@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="拷贝以下的内容（https://developer.android.com/studio/build/shrink-code.html），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。 压缩代码和资源 要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。代码压缩通过 ProGuard">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android-混淆">
+<meta property="og:url" content="http://yoursite.com/Android/Android-混淆/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="拷贝以下的内容（https://developer.android.com/studio/build/shrink-code.html），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。 压缩代码和资源 要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。代码压缩通过 ProGuard">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-12-28T03:24:10.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android-混淆">
+<meta name="twitter:description" content="拷贝以下的内容（https://developer.android.com/studio/build/shrink-code.html），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。 压缩代码和资源 要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。代码压缩通过 ProGuard">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/Android-混淆/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android-混淆 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android-混淆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android-混淆
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>拷贝以下的内容（<a href="https://developer.android.com/studio/build/shrink-code.html" target="_blank" rel="noopener">https://developer.android.com/studio/build/shrink-code.html</a><br>），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。</p>
+<p>压缩代码和资源</p>
+<p>要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。<br>代码压缩通过 ProGuard 提供，ProGuard 会检测和移除封装应用中未使用的类、字段、方法和属性，包括自带代码库中的未使用项（这使其成为以变通方式解决 <a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="noopener">64k 引用限制</a>的有用工具）。ProGuard 还可优化字节码，移除未使用的代码指令，以及用短名称混淆其余的类、字段和方法。混淆过的代码可令您的 APK 难以被逆向工程，这在应用使用<a href="https://developer.android.com/google/play/licensing/overview.html" target="_blank" rel="noopener">许可验证</a>等安全敏感性功能时特别有用。<br>资源压缩通过适用于 Gradle 的 Android 插件提供，该插件会移除封装应用中未使用的资源，包括代码库中未使用的资源。它可与代码压缩发挥协同效应，使得在移除未使用的代码后，任何不再被引用的资源也能安全地移除。<br>本文介绍的功能依赖下列组件：<br><a href="https://developer.android.com/studio/releases/sdk-tools.html" target="_blank" rel="noopener">SDK Tools</a> 25.0.10 或更高版本<br><a href="https://developer.android.com/studio/releases/gradle-plugin.html" target="_blank" rel="noopener">适用于 Gradle 的 Android 插件</a> 2.0.0 或更高版本</p>
+<p>压缩代码</p>
+<p>要通过 ProGuard 启用代码压缩，请在 build.gradle<br> 文件内相应的构建类型中添加 minifyEnabled true<br>。<br>请注意，代码压缩会拖慢构建速度，因此您应该尽可能避免在调试构建中使用。不过，重要的是您一定要为用于测试的最终 APK 启用代码压缩，因为如果您不能充分地<a href="https://developer.android.com/studio/build/shrink-code.html#keep-code" target="_blank" rel="noopener">自定义要保留的代码</a>，可能会引入错误。<br>例如，下面这段来自 build.gradle<br> 文件的代码用于为发布构建启用代码压缩：<br>android { buildTypes { release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } } …}<br><strong>注</strong>：Android Studio 会在使用 <a href="https://developer.android.com/studio/run/index.html#instant-run" target="_blank" rel="noopener">Instant Run</a> 时停用 ProGuard。如果您需要为增量式构建压缩代码，请尝试<a href="https://developer.android.com/studio/build/shrink-code.html#gradle-shrinker" target="_blank" rel="noopener">试用 Gradle 压缩器</a>。<br>除了 minifyEnabled<br> 属性外，还有用于定义 ProGuard 规则的 proguardFiles<br> 属性：<br>getDefaultProguardFile(‘proguard-android.txt’)<br> 方法可从 Android SDK tools/proguard/<br> 文件夹获取默认的 ProGuard 设置。<strong>提示</strong>：要想做进一步的代码压缩，请尝试使用位于同一位置的 proguard-android-optimize.txt<br> 文件。它包括相同的 ProGuard 规则，但还包括其他在字节码一级（方法内和方法间）执行分析的优化，以进一步减小 APK 大小和帮助提高其运行速度。</p>
+<p>proguard-rules.pro<br> 文件用于添加自定义 ProGuard 规则。默认情况下，该文件位于模块根目录（build.gradle<br> 文件旁）。</p>
+<p>要添加更多各构建变体专用的 ProGuard 规则，请在相应的 productFlavor<br> 代码块中再添加一个 proguardFiles<br> 属性。例如，以下 Gradle 文件会向 flavor2<br> 产品定制添加 flavor2-rules.pro<br>。现在 flavor2<br> 使用所有三个 ProGuard 规则，因为还应用了来自 release<br> 代码块的规则。<br>android { … buildTypes { release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } } productFlavors { flavor1 { } flavor2 { proguardFile ‘flavor2-rules.pro’ } }}<br>每次构建时 ProGuard 都会输出下列文件：<br>dump.txt</p>
+<p>说明 APK 中所有类文件的内部结构。<br>mapping.txt</p>
+<p>提供原始与混淆过的类、方法和字段名称之间的转换。<br>seeds.txt</p>
+<p>列出未进行混淆的类和成员。<br>usage.txt</p>
+<p>列出从 APK 移除的代码。</p>
+<p>这些文件保存在 <module-name>/build/outputs/mapping/release/<br> 中。<br>自定义要保留的代码<br>对于某些情况，默认 ProGuard 配置文件 (proguard-android.txt<br>) 足以满足需要，ProGuard 会移除所有（并且只会移除）未使用的代码。不过，ProGuard 难以对许多情况进行正确分析，可能会移除应用真正需要的代码。举例来说，它可能错误移除代码的情况包括：<br>当应用引用的类只来自 AndroidManifest.xml<br> 文件时<br>当应用调用的方法来自 Java 原生接口 (JNI) 时<br>当应用在运行时（例如使用反射或自检）操作代码时</module-name></p>
+<p>测试应用应该能够发现因不当移除的代码而导致的错误，但您也可以通过查看 <module-name>/build/outputs/mapping/release/<br> 中保存的 usage.txt<br> 输出文件来检查移除了哪些代码。<br>要修正错误并强制 ProGuard 保留特定代码，请在 ProGuard 配置文件中添加一行 <a href="https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/usage.html" target="_blank" rel="noopener">-keep</a><br> 代码。例如：<br>-keep public class MyClass<br>或者，您可以向您想保留的代码添加 <a href="https://developer.android.com/reference/android/support/annotation/Keep.html" target="_blank" rel="noopener">@Keep</a><br> 注解。在类上添加 @Keep<br> 可原样保留整个类。在方法或字段上添加它可完整保留方法/字段（及其名称）以及类名称。请注意，只有在使用<a href="https://developer.android.com/studio/write/annotations.html" target="_blank" rel="noopener">注解支持库</a>时，才能使用此注解。<br>在使用 -keep<br> 选项时，有许多事项需要考虑；如需了解有关自定义配置文件的详细信息，请阅读 <a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html" target="_blank" rel="noopener">ProGuard 手册</a>。<a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html" target="_blank" rel="noopener">问题排查</a>一章概述了您可能会在混淆代码时遇到的其他常见问题。<br>解码混淆过的堆叠追踪<br>在 ProGuard 压缩代码后，读取堆叠追踪变得困难（即使并非不可行），因为方法名称经过了混淆处理。幸运的是，ProGuard 每次运行时都会创建一个 mapping.txt<br> 文件，其中显示了与混淆过的名称对应的原始类名称、方法名称和字段名称。ProGuard 将该文件保存在应用的 <module-name>/build/outputs/mapping/release/<br> 目录中。<br>请注意，您每次使用 ProGuard 创建发布构建时都会覆盖 mapping.txt<br> 文件，因此您每次发布新版本时都必须小心地保存一个副本。通过为每个发布构建保留一个 mapping.txt<br> 文件副本，您就可以在用户提交的已混淆堆叠追踪来自旧版本应用时对问题进行调试。<br>在 Google Play 上发布应用时，您可以上传每个 APK 版本的 mapping.txt<br> 文件。Google Play 将根据用户报告的问题对收到的堆叠追踪进行去混淆处理，以便您在 Google Play Developer Console 中进行检查。如需了解详细信息，请参阅帮助中心有关如何<a href="https://support.google.com/googleplay/android-developer/answer/6295281" target="_blank" rel="noopener">对崩溃堆叠追踪进行去混淆处理</a>的文章。<br>要自行将混淆过的堆叠追踪转换成可读的堆叠追踪，请使用 retrace<br> 脚本（在 Windows 上为 retrace.bat<br>；在 Mac/Linux 上为 retrace.sh<br>）。它位于 <sdk-root>/tools/proguard/<br> 目录中。该脚本利用 mapping.txt<br> 文件和您的堆叠追踪生成新的可读堆叠追踪。使用 retrace 工具的语法如下：<br>retrace.bat|retrace.sh [-verbose] mapping.txt [&lt;stacktrace_file&gt;]<br>例如：<br>retrace.bat -verbose mapping.txt obfuscated_trace.txt<br>如果您不指定堆叠追踪文件，retrace 工具会从标准输入读取。<br>通过 Instant Run 启用代码压缩<br>如果代码压缩在您增量构建应用时非常重要，请尝试<a href="https://developer.android.com/studio/releases/gradle-plugin.html" target="_blank" rel="noopener">适用于 Gradle 的 Android 插件</a>内置的试用代码压缩器。与 ProGuard 不同，此压缩器支持 <a href="https://developer.android.com/studio/run/index.html#instant-run" target="_blank" rel="noopener">Instant Run</a>。<br>您也可以使用与 ProGuard 相同的配置文件来配置 Android 插件压缩器。但是，<strong>Android 插件压缩器不会对您的代码进行混淆处理或优化</strong>，它只会删除未使用的代码。因此，您应该仅将其用于调试构建，并为发布构建启用 ProGuard，以便对发布 APK 的代码进行混淆处理和优化。<br>要启用 Android 插件压缩器，只需在 “debug” 构建类型中将 useProguard<br> 设置为 false<br>（并保留 minifyEnabled<br> 设置 true<br>）：<br>android { buildTypes { debug { minifyEnabled true <strong>useProguard false</strong> proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } }}<br><strong>注</strong>：如果 Android 插件压缩器最初删除了某个方法，但您之后更改了代码，使该方法可访问，Instant Run 会将其视为<a href="https://developer.android.com/studio/run/index.html#ir-table" target="_blank" rel="noopener">结构代码更改</a>并执行冷交换。<br>压缩资源<br>资源压缩只与代码压缩协同工作。代码压缩器移除所有未使用的代码后，资源压缩器便可确定应用仍然使用的资源。这在您添加包含资源的代码库时体现得尤为明显 - 您必须移除未使用的库代码，使库资源变为未引用资源，才能通过资源压缩器将它们移除。<br>要启用资源压缩，请在 build.gradle<br> 文件中将 shrinkResources<br> 属性设置为 true<br>（在用于代码压缩的 minifyEnabled<br> 旁边）。例如：<br>android { … buildTypes { release { shrinkResources true minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } }}<br>如果您尚未使用代码压缩用途的 minifyEnabled<br> 构建应用，请先尝试使用它，然后再启用 shrinkResources<br>，因为您可能需要编辑 proguard-rules.pro<br>文件以保留动态创建或调用的类或方法，然后再开始移除资源。<br><strong>注</strong>：资源压缩器目前不会移除 values/<br> 文件夹中定义的资源（例如字符串、尺寸、样式和颜色）。这是因为 Android 资源打包工具 (AAPT) 不允许 Gradle 插件为资源指定预定义版本。有关详情，请参阅<a href="https://code.google.com/p/android/issues/detail?id=70869" target="_blank" rel="noopener">问题 70869</a>。<br>自定义要保留的资源<br>如果您有想要保留或舍弃的特定资源，请在您的项目中创建一个包含 <resources><br> 标记的 XML 文件，并在 tools:keep<br> 属性中指定每个要保留的资源，在 tools:discard<br> 属性中指定每个要舍弃的资源。这两个属性都接受逗号分隔的资源名称列表。您可以使用星号字符作为通配符。<br>例如：<br>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@layout/l_used*_c,@layout/l_used_a,@layout/l_used_b*" tools:discard="@layout/unused2"><br>将该文件保存在项目资源中，例如，保存在 res/raw/keep.xml<br>。构建不会将该文件打包到 APK 之中。<br>指定要舍弃的资源可能看似愚蠢，因为您本可将它们删除，但在使用构建变体时，这样做可能很有用。例如，如果您明知给定资源表面上会在代码中使用（并因此不会被压缩器移除），但实际不会用于给定构建变体，就可以将所有资源放入公用项目目录，然后为每个构建变体创建一个不同的 keep.xml<br> 文件。构建工具也可能无法根据需要正确识别资源，这是因为编译器会添加内联资源 ID，而资源分析器可能不知道真正引用的资源和恰巧具有相同值的代码中的整数值之间的差别。<br>启用严格引用检查<br>正常情况下，资源压缩器可准确判定系统是否使用了资源。不过，如果您的代码调用 <a href="https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier(java.lang.String, java.lang.String, java.lang.String" target="_blank" rel="noopener">Resources.getIdentifier()</a>)<br>（或您的任何库进行了这一调用 - <a href="https://developer.android.com/topic/libraries/support-library/features.html#v7-appcompat" target="_blank" rel="noopener">AppCompat</a> 库会执行该调用），这就表示您的代码将根据动态生成的字符串查询资源名称。当您执行这一调用时，默认情况下资源压缩器会采取防御性行为，将所有具有匹配名称格式的资源标记为可能已使用，无法移除。<br>例如，以下代码会使所有带 img_<br> 前缀的资源标记为已使用。<br>String name = String.format(“img_%1d”, angle + 1);res = getResources().getIdentifier(name, “drawable”, getPackageName());<br>资源压缩器还会浏览代码以及各种 res/raw/<br> 资源中的所有字符串常量，寻找格式类似于 file:///android_res/drawable//ic_plus_anim_016.png<br> 的资源网址。如果它找到与其类似的字符串，或找到其他看似可用来构建与其类似的网址的字符串，则不会将它们移除。<br>这些是默认情况下启用的安全压缩模式的示例。但您可以停用这一“有备无患”处理方式，并指定资源压缩器只保留其确定已使用的资源。要执行此操作，请在 keep.xml<br> 文件中将 shrinkMode<br> 设置为 strict<br>，如下所示：<br>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;<resources xmlns:tools="http://schemas.android.com/tools" tools:shrinkmode="strict"><br>如果您确已启用严格压缩模式，并且代码也引用了包含动态生成字符串的资源（如上所示），则必须利用 tools:keep<br> 属性手动保留这些资源。<br>移除未使用的备用资源<br>Gradle 资源压缩器只会移除未被您的应用代码引用的资源，这意味着它不会移除用于不同设备配置的<a href="https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_blank" rel="noopener">备用资源</a>。必要时，您可以使用 Android Gradle 插件的 resConfigs<br> 属性来移除您的应用不需要的备用资源文件。<br>例如，如果您使用的库包含语言资源（例如使用的是 AppCompat 或 Google Play 服务），则 APK 将包括这些库中消息的所有已翻译语言字符串，无论应用的其余部分是否翻译为同一语言。如果您想只保留应用正式支持的语言，则可以利用 resConfig<br> 属性指定这些语言。系统会移除未指定语言的所有资源。<br>下面这段代码展示了如何将语言资源限定为仅支持英语和法语：<br>android { defaultConfig { … resConfigs “en”, “fr” }}<br>同理，您也可以利用 <a href="https://developer.android.com/studio/build/configure-apk-splits.html" target="_blank" rel="noopener">APK 拆分</a>为不同设备构建不同的 APK，自定义在 APK 中包括的屏幕密度或 ABI 资源。<br>合并重复资源<br>默认情况下，Gradle 还会合并同名资源，例如可能位于不同资源文件夹中的同名可绘制对象。这一行为不受 shrinkResources<br> 属性控制，也无法停用，因为在有多个资源匹配代码查询的名称时，有必要利用这一行为来避免错误。<br>只有在两个或更多个文件具有完全相同的资源名称、类型和限定符时，才会进行资源合并。Gradle 会在重复项中选择其视为最佳选择的文件（根据下述优先顺序），并只将这一个资源传递给 AAPT，以供在 APK 文件中分发。<br>Gradle 会在下列位置寻找重复资源：<br>与主源集关联的主资源，一般位于 src/main/res/<br> 中。<br>变体叠加，来自构建类型和构建风味。<br>库项目依赖项。</resources></resources></resources></sdk-root></module-name></module-name></p>
+<p>Gradle 会按以下级联优先顺序合并重复资源：<br>依赖项 → 主资源 → 构建风味 → 构建类型<br>例如，如果某个重复资源同时出现在主资源和构建风味中，Gradle 会选择构建风味中的重复资源。<br>如果完全相同的资源出现在同一源集中，Gradle 无法合并它们，并且会发出资源合并错误。如果您在 build.gradle<br> 文件的 sourceSet<br> 属性中定义了多个源集，则可能会发生这种情况，例如，如果 src/main/res/<br> 和 src/main/res2/<br> 包含完全相同的资源，就可能会发生这种情况。<br>排查资源压缩问题<br>当您压缩资源时，Gradle Console 会显示它从应用软件包中移除的资源的摘要。例如：<br>:android:shrinkDebugResourcesRemoved unused resources: Binary resource data reduced from 2570KB to 1711KB: Removed 33%:android:validateDebugSigning<br>Gradle 还会在 <module-name>/build/outputs/mapping/release/<br>（ProGuard 输出文件所在的文件夹）中创建一个名为 resources.txt 的诊断文件。该文件包括诸如哪些资源引用了其他资源以及使用或移除了哪些资源等详情。</module-name></p>
+<p>例如，要了解您的 APK 为何仍包含 @drawable/ic_plus_anim_016<br>，请打开 resources.txt<br> 文件并搜索该文件名。您可能会发现，有其他资源引用了它，如下所示：<br>16:25:48.005 [QUIET] [system.out] @drawable/add_schedule_fab_icon_anim : reachable=true16:25:48.009 [QUIET] [system.out] @drawable/ic_plus_anim_016<br>现在您需要了解为何 @drawable/add_schedule_fab_icon_anim<br> 可以访问 - 如果您向上搜索，就会发现“The root reachable resources are:”之下列有该资源。这意味着存在对 add_schedule_fab_icon_anim<br> 的代码引用（即在可访问代码中找到了其 R.drawable ID）。<br>如果您使用的不是严格检查，则存在看似可用于为动态加载资源构建资源名称的字符串常量时，可将资源 ID 标记为可访问。在这种情况下，如果您在构建输出中搜索资源名称，可能会找到类似下面这样的消息：<br>10:32:50.590 [QUIET] [system.out] Marking drawable:ic_plus_anim_016:2130837506 used because it format-string matches string pool constant ic_plus_anim_%1$d.<br>如果您看到一个这样的字符串，并且您能确定该字符串未用于动态加载给定资源，就可以按照有关如何<a href="https://developer.android.com/studio/build/shrink-code.html#keep-resources" target="_blank" rel="noopener">自定义要保留的资源</a>部分中所述利用 tools:discard<br> 属性通知构建系统将它移除。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android/Android-列表Item滑出菜单方案选择/" rel="next" title="Android-列表Item滑出菜单方案选择">
+                <i class="fa fa-chevron-left"></i> Android-列表Item滑出菜单方案选择
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android-Studio下载地址/" rel="prev" title="Android-Studio下载地址">
+                Android-Studio下载地址 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">286</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

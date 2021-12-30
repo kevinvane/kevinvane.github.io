@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="本文是拷贝  google.cn ，更新时间是文章的发表时间。  搭配使用 Android Studio 2.2 或更高版本与 Android Plugin for Gradle 版本 2.2.0 或更高版本时，您可以将 C 和 C++ 代码编译到 Gradle 与 APK 一起打包的原生库中，将这类代码添加到您的应用中。您的 Java 代码随后可以通过 Java 原生接口 (JNI) 调用您的">
+<meta name="keywords" content="ndk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="向您的Android项目添加 C 和 C++ 代码">
+<meta property="og:url" content="http://yoursite.com/Android/向您的Android项目添加C和C++代码/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="本文是拷贝  google.cn ，更新时间是文章的发表时间。  搭配使用 Android Studio 2.2 或更高版本与 Android Plugin for Gradle 版本 2.2.0 或更高版本时，您可以将 C 和 C++ 代码编译到 Gradle 与 APK 一起打包的原生库中，将这类代码添加到您的应用中。您的 Java 代码随后可以通过 Java 原生接口 (JNI) 调用您的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/android/从%20SDK%20管理器中安装%20LLDB、CMake%20和%20NDK.png">
+<meta property="og:image" content="http://yoursite.com/images/android/您的原生源文件和外部构建脚本的.png">
+<meta property="og:image" content="http://yoursite.com/images/android/分析器定位原生库.png">
+<meta property="og:image" content="http://yoursite.com/images/android/对话框关联外部.png">
+<meta property="og:updated_time" content="2021-12-28T03:24:10.124Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="向您的Android项目添加 C 和 C++ 代码">
+<meta name="twitter:description" content="本文是拷贝  google.cn ，更新时间是文章的发表时间。  搭配使用 Android Studio 2.2 或更高版本与 Android Plugin for Gradle 版本 2.2.0 或更高版本时，您可以将 C 和 C++ 代码编译到 Gradle 与 APK 一起打包的原生库中，将这类代码添加到您的应用中。您的 Java 代码随后可以通过 Java 原生接口 (JNI) 调用您的">
+<meta name="twitter:image" content="http://yoursite.com/images/android/从%20SDK%20管理器中安装%20LLDB、CMake%20和%20NDK.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/向您的Android项目添加C和C++代码/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>向您的Android项目添加 C 和 C++ 代码 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/向您的Android项目添加C和C++代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">向您的Android项目添加 C 和 C++ 代码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-17 09:52:36" itemprop="dateCreated datePublished" datetime="2018-01-17T09:52:36+08:00">2018-01-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文是拷贝  <a href="https://developer.android.google.cn/studio/projects/add-native-code.html" target="_blank" rel="noopener">google.cn</a> ，更新时间是文章的发表时间。</p>
+</blockquote>
+<p>搭配使用 Android Studio 2.2 或更高版本与 Android Plugin for Gradle 版本 2.2.0 或更高版本时，您可以将 C 和 C++ 代码编译到 Gradle 与 APK 一起打包的原生库中，将这类代码添加到您的应用中。您的 Java 代码随后可以通过 Java 原生接口 (JNI) 调用您的原生库中的函数。如果您想要详细了解如何使用 JNI 框架，请阅读 Android 的 JNI 提示。</p>
+<p>Android Studio 用于构建原生库的默认工具是 CMake。由于很多现有项目都使用构建工具包编译其原生代码，Android Studio 还支持 ndk-build。如果您想要将现有的 ndk-build 库导入到您的 Android Studio 项目中，请参阅介绍如何配置 Gradle 以关联到您的原生库的部分。不过，如果您在创建新的原生库，则应使用 CMake。</p>
+<p>本页面介绍的信息可以帮助您使用所需构建工具设置 Android Studio、创建或配置项目以支持 Android 上的原生代码，以及构建和运行应用。 </p>
+<blockquote>
+<p>注：如果您的现有项目使用已弃用的 <code>ndkCompile</code> 工具，则应先打开 <code>build.properties</code> 文件，并移除以下代码行，然后再<a href="https://developer.android.google.cn/studio/projects/add-native-code.html#link-gradle" target="_blank" rel="noopener">将 Gradle 关联到您的原生库</a>： </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Remove this line</span><br><span class="line">android.useDeprecatedNdk = true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>实验性 Gradle 的用户注意事项</strong>：如果您是以下任意一种情况，请考虑<a href="http://tools.android.com/tech-docs/new-build-system/gradle-experimental/migrate-to-stable" target="_blank" rel="noopener">迁移到插件版本 2.2.0 或更高版本</a>并使用 CMake 或 ndk-build 构建原生库：您的原生项目已经使用 CMake 或者 ndk-build；但是您想要使用稳定版本的 Gradle 构建系统；或者您希望支持插件工具，例如 <a href="https://ccache.samba.org/" target="_blank" rel="noopener">CCache</a>。否则，您可以继续<a href="http://tools.android.com/tech-docs/new-build-system/gradle-experimental" target="_blank" rel="noopener">使用实验性版本的 Gradle 和 Android 插件</a>。</p>
+</blockquote>
+<h3 id="下载-NDK-和构建工具"><a href="#下载-NDK-和构建工具" class="headerlink" title="下载 NDK 和构建工具"></a>下载 NDK 和构建工具</h3><p>要为您的应用编译和调试原生代码，您需要以下组件： </p>
+<ul>
+<li><a href="https://developer.android.google.cn/ndk/index.html" target="_blank" rel="noopener">Android 原生开发工具包 (NDK)</a>：这套工具集允许您为 Android 使用 C 和 C++ 代码，并提供众多平台库，让您可以管理原生 Activity 和访问物理设备组件，例如传感器和触摸输入。</li>
+<li><a href="https://cmake.org/" target="_blank" rel="noopener">CMake</a>：一款外部构建工具，可与 Gradle 搭配使用来构建原生库。如果您只计划使用 ndk-build，则不需要此组件。</li>
+<li><a href="http://lldb.llvm.org/" target="_blank" rel="noopener">LLDB</a>：一种调试程序，Android Studio 使用它来调试原生代码。</li>
+</ul>
+<p>您可以<a href="https://developer.android.google.cn/studio/intro/update.html#sdk-manager" target="_blank" rel="noopener">使用 SDK 管理器</a>安装这些组件：</p>
+<ol>
+<li>在打开的项目中，从菜单栏选择 Tools &gt; Android &gt; SDK Manager。</li>
+<li>点击 <strong>SDK Tools</strong> 标签。</li>
+<li>选中 <strong>LLDB</strong>、<strong>CMake</strong> 和 <strong>NDK</strong> 旁的复选框，如图 1 所示。<br> <img src="/images/android/从 SDK 管理器中安装 LLDB、CMake 和 NDK.png" alt=" 图 1. 从 SDK 管理器中安装 LLDB、CMake 和 NDK。"></li>
+<li>点击 Apply，然后在弹出式对话框中点击 OK。</li>
+<li>安装完成后，点击 Finish，然后点击 OK。</li>
+</ol>
+<h3 id="创建支持-C-C-的新项目"><a href="#创建支持-C-C-的新项目" class="headerlink" title="创建支持 C/C++ 的新项目"></a>创建支持 C/C++ 的新项目</h3><p>创建支持原生代码的项目与创建任何其他 Android Studio 项目类似，不过前者还需要额外几个步骤： </p>
+<ol>
+<li>在向导的 <strong>Configure your new project</strong> 部分，选中 Include C++ Support 复选框。</li>
+<li>点击 <strong>Next</strong>。</li>
+<li>正常填写所有其他字段并完成向导接下来的几个部分。</li>
+<li>在向导的 <strong>Customize C++ Support</strong> 部分，您可以使用下列选项自定义项目：<ul>
+<li><strong>C++ Standard</strong>：使用下拉列表选择您希望使用哪种 C++ 标准。选择 <strong>Toolchain Default</strong> 会使用默认的 CMake 设置。</li>
+<li><strong>Exceptions Support</strong>：如果您希望启用对 C++ 异常处理的支持，请选中此复选框。如果启用此复选框，Android Studio 会将 -fexceptions 标志添加到模块级 build.gradle 文件的 cppFlags 中，Gradle 会将其传递到 CMake。</li>
+<li><strong>Runtime Type Information Support</strong>：如果您希望支持 RTTI，请选中此复选框。如果启用此复选框，Android Studio 会将 -frtti 标志添加到模块级 build.gradle 文件的 cppFlags 中，Gradle 会将其传递到 CMake。</li>
+</ul>
+</li>
+<li>点击 <strong>Finish</strong>。<br>在 Android Studio 完成新项目的创建后，请从 IDE 左侧打开 <strong>Project</strong> 窗格并选择 <strong>Android</strong> 视图。如图 2 中所示，Android Studio 将添加 <strong>cpp</strong> 和 <strong>External Build Files</strong> 组：<br><img src="/images/android/您的原生源文件和外部构建脚本的.png" alt=" 图 2. 您的原生源文件和外部构建脚本的 Android 视图组。"></li>
+</ol>
+<blockquote>
+<p>注：此视图无法反映磁盘上的实际文件层次结构，而是将相似文件分到一组中，简化项目导航。 </p>
+</blockquote>
+<ol>
+<li><p>在 <strong>cpp </strong>组中，您可以找到属于项目的所有原生源文件、标头和预构建库。对于新项目，Android Studio 会创建一个示例 C++ 源文件 native-lib.cpp，并将其置于应用模块的 src/main/cpp/ 目录中。本示例代码提供了一个简单的 C++ 函数 stringFromJNI()，此函数可以返回字符串“Hello from C++”。要了解如何向项目添加其他源文件，请参阅介绍如何 <a href="https://developer.android.google.cn/studio/projects/add-native-code.html#create-sources" target="_blank" rel="noopener">创建新的原生源文件</a> 的部分。 </p>
+</li>
+<li><p>在 <strong>External Build Files</strong> 组中，您可以找到 CMake 或 ndk-build 的构建脚本。与 build.gradle 文件指示 Gradle 如何构建应用一样，CMake 和 ndk-build 需要一个构建脚本来了解如何构建您的原生库。对于新项目，Android Studio 会创建一个 CMake 构建脚本 CMakeLists.txt，并将其置于模块的根目录中。要详细了解此构建脚本的内容，请参阅介绍如何 <a href="https://developer.android.google.cn/studio/projects/add-native-code.html#create-cmake-script" target="_blank" rel="noopener">创建 Cmake 构建脚本</a> 的部分。</p>
+</li>
+</ol>
+<h4 id="构建和运行示例应用"><a href="#构建和运行示例应用" class="headerlink" title="构建和运行示例应用"></a>构建和运行示例应用</h4><p>点击 <strong>Run</strong> 从菜单栏运行应用 后，Android Studio 将在您的 Android 设备或者模拟器上构建并启动一个显示文字“Hello from C++”的应用。下面的概览介绍了构建和运行示例应用时会发生的事件： </p>
+<ol>
+<li>Gradle 调用您的外部构建脚本 <code>CMakeLists.txt</code>。</li>
+<li>CMake 按照构建脚本中的命令将 C++ 源文件 <code>native-lib.cpp</code> 编译到共享的对象库中，并命名为 <code>libnative-lib.so</code>，Gradle 随后会将其打包到 APK 中。</li>
+<li>运行时，应用的 <code>MainActivity</code> 会使用 <a href="https://developer.android.google.cn/reference/java/lang/System.html#loadLibrary(java.lang.String" target="_blank" rel="noopener">System.loadLibrary() </a>)加载原生库。现在，应用可以使用库的原生函数 <code>stringFromJNI()</code>。</li>
+<li><code>MainActivity.onCreate()</code> 调用 <code>stringFromJNI()</code>，这将返回“Hello from C++”并使用这些文字更新 TextView。</li>
+</ol>
+<blockquote>
+<p>注：<a href="https://developer.android.google.cn/studio/run/index.html#instant-run" target="_blank" rel="noopener">Instant Run</a> 与使用原生代码的项目不兼容。Android Studio 会自动停用此功能。 </p>
+</blockquote>
+<p>如果您想要验证 Gradle 是否已将原生库打包到 APK 中，可以使用 <a href="https://developer.android.google.cn/studio/build/apk-analyzer.html" target="_blank" rel="noopener">APK 分析器</a>： </p>
+<ol>
+<li>选择 <strong>Build &gt; Analyze APK</strong>。</li>
+<li>从 <code>app/build/outputs/apk/</code> 目录中选择 APK 并点击 OK。</li>
+<li>如图 3 中所示，您会在 APK 分析器窗口的 <code>lib/&lt;ABI&gt;/</code> 下看到 <code>libnative-lib.so</code>。<br> <img src="/images/android/分析器定位原生库.png" alt="图 3. 使用 APK 分析器定位原生库。"></li>
+</ol>
+<blockquote>
+<p><strong>提示</strong>：如果您想要试验使用原生代码的其他 Android 应用，请点击 <strong>File &gt; New &gt; Import Sample</strong> 并从 <strong>Ndk</strong> 列表中选择示例项目。 </p>
+</blockquote>
+<h3 id="向现有项目添加-C-C-代码"><a href="#向现有项目添加-C-C-代码" class="headerlink" title="向现有项目添加 C/C++ 代码"></a>向现有项目添加 C/C++ 代码</h3><p>如果您希望向现有项目添加原生代码，请执行以下步骤：</p>
+<ol>
+<li><a href="https://developer.android.google.cn/studio/projects/add-native-code.html#create-sources" target="_blank" rel="noopener">创建新的原生源文件</a>并将其添加到您的 Android Studio 项目中。<ul>
+<li>如果您已经拥有原生代码或想要导入预构建的原生库，则可以跳过此步骤。</li>
+</ul>
+</li>
+<li><a href="https://developer.android.google.cn/studio/projects/add-native-code.html#create-cmake-script" target="_blank" rel="noopener">创建CMake构建脚本</a>，将您的原生源代码构建到库中。如果导入和关联预构建库或平台库，您也需要此构建脚本。<ul>
+<li>如果您的现有原生库已经拥有 CMakeLists.txt 构建脚本或者使用 ndk-build 并包含 Android.mk 构建脚本，则可以跳过此步骤。</li>
+</ul>
+</li>
+<li>提供一个指向您的 CMake 或 ndk-build 脚本文件的路径，将 Gradle 关联到您的原生库。Gradle 使用构建脚本将源代码导入您的 Android Studio 项目并将原生库（SO 文件）打包到 APK 中。</li>
+</ol>
+<p>配置完项目后，您可以使用 <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/jniTOC.html" target="_blank" rel="noopener">JNI 框架</a>从 Java 代码中访问您的原生函数。要构建和运行应用，只需点击 <strong>Run</strong> 从菜单栏运行应用。Gradle 会以依赖项的形式添加您的外部原生构建流程，用于编译、构建原生库并将其随 APK 一起打包。 </p>
+<h4 id="创建新的原生源文件"><a href="#创建新的原生源文件" class="headerlink" title="创建新的原生源文件"></a>创建新的原生源文件</h4><p>要在应用模块的主源代码集中创建一个包含新建原生源文件的 cpp/ 目录，请按以下步骤操作：</p>
+<ol>
+<li>从 IDE 的左侧打开 <strong>Project</strong> 窗格并从下拉菜单中选择 <strong>Project</strong> 视图。</li>
+<li>导航到 <strong>您的模块 &gt; src</strong>，右键点击 <strong>main</strong> 目录，然后选择 <strong>New &gt; Directory</strong>。</li>
+<li>为目录输入一个名称（例如 cpp）并点击 <strong>OK</strong>。</li>
+<li>右键点击您刚刚创建的目录，然后选择 <strong>New &gt; C/C++ Source File</strong>。</li>
+<li>为您的源文件输入一个名称，例如 <strong>native-lib</strong>。</li>
+<li>从 <strong>Type</strong> 下拉菜单中，为您的源文件选择文件扩展名，例如 <strong>.cpp</strong>。<ul>
+<li>点击 <strong>Edit File Types</strong> ，您可以向下拉菜单中添加其他文件类型，例如 .cxx 或 .hxx。在弹出的 <strong>C/C++</strong> 对话框中，从 <strong>Source Extension</strong> 和 <strong>Header Extension</strong>下拉菜单中选择另一个文件扩展名，然后点击 <strong>OK</strong>。</li>
+</ul>
+</li>
+<li>如果您还希望创建一个标头文件，请选中 <strong>Create an associated header</strong> 复选框。</li>
+<li>点击 <strong>OK</strong>。</li>
+</ol>
+<h4 id="创建-CMake-构建脚本"><a href="#创建-CMake-构建脚本" class="headerlink" title="创建 CMake 构建脚本"></a>创建 CMake 构建脚本</h4><p>如果您的原生源文件还没有 CMake 构建脚本，则您需要自行创建一个并包含适当的 CMake 命令。CMake 构建脚本是一个纯文本文件，您必须将其命名为 <code>CMakeLists.txt</code>。本部分介绍了您应包含到构建脚本中的一些基本命令，用于在创建原生库时指示 CMake 应使用哪些源文件。 </p>
+<blockquote>
+<p>注：如果您的项目使用 ndk-build，则不需要创建 CMake 构建脚本。提供一个指向您的 <a href="https://developer.android.google.cn/ndk/guides/android_mk.html" target="_blank" rel="noopener">Android.mk</a> 文件的路径，<a href="https://developer.android.google.cn/studio/projects/add-native-code.html#link-gradle" target="_blank" rel="noopener">将 Gradle 关联到您的原生库</a>。 </p>
+</blockquote>
+<p>要创建一个可以用作 CMake 构建脚本的纯文本文件，请按以下步骤操作：</p>
+<ol>
+<li>从 IDE 的左侧打开 <strong>Project</strong> 窗格并从下拉菜单中选择 <strong>Project</strong> 视图。</li>
+<li>右键点击 您的模块 的根目录并选择 <strong>New &gt; File</strong>。<blockquote>
+<p><strong>注</strong>：您可以在所需的任意位置创建构建脚本。不过，在配置构建脚本时，原生源文件和库的路径将与构建脚本的位置相关。</p>
+</blockquote>
+</li>
+<li>输入“CMakeLists.txt”作为文件名并点击 OK。<br>现在，您可以添加 CMake 命令，对您的构建脚本进行配置。要指示 CMake 从原生源代码创建一个原生库，请将 <a href="https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html" target="_blank" rel="noopener">cmake_minimum_required()</a> 和 <a href="https://cmake.org/cmake/help/latest/command/add_library.html" target="_blank" rel="noopener">add_library() </a>命令添加到您的构建脚本中： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># Sets the minimum version of CMake required to build your native library.</span><br><span class="line"># This ensures that a certain set of CMake features is available to</span><br><span class="line"># your build.</span><br><span class="line"></span><br><span class="line">cmake_minimum_required(VERSION 3.4.1)</span><br><span class="line"></span><br><span class="line"># Specifies a library name, specifies whether the library is STATIC or</span><br><span class="line"># SHARED, and provides relative paths to the source code. You can</span><br><span class="line"># define multiple libraries by adding multiple add.library() commands,</span><br><span class="line"># and CMake builds them for you. When you build your app, Gradle</span><br><span class="line"># automatically packages shared libraries with your APK.</span><br><span class="line"></span><br><span class="line">add_library( # Specifies the name of the library.</span><br><span class="line">             native-lib</span><br><span class="line"></span><br><span class="line">             # Sets the library as a shared library.</span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             # Provides a relative path to your source file(s).</span><br><span class="line">             src/main/cpp/native-lib.cpp )</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用 add_library() 向您的 CMake 构建脚本添加源文件或库时，Android Studio 还会在您同步项目后在 Project 视图下显示关联的标头文件。不过，为了确保 CMake 可以在编译时定位您的标头文件，您需要将 <a href="https://cmake.org/cmake/help/latest/command/include_directories.html" target="_blank" rel="noopener">include_directories() </a>命令添加到 CMake 构建脚本中并指定标头的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add_library(...)</span><br><span class="line"></span><br><span class="line"># Specifies a path to native header files.</span><br><span class="line">include_directories(src/main/cpp/include/)</span><br></pre></td></tr></table></figure></p>
+<p>CMake 使用以下规范来为库文件命名：<br>    <strong>lib库名称.so</strong><br>例如，如果您在构建脚本中指定“native-lib”作为共享库的名称，CMake 将创建一个名称为 libnative-lib.so 的文件。不过，在 Java 代码中加载此库时，请使用您在 CMake 构建脚本中指定的名称：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static &#123;</span><br><span class="line">    System.loadLibrary(“native-lib”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注</strong>：如果您在 CMake 构建脚本中重命名或移除某个库，您需要先清理项目，Gradle 随后才会应用更改或者从 APK 中移除旧版本的库。要清理项目，请从菜单栏中选择 <strong>Build &gt; Clean Project</strong>。 </p>
+</blockquote>
+<p>Android Studio 会自动将源文件和标头添加到 Project 窗格的 cpp 组中。使用多个 add_library() 命令，您可以为 CMake 定义要从其他源文件构建的更多库。</p>
+<h5 id="添加-NDK-API"><a href="#添加-NDK-API" class="headerlink" title="添加 NDK API"></a>添加 NDK API</h5><p>Android NDK 提供了一套实用的原生 API 和库。通过将 <a href="https://developer.android.google.cn/ndk/guides/stable_apis.html" target="_blank" rel="noopener">NDK</a> 库包含到项目的 CMakeLists.txt 脚本文件中，您可以使用这些 API 中的任意一种。<br>预构建的 NDK 库已经存在于 Android 平台上，因此，您无需再构建或将其打包到 APK 中。由于 NDK 库已经是 CMake 搜索路径的一部分，您甚至不需要在您的本地 NDK 安装中指定库的位置 - 只需要向 CMake 提供您希望使用的库的名称，并将其关联到您自己的原生库。<br>将 <a href="https://cmake.org/cmake/help/latest/command/find_library.html" target="_blank" rel="noopener">find_library()</a> 命令添加到您的 CMake 构建脚本中以定位 NDK 库，并将其路径存储为一个变量。您可以使用此变量在构建脚本的其他部分引用 NDK 库。以下示例可以定位 <a href="https://developer.android.google.cn/ndk/guides/stable_apis.html#a3" target="_blank" rel="noopener">Android 特定的日志支持库</a>并将其路径存储在 log-lib 中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">find_library( # Defines the name of the path variable that stores the</span><br><span class="line">              # location of the NDK library.</span><br><span class="line">              log-lib</span><br><span class="line"></span><br><span class="line">              # Specifies the name of the NDK library that</span><br><span class="line">              # CMake needs to locate.</span><br><span class="line">              log )</span><br></pre></td></tr></table></figure></p>
+<p>为了确保您的原生库可以在 log 库中调用函数，您需要使用 CMake 构建脚本中的 <a href="https://cmake.org/cmake/help/latest/command/target_link_libraries.html" target="_blank" rel="noopener">target_link_libraries()</a> 命令关联库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">find_library(...)</span><br><span class="line"></span><br><span class="line"># Links your native library against one or more other native libraries.</span><br><span class="line">target_link_libraries( # Specifies the target library.</span><br><span class="line">                       native-lib</span><br><span class="line"></span><br><span class="line">                       # Links the log library to the target library.</span><br><span class="line">                       $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure></p>
+<p>NDK还以源代码的形式包含一些库，您在构建和关联到您的原生库时需要使用这些代码。您可以使用 CMake 构建脚本中的 <code>add_library()</code>命令，将源代码编译到原生库中。要提供本地 NDK库的路径，您可以使用 <code>ANDROID_NDK</code> 路径变量，Android Studio会自动为您定义此变量。</p>
+<p>以下命令可以指示 <code>CMake</code> 构建 <code>android_native_app_glue.c</code>，后者会将 NativeActivity 生命周期事件和触摸输入置于静态库中并将静态库关联到 native-lib：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add_library( app-glue</span><br><span class="line">             STATIC</span><br><span class="line">             $&#123;ANDROID_NDK&#125;/sources/android/native_app_glue/android_native_app_glue.c )</span><br><span class="line"></span><br><span class="line"># You need to link static libraries against your shared native library.</span><br><span class="line">target_link_libraries( native-lib app-glue $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure></p>
+<h5 id="添加其他预构建库"><a href="#添加其他预构建库" class="headerlink" title="添加其他预构建库"></a>添加其他预构建库</h5><p>添加预构建库与为 CMake 指定要构建的另一个原生库类似。不过，由于库已经预先构建，您需要使用 IMPORTED 标志告知 CMake 您只希望将库导入到项目中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_library( imported-lib</span><br><span class="line">             SHARED</span><br><span class="line">             IMPORTED )</span><br></pre></td></tr></table></figure></p>
+<p>然后，您需要使用 <a href="https://cmake.org/cmake/help/latest/command/set_target_properties.html" target="_blank" rel="noopener">set_target_properties() </a>命令指定库的路径，如下所示。 </p>
+<p>某些库为特定的 CPU 架构（或<a href="https://developer.android.google.cn/ndk/guides/abis.html" target="_blank" rel="noopener">应用二进制接口 (ABI)</a>）提供了单独的软件包，并将其组织到单独的目录中。此方法既有助于库充分利用特定的 CPU 架构，又能让您仅使用所需的库版本。要向 CMake 构建脚本中添加库的多个 ABI 版本，而不必为库的每个版本编写多个命令，您可以使用 ANDROID_ABI 路径变量。此变量使用 <a href="https://developer.android.google.cn/ndk/guides/abis.html#sa" target="_blank" rel="noopener">NDK 支持的一组默认 ABI</a>，或者<a href="https://developer.android.google.cn/studio/projects/add-native-code.html#specify-abi" target="_blank" rel="noopener">您手动配置 Gradle </a>而让其使用的一组经过筛选的 ABI。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add_library(...)</span><br><span class="line">set_target_properties( # Specifies the target library.</span><br><span class="line">                       imported-lib</span><br><span class="line"></span><br><span class="line">                       # Specifies the parameter you want to define.</span><br><span class="line">                       PROPERTIES IMPORTED_LOCATION</span><br><span class="line"></span><br><span class="line">                       # Provides the path to the library you want to import.</span><br><span class="line">                       imported-lib/src/$&#123;ANDROID_ABI&#125;/libimported-lib.so )</span><br></pre></td></tr></table></figure></p>
+<p>为了确保 CMake 可以在编译时定位您的标头文件，您需要使用 <code>include_directories()</code> 命令，并包含标头文件的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include_directories( imported-lib/include/ )</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注</strong>：如果您希望打包一个并不是构建时依赖项的预构建库（例如在添加属于 imported-lib 依赖项的预构建库时），则不需要执行以下说明来关联库。<br>要将预构建库关联到您自己的原生库，请将其添加到 CMake 构建脚本的 <code>target_link_libraries()</code> 命令中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">target_link_libraries( native-lib imported-lib app-glue $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在您构建应用时，Gradle 会自动将导入的库打包到 APK 中。您可以使用 APK 分析器验证 Gradle 将哪些库打包到您的 APK 中。如需了解有关 CMake 命令的详细信息，请参阅 <a href="https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html" target="_blank" rel="noopener">CMake文档</a></p>
+<h4 id="将-Gradle-关联到您的原生库"><a href="#将-Gradle-关联到您的原生库" class="headerlink" title="将 Gradle 关联到您的原生库"></a>将 Gradle 关联到您的原生库</h4><p>要将 Gradle 关联到您的原生库，您需要提供一个指向 CMake 或 ndk-build 脚本文件的路径。在您构建应用时，Gradle 会以依赖项的形式运行 CMake 或 ndk-build，并将共享的库打包到您的 APK 中。Gradle 还使用构建脚本来了解要将哪些文件添加到您的 Android Studio 项目中，以便您可以从 Project 窗口访问这些文件。如果您的原生源文件没有构建脚本，则需要先<a href="https://developer.android.google.cn/studio/projects/add-native-code.html#create-cmake-script" target="_blank" rel="noopener">创建 CMake 构建脚本</a>，然后再继续。</p>
+<p>将 Gradle 关联到原生项目后，Android Studio 会更新 <strong>Project</strong> 窗格以在 <strong>cpp</strong> 组中显示您的源文件和原生库，在 <strong>External Build Files </strong>组中显示您的外部构建脚本。 </p>
+<blockquote>
+<p><strong>注</strong>：更改 Gradle 配置时，请确保通过点击工具栏中的 <strong>Sync Project</strong> 应用更改。此外，如果在将 CMake 或 ndk-build 脚本文件关联到 Gradle 后再对其进行更改，您应当从菜单栏中选择 <strong>Build &gt; Refresh Linked C++ Projects</strong>，将 Android Studio 与您的更改同步。</p>
+</blockquote>
+<h5 id="使用-Android-Studio-UI"><a href="#使用-Android-Studio-UI" class="headerlink" title="使用 Android Studio UI"></a>使用 Android Studio UI</h5><p>您可以使用 Android Studio UI 将 Gradle 关联到外部 CMake 或 ndk-build 项目：</p>
+<ol>
+<li>从 IDE 左侧打开 <strong>Project</strong> 窗格并选择 <strong>Android</strong> 视图。</li>
+<li>右键点击您想要关联到原生库的模块（例如 <strong>app</strong>模块），并从菜单中选择 <strong>Link C++ Project with Gradle</strong>。您应看到一个如图 4 所示的对话框。</li>
+<li>从下拉菜单中，选择 <strong>CMake</strong> 或 <strong>ndk-build</strong>。<br> a. 如果您选择 <strong>CMake</strong>，请使用 <strong>Project Path</strong> 旁的字段为您的外部 <strong>CMake</strong> 项目指定 <code>CMakeLists.txt</code> 脚本文件。<br> b. 如果您选择 <strong>ndk-build</strong>，请使用 <strong>Project Path </strong>旁的字段为您的外部 ndk-build 项目指定 <a href="https://developer.android.google.cn/ndk/guides/android_mk.html" target="_blank" rel="noopener">Android.mk</a> 脚本文件。如果 <a href="https://developer.android.google.cn/ndk/guides/application_mk.html" target="_blank" rel="noopener">Application.mk</a> 文件与您的 Android.mk 文件位于相同目录下，Android Studio 也会包含此文件。<br> <img src="/images/android/对话框关联外部.png" alt=" 图 4. 使用 Android Studio 对话框关联外部 C++ 项目。"></li>
+</ol>
+<h5 id="手动配置-Gradle"><a href="#手动配置-Gradle" class="headerlink" title="手动配置 Gradle"></a>手动配置 Gradle</h5><p>要手动配置 Gradle 以关联到您的原生库，您需要将 externalNativeBuild {} 块添加到模块级 build.gradle 文件中，并使用 cmake {} 或 ndkBuild {} 对其进行配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;...&#125;</span><br><span class="line">  buildTypes &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  // Encapsulates your external native build configurations.</span><br><span class="line">  externalNativeBuild &#123;</span><br><span class="line"></span><br><span class="line">    // Encapsulates your CMake build configurations.</span><br><span class="line">    cmake &#123;</span><br><span class="line"></span><br><span class="line">      // Provides a relative path to your CMake build script.</span><br><span class="line">      path &quot;CMakeLists.txt&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注：如果您想要将 Gradle 关联到现有 ndk-build 项目，请使用 ndkBuild {} 块而不是 cmake {}，并提供 Android.mk 文件的相对路径。如果 Application.mk 文件与您的 Android.mk 文件位于相同目录下，Gradle 也会包含此文件。</p>
+</blockquote>
+<h5 id="指定可选配置"><a href="#指定可选配置" class="headerlink" title="指定可选配置"></a>指定可选配置</h5><p>您可以在模块级 <code>build.gradle</code> 文件的 <code>defaultConfig {}</code>块中配置另一个 <code>externalNativeBuild {}</code> 块，为 CMake 或 ndk-build 指定可选参数和标志。与 <code>defaultConfig {}</code>块中的其他属性类似，您也可以在构建配置中为每个产品风味重写这些属性。</p>
+<p>例如，如果您的 CMake 或 ndk-build 项目定义多个原生库，您可以使用 <code>targets</code>属性仅为给定产品风味构建和打包这些库中的一部分。以下代码示例说明了您可以配置的部分属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">    // This block is different from the one you use to link Gradle</span><br><span class="line">    // to your CMake or ndk-build script.</span><br><span class="line">    externalNativeBuild &#123;</span><br><span class="line"></span><br><span class="line">      // For ndk-build, instead use ndkBuild &#123;&#125;</span><br><span class="line">      cmake &#123;</span><br><span class="line"></span><br><span class="line">        // Passes optional arguments to CMake.</span><br><span class="line">        arguments &quot;-DANDROID_ARM_NEON=TRUE&quot;, &quot;-DANDROID_TOOLCHAIN=clang&quot;</span><br><span class="line"></span><br><span class="line">        // Sets optional flags for the C compiler.</span><br><span class="line">        cFlags &quot;-D_EXAMPLE_C_FLAG1&quot;, &quot;-D_EXAMPLE_C_FLAG2&quot;</span><br><span class="line"></span><br><span class="line">        // Sets a flag to enable format macro constants for the C++ compiler.</span><br><span class="line">        cppFlags &quot;-D__STDC_FORMAT_MACROS&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  buildTypes &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  productFlavors &#123;</span><br><span class="line">    ...</span><br><span class="line">    demo &#123;</span><br><span class="line">      ...</span><br><span class="line">      externalNativeBuild &#123;</span><br><span class="line">        cmake &#123;</span><br><span class="line">          ...</span><br><span class="line">          // Specifies which native libraries to build and package for this</span><br><span class="line">          // product flavor. If you don&apos;t configure this property, Gradle</span><br><span class="line">          // builds and packages all shared object libraries that you define</span><br><span class="line">          // in your CMake or ndk-build project.</span><br><span class="line">          targets &quot;native-lib-demo&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    paid &#123;</span><br><span class="line">      ...</span><br><span class="line">      externalNativeBuild &#123;</span><br><span class="line">        cmake &#123;</span><br><span class="line">          ...</span><br><span class="line">          targets &quot;native-lib-paid&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Use this block to link Gradle to your CMake or ndk-build script.</span><br><span class="line">  externalNativeBuild &#123;</span><br><span class="line">    cmake &#123;...&#125;</span><br><span class="line">    // or ndkBuild &#123;...&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>要详细了解配置产品风味和构建变体，请参阅<a href="https://developer.android.google.cn/studio/build/build-variants.html" target="_blank" rel="noopener">配置构建变体</a>。如需了解您可以使用 arguments 属性为 CMake 配置的变量列表，请参阅<a href="https://developer.android.google.cn/ndk/guides/cmake.html#variables" target="_blank" rel="noopener">使用 CMake 变量</a>。 </p>
+<h5 id="指定-ABI"><a href="#指定-ABI" class="headerlink" title="指定 ABI"></a>指定 ABI</h5><p>默认情况下，Gradle 会针对 <a href="https://developer.android.google.cn/ndk/guides/abis.html#sa" target="_blank" rel="noopener">NDK 支持的 ABI </a>将您的原生库构建到单独的 .so 文件中，并将其全部打包到您的 APK 中。如果您希望 Gradle 仅构建和打包原生库的特定 ABI 配置，您可以在模块级 <code>build.gradle</code> 文件中使用 <code>ndk.abiFilters</code>标志指定这些配置，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">    externalNativeBuild &#123;</span><br><span class="line">      cmake &#123;...&#125;</span><br><span class="line">      // or ndkBuild &#123;...&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ndk &#123;</span><br><span class="line">      // Specifies the ABI configurations of your native</span><br><span class="line">      // libraries Gradle should build and package with your APK.</span><br><span class="line">      abiFilters &apos;x86&apos;, &apos;x86_64&apos;, &apos;armeabi&apos;, &apos;armeabi-v7a&apos;,</span><br><span class="line">                   &apos;arm64-v8a&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  buildTypes &#123;...&#125;</span><br><span class="line">  externalNativeBuild &#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在大多数情况下，您只需要在 <code>ndk {}</code> 块中指定 <code>abiFilters</code>（如上所示），因为它会指示 Gradle 构建和打包原生库的这些版本。不过，如果您希望控制 Gradle 应当构建的配置，并独立于您希望其打包到 APK 中的配置，请在 <code>defaultConfig.externalNativeBuild.cmake {}</code> 块（或 <code>defaultConfig.externalNativeBuild.ndkBuild {}</code> 块中）配置另一个 abiFilters 标志。Gradle 会构建这些 ABI 配置，不过仅会打包您在 <code>defaultConfig.ndk{}</code>块中指定的配置。 </p>
+<p>为了进一步降低 APK 的大小，请考虑<a href="https://developer.android.google.cn/studio/build/configure-apk-splits.html#configure-abi-split" target="_blank" rel="noopener">配置 ABI APK</a> 拆分，而不是创建一个包含原生库所有版本的大型 APK，Gradle 会为您想要支持的每个 ABI 创建单独的 APK，并且仅打包每个 ABI 需要的文件。如果您配置 ABI 拆分，但没有像上面的代码示例一样指定 <code>abiFilters</code> 标志，Gradle 会构建原生库的所有受支持 ABI 版本，不过仅会打包您在 ABI 拆分配置中指定的版本。为了避免构建您不想要的原生库版本，请为 abiFilters 标志和 ABI 拆分配置提供相同的 ABI 列表。 </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ndk/" rel="tag"># ndk</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/WiFi/SmartLink和AirKiss原理解析/" rel="next" title="SmartLink和AirKiss原理解析">
+                <i class="fa fa-chevron-left"></i> SmartLink和AirKiss原理解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Web后端/ElasticSearch的优势/" rel="prev" title="ElasticSearch的优势">
+                ElasticSearch的优势 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">286</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-NDK-和构建工具"><span class="nav-number">1.</span> <span class="nav-text">下载 NDK 和构建工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建支持-C-C-的新项目"><span class="nav-number">2.</span> <span class="nav-text">创建支持 C/C++ 的新项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构建和运行示例应用"><span class="nav-number">2.1.</span> <span class="nav-text">构建和运行示例应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向现有项目添加-C-C-代码"><span class="nav-number">3.</span> <span class="nav-text">向现有项目添加 C/C++ 代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建新的原生源文件"><span class="nav-number">3.1.</span> <span class="nav-text">创建新的原生源文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-CMake-构建脚本"><span class="nav-number">3.2.</span> <span class="nav-text">创建 CMake 构建脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加-NDK-API"><span class="nav-number">3.2.1.</span> <span class="nav-text">添加 NDK API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加其他预构建库"><span class="nav-number">3.2.2.</span> <span class="nav-text">添加其他预构建库</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-Gradle-关联到您的原生库"><span class="nav-number">3.3.</span> <span class="nav-text">将 Gradle 关联到您的原生库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-Android-Studio-UI"><span class="nav-number">3.3.1.</span> <span class="nav-text">使用 Android Studio UI</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#手动配置-Gradle"><span class="nav-number">3.3.2.</span> <span class="nav-text">手动配置 Gradle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指定可选配置"><span class="nav-number">3.3.3.</span> <span class="nav-text">指定可选配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指定-ABI"><span class="nav-number">3.3.4.</span> <span class="nav-text">指定 ABI</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

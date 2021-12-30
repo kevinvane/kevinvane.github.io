@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="抓包文件在附件中…  一、Play 抓包 Over TCP 推流Client端rtmp-rtsp-stream-client-java server端EasyDarwin 播放Client端 Javacv 录制（ 这里用Wireshark抓包 ）  tcp追踪流12345678910111213141516171819202122232425262728293031323334353637383">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RTSP网络抓包分析">
+<meta property="og:url" content="http://yoursite.com/音视频/RTSP抓包分析/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="抓包文件在附件中…  一、Play 抓包 Over TCP 推流Client端rtmp-rtsp-stream-client-java server端EasyDarwin 播放Client端 Javacv 录制（ 这里用Wireshark抓包 ）  tcp追踪流12345678910111213141516171819202122232425262728293031323334353637383">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-12-28T03:24:10.316Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RTSP网络抓包分析">
+<meta name="twitter:description" content="抓包文件在附件中…  一、Play 抓包 Over TCP 推流Client端rtmp-rtsp-stream-client-java server端EasyDarwin 播放Client端 Javacv 录制（ 这里用Wireshark抓包 ）  tcp追踪流12345678910111213141516171819202122232425262728293031323334353637383">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/音视频/RTSP抓包分析/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>RTSP网络抓包分析 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/音视频/RTSP抓包分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">RTSP网络抓包分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-16 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-16T19:52:36+08:00">2020-07-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/音视频/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>抓包文件在附件中…</p>
+</blockquote>
+<h3 id="一、Play-抓包-Over-TCP"><a href="#一、Play-抓包-Over-TCP" class="headerlink" title="一、Play 抓包 Over TCP"></a>一、Play 抓包 Over TCP</h3><ul>
+<li>推流Client端rtmp-rtsp-stream-client-java</li>
+<li>server端EasyDarwin</li>
+<li>播放Client端 Javacv 录制（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<p>tcp追踪流<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/<span class="built_in">test</span>/ RTSP/1.0</span><br><span class="line">CSeq: 1</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 1</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Public: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.223:554/<span class="built_in">test</span>/ RTSP/1.0</span><br><span class="line">Accept: application/sdp</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 2</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Content-Length: 444</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/32000/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1290; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">SETUP rtsp://192.168.0.223:554/<span class="built_in">test</span>/trackID=1 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 3</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/<span class="built_in">test</span>/trackID=0 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 4</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line"></span><br><span class="line">PLAY rtsp://192.168.0.223:554/<span class="built_in">test</span>/ RTSP/1.0</span><br><span class="line">Range: npt=0.000-</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 5</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Range: npt=0.000-</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是紧接着一帧一帧rtp包（rtp over tcp）</span></span><br><span class="line">701ce71cfb29c8ff28ed6843080045000524c1c240004006f1c3c0a800dfc0a8001e022ae383d37e23f074458e0a501800feecab0000240004f88060447500bd14102e9f0a407c85b803f06fe00f0e157e880381bc15565f8c35982ddba36a0312c81fd3800a814eb570c928a7818974f2303f010e39d505ae59ae3ebb42bbe706078d36e0997a0e00020011c000fff70000fea1d04f4480006968249f20dad1f9b600a5b19018a3c169c190e22c754f401f5cb5f3a4fa0736d00d6cbcb19670584cc24d248c1c51ef552de01e01807565e81e0ce8185fc160dbbeea53228011496146e44add661440a93ca0b20a0e6b2455413b9964320ed088f5cb751a24effc030f6b65c1d423a60fcf96247b9e7de03c0ef60020a1d76ad07eab06ad7584bfea63cfc9f5af1516029898299d30daa09cbff265002a099de41d7fa2262cc9a2957e885747b2bfd24b95583fd2007b1dc8060c63d0f9cb6000201a7968ad6b1eb03fc4932ee1efbc13b7a1ef52167acab89f939b0d039dad33c4b541c6ee759e541591f309071a007c130ffd1801818830226664c4db87bc2a00342111c8a630a654263ac5856721e37ed483ab31f8fa7a6797d9135039ffdfffa121bf11d0f440a84cbf443d5c9edd00010114f1c8298d5ad50b189ec1da94250a4826c50f3620d9da18cdffffb8ea614710240104fe5fa6886924bcc0d76987aa095427a80a08e13f0b935ca244c4ed4ff43b4ce7cd881a403cf8932bbffff695047712c3e0b19448ad5405308200306a59632f0a50e9a7a488da16040ece88915077f4299c947fff0794c028eba019c1036e548ce347af0cc3b1a18448fbaca4a4adaa8efd7b06f5be2dc1e7daec2ca97e2070654438fc5fe8dd06e0d30400f6fa7e09acc0c889df44c0a9cfda3c70f1cd3e0c9adcb6e208141e03bdfafd780400a3a3bf0f72fab2f7df9f8d0c701ff82c2105b6e2bcd85ea95fba2f79bbfd03539e2b4c412951d0bd4bf0581855cbcff519f54bd70d41c3b0a2f9bbe5fcf8aae3e87146bbe3c793a202ec6a5f5524a38c7fa7b6df5e90476add0f23a1539f71a2bdb6928320a0a01bdeb58527002d97c3826fcfdf7a6dc9e9a79909d71489e700531cc90d2f252aa97a97e9c1431a76fa785f03b42e60ee9f97fa6dedd63450c29b6f4d34fe3eb5c6b1d556ec510f6b6e6c8e31fede9a7ddfa939b8a9ad15b07e1e911cf2b358b776ee90de750f21b78eb8ad4ecc9c9859576c89856d2238b2feb87ca0a07f5f98bd655755bf2f6e66cb13c5b9cda6b50d605ddc4921c7a69f6fcf80aac42aaac56d5c98d6ec6b9f1e90d3183e9fc46623829bfef4b37de2d6d6d170c862ada69edb71f7723a98e6ad4bd289f42dfcb9cd90dd43cfdbd530a4e028320cdc846dd36e9ff6db77ffb8be74a93c98cce6c37ee9ca9ff1abd7d33b92dddd4d8ffaf2e0b703c21c342837a3460a8fe2002dae062608045068ace00a404e19d8d080527c354e368ce82406ab26eb61b0018c3b9991b036c07153560b53840bd0398c01e01e1c129b5b2e0efc55e32bae349338fa42a8a8c31427df5c18abc6f2f36aae5b55c78a648a6b4e3fdacd931184ea59d1e64cda61c0c0b2fb65e3ab07d70ff4b8988488acf3b25d56fa3039c123b28eff95e380c8dee9530e128920d476f47b28867b80fbb4e96af68a781b7e8bb9663c0130f8f752c7c9bbea0090e3e99b7797ff124528fc31a950e5fc651b85bdedf5ea5daa5ca41e2c2e7940ecb8e58448133afe9acaa6fb63badd2930240346a6eeda99aabb44822a41351c75d0725e36ad4d1fdc1086dbb9e6a5ee416d2df2ee372317b9541c6612d94cbb61357b2be0e37f981772c3880e02e2f4cc47e866</span><br></pre></td></tr></table></figure></p>
+<p><code>240004f88060447500bd14102e9f0a40</code> 这一段 <code>rtp over tcp</code> 的头信息</p>
+<p><code>240004f8</code> 是 RTSP Interleaved Frame （RTSP交错帧头）</p>
+<blockquote>
+<p>rtp over tcp 发送时要加这四个字节：</p>
+<p>第一个字节Magic是 ‘$’ 符号；</p>
+<p>第二个字节channel在rtsp的setup时获取；</p>
+<p>第三、四个字节是rtp包的大小，第三个字节高4位，第四个字节保存低8位，最大12位。</p>
+</blockquote>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Magic</span>: 0x24</span><br><span class="line"><span class="attribute">Channel</span>: 0x00</span><br><span class="line"><span class="attribute">Length</span>: 1272</span><br></pre></td></tr></table></figure>
+<p><code>8060447500bd14102e9f0a40</code> 是 RTP 头</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">..0. .... = Padding: False</span><br><span class="line">...0 .... = Extension: False</span><br><span class="line">.... 0000 = Contributing source identifiers count: 0</span><br><span class="line">0... .... = Marker: False</span><br><span class="line">Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">Sequence number: 17525</span><br><span class="line"><span class="attribute">Timestamp</span>: 12391440</span><br><span class="line">Synchronization Source identifier: 0x2e9f0a40 (782174784)</span><br></pre></td></tr></table></figure>
+<p><code>80-60-4475-00bd1410-2e9f0a40</code> 五组数据一个一个分析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">0               1               2               3</span><br><span class="line">7 6 5 4 3 2 1 0 |7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0| 7 6 5 4 3 2 1 0</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|V=2|P|X|  CC   |M|     PT      |       sequence number         |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                           timestamp                           |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|           synchronization source (SSRC) identifier            |</span><br><span class="line">+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+</span><br><span class="line">|            contributing source (CSRC) identifiers             |</span><br><span class="line">|                             ....                              |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line"></span><br><span class="line">Figure 1.  RTP header according to RFC 3550</span><br></pre></td></tr></table></figure>
+<ul>
+<li>版本号(V)：2Bit，用来标志使用RTP版本</li>
+<li>填充位：1Bit，如果该位置位，则该RTP包的尾部就包含填充的附加字节</li>
+<li>扩展位(X)：1Bit，如果该位置位，则该RTP包的固定头部后面就跟着一个扩展头部</li>
+<li>CSRC技术器(CC)：4Bit，含有固定头部后面跟着的CSRC的数据</li>
+</ul>
+<ul>
+<li>标记位(M)：1Bit，该位的解释由配置文档来承担</li>
+<li>载荷类型(PT)：7Bit，标识了RTP载荷的类型</li>
+</ul>
+<ul>
+<li>序列号(SN)：16Bit，发送方在每发送完一个RTP包后就将该域的值增加1，可以由该域检测包的丢失及恢复包的序列。序列号的初始值是随机的。</li>
+</ul>
+<ul>
+<li>时间戳timestamp：32比特，记录了该包中数据的第一个字节的采样时刻</li>
+</ul>
+<ul>
+<li>同步源标识符(SSRC)：32比特，同步源就是RTP包源的来源。在同一个RTP会话中不能有两个相同的SSRC值</li>
+</ul>
+<ul>
+<li>贡献源列表(CSRC List)：0-15项，每项32比特，这个不常用，可以不用。</li>
+</ul>
+<ol>
+<li><p>0x80 是指二进制位的值（10000000）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">..0. .... = Padding: False</span><br><span class="line">...0 .... = Extension: False</span><br><span class="line">.... 0000 = Contributing source identifiers count: 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>0x60</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0... .... = Marker: False</span><br><span class="line">Payload type: DynamicRTP-Type-96 (96)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>0x4475</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sequence number: 17525</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>0x00bd1410</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Timestamp: 12391440</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>0x2e9f0a40</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Synchronization Source identifier: 0x2e9f0a40 (782174784)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>头部后面的就是payload负载了。</p>
+<h5 id="SDP"><a href="#SDP" class="headerlink" title="SDP"></a>SDP</h5><p>在RTSP的DESCRIBE方法响应 SDP Body 中，这一行很重要，下面分析一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br></pre></td></tr></table></figure>
+<p><code>fmtp:96</code> 其中 <code>96</code> 表示视频格式是H.264<br><code>sprop-parameter-sets</code> 则是H.264中比较重要的SPS和PPS信息，它的值是两个Base64编码的值（逗号隔开），<br><code>Z0LAHtoHgUSAeEAhUA</code> -&gt; <code>0x6742c01eda0781448078402150</code> ，0x67 表示这是SPS。<br><code>aM48gA==</code> -&gt; <code>0x68ce3c80</code> ，0x68表示这是PPS 。</p>
+<h3 id="二、Play-抓包-Over-UDP"><a href="#二、Play-抓包-Over-UDP" class="headerlink" title="二、Play 抓包 Over UDP"></a>二、Play 抓包 Over UDP</h3><ul>
+<li>推流client端rtmp-rtsp-stream-client-java</li>
+<li>server端EasyDarwin</li>
+<li>播放client端VLC（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<p>tcp追踪流（RTSP部分，rtp over udp）</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">User-Agent</span>: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Public</span>: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">User-Agent</span>: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"><span class="attribute">Accept</span>: application/sdp</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Content-Length</span>: 444</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/32000/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1290; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=1 RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"><span class="attribute">User-Agent</span>: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP;unicast;client_port=49834-49835</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP;unicast;client_port=49834-49835</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=0 RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">User-Agent</span>: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP;unicast;client_port=49836-49837</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP;unicast;client_port=49836-49837</span><br><span class="line"></span><br><span class="line">PLAY rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 6</span><br><span class="line"><span class="attribute">User-Agent</span>: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Range</span>: npt=0.000-</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 6</span><br><span class="line"><span class="attribute">Session</span>: Ub5j54nMR</span><br><span class="line"><span class="attribute">Range</span>: npt=0.000-</span><br></pre></td></tr></table></figure>
+<p>rtp over udp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Real-Time Transport Protocol</span><br><span class="line">    [Stream setup by RTSP (frame 13)]</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    0... .... = Marker: False</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 918</span><br><span class="line">    [Extended sequence number: 66454]</span><br><span class="line">    Timestamp: 849582</span><br><span class="line">    Synchronization Source identifier: 0x0ce9d37f (216650623)</span><br><span class="line">    Payload: 7c85b8141ff1c6921a6ba385c00040056dd92a7ccbeb7e38…</span><br></pre></td></tr></table></figure>
+<p>十六进制 （0x80600396000cf6ae0ce9d37f 是 rtp header）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">80600396000cf6ae0ce9d37f|我是分隔符|7c85b8141ff1c6921a6ba385c00040056dd92a7ccbeb7e38000837470001067fff1fc3177b46c9c731d84f1e6b6f6ff6fc763b09e21dfe9df6dbc8b84f176dbfe9db4d3b68efff8f1c444b8fca76b5da32e13cda7476ffff477fc47e3c53ebad78fc20f47edf6fe3ffa3fffff3ff043afe1edee6b04a600b730c899d05e4d4dffba8ba5f3adab44c59e08ded760e63763eda138901d3c527ffedff09e0854eb3b7ffe3bef09fd013dfb7ffe9be1d7a32430a449f19848276060df0f31fe941ff8a8976a7039b22b8d910300043c1c004254905641cf077c3c9ed77812f89043040be9a437b35b520bf448436f46f48c000401817b8f391571dc96f9f8515c3225034d14963b27feab77e6a3e8e7722e93bf6bda10b439fbee0f8afa2887e21c776f75fb8c50fff9f50caa27ddf2f17de9e690f29a9780eef43e6b031805184fce2e27feb480fb577381cace9e2bbaf378354bd524c3a3c45812dc55528ee47b8a78ab2f228bddf5372c7964bd0781f5cb673f2dbd45cfe8fc00e8675e64aaca76d34cdbaa6993c69c69c5df77bb0cf48a7ba41457cb8f6d42728128ecd69f2d1b7fdbffc89e3ebe78cbbe90bb557dc8fa006e3e8593fb7f5d3b65a8347e7ffd757e21558f4b17ac009c887912807061fdc1d87e56cfffcd951823d6e8d28060f7038a1605115c154bc0bcec0e77cfbc17ae34e6cf9b2b7641dd1f4e3e5dfff0f060a7bf595121372efffdbd2de14a9c908826749655109894930c25b0cb20fc30327a7ffc2b8973fff6e54b221f641354a50ffffe8e7485551a7fffca8c832481117a78fffdb6d05fd3edf171153a44cb24d580c9862259a3152f54e1565d4694eda2a32519e5ffbbfa88afe7cd956bd2f516f74fffa21042c4e12421c2112488a2a11b4da4055a564a7b022561f103175bd441f8f73fc3d4474f8e62d71bc4c1dc6c6cd295df1690870f73aa0efad48c09f7ec5203c0954554ba7f0a312006e3bd03fbacf6ff9518c1ed5bccb3c49106c150b6bc14c5216e9ab42bfb48cb8d958eb59641482a2946928541f04f49fd74e3b4ea8e67b78147940b2d3813f275f5744028cad6a0d27369bd6b8e6ddf4ae5ea34ac977795b69afa9888a2dc7c657b8428e7f510f971c3d035d0ee31ee67a6185555ceb6610c896d16c32cd8c857bedf56aaf58a49a1e68f28875bedf4bd083601f0ada56fffffe7d61d07fd650b7e045246963c6aa9d28ed1ccf9e37c584401664a2f8e92c711f055b7b52d9d89dc02f7e48280553ca1c2d52cf20159a824cb6fb7eb60971384a9ff7b954807714fcb880952c102ed4fd32af30ce6032668ad447dfae2425f10c04dfcfea34116c1565385b99728679581c8d23dbb18bdf90abeae6fbfa94ca18f486feb34d660bec5c5d76b54db986731a0857db65250c82d293b16060802c1c1037464d9b3709ecf5b770ca586800821738c93c4588a64b80d33292b3ec07c461c7e840bda57c18f4403615df6de9012a2b60b7e066105e60f30aee1506dbc2c4f2b8c89201b293a8fa61dd3d3804498c8c48643c80724573fb77238f65116824d336be409c8ec6a290344368394a6bd00a5872d4107ff54b09eb398c061f5e0c81283da0afdbf06686a383fab987254b835d095f2cabcbe0eaae9c4c03d7286ada203e607156d0d3a9b6f9f9a0034211effb7c0392a47214afbef9ffda37102e821292af133105d4c33b5ddbf0b1ba4e609422f878e94831e6f6909391292a41daafd076146581226a148afcfa1395062fa8</span><br></pre></td></tr></table></figure>
+<p>后面 <code>rtp payload</code> 是H264的NAL，这部分可能有三种情况：单NAL，聚合NAL，分包NAL</p>
+<h3 id="三、Play-抓包-Over-UDP"><a href="#三、Play-抓包-Over-UDP" class="headerlink" title="三、Play 抓包 Over UDP"></a>三、Play 抓包 Over UDP</h3><ul>
+<li>server端live555</li>
+<li>播放client端VLC（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.226:8554/test81.mkv RTSP/1.0</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 2</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:00 GMT</span><br><span class="line">Public: OPTIONS, DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, GET_PARAMETER, SET_PARAMETER</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.226:8554/test81.mkv RTSP/1.0</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Accept: application/sdp</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 3</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:00 GMT</span><br><span class="line">Content-Base: rtsp://192.168.0.226:8554/test81.mkv/</span><br><span class="line">Content-Type: application/sdp</span><br><span class="line">Content-Length: 802</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 1596271740645123 1 IN IP4 192.168.0.226</span><br><span class="line">s=Matroska video+audio+(optional)subtitles, streamed by the LIVE555 Media Server</span><br><span class="line">i=test81.mkv</span><br><span class="line">t=0 0</span><br><span class="line">a=tool:LIVE555 Streaming Media v2020.07.31</span><br><span class="line">a=type:broadcast</span><br><span class="line">a=control:*</span><br><span class="line">a=range:npt=0-24.762</span><br><span class="line">a=x-qt-text-nam:Matroska video+audio+(optional)subtitles, streamed by the LIVE555 Media Server</span><br><span class="line">a=x-qt-text-inf:test81.mkv</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">c=IN IP4 0.0.0.0</span><br><span class="line">b=AS:500</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;profile-level-id=64001F;sprop-parameter-sets=Z2QAH6zZQIgeaEAAAAMAQAAADIPGDGWA,aO+8sA==</span><br><span class="line">a=control:track1</span><br><span class="line">m=audio 0 RTP/AVP 97</span><br><span class="line">c=IN IP4 0.0.0.0</span><br><span class="line">b=AS:96</span><br><span class="line">a=rtpmap:97 MPEG4-GENERIC/44100/2</span><br><span class="line">a=fmtp:97 streamtype=5;profile-level-id=1;mode=AAC-hbr;sizelength=13;indexlength=3;indexdeltalength=3;config=1210</span><br><span class="line">a=control:track2</span><br><span class="line">SETUP rtsp://192.168.0.226:8554/test81.mkv/track1 RTSP/1.0</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Transport: RTP/AVP;unicast;client_port=53828-53829</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 4</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:00 GMT</span><br><span class="line">Transport: RTP/AVP;unicast;destination=192.168.0.30;source=192.168.0.226;client_port=53828-53829;server_port=6970-6971</span><br><span class="line">Session: 19482B64;timeout=65</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.226:8554/test81.mkv/track2 RTSP/1.0</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Transport: RTP/AVP;unicast;client_port=53830-53831</span><br><span class="line">Session: 19482B64</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 5</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:00 GMT</span><br><span class="line">Transport: RTP/AVP;unicast;destination=192.168.0.30;source=192.168.0.226;client_port=53830-53831;server_port=6972-6973</span><br><span class="line">Session: 19482B64;timeout=65</span><br><span class="line"></span><br><span class="line">PLAY rtsp://192.168.0.226:8554/test81.mkv/ RTSP/1.0</span><br><span class="line">CSeq: 6</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Session: 19482B64</span><br><span class="line">Range: npt=0.000-</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 6</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:00 GMT</span><br><span class="line">Range: npt=0.000-</span><br><span class="line">Session: 19482B64</span><br><span class="line">RTP-Info: url=rtsp://192.168.0.226:8554/test81.mkv/track1;seq=51716;rtptime=3858412142,url=rtsp://192.168.0.226:8554/test81.mkv/track2;seq=33672;rtptime=3712761154</span><br><span class="line"></span><br><span class="line">PAUSE rtsp://192.168.0.226:8554/test81.mkv/ RTSP/1.0</span><br><span class="line">CSeq: 7</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Session: 19482B64</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 7</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:04 GMT</span><br><span class="line">Session: 19482B64</span><br><span class="line"></span><br><span class="line">TEARDOWN rtsp://192.168.0.226:8554/test81.mkv/ RTSP/1.0</span><br><span class="line">CSeq: 8</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Session: 19482B64</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 8</span><br><span class="line">Date: Sat, Aug 01 2020 08:49:09 GMT</span><br></pre></td></tr></table></figure>
+<h3 id="四、Play-抓包-Over-UDP"><a href="#四、Play-抓包-Over-UDP" class="headerlink" title="四、Play 抓包 Over UDP"></a>四、Play 抓包 Over UDP</h3><ul>
+<li>server端<a href="https://github.com/sszhangpengfei/AndroidShow" target="_blank" rel="noopener">Android Show</a> </li>
+<li>播放client端VLC（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<blockquote>
+<p>这一次抓包没有按照RTSP规范来，先启动了”Android Show”（开始发RTP包了），后启动VLC。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.32:8554/ RTSP/1.0</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">Server: MajorKernelPanic RTSP Server</span><br><span class="line">Cseq: 2</span><br><span class="line">Content-Length: 0</span><br><span class="line">Public: DESCRIBE,SETUP,TEARDOWN,PLAY,PAUSE</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.32:8554/ RTSP/1.0</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Accept: application/sdp</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">Server: MajorKernelPanic RTSP Server</span><br><span class="line">Cseq: 3</span><br><span class="line">Content-Length: 240</span><br><span class="line">Content-Base: 192.168.0.32:8554/</span><br><span class="line">Content-Type: application/sdp</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 192.168.0.32</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.30</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;profile-level-id=000042;sprop-parameter-sets=;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">SETUP 192.168.0.32:8554/trackID=1 RTSP/1.0</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Transport: RTP/AVP;unicast;client_port=53754-53755</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">Server: MajorKernelPanic RTSP Server</span><br><span class="line">Cseq: 4</span><br><span class="line">Content-Length: 0</span><br><span class="line">Transport: RTP/AVP/UDP;unicast;destination=192.168.0.30;client_port=53754-53755;server_port=47390-45114;ssrc=d59b4263;mode=play</span><br><span class="line">Session: 1185d20035702ca</span><br><span class="line">Cache-Control: no-cache</span><br><span class="line"></span><br><span class="line">PLAY 192.168.0.32:8554/ RTSP/1.0</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: LibVLC/3.0.11 (LIVE555 Streaming Media v2016.11.28)</span><br><span class="line">Session: 1185d20035702ca</span><br><span class="line">Range: npt=0.000-</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">Server: MajorKernelPanic RTSP Server</span><br><span class="line">Cseq: 5</span><br><span class="line">Content-Length: 0</span><br><span class="line">RTP-Info: url=rtsp://192.168.0.32:8554/trackID=1;seq=0</span><br><span class="line">Session: 1185d20035702ca</span><br></pre></td></tr></table></figure>
+<p>第一个Rtp包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Frame 1011: 86 bytes on wire (688 bits), 86 bytes captured (688 bits) on interface \Device\NPF_&#123;CAE75AB8-102D-4211-B413-07C344B1BD41&#125;, id 0</span><br><span class="line">Ethernet II, Src: HuaweiTe_cc:b7:c3 (ac:e3:42:cc:b7:c3), Dst: IntelCor_1c:fb:29 (70:1c:e7:1c:fb:29)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.0.32, Dst: 192.168.0.30</span><br><span class="line">User Datagram Protocol, Src Port: 47390, Dst Port: 53754</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    [Stream setup by RTSP (frame 1009)]</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 32</span><br><span class="line">    [Extended sequence number: 65568]</span><br><span class="line">    Timestamp: 688259944</span><br><span class="line">    Synchronization Source identifier: 0xd59b4263 (3583722083)</span><br><span class="line">    Payload: 0000000161edab0df03a7126d03a00f27425901cfd5be89afa597d5afab10019</span><br></pre></td></tr></table></figure></p>
+<p>第二个Rtp包(空payload？)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Frame 1012: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_&#123;CAE75AB8-102D-4211-B413-07C344B1BD41&#125;, id 0</span><br><span class="line">Ethernet II, Src: HuaweiTe_cc:b7:c3 (ac:e3:42:cc:b7:c3), Dst: IntelCor_1c:fb:29 (70:1c:e7:1c:fb:29)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.0.32, Dst: 192.168.0.30</span><br><span class="line">User Datagram Protocol, Src Port: 47390, Dst Port: 53754</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    [Stream setup by RTSP (frame 1009)]</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 33</span><br><span class="line">    [Extended sequence number: 65569]</span><br><span class="line">    Timestamp: 688259944</span><br><span class="line">    Synchronization Source identifier: 0xd59b4263 (3583722083)</span><br></pre></td></tr></table></figure></p>
+<p>第三个Rtp包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Frame 1013: 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface \Device\NPF_&#123;CAE75AB8-102D-4211-B413-07C344B1BD41&#125;, id 0</span><br><span class="line">Ethernet II, Src: HuaweiTe_cc:b7:c3 (ac:e3:42:cc:b7:c3), Dst: IntelCor_1c:fb:29 (70:1c:e7:1c:fb:29)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.0.32, Dst: 192.168.0.30</span><br><span class="line">User Datagram Protocol, Src Port: 47390, Dst Port: 53754</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    [Stream setup by RTSP (frame 1009)]</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 34</span><br><span class="line">    [Extended sequence number: 65570]</span><br><span class="line">    Timestamp: 688261409</span><br><span class="line">    Synchronization Source identifier: 0xd59b4263 (3583722083)</span><br><span class="line">    Payload: 0000000161efab0df03c74d901cfd5be89afa597d5afab100195</span><br></pre></td></tr></table></figure></p>
+<p><strong> 这几个都是P帧，原因是：AndroidShow启动投屏之后，就一开始发UDP包了，所以VLC连接上之后，接收到的第一帧不是I帧。 所以要等到接收到下一个I帧才能正常播放</strong></p>
+<p>但是这里有一个疑惑，Sdp中 “sprop-parameter-sets” 为空，Wireshark也显示Sdp这里出现错误，那VLC如何获取到SPS+PPS？</p>
+<blockquote>
+<p>注：VLC能正常播放和识别宽高</p>
+</blockquote>
+<p>通过查看AndroidShow的源码，它是将 SPS+PPS 添加到流里面，每3秒就随rtp一起发送，所以不需要在SDP中携带SPS也能解码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Every 3 secondes, we send two packets containing NALU type 7 (sps) and 8 (pps)</span></span><br><span class="line"><span class="comment">// 每3秒，我们发送两个包，包含NALU类型7 (sps)和8 (pps)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Those should allow the H264 stream to be decoded even if no SDP was sent to the decoder.</span></span><br><span class="line"><span class="comment">// 即使没有SDP发送到解码器，H264流也允许被解码。</span></span><br><span class="line">delta2 += duration/<span class="number">1000000</span>;</span><br><span class="line"><span class="keyword">if</span> (delta2&gt;<span class="number">2000</span>) &#123;</span><br><span class="line">          delta2 = <span class="number">0</span>;</span><br><span class="line">          <span class="keyword">if</span> (sps != <span class="keyword">null</span>) &#123;</span><br><span class="line">            buffer = socket.requestBuffer();</span><br><span class="line">            socket.markNextPacket();</span><br><span class="line">            socket.updateTimestamp(ts);</span><br><span class="line">            System.arraycopy(sps, <span class="number">0</span>, buffer, rtphl, sps.length);</span><br><span class="line">            <span class="keyword">super</span>.send(rtphl+sps.length);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (pps != <span class="keyword">null</span>) &#123;</span><br><span class="line">            buffer = socket.requestBuffer();</span><br><span class="line">            socket.updateTimestamp(ts);</span><br><span class="line">            socket.markNextPacket();</span><br><span class="line">            System.arraycopy(pps, <span class="number">0</span>, buffer, rtphl, pps.length);</span><br><span class="line">            <span class="keyword">super</span>.send(rtphl+pps.length);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中，super.send是发送rtcp的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Updates data for RTCP SR and sends the packet. */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(<span class="keyword">int</span> length)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">  socket.commitBuffer(length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="五、Record-抓包-Over-TCP"><a href="#五、Record-抓包-Over-TCP" class="headerlink" title="五、Record 抓包 Over TCP"></a>五、Record 抓包 Over TCP</h3><blockquote>
+<p>在rtsp的方法中record是指client推流<br>早期不太清楚，其实用ffmpeg作为推流客户端更好（标准）</p>
+</blockquote>
+<ul>
+<li>推流client端 <code>rtmp-rtsp-stream-client-java</code> 默认推流 （ <strong>这里用Wireshark抓包</strong> ）</li>
+<li>server端EasyDarwin</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 1</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 1</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"><span class="attribute">Public</span>: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">ANNOUNCE rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">Content-Length</span>: 444</span><br><span class="line"><span class="attribute">Content-Type</span>: application/sdp</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/32000/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1290; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test//trackID=0 RTSP/1.0</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/TCP;interleaved=0-1;mode=record</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/TCP;interleaved=0-1;mode=record</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test//trackID=1 RTSP/1.0</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/TCP;interleaved=2-3;mode=record</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/TCP;interleaved=2-3;mode=record</span><br><span class="line"></span><br><span class="line">RECORD rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">Range</span>: npt=0.000-</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">Session</span>: 0sSc8K7Mg</span><br></pre></td></tr></table></figure>
+<p>rtp over tcp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">RTSP Interleaved Frame, Channel: 0x00, 284 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x00</span><br><span class="line">    Length: 284</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 1</span><br><span class="line">    Timestamp: 31752</span><br><span class="line">    Synchronization Source identifier: 0x4ead93aa (1319998378)</span><br><span class="line">    Payload: 00100860211c0fd3f7b904100cd41d9a87d188f484100ea0…</span><br><span class="line">RTSP Interleaved Frame, Channel: 0x01, 28 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x01</span><br><span class="line">    Length: 28</span><br><span class="line">Real-time Transport Control Protocol (Sender Report)</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 0000 = Reception report count: 0</span><br><span class="line">    Packet type: Sender Report (200)</span><br><span class="line">    Length: 6 (28 bytes)</span><br><span class="line">    Sender SSRC: 0x1335186a (322246762)</span><br><span class="line">    Timestamp, MSW: 29536 (0x00007360)</span><br><span class="line">    Timestamp, LSW: 3497974249 (0xd07ed9e9)</span><br><span class="line">    [MSW and LSW as NTP timestamp: Feb  7, 2036 14:40:32.814435595 UTC]</span><br><span class="line">    RTP timestamp: 992265000</span><br><span class="line">    Sender's packet count: 1</span><br><span class="line">    Sender's octet count: 284</span><br><span class="line">    [RTCP frame length check: OK - 28 bytes]</span><br><span class="line">RTSP Interleaved Frame, Channel: 0x00, 288 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x00</span><br><span class="line">    Length: 288</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 2</span><br><span class="line">    Timestamp: 33004</span><br><span class="line">    Synchronization Source identifier: 0x4ead93aa (1319998378)</span><br><span class="line">    Payload: 00100880211c0feb7e2005013ccc4515a510e8443a710e88…</span><br><span class="line">RTSP Interleaved Frame, Channel: 0x00, 297 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x00</span><br><span class="line">    Length: 297</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 3</span><br><span class="line">    Timestamp: 33515</span><br><span class="line">    Synchronization Source identifier: 0x4ead93aa (1319998378)</span><br><span class="line">    Payload: 001008c8211c09bffe4800621cd41d928bd10874c22d1907…</span><br><span class="line">RTSP Interleaved Frame, Channel: 0x00, 248 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x00</span><br><span class="line">    Length: 248</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 4</span><br><span class="line">    Timestamp: 34804</span><br><span class="line">    Synchronization Source identifier: 0x4ead93aa (1319998378)</span><br><span class="line">    Payload: 00100740211c0f6d4c8000fffcdb348a29d108f462802b9d…</span><br><span class="line">RTSP Interleaved Frame, Channel: 0x00, 257 bytes</span><br><span class="line">    Magic: 0x24</span><br><span class="line">    Channel: 0x00</span><br><span class="line">    Length: 257</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    1... .... = Marker: True</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 5</span><br><span class="line">    Timestamp: 36157</span><br><span class="line">    Synchronization Source identifier: 0x4ead93aa (1319998378)</span><br><span class="line">    Payload: 00100788211c0fa51e28016f3cdb30dfa316019b72bf3373…</span><br></pre></td></tr></table></figure>
+<h3 id="六、Record-抓包-Over-UDP"><a href="#六、Record-抓包-Over-UDP" class="headerlink" title="六、Record 抓包 Over UDP"></a>六、Record 抓包 Over UDP</h3><ul>
+<li>推流client端 <code>rtmp-rtsp-stream-client-java</code> 选用UDP推流 （ <strong>这里用Wireshark抓包</strong> ）</li>
+<li>server端EasyDarwin</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 1</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 1</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"><span class="attribute">Public</span>: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">ANNOUNCE rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">Content-Length</span>: 444</span><br><span class="line"><span class="attribute">Content-Type</span>: application/sdp</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAKNoBEA8WXgHhAIVA,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/44100/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1210; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 2</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test//trackID=0 RTSP/1.0</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/UDP;unicast;client_port=5000-5001;mode=record</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 3</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/UDP;unicast;client_port=5000-5001;server_port=53646-50516;mode=record</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test//trackID=1 RTSP/1.0</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/UDP;unicast;client_port=5002-5003;mode=record</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"><span class="attribute">Transport</span>: RTP/AVP/UDP;unicast;client_port=5002-5003;server_port=50593-32937;mode=record</span><br><span class="line"><span class="attribute">CSeq</span>: 4</span><br><span class="line"></span><br><span class="line">RECORD rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">Range</span>: npt=0.000-</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 5</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">TEARDOWN rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line"><span class="attribute">CSeq</span>: 6</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line"><span class="attribute">CSeq</span>: 6</span><br><span class="line"><span class="attribute">Session</span>: 6KgD6pnGg</span><br></pre></td></tr></table></figure>
+<p>rtp over udp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">User Datagram Protocol, Src Port: 62235, Dst Port: 50593</span><br><span class="line">Real-Time Transport Protocol</span><br><span class="line">    10.. .... = Version: RFC 1889 Version (2)</span><br><span class="line">    ..0. .... = Padding: False</span><br><span class="line">    ...0 .... = Extension: False</span><br><span class="line">    .... 0000 = Contributing source identifiers count: 0</span><br><span class="line">    0... .... = Marker: False</span><br><span class="line">    Payload type: DynamicRTP-Type-96 (96)</span><br><span class="line">    Sequence number: 2</span><br><span class="line">    Timestamp: 254255</span><br><span class="line">    Synchronization Source identifier: 0x401fd7b1 (1075828657)</span><br><span class="line">    Payload: 7c85b82057ffffc2e2450001014fd63fde278f9369f7bbe4…</span><br></pre></td></tr></table></figure>
+<h3 id="七、Record-抓包-Over-UDP-FFmpeg"><a href="#七、Record-抓包-Over-UDP-FFmpeg" class="headerlink" title="七、Record 抓包 Over UDP (FFmpeg)"></a>七、Record 抓包 Over UDP (FFmpeg)</h3><ul>
+<li>推流FFmpeg(<code>ffmpeg -re -i move.mp4 -vcodec copy -codec copy -f rtsp rtsp://192.168.0.30/live</code>)</li>
+<li>server端 基于Netty写的接收程序（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.30:554/live RTSP/1.0</span><br><span class="line">CSeq: 1</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">public: OPTIONS, ANNOUNCE, SETUP, RECORD, TEARDOWN</span><br><span class="line">cseq: 1</span><br><span class="line">SESSION: 850601d9</span><br><span class="line">connection: keep-alive</span><br><span class="line"></span><br><span class="line">ANNOUNCE rtsp://192.168.0.30:554/live RTSP/1.0</span><br><span class="line">Content-Type: application/sdp</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line">Session: 850601d9</span><br><span class="line">Content-Length: 494</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=No Name</span><br><span class="line">c=IN IP4 192.168.0.30</span><br><span class="line">t=0 0</span><br><span class="line">a=tool:libavformat 57.71.100</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">b=AS:1351</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1; sprop-parameter-sets=Z2QAIKzZgIgee+EAAAMD6QAB1MAPGDGa,aOl4ssiw; profile-level-id=640020</span><br><span class="line">a=control:streamid=0</span><br><span class="line">m=audio 0 RTP/AVP 97</span><br><span class="line">b=AS:128</span><br><span class="line">a=rtpmap:97 MPEG4-GENERIC/44100/2</span><br><span class="line">a=fmtp:97 profile-level-id=1;mode=AAC-hbr;sizelength=13;indexlength=3;indexdeltalength=3; config=1210</span><br><span class="line">a=control:streamid=1</span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">cseq: 2</span><br><span class="line">SESSION: 850601d9</span><br><span class="line">connection: keep-alive</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.30:554/live/streamid=0 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/UDP;unicast;client_port=20502-20503;mode=record</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line">Session: 850601d9</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">transport: RTP/AVP/UDP;unicast;client_port=20502-20503;mode=record;server_port=54000-54001;ssrc=1015232941</span><br><span class="line">cseq: 3</span><br><span class="line">SESSION: 850601d9</span><br><span class="line">connection: keep-alive</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.30:554/live/streamid=1 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/UDP;unicast;client_port=20504-20505;mode=record</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line">Session: 850601d9</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">transport: RTP/AVP/UDP;unicast;client_port=20504-20505;mode=record;server_port=54000-54001;ssrc=102410565</span><br><span class="line">cseq: 4</span><br><span class="line">SESSION: 850601d9</span><br><span class="line">connection: keep-alive</span><br><span class="line"></span><br><span class="line">RECORD rtsp://192.168.0.30:554/live RTSP/1.0</span><br><span class="line">Range: npt=0.000-</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line">Session: 850601d9</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">filename: 1595477112</span><br><span class="line">cseq: 5</span><br><span class="line">SESSION: 850601d9</span><br><span class="line">connection: keep-alive</span><br><span class="line"></span><br><span class="line">TEARDOWN rtsp://192.168.0.30:554/live RTSP/1.0</span><br><span class="line">CSeq: 6</span><br><span class="line">User-Agent: Lavf57.71.100</span><br><span class="line">Session: 850601d9</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/音视频/Live555搭建流媒体服务器/" rel="next" title="Live555搭建流媒体服务器">
+                <i class="fa fa-chevron-left"></i> Live555搭建流媒体服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/音视频/RTP网络抓包分析/" rel="prev" title="RTP网络抓包分析">
+                RTP网络抓包分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">286</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Play-抓包-Over-TCP"><span class="nav-number">1.</span> <span class="nav-text">一、Play 抓包 Over TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SDP"><span class="nav-number">1.0.1.</span> <span class="nav-text">SDP</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Play-抓包-Over-UDP"><span class="nav-number">2.</span> <span class="nav-text">二、Play 抓包 Over UDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Play-抓包-Over-UDP"><span class="nav-number">3.</span> <span class="nav-text">三、Play 抓包 Over UDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、Play-抓包-Over-UDP"><span class="nav-number">4.</span> <span class="nav-text">四、Play 抓包 Over UDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、Record-抓包-Over-TCP"><span class="nav-number">5.</span> <span class="nav-text">五、Record 抓包 Over TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、Record-抓包-Over-UDP"><span class="nav-number">6.</span> <span class="nav-text">六、Record 抓包 Over UDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Record-抓包-Over-UDP-FFmpeg"><span class="nav-number">7.</span> <span class="nav-text">七、Record 抓包 Over UDP (FFmpeg)</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

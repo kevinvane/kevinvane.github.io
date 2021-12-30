@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="借助网上的一段描述：  若以银行账户为类比，这 5 个词分别对应内容如下： 地址=银行卡号密码=银行卡密码私钥=银行卡号+银行卡密码助记词=银行卡号+银行卡密码Keystore+密码=银行卡号+银行卡密码Keystore ≠ 银行卡号  12implementation &apos;org.web3j:core:3.3.1-android&apos;implementation &apos;io.github.novacryp">
+<meta name="keywords" content="区块链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="14、创建&#x2F;恢复ETH钱包身份">
+<meta property="og:url" content="http://yoursite.com/区块链/14、创建恢复钱包身份/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="借助网上的一段描述：  若以银行账户为类比，这 5 个词分别对应内容如下： 地址=银行卡号密码=银行卡密码私钥=银行卡号+银行卡密码助记词=银行卡号+银行卡密码Keystore+密码=银行卡号+银行卡密码Keystore ≠ 银行卡号  12implementation &apos;org.web3j:core:3.3.1-android&apos;implementation &apos;io.github.novacryp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-27T13:52:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="14、创建&#x2F;恢复ETH钱包身份">
+<meta name="twitter:description" content="借助网上的一段描述：  若以银行账户为类比，这 5 个词分别对应内容如下： 地址=银行卡号密码=银行卡密码私钥=银行卡号+银行卡密码助记词=银行卡号+银行卡密码Keystore+密码=银行卡号+银行卡密码Keystore ≠ 银行卡号  12implementation &apos;org.web3j:core:3.3.1-android&apos;implementation &apos;io.github.novacryp">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/区块链/14、创建恢复钱包身份/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>14、创建/恢复ETH钱包身份 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/区块链/14、创建恢复钱包身份/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">14、创建/恢复ETH钱包身份
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-29 21:52:36" itemprop="dateCreated datePublished" datetime="2018-12-29T21:52:36+08:00">2018-12-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-27 21:52:36" itemprop="dateModified" datetime="2019-07-27T21:52:36+08:00">2019-07-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>借助网上的一段描述：</p>
+<blockquote>
+<p>若以银行账户为类比，这 5 个词分别对应内容如下：</p>
+<p>地址=银行卡号<br>密码=银行卡密码<br>私钥=银行卡号+银行卡密码<br>助记词=银行卡号+银行卡密码<br>Keystore+密码=银行卡号+银行卡密码<br>Keystore ≠ 银行卡号</p>
+</blockquote>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">'org.web3j:core:3.3.1-android'</span></span><br><span class="line">implementation <span class="string">'io.github.novacrypto:BIP39:0.1.9'</span><span class="comment">//用于生成助记词</span></span><br></pre></td></tr></table></figure>
+<p><code>org.web3j:core</code> 这个库是Java的，<code>org.web3j:core:x-android</code> 是兼容Android平台，所有接口和工具类都是为Java应用设计的，所以在Android上使用的时候要注意变通一下。</p>
+<h3 id="创建数字身份"><a href="#创建数字身份" class="headerlink" title="创建数字身份"></a>创建数字身份</h3><p>创建钱包身份可以通过 WalletUtils 类来实现，它可以创建两种钱包：标准和 BIP39。</p>
+<p>可以通过 generateWalletFile 函数创建，直接保存为json文件，以下其他三个函数都是它的封装。</p>
+<p><strong>在Android上不建议使用 <code>WalletUtils</code> 的这几个函数创建数字身份。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WalletUtils.generateFullNewWalletFile();</span><br><span class="line">WalletUtils.generateLightNewWalletFile();</span><br><span class="line">WalletUtils.generateNewWalletFile();</span><br><span class="line">WalletUtils.generateWalletFile();</span><br></pre></td></tr></table></figure>
+<p>generateFullNewWalletFile 使用N_STANDARD加密强度，在Android上会发送OOM，Android的处理速度也跟不上。</p>
+<p>generateLightNewWalletFile 相对来说比较轻量级，但是在我手机（红米4）上也花了21秒才创建完成，而加载为 Credentials 花了40秒。而在一台三星手机跑比较快，7秒左右。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startClickCreateDefault</span><span class="params">(View view)</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		String password = <span class="string">"123456"</span>;</span><br><span class="line">		String path = Environment.getExternalStorageDirectory().getPath() + <span class="string">"/MyWallet"</span>;</span><br><span class="line">		File fileDir = <span class="keyword">new</span> File(path);</span><br><span class="line">		<span class="keyword">if</span> (!fileDir.exists()) &#123;</span><br><span class="line">			fileDir.mkdirs();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//生成钱包身份保存到目录下</span></span><br><span class="line">		String fileName = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">		Log.e(TAG, <span class="string">"startClickCreateDefault: "</span>+fileDir.getPath() );</span><br><span class="line">		fileName = WalletUtils.generateLightNewWalletFile(<span class="string">"123456"</span>,fileDir);</span><br><span class="line"></span><br><span class="line">		Log.e(TAG, <span class="string">"wallet fileName: "</span> + fileName );</span><br><span class="line"></span><br><span class="line">		<span class="comment">//加载钱包身份</span></span><br><span class="line">		Credentials credentials = WalletUtils.loadCredentials(password,path + <span class="string">"/"</span> +fileName);</span><br><span class="line">		Log.e(TAG, <span class="string">"getAddress: "</span>+credentials.getAddress());</span><br><span class="line">		Log.e(TAG, <span class="string">"getPrivateKey: "</span>+credentials.getEcKeyPair().getPrivateKey());</span><br><span class="line">		Log.e(TAG, <span class="string">"getPublicKey: "</span>+credentials.getEcKeyPair().getPublicKey());</span><br><span class="line">	&#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (NoSuchProviderException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (InvalidAlgorithmParameterException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (CipherException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建BIP39身份"><a href="#创建BIP39身份" class="headerlink" title="创建BIP39身份"></a>创建BIP39身份</h3><p>可以导出助记词，创建花了43秒，用助记词导入很快，只花了几秒。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WalletUtils.generateBip39Wallet();</span><br></pre></td></tr></table></figure>
+<p>WalletUtils提供的这个方法在Android上闪退，只有自己写一个了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startClickCreateBip39</span><span class="params">(View view)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	String password = <span class="string">"123456"</span>;</span><br><span class="line">	String path = Environment.getExternalStorageDirectory().getPath() + <span class="string">"/MyWallet"</span>;</span><br><span class="line">	File fileDir = <span class="keyword">new</span> File(path);</span><br><span class="line">	<span class="keyword">if</span> (!fileDir.exists()) &#123;</span><br><span class="line">		fileDir.mkdirs();</span><br><span class="line">	&#125;</span><br><span class="line">	Log.e(TAG, <span class="string">"wallet start"</span>);</span><br><span class="line">	<span class="comment">//闪退</span></span><br><span class="line">	<span class="comment">//Bip39Wallet wallet = WalletUtils.generateBip39Wallet(password,fileDir);</span></span><br><span class="line">	<span class="comment">//String mnemonic = wallet.getMnemonic();</span></span><br><span class="line">	<span class="comment">//Log.e(TAG, "助记词wallet.getMnemonic(): " + mnemonic);</span></span><br><span class="line">	<span class="comment">//String fileName = wallet.getFilename();</span></span><br><span class="line">	<span class="comment">//Log.e(TAG, "fileName: " + fileName);</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">		StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="keyword">byte</span>[] entropy = <span class="keyword">new</span> <span class="keyword">byte</span>[Words.TWELVE.byteLength()];</span><br><span class="line">		<span class="keyword">new</span> SecureRandom().nextBytes(entropy);</span><br><span class="line">		<span class="keyword">new</span> MnemonicGenerator(English.INSTANCE).createMnemonic(entropy, sb::append);</span><br><span class="line">		String mnemonic = sb.toString();</span><br><span class="line">		<span class="comment">//String mnemonic = MnemonicUtils.generateMnemonic(initialEntropy);</span></span><br><span class="line">		<span class="keyword">byte</span>[] seed = MnemonicUtils.generateSeed(mnemonic, password);</span><br><span class="line">		ECKeyPair privateKey = ECKeyPair.create(sha256(seed));</span><br><span class="line"></span><br><span class="line">		String fileName = WalletUtils.generateWalletFile(password, privateKey, fileDir, <span class="keyword">false</span>);</span><br><span class="line">		Log.e(TAG, <span class="string">"fileName: "</span> + fileName);</span><br><span class="line">		Log.e(TAG, <span class="string">"助记词wallet.getMnemonic(): "</span> + mnemonic);</span><br><span class="line">		<span class="comment">//加载钱包身份</span></span><br><span class="line">		Credentials credentials = WalletUtils.loadBip39Credentials(password,mnemonic);</span><br><span class="line">		Log.e(TAG, <span class="string">"getAddress: "</span>+credentials.getAddress());</span><br><span class="line">		Log.e(TAG, <span class="string">"getPrivateKey: "</span>+credentials.getEcKeyPair().getPrivateKey());</span><br><span class="line">		Log.e(TAG, <span class="string">"getPublicKey: "</span>+credentials.getEcKeyPair().getPublicKey());</span><br><span class="line"></span><br><span class="line">	&#125; <span class="keyword">catch</span> (CipherException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Android创建钱包"><a href="#Android创建钱包" class="headerlink" title="Android创建钱包"></a>Android创建钱包</h3><p>上面这些感觉比较适合Java程序，我们跳进去看看就知道了，其实生成数字身份的代码是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> WalletFile <span class="title">createLight</span><span class="params">(String password, ECKeyPair ecKeyPair)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> CipherException </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> create(password, ecKeyPair, N_LIGHT, P_LIGHT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>针对Android，我们需要将生成的数字身份 <code>WalletFile</code> 转为 <code>JSON</code> (Keystore)保存到 <code>SharedPreferences</code> ，所以整理一个工具类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.support.annotation.Nullable;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.CipherException;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.Credentials;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.ECKeyPair;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.Keys;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.MnemonicUtils;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.Wallet;</span><br><span class="line"><span class="keyword">import</span> org.web3j.crypto.WalletFile;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.security.InvalidAlgorithmParameterException;</span><br><span class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</span><br><span class="line"><span class="keyword">import</span> java.security.NoSuchProviderException;</span><br><span class="line"><span class="keyword">import</span> java.security.SecureRandom;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.github.novacrypto.bip39.MnemonicGenerator;</span><br><span class="line"><span class="keyword">import</span> io.github.novacrypto.bip39.Words;</span><br><span class="line"><span class="keyword">import</span> io.github.novacrypto.bip39.wordlists.English;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.web3j.crypto.Hash.sha256;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyWalletTool</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String TAG = getClass().getName();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个轻量级钱包，没有助记词</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> password</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> WalletFile <span class="title">createLightWallet</span><span class="params">(String password)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        WalletFile walletFile = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            walletFile = Wallet.createLight(password, Keys.createEcKeyPair());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CipherException | NoSuchProviderException | NoSuchAlgorithmException | InvalidAlgorithmParameterException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> walletFile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个助记词</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createMnemonic</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">byte</span>[] entropy = <span class="keyword">new</span> <span class="keyword">byte</span>[Words.TWELVE.byteLength()];</span><br><span class="line">        <span class="keyword">new</span> SecureRandom().nextBytes(entropy);</span><br><span class="line">        <span class="keyword">new</span> MnemonicGenerator(English.INSTANCE).createMnemonic(entropy, sb::append);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个带有助记词的轻量级钱包</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> password</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> mnemonic</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> WalletFile <span class="title">createBip39Wallet</span><span class="params">(String password,String mnemonic)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        WalletFile walletFile = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">byte</span>[] seed = MnemonicUtils.generateSeed(mnemonic, password);</span><br><span class="line">            Log.d(TAG, <span class="string">"createLight start..."</span>);</span><br><span class="line">            walletFile = Wallet.createLight(password, ECKeyPair.create(sha256(seed)));</span><br><span class="line">            Log.d(TAG, <span class="string">"createLight end."</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> walletFile;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成凭证</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> password</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> walletFile</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> CipherException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Credentials <span class="title">createCredentials</span><span class="params">(String password,String mnemonic)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">byte</span>[] seed = MnemonicUtils.generateSeed(mnemonic, password);</span><br><span class="line">        <span class="keyword">return</span> Credentials.create(ECKeyPair.create(sha256(seed)));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Credentials <span class="title">createCredentials</span><span class="params">(String password,WalletFile walletFile)</span> <span class="keyword">throws</span> CipherException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Credentials.create(Wallet.decrypt(password, walletFile));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Credentials <span class="title">createCredentials</span><span class="params">(String privateKey)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Credentials.create(privateKey);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="交易凭证Credentials"><a href="#交易凭证Credentials" class="headerlink" title="交易凭证Credentials"></a>交易凭证Credentials</h3><p>在 <code>web3j</code> 中每一个交易都需要一个参数：<code>Credentials</code>，<code>Credentials</code> 实例化有三种方法，其中私钥权限最高，所以绝不能泄露自己的私钥和助记词，常用的是<code>密码 + Keystore</code>。</p>
+<p>从<code>MyWalletTool</code>调用的函数来看，交易凭证的实例化只需要以下之一：</p>
+<ol>
+<li>私钥</li>
+<li>助记词</li>
+<li>密码 + Keystore</li>
+</ol>
+<h4 id="私钥"><a href="#私钥" class="headerlink" title="私钥"></a>私钥</h4><blockquote>
+<p>一个钱包只有一个私钥且不能修改</p>
+</blockquote>
+<p>为什么 <code>私钥</code> 单独可以实现实例化 <code>Credentials</code> ？</p>
+<p><code>Credentials</code> 的构造函数参数是 <code>ECKeyPair</code> 和 <code>address</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Credentials</span><span class="params">(ECKeyPair ecKeyPair, String address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ecKeyPair = ecKeyPair;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>address</code> 可以通过 <code>ECKeyPair</code> 推导出来，而 <code>ECKeyPair</code> 的构造函数参数就是公钥和私钥</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ECKeyPair</span><span class="params">(BigInteger privateKey, BigInteger publicKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.privateKey = privateKey;</span><br><span class="line">	<span class="keyword">this</span>.publicKey = publicKey;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>公钥可以通过私钥推导出来，所以可以直接实例化 <code>Credentials</code>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sign.publicKeyFromPrivate(privateKey)</span><br></pre></td></tr></table></figure></p>
+<h4 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h4><blockquote>
+<p>助记词是明文私钥的另一种表现形式，其目的是为了帮助用户记忆复杂的私钥</p>
+</blockquote>
+<p>Canache生成的一个助记词<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">助记词:jump dolphin leave reward allow farm gate hospital region diary seminar loan</span><br><span class="line">地址:0x7E728c371D66813434F340E6D473B212F506bA54</span><br><span class="line">私钥:6229413033912ab1f26e36f0aad7e1ea2b957de73cfedf788b9fff811192aa89</span><br></pre></td></tr></table></figure></p>
+<p>用 <code>imToken</code> 可以成功导入钱包，但是用下面的 <code>BIP39</code> 标准的代码却不行(passphrase是加盐，这里为空)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] seed = MnemonicUtils.generateSeed(mnemonic, passphrase);<span class="comment">//passphrase=null</span></span><br><span class="line">ECKeyPair ecKeyPair = ECKeyPair.create(sha256(seed));</span><br><span class="line">System.out.println(<span class="string">"private="</span> + ecKeyPair.getPrivateKey().toString());</span><br><span class="line">System.out.println(<span class="string">"private="</span> + ecKeyPair.getPrivateKey().toString(<span class="number">16</span>));</span><br></pre></td></tr></table></figure>
+<p>结果是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">private=27538423023524426157929608133615570842335693203949154557762660148101331275721</span><br><span class="line">private=3ce231f097447fe5d623b3a1f9a37e8c554ee014959903c4e2ebadf69ac7cfc9</span><br></pre></td></tr></table></figure></p>
+<p>网上查资料说 <code>imToken</code> 用的是 <code>BIP44</code> 标准。后面再看看怎么搞，<a href="https://github.com/consenlabs" target="_blank" rel="noopener">imToken核心码开源地址</a></p>
+<p><a href="https://blog.csdn.net/qq_27381325/article/details/82685714" target="_blank" rel="noopener">BIP44助记词创建和导入</a></p>
+<h4 id="Keystore"><a href="#Keystore" class="headerlink" title="Keystore"></a>Keystore</h4><blockquote>
+<p>将私钥以加密的方式保存为一份 JSON 文件，这份 JSON 文件就是 Keystore，所以它就是加密后的私钥，它必须配合钱包密码才能使用该账号。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECKeyPair ecKeyPair = Wallet.decrypt(password, walletFile);</span><br></pre></td></tr></table></figure>
+<h3 id="钱包开源项目"><a href="#钱包开源项目" class="headerlink" title="钱包开源项目"></a>钱包开源项目</h3><ol>
+<li><a href="https://github.com/DwyaneQ/ETHWallet" target="_blank" rel="noopener">A ethereum wallet like imToken for Android</a></li>
+<li><a href="https://github.com/manuelsc/Lunary-Ethereum-Wallet" target="_blank" rel="noopener">A beautiful, secure and native Ethereum Wallet for Android</a></li>
+<li><a href="https://github.com/ConsenSys/eth-lightwallet" target="_blank" rel="noopener">Lightweight JS Wallet for Node and the browser </a></li>
+<li><a href="https://github.com/immutability-io/vault-ethereum" target="_blank" rel="noopener">A plugin that turns Vault into an Ethereum wallet. Golang</a></li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/区块链/13、Android通过web3j交易代币/" rel="next" title="13、Android通过web3j交易代币">
+                <i class="fa fa-chevron-left"></i> 13、Android通过web3j交易代币
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android Preview空白/" rel="prev" title="Android Preview空白">
+                Android Preview空白 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">286</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数字身份"><span class="nav-number">1.</span> <span class="nav-text">创建数字身份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建BIP39身份"><span class="nav-number">2.</span> <span class="nav-text">创建BIP39身份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android创建钱包"><span class="nav-number">3.</span> <span class="nav-text">Android创建钱包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交易凭证Credentials"><span class="nav-number">4.</span> <span class="nav-text">交易凭证Credentials</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#私钥"><span class="nav-number">4.1.</span> <span class="nav-text">私钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#助记词"><span class="nav-number">4.2.</span> <span class="nav-text">助记词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Keystore"><span class="nav-number">4.3.</span> <span class="nav-text">Keystore</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#钱包开源项目"><span class="nav-number">5.</span> <span class="nav-text">钱包开源项目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
