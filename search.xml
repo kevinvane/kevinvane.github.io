@@ -11551,4 +11551,24 @@ location /api/ {
         <category>SpringBoot</category>
       </categories>
   </entry>
+  <entry>
+    <title>Android 线程池</title>
+    <url>/Android/Android%20%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
+    <content><![CDATA[<p><code>ExecutorService</code> 是Java提供的用于管理线程池的类。</p>
+<h4 id="1、FixedThreadPool"><a href="#1、FixedThreadPool" class="headerlink" title="1、FixedThreadPool"></a>1、FixedThreadPool</h4><p><code>FixedThreadPool</code> ，固定线程数的线程池，核心线程数和最大线程数是一样的；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 创建一个可重用固定个数的线程池</span><br><span class="line">ExecutorService executorService = Executors.newFixedThreadPool(3);</span><br></pre></td></tr></table></figure>
+<h4 id="2、CachedThreadPool"><a href="#2、CachedThreadPool" class="headerlink" title="2、CachedThreadPool"></a>2、CachedThreadPool</h4><p><code>CachedThreadPool</code>，缓存线程，池线程数可以持续增加。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 创建一个可缓存线程池</span><br><span class="line">ExecutorService executorService = Executors.newCachedThreadPool();</span><br></pre></td></tr></table></figure>
+<h4 id="3、ScheduledThreadPool"><a href="#3、ScheduledThreadPool" class="headerlink" title="3、ScheduledThreadPool"></a>3、ScheduledThreadPool</h4><p><code>ScheduledThreadPool</code>，周期性执行任务的线程池，定时或周期性的执行任务。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//核心线程数是3</span><br><span class="line">ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(3);</span><br><span class="line"></span><br><span class="line">//周期执行一次</span><br><span class="line">scheduledExecutorService.scheduleAtFixedRate(new Runnable() &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">    Log.d(TAG,Thread.currentThread().getName()+ &quot;正在执行&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;, 1, 500, TimeUnit.MILLISECONDS);</span><br></pre></td></tr></table></figure>
+<h4 id="4、SingleThreadExecutor"><a href="#4、SingleThreadExecutor" class="headerlink" title="4、SingleThreadExecutor"></a>4、SingleThreadExecutor</h4><p><code>SingleThreadExecutor</code>，单线程池，核心线程数是1，任务会按顺序执行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();</span><br></pre></td></tr></table></figure>
+<h4 id="5、SingleThreadScheduledExecutor"><a href="#5、SingleThreadScheduledExecutor" class="headerlink" title="5、SingleThreadScheduledExecutor"></a>5、SingleThreadScheduledExecutor</h4><p><code>SingleThreadScheduledExecutor</code>，周期性执行任务的单线程池，核心线程数是1，只有一个任务在同一个时间执行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();</span><br></pre></td></tr></table></figure>
+<p>总结，上面常用的线程池最终调用的都是 <code>ThreadPoolExecutor</code> : </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public ThreadPoolExecutor(int corePoolSize,    //核心线程数</span><br><span class="line">                          int maximumPoolSize, //最大线程数</span><br><span class="line">                          long keepAliveTime,  //空闲线程存活时间</span><br><span class="line">                          TimeUnit unit,       //存活时间单位</span><br><span class="line">                          BlockingQueue&lt;Runnable&gt; workQueue //用于保存等待执行任务的阻塞队列</span><br><span class="line">                          ) &#123;</span><br><span class="line">    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">         Executors.defaultThreadFactory(), defaultHandler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
 </search>
