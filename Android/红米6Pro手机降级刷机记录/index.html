@@ -584,15 +584,15 @@
 <li>下载相应的版本：<a href="https://twrp.me/xiaomi/xiaomiredmi6pro.html" target="_blank" rel="noopener">https://twrp.me/xiaomi/xiaomiredmi6pro.html</a> 的 <a href="https://dl.twrp.me/sakura/twrp-3.6.2_9-0-sakura.img.html" target="_blank" rel="noopener">【下载地址】</a>，<code>twrp-3.6.2_9-0-sakura.img</code> 放到 <code>platform-tools</code> 目录。</li>
 <li>手机USB接在电脑，保持<code>Fastboot</code> 模式</li>
 <li><p>尝试刷TWRP到手机，覆盖掉小米的，但是失败了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./fastboot.exe flash recovery twrp-3.6.2_9-0-sakura.img</span><br><span class="line">Sending 'recovery' (43676 KB)   OKAY [  0.994s]</span><br><span class="line">Writing 'recovery'              FAILED (remote: 'rollback version downgrade')</span><br><span class="line">fastboot: error: Command failed</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./fastboot.exe flash recovery twrp-3.6.2_9-0-sakura.img</span></span><br><span class="line">Sending 'recovery' (43676 KB)   OKAY [  0.994s]</span><br><span class="line">Writing 'recovery'              FAILED (remote: 'rollback version downgrade')</span><br><span class="line">fastboot: error: Command failed</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>直接启动twrp，这是一个临时的方法，twrp不会烧录到手机，只是加载到内存，下次重启会失效。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 这样也有一个好处，就是不影响原来小米的 recovery 。 </span><br><span class="line"><span class="meta">$</span> ./fastboot.exe boot twrp-3.6.2_9-0-sakura.img</span><br><span class="line">Sending 'boot.img' (43676 KB)                      OKAY [  0.969s]</span><br><span class="line">Booting                                            OKAY [  0.724s]</span><br><span class="line">Finished. Total time: 1.733s</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 这样也有一个好处，就是不影响原来小米的 recovery 。 </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./fastboot.exe boot twrp-3.6.2_9-0-sakura.img</span></span><br><span class="line">Sending 'boot.img' (43676 KB)                      OKAY [  0.969s]</span><br><span class="line">Booting                                            OKAY [  0.724s]</span><br><span class="line">Finished. Total time: 1.733s</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>利用twrp卡刷预先放到手机的包</p>
 </li>
 <li><p>刷完重启，线不要进入系统，再次进入<code>Fastboot</code> 模式，锁上手机</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 注意：这条命令和解锁一样，会删除掉所有的数据。</span><br><span class="line"><span class="meta">$</span> ./fastboot.exe oem lock</span><br><span class="line">OKAY [  0.009s]</span><br><span class="line">Finished. Total time: 0.009s</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注意：这条命令和解锁一样，会删除掉所有的数据。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./fastboot.exe oem lock</span></span><br><span class="line">OKAY [  0.009s]</span><br><span class="line">Finished. Total time: 0.009s</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>等待完成重启进入系统，验证录像可用。</p>
 </li>
@@ -713,7 +713,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">311</span>
+                    <span class="site-state-item-count">312</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
