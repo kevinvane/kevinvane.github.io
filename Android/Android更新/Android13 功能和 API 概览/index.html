@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="【原文：功能和 API 概览】 Android 13 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。 有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android13功能和 API 概览">
+<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android13 功能和 API 概览/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="【原文：功能和 API 概览】 Android 13 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。 有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-08-31T11:53:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android13功能和 API 概览">
+<meta name="twitter:description" content="【原文：功能和 API 概览】 Android 13 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。 有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android13 功能和 API 概览/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android13功能和 API 概览 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-git命令">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-android-&-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android13 功能和 API 概览/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android13功能和 API 概览
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2022-08-31 19:53:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:53:36+08:00">2022-08-31</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.android.google.cn/about/versions/13/features" target="_blank" rel="noopener">【原文：功能和 API 概览】</a></p>
+<p>Android 13 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。</p>
+<p>有关新增、修改和移除的 API 的详细列表，请参阅 <a href="https://developer.android.google.cn/sdk/api_diff/t-dp1/changes" target="_blank" rel="noopener">API 差异报告</a>。</p>
+<ul>
+<li>如需详细了解新的 API，请访问 <a href="https://developer.android.google.cn/reference" target="_blank" rel="noopener">Android API 参考文档</a> - 新 API 会突出显示以方便查看。</li>
+<li>如需了解平台变更可能会在哪些方面影响您的应用，请务必查看会影响<a href="https://developer.android.google.cn/about/versions/13/behavior-changes-13" target="_blank" rel="noopener">以 Android 13 为目标平台的应用</a></li>
+<li><a href="https://developer.android.google.cn/about/versions/13/behavior-changes-all" target="_blank" rel="noopener">所有应用</a>的 Android 13 行为变更。</li>
+</ul>
+<h2 id="开发者工作效率"><a href="#开发者工作效率" class="headerlink" title="开发者工作效率"></a>开发者工作效率</h2><h3 id="新的复制和粘贴界面"><a href="#新的复制和粘贴界面" class="headerlink" title="新的复制和粘贴界面"></a>新的复制和粘贴界面</h3><p>从 Android 13 开始，将内容添加到剪贴板时，系统会显示标准视觉确认界面。新确认界面会执行以下操作：</p>
+<ul>
+<li>确认内容已成功复制。</li>
+<li>提供所复制内容的预览。</li>
+</ul>
+<p>此功能可将应用在用户复制内容后显示的各种通知标准化，并让用户可以更好地控制剪贴板。如需了解详情，请访问<a href="https://developer.android.google.cn/about/versions/13/features/copy-paste" target="_blank" rel="noopener">复制和粘贴</a>功能页面。</p>
+<h3 id="预测性返回手势"><a href="#预测性返回手势" class="headerlink" title="预测性返回手势"></a>预测性返回手势</h3><p>Android 13 针对手机、大屏设备和可折叠设备等 Android 设备引入了预测性返回手势。如需支持此功能，您需要更新应用。</p>
+<p>如需查看详细文档，请参阅<a href="https://developer.android.google.cn/about/versions/13/features/predictive-back-gesture" target="_blank" rel="noopener">更新应用以支持预测性返回手势</a>。您还可以尝试完成<a href="https://developers.google.cn/codelabs/codelabs/handling-gesture-back-navigation" target="_blank" rel="noopener">我们的 Codelab</a>。</p>
+<h3 id="带主题的应用图标"><a href="#带主题的应用图标" class="headerlink" title="带主题的应用图标"></a>带主题的应用图标</h3><p>从 Android 13 起，用户可以选择启用带主题的应用图标。借助此功能，用户可以调节受支持的 Android 启动器中应用图标的色调，以继承所选壁纸和其他主题的配色。</p>
+<p>如需支持此功能，您的应用必须提供<a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive" target="_blank" rel="noopener">自适应图标</a>和单色应用图标，并通过清单中的 <code></code> 元素指向该单色应用图标。如果用户启用了带主题的应用图标（换句话说，在系统设置中开启了<strong>带主题的图标</strong>切换开关），而启动器支持此功能，则系统将使用用户选择的壁纸和主题来确定色调颜色，然后该颜色将应用于单色应用图标。</p>
+<p>在以下任何情况下，主屏幕都不会显示带主题的应用图标，而是显示自适应或标准应用图标：</p>
+<ul>
+<li>如果用户未启用带主题的应用图标</li>
+<li>如果您的应用不提供单色应用图标</li>
+<li>如果启动器不支持带主题的应用图标</li>
+</ul>
+<h4 id="规格"><a href="#规格" class="headerlink" title="规格"></a>规格</h4><p>您的单色应用图标应符合以下规范：</p>
+<ul>
+<li>应是一个 <a href="https://developer.android.google.cn/guide/topics/graphics/vector-drawable-resources" target="_blank" rel="noopener"><code>VectorDrawable</code></a>。</li>
+<li>我们建议该徽标适合 108 x 108 dp 容器中的 44 x 44 dp 的区域内。如果需要更大尺寸的徽标，最大可以为 72 x 72 dp。</li>
+<li>我们建议您使用平面徽标；如果您的徽标是三维的，那么您可以使用 Alpha 渐变。</li>
+</ul>
+<p>您必须将单色属性指向自适应应用图标的前台图层所使用的同一 <code>VectorDrawable</code>，或者重复使用用于通知的矢量可绘制对象。</p>
+<p>以下示例展示了 Google 应用的单色应用图标，其中虚线表示徽标和容器区域之间的边界。此处显示的边界仅用于图示说明，其大小不可调整。</p>
+<p>1 容器区域 (108 x 108 dp)。</p>
+<p>2 徽标区域（建议尺寸为 44 x 44 dp，最大尺寸为 72 x 72 dp）。</p>
+<h4 id="实现带主题的应用图标"><a href="#实现带主题的应用图标" class="headerlink" title="实现带主题的应用图标"></a>实现带主题的应用图标</h4><p>将 <code>monochrome android:drawable</code> 属性添加到 <code></code> 元素中。例如，在 <code>res/mipmap-anydpi-v26/ic_launcher.xml</code> 中：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">adaptive-icon</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">background</span> <span class="attr">android:drawable</span>=<span class="string">"..."</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">foreground</span> <span class="attr">android:drawable</span>=<span class="string">"..."</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">monochrome</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/myicon"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">adaptive-icon</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在您的清单文件中，使用 <code>android:icon</code> 定义图标：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;application</span><br><span class="line">    …</span><br><span class="line">    android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">    …&gt;</span><br><span class="line">&lt;/application&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：如果清单中同时包含 <code>android:roundIcon</code> 和 <code>android:icon</code>，您必须移除对 <code>android:roundIcon</code> 的引用，或者在由 <code>android:roundIcon</code> 属性定义的可绘制对象中提供单色图标。</p>
+<h3 id="Quick-Settings-Placement-API"><a href="#Quick-Settings-Placement-API" class="headerlink" title="Quick Settings Placement API"></a>Quick Settings Placement API</h3><p>通过通知栏中的“快捷设置”，用户可无需离开应用上下文就能方便地更改设置或执行快速操作。对于提供<a href="https://developer.android.google.cn/reference/android/service/quicksettings/TileService" target="_blank" rel="noopener">自定义图块</a>的应用，用户可以更轻松地发现图块并将其添加到“快捷设置”。借助新的<a href="https://developer.android.google.cn/reference/android/app/StatusBarManager#requestAddTileService(android.content.ComponentName, java.lang.CharSequence, android.graphics.drawable.Icon, java.util.concurrent.Executor, java.util.function.Consumer" target="_blank" rel="noopener">图块放置 API</a>)，您的应用现在可以提示用户直接将自定义图块添加到一组有效的快捷设置图块中。借助新的系统对话框，用户只需一步即可不离开应用就添加图块，而不必转到“快捷设置”来添加图块。</p>
+<h3 id="为多语言用户提供更好的支持"><a href="#为多语言用户提供更好的支持" class="headerlink" title="为多语言用户提供更好的支持"></a>为多语言用户提供更好的支持</h3><p>Android 13 引入了几项功能来改进多语言用户的应用体验，具体介绍请参阅以下几部分：</p>
+<h4 id="按应用设定的语言偏好设置"><a href="#按应用设定的语言偏好设置" class="headerlink" title="按应用设定的语言偏好设置"></a>按应用设定的语言偏好设置</h4><p>在许多情况下，多语言用户会将其系统语言设置为某一种语言（例如英语），但又想为特定应用选择其他语言（例如荷兰语、中文或印地语）。为了帮助应用为这些用户提供更好的体验，Android 13 针对支持多种语言的应用引入了以下功能：</p>
+<ul>
+<li><p><strong>系统设置</strong>，可让用户在一个位置为各个应用选择首选语言。</p>
+<p>您的应用必须在应用的清单中声明 <code>android:localeConfig</code> 属性，以告知系统它支持多种语言。如需了解详情，请参阅有关<a href="https://developer.android.google.cn/about/versions/13/features/app-languages#app-language-settings" target="_blank" rel="noopener">创建资源文件并在应用的清单文件中声明资源</a>的说明。</p>
+</li>
+<li><p><strong>使应用可在运行时设置在界面中使用的其他语言的 API</strong>。</p>
+<p>使用自定义应用内语言选择器的应用应当使用这些新 API，以确保无论用户通过何种方式选择其语言偏好设置，都能获得一致的用户体验。新的 API 还有助于减少样板代码量、支持拆分 APK，并且支持<a href="https://developer.android.google.cn/guide/topics/data/autobackup" target="_blank" rel="noopener">应用自动备份</a>，以存储应用级的用户语言设置。</p>
+<p>为了向后兼容以前的 Android 版本，AndroidX 中也提供了相应 API。我们建议使用 <a href="https://developer.android.google.cn/jetpack/androidx/releases/appcompat#1.6.0-alpha03" target="_blank" rel="noopener">Appcompat 1.6.0-alpha03</a> 或更高版本。</p>
+<p>如需了解详情，请参阅有关<a href="https://developer.android.google.cn/about/versions/13/features/app-languages#api-implementation" target="_blank" rel="noopener">实现新 API</a> 的说明。</p>
+</li>
+</ul>
+<h4 id="改进了非拉丁字母的行高"><a href="#改进了非拉丁字母的行高" class="headerlink" title="改进了非拉丁字母的行高"></a>改进了非拉丁字母的行高</h4><p>Android 13 通过使用适合每种语言的行高，改进了非拉丁文字（例如泰米尔语、缅甸语、泰卢固语和藏语）的显示。新的行高可防止字符被裁剪并改进了字符的放置。您的应用只需要以 Android 13 为目标平台就可以利用这些改进。请确保在采用新的行间距后对应用进行测试，因为这些更改可能会影响非拉丁语的界面。</p>
+<p>在 Android 12 中会被裁剪的行高，现在在 Android 13 中可以更好地放置并且不会被裁剪（如下方图片所示）。</p>
+<h4 id="文本转换-API"><a href="#文本转换-API" class="headerlink" title="文本转换 API"></a>文本转换 API</h4><p>使用日语和中文等语言的用户会使用拼音输入法，这通常会导致搜索以及自动填充等功能的执行速度变慢。在 Android 13 中，应用可以调用新的<a href="https://developer.android.google.cn/reference/android/view/inputmethod/TextAttribute" target="_blank" rel="noopener">文本转换 API</a>，以便用户更快、更轻松地找到所需内容。例如，以前日语用户在进行搜索时需要执行以下步骤：</p>
+<ol>
+<li>输入平假名作为其搜索字词（例如地点或应用名称）的发音</li>
+<li>使用键盘将平假名字符转换为日语汉字</li>
+<li>使用日语汉字字符重新进行搜索</li>
+<li>最后获得搜索结果</li>
+</ol>
+<p>使用新的文本转换 API 时，日语用户可以输入平假名，然后不经过第 2 步和第 3 步就立即看到实时的日语汉字搜索结果。</p>
+<h4 id="Unicode-库更新"><a href="#Unicode-库更新" class="headerlink" title="Unicode 库更新"></a>Unicode 库更新</h4><p>Android 13 添加了一些最新改进、修复和变更，均包含在 <a href="http://blog.unicode.org/2021/10/icu-70-released.html" target="_blank" rel="noopener">Unicode ICU 70</a>、<a href="http://blog.unicode.org/2021/10/unicode-cldr-v40-now-available.html" target="_blank" rel="noopener">Unicode CLDR 40</a> 和 <a href="http://blog.unicode.org/2021/09/announcing-unicode-standard-version-140.html" target="_blank" rel="noopener">Unicode 14.0</a> 中。</p>
+<p>以下是两项显著变更：</p>
+<ul>
+<li>英语（加拿大）<code>en‑CA</code> 和英语（菲律宾）<code>en‑PH</code> 在无可用的翻译资源时均使用英语（美国）<code>en</code> 翻译资源，而非英语（英国）<code>en‑GB</code> 翻译资源。</li>
+<li>针对西班牙语 <code>es</code>、意大利语 <code>it</code>、葡萄牙语 <code>pt</code> 和葡萄牙语（葡萄牙）<code>pt‑PT</code> 引入了 <code>many</code> 复数类别。与 <a href="https://cldr.unicode.org/index/downloads/cldr-38#h.6nnr48ppi2p3" target="_blank" rel="noopener">CLDR v38</a> 中引入的法语类似，此类别适用于大数目。</li>
+</ul>
+<h3 id="更快断字"><a href="#更快断字" class="headerlink" title="更快断字"></a>更快断字</h3><p>断字让分行的文本更易于阅读，并且有助于使界面更具自适应性。在 Android 13 中，我们将断字性能优化了多达 200%，因此您现在可以在 <code>TextView</code> 中启用断字功能，这几乎不影响渲染性能。如需启用更快断字功能，请在 <a href="https://developer.android.google.cn/reference/android/widget/TextView#setHyphenationFrequency(int" target="_blank" rel="noopener"><code>setHyphenationFrequency()</code></a>) 中使用新的 <a href="https://developer.android.google.cn/reference/android/widget/TextView#attr_android:hyphenationFrequency" target="_blank" rel="noopener"><code>fullFast</code></a> 或 <a href="https://developer.android.google.cn/reference/android/widget/TextView#attr_android:hyphenationFrequency" target="_blank" rel="noopener"><code>normalFast</code></a> 频率。</p>
+<h3 id="彩色矢量字体"><a href="#彩色矢量字体" class="headerlink" title="彩色矢量字体"></a>彩色矢量字体</h3><p>Android 13 可支持呈现 COLR 版本 1 (COLRv1) 字体，并将系统表情符号更新成了 COLRv1 格式。COLRv1 是一种高度紧凑的新字体格式，该字体在任意大小下都可以快速清晰地呈现。</p>
+<p>对于大多数应用，系统会处理所有工作，COLRv1 可以正常使用。<strong>不过，如果您的应用使用系统字体来实现自己的文本呈现，建议您对表情符号呈现进行测试。</strong></p>
+<p>如需详细了解 COLRv1，请参阅以下资源：</p>
+<ul>
+<li><a href="https://developer.chrome.com/blog/colrv1-fonts/" target="_blank" rel="noopener">Chrome 开发者博客公告</a></li>
+<li><a href="https://www.youtube.com/watch?v=BmqYm5Wwz8M" target="_blank" rel="noopener">在 Chrome 中提供 COLRv1 彩色矢量字体（视频）</a></li>
+<li><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/colr" target="_blank" rel="noopener">COLR 表规范</a></li>
+</ul>
+<h3 id="蓝牙-LE-音频"><a href="#蓝牙-LE-音频" class="headerlink" title="蓝牙 LE 音频"></a>蓝牙 LE 音频</h3><p>低功耗 (LE) 音频是新一代无线音频，旨在取代传统蓝牙并支持新的使用情形和连接拓扑。通过该技术，用户能够与朋友和家人分享音频内容以及播放音频给他们听，也可以订阅信息、娱乐或无障碍用途的公共广播内容。这项新技术可以确保用户接收到高保真度的音频，而不必牺牲电池续航时间，并且还可以在不同使用情形之间无缝切换，这是传统蓝牙技术无法实现的。Android 13 内置对 LE 音频的支持，因此，开发者应该能够在兼容设备上免费获取相关的新功能。</p>
+<h3 id="MIDI-2-0"><a href="#MIDI-2-0" class="headerlink" title="MIDI 2.0"></a>MIDI 2.0</h3><p>Android 13 可支持新的 MIDI 2.0 标准，包括能够通过 USB 连接 MIDI 2.0 硬件。此新版标准有诸多优点，如提升控制器精度、改善对非西方地区语调的支持，以及提高使用单一音符控制器时的表现力。</p>
+<h2 id="隐私权和安全"><a href="#隐私权和安全" class="headerlink" title="隐私权和安全"></a>隐私权和安全</h2><h3 id="更安全地导出上下文注册的接收器"><a href="#更安全地导出上下文注册的接收器" class="headerlink" title="更安全地导出上下文注册的接收器"></a>更安全地导出上下文注册的接收器</h3><p>为了帮助提高运行时接收器的安全性，Android 13 允许您指定您应用中的特定广播接收器是否应被导出以及是否对设备上的其他应用可见。如果导出广播接收器，其他应用将可以向您的应用发送不受保护的广播。此导出配置在以 Android 13 或更高版本为目标平台的应用中可用，有助于防止一个主要的应用漏洞来源。</p>
+<p>在以前的 Android 版本中，设备上的任何应用都可以向动态注册的接收器发送不受保护的广播，除非该接收器受<a href="https://developer.android.google.cn/guide/topics/permissions/overview#signature" target="_blank" rel="noopener">签名权限</a>的保护。</p>
+<p>要实现此安全增强措施，请执行以下操作：</p>
+<ol>
+<li><p>启用 <a href="https://developer.android.google.cn/about/versions/13/reference/compat-framework-changes#dynamic_receiver_explicit_export_required" target="_blank" rel="noopener"><code>DYNAMIC_RECEIVER_EXPLICIT_EXPORT_REQUIRED</code></a> 兼容性框架更改。</p>
+</li>
+<li><p>在应用的每个广播接收器中，明确指明其他应用是否可以向其发送广播，如以下代码段所示：</p>
+<p><a href="https://developer.android.google.cn/about/versions/13/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/13/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This broadcast receiver should be able to receive broadcasts from other apps.</span></span><br><span class="line"><span class="comment">// This option causes the same behavior as setting the broadcast receiver's</span></span><br><span class="line"><span class="comment">// "exported" attribute to true in your app's manifest.</span></span><br><span class="line">context.registerReceiver(sharedBroadcastReceiver, intentFilter,</span><br><span class="line">    RECEIVER_EXPORTED)</span><br><span class="line"></span><br><span class="line"><span class="comment">// For app safety reasons, this private broadcast receiver should **NOT**</span></span><br><span class="line"><span class="comment">// be able to receive broadcasts from other apps.</span></span><br><span class="line">context.registerReceiver(privateBroadcastReceiver, intentFilter,</span><br><span class="line">    RECEIVER_NOT_EXPORTED)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意</strong>：如果启用了 <code>DYNAMIC_RECEIVER_EXPLICIT_EXPORT_REQUIRED</code> 兼容性框架更改，则<strong>必须</strong>为每个广播接收器指定 <code>RECEIVER_EXPORTED</code> 或 <code>RECEIVER_NOT_EXPORTED</code>。否则，当您尝试注册广播接收器时，系统会抛出 <code>SecurityException</code>。</p>
+<p>为了帮助检测这种情况，Android Studio 将会采用一个 lint 规则，而即将发布的 <a href="https://developer.android.google.cn/reference/androidx/core/content/ContextCompat" target="_blank" rel="noopener"><code>ContextCompat</code></a> 将会检查接收器配置是否正确。</p>
+<h3 id="照片选择器"><a href="#照片选择器" class="headerlink" title="照片选择器"></a>照片选择器</h3><p>Android 13（API 级别 33）提供了全新的<a href="https://developer.android.google.cn/about/versions/13/features/photopicker" target="_blank" rel="noopener">照片选择器</a>体验。应用启动照片选择器时，用户可选择与应用分享特定图片和视频（如个人资料照片），而不是授予应用查看整个媒体库的权限。</p>
+<p>照片选择器可为用户提供更好的隐私保护，因为您的应用无需声明任何运行时权限。此外，照片选择器还为应用提供内置标准化界面，从而打造更一致的用户体验。</p>
+<p><strong>注意</strong>：现在，我们推荐使用照片选择器来访问用户的照片和视频。</p>
+<h3 id="针对附近-Wi-Fi-设备的新运行时权限"><a href="#针对附近-Wi-Fi-设备的新运行时权限" class="headerlink" title="针对附近 Wi-Fi 设备的新运行时权限"></a>针对附近 Wi-Fi 设备的新运行时权限</h3><p>Android 13（API 级别 33）在 <code>NEARBY_DEVICES</code> 权限组中引入了一项新的<a href="https://developer.android.google.cn/guide/topics/permissions/overview#runtime" target="_blank" rel="noopener">运行时权限</a>，它适用于会管理设备与附近 Wi-Fi 接入点连接情况的应用。这些应用在<a href="https://developer.android.google.cn/about/versions/13/features/nearby-wifi-devices-permission#check-for-apis-that-require-permission" target="_blank" rel="noopener">调用多个不同的 Wi-Fi API</a> 时必须声明新的权限 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#NEARBY_WIFI_DEVICES" target="_blank" rel="noopener"><code>NEARBY_WIFI_DEVICES</code></a>。此外，只要应用不会通过 Wi-Fi API 推导物理位置，那么在以 Android 13 或更高版本为目标平台时，就无需声明 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#ACCESS_FINE_LOCATION" target="_blank" rel="noopener"><code>ACCESS_FINE_LOCATION</code></a> 权限。</p>
+<p>详细了解<a href="https://developer.android.google.cn/about/versions/13/features/nearby-wifi-devices-permission" target="_blank" rel="noopener">附近 Wi-Fi 设备权限</a>。</p>
+<h3 id="使用精确闹钟的新权限"><a href="#使用精确闹钟的新权限" class="headerlink" title="使用精确闹钟的新权限"></a>使用精确闹钟的新权限</h3><p>如果您的应用以 Android 13 为目标平台，您可以使用自动授予应用的 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#USE_EXACT_ALARM" target="_blank" rel="noopener"><code>USE_EXACT_ALARM</code></a> 权限。不过，您的应用若要使用此权限，必须至少满足以下条件之一：</p>
+<ul>
+<li>您的应用是闹钟应用或计时器应用。</li>
+<li>您的应用是日历应用，可显示即将进行的活动的通知。</li>
+</ul>
+<p><strong>注意</strong>：即将推出的 Google Play 政策会阻止应用使用 <code>USE_EXACT_ALARM</code> 权限，除非应用满足前面列表中显示的任一情况。</p>
+<p>如果您的应用设置了精确闹钟，但不符合前面列表中显示的任一情况，请改为继续声明 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#SCHEDULE_EXACT_ALARM" target="_blank" rel="noopener"><code>SCHEDULE_EXACT_ALARM</code></a> 权限，并为用户拒绝授予您应用相应访问权限的情况做好准备</p>
+<h3 id="开发者可降级权限"><a href="#开发者可降级权限" class="headerlink" title="开发者可降级权限"></a>开发者可降级权限</h3><p>从 Android 13 开始，应用可以撤消先前由系统或用户授予的运行时权限。此 API 可让您的应用执行增强隐私权的任务，如下所示：</p>
+<ul>
+<li>撤消未使用的权限。</li>
+<li>遵循权限最佳做法，从而提高用户信任度。您可能需要考虑向用户显示一个对话框，其中会显示您主动撤消的权限。</li>
+</ul>
+<p>如需撤消特定运行时权限，请将该权限的名称传入 <a href="https://developer.android.google.cn/reference/android/content/Context#revokeSelfPermissionOnKill(java.lang.String" target="_blank" rel="noopener"><code>revokeSelfPermissionOnKill()</code></a>)。如需同时撤消一组运行时权限，请将这组权限的名称传入 <a href="https://developer.android.google.cn/reference/android/content/Context#revokeSelfPermissionsonKill(java.util.Collection" target="_blank" rel="noopener"><code>revokeSelfPermissionsOnKill()</code></a>)。撤消是异步发生的，会终止与您应用的 UID 相关联的所有进程。</p>
+<p><strong>注意</strong>：为了让系统设置表明您的应用不会访问特定<a href="https://developer.android.google.cn/reference/android/Manifest.permission_group" target="_blank" rel="noopener">权限组</a>中的数据，您必须撤消该权限组中的<strong>所有</strong>权限。在这种情况下，调用 <code>revokeSelfPermissionsOnKill()</code> 会很有帮助。</p>
+<p>为使系统撤消权限，必须终止与您的应用关联的所有进程。当您调用该 API 时，系统会确定何时可以安全终止这些进程。通常，系统会等待应用有较长时间在后台运行，而不是在前台运行时。</p>
+<p>为了立即撤消权限，您需要手动终止所有相关进程。由于此操作会导致不良的用户体验，因此我们不建议这样做。</p>
+<p>如需告知用户应用的权限被撤消，请在用户下次启动应用时显示一个对话框。此对话框可以包含撤消的权限列表。</p>
+<h3 id="APK-签名方案-v3-1"><a href="#APK-签名方案-v3-1" class="headerlink" title="APK 签名方案 v3.1"></a>APK 签名方案 v3.1</h3><p>Android 13 可支持 APK 签名方案 v3.1，此方案在现有的 <a href="https://source.android.google.cn/security/apksigning/v3" target="_blank" rel="noopener">APK 签名方案 v3</a> 的基础上进行了改进，解决了 APK 签名方案 v3 的一些已知问题。具体而言，v3.1 签名方案允许应用在单个 APK 中同时支持原始签名者和轮替签名者。此外，该方案还支持 SDK 版本定位功能，这会允许轮替定位到更高版本的平台。</p>
+<p>v3.1 签名方案使用在 12L 或更低版本中无法识别的新分块 ID。因此，平台会应用以下签名者行为：</p>
+<ul>
+<li>搭载 Android 13 的设备会使用 v3.1 分块中的轮替签名者。</li>
+<li>搭载旧版 Android 的设备会忽略轮替签名者，而使用 v3.0 分块中的原始签名者。</li>
+</ul>
+<p>尚未轮替其签名密钥的应用无需执行任何其他操作。每当这些应用选择轮替时，系统都会默认应用新的 v3.1 签名方案。</p>
+<p>已经轮替并希望继续使用 v3.0 签名分块中的轮替签名密钥的应用需要更新其 <a href="https://developer.android.google.cn/studio/command-line/apksigner" target="_blank" rel="noopener"><code>apksigner</code></a> 调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apksigner sign --ks keystore.jks |</span><br><span class="line">  --key key.pk8 --cert cert.x509.pem</span><br><span class="line">  --rotation-min-sdk-version API_LEVEL</span><br><span class="line">  [signer_options] app-name.apk</span><br></pre></td></tr></table></figure>
+<p>…其中 <code>API_LEVEL</code> 为 32 或更低的值。</p>
+<h3 id="改进了密钥库和-KeyMint-中的错误报告功能"><a href="#改进了密钥库和-KeyMint-中的错误报告功能" class="headerlink" title="改进了密钥库和 KeyMint 中的错误报告功能"></a>改进了密钥库和 KeyMint 中的错误报告功能</h3><p>对于生成密钥的应用，密钥库和 KeyMint 现在提供更加详细且更准确的错误指示器。我们在 <code>java.security.ProviderException</code> 下添加了一个异常类层次结构，包含了特定于 Android 的异常，其中包括 <a href="https://developer.android.google.cn/reference/android/security/KeyStoreException" target="_blank" rel="noopener">Keystore/KeyMint 错误代码</a>，以及错误是否可重试。您还可以修改密钥生成方法和使用方法（签名、加密），以抛出新的异常。改进的错误报告并不仅限于生成密钥，现在应为您提供重试密钥生成所需的内容。</p>
+<h2 id="平板电脑和大屏设备支持"><a href="#平板电脑和大屏设备支持" class="headerlink" title="平板电脑和大屏设备支持"></a>平板电脑和大屏设备支持</h2><p>Android 13 基于 Android 12 中引入的平板电脑优化和 Android 12L 功能更新构建而成 - 包括针对系统界面的优化、更出色的多任务处理功能和改进的兼容模式。在测试过程中，请确保您的应用在平板电脑和其他大屏设备上拥有最佳显示效果。</p>
+<p>如需详细了解新功能和测试内容，请参阅<a href="https://developer.android.google.cn/about/versions/13/features/large-screens" target="_blank" rel="noopener">平板电脑和大屏设备支持</a>页面。</p>
+<h2 id="图形"><a href="#图形" class="headerlink" title="图形"></a>图形</h2><h3 id="可编程的着色器"><a href="#可编程的着色器" class="headerlink" title="可编程的着色器"></a>可编程的着色器</h3><p>Android 13 添加了对可编程 <a href="https://developer.android.google.cn/reference/android/graphics/RuntimeShader" target="_blank" rel="noopener"><code>RuntimeShader</code></a> 对象的支持，其行为是使用 Android 图形着色语言 (AGSL) 定义的。AGSL 与 GLSL 共用大部分语法，但可用于 Android 渲染引擎中以自定义 Android 画布中的绘制行为以及过滤 View 内容。Android 在内部使用这些着色器来实现<a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/base/graphics/java/android/graphics/drawable/RippleShader.java;l=24?q=RippleShader&amp;sq=" target="_blank" rel="noopener">涟漪效果</a>、<a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/native/libs/renderengine/skia/filters/BlurFilter.cpp?q=RuntimeShader&amp;ss=android%2Fplatform%2Fsuperproject&amp;start=21" target="_blank" rel="noopener">模糊</a>以及<a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/base/tests/HwAccelerationTest/src/com/android/test/hwui/StretchShaderActivity.java?q=RuntimeShader&amp;ss=android%2Fplatform%2Fsuperproject&amp;start=11" target="_blank" rel="noopener">拉伸滚动</a>，并且 Android 13 使您能够为应用制作类似的高级效果。</p>
+<h2 id="媒体"><a href="#媒体" class="headerlink" title="媒体"></a>媒体</h2><h3 id="预期音频路由"><a href="#预期音频路由" class="headerlink" title="预期音频路由"></a>预期音频路由</h3><p>为了帮助媒体应用确定其音频的路由方式，我们在 <a href="https://developer.android.google.cn/reference/android/media/AudioManager" target="_blank" rel="noopener"><code>AudioManager</code></a> 类中添加了新的音频路由 API。新的 <a href="https://developer.android.google.cn/reference/android/media/AudioManager#getAudioDevicesForAttributes(android.media.AudioAttributes" target="_blank" rel="noopener"><code>getAudioDevicesForAttributes()</code></a>) API 允许您检索可以用于播放指定音频的设备列表，添加了可帮助您了解音频流是否可以直接播放的 <a href="https://developer.android.google.cn/reference/android/media/AudioManager#getDirectProfilesForAttributes(android.media.AudioAttributes" target="_blank" rel="noopener"><code>getDirectProfilesForAttributes()</code></a>)。使用这些新 API 可确定最适合用于您的音轨的 <a href="https://developer.android.google.cn/reference/android/media/AudioFormat" target="_blank" rel="noopener"><code>AudioFormat</code></a>。</p>
+<h2 id="无障碍功能"><a href="#无障碍功能" class="headerlink" title="无障碍功能"></a>无障碍功能</h2><h3 id="语音描述"><a href="#语音描述" class="headerlink" title="语音描述"></a>语音描述</h3><p>Android 13（API 级别 33）引入了新的系统级无障碍功能偏好设置，允许用户跨所有应用启用音频说明。音频说明是一种额外的旁白轨道，其中会有一位讲述者在演示过程中进行讲解，描述在音频的自然停顿期间屏幕上发生的情况。应用可以通过使用 <a href="https://developer.android.google.cn/reference/android/view/accessibility/AccessibilityManager#isAudioDescriptionRequested(" target="_blank" rel="noopener"><code>isAudioDescriptionRequested()</code></a>) 查询音频说明轨道来遵循用户对音频说明轨道的偏好设置，如以下代码段所示：</p>
+<p><a href="https://developer.android.google.cn/about/versions/13/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/13/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> accessibilityManager: AccessibilityManager</span><br><span class="line"></span><br><span class="line"><span class="comment">// In onCreate():</span></span><br><span class="line">accessibilityManager = getSystemService(AccessibilityManager::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Where your media player is initialized</span></span><br><span class="line"><span class="keyword">if</span> (accessibilityManager.isAudioDescriptionRequested) &#123;</span><br><span class="line">    <span class="comment">// User has requested to enable audio descriptions</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应用可以通过向 <a href="https://developer.android.google.cn/reference/android/view/accessibility/AccessibilityManager" target="_blank" rel="noopener"><code>AccessbilityManager</code></a> 添加监听器来监控用户的偏好设置更改：</p>
+<p><a href="https://developer.android.google.cn/about/versions/13/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/13/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">val</span> listener =</span><br><span class="line">    AccessibilityManager.AudioDescriptionRequestedChangeListener &#123; enabled -&gt;</span><br><span class="line">        <span class="comment">// Preference changed; reflect its state in your media player</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onStart</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onStart()</span><br><span class="line"></span><br><span class="line">    accessibilityManager.addAudioDescriptionRequestedChangeListener(mainExecutor, listener)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onStop</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onStop()</span><br><span class="line"></span><br><span class="line">    accessibilityManager.removeAudioDescriptionRequestedChangeListener(listener)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><h3 id="OpenJDK-11-更新"><a href="#OpenJDK-11-更新" class="headerlink" title="OpenJDK 11 更新"></a>OpenJDK 11 更新</h3><p>Android 13 开始刷新 Android 的核心库，以与 OpenJDK 11 LTS 版本保持一致，并增添了适合应用和平台开发者的库更新和 Java 11 语言支持。Android 13 中引入的核心库变更还可以通过 Google Play 系统更新到 ART Mainline 模块，供 Android 12 设备使用。</p>
+<p>Android 13 包含对核心库的以下更改：</p>
+<ul>
+<li>支持将 <code>var</code> 关键字用于局部变量，以及用作参数 lambda。</li>
+<li>String 类中的新方法：<ul>
+<li><code>isBlank()</code></li>
+<li><code>lines()</code></li>
+<li><code>repeat()</code></li>
+<li><code>strip()</code></li>
+<li><code>stripLeading()</code></li>
+<li><code>stripTrailing()</code></li>
+</ul>
+</li>
+<li>支持 <code>Collection.toArray(IntFunction)</code>，以便更轻松地使集合适应数组。</li>
+<li>支持 <code>java.util</code> 类 <code>Optional</code>、<code>OptionalDouble</code>、<code>OptionalInt</code> 和 <code>OptionalLong</code> 中的 <code>ifPresentOrElse()</code>、<code>isEmpty()</code>、<code>orElseThrow()</code> 和 <code>stream()</code>。</li>
+<li>扩展了对 <code>SocketOptions</code> 的支持，包括重复使用套接字。</li>
+<li><code>NullReader</code>、<code>NullWriter</code>、<code>InputStream</code>、<code>OutputStream</code> 和 <code>transferTo()`</code>Reader<code>功能，用于将读取的字符传输给</code>Writer`。</li>
+<li>添加了使用 <code>Charsets</code> 进行网址编码和解码的功能。</li>
+<li>适用于 <code>FileReader</code>、<code>FileWriter</code>、<code>PrintStream</code> 和 <code>PrintWriter</code> 的 <code>Charset</code> 功能。</li>
+<li>为 <code>ByteArrayInput</code> 或 <code>OutputStream</code> 以及 <code>Input</code> 或 <code>OutputStream</code> 新增了 <code>transferTo()</code>、<code>readNBytes()</code>、<code>readAllBytes()</code> 和 <code>writeBytes()</code> 函数。</li>
+<li>对 <code>java.lang.invoke.VarHandle</code> 的运行时和编译器支持。</li>
+<li>在内部使用 <code>VarHandle</code> 将 <code>java.util.concurrent</code> 更新到 OpenJDK 11 API。</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android/Android更新/Android13 行为变更之所有应用/" rel="next" title="Android13 所有应用行为变更">
+                <i class="fa fa-chevron-left"></i> Android13 所有应用行为变更
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android更新/Android13 行为变更之TargetSDK/" rel="prev" title="以 Android 13 或更高版本为目标平台的应用行为变更">
+                以 Android 13 或更高版本为目标平台的应用行为变更 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">331</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发者工作效率"><span class="nav-number">1.</span> <span class="nav-text">开发者工作效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新的复制和粘贴界面"><span class="nav-number">1.1.</span> <span class="nav-text">新的复制和粘贴界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预测性返回手势"><span class="nav-number">1.2.</span> <span class="nav-text">预测性返回手势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带主题的应用图标"><span class="nav-number">1.3.</span> <span class="nav-text">带主题的应用图标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#规格"><span class="nav-number">1.3.1.</span> <span class="nav-text">规格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现带主题的应用图标"><span class="nav-number">1.3.2.</span> <span class="nav-text">实现带主题的应用图标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Settings-Placement-API"><span class="nav-number">1.4.</span> <span class="nav-text">Quick Settings Placement API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为多语言用户提供更好的支持"><span class="nav-number">1.5.</span> <span class="nav-text">为多语言用户提供更好的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按应用设定的语言偏好设置"><span class="nav-number">1.5.1.</span> <span class="nav-text">按应用设定的语言偏好设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进了非拉丁字母的行高"><span class="nav-number">1.5.2.</span> <span class="nav-text">改进了非拉丁字母的行高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本转换-API"><span class="nav-number">1.5.3.</span> <span class="nav-text">文本转换 API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unicode-库更新"><span class="nav-number">1.5.4.</span> <span class="nav-text">Unicode 库更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更快断字"><span class="nav-number">1.6.</span> <span class="nav-text">更快断字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#彩色矢量字体"><span class="nav-number">1.7.</span> <span class="nav-text">彩色矢量字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝牙-LE-音频"><span class="nav-number">1.8.</span> <span class="nav-text">蓝牙 LE 音频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIDI-2-0"><span class="nav-number">1.9.</span> <span class="nav-text">MIDI 2.0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐私权和安全"><span class="nav-number">2.</span> <span class="nav-text">隐私权和安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更安全地导出上下文注册的接收器"><span class="nav-number">2.1.</span> <span class="nav-text">更安全地导出上下文注册的接收器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#照片选择器"><span class="nav-number">2.2.</span> <span class="nav-text">照片选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#针对附近-Wi-Fi-设备的新运行时权限"><span class="nav-number">2.3.</span> <span class="nav-text">针对附近 Wi-Fi 设备的新运行时权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用精确闹钟的新权限"><span class="nav-number">2.4.</span> <span class="nav-text">使用精确闹钟的新权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发者可降级权限"><span class="nav-number">2.5.</span> <span class="nav-text">开发者可降级权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APK-签名方案-v3-1"><span class="nav-number">2.6.</span> <span class="nav-text">APK 签名方案 v3.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进了密钥库和-KeyMint-中的错误报告功能"><span class="nav-number">2.7.</span> <span class="nav-text">改进了密钥库和 KeyMint 中的错误报告功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平板电脑和大屏设备支持"><span class="nav-number">3.</span> <span class="nav-text">平板电脑和大屏设备支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形"><span class="nav-number">4.</span> <span class="nav-text">图形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可编程的着色器"><span class="nav-number">4.1.</span> <span class="nav-text">可编程的着色器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体"><span class="nav-number">5.</span> <span class="nav-text">媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预期音频路由"><span class="nav-number">5.1.</span> <span class="nav-text">预期音频路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无障碍功能"><span class="nav-number">6.</span> <span class="nav-text">无障碍功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语音描述"><span class="nav-number">6.1.</span> <span class="nav-text">语音描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心功能"><span class="nav-number">7.</span> <span class="nav-text">核心功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenJDK-11-更新"><span class="nav-number">7.1.</span> <span class="nav-text">OpenJDK 11 更新</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

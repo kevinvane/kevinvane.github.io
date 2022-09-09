@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="【原文：功能和 API 概览】 Android 12 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。 如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android12 功能和 API 概览">
+<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android12 功能和 API 概览/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="【原文：功能和 API 概览】 Android 12 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。 如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-08-31T11:52:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android12 功能和 API 概览">
+<meta name="twitter:description" content="【原文：功能和 API 概览】 Android 12 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。 如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。 如需了解平台变更可能会在哪些方面影响您的应用，请">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android12 功能和 API 概览/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android12 功能和 API 概览 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-git命令">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-android-&-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android12 功能和 API 概览/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android12 功能和 API 概览
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2022-08-31 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:52:36+08:00">2022-08-31</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.android.google.cn/about/versions/12/features" target="_blank" rel="noopener">【原文：功能和 API 概览】</a></p>
+<p>Android 12 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。</p>
+<ul>
+<li>有关新增、修改和移除的 API 的详细列表，请参阅 <a href="https://developer.android.google.cn/sdk/api_diff/s-dp1/changes" target="_blank" rel="noopener">API 差异报告</a>。</li>
+<li>如需详细了解新的 API，请访问 <a href="https://developer.android.google.cn/reference" target="_blank" rel="noopener">Android API 参考文档</a> - 新 API 会突出显示以方便查看。</li>
+<li>如需了解平台变更可能会在哪些方面影响您的应用，请务必查看会影响<a href="https://developer.android.google.cn/about/versions/12/behavior-changes-12" target="_blank" rel="noopener">以 Android 12 为目标平台的应用</a>和<a href="https://developer.android.google.cn/about/versions/12/behavior-changes-all" target="_blank" rel="noopener">所有应用</a>的 Android 12 行为变更。</li>
+</ul>
+<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="Material-You"><a href="#Material-You" class="headerlink" title="Material You"></a>Material You</h3><p>Android 12 引入了一种名为 <a href="https://material.io/blog/announcing-material-you" target="_blank" rel="noopener">Material You</a> 的新设计语言，可帮助您构建更具个性化、更精美的应用。如需将所有最新的 Material Design 3 更新添加到您的应用中，请试用 Alpha 版 <a href="https://github.com/material-components/material-components-android/releases" target="_blank" rel="noopener">Material Design 组件</a>。</p>
+<h3 id="微件改进"><a href="#微件改进" class="headerlink" title="微件改进"></a>微件改进</h3><p>Android 12 改进了现有的 Widgets API，以改善平台和启动器中的用户和开发者体验。我们编写了一个指南，帮助您确保您的微件与 Android 12 兼容并使用新功能对其进行更新。</p>
+<p>如需了解详情，请参阅 <a href="https://developer.android.google.cn/about/versions/12/features/widgets" target="_blank" rel="noopener">Android 12 微件改进</a>。</p>
+<h3 id="富媒体内容插入"><a href="#富媒体内容插入" class="headerlink" title="富媒体内容插入"></a>富媒体内容插入</h3><p>Android 12 引入了一个新的统一 API，可让您的应用从任何可用来源（剪贴板粘贴、键盘输入或拖放操作）接收富媒体内容。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/input/receive-rich-content" target="_blank" rel="noopener">接收富媒体内容</a>。</p>
+<h3 id="应用启动画面-API"><a href="#应用启动画面-API" class="headerlink" title="应用启动画面 API"></a>应用启动画面 API</h3><p>Android 12 为所有应用引入了新的应用启动动画，包括启动时的进入应用运动、显示应用图标的启动画面，以及向应用本身的过渡。如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/splash-screen" target="_blank" rel="noopener">启动画面开发者指南</a>。</p>
+<h3 id="圆角-API"><a href="#圆角-API" class="headerlink" title="圆角 API"></a>圆角 API</h3><p>Android 12 引入了 <a href="https://developer.android.google.cn/reference/android/view/RoundedCorner" target="_blank" rel="noopener"><code>RoundedCorner</code></a> 和 <a href="https://developer.android.google.cn/reference/android/view/WindowInsets#getRoundedCorner(int" target="_blank" rel="noopener"><code>WindowInsets.getRoundedCorner(int position)</code></a>)，它们可以提供圆角的半径和中心点。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/look-and-feel/rounded-corners" target="_blank" rel="noopener">圆角</a>。</p>
+<h3 id="富触感反馈体验"><a href="#富触感反馈体验" class="headerlink" title="富触感反馈体验"></a>富触感反馈体验</h3><p>Android 12 扩展了各个工具，以期为界面事件创建信息触感反馈，为游戏打造令人愉悦的沉浸式效果，以及为提高工作效率提供注意力触感反馈。</p>
+<h4 id="致动器效果"><a href="#致动器效果" class="headerlink" title="致动器效果"></a>致动器效果</h4><p>Android 12 添加了<a href="https://developer.android.google.cn/reference/android/os/VibrationEffect.Composition#PRIMITIVE_LOW_TICK" target="_blank" rel="noopener">低滴答声</a>等具有表现力的效果，以便充分利用最新致动器的更宽频率带宽。现在，游戏开发者可以在游戏控制器中单独访问<a href="https://developer.android.google.cn/reference/android/os/VibratorManager" target="_blank" rel="noopener">多个不同的致动器</a>，以在多个致动器上同步提供相同的效果或实现不同的触感反馈效果。对于开发者，我们建议使用<a href="https://developer.android.google.cn/reference/android/view/HapticFeedbackConstants" target="_blank" rel="noopener">常量</a>和<a href="https://developer.android.google.cn/reference/android/os/VibrationEffect.Composition#summary" target="_blank" rel="noopener">基元</a>作为富触感反馈效果的构建块，常量用于增强界面事件，而<a href="https://developer.android.google.cn/reference/android/os/VibrationEffect.Composition" target="_blank" rel="noopener">触感反馈合成器</a>用于对基元进行排序以获得更复杂的效果。这些 API 可以在 Pixel 4 设备上试用，我们会继续与设备制造商合作伙伴携手合作，共同为整个生态系统中的用户提供最新的触感反馈支持。</p>
+<h4 id="音频耦合触感反馈效果"><a href="#音频耦合触感反馈效果" class="headerlink" title="音频耦合触感反馈效果"></a>音频耦合触感反馈效果</h4><p>Android 12 应用可使用手机的振动器从音频会话产生触感反馈。这可让您获得更身临其境的游戏和音频体验。例如，触感反馈效果增强的铃声有助于识别来电者，或者赛车游戏可以模拟在崎岖地形驾驶的感觉。</p>
+<p>如需了解详情，请参阅 <a href="https://developer.android.google.cn/reference/android/media/audiofx/HapticGenerator" target="_blank" rel="noopener"><code>HapticGenerator</code></a> 参考文档。</p>
+<h3 id="AppSearch"><a href="#AppSearch" class="headerlink" title="AppSearch"></a>AppSearch</h3><p>Android 12 引入了 AppSearch 作为一种系统服务，这是一种高性能设备上搜索引擎。AppSearch 可使应用对结构化数据建立索引，并使用内置的全文搜索功能对其进行搜索。此外，AppSearch 还支持原生搜索功能，例如高效的编入索引和检索、多语言支持和相关性排名。</p>
+<p>AppSearch 有两种形式：本地索引，供与更早 Android 版本兼容的应用使用；中央索引，在 Android 12 中为整个系统维护。通过使用中央索引，您的应用可以通过系统预安装的智能组件将其数据显示在系统界面上。系统界面上会显示哪些数据取决于 OEM。此外，您的应用也可以与其他应用安全地共享数据，以便这些应用也能搜索这些数据。</p>
+<p>阅读<a href="https://developer.android.google.cn/guide/topics/search/appsearch" target="_blank" rel="noopener">开发者指南</a>详细了解 AppSearch，并开始将它与 <a href="https://developer.android.google.cn/jetpack/androidx/releases/appsearch" target="_blank" rel="noopener">AppSearch Jetpack 库</a>一起使用，该库提供了对开发者友好的 API Surface 以及注释处理器支持。</p>
+<h3 id="游戏模式"><a href="#游戏模式" class="headerlink" title="游戏模式"></a>游戏模式</h3><p>借助 <a href="https://developer.android.google.cn/games/gamemode/gamemode-api" target="_blank" rel="noopener">Game Mode API</a> 和<a href="https://developer.android.google.cn/games/gamemode/gamemode-interventions" target="_blank" rel="noopener">游戏模式干预项</a>，您可以根据用户设置或游戏专用配置，通过确定性能或电池续航时间等特征的优先级来优化游戏内容。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/games/gamemode" target="_blank" rel="noopener">游戏模式</a>。</p>
+<h3 id="画中画-PiP-改进"><a href="#画中画-PiP-改进" class="headerlink" title="画中画 (PiP) 改进"></a>画中画 (PiP) 改进</h3><p>Android 12 针对画中画模式引入了以下新功能：</p>
+<ul>
+<li><p><a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture#smoother-transition" target="_blank" rel="noopener">用于在手势导航中更流畅地过渡到画中画模式的新 API 标志</a></p>
+<p>在手势导航模式下向上滑动到主屏幕时，使用 <a href="https://developer.android.google.cn/reference/android/app/PictureInPictureParams.Builder#setAutoEnterEnabled(boolean" target="_blank" rel="noopener"><code>setAutoEnterEnabled</code></a>) 标志更流畅地过渡到画中画模式。以前，Android 会等到“向上滑动转到主屏幕”动画结束，然后再淡入画中画窗口。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture#seamless-resizing" target="_blank" rel="noopener">用于为非视频内容停用无缝大小调整的新 API 标志</a></p>
+<p>在调整画中画窗口中的非视频内容的大小时，<a href="https://developer.android.google.cn/reference/android/app/PictureInPictureParams.Builder#setSeamlessResizeEnabled(boolean" target="_blank" rel="noopener"><code>SeamlessResizeEnabled</code></a>) 标志可以提供更平滑的淡入淡出动画。以前，在画中画窗口中调整非视频内容的大小时会产生烦人的视觉伪影。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture#smoother-exit" target="_blank" rel="noopener">退出画中画模式时更流畅的动画</a></p>
+<p>现在，<a href="https://developer.android.google.cn/reference/android/app/PictureInPictureParams.Builder#setSourceRectHint(android.graphics.Rect" target="_blank" rel="noopener"><code>SourceRectHint</code></a>) 标志重用于在退出画中画模式时实现更流畅的动画。退出时，系统会使用当前可用的 <code>sourceRectHint</code> 创建动画，无论它是用于进入画中画模式的原始 <code>Rect</code>，还是应用提供的更新后的 <code>Rect</code>。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture#gestures" target="_blank" rel="noopener">支持新手势</a></p>
+<p>Android 12 现在支持对画中画窗口使用隐藏和“双指张合即可缩放”手势：</p>
+<ul>
+<li>如需隐藏窗口，用户可以将窗口拖动到左侧或右侧边缘。如需取消隐藏窗口，用户可以点按已隐藏窗口的可见部分或将其拖出。</li>
+<li>用户现在可以使用“双指张合即可缩放”手势调整画中画窗口的大小。</li>
+</ul>
+</li>
+</ul>
+<p>如需详细了解会影响以 Android 12 或更高版本为目标平台的应用的新行为，请参阅<a href="https://developer.android.google.cn/about/versions/12/behavior-changes-12" target="_blank" rel="noopener">画中画行为改进</a>。有关实现此功能的说明，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture" target="_blank" rel="noopener">画中画支持</a>。</p>
+<h3 id="允许按来电重要性排名的新通话通知"><a href="#允许按来电重要性排名的新通话通知" class="headerlink" title="允许按来电重要性排名的新通话通知"></a>允许按来电重要性排名的新通话通知</h3><p>Android 12 为通话添加了新的通知样式 <a href="https://developer.android.google.cn/reference/android/app/Notification.CallStyle" target="_blank" rel="noopener"><code>Notification.CallStyle</code></a>。使用此模板可让您的应用指明正在进行的通话的重要性，方法是在状态栏中显示一个显眼的条状标签，在其中显示通话的时间；用户可以点按此条状标签以返回他们的通话。</p>
+<p>由于来电和进行中的通话对用户来说最为重要，因此这些通知在通知栏中排名最高。这种排名还让系统有可能将这些优先处理的通话转接到其他设备。</p>
+<p>为所有类型的通话实现以下代码。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create a new call with the user as caller.</span></span><br><span class="line"><span class="keyword">val</span> incoming_caller = Person.Builder()</span><br><span class="line">    .setName(<span class="string">"Jane Doe"</span>)</span><br><span class="line">    .setImportant(<span class="literal">true</span>)</span><br><span class="line">    .build()</span><br></pre></td></tr></table></figure>
+<p>使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.CallStyle#forIncomingCall(android.app.Person, android.app.PendingIntent, android.app.PendingIntent" target="_blank" rel="noopener"><code>forIncomingCall()</code></a>) 为来电创建通话样式通知。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create a call style notification for an incoming call.</span></span><br><span class="line"><span class="keyword">val</span> builder = Notification.Builder(context, CHANNEL_ID)</span><br><span class="line">    .setContentIntent(contentIntent)</span><br><span class="line">    .setSmallIcon(smallIcon)</span><br><span class="line">    .setStyle(</span><br><span class="line">         Notification.CallStyle.forIncomingCall(caller, declineIntent, answerIntent))</span><br><span class="line">    .addPerson(incoming_caller)</span><br></pre></td></tr></table></figure>
+<p>使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.CallStyle#forOngoingCall(android.app.Person, android.app.PendingIntent" target="_blank" rel="noopener"><code>forOngoingCall()</code></a>) 为进行中的通话创建通话样式通知。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create a call style notification for an ongoing call.</span></span><br><span class="line"><span class="keyword">val</span> builder = Notification.Builder(context, CHANNEL_ID)</span><br><span class="line">    .setContentIntent(contentIntent)</span><br><span class="line">    .setSmallIcon(smallIcon)</span><br><span class="line">    .setStyle(</span><br><span class="line">         Notification.CallStyle.forOnGoingCall(caller, hangupIntent))</span><br><span class="line">    .addPerson(second_caller)</span><br></pre></td></tr></table></figure>
+<p>使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.CallStyle#forScreeningCall(android.app.Person, android.app.PendingIntent, android.app.PendingIntent" target="_blank" rel="noopener"><code>forScreeningCall()</code></a>) 为过滤来电创建通话样式通知。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create a call style notification for screening a call.</span></span><br><span class="line"><span class="keyword">val</span> builder = Notification.Builder(context, CHANNEL_ID)</span><br><span class="line">    .setContentIntent(contentIntent)</span><br><span class="line">    .setSmallIcon(smallIcon)</span><br><span class="line">    .setStyle(</span><br><span class="line">         Notification.CallStyle.forScreeningCall(caller, hangupIntent, answerIntent))</span><br><span class="line">    .addPerson(second_caller)</span><br></pre></td></tr></table></figure>
+<h3 id="通知的丰富图片支持"><a href="#通知的丰富图片支持" class="headerlink" title="通知的丰富图片支持"></a>通知的丰富图片支持</h3><p>在 Android 12 中，您现在可以通过在 <a href="https://developer.android.google.cn/reference/android/app/Notification.MessagingStyle#MessagingStyle(android.app.Person" target="_blank" rel="noopener"><code>MessagingStyle()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/app/Notification.BigPictureStyle#BigPictureStyle(" target="_blank" rel="noopener"><code>BigPictureStyle()</code></a>) 通知中提供动画图片来丰富应用的通知体验。此外，您的应用现在还可以让用户在从通知栏回复消息时发送图片消息。</p>
+<h3 id="沉浸模式下的手势导航改进"><a href="#沉浸模式下的手势导航改进" class="headerlink" title="沉浸模式下的手势导航改进"></a>沉浸模式下的手势导航改进</h3><p>Android 12 整合了现有行为，让用户可以<a href="https://developer.android.google.cn/training/system-ui/immersive#immersive-consolidated-behavior" target="_blank" rel="noopener">在沉浸模式下更轻松地执行手势导航命令</a>。此外，Android 12 还为<a href="https://developer.android.google.cn/training/system-ui/immersive#sticky-immersive-compat-android11-lower" target="_blank" rel="noopener">粘性沉浸模式提供了向后兼容性行为</a>。</p>
+<h3 id="近期网址共享（仅限-Pixel）"><a href="#近期网址共享（仅限-Pixel）" class="headerlink" title="近期网址共享（仅限 Pixel）"></a>近期网址共享（仅限 Pixel）</h3><p>现在，在 Pixel 设备上，用户可以直接通过“近期”屏幕分享最近浏览的网页内容的链接。在某个应用中访问内容后，用户可以滑动到“近期”屏幕，并找到在其中查看了相应内容的应用，然后点按链接按钮来复制或分享网址。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/components/activities/recents#url-sharing" target="_blank" rel="noopener">启用近期网址共享</a>。</p>
+<h2 id="安全和隐私设置"><a href="#安全和隐私设置" class="headerlink" title="安全和隐私设置"></a>安全和隐私设置</h2><h3 id="隐私信息中心"><a href="#隐私信息中心" class="headerlink" title="隐私信息中心"></a>隐私信息中心</h3><p>在搭载 Android 12 或更高版本的受支持设备上，系统设置中会显示“隐私信息中心”屏幕。在此屏幕上，用户可以访问一些单独的屏幕，这些屏幕显示了应用何时访问位置信息、相机和麦克风信息。每个屏幕都会显示一个时间轴，指明不同的应用何时访问过特定类型的数据。图 1 显示了位置信息的数据访问时间轴。</p>
+<p>您的应用可以<a href="https://developer.android.google.cn/training/permissions/explaining-access#privacy-dashboard-show-rationale" target="_blank" rel="noopener">向用户提供一个理由</a>，帮助他们了解为什么您的应用访问位置信息、相机或麦克风信息。此理由可以显示在新的“隐私信息中心”屏幕和/或您应用的权限屏幕上。</p>
+<h3 id="蓝牙权限"><a href="#蓝牙权限" class="headerlink" title="蓝牙权限"></a>蓝牙权限</h3><p>Android 12 引入了 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#BLUETOOTH_SCAN" target="_blank" rel="noopener"><code>BLUETOOTH_SCAN</code></a>、<a href="https://developer.android.google.cn/reference/android/Manifest.permission#BLUETOOTH_ADVERTISE" target="_blank" rel="noopener"><code>BLUETOOTH_ADVERTISE</code></a> 和 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#BLUETOOTH_CONNECT" target="_blank" rel="noopener"><code>BLUETOOTH_CONNECT</code></a> 权限。这些权限可让以 Android 12 为目标平台的应用更轻松地<a href="https://developer.android.google.cn/guide/topics/connectivity/bluetooth" target="_blank" rel="noopener">与蓝牙设备互动</a>，尤其是不需要访问设备位置信息的应用。</p>
+<p><strong>注意</strong>：<a href="https://developer.android.google.cn/guide/topics/connectivity/companion-device-pairing" target="_blank" rel="noopener">配套设备管理器</a>提供了一种更精简的方法来连接到配套设备。系统代表您的应用提供配对界面。如果您希望更好地控制配对和连接体验，请使用 Android 12 中引入的蓝牙权限。</p>
+<h4 id="更新应用的蓝牙权限声明"><a href="#更新应用的蓝牙权限声明" class="headerlink" title="更新应用的蓝牙权限声明"></a>更新应用的蓝牙权限声明</h4><p>为了让您的设备做好准备以 Android 12 或更高版本为目标平台，请更新应用的逻辑。请声明一组更现代的<a href="https://developer.android.google.cn/guide/topics/connectivity/bluetooth/permissions#declare-android12-or-higher" target="_blank" rel="noopener">蓝牙权限</a>，而不是声明一组<a href="https://developer.android.google.cn/guide/topics/connectivity/bluetooth/permissions#declare-android11-or-lower" target="_blank" rel="noopener">旧版蓝牙权限</a>。</p>
+<h3 id="权限组查找"><a href="#权限组查找" class="headerlink" title="权限组查找"></a>权限组查找</h3><p>在 Android 12 或更高版本中，您可以查询系统将平台提供的<a href="https://developer.android.google.cn/guide/topics/permissions/overview" target="_blank" rel="noopener">权限</a>组织到权限组中的方式：</p>
+<ul>
+<li>如需确定系统在其中分配平台定义的权限的权限组，请调用 <a href="https://developer.android.google.cn/reference/android/content/pm/PackageManager#getGroupOfPlatformPermission(java.lang.String, java.util.concurrent.Executor, java.util.function.Consumer" target="_blank" rel="noopener"><code>getGroupOfPlatformPermission()</code></a>)。</li>
+<li>如需确定系统向特定权限组授予的平台定义的权限，请调用 <a href="https://developer.android.google.cn/reference/android/content/pm/PackageManager#getPlatformPermissionsForGroup(java.lang.String, java.util.concurrent.Executor, java.util.function.Consumer" target="_blank" rel="noopener"><code>getPlatformPermissionsForGroup()</code></a>)。</li>
+</ul>
+<p><strong>注意</strong>：使用 Android 权限的<a href="https://developer.android.google.cn/training/permissions/requesting#principles" target="_blank" rel="noopener">基本原则</a>之一是不要假设系统行为。不要假设特定权限位于特定组中。请改用本部分中介绍的 API。</p>
+<h3 id="隐藏应用叠加窗口"><a href="#隐藏应用叠加窗口" class="headerlink" title="隐藏应用叠加窗口"></a>隐藏应用叠加窗口</h3><p>为了让开发者能够更好地控制用户在与开发者的应用互动时会看到什么内容，Android 12 引入了隐藏由具有 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#SYSTEM_ALERT_WINDOW" target="_blank" rel="noopener"><code>SYSTEM_ALERT_WINDOW</code></a> 权限的应用绘制的叠加窗口的功能。</p>
+<p>声明 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#HIDE_OVERLAY_WINDOWS" target="_blank" rel="noopener"><code>HIDE_OVERLAY_WINDOWS</code></a> 权限后，应用可以调用 <a href="https://developer.android.google.cn/reference/android/view/Window#setHideOverlayWindows(boolean" target="_blank" rel="noopener"><code>setHideOverlayWindows()</code></a>) 以指明当应用自己的窗口可见时所有 <a href="https://developer.android.google.cn/reference/android/view/WindowManager.LayoutParams#TYPE_APPLICATION_OVERLAY" target="_blank" rel="noopener"><code>TYPE_APPLICATION_OVERLAY</code></a> 类型的窗口都应隐藏。在显示敏感屏幕（如交易确认流程）时，应用可能会选择这样做。</p>
+<p>显示 <code>TYPE_APPLICATION_OVERLAY</code> 类型窗口的应用应考虑可能更适合其用例的替代方案，如<a href="https://developer.android.google.cn/guide/topics/ui/picture-in-picture" target="_blank" rel="noopener">画中画</a>或<a href="https://developer.android.google.cn/guide/topics/ui/bubbles" target="_blank" rel="noopener">气泡</a>。</p>
+<h3 id="已知签名者权限保护标志"><a href="#已知签名者权限保护标志" class="headerlink" title="已知签名者权限保护标志"></a>已知签名者权限保护标志</h3><p>从 Android 12 开始，<a href="https://developer.android.google.cn/guide/topics/permissions/overview#signature" target="_blank" rel="noopener">签名级权限</a>的 <a href="https://developer.android.google.cn/static/reference/android/R.attr#knownCerts" target="_blank" rel="noopener"><code>knownCerts</code></a> 属性可让您在声明时引用已知<a href="https://developer.android.google.cn/studio/publish/app-signing#certificates-keystores" target="_blank" rel="noopener">签名证书</a>的摘要。</p>
+<p>您的应用可以声明此属性并使用 <code>knownSigner</code> 标志，以使设备和应用<a href="https://developer.android.google.cn/guide/topics/permissions/defining#grant-signature-permissions" target="_blank" rel="noopener">向其他应用授予签名权限</a>，而不必在设备制造和发货时对应用进行签名。</p>
+<h3 id="设备属性认证"><a href="#设备属性认证" class="headerlink" title="设备属性认证"></a>设备属性认证</h3><p>Android 12 扩展了一组应用，当这些应用生成新密钥时，可以验证<a href="https://source.android.google.cn/security/keystore/attestation#attestation-certificate" target="_blank" rel="noopener">认证证书</a>中的设备属性。</p>
+<p>自 Android 9（API 级别 28）起，使用 <a href="https://source.android.google.cn/security/keystore" target="_blank" rel="noopener">Keymaster 4.0</a> 或更高版本的<a href="https://developer.android.google.cn/guide/topics/admin/device-admin" target="_blank" rel="noopener">设备政策所有者 (DPO)</a> 可以验证这些认证证书中的设备属性。从 Android 12 开始，任何以 Android 12（API 级别 31）或更高版本为目标平台的应用都可以使用 <a href="https://developer.android.google.cn/reference/android/security/keystore/KeyGenParameterSpec.Builder#setDevicePropertiesAttestationIncluded(boolean" target="_blank" rel="noopener"><code>setDevicePropertiesAttestationIncluded()</code></a>) 方法执行此验证。</p>
+<p>生成的设备属性包含以下 <a href="https://developer.android.google.cn/reference/android/os/Build" target="_blank" rel="noopener"><code>Build</code></a> 字段：</p>
+<ul>
+<li><code>BRAND</code></li>
+<li><code>DEVICE</code></li>
+<li><code>MANUFACTURER</code></li>
+<li><code>MODEL</code></li>
+<li><code>PRODUCT</code></li>
+</ul>
+<h3 id="安全锁定屏幕通知操作"><a href="#安全锁定屏幕通知操作" class="headerlink" title="安全锁定屏幕通知操作"></a>安全锁定屏幕通知操作</h3><p>从 Android 12 开始，<code>Notification.Action.Builder</code> 类支持 <a href="https://developer.android.google.cn/reference/android/app/Notification.Action.Builder#setAuthenticationRequired(boolean" target="_blank" rel="noopener"><code>setAuthenticationRequired()</code></a>) 方法，这使您的应用可以在调用指定的通知操作前要求<a href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications#ActionsRequireUnlockedDevice" target="_blank" rel="noopener">必须解锁设备</a>。此方法有助于为锁定设备上的通知添加一道额外的安全保障。</p>
+<h3 id="BiometricPrompt-的可本地化字符串"><a href="#BiometricPrompt-的可本地化字符串" class="headerlink" title="BiometricPrompt 的可本地化字符串"></a>BiometricPrompt 的可本地化字符串</h3><p>Android 12 引入了新的 API 来帮助您改进应用的生物识别身份验证用户体验。新的 <a href="https://developer.android.google.cn/reference/android/hardware/biometrics/BiometricManager.Strings" target="_blank" rel="noopener"><code>BiometricManager.Strings</code></a> 嵌套类包括 <a href="https://developer.android.google.cn/reference/android/hardware/biometrics/BiometricManager.Strings#getButtonLabel(" target="_blank" rel="noopener"><code>getButtonLabel()</code></a>)、<a href="https://developer.android.google.cn/reference/android/hardware/biometrics/BiometricManager.Strings#getPromptMessage(" target="_blank" rel="noopener"><code>getPromptMessage()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/hardware/biometrics/BiometricManager.Strings#getSettingName(" target="_blank" rel="noopener"><code>getSettingName()</code></a>) 方法，让您的应用可以检索用户可读的本地化按钮标签、提示消息或应用设置名称。使用这些标签可以创建更精确的面向用户且特定于所使用的生物识别身份验证方法的指令，例如“使用人脸解锁”或“使用指纹继续操作”。</p>
+<h3 id="即时通讯应用中的钓鱼式攻击检测功能（仅限-Pixel）"><a href="#即时通讯应用中的钓鱼式攻击检测功能（仅限-Pixel）" class="headerlink" title="即时通讯应用中的钓鱼式攻击检测功能（仅限 Pixel）"></a>即时通讯应用中的钓鱼式攻击检测功能（仅限 Pixel）</h3><p>当检测到可疑消息时用户会看到与上方消息类似的消息。</p>
+<p>在受支持的 Pixel 设备上，Android 12 会对常用即时通讯应用中收到的消息进行钓鱼式攻击检测。系统会使用设备端机器学习技术来检测可疑活动。检测到此类消息时，系统会在即时通讯应用界面顶部显示安全叠加层来警告用户。例如，钓鱼式攻击检测可以警告用户存在以下潜在风险：</p>
+<ul>
+<li>可疑要求，例如发送验证码、汇款或类似要求</li>
+<li>不受信任的网址</li>
+<li>恶意附件</li>
+<li>链接到恶意应用</li>
+</ul>
+<p>除了警告用户外，叠加层还可让用户报告可疑消息，并就系统发出的警告提供反馈。</p>
+<p>开发者可以通过在应用清单文件中添加包含字符串 <code>com.google.android.ALLOW_PHISHING_DETECTION</code> 的新元数据标记来停用此功能。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span> <span class="attr">android:name</span>=<span class="string">"com.messagingapp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"com.google.android.ALLOW_PHISHING_DETECTION"</span> <span class="attr">android:value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="媒体"><a href="#媒体" class="headerlink" title="媒体"></a>媒体</h2><h3 id="兼容的媒体转码"><a href="#兼容的媒体转码" class="headerlink" title="兼容的媒体转码"></a>兼容的媒体转码</h3><p>从 Android 12（API 级别 31）开始，系统可以自动将设备上录制的 <a href="https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding" target="_blank" rel="noopener">HEVC(H.265)</a> 和 <a href="https://en.wikipedia.org/wiki/High-dynamic-range_video" target="_blank" rel="noopener">HDR</a>（HDR10 和 HDR10+）视频转码为 AVC (H.264)，这是一种广泛兼容标准播放器的格式。因此，当现代编解码器可用且不会影响与旧应用的兼容性时，便会利用现代编解码器。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/media-apps/video-app/compatible-media-transcoding" target="_blank" rel="noopener">兼容的媒体转码</a>。</p>
+<h3 id="性能等级"><a href="#性能等级" class="headerlink" title="性能等级"></a>性能等级</h3><p>Android 12 引入了一个名为性能等级的标准。性能等级指定超出 Android 基准要求的硬件功能。每个 Android 设备都会声明其支持的性能等级。开发者可以在运行时检查设备的性能等级，并提供充分利用设备功能的升级体验。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/topic/performance/performance-class" target="_blank" rel="noopener">性能等级</a>。</p>
+<h3 id="视频编码改进"><a href="#视频编码改进" class="headerlink" title="视频编码改进"></a>视频编码改进</h3><p>Android 12 定义了一组标准键来控制视频编码的量化参数 (QP) 值，这样可让开发者避免供应商专用代码。</p>
+<p><a href="https://developer.android.google.cn/reference/android/media/MediaFormat#KEY_VIDEO_QP_B_MAX" target="_blank" rel="noopener"><code>MediaFormat</code></a> API 以及 <a href="https://developer.android.google.cn/ndk/reference/group/media" target="_blank" rel="noopener">NDK 媒体库</a>中提供了这些新键。</p>
+<p>从 Android 12 开始，视频编码器强制执行一个最低质量阈值。这样可保证用户在对场景复杂性较高的视频进行编码时不会体验到极低的质量。</p>
+<h3 id="音频焦点"><a href="#音频焦点" class="headerlink" title="音频焦点"></a>音频焦点</h3><p>从 Android 12（API 级别 31）开始，如果某个应用请求获得音频焦点，而另一个应用具有焦点并正在播放，则系统会淡出正在播放的应用。</p>
+<p>如需了解详情，请参阅 <a href="https://developer.android.google.cn/guide/topics/media-apps/audio-focus#audio-focus-12" target="_blank" rel="noopener">Android 12 及更高版本中的音频焦点</a>。</p>
+<h3 id="MediaDrm-更新"><a href="#MediaDrm-更新" class="headerlink" title="MediaDrm 更新"></a>MediaDrm 更新</h3><p>为了确定当前的 <code>MediaDrm</code> API 是否需要安全的解码器组件，您必须按照以下步骤操作：</p>
+<ol>
+<li>创建 <code>MediaDrm</code>。</li>
+<li>打开会话以获取会话 ID。</li>
+<li>使用会话 ID 创建 <code>MediaCrypto</code>。</li>
+<li>调用 <code>MediaCrypto.requiresSecureDecoderComponent(mimeType)</code>。</li>
+</ol>
+<p>借助新方法 <code>requiresSecureDecoder(@NonNull String mime)</code> 和 <code>requiresSecureDecoder(@NonNull String mime, @SecurityLevel int level)</code>，您可以在创建 <code>MediaDrm</code> 后立即确定这一点。</p>
+<h2 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h2><h3 id="Camera2-供应商扩展"><a href="#Camera2-供应商扩展" class="headerlink" title="Camera2 供应商扩展"></a>Camera2 供应商扩展</h3><p>我们的许多设备制造商合作伙伴构建了自定义相机效果（例如焦外成像、HDR 模式和夜间模式等），他们希望应用能够利用这些效果在自己的设备上打造差异化的体验。<a href="https://developer.android.google.cn/training/camerax/vendor-extensions" target="_blank" rel="noopener">CameraX 库</a>已通过一组供应商扩展来支持这些自定义效果。在 Android 12 中，相同的供应商扩展现在直接在平台中公开。</p>
+<p>这项附加功能可帮助具有复杂 <a href="https://developer.android.google.cn/reference/android/hardware/camera2/package-summary" target="_blank" rel="noopener"><code>Camera2</code></a> 实现的应用利用这些扩展，而无需对旧代码进行重大更改。Camera2 扩展 API 公开了与 CameraX 中<a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraExtensionCharacteristics" target="_blank" rel="noopener">完全一样的一组效果</a>，并且<a href="https://developer.android.google.cn/training/camerax/devices" target="_blank" rel="noopener">许多不同的设备</a>已经支持这些效果，因此，您无需进行任何其他配置即可使用这些效果。</p>
+<p>如需了解详情，请参阅 <a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraExtensionCharacteristics" target="_blank" rel="noopener"><code>CameraExtensionCharacteristics</code></a>。</p>
+<h3 id="Quad-Bayer-摄像头传感器支持"><a href="#Quad-Bayer-摄像头传感器支持" class="headerlink" title="Quad Bayer 摄像头传感器支持"></a>Quad Bayer 摄像头传感器支持</h3><p>如今，许多 Android 设备都配备了超高分辨率摄像头传感器（通常采用 Quad 或 Nona Bayer 模式），这些传感器在图片质量和弱光性能方面提供了极大的灵活性。Android 12 引入了新的平台 API，可让第三方应用充分利用这些多功能传感器。<a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_ULTRA_HIGH_RESOLUTION_SENSOR" target="_blank" rel="noopener">新 API</a> 支持这些传感器的独特行为，并且考虑到它们在全分辨率或“最大分辨率”模式下而不是“默认”模式下运行时可能支持不同的流配置和组合。</p>
+<h2 id="图形和图片"><a href="#图形和图片" class="headerlink" title="图形和图片"></a>图形和图片</h2><h3 id="让应用能够直接访问-Tombstone-跟踪记录"><a href="#让应用能够直接访问-Tombstone-跟踪记录" class="headerlink" title="让应用能够直接访问 Tombstone 跟踪记录"></a>让应用能够直接访问 Tombstone 跟踪记录</h3><p>从 Android 12 开始，您可以通过 <a href="https://developer.android.google.cn/reference/android/app/ApplicationExitInfo#getTraceInputStream(" target="_blank" rel="noopener"><code>ApplicationExitInfo.getTraceInputStream()</code></a>) 方法以<a href="https://developers.google.cn/protocol-buffers/" target="_blank" rel="noopener">协议缓冲区</a>的形式访问应用的原生代码崩溃 Tombstone。协议缓冲区使用<a href="https://android.googlesource.com/platform/system/core/+/refs/heads/master/debuggerd/proto/tombstone.proto" target="_blank" rel="noopener">此架构</a>进行序列化。以前，只有通过 <a href="https://developer.android.google.cn/studio/command-line/adb" target="_blank" rel="noopener">Android 调试桥</a> (adb) 才能访问此信息。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/ndk/guides/debug#tombstone-traces" target="_blank" rel="noopener">让应用能够直接访问 Tombstone 轨迹</a></p>
+<h3 id="AVIF-图片支持"><a href="#AVIF-图片支持" class="headerlink" title="AVIF 图片支持"></a>AVIF 图片支持</h3><p>Android 12 引入了对使用 AV1 图片文件格式 (AVIF) 的图片的支持。AVIF 是一种使用 AV1 编码的图片和图片序列的容器格式。AVIF 利用了视频压缩的帧内编码内容。与以前的图片格式（例如 JPEG）相比，这种格式可显著提升相同文件大小下的图片质量。如需深入了解此格式的优势，请参阅 Jake Archibald 的<a href="https://jakearchibald.com/2020/avif-has-landed/" target="_blank" rel="noopener">博文</a>。</p>
+<h3 id="更简单的模糊处理、颜色滤镜及其他效果"><a href="#更简单的模糊处理、颜色滤镜及其他效果" class="headerlink" title="更简单的模糊处理、颜色滤镜及其他效果"></a>更简单的模糊处理、颜色滤镜及其他效果</h3><p>Android 12 添加了新的 <a href="https://developer.android.google.cn/reference/android/graphics/RenderEffect" target="_blank" rel="noopener"><code>RenderEffect</code></a>，它可将常见的图片效果（如模糊处理、颜色滤镜、Android 着色器效果及更多效果）应用于 <a href="https://developer.android.google.cn/reference/android/view/View" target="_blank" rel="noopener"><code>View</code></a> 和渲染层次结构。效果可以组合为连锁效果（构成一种内外效果）或混合效果。由于处理能力有限，不同的 Android 设备可能支持该功能，也可能不支持。</p>
+<p>也可以通过调用 <a href="https://developer.android.google.cn/reference/android/view/View#setRenderEffect(android.graphics.RenderEffect" target="_blank" rel="noopener"><code>View.setRenderEffect(RenderEffect)</code></a>) 将效果应用于 <code>View</code> 的底层 <a href="https://developer.android.google.cn/reference/android/graphics/RenderNode" target="_blank" rel="noopener"><code>RenderNode</code></a>。</p>
+<p>如需实现 <code>RenderEffect</code>，请编写以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">view.setRenderEffect(RenderEffect.createBlurEffect(radiusX, radiusY, SHADER_TILE_MODE))</span><br></pre></td></tr></table></figure>
+<h3 id="原生动画图片解码"><a href="#原生动画图片解码" class="headerlink" title="原生动画图片解码"></a>原生动画图片解码</h3><p>在 Android 12 中，NDK <a href="https://developer.android.google.cn/ndk/reference/group/image-decoder" target="_blank" rel="noopener"><code>ImageDecoder</code></a> API 已进行了扩展，可以对使用以下文件格式的图片的所有帧和时间数据进行解码：动画 <a href="https://en.wikipedia.org/wiki/GIF" target="_blank" rel="noopener">GIF</a> 和动画 <a href="https://developers.google.cn/speed/webp" target="_blank" rel="noopener">WebP</a> 文件格式。在 Android 11 中引入该 API 时，该 API 仅从这些格式的动画中解码第一张图片。</p>
+<p>使用 <code>ImageDecoder</code>（而非第三方库）可进一步<a href="https://developer.android.google.cn/topic/performance/reduce-apk-size#minimize" target="_blank" rel="noopener">缩减 APK 大小</a>，并从未来与安全性和性能相关的更新中受益。</p>
+<p>如需详细了解该 API，请参阅 <a href="https://developer.android.google.cn/ndk/reference/group/image-decoder" target="_blank" rel="noopener">API 参考文档</a>和 <a href="https://github.com/android/ndk-samples/tree/develop/webp/image-decoder" target="_blank" rel="noopener">GitHub 上的示例</a>。</p>
+<h2 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h2><h3 id="使配套应用保持唤醒状态"><a href="#使配套应用保持唤醒状态" class="headerlink" title="使配套应用保持唤醒状态"></a>使配套应用保持唤醒状态</h3><p>为了满足让配套应用保持运行状态以管理设备的需求，Android 12 引入了具有以下作用的 API：</p>
+<ul>
+<li>当配套设备处于范围内时，让您可以唤醒某个应用。</li>
+<li>保证该过程在设备处于范围内时将继续运行。</li>
+</ul>
+<p>如需使用相应的 API，必须使用<a href="https://developer.android.google.cn/reference/android/companion/CompanionDeviceManager" target="_blank" rel="noopener">配套设备管理器</a>连接您的设备。如需了解详情，请参阅 <a href="https://developer.android.google.cn/reference/android/companion/CompanionDeviceManager#startObservingDevicePresence(java.lang.String" target="_blank" rel="noopener"><code>CompanionDeviceManager.startObservingDevicePresence()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/companion/CompanionDeviceService#onDeviceAppeared(java.lang.String" target="_blank" rel="noopener"><code>CompanionDeviceService.onDeviceAppeared()</code></a>)。</p>
+<h3 id="配套设备管理器配置文件"><a href="#配套设备管理器配置文件" class="headerlink" title="配套设备管理器配置文件"></a>配套设备管理器配置文件</h3><p>使用配套的设备配置文件在单个请求中请求多项权限的权限对话框。</p>
+<p>对于以 Android 12（API 级别 31）及更高版本为目标平台的合作伙伴应用，可以在连接到手表时使用配套设备配置文件。使用配置文件可将一组设备类型专用权限的授予操作捆绑在一个步骤中，从而简化注册过程。</p>
+<p>设备连接后就会向配套应用授予捆绑的权限，且这些权限仅在设备关联时持续有效。删除应用或移除关联时会移除权限。</p>
+<p>如需了解详情，请参阅 <a href="https://developer.android.google.cn/reference/android/companion/AssociationRequest.Builder#setDeviceProfile(java.lang.String" target="_blank" rel="noopener"><code>AssociationRequest.Builder.setDeviceProfile()</code></a>)。</p>
+<h3 id="带宽估测改进"><a href="#带宽估测改进" class="headerlink" title="带宽估测改进"></a>带宽估测改进</h3><p>在 Android 12 中，由 <a href="https://developer.android.google.cn/reference/android/net/NetworkCapabilities#getLinkDownstreamBandwidthKbps(" target="_blank" rel="noopener"><code>getLinkDownstreamBandwidthKbps()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/net/NetworkCapabilities#getLinkUpstreamBandwidthKbps(" target="_blank" rel="noopener"><code>getLinkUpstreamBandwidthKbps()</code></a>) 提供的带宽估测功能针对 Wi-Fi 和移动网络连接都得到了改进。现在，返回的值表示用户在设备上的所有应用中的每个运营商或 WiFi SSID、网络类型和信号电平的全时加权平均吞吐量。这样可返回对预期吞吐量的更准确且更实际的估测数据，提供对应用冷启动的估测数据，并且与使用其他吞吐量估测方法相比需要更少的周期。</p>
+<h3 id="Wi-Fi-感知-NAN-增强功能"><a href="#Wi-Fi-感知-NAN-增强功能" class="headerlink" title="Wi-Fi 感知 (NAN) 增强功能"></a>Wi-Fi 感知 (NAN) 增强功能</h3><p>Android 12 增强了 Wi-Fi 感知功能：</p>
+<ul>
+<li>在搭载 Android 12（API 级别 31）及更高版本的设备上，您可以使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/aware/DiscoverySessionCallback#onServiceLost(android.net.wifi.aware.PeerHandle, int" target="_blank" rel="noopener"><code>onServiceLost()</code></a>) 回调，以便在应用因服务停止或移出范围而失去已发现的服务时发出警报。</li>
+<li>设置多个数据路径（NAN 数据路径）的方式将发生变化以提高效率。较低的版本使用 L2 消息功能来交换发起方的对等信息，由此导致了延迟。在搭载 Android 12 及更高版本的设备上，可以将响应方（服务器）配置为接受任何对等方，也就是说，它不需要预先知道发起方信息。这可加快数据路径启动，并只需一个网络请求即可实现多个点对点链接。</li>
+<li>为了防止框架因资源不足而拒绝发现请求或连接请求，在搭载 Android 12 及更高版本的设备上，您可以调用 <a href="https://developer.android.google.cn/reference/android/net/wifi/aware/WifiAwareManager#getAvailableAwareResources(" target="_blank" rel="noopener"><code>WifiAwareManager.getAvailableAwareResources()</code></a>)。通过此方法的返回值，您可以获得可用数据路径的数量、可用发布会话的数量以及可用的订阅会话数量。</li>
+</ul>
+<h3 id="并发点对点-互联网连接"><a href="#并发点对点-互联网连接" class="headerlink" title="并发点对点 + 互联网连接"></a>并发点对点 + 互联网连接</h3><p>当以 Android 12（API 级别 31）及更高版本为目标平台的设备在具有硬件支持的设备上运行时，使用<a href="https://developer.android.google.cn/guide/topics/connectivity/wifi-bootstrap" target="_blank" rel="noopener">点对点连接</a>不会在建立与对等设备的连接时断开现有的 Wi-Fi 连接。如需检查是否支持此功能，请使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#isMultiStaConcurrencySupported(" target="_blank" rel="noopener"><code>WifiManager.isMultiStaConcurrencySupported()</code></a>)。</p>
+<h3 id="为-NFC-付款启用屏幕关闭"><a href="#为-NFC-付款启用屏幕关闭" class="headerlink" title="为 NFC 付款启用屏幕关闭"></a>为 NFC 付款启用屏幕关闭</h3><p>在以 Android 12 及更高版本为目标平台的应用中，您可以通过将 <a href="https://developer.android.google.cn/reference/android/R.attr#requireDeviceScreenOn" target="_blank" rel="noopener"><code>requireDeviceScreenOn</code></a> 设置为 <code>false</code>，在设备屏幕未打开的情况下启用 NFC 付款。如需详细了解屏幕关闭或锁定状态下的 NFC 付款，请参阅<a href="https://developer.android.google.cn/guide/topics/connectivity/nfc/hce#screen-off-12-higher" target="_blank" rel="noopener">屏幕关闭和锁定屏幕行为</a>。</p>
+<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p>Android 12 引入了以下存储管理功能：</p>
+<ul>
+<li>当您的应用<a href="https://developer.android.google.cn/training/data-storage/shared/documents-files#retrieve-equivalent-media-uri" target="_blank" rel="noopener">检索与给定文档提供程序 URI 等效的媒体 URI</a> 时，媒体库支持 <code>MediaDocumentsProvider</code>。</li>
+<li>用于<a href="https://developer.android.google.cn/training/data-storage/shared/media#well-defined-collections" target="_blank" rel="noopener">录音</a>的目录。</li>
+<li><a href="https://developer.android.google.cn/reference/android/Manifest.permission#MANAGE_MEDIA" target="_blank" rel="noopener"><code>MANAGE_MEDIA</code></a> 权限，此权限允许应用<a href="https://developer.android.google.cn/training/data-storage/shared/media#management-permission" target="_blank" rel="noopener">执行媒体管理操作</a>，而无需针对每项操作向用户显示确认对话框。</li>
+<li>同时具有 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#MANAGE_EXTERNAL_STORAGE" target="_blank" rel="noopener"><code>MANAGE_EXTERNAL_STORAGE</code></a> 权限和 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#QUERY_ALL_PACKAGES" target="_blank" rel="noopener"><code>QUERY_ALL_PACKAGES</code></a> 权限的应用（例如文件管理应用）可以<a href="https://developer.android.google.cn/training/data-storage/manage-all-files#invoke-storage-management-activity" target="_blank" rel="noopener">调用自定义 activity</a> 来管理另一个应用的存储空间，前提是另一个应用<a href="https://developer.android.google.cn/training/data-storage/app-specific#create-storage-management-activity" target="_blank" rel="noopener">会创建自定义 activity</a>。</li>
+</ul>
+<h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><h3 id="自动更新应用"><a href="#自动更新应用" class="headerlink" title="自动更新应用"></a>自动更新应用</h3><p>Android 12 针对使用 <a href="https://developer.android.google.cn/reference/android/content/pm/PackageInstaller" target="_blank" rel="noopener"><code>PackageInstaller</code></a> API 的应用引入了 <a href="https://developer.android.google.cn/reference/android/content/pm/PackageInstaller.SessionParams#setRequireUserAction(int" target="_blank" rel="noopener"><code>setRequireUserAction()</code></a>) 方法。此方法可让安装程序应用执行应用更新而无需用户确认操作。</p>
+<h3 id="设备芯片组信息"><a href="#设备芯片组信息" class="headerlink" title="设备芯片组信息"></a>设备芯片组信息</h3><p>Android 12 向 <code>android.os.Build</code> 添加了两个常量，它们可通过 SDK 公开 SoC 芯片组供应商和型号信息。您可以通过分别调用 <code>Build.SOC_MANUFACTURER</code> 和 <code>Build.SOC_MODEL</code> 来检索此信息。</p>
+<h3 id="核心-Java-API-的更新"><a href="#核心-Java-API-的更新" class="headerlink" title="核心 Java API 的更新"></a>核心 Java API 的更新</h3><p>根据请求以及与开发者的协作，我们在 Android 12 中添加了以下核心库：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>类</strong></th>
+<th style="text-align:left"><strong>API</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>java.lang.Deprecated</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/lang/Deprecated#forRemoval(" target="_blank" rel="noopener"><code>forRemoval()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/Deprecated#since(" target="_blank" rel="noopener"><code>since()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.lang.Byte</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/lang/Byte#public-constructors_1" target="_blank" rel="noopener">构造函数已弃用</a><a href="https://developer.android.google.cn/reference/java/lang/Byte#compareUnsigned(byte, byte" target="_blank" rel="noopener"><code>compareUnsigned()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.lang.Short</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/lang/Short#public-constructors_1" target="_blank" rel="noopener">构造函数已弃用</a><a href="https://developer.android.google.cn/reference/java/lang/Short#compareUnsigned(short, short" target="_blank" rel="noopener"><code>compareUnsigned()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.lang.Math</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/lang/Math#floorDiv(long, int" target="_blank" rel="noopener"><code>floorDiv()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/Math#floorMod(long, int" target="_blank" rel="noopener"><code>floorMod()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/Math#multiplyExact(long, int" target="_blank" rel="noopener"><code>multiplyExact()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/Math#multiplyFull(int, int" target="_blank" rel="noopener"><code>multiplyFull()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/Math#multiplyHigh(long, long" target="_blank" rel="noopener"><code>multiplyHigh()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.lang.StrictMath</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/lang/StrictMath#floorDiv(long, int" target="_blank" rel="noopener"><code>floorDiv()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/StrictMath#floorMod(long, int" target="_blank" rel="noopener"><code>floorMod()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/StrictMath#multiplyExact(long, int" target="_blank" rel="noopener"><code>multiplyExact()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/StrictMath#multiplyFull(int, int" target="_blank" rel="noopener"><code>multiplyFull()</code></a>)<a href="https://developer.android.google.cn/reference/java/lang/StrictMath#multiplyHigh(long, long" target="_blank" rel="noopener"><code>multiplyHigh()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.util.Set</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/util/Set#copyOf(java.util.Collection" target="_blank" rel="noopener"><code>copyOf()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.util.Map</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/util/Map#copyOf(java.util.Map" target="_blank" rel="noopener"><code>copyOf()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.util.List</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/util/List#copyOf(java.util.Collection" target="_blank" rel="noopener"><code>copyOf()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.time.Duration</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/time/Duration#dividedBy(java.time.Duration" target="_blank" rel="noopener"><code>dividedBy()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toDaysPart(" target="_blank" rel="noopener"><code>toDaysPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toHoursPart(" target="_blank" rel="noopener"><code>toHoursPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toMillisPart(" target="_blank" rel="noopener"><code>toMillisPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toMinutesPart(" target="_blank" rel="noopener"><code>toMinutesPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toNanosPart(" target="_blank" rel="noopener"><code>toNanosPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#toSecondsPart(" target="_blank" rel="noopener"><code>toSecondsPart()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/Duration#truncatedTo(java.time.temporal.TemporalUnit" target="_blank" rel="noopener"><code>truncatedTo()</code></a>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>java.time.LocalTime</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/reference/java/time/LocalTime#ofInstant(java.time.Instant, java.time.ZoneId" target="_blank" rel="noopener"><code>ofInstant()</code></a>)<a href="https://developer.android.google.cn/reference/java/time/LocalTime#toEpochSecond(java.time.LocalDate, java.time.ZoneOffset" target="_blank" rel="noopener"><code>toEpochSecond()</code></a>)</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android/Android更新/Android12 行为变更之所有应用/" rel="next" title="Android12 所有应用行为变更">
+                <i class="fa fa-chevron-left"></i> Android12 所有应用行为变更
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android更新/Android13 行为变更之所有应用/" rel="prev" title="Android13 所有应用行为变更">
+                Android13 所有应用行为变更 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">331</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验"><span class="nav-number">1.</span> <span class="nav-text">用户体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Material-You"><span class="nav-number">1.1.</span> <span class="nav-text">Material You</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微件改进"><span class="nav-number">1.2.</span> <span class="nav-text">微件改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#富媒体内容插入"><span class="nav-number">1.3.</span> <span class="nav-text">富媒体内容插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用启动画面-API"><span class="nav-number">1.4.</span> <span class="nav-text">应用启动画面 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圆角-API"><span class="nav-number">1.5.</span> <span class="nav-text">圆角 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#富触感反馈体验"><span class="nav-number">1.6.</span> <span class="nav-text">富触感反馈体验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#致动器效果"><span class="nav-number">1.6.1.</span> <span class="nav-text">致动器效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音频耦合触感反馈效果"><span class="nav-number">1.6.2.</span> <span class="nav-text">音频耦合触感反馈效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AppSearch"><span class="nav-number">1.7.</span> <span class="nav-text">AppSearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏模式"><span class="nav-number">1.8.</span> <span class="nav-text">游戏模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画中画-PiP-改进"><span class="nav-number">1.9.</span> <span class="nav-text">画中画 (PiP) 改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许按来电重要性排名的新通话通知"><span class="nav-number">1.10.</span> <span class="nav-text">允许按来电重要性排名的新通话通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知的丰富图片支持"><span class="nav-number">1.11.</span> <span class="nav-text">通知的丰富图片支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#沉浸模式下的手势导航改进"><span class="nav-number">1.12.</span> <span class="nav-text">沉浸模式下的手势导航改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近期网址共享（仅限-Pixel）"><span class="nav-number">1.13.</span> <span class="nav-text">近期网址共享（仅限 Pixel）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全和隐私设置"><span class="nav-number">2.</span> <span class="nav-text">安全和隐私设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐私信息中心"><span class="nav-number">2.1.</span> <span class="nav-text">隐私信息中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝牙权限"><span class="nav-number">2.2.</span> <span class="nav-text">蓝牙权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更新应用的蓝牙权限声明"><span class="nav-number">2.2.1.</span> <span class="nav-text">更新应用的蓝牙权限声明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限组查找"><span class="nav-number">2.3.</span> <span class="nav-text">权限组查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏应用叠加窗口"><span class="nav-number">2.4.</span> <span class="nav-text">隐藏应用叠加窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已知签名者权限保护标志"><span class="nav-number">2.5.</span> <span class="nav-text">已知签名者权限保护标志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设备属性认证"><span class="nav-number">2.6.</span> <span class="nav-text">设备属性认证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全锁定屏幕通知操作"><span class="nav-number">2.7.</span> <span class="nav-text">安全锁定屏幕通知操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BiometricPrompt-的可本地化字符串"><span class="nav-number">2.8.</span> <span class="nav-text">BiometricPrompt 的可本地化字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#即时通讯应用中的钓鱼式攻击检测功能（仅限-Pixel）"><span class="nav-number">2.9.</span> <span class="nav-text">即时通讯应用中的钓鱼式攻击检测功能（仅限 Pixel）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体"><span class="nav-number">3.</span> <span class="nav-text">媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容的媒体转码"><span class="nav-number">3.1.</span> <span class="nav-text">兼容的媒体转码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能等级"><span class="nav-number">3.2.</span> <span class="nav-text">性能等级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频编码改进"><span class="nav-number">3.3.</span> <span class="nav-text">视频编码改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音频焦点"><span class="nav-number">3.4.</span> <span class="nav-text">音频焦点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaDrm-更新"><span class="nav-number">3.5.</span> <span class="nav-text">MediaDrm 更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机"><span class="nav-number">4.</span> <span class="nav-text">相机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Camera2-供应商扩展"><span class="nav-number">4.1.</span> <span class="nav-text">Camera2 供应商扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quad-Bayer-摄像头传感器支持"><span class="nav-number">4.2.</span> <span class="nav-text">Quad Bayer 摄像头传感器支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形和图片"><span class="nav-number">5.</span> <span class="nav-text">图形和图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让应用能够直接访问-Tombstone-跟踪记录"><span class="nav-number">5.1.</span> <span class="nav-text">让应用能够直接访问 Tombstone 跟踪记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVIF-图片支持"><span class="nav-number">5.2.</span> <span class="nav-text">AVIF 图片支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更简单的模糊处理、颜色滤镜及其他效果"><span class="nav-number">5.3.</span> <span class="nav-text">更简单的模糊处理、颜色滤镜及其他效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生动画图片解码"><span class="nav-number">5.4.</span> <span class="nav-text">原生动画图片解码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接性"><span class="nav-number">6.</span> <span class="nav-text">连接性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使配套应用保持唤醒状态"><span class="nav-number">6.1.</span> <span class="nav-text">使配套应用保持唤醒状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配套设备管理器配置文件"><span class="nav-number">6.2.</span> <span class="nav-text">配套设备管理器配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带宽估测改进"><span class="nav-number">6.3.</span> <span class="nav-text">带宽估测改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wi-Fi-感知-NAN-增强功能"><span class="nav-number">6.4.</span> <span class="nav-text">Wi-Fi 感知 (NAN) 增强功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发点对点-互联网连接"><span class="nav-number">6.5.</span> <span class="nav-text">并发点对点 + 互联网连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为-NFC-付款启用屏幕关闭"><span class="nav-number">6.6.</span> <span class="nav-text">为 NFC 付款启用屏幕关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储"><span class="nav-number">7.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心功能"><span class="nav-number">8.</span> <span class="nav-text">核心功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动更新应用"><span class="nav-number">8.1.</span> <span class="nav-text">自动更新应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设备芯片组信息"><span class="nav-number">8.2.</span> <span class="nav-text">设备芯片组信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心-Java-API-的更新"><span class="nav-number">8.3.</span> <span class="nav-text">核心 Java API 的更新</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

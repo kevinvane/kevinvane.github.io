@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="【原文：功能和 API 概览】 Android 10 为用户和开发者引入了强大的功能。本文重点介绍面向开发者的功能。 要了解 API，请阅读 API 差异报告或访问 Android API 参考文档，查找“在 API 级别 29 添加”的 API。此外，请务必查阅 Android 10 行为变更（针对以 API 级别 29 为目标的应用和所有应用）以及隐私权变更，以了解平台变更可能给您的应用带来哪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android10 功能和 API 概览">
+<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android10 功能和 API 概览/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="【原文：功能和 API 概览】 Android 10 为用户和开发者引入了强大的功能。本文重点介绍面向开发者的功能。 要了解 API，请阅读 API 差异报告或访问 Android API 参考文档，查找“在 API 级别 29 添加”的 API。此外，请务必查阅 Android 10 行为变更（针对以 API 级别 29 为目标的应用和所有应用）以及隐私权变更，以了解平台变更可能给您的应用带来哪">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://developer.android.google.cn/static/images/about/versions/10/settings-wifi-part1.png">
+<meta property="og:image" content="https://developer.android.google.cn/static/images/about/versions/10/settings-wifi-part2.png">
+<meta property="og:updated_time" content="2022-08-29T11:52:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android10 功能和 API 概览">
+<meta name="twitter:description" content="【原文：功能和 API 概览】 Android 10 为用户和开发者引入了强大的功能。本文重点介绍面向开发者的功能。 要了解 API，请阅读 API 差异报告或访问 Android API 参考文档，查找“在 API 级别 29 添加”的 API。此外，请务必查阅 Android 10 行为变更（针对以 API 级别 29 为目标的应用和所有应用）以及隐私权变更，以了解平台变更可能给您的应用带来哪">
+<meta name="twitter:image" content="https://developer.android.google.cn/static/images/about/versions/10/settings-wifi-part1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android10 功能和 API 概览/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android10 功能和 API 概览 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-git命令">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-android-&-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android10 功能和 API 概览/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android10 功能和 API 概览
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2022-08-29 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-29T19:52:36+08:00">2022-08-29</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.android.google.cn/about/versions/10/features" target="_blank" rel="noopener">【原文：功能和 API 概览】</a></p>
+<p>Android 10 为用户和开发者引入了强大的功能。本文重点介绍面向开发者的功能。</p>
+<p>要了解 API，请阅读 <a href="https://developer.android.google.cn/sdk/api_diff/29/changes" target="_blank" rel="noopener">API 差异报告</a>或访问 <a href="https://developer.android.google.cn/reference" target="_blank" rel="noopener">Android API 参考文档</a>，查找“在 API 级别 29 添加”的 API。此外，请务必查阅 Android 10 行为变更（针对<a href="https://developer.android.google.cn/about/versions/10/behavior-changes-10" target="_blank" rel="noopener">以 API 级别 29 为目标的应用</a>和<a href="https://developer.android.google.cn/about/versions/10/behavior-changes-all" target="_blank" rel="noopener">所有应用</a>）以及<a href="https://developer.android.google.cn/about/versions/10/privacy" target="_blank" rel="noopener">隐私权变更</a>，以了解平台变更可能给您的应用带来哪些方面的影响。</p>
+<h2 id="安全增强功能"><a href="#安全增强功能" class="headerlink" title="安全增强功能"></a>安全增强功能</h2><p>Android 10 引入了若干安全功能，详见以下各节摘要说明。</p>
+<h3 id="改进了生物识别身份验证对话框"><a href="#改进了生物识别身份验证对话框" class="headerlink" title="改进了生物识别身份验证对话框"></a>改进了生物识别身份验证对话框</h3><p>Android 10 对<a href="https://developer.android.google.cn/training/sign-in/biometric-auth" target="_blank" rel="noopener">生物识别身份验证</a>支持进行了以下改进：</p>
+<ul>
+<li>添加了针对生物识别身份验证功能的检查。</li>
+<li>提供了一种回退机制，如果用户无法使用其生物识别输入设备进行身份验证，则可以使用设备 PIN 码、图案或密码来进行身份验证。</li>
+<li>提供了一个提示，以告知系统在用户使用隐式生物识别模式完成身份验证后无需要求用户进行确认。例如，您可以告知系统，在用户使用人脸识别身份验证完成身份验证后无需进一步确认。</li>
+</ul>
+<h3 id="直接从-APK-运行嵌入式-DEX-代码"><a href="#直接从-APK-运行嵌入式-DEX-代码" class="headerlink" title="直接从 APK 运行嵌入式 DEX 代码"></a>直接从 APK 运行嵌入式 DEX 代码</h3><p>从 Android 10 开始，您可以告知平台直接从应用的 APK 文件中运行嵌入式 DEX 代码。如果攻击者设法篡改了设备上本地编译的代码，此选项有助于防止此类攻击。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/topic/security/dex" target="_blank" rel="noopener">直接从 APK 运行嵌入式 DEX 代码</a>。</p>
+<h3 id="TLS-1-3-支持"><a href="#TLS-1-3-支持" class="headerlink" title="TLS 1.3 支持"></a>TLS 1.3 支持</h3><p>Android 10 增加了对 <a href="https://www.ietf.org/blog/tls13/" target="_blank" rel="noopener">TLS 1.3</a> 的支持。TLS 1.3 是 TLS 标准的主要修订版本，它提升了性能和安全性。我们的基准测试数据表明，与 TLS 1.2 相比，使用 TLS 1.3 可以将建立安全连接的速度提高 40%。</p>
+<p>如需详细了解我们的 TLS 1.3 实现，请参阅<a href="https://developer.android.google.cn/about/versions/10/behavior-changes-all#tls-1.3" target="_blank" rel="noopener">“针对所有应用的行为变更”页面内的“TLS”部分</a>。</p>
+<h3 id="公共-Conscrypt-API"><a href="#公共-Conscrypt-API" class="headerlink" title="公共 Conscrypt API"></a>公共 Conscrypt API</h3><p>从 Android 10 开始，Conscrypt 安全提供程序包含适用于 TLS 功能的公共 API。</p>
+<p><a href="https://developer.android.google.cn/reference/android/net/ssl/package-summary" target="_blank" rel="noopener"><code>android.net.ssl</code></a> 下的一组类包含用于访问通用 <code>javax.net.ssl</code> API 不提供的功能的静态方法。这些类的名称为相应 <code>javax.net.ssl</code> 类的复数，用户可以由此推断是否为这些类。例如，在 <code>javax.net.ssl.SSLSocket</code> 实例中运行的代码可以改用 <a href="https://developer.android.google.cn/reference/android/net/ssl/SSLSockets" target="_blank" rel="noopener"><code>SSLSockets</code></a> 中的方法。</p>
+<p><strong>注意</strong>：如果您仍使用反射访问 TLS 功能，请改为使用公共 API。这是因为我们已计划好进一步<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces" target="_blank" rel="noopener">针对非 SDK 接口实施限制</a>。</p>
+<h2 id="连接功能"><a href="#连接功能" class="headerlink" title="连接功能"></a>连接功能</h2><p>Android 10 包含一些与网络和连接相关的改进。</p>
+<h3 id="WLAN-网络连接-API"><a href="#WLAN-网络连接-API" class="headerlink" title="WLAN 网络连接 API"></a>WLAN 网络连接 API</h3><p>Android 10 增加了对点对点连接的支持。借助此功能，应用可以使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/WifiNetworkSpecifier" target="_blank" rel="noopener"><code>WifiNetworkSpecifier</code></a> 描述所请求网络的属性，以此来提示用户更改设备连接到的接入点。点对点连接用于“非网络提供”目的，例如 Chromecast 和 Google Home 硬件等辅助设备的引导配置。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/connectivity/wifi-bootstrap" target="_blank" rel="noopener">适用于点对点连接的 WLAN 网络请求 API</a>。</p>
+<h3 id="WLAN-网络建议-API"><a href="#WLAN-网络建议-API" class="headerlink" title="WLAN 网络建议 API"></a>WLAN 网络建议 API</h3><p>Android 10 扩大了支持范围，现在允许应用提示用户连接到 WLAN 接入点。您可以提供关于要连接到哪个网络的建议。平台最终会根据来自您的应用和其他应用的输入来选择要接受的接入点。</p>
+<p>如需详细了解此功能，请参阅 <a href="https://developer.android.google.cn/guide/topics/connectivity/wifi-suggest" target="_blank" rel="noopener">WLAN 建议</a>。</p>
+<h3 id="改进了-WLAN-高性能和低延迟模式"><a href="#改进了-WLAN-高性能和低延迟模式" class="headerlink" title="改进了 WLAN 高性能和低延迟模式"></a>改进了 WLAN 高性能和低延迟模式</h3><p>借助 Android 10，您可以为底层调制解调器提供提示，以最大限度地缩短延迟。</p>
+<p>Android 10 扩展了 WLAN 锁定 API，以有效地支持高性能和低延迟模式。系统会针对高性能和低延迟模式停用 WLAN 节能模式，并且您可以在低延迟模式下启用进一步的延迟优化（具体取决于调制解调器支持）。</p>
+<p>仅当获取锁的应用在前台运行且屏幕处于开启状态时才能启用低延迟模式。低延迟模式对实时移动游戏应用尤其有用。</p>
+<h3 id="DNS-解析器中的专用查找"><a href="#DNS-解析器中的专用查找" class="headerlink" title="DNS 解析器中的专用查找"></a>DNS 解析器中的专用查找</h3><p>Android 10 使用明文查找和“通过传输层安全协议 (TLS) 执行 DNS”模式，增加了对专用 DNS 查找的原生支持。之前，平台 DNS 解析器仅支持 A 和 AAAA 记录，这些记录仅允许查找与名称关联的 IP 地址，不支持任何其他记录类型。<a href="https://developer.android.google.cn/reference/android/net/DnsResolver" target="_blank" rel="noopener"><code>DnsResolver</code></a> API 提供了通用的异步解析，使您能够查询 <code>SRV</code>、<code>NAPTR</code>，以及其他记录类型。请注意，解析响应由应用负责执行。</p>
+<p>对于基于 NDK 的应用，请参阅 <a href="https://developer.android.google.cn/ndk/reference/group/networking#android_res_nsend" target="_blank" rel="noopener"><code>android_res_nsend</code></a>。</p>
+<h3 id="WLAN-Easy-Connect"><a href="#WLAN-Easy-Connect" class="headerlink" title="WLAN Easy Connect"></a>WLAN Easy Connect</h3><p>借助 Android 10，您可以利用 Easy Connect 为对等设备配置 WLAN 凭据，以替代已弃用的 WPS。应用可以使用 <a href="https://developer.android.google.cn/reference/android/provider/Settings#ACTION_PROCESS_WIFI_EASY_CONNECT_URI" target="_blank" rel="noopener"><code>ACTION_PROCESS_WIFI_EASY_CONNECT_URI</code></a> intent 将 Easy Connect 集成到其设置和配置流程中。</p>
+<p>如需详细了解此功能，请参阅 <a href="https://developer.android.google.cn/guide/topics/connectivity/wifi-easy" target="_blank" rel="noopener">WLAN Easy Connect</a>。</p>
+<h3 id="Wi-Fi-Direct-connection-API"><a href="#Wi-Fi-Direct-connection-API" class="headerlink" title="Wi-Fi Direct connection API"></a>Wi-Fi Direct connection API</h3><p><code>WifiP2pConfig</code> 和 <code>WifiP2pManager</code> API 类在 Android 10 中已更新，以支持利用预先确定的信息快速与 WLAN 直连建立连接的功能。这一信息通过边信道进行共享，例如蓝牙或 NFC。</p>
+<p>以下代码示例显示了如何使用预先确定的信息来创建群组：</p>
+<p><a href="https://developer.android.google.cn/about/versions/10/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/10/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> manager = getSystemService(Context.WIFI_P2P_SERVICE) <span class="keyword">as</span> WifiP2pManager</span><br><span class="line"><span class="keyword">val</span> channel = manager.initialize(<span class="keyword">this</span>, mainLooper, <span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// prefer 5G band for this group</span></span><br><span class="line"><span class="keyword">val</span> config = WifiP2pConfig.Builder()</span><br><span class="line">    .setNetworkName(<span class="string">"networkName"</span>)</span><br><span class="line">    .setPassphrase(<span class="string">"passphrase"</span>)</span><br><span class="line">    .enablePersistentMode(<span class="literal">false</span>)</span><br><span class="line">    .setGroupOperatingBand(WifiP2pConfig.GROUP_OWNER_BAND_5GHZ)</span><br><span class="line">    .build()</span><br><span class="line"></span><br><span class="line"><span class="comment">// create a non-persistent group on 5GHz</span></span><br><span class="line">manager.createGroup(channel, config, <span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
+<p>要使用凭据加入群组，请将 <code>manager.createGroup()</code> 替换为以下内容：</p>
+<p><a href="https://developer.android.google.cn/about/versions/10/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/10/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">manager.connect(channel, config, <span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="蓝牙-LE-连接导向型频道-CoC"><a href="#蓝牙-LE-连接导向型频道-CoC" class="headerlink" title="蓝牙 LE 连接导向型频道 (CoC)"></a>蓝牙 LE 连接导向型频道 (CoC)</h3><p>借助 Android 10，您的应用可以使用 BLE CoC 连接在两个 BLE 设备之间传输较大的数据流。此接口抽象化处理了蓝牙和连接机制，以简化实现。</p>
+<h2 id="电话功能"><a href="#电话功能" class="headerlink" title="电话功能"></a>电话功能</h2><p>Android 10 包含一些与电话相关的改进。</p>
+<h3 id="通话质量方面的改进"><a href="#通话质量方面的改进" class="headerlink" title="通话质量方面的改进"></a>通话质量方面的改进</h3><p>Android 10 增加了在支持相关功能的设备上收集进行中的 IP 多媒体子系统 (IMS) 通话质量相关信息的功能，包括通过网络接听和拨打电话的质量。</p>
+<h3 id="选接电话和来电显示"><a href="#选接电话和来电显示" class="headerlink" title="选接电话和来电显示"></a>选接电话和来电显示</h3><p>Android 10 让您的应用可以将用户通讯录中不存在号码的来电标识为潜在骚扰电话，以及代表用户拒接骚扰电话而不响铃。系统会在通话记录中将这些已屏蔽的来电的相关信息记录为已屏蔽的来电，以便用户更清楚地了解何时有过未接来电。使用此 API，不需要从用户那里获取 <code>READ_CALL_LOG</code> 权限就可以提供选接电话和来电显示功能。</p>
+<h3 id="Call-Redirection-Service-API"><a href="#Call-Redirection-Service-API" class="headerlink" title="Call Redirection Service API"></a>Call Redirection Service API</h3><p>Android 10 更改了来电 intent 的处理方式。我们弃用了 <code>NEW_OUTGOING_CALL</code> 广播，并将其替换为 <code>CallRedirectionService</code> API。<code>CallRedirectionService</code> API 提供了相关接口，以供您修改 Android 平台外拨的电话。例如，第三方应用可能会取消通话并通过 VoIP 对其进行重新路由。</p>
+<h2 id="在外部存储设备中创建文件的相关改进"><a href="#在外部存储设备中创建文件的相关改进" class="headerlink" title="在外部存储设备中创建文件的相关改进"></a>在外部存储设备中创建文件的相关改进</h2><p>除了引入<a href="https://developer.android.google.cn/training/data-storage/files/external-scoped" target="_blank" rel="noopener">分区存储</a>之外，Android 10 还增加了以下与外部存储设备相关的功能：</p>
+<ul>
+<li>您可以使用 <a href="https://developer.android.google.cn/training/data-storage/files/media#pending-media-files" target="_blank" rel="noopener"><code>IS_PENDING</code> 标记</a>，让您的应用可以在媒体文件写入磁盘时进行独占访问。</li>
+<li>如果您知道应该在哪个具体位置存储文件，您可以<a href="https://developer.android.google.cn/training/data-storage/files/media#provide-hint" target="_blank" rel="noopener">提示系统</a>在何处存储新写入的文件。</li>
+<li>每个外部存储设备都有<a href="https://developer.android.google.cn/training/data-storage/files/external#unique-volume-names" target="_blank" rel="noopener">唯一的卷名称</a>。</li>
+</ul>
+<h2 id="媒体和图形"><a href="#媒体和图形" class="headerlink" title="媒体和图形"></a>媒体和图形</h2><p>Android 10 引入了以下媒体和图形方面的新功能和 API：</p>
+<h3 id="共享音频输入"><a href="#共享音频输入" class="headerlink" title="共享音频输入"></a>共享音频输入</h3><p>Android 10 增加了两个应用同时共享音频输入的功能。如需了解完整信息，请参阅<a href="https://developer.android.google.cn/guide/topics/media/sharing-audio-input" target="_blank" rel="noopener">共享音频输入</a>。</p>
+<h3 id="捕获播放的音频"><a href="#捕获播放的音频" class="headerlink" title="捕获播放的音频"></a>捕获播放的音频</h3><p>Android 10 可让应用捕获其他应用播放的音频。如需了解完整信息，请参阅<a href="https://developer.android.google.cn/guide/topics/media/playback-capture" target="_blank" rel="noopener">捕获播放的音频</a>。</p>
+<h3 id="MediaStyle-通知中的拖动条"><a href="#MediaStyle-通知中的拖动条" class="headerlink" title="MediaStyle 通知中的拖动条"></a>MediaStyle 通知中的拖动条</h3><p>从 Android 10 开始，<code>MediaStyle</code> 通知会显示拖动条。拖动条显示了 <a href="https://developer.android.google.cn/reference/android/media/session/PlaybackState#getPosition(" target="_blank" rel="noopener"><code>PlaybackState.getPosition()</code></a>) 中的播放进度，并且在某些情况下，拖动条可用于跳转到正在播放的节目中的某个位置。拖动条的外观和行为受以下规则的控制：</p>
+<ul>
+<li>如果存在处于活动状态的 <code>MediaSession</code>，且其持续时长（由 <code>MediaMetadata.METADATA_KEY_DURATION</code> 指定）大于零，则会出现拖动条。这意味着该拖动条不会出现在直播和无线电广播等不确定的信息流中。</li>
+<li>如果会话实现了 <code>ACTION_SEEK_TO</code>，则用户可以通过拖动该拖动条来控制播放位置。</li>
+</ul>
+<h3 id="原生-MIDI-API"><a href="#原生-MIDI-API" class="headerlink" title="原生 MIDI API"></a>原生 MIDI API</h3><p>借助 Android Native MIDI API (AMidi)，应用开发者可以使用 C/C++ 代码发送和接收 MIDI 数据、与 C/C++ 音频/控制逻辑进行更紧密的集成以及最大限度地减少对 JNI 的需求。</p>
+<p>有关详情，请参阅 <a href="https://developer.android.google.cn/ndk/guides/audio/midi" target="_blank" rel="noopener">Android Native MIDI API</a>。</p>
+<h3 id="MediaCodecInfo-方面的改进"><a href="#MediaCodecInfo-方面的改进" class="headerlink" title="MediaCodecInfo 方面的改进"></a>MediaCodecInfo 方面的改进</h3><p>Android 10 向 <a href="https://developer.android.google.cn/reference/android/media/MediaCodecInfo" target="_blank" rel="noopener"><code>MediaCodecInfo</code></a> 添加了一些方法，这些方法可以显示有关编解码器的更多信息。</p>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/media/media-codecs" target="_blank" rel="noopener">媒体编解码器</a>。</p>
+<h2 id="Thermal-API"><a href="#Thermal-API" class="headerlink" title="Thermal API"></a>Thermal API</h2><p>当设备过热时，它们可能会限制 CPU 和/或 GPU，而这可能会以意想不到的方式影响应用和游戏。使用复杂图形、大量计算或持续网络活动的应用更有可能遇到问题，并且问题可能因芯片组和核心频率、集成级别以及设备封装和设备类型而异。</p>
+<p>在 Android 10 中，应用和游戏可以使用 Thermal API 监控设备变化情况，并在设备过热时采取措施维持低电耗状态，使设备恢复到正常温度。应用在 <a href="https://developer.android.google.cn/reference/android/os/PowerManager" target="_blank" rel="noopener">PowerManager</a> 中<a href="https://developer.android.google.cn/reference/android/os/PowerManager#addThermalStatusListener(android.os.PowerManager.OnThermalStatusChangedListener" target="_blank" rel="noopener">注册监听器</a>)，系统通过该监听器报告持续的热状态，热状态的范围从轻度和中度到重度、危急、紧急和关机。</p>
+<p>当设备报告热应力时，各应用和游戏可以减少正在进行的活动，以此来帮助减少各个方面的耗电量。例如，影音在线播放应用可以降低分辨率/比特率或减少网络流量；相机应用可以停用闪光灯或密集型图像增强；游戏可以降低帧速率或减少多边形曲面细分；媒体应用可以降低扬声器音量；地图应用可以关闭 GPS。</p>
+<p>Thermal API 需要新的设备 HAL 层，目前在搭载 Android 10 的 Pixel 设备上受支持。我们正在与设备制造商合作伙伴合作，以期尽快为生态系统提供广泛支持。</p>
+<h2 id="摄像头和图片"><a href="#摄像头和图片" class="headerlink" title="摄像头和图片"></a>摄像头和图片</h2><p>Android 10 引入了以下与摄像头和图片相关的新功能：</p>
+<h3 id="单色摄像头支持"><a href="#单色摄像头支持" class="headerlink" title="单色摄像头支持"></a>单色摄像头支持</h3><p>Android 9（API 等级 28）首次引入了单色摄像头功能。Android 10 为单色摄像头支持增加了几项增强功能：</p>
+<ul>
+<li>增加了对 Y8 流格式的支持，以提高内存效率。</li>
+<li>支持单色原始 DNG 捕获。</li>
+<li>引入了 MONO 和 NIR CFA 枚举，以区分常规单色摄像头和近红外摄像头。</li>
+</ul>
+<p>您可以使用此功能来捕捉原生单色图片。逻辑多摄像头设备可以使用单色摄像头作为物理子摄像头，以获取更出色的低光图片质量。</p>
+<h3 id="动态深度格式"><a href="#动态深度格式" class="headerlink" title="动态深度格式"></a>动态深度格式</h3><p>从 Android 10 开始，摄像头可以使用名为“动态深度格式”(DDF) 的新架构将图片的深度数据存储在单独的文件中。应用可以请求 JPG 图片及其深度元数据，以便在后期处理中利用这些信息来应用所需的模糊处理，而无需修改原始图片数据。</p>
+<p>要了解此格式的规范，请参阅<a href="https://developer.android.google.cn/static/training/camera2/Dynamic-depth-v1.0.pdf" target="_blank" rel="noopener">动态深度格式</a>。</p>
+<h3 id="高效率图片文件格式"><a href="#高效率图片文件格式" class="headerlink" title="高效率图片文件格式"></a>高效率图片文件格式</h3><p>高效率图片文件 (HEIF) 格式是一种标准的图片和视频格式，与其他文件格式相比，这种格式的编码质量更高，文件更小。</p>
+<p>如需详细了解此文件格式，请参阅 <a href="https://developer.android.google.cn/reference/android/graphics/ImageFormat#HEIC" target="_blank" rel="noopener">HEIC</a>。</p>
+<h3 id="多摄像头方面的改进"><a href="#多摄像头方面的改进" class="headerlink" title="多摄像头方面的改进"></a>多摄像头方面的改进</h3><p>Android 9（API 级别 28）中引入了将多摄像头融合成单个逻辑摄像头的功能，Android 10 对此功能进行了改进。<a href="https://developer.android.google.cn/reference/android/hardware/camera2/package-summary" target="_blank" rel="noopener">Camera2 API</a> 中添加了以下内容：</p>
+<ul>
+<li><a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraDevice#isSessionConfigurationSupported(android.hardware.camera2.params.SessionConfiguration" target="_blank" rel="noopener"><code>isSessionConfigurationSupported(SessionConfiguration sessionConfig)</code></a>) - 使您能够查询传递的会话配置能否用于创建摄像头拍摄会话。</li>
+<li><a href="https://developer.android.google.cn/reference/android/hardware/camera2/CaptureResult#LOGICAL_MULTI_CAMERA_ACTIVE_PHYSICAL_ID" target="_blank" rel="noopener"><code>LOGICAL_MULTI_CAMERA_ACTIVE_PHYSICAL_ID</code></a> - 使您能够确定支持逻辑摄像头设备的有效物理摄像头的 ID。您可以使用返回的 ID 来请求逻辑信息流和物理子摄像头信息流，以提高用电效率。</li>
+</ul>
+<h2 id="无障碍服务-API"><a href="#无障碍服务-API" class="headerlink" title="无障碍服务 API"></a>无障碍服务 API</h2><p>Android 10 引入了以下新的无障碍服务功能和 API：</p>
+<h3 id="AccessibilityNodeInfo-输入键标记"><a href="#AccessibilityNodeInfo-输入键标记" class="headerlink" title="AccessibilityNodeInfo 输入键标记"></a>AccessibilityNodeInfo 输入键标记</h3><p>从 Android 10 开始，您可以通过调用 <a href="https://developer.android.google.cn/reference/android/view/accessibility/AccessibilityNodeInfo#isTextEntryKey(" target="_blank" rel="noopener"><code>isTextEntryKey()</code></a>) 来确定指定的 <code>AccessibilityNodeInfo</code> 是否代表键盘或拨号键盘内的文本输入键。</p>
+<h3 id="无障碍对话框语音反馈"><a href="#无障碍对话框语音反馈" class="headerlink" title="无障碍对话框语音反馈"></a>无障碍对话框语音反馈</h3><p>当用户需要执行无障碍快捷方式以启动无障碍服务时，Android 10 可允许此对话框在服务请求时附带文字转语音提示。</p>
+<h3 id="启用手势导航时的无障碍快捷方式"><a href="#启用手势导航时的无障碍快捷方式" class="headerlink" title="启用手势导航时的无障碍快捷方式"></a>启用手势导航时的无障碍快捷方式</h3><p>在 Android 10 中启用<a href="https://developer.android.google.cn/guide/navigation/gesturenav" target="_blank" rel="noopener">手势导航</a>功能后，用户将看不到也无法选择<a href="https://support.google.com/accessibility/android/answer/7650693" target="_blank" rel="noopener">“无障碍”按钮</a>。要访问“无障碍服务”菜单，用户必须执行以下某种手势：</p>
+<ul>
+<li>双指向上滑动。</li>
+<li>双指向上滑动并按住。</li>
+</ul>
+<h3 id="物理键盘的无障碍快捷方式"><a href="#物理键盘的无障碍快捷方式" class="headerlink" title="物理键盘的无障碍快捷方式"></a>物理键盘的无障碍快捷方式</h3><p>在 Android 10 中，用户可以通过物理键盘来触发无障碍快捷方式，只需按 Control+Alt+Z 即可。</p>
+<h3 id="软键盘控制器增强功能"><a href="#软键盘控制器增强功能" class="headerlink" title="软键盘控制器增强功能"></a>软键盘控制器增强功能</h3><p>在 Android 10 中，无障碍服务可以请求显示软键盘，即使设备检测到连接了硬键盘也不例外。用户可以替换此行为。</p>
+<h3 id="用户定义的无障碍服务超时"><a href="#用户定义的无障碍服务超时" class="headerlink" title="用户定义的无障碍服务超时"></a>用户定义的无障碍服务超时</h3><p>Android 10 引入了 <a href="https://developer.android.google.cn/reference/android/view/accessibility/AccessibilityManager#getRecommendedTimeoutMillis(int, int" target="_blank" rel="noopener"><code>getRecommendedTimeoutMillis()</code></a>) API。此方法可为用户针对互动式和非互动式的无障碍界面元素定义的超时提供支持。返回值受用户偏好设置和无障碍服务 API 的影响。</p>
+<h2 id="自动填充方面的改进"><a href="#自动填充方面的改进" class="headerlink" title="自动填充方面的改进"></a>自动填充方面的改进</h2><p>Android 10 包含对自动填充服务的以下改进。</p>
+<h3 id="与兼容性相关的自动填充请求"><a href="#与兼容性相关的自动填充请求" class="headerlink" title="与兼容性相关的自动填充请求"></a>与兼容性相关的自动填充请求</h3><p>您现在可以使用 <a href="https://developer.android.google.cn/reference/android/service/autofill/FillRequest#FLAG_COMPATIBILITY_MODE_REQUEST" target="_blank" rel="noopener"><code>FillRequest.FLAG_COMPATIBILITY_MODE_REQUEST</code></a> 标记确定是否通过兼容性模式生成了自动填充请求。</p>
+<h3 id="同时保存用户名和密码"><a href="#同时保存用户名和密码" class="headerlink" title="同时保存用户名和密码"></a>同时保存用户名和密码</h3><p>借助 <a href="https://developer.android.google.cn/reference/android/service/autofill/SaveInfo#FLAG_DELAY_SAVE" target="_blank" rel="noopener"><code>SaveInfo.FLAG_DELAY_SAVE</code></a> 标记，应用现在可以使用多个 Activity 显示用户名、密码和其他字段。</p>
+<h3 id="用户与保存界面的互动"><a href="#用户与保存界面的互动" class="headerlink" title="用户与保存界面的互动"></a>用户与保存界面的互动</h3><p>您可以在保存对话框中显示和隐藏密码字段，只需在此对话框中设置操作监听器，并更改相应密码远程视图的可见性即可。</p>
+<h3 id="支持更新数据集"><a href="#支持更新数据集" class="headerlink" title="支持更新数据集"></a>支持更新数据集</h3><p>自动填充可以更新现有的密码。例如，如果用户已经存储了一个密码，然后又保存了一个新密码，则自动填充功能会提示用户更新现有密码，而不是保存新密码。</p>
+<h3 id="字段分类方面的改进"><a href="#字段分类方面的改进" class="headerlink" title="字段分类方面的改进"></a>字段分类方面的改进</h3><p>Android 10 包含对 Field Classification API 的以下改进。</p>
+<h4 id="UserData-Builder-构造函数"><a href="#UserData-Builder-构造函数" class="headerlink" title="UserData.Builder 构造函数"></a>UserData.Builder 构造函数</h4><p>我们更改了 <a href="https://developer.android.google.cn/reference/android/service/autofill/UserData.Builder" target="_blank" rel="noopener"><code>UserData.Builder</code></a> 构造函数，现在可以更好地契合 <code>Builder</code> 模式。</p>
+<h4 id="允许将一个值映射到多种类别-ID"><a href="#允许将一个值映射到多种类别-ID" class="headerlink" title="允许将一个值映射到多种类别 ID"></a>允许将一个值映射到多种类别 ID</h4><p>在使用 Android 10 中的 <a href="https://developer.android.google.cn/reference/android/service/autofill/UserData.Builder" target="_blank" rel="noopener"><code>UserData.Builder</code></a> 时，您现在可以将一个值映射到多种类别 ID。在以前的版本中，如果一个值被添加多次，系统就会抛出异常。</p>
+<h4 id="改进了对信用卡号码的支持"><a href="#改进了对信用卡号码的支持" class="headerlink" title="改进了对信用卡号码的支持"></a>改进了对信用卡号码的支持</h4><p>现在，字段分类可以检测四位数字作为信用卡号码的最后四位数字。</p>
+<h4 id="支持特定于应用的字段分类"><a href="#支持特定于应用的字段分类" class="headerlink" title="支持特定于应用的字段分类"></a>支持特定于应用的字段分类</h4><p>Android 10 增加了 <a href="https://developer.android.google.cn/reference/android/service/autofill/FillResponse#setUserData(android.service.autofill.UserData" target="_blank" rel="noopener"><code>FillResponse.setUserData()</code></a>)，让您能够在会话期间设置特定于应用的用户数据。这有助于自动填充服务检测包含特定于应用的内容的字段属于哪种类型。</p>
+<h2 id="界面和系统控件"><a href="#界面和系统控件" class="headerlink" title="界面和系统控件"></a>界面和系统控件</h2><p>Android 10 提供界面方面的以下改进：</p>
+<h3 id="支持-JVMTI-PopFrame-功能"><a href="#支持-JVMTI-PopFrame-功能" class="headerlink" title="支持 JVMTI PopFrame 功能"></a>支持 JVMTI PopFrame 功能</h3><p>Android 10 增加了对 Android JVMTI 实现中的 <a href="https://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html#PopFrame" target="_blank" rel="noopener"><code>can_pop_frames</code></a> 功能的支持。在调试时，此功能让您能够在断点暂停并调整函数的局部变量、全局变量或实现，然后重新运行函数。有关详情，请参阅 Oracle 的 <a href="https://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html#PopFrame" target="_blank" rel="noopener">Pop Frame 参考页面</a>。</p>
+<h3 id="Surface-Control-API"><a href="#Surface-Control-API" class="headerlink" title="Surface Control API"></a>Surface Control API</h3><p>Android 10 提供了一个 <a href="https://developer.android.google.cn/reference/android/view/SurfaceControl" target="_blank" rel="noopener"><code>SurfaceControl</code></a> API，用于对系统合成器 (<a href="https://source.android.google.cn/devices/graphics/arch-sf-hwc" target="_blank" rel="noopener"><code>SurfaceFlinger</code></a>) 进行底层访问。对于大多数用户而言，SurfaceView 是使用此合成器的正确方法。<code>SurfaceControl</code> API 在某些情况下很有用，例如：</p>
+<ul>
+<li>同步多个表面</li>
+<li>跨进程的表面嵌入</li>
+<li>底层生命周期管理</li>
+</ul>
+<p><code>SurfaceControl</code> API 在 <a href="https://developer.android.google.cn/reference/android/view/SurfaceControl" target="_blank" rel="noopener">SDK</a> 和 NDK 绑定中都可用。NDK 实现包含用于与合成器手动交换缓冲区的 API。这为遇到 <a href="https://source.android.google.cn/devices/graphics/arch-bq-gralloc" target="_blank" rel="noopener"><code>BufferQueue</code></a> 限制的用户提供了一种替代方案。</p>
+<h3 id="WebView-挂起渲染程序检测"><a href="#WebView-挂起渲染程序检测" class="headerlink" title="WebView 挂起渲染程序检测"></a>WebView 挂起渲染程序检测</h3><p>Android 10 引入了 <a href="https://developer.android.google.cn/reference/android/webkit/WebViewRenderProcessClient" target="_blank" rel="noopener"><code>WebViewRenderProcessClient</code></a> 抽象类，应用可以使用该抽象类检测 <a href="https://developer.android.google.cn/reference/android/webkit/WebView" target="_blank" rel="noopener"><code>WebView</code></a> 是否无响应。要使用此类，请执行以下操作：</p>
+<ol>
+<li>定义您自己的子类，并实现其 <a href="https://developer.android.google.cn/reference/android/webkit/WebViewRenderProcessClient#onRenderProcessResponsive(android.webkit.WebView, android.webkit.WebViewRenderProcess" target="_blank" rel="noopener"><code>onRenderProcessResponsive()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/webkit/WebViewRenderProcessClient#onRenderProcessUnresponsive(android.webkit.WebView, android.webkit.WebViewRenderProcess" target="_blank" rel="noopener"><code>onRenderProcessUnresponsive()</code></a>) 方法。</li>
+<li>将 <code>WebViewRenderProcessClient</code> 的实例附加到一个或多个 <code>WebView</code> 对象上。</li>
+<li>如果 <code>WebView</code> 无响应，系统将调用客户端的 <code>onRenderProcessUnresponsive()</code> 方法，在调用时会传递 <code>WebView</code> 和 <code>WebViewRenderProcess</code>（如果 <code>WebView</code> 是单进程，<code>WebViewRenderProcess</code> 参数将为 null）。您的应用可以执行适当的操作，例如向用户显示一个对话框，以询问其是否要暂停渲染流程。</li>
+</ol>
+<p>如果 <code>WebView</code> 仍然无响应，则系统会定期调用 <code>onRenderProcessUnresponsive()</code>（频率不高于每 5 秒一次），但不会执行其他任何操作。如果 <code>WebView</code> 再次无响应，系统只调用 <code>onRenderProcessResponsive()</code> 一次。</p>
+<h3 id="设置面板"><a href="#设置面板" class="headerlink" title="设置面板"></a>设置面板</h3><p>Android 10 引入了“设置面板”，这是一种 API，让应用能够在自身环境中向用户显示设置。这样一来，用户无需通过转到<strong>设置</strong>来更改 <strong>NFC</strong> 或<strong>移动数据</strong>等设置，而能继续留在原来的应用中。</p>
+<p><img src="https://developer.android.google.cn/static/images/about/versions/10/settings-wifi-part1.png" alt="img"><strong>图 1.</strong> 用户尝试在设备未连接到网络时打开网页。Chrome 弹出<strong>互联网连接</strong>设置面板…</p>
+<p><img src="https://developer.android.google.cn/static/images/about/versions/10/settings-wifi-part2.png" alt="img"><strong>图 2.</strong> 用户可以开启 WLAN 并选择网络，而无需离开 Chrome 应用。</p>
+<p>例如，假设用户打开了网络浏览器，而其设备已开启飞行模式。在 Android 10 之前的版本中，此应用只能显示一条通用消息，要求用户打开<strong>设置</strong>以恢复连接。而借助 Android 10，浏览器应用便可以显示一个内嵌面板，其中会显示各种主要连接设置，例如飞行模式、WLAN（包括附近的网络）和移动数据。借助此面板，用户无需离开应用即可恢复连接。</p>
+<p>要显示设置面板，请发出具有以下一个 <a href="https://developer.android.google.cn/reference/android/provider/Settings.Panel" target="_blank" rel="noopener"><code>Settings.Panel</code></a> 操作的 intent：</p>
+<p><a href="https://developer.android.google.cn/about/versions/10/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/10/features#java" target="_blank" rel="noopener">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> panelIntent = Intent(Settings.Panel.settings_panel_type)</span><br><span class="line">startActivityForResult(panelIntent)</span><br></pre></td></tr></table></figure>
+<p><code>settings_panel_type</code> 可以是下列项之一：</p>
+<ul>
+<li><p><a href="https://developer.android.google.cn/reference/android/provider/Settings.Panel#ACTION_INTERNET_CONNECTIVITY" target="_blank" rel="noopener"><code>ACTION_INTERNET_CONNECTIVITY</code></a></p>
+<p>显示与互联网连接相关的设置，例如飞行模式、WLAN 和移动数据。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/reference/android/provider/Settings.Panel#ACTION_WIFI" target="_blank" rel="noopener"><code>ACTION_WIFI</code></a></p>
+<p>显示 WLAN 设置，但不显示其他连接设置。这对于需要 WLAN 连接以执行大容量上传或下载的应用非常有用。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/reference/android/provider/Settings.Panel#ACTION_NFC" target="_blank" rel="noopener"><code>ACTION_NFC</code></a></p>
+<p>显示与近距离无线通信 (NFC) 相关的所有设置。</p>
+</li>
+<li><p><a href="https://developer.android.google.cn/reference/android/provider/Settings.Panel#ACTION_VOLUME" target="_blank" rel="noopener"><code>ACTION_VOLUME</code></a></p>
+<p>显示所有音频流的音量设置。</p>
+</li>
+</ul>
+<p>我们计划针对此功能引入一个 AndroidX 封装容器。在搭载 Android 9（API 级别 28）或更低级别的设备上调用时，此封装容器会在<strong>设置</strong>应用中打开最合适的页面。</p>
+<h3 id="共享功能方面的改进"><a href="#共享功能方面的改进" class="headerlink" title="共享功能方面的改进"></a>共享功能方面的改进</h3><p>Android 10 为共享功能提供了多项改进：</p>
+<h4 id="Sharing-Shortcuts-API"><a href="#Sharing-Shortcuts-API" class="headerlink" title="Sharing Shortcuts API"></a>Sharing Shortcuts API</h4><p><a href="https://developer.android.google.cn/training/sharing/receive#sharing-shortcuts-api" target="_blank" rel="noopener">Sharing Shortcuts API</a> 取代了 <a href="https://developer.android.google.cn/about/versions/marshmallow/android-6.0#direct-share" target="_blank" rel="noopener">Direct Share API</a>。</p>
+<p>Sharing Shortcuts API 允许应用提前发布直接共享目标，而不是被动地按需检索结果。这就是 <a href="https://developer.android.google.cn/guide/topics/ui/shortcuts/managing-shortcuts" target="_blank" rel="noopener"><code>ShortcutManager</code></a> 的工作原理。由于这两个 API 类似，因此我们扩展了 <a href="https://developer.android.google.cn/reference/android/content/pm/ShortcutInfo" target="_blank" rel="noopener"><code>ShortcutInfo</code> API</a> 以让这两个功能更易于使用。借助 Sharing Shortcuts API，您可以直接将类别或人员分配到共享目标。在同一应用更新共享目标或此应用被卸载之前，这些共享目标会一直保留在系统中。</p>
+<p>旧版“直接共享”机制仍有效，但使用该机制的应用的优先级低于使用 Sharing Shortcuts API 的应用。</p>
+<p><a href="https://developer.android.google.cn/reference/android/content/pm/ShortcutInfo.Builder" target="_blank" rel="noopener"><code>ShortcutInfo.Builder</code></a> 添加并增强了一些方法，以提供与共享目标有关的其他信息。</p>
+<h4 id="直接共享目标"><a href="#直接共享目标" class="headerlink" title="直接共享目标"></a>直接共享目标</h4><p>您可以发布一个动态快捷方式作为直接共享目标。请参阅<a href="https://developer.android.google.cn/training/sharing/receive#publish-direct-share-targets" target="_blank" rel="noopener">发布直接共享目标</a>。</p>
+<p><a href="https://developer.android.google.cn/reference/androidx/core/content/pm/ShortcutManagerCompat" target="_blank" rel="noopener"><code>ShortcutManagerCompat</code></a> 是一个新版 AndroidX API，它可以向后兼容旧版 DirectShare API。这是发布共享目标的首选方式。</p>
+<h4 id="预览文本"><a href="#预览文本" class="headerlink" title="预览文本"></a>预览文本</h4><p>当应用共享文本内容时，它可以在 Sharesheet 界面中显示相应内容的可选预览。</p>
+<p>请参阅<a href="https://developer.android.google.cn/training/sharing/send#adding-rich-content-previews" target="_blank" rel="noopener">添加富文本预览</a></p>
+<h4 id="了解详情"><a href="#了解详情" class="headerlink" title="了解详情"></a>了解详情</h4><p>如需详细了解应用如何共享数据，请参阅<a href="https://developer.android.google.cn/training/sharing/send" target="_blank" rel="noopener">将简单的数据发送到其他应用</a>和<a href="https://developer.android.google.cn/training/sharing/receive" target="_blank" rel="noopener">从其他应用接收简单的数据</a></p>
+<h3 id="深色主题"><a href="#深色主题" class="headerlink" title="深色主题"></a>深色主题</h3><p>Android 10 提供深色主题背景，既可应用于 Android 系统界面，也可应用于设备上运行的应用。如需了解完整信息，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/look-and-feel/darktheme" target="_blank" rel="noopener">深色主题背景</a>。</p>
+<h2 id="前台服务类型"><a href="#前台服务类型" class="headerlink" title="前台服务类型"></a>前台服务类型</h2><p>Android 10 引入了 <a href="https://developer.android.google.cn/reference/android/R.attr#foregroundServiceType" target="_blank" rel="noopener"><code>foregroundServiceType</code></a> XML 清单属性，您可以将其包含在多项特定服务的定义中。虽然很少适用，但您可以为一项特定服务分配多个前台服务类型。</p>
+<p>下表显示了不同的前台服务类型，以及适合在其中声明特定类型的服务：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">前台服务类型</th>
+<th style="text-align:left">应声明相应类型的服务的示例使用情形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>connectedDevice</code></td>
+<td style="text-align:left">监控穿戴式设备健身跟踪器</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dataSync</code></td>
+<td style="text-align:left">从网络下载文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>location</code></td>
+<td style="text-align:left"><a href="https://developer.android.google.cn/preview/privacy/device-location#continuation-user-initiated-action" target="_blank" rel="noopener">延续用户发起的操作</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>mediaPlayback</code></td>
+<td style="text-align:left">播放有声读物、播客或音乐</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>mediaProjection</code></td>
+<td style="text-align:left">简短地录屏</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>phoneCall</code></td>
+<td style="text-align:left">处理正在进行的通话</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h2><p>Android 10 对 Kotlin 开发进行了以下更新。</p>
+<h3 id="libcore-API-的可空性注释"><a href="#libcore-API-的可空性注释" class="headerlink" title="libcore API 的可空性注释"></a>libcore API 的可空性注释</h3><p>Android 10 改进了 SDK 中针对 libcore API 的可空性注释的覆盖范围。借助这些注释，在 Android Studio 中使用 Kotlin 或 Java 可空性分析的应用开发者可以在与这些 API 互动时获取非 Null 信息。</p>
+<p>通常，Kotlin 中的可空性合同违规行为会导致编译错误。为确保与现有的代码兼容，仅添加了 <code>@RecentlyNullable</code> 和 <code>@RecentlyNonNull</code> 注释。这意味着可空性违规行为会引发警告，而不是错误。</p>
+<p>此外，Android 9 中添加的所有 <code>@RecentlyNullable</code> 或 <code>@RecentlyNonNull</code> 注释都会分别更改为 <code>@Nullable</code> 和 <code>@NonNull</code>。这意味着，在 Android 10 及更高版本中，可空性违规行为会引发错误，而不是警告。</p>
+<p>如需详细了解注释方面的变更，请参阅 Android 开发者博客中的 <a href="https://android-developers.googleblog.com/2018/08/android-pie-sdk-is-now-more-kotlin.html" target="_blank" rel="noopener">Android Pie SDK 现已更适用于 Kotlin</a>一文。</p>
+<h2 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h2><p>Android 10 包含 NDK 方面的以下变更。</p>
+<h3 id="改进了文件描述符所有权的调试"><a href="#改进了文件描述符所有权的调试" class="headerlink" title="改进了文件描述符所有权的调试"></a>改进了文件描述符所有权的调试</h3><p>Android 10 增加了 fdsan，它可以帮助您更轻松地查找和修复文件描述符所有权方面的问题。</p>
+<p>与错误处理文件描述符所有权相关的错误（通常表现为“use-after-close”和“double-close”）类似于内存分配“use-after-free”和“double-free”错误，但通常更难以诊断和修复。“fdsan”会尝试通过强制执行文件描述符所有权来检测和/或防止文件描述符误管理。</p>
+<p>要详细了解与这些问题相关的崩溃，请参阅 <a href="https://source.android.google.cn/devices/tech/debug/native-crash#fdsan" target="_blank" rel="noopener">fdsan 检测到的错误</a>。要详细了解 fdsan，请参阅<a href="https://android.googlesource.com/platform/bionic/+/master/docs/fdsan.md" target="_blank" rel="noopener">关于 fdsan 的 Googlesource 页面</a>。</p>
+<h3 id="ELF-TLS"><a href="#ELF-TLS" class="headerlink" title="ELF TLS"></a>ELF TLS</h3><p>使用 API 级别 29 及更高版本的 NDK 编译的应用可以使用 ELF TLS，而非 <code>emutls</code>。我们增加了对动态和静态链接器的支持，以支持处理线程局部变量的方法。</p>
+<p>对于针对 API 级别 28 及更低版本编译的应用，我们实现了针对 <code>libgcc/compiler-rt</code> 的改进，以便解决一些 <code>emutls</code> 问题。</p>
+<p>有关详情，请参阅<a href="https://android.googlesource.com/platform/bionic/+/master/android-changes-for-ndk-developers.md" target="_blank" rel="noopener">面向 NDK 开发者的 Android 变更</a>。</p>
+<h2 id="运行时"><a href="#运行时" class="headerlink" title="运行时"></a>运行时</h2><p>Android 10 包含运行时方面的以下变更。</p>
+<h3 id="触发基于-Mallinfo-的垃圾回收"><a href="#触发基于-Mallinfo-的垃圾回收" class="headerlink" title="触发基于 Mallinfo 的垃圾回收"></a>触发基于 Mallinfo 的垃圾回收</h3><p>当小型平台 Java 对象引用 C++ 堆中的大型对象时，通常只有在系统已回收并（举例而言）最终确定 Java 对象后，才能回收 C++ 对象。在之前的版本中，平台会估算与 Java 对象相关联的许多 C++ 对象的大小。这种估算并不总是准确，并且偶尔会导致内存使用量大大增加，因为平台无法在应该进行垃圾回收时完成回收。</p>
+<p>在 Android 10 中，垃圾回收器 (GC) 会跟踪系统 <code>malloc()</code> 分配的堆的总大小，以确保 <code>malloc()</code> 分配的大型堆始终包含在可触发 GC 的计算中。因此，与 Java 执行交错大量 C++ 分配的应用可能会出现垃圾回收频率提高的现象。其他应用的频率则可能会略有下降。</p>
+<h2 id="测试和调试"><a href="#测试和调试" class="headerlink" title="测试和调试"></a>测试和调试</h2><p>Android 10 包含测试和调试方面的以下改进。</p>
+<h3 id="改进了设备上系统跟踪功能"><a href="#改进了设备上系统跟踪功能" class="headerlink" title="改进了设备上系统跟踪功能"></a>改进了设备上系统跟踪功能</h3><p>从 Android 10 开始，您在执行<a href="https://developer.android.google.cn/studio/profile/systrace-on-device" target="_blank" rel="noopener">设备上系统跟踪</a>时可以指定跟踪的记录大小和持续时间限制。在您指定任一值后，系统便会执行长期跟踪，并在记录跟踪时定期将跟踪缓冲区复制到目标文件。在达到您指定的记录大小或持续时间限制后，跟踪即告完成。</p>
+<p>请使用这些附加参数来测试除了您使用标准跟踪进行测试的用例之外的其他用例。例如，您可能正在诊断某个性能错误，而此错误仅在您的应用长时间运行后才会发生。在这种情况下，您可以记录为期一整天的长期跟踪，然后分析 CPU 调度程序、磁盘活动、应用线程以及报告中的其他数据，以帮助您确定造成此错误的原因。</p>
+<p>在 Android 10 及更高版本中，跟踪文件会以 <a href="https://ui.perfetto.dev/#!/" target="_blank" rel="noopener">Perfetto</a>（一个可用于性能检测和跟踪的开源项目）可以打开的格式保存。您可以<a href="https://docs.perfetto.dev/#/traceconv.md" target="_blank" rel="noopener">将 Perfetto 跟踪文件转换为 Systrace 格式</a>。</p>
+<h2 id="TextClassifier-方面的改进"><a href="#TextClassifier-方面的改进" class="headerlink" title="TextClassifier 方面的改进"></a>TextClassifier 方面的改进</h2><p>Android 10 在 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextClassifier" target="_blank" rel="noopener"><code>TextClassifier</code></a> 接口中提供了其他文本分类功能。</p>
+<h3 id="语言检测"><a href="#语言检测" class="headerlink" title="语言检测"></a>语言检测</h3><p><a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextClassifier#detectLanguage(android.view.textclassifier.TextLanguage.Request" target="_blank" rel="noopener"><code>detectLanguage()</code></a>) 方法的工作方式与先前已有的分类方法类似。它会接收一个 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextLanguage.Request" target="_blank" rel="noopener"><code>TextLanguage.Request</code></a> 对象并返回 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextLanguage" target="_blank" rel="noopener"><code>TextLanguage</code></a> 对象。</p>
+<p><code>TextLanguage</code> 对象包含一系列有序对。每个有序对都包含分类的语言区域和相应的置信度得分。</p>
+<h3 id="建议采取的对话操作"><a href="#建议采取的对话操作" class="headerlink" title="建议采取的对话操作"></a>建议采取的对话操作</h3><p><a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextClassifier#suggestConversationActions(android.view.textclassifier.ConversationActions.Request" target="_blank" rel="noopener"><code>suggestConversationActions()</code></a>) 方法的工作方式与现有分类方法类似。它会接收一个 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/ConversationActions.Request" target="_blank" rel="noopener"><code>ConversationActions.Request</code></a> 对象并返回 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/ConversationActions" target="_blank" rel="noopener"><code>ConversationActions</code></a> 对象。</p>
+<p><a href="https://developer.android.google.cn/reference/android/view/textclassifier/ConversationActions" target="_blank" rel="noopener"><code>ConversationActions</code></a> 对象包含一系列 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/ConversationAction" target="_blank" rel="noopener"><code>ConversationAction</code></a> 对象。每个 <code>ConversationAction</code> 对象都包含建议采取的可行操作及其置信度得分。</p>
+<h2 id="通知中的智能回复-操作"><a href="#通知中的智能回复-操作" class="headerlink" title="通知中的智能回复/操作"></a>通知中的智能回复/操作</h2><p>Android 9 引入了在通知中显示建议回复的功能。 Android 10 扩展了此功能，使其可以包含基于 intent 的建议操作。此外，该平台能够自动生成这些建议。应用仍然可以提供它们自己的建议，或选择停用系统生成的建议。</p>
+<p>用于生成这些回复的 API 是 <a href="https://developer.android.google.cn/reference/android/view/textclassifier/TextClassifier" target="_blank" rel="noopener"><code>TextClassifier</code></a> 的一部分，且已在 Android 10 中直接提供给开发者。如需了解详情，请参阅<a href="https://developer.android.google.cn/about/versions/10/features#textclass" target="_blank" rel="noopener">“TextClassifier 方面的改进”这一部分</a>。</p>
+<p>如果您的应用提供自己的建议，则平台不会生成任何自动建议。如果您不希望应用的通知显示任何建议回复或操作，可以通过使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.Action.Builder#setAllowGeneratedReplies(boolean" target="_blank" rel="noopener"><code>setAllowGeneratedReplies()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setAllowSystemGeneratedContextualActions(boolean" target="_blank" rel="noopener"><code>setAllowSystemGeneratedContextualActions()</code></a>) 选择停用系统生成的回复和操作。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android/Android更新/Android10 行为变更之TargetSDK/" rel="next" title="以 Android 10 为目标平台的应用行为变更">
+                <i class="fa fa-chevron-left"></i> 以 Android 10 为目标平台的应用行为变更
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android更新/Android11 功能和 API 概览/" rel="prev" title="Android11 功能和 API 概览">
+                Android11 功能和 API 概览 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">331</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全增强功能"><span class="nav-number">1.</span> <span class="nav-text">安全增强功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改进了生物识别身份验证对话框"><span class="nav-number">1.1.</span> <span class="nav-text">改进了生物识别身份验证对话框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接从-APK-运行嵌入式-DEX-代码"><span class="nav-number">1.2.</span> <span class="nav-text">直接从 APK 运行嵌入式 DEX 代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS-1-3-支持"><span class="nav-number">1.3.</span> <span class="nav-text">TLS 1.3 支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公共-Conscrypt-API"><span class="nav-number">1.4.</span> <span class="nav-text">公共 Conscrypt API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接功能"><span class="nav-number">2.</span> <span class="nav-text">连接功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WLAN-网络连接-API"><span class="nav-number">2.1.</span> <span class="nav-text">WLAN 网络连接 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WLAN-网络建议-API"><span class="nav-number">2.2.</span> <span class="nav-text">WLAN 网络建议 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进了-WLAN-高性能和低延迟模式"><span class="nav-number">2.3.</span> <span class="nav-text">改进了 WLAN 高性能和低延迟模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-解析器中的专用查找"><span class="nav-number">2.4.</span> <span class="nav-text">DNS 解析器中的专用查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WLAN-Easy-Connect"><span class="nav-number">2.5.</span> <span class="nav-text">WLAN Easy Connect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wi-Fi-Direct-connection-API"><span class="nav-number">2.6.</span> <span class="nav-text">Wi-Fi Direct connection API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝牙-LE-连接导向型频道-CoC"><span class="nav-number">2.7.</span> <span class="nav-text">蓝牙 LE 连接导向型频道 (CoC)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电话功能"><span class="nav-number">3.</span> <span class="nav-text">电话功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通话质量方面的改进"><span class="nav-number">3.1.</span> <span class="nav-text">通话质量方面的改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选接电话和来电显示"><span class="nav-number">3.2.</span> <span class="nav-text">选接电话和来电显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-Redirection-Service-API"><span class="nav-number">3.3.</span> <span class="nav-text">Call Redirection Service API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在外部存储设备中创建文件的相关改进"><span class="nav-number">4.</span> <span class="nav-text">在外部存储设备中创建文件的相关改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体和图形"><span class="nav-number">5.</span> <span class="nav-text">媒体和图形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共享音频输入"><span class="nav-number">5.1.</span> <span class="nav-text">共享音频输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#捕获播放的音频"><span class="nav-number">5.2.</span> <span class="nav-text">捕获播放的音频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaStyle-通知中的拖动条"><span class="nav-number">5.3.</span> <span class="nav-text">MediaStyle 通知中的拖动条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生-MIDI-API"><span class="nav-number">5.4.</span> <span class="nav-text">原生 MIDI API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaCodecInfo-方面的改进"><span class="nav-number">5.5.</span> <span class="nav-text">MediaCodecInfo 方面的改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thermal-API"><span class="nav-number">6.</span> <span class="nav-text">Thermal API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#摄像头和图片"><span class="nav-number">7.</span> <span class="nav-text">摄像头和图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单色摄像头支持"><span class="nav-number">7.1.</span> <span class="nav-text">单色摄像头支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态深度格式"><span class="nav-number">7.2.</span> <span class="nav-text">动态深度格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高效率图片文件格式"><span class="nav-number">7.3.</span> <span class="nav-text">高效率图片文件格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多摄像头方面的改进"><span class="nav-number">7.4.</span> <span class="nav-text">多摄像头方面的改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无障碍服务-API"><span class="nav-number">8.</span> <span class="nav-text">无障碍服务 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AccessibilityNodeInfo-输入键标记"><span class="nav-number">8.1.</span> <span class="nav-text">AccessibilityNodeInfo 输入键标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无障碍对话框语音反馈"><span class="nav-number">8.2.</span> <span class="nav-text">无障碍对话框语音反馈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用手势导航时的无障碍快捷方式"><span class="nav-number">8.3.</span> <span class="nav-text">启用手势导航时的无障碍快捷方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理键盘的无障碍快捷方式"><span class="nav-number">8.4.</span> <span class="nav-text">物理键盘的无障碍快捷方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软键盘控制器增强功能"><span class="nav-number">8.5.</span> <span class="nav-text">软键盘控制器增强功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户定义的无障碍服务超时"><span class="nav-number">8.6.</span> <span class="nav-text">用户定义的无障碍服务超时</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动填充方面的改进"><span class="nav-number">9.</span> <span class="nav-text">自动填充方面的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与兼容性相关的自动填充请求"><span class="nav-number">9.1.</span> <span class="nav-text">与兼容性相关的自动填充请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同时保存用户名和密码"><span class="nav-number">9.2.</span> <span class="nav-text">同时保存用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户与保存界面的互动"><span class="nav-number">9.3.</span> <span class="nav-text">用户与保存界面的互动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持更新数据集"><span class="nav-number">9.4.</span> <span class="nav-text">支持更新数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段分类方面的改进"><span class="nav-number">9.5.</span> <span class="nav-text">字段分类方面的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UserData-Builder-构造函数"><span class="nav-number">9.5.1.</span> <span class="nav-text">UserData.Builder 构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#允许将一个值映射到多种类别-ID"><span class="nav-number">9.5.2.</span> <span class="nav-text">允许将一个值映射到多种类别 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进了对信用卡号码的支持"><span class="nav-number">9.5.3.</span> <span class="nav-text">改进了对信用卡号码的支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#支持特定于应用的字段分类"><span class="nav-number">9.5.4.</span> <span class="nav-text">支持特定于应用的字段分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#界面和系统控件"><span class="nav-number">10.</span> <span class="nav-text">界面和系统控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#支持-JVMTI-PopFrame-功能"><span class="nav-number">10.1.</span> <span class="nav-text">支持 JVMTI PopFrame 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Surface-Control-API"><span class="nav-number">10.2.</span> <span class="nav-text">Surface Control API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebView-挂起渲染程序检测"><span class="nav-number">10.3.</span> <span class="nav-text">WebView 挂起渲染程序检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置面板"><span class="nav-number">10.4.</span> <span class="nav-text">设置面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享功能方面的改进"><span class="nav-number">10.5.</span> <span class="nav-text">共享功能方面的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sharing-Shortcuts-API"><span class="nav-number">10.5.1.</span> <span class="nav-text">Sharing Shortcuts API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接共享目标"><span class="nav-number">10.5.2.</span> <span class="nav-text">直接共享目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预览文本"><span class="nav-number">10.5.3.</span> <span class="nav-text">预览文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#了解详情"><span class="nav-number">10.5.4.</span> <span class="nav-text">了解详情</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深色主题"><span class="nav-number">10.6.</span> <span class="nav-text">深色主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前台服务类型"><span class="nav-number">11.</span> <span class="nav-text">前台服务类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin"><span class="nav-number">12.</span> <span class="nav-text">Kotlin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#libcore-API-的可空性注释"><span class="nav-number">12.1.</span> <span class="nav-text">libcore API 的可空性注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NDK"><span class="nav-number">13.</span> <span class="nav-text">NDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改进了文件描述符所有权的调试"><span class="nav-number">13.1.</span> <span class="nav-text">改进了文件描述符所有权的调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ELF-TLS"><span class="nav-number">13.2.</span> <span class="nav-text">ELF TLS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时"><span class="nav-number">14.</span> <span class="nav-text">运行时</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#触发基于-Mallinfo-的垃圾回收"><span class="nav-number">14.1.</span> <span class="nav-text">触发基于 Mallinfo 的垃圾回收</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试和调试"><span class="nav-number">15.</span> <span class="nav-text">测试和调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改进了设备上系统跟踪功能"><span class="nav-number">15.1.</span> <span class="nav-text">改进了设备上系统跟踪功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextClassifier-方面的改进"><span class="nav-number">16.</span> <span class="nav-text">TextClassifier 方面的改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言检测"><span class="nav-number">16.1.</span> <span class="nav-text">语言检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建议采取的对话操作"><span class="nav-number">16.2.</span> <span class="nav-text">建议采取的对话操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知中的智能回复-操作"><span class="nav-number">17.</span> <span class="nav-text">通知中的智能回复/操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

@@ -304,7 +304,7 @@
         
         
           
-          <li class="menu-item menu-item-jdk新特性">
+          <li class="menu-item menu-item-android-&-jdk新特性">
 
     
     
@@ -314,7 +314,7 @@
 
     
 
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
 
   </li>
         
@@ -613,8 +613,8 @@
 <li>作为模块中的主类</li>
 </ul>
 <p>而在最新的 Java 11 中新增了一个启动方式，即可以在源代码中声明类，例如：如果名为 HelloWorld.java 的文件包含一个名为 hello.World 的类，那么该命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> java HelloWorld.java</span><br></pre></td></tr></table></figure>
-<p>也等同于：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> javac HelloWorld.java</span><br><span class="line"><span class="meta">$</span> java -cp . hello.World</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> java HelloWorld.java</span></span><br></pre></td></tr></table></figure>
+<p>也等同于：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> javac HelloWorld.java</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> java -cp . hello.World</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="用于-Lambda-参数的局部变量语法"><a href="#用于-Lambda-参数的局部变量语法" class="headerlink" title="用于 Lambda 参数的局部变量语法"></a>用于 Lambda 参数的局部变量语法</h2><p>在 Lambda 表达式中使用局部变量类型推断是 Java 11 引入的唯一与语言相关的特性。</p>
 <p>从 Java 10 开始，便引入了局部变量类型推断这一关键特性。类型推断允许使用关键字 var 作为局部变量的类型而不是实际类型，编译器根据分配给变量的值推断出类型。这一改进简化了代码编写、节省了开发者的工作时间，因为不再需要显式声明局部变量的类型，而是可以使用关键字 var，且不会使源代码过于复杂。</p>
 <p>可以使用关键字 var 声明局部变量，如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"Hello Java 11"</span>;</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure></p>
@@ -768,7 +768,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">319</span>
+                    <span class="site-state-item-count">331</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

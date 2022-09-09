@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="【原文：behavior-changes-all】 Android 11 平台包含一些行为变更，这些变更可能会影响您的应用。以下行为变更将影响在 Android 11 上运行的所有应用，无论其采用哪种 targetSdkVersion 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更（如果适用）。 此外，请务必查看仅影响以 Android 11 为目标平台的应用的行为变更列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android11 所有应用行为变更">
+<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android11 行为变更之所有应用/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="【原文：behavior-changes-all】 Android 11 平台包含一些行为变更，这些变更可能会影响您的应用。以下行为变更将影响在 Android 11 上运行的所有应用，无论其采用哪种 targetSdkVersion 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更（如果适用）。 此外，请务必查看仅影响以 Android 11 为目标平台的应用的行为变更列">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://developer.android.google.cn/static/about/versions/11/images/emulator-5g.png">
+<meta property="og:updated_time" content="2022-08-30T11:52:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android11 所有应用行为变更">
+<meta name="twitter:description" content="【原文：behavior-changes-all】 Android 11 平台包含一些行为变更，这些变更可能会影响您的应用。以下行为变更将影响在 Android 11 上运行的所有应用，无论其采用哪种 targetSdkVersion 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更（如果适用）。 此外，请务必查看仅影响以 Android 11 为目标平台的应用的行为变更列">
+<meta name="twitter:image" content="https://developer.android.google.cn/static/about/versions/11/images/emulator-5g.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android11 行为变更之所有应用/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android11 所有应用行为变更 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-git命令">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-android-&-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android11 行为变更之所有应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android11 所有应用行为变更
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2022-08-30 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-30T19:52:36+08:00">2022-08-30</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.android.google.cn/about/versions/11/behavior-changes-all" target="_blank" rel="noopener">【原文：behavior-changes-all】</a></p>
+<p>Android 11 平台包含一些行为变更，这些变更可能会影响您的应用。以下行为变更将影响在 Android 11 上运行的所有应用，无论其采用哪种 <code>targetSdkVersion</code> 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更（如果适用）。</p>
+<p>此外，请务必查看<a href="https://developer.android.google.cn/about/versions/11/behavior-changes-11" target="_blank" rel="noopener">仅影响以 Android 11 为目标平台的应用的行为变更</a>列表。</p>
+<h2 id="隐私设置"><a href="#隐私设置" class="headerlink" title="隐私设置"></a>隐私设置</h2><p>Android 11 引入了一些变更和限制来加强用户隐私保护，其中包括：</p>
+<ul>
+<li><strong><a href="https://developer.android.google.cn/about/versions/11/privacy/permissions#one-time" target="_blank" rel="noopener">单次授权</a></strong>：让用户可以选择授予更多对位置信息、麦克风和摄像头的临时访问权限。</li>
+<li><strong><a href="https://developer.android.google.cn/about/versions/11/privacy/permissions#dialog-visibility" target="_blank" rel="noopener">权限对话框的可见性</a></strong>：一再拒绝某项权限表示用户希望“不再询问”。</li>
+<li><strong><a href="https://developer.android.google.cn/about/versions/11/privacy/data-access-auditing" target="_blank" rel="noopener">数据访问审核</a></strong>：深入了解您的应用在何处访问私密数据，无论是在您的应用自己的代码中，还是在依赖库的代码中。</li>
+<li><strong><a href="https://developer.android.google.cn/about/versions/11/privacy/permissions#system-alert" target="_blank" rel="noopener">系统提醒窗口权限</a></strong>：根据请求自动向某些类型的应用授予 <code>SYSTEM_ALERT_WINDOW</code> 权限。此外，包含 <code>ACTION_MANAGE_OVERLAY_PERMISSION</code> intent 操作的 intent 始终会将用户转至系统设置中的屏幕。</li>
+<li><strong><a href="https://developer.android.google.cn/training/articles/user-data-ids#mobile-service-subscriptions" target="_blank" rel="noopener">永久 SIM 卡标识符</a></strong>：在 Android 11 及更高版本中，使用 <a href="https://developer.android.google.cn/reference/android/telephony/SubscriptionInfo#getIccId(" target="_blank" rel="noopener"><code>getIccId()</code></a>) 方法访问不可重置的 ICCID 受到限制。该方法会返回一个非 null 的空字符串。如需唯一标识设备上安装的 SIM 卡，请改用 <a href="https://developer.android.google.cn/reference/android/telephony/SubscriptionInfo#getSubscriptionId(" target="_blank" rel="noopener"><code>getSubscriptionId()</code></a>) 方法。订阅 ID 会提供一个索引值（从 1 开始），用于唯一识别已安装的 SIM 卡（包括实体 SIM 卡和电子 SIM 卡）。除非设备恢复出厂设置，否则此标识符的值对于给定 SIM 卡是保持不变的。</li>
+</ul>
+<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/about/versions/11/privacy" target="_blank" rel="noopener">隐私设置</a>页面。</p>
+<h2 id="接触史通知"><a href="#接触史通知" class="headerlink" title="接触史通知"></a>接触史通知</h2><p>Android 11 在更新平台时考虑了<a href="https://www.google.com/covid19/exposurenotifications/" target="_blank" rel="noopener">接触史通知系统</a>。用户现已可在 Android 11 上运行接触史通知应用，且无需开启设备位置信息设置。接触史通知系统的设计使得使用该系统的应用无法通过蓝牙扫描推断设备所处的位置，因此，此例外情况仅适用于接触史通知系统。</p>
+<p>为保护用户的隐私，所有其他应用仍无法执行蓝牙扫描，除非用户已开启设备位置信息设置且已授予相应应用位置权限。如需了解详情，请阅读我们的<a href="https://blog.google/inside-google/company-announcements/update-exposure-notifications" target="_blank" rel="noopener">接触史通知最新动态</a>博文。</p>
+<h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><h3 id="SSL-套接字默认情况下使用-Conscrypt-SSL-引擎"><a href="#SSL-套接字默认情况下使用-Conscrypt-SSL-引擎" class="headerlink" title="SSL 套接字默认情况下使用 Conscrypt SSL 引擎"></a>SSL 套接字默认情况下使用 Conscrypt SSL 引擎</h3><p>Android 的默认 <code>SSLSocket</code> 实现基于 <a href="https://github.com/google/conscrypt" target="_blank" rel="noopener">Conscrypt</a>。从 Android 11 开始，该实现是在 Conscrypt 的 <code>SSLEngine</code> 之上内部构建的。</p>
+<h3 id="Scudo-Hardened-Allocator"><a href="#Scudo-Hardened-Allocator" class="headerlink" title="Scudo Hardened Allocator"></a>Scudo Hardened Allocator</h3><p>Android 11 在内部使用 <a href="https://source.android.google.cn/devices/tech/debug/scudo" target="_blank" rel="noopener">Scudo Hardened Allocator</a> 为堆分配提供服务。Scudo 能够检测并减轻某些类型的内存安全违规行为。如果您在原生代码崩溃报告中发现与 Scudo 相关的崩溃（例如 <code>Scudo ERROR:</code>），请参阅 <a href="https://source.android.google.cn/devices/tech/debug/scudo#Troubleshooting" target="_blank" rel="noopener">Scudo 问题排查</a>文档。</p>
+<h3 id="应用使用情况统计信息"><a href="#应用使用情况统计信息" class="headerlink" title="应用使用情况统计信息"></a>应用使用情况统计信息</h3><p>为了更好地保护用户，Android 11 将每个用户的应用使用情况统计信息存储在<a href="https://source.android.google.cn/security/encryption/file-based" target="_blank" rel="noopener">凭据加密存储空间</a>中。因此，系统和任何应用都无法访问该数据，除非 <a href="https://developer.android.google.cn/reference/android/os/UserManager#isUserUnlocked(android.os.UserHandle" target="_blank" rel="noopener"><code>isUserUnlocked()</code></a>) 返回 <code>true</code>，这发生在出现以下某种情况之后：</p>
+<ul>
+<li>用户在系统启动后首次解锁其设备。</li>
+<li>用户在设备上切换到自己的帐号。</li>
+</ul>
+<p>如果您的应用已绑定到 <a href="https://developer.android.google.cn/reference/android/app/usage/UsageStatsManager" target="_blank" rel="noopener"><code>UsageStatsManager</code></a> 的实例，请检查您是否是在用户解锁其设备后在此对象上调用方法。如果并非如此，该 API 现在会返回 null 或空值。</p>
+<h3 id="针对-5G-的模拟器支持"><a href="#针对-5G-的模拟器支持" class="headerlink" title="针对 5G 的模拟器支持"></a>针对 5G 的模拟器支持</h3><p>Android 11 添加了 <a href="https://developer.android.google.cn/about/versions/11/features/5g" target="_blank" rel="noopener">5G API</a>，使您的应用能够添加各种先进的功能。如需在添加这些功能时对其进行测试，您可以使用 <a href="https://developer.android.google.cn/studio/run/emulator" target="_blank" rel="noopener">Android SDK 模拟器</a>的新功能。这项新功能是在模拟器版本 30.0.22 中添加的。选择 5G 网络设置可将 <a href="https://developer.android.google.cn/reference/android/telephony/TelephonyDisplayInfo" target="_blank" rel="noopener"><code>TelephonyDisplayInfo</code></a> 设为 <a href="https://developer.android.google.cn/reference/android/telephony/TelephonyDisplayInfo#OVERRIDE_NETWORK_TYPE_NR_NSA" target="_blank" rel="noopener"><code>OVERRIDE_NETWORK_TYPE_NR_NSA</code></a>，修改带宽估算值，还允许您设置按流量计费性，以验证您的应用是否会对 <a href="https://developer.android.google.cn/reference/android/net/NetworkCapabilities#NET_CAPABILITY_TEMPORARILY_NOT_METERED" target="_blank" rel="noopener"><code>NET_CAPABILITY_TEMPORARILY_NOT_METERED</code></a> 状态的变化做出适当的响应。</p>
+<p><img src="https://developer.android.google.cn/static/about/versions/11/images/emulator-5g.png" alt="img"></p>
+<h2 id="性能和调试"><a href="#性能和调试" class="headerlink" title="性能和调试"></a>性能和调试</h2><h3 id="JobScheduler-API-调用限制调试"><a href="#JobScheduler-API-调用限制调试" class="headerlink" title="JobScheduler API 调用限制调试"></a>JobScheduler API 调用限制调试</h3><p>Android 11 为应用提供调试支持，以便确定有可能超过特定速率限制的 <code>JobScheduler</code> API 调用。开发者可以利用此服务发现潜在的性能问题。对于 <code>debuggable</code> 清单属性设置为 true 的应用，超出速率限制的 <code>JobScheduler</code> API 调用将返回 <a href="https://developer.android.google.cn/reference/android/app/job/JobScheduler#RESULT_FAILURE" target="_blank" rel="noopener"><code>RESULT_FAILURE</code></a>。如此设置限制，正当合理的用例应该就不会受到影响。</p>
+<h3 id="文件描述符排错程序-fdsan"><a href="#文件描述符排错程序-fdsan" class="headerlink" title="文件描述符排错程序 (fdsan)"></a>文件描述符排错程序 (fdsan)</h3><p>Android 10 引入了 <code>fdsan</code>（文件描述符排错程序）。<code>fdsan</code> 检测错误处理文件描述符所有权的错误，例如 use-after-close 和 double-close。在 Android 11 中，<code>fdsan</code> 的默认模式发生了变化。现在，<code>fdsan</code> 会在检测到错误时中止，而以前的行为则是记录警告并继续。如果您在应用中发现由于 <code>fdsan</code> 而导致的崩溃，请参阅 <a href="https://android.googlesource.com/platform/bionic/+/master/docs/fdsan.md" target="_blank" rel="noopener"><code>fdsan documentation</code></a>。</p>
+<h2 id="非-SDK-接口限制"><a href="#非-SDK-接口限制" class="headerlink" title="非 SDK 接口限制"></a>非 SDK 接口限制</h2><p>Android 11 包含更新后的受限制非 SDK 接口列表（基于与 Android 开发者之间的协作以及最新的内部测试）。在限制使用非 SDK 接口之前，我们会尽可能确保有可用的公开替代方案。</p>
+<p>如果您的应用并非以 Android 11 为目标平台，那么其中一些变更可能不会立即对您产生影响。不过，虽然您目前可以使用一些非 SDK 接口（<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#list-names" target="_blank" rel="noopener">具体取决于应用的目标 API 级别</a>），但只要您使用任何非 SDK 方法或字段，应用无法运行的风险终归较高。</p>
+<p>如果您不确定自己的应用是否使用了非 SDK 接口，则可以<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#test-for-non-sdk" target="_blank" rel="noopener">测试该应用</a>，进行确认。如果您的应用依赖于非 SDK 接口，您应该开始计划迁移到 SDK 替代方案。然而，我们知道某些应用具有使用非 SDK 接口的有效用例。如果您无法为应用中的某项功能找到使用非 SDK 接口的替代方案，则应<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#feature-request" target="_blank" rel="noopener">请求新的公共 API</a>。</p>
+<p>如需详细了解此 Android 版本中的变更，请参阅 <a href="https://developer.android.google.cn/about/versions/11/non-sdk-11" target="_blank" rel="noopener">Android 11 中有关限制非 SDK 接口的更新</a>。如需全面了解有关非 SDK 接口的详细信息，请参阅<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces" target="_blank" rel="noopener">对非 SDK 接口的限制</a>。</p>
+<h2 id="V1-版-Google-地图共享库已移除"><a href="#V1-版-Google-地图共享库已移除" class="headerlink" title="V1 版 Google 地图共享库已移除"></a>V1 版 Google 地图共享库已移除</h2><p>Android 11 中已完全移除 V1 版 Google 地图共享库。此库之前已被弃用，并已停止在 Android 10 中的应用中运行。对于搭载 Android 9（API 级别 28）或更低版本的设备，之前依赖于此共享库的应用应改用<a href="https://developers.google.cn/maps/documentation/android-sdk/intro" target="_blank" rel="noopener">适用于 Android 的 Google 地图 SDK</a>。</p>
+<p><strong>重要提示</strong>：迁移到 Maps SDK for Android 后，请务必从应用清单文件的 <a href="https://developer.android.google.cn/guide/topics/manifest/uses-library-element" target="_blank" rel="noopener"><code></code></a> 元素中移除对 v1 版 Google 地图共享库的引用。应用无法再将 <a href="https://developer.android.google.cn/google/play/filters" target="_blank" rel="noopener">Google Play 过滤</a>与 V1 版 Google 地图共享库和 <code></code> 元素一起使用。</p>
+<h2 id="与其他应用交互"><a href="#与其他应用交互" class="headerlink" title="与其他应用交互"></a>与其他应用交互</h2><h3 id="分享内容-URI"><a href="#分享内容-URI" class="headerlink" title="分享内容 URI"></a>分享内容 URI</h3><p>如果您的应用与其他应用分享内容 URI，相应 intent 必须至少设置以下 intent 标记中的一个，以便<a href="https://developer.android.google.cn/about/versions/11/privacy/package-visibility-use-cases#grant-uri-access" target="_blank" rel="noopener">授予对 URI 的访问权限</a>：<a href="https://developer.android.google.cn/reference/android/content/Intent#FLAG_GRANT_READ_URI_PERMISSION" target="_blank" rel="noopener"><code>FLAG_GRANT_READ_URI_PERMISSION</code></a> 和 <a href="https://developer.android.google.cn/reference/android/content/Intent#FLAG_GRANT_WRITE_URI_PERMISSION" target="_blank" rel="noopener"><code>FLAG_GRANT_WRITE_URI_PERMISSION</code></a>。这样一来，如果其他应用以 Android 11 为目标平台，相应应用仍可访问内容 URI。即使内容 URI 与不属于您的应用的内容提供程序相关联，您的应用也必须包含 intent 标记。</p>
+<p>如果您的应用拥有已与内容 URI 相关联的内容提供程序，请确认<a href="https://developer.android.google.cn/topic/security/best-practices#disallow-access-to-your-apps-content-providers" target="_blank" rel="noopener">该内容提供程序未被导出</a>。我们已建议采用这项安全最佳做法。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android/Android更新/Android11 功能和 API 概览/" rel="next" title="Android11 功能和 API 概览">
+                <i class="fa fa-chevron-left"></i> Android11 功能和 API 概览
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android/Android更新/Android11 行为变更之TargetSDK/" rel="prev" title="以 Android 11 为目标平台的应用行为变更">
+                以 Android 11 为目标平台的应用行为变更 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">331</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐私设置"><span class="nav-number">1.</span> <span class="nav-text">隐私设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接触史通知"><span class="nav-number">2.</span> <span class="nav-text">接触史通知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全性"><span class="nav-number">3.</span> <span class="nav-text">安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL-套接字默认情况下使用-Conscrypt-SSL-引擎"><span class="nav-number">3.1.</span> <span class="nav-text">SSL 套接字默认情况下使用 Conscrypt SSL 引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scudo-Hardened-Allocator"><span class="nav-number">3.2.</span> <span class="nav-text">Scudo Hardened Allocator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用使用情况统计信息"><span class="nav-number">3.3.</span> <span class="nav-text">应用使用情况统计信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#针对-5G-的模拟器支持"><span class="nav-number">3.4.</span> <span class="nav-text">针对 5G 的模拟器支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能和调试"><span class="nav-number">4.</span> <span class="nav-text">性能和调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JobScheduler-API-调用限制调试"><span class="nav-number">4.1.</span> <span class="nav-text">JobScheduler API 调用限制调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件描述符排错程序-fdsan"><span class="nav-number">4.2.</span> <span class="nav-text">文件描述符排错程序 (fdsan)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非-SDK-接口限制"><span class="nav-number">5.</span> <span class="nav-text">非 SDK 接口限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V1-版-Google-地图共享库已移除"><span class="nav-number">6.</span> <span class="nav-text">V1 版 Google 地图共享库已移除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与其他应用交互"><span class="nav-number">7.</span> <span class="nav-text">与其他应用交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分享内容-URI"><span class="nav-number">7.1.</span> <span class="nav-text">分享内容 URI</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
