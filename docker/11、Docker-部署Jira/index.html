@@ -136,18 +136,18 @@
 
 
 
-  <meta name="description" content="编写docker-compose.yml文件12 启动容器1$ docker-compose up">
+  <meta name="description" content="jira 是一个商用的java应用，用于敏捷开发项目管理或者BUG追踪等，镜像需要自己制作，免费试用30天，稍微麻烦点。 创建目录123$ mkdir -p /opt/atlassian/mysql/data$ mkdir -p /opt/atlassian/mysql/conf$ mkdir -p /opt/atlassian/jiradata 编写docker-compose.yml文件123">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="11、Docker-部署Jira">
 <meta property="og:url" content="http://yoursite.com/docker/11、Docker-部署Jira/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="编写docker-compose.yml文件12 启动容器1$ docker-compose up">
+<meta property="og:description" content="jira 是一个商用的java应用，用于敏捷开发项目管理或者BUG追踪等，镜像需要自己制作，免费试用30天，稍微麻烦点。 创建目录123$ mkdir -p /opt/atlassian/mysql/data$ mkdir -p /opt/atlassian/mysql/conf$ mkdir -p /opt/atlassian/jiradata 编写docker-compose.yml文件123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-10-31T07:55:08.131Z">
+<meta property="og:updated_time" content="2022-10-31T09:18:13.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11、Docker-部署Jira">
-<meta name="twitter:description" content="编写docker-compose.yml文件12 启动容器1$ docker-compose up">
+<meta name="twitter:description" content="jira 是一个商用的java应用，用于敏捷开发项目管理或者BUG追踪等，镜像需要自己制作，免费试用30天，稍微麻烦点。 创建目录123$ mkdir -p /opt/atlassian/mysql/data$ mkdir -p /opt/atlassian/mysql/conf$ mkdir -p /opt/atlassian/jiradata 编写docker-compose.yml文件123">
 
 
 
@@ -506,7 +506,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-10-31 15:55:08" itemprop="dateModified" datetime="2022-10-31T15:55:08+08:00">2022-10-31</time>
+                <time title="修改时间：2022-10-31 17:18:13" itemprop="dateModified" datetime="2022-10-31T17:18:13+08:00">2022-10-31</time>
               
             
           </span>
@@ -557,8 +557,15 @@
       
 
       
-        <h2 id="编写docker-compose-yml文件"><a href="#编写docker-compose-yml文件" class="headerlink" title="编写docker-compose.yml文件"></a>编写docker-compose.yml文件</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p><code>jira</code> 是一个商用的java应用，用于敏捷开发项目管理或者BUG追踪等，镜像需要自己制作，免费试用30天，稍微麻烦点。</p>
+<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p /opt/atlassian/mysql/data</span><br><span class="line">$ mkdir -p /opt/atlassian/mysql/conf</span><br><span class="line">$ mkdir -p /opt/atlassian/jiradata</span><br></pre></td></tr></table></figure>
+<h2 id="编写docker-compose-yml文件"><a href="#编写docker-compose-yml文件" class="headerlink" title="编写docker-compose.yml文件"></a>编写docker-compose.yml文件</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.3'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jira_mysql:</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">        <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123456</span></span><br><span class="line">        <span class="attr">MYSQL_DATABASE:</span> <span class="string">myjira</span></span><br><span class="line">        <span class="attr">MYSQL_USER:</span> <span class="string">myjira</span></span><br><span class="line">        <span class="attr">MYSQL_PASSWORD:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:5.7</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/opt/atlassian/mysql/data:/var/lib/mysql</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/opt/atlassian/mysql/conf:/etc/mysql/mysql.conf.d</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="number">3306</span><span class="string">:3306</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">jira_mysql</span></span><br><span class="line">  <span class="attr">myjira:</span></span><br><span class="line">    <span class="attr">depends_on:</span> </span><br><span class="line">        <span class="bullet">-</span> <span class="string">jira_mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">        <span class="attr">TZ:</span> <span class="string">"Asia/Shanghai"</span></span><br><span class="line">    <span class="comment"># 这个镜像可能不能用</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jira-xxx</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/opt/atlassian/jiradata:/var/atlassian/jira</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="number">80</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">myjira</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>image: jira-xxx 可以换成网友制作的镜像可以省很多java方面的配置<br>base64: aW1hZ2U6IHJlZ2lzdHJ5LmNuLWhhbmd6aG91LmFsaXl1bmNzLmNvbS95YW5nbWluZ3F1YW4vamlyYTo4LjEuMA==</p>
+</blockquote>
 <h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose up</span><br></pre></td></tr></table></figure>
+<p>访问 <code>http://IP:80</code> 即可访问服务，第一次访问要配置数据库等参数。</p>
+
       
     </div>
 
@@ -1014,7 +1021,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写docker-compose-yml文件"><span class="nav-number">1.</span> <span class="nav-text">编写docker-compose.yml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动容器"><span class="nav-number">2.</span> <span class="nav-text">启动容器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录"><span class="nav-number">1.</span> <span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写docker-compose-yml文件"><span class="nav-number">2.</span> <span class="nav-text">编写docker-compose.yml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动容器"><span class="nav-number">3.</span> <span class="nav-text">启动容器</span></a></li></ol></div>
             
 
           </div>
