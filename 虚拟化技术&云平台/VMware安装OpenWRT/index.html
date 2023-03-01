@@ -136,21 +136,22 @@
 
 
 
-  <meta name="description" content="VMware上安装OpenWRT的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  我比较懒，就用开箱即用试了一下。 【下载地址】下载了一个，解压之后只要一个VM的配置文件和VM磁盘文件。用VM打开，启动提示其他版本VM创建，修改配置文件，把 virtualHW.v">
+  <meta name="description" content="建议首先看看此文：【Openwrt&amp;amp;VMware官方指导文档】 VMware上安装OpenWrt的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  其他文章：  【openwrt 好用的插件】 【openwrt vmware 安装无法显示eth0网卡】 【o">
 <meta name="keywords" content="VMWare,OpenWRT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VMware安装OpenWRT">
+<meta property="og:title" content="VMware安装OpenWrt">
 <meta property="og:url" content="http://yoursite.com/虚拟化技术&云平台/VMware安装OpenWRT/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="VMware上安装OpenWRT的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  我比较懒，就用开箱即用试了一下。 【下载地址】下载了一个，解压之后只要一个VM的配置文件和VM磁盘文件。用VM打开，启动提示其他版本VM创建，修改配置文件，把 virtualHW.v">
+<meta property="og:description" content="建议首先看看此文：【Openwrt&amp;amp;VMware官方指导文档】 VMware上安装OpenWrt的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  其他文章：  【openwrt 好用的插件】 【openwrt vmware 安装无法显示eth0网卡】 【o">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/linux/openwrt.png">
 <meta property="og:image" content="http://yoursite.com/images/linux/openwrt-login.png">
 <meta property="og:image" content="http://yoursite.com/images/linux/openwrt_web.png">
+<meta property="og:image" content="http://yoursite.com/images/linux/openwrt-vm-conf.png">
 <meta property="og:updated_time" content="2019-07-13T01:52:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VMware安装OpenWRT">
-<meta name="twitter:description" content="VMware上安装OpenWRT的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  我比较懒，就用开箱即用试了一下。 【下载地址】下载了一个，解压之后只要一个VM的配置文件和VM磁盘文件。用VM打开，启动提示其他版本VM创建，修改配置文件，把 virtualHW.v">
+<meta name="twitter:title" content="VMware安装OpenWrt">
+<meta name="twitter:description" content="建议首先看看此文：【Openwrt&amp;amp;VMware官方指导文档】 VMware上安装OpenWrt的方法很多种，推荐：  通过源码编译vmdk磁盘文件，【教程】。 通过下载官方的img镜像，转换为vmdk磁盘文件，【教程】。 直接下载vm镜像，开箱即用，但是安全性不高，【教程】。  其他文章：  【openwrt 好用的插件】 【openwrt vmware 安装无法显示eth0网卡】 【o">
 <meta name="twitter:image" content="http://yoursite.com/images/linux/openwrt.png">
 
 
@@ -168,7 +169,7 @@
   };
 </script>
 
-  <title>VMware安装OpenWRT | 咸鱼</title>
+  <title>VMware安装OpenWrt | 咸鱼</title>
   
 
 
@@ -468,7 +469,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VMware安装OpenWRT
+          <h1 class="post-title" itemprop="name headline">VMware安装OpenWrt
               
             
           </h1>
@@ -545,19 +546,42 @@
       
 
       
-        <p>VMware上安装OpenWRT的方法很多种，推荐：</p>
+        <p>建议首先看看此文：<a href="https://openwrt.org/docs/guide-user/virtualization/vmware" target="_blank" rel="noopener">【Openwrt&amp;VMware官方指导文档】</a></p>
+<p>VMware上安装OpenWrt的方法很多种，推荐：</p>
 <ol>
 <li>通过源码编译vmdk磁盘文件，<a href="https://blog.csdn.net/a13698709128/article/details/78159833" target="_blank" rel="noopener">【教程】</a>。</li>
 <li>通过下载官方的img镜像，转换为vmdk磁盘文件，<a href="https://cokebar.info/archives/2444" target="_blank" rel="noopener">【教程】</a>。</li>
 <li>直接下载vm镜像，开箱即用，但是安全性不高，<a href="https://github.com/luoqeng/OpenWrt-on-VMware" target="_blank" rel="noopener">【教程】</a>。</li>
 </ol>
-<p>我比较懒，就用开箱即用试了一下。</p>
-<p><a href="https://github.com/luoqeng/OpenWrt-on-VMware/releases/download/v18.06.2/openwrt-18.06.2.tar.gz" target="_blank" rel="noopener">【下载地址】</a>下载了一个，解压之后只要一个VM的配置文件和VM磁盘文件。<br>用VM打开，启动提示其他版本VM创建，修改配置文件，把 <code>virtualHW.version</code>的值改为自己的版本，重新启动。</p>
+<p>其他文章：</p>
+<ol>
+<li><a href="https://blog.csdn.net/GaaraZ/article/details/129197344" target="_blank" rel="noopener">【openwrt 好用的插件】</a></li>
+<li><a href="https://www.cnblogs.com/ztxd/articles/15117255.html" target="_blank" rel="noopener">【openwrt vmware 安装无法显示eth0网卡】</a></li>
+<li><a href="https://www.cnblogs.com/GreyWang/archive/2023/02/15/17124678.html" target="_blank" rel="noopener">【openwrt vmware 作旁路由】</a></li>
+<li><a href="https://blog.csdn.net/mshxuyi/article/details/129043787" target="_blank" rel="noopener">【openwrt vmware 作旁路由并配置PassWall】</a></li>
+</ol>
+<h3 id="一、Vmware镜像，开箱即用"><a href="#一、Vmware镜像，开箱即用" class="headerlink" title="一、Vmware镜像，开箱即用"></a>一、Vmware镜像，开箱即用</h3><p><a href="https://github.com/luoqeng/OpenWrt-on-VMware/releases/download/v18.06.2/openwrt-18.06.2.tar.gz" target="_blank" rel="noopener">【下载地址】</a>下载了一个，解压之后只要一个VM的配置文件和VM磁盘文件。<br>用VM打开，启动提示其他版本VM创建，修改配置文件，把 <code>virtualHW.version</code>的值改为自己的版本，重新启动。</p>
 <p><img src="/images/linux/openwrt.png" alt></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ifconfig -a</span><br></pre></td></tr></table></figure>
-<p>看到它的IP是 <code>192.168.0.120</code>,在浏览器访问，就能看到OpenWRT的Web登录界面。<br>默认登录账号是 <code>root</code>，密码不知道。<br><img src="/images/linux/openwrt-login.png" alt></p>
+<p>看到它的IP是 <code>192.168.0.120</code>,在浏览器访问，就能看到OpenWRT的Web登录界面。<br>默认登录账号是 <code>root</code>，密码默认是空。<br><img src="/images/linux/openwrt-login.png" alt></p>
 <p>直接在虚拟机终端修改root的密码:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd root</span><br></pre></td></tr></table></figure></p>
 <p>重新登录Web<br><img src="/images/linux/openwrt_web.png" alt></p>
+<h3 id="二、官方IMG镜像vmdk磁盘"><a href="#二、官方IMG镜像vmdk磁盘" class="headerlink" title="二、官方IMG镜像vmdk磁盘"></a>二、官方IMG镜像vmdk磁盘</h3><p><a href="https://openwrt.org/docs/guide-user/virtualization/vmware" target="_blank" rel="noopener">【Openwrt官方文档】</a></p>
+<p><code>IMG -&gt; vmdk</code> 转换软件：</p>
+<ul>
+<li>linux -&gt; qemu-img</li>
+<li>windows -&gt; <a href="https://www.starwindsoftware.com/tmplink/starwindconverter.exe" target="_blank" rel="noopener">【starwindconverter】</a></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> centos</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yum -y install qemu-img </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> ubuntu </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install qemu-img</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> mac</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> brew install qemu</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 国内源</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget https://archive.openwrt.org/releases/19.07.10/targets/x86/64/openwrt-19.07.10-x86-64-combined-ext4.img.gz</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> gunzip openwrt-19.07.10-x86-64-combined-ext4.img.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> qemu-img convert -f raw -O vmdk openwrt-19.07.10-x86-64-combined-ext4.img openwrt-19.07.10-x86-64-combined-ext4.vmdk</span></span><br></pre></td></tr></table></figure>
+<p>有了vmdk文件，创建一个自定义32位的vm虚拟机，磁盘选择vmdk文件即可。</p>
+<p><img src="/images/linux/openwrt-vm-conf.png" alt></p>
+<p>注意（重要）： 创建虚拟机后，要编辑虚拟机的配置文件 <code>**.vmx</code> 加入一行配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethernet0.virtualDev = &quot;e1000&quot;</span><br></pre></td></tr></table></figure></p>
+<p>这样 <code>openwrt</code> 才能识别到网卡，我就是 <code>eth0</code> 一直起不来，网络不通。</p>
+<h4 id="1-vm网络模式可以用桥接，lan网卡设置为静态模式"><a href="#1-vm网络模式可以用桥接，lan网卡设置为静态模式" class="headerlink" title="1. vm网络模式可以用桥接，lan网卡设置为静态模式"></a>1. vm网络模式可以用桥接，lan网卡设置为静态模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/config/network</span><br><span class="line"></span><br><span class="line">config interface &apos;lan&apos;</span><br><span class="line">    option type &apos;bridge&apos;</span><br><span class="line">    option ifname &apos;eth0&apos;</span><br><span class="line">    option proto &apos;static&apos;</span><br><span class="line">    option ipaddr &apos;192.168.0.66&apos;</span><br><span class="line">    option netmask &apos;255.255.255.0&apos;</span><br><span class="line">    option ip6assign &apos;60&apos;</span><br><span class="line">    option gateway &apos;192.168.0.1&apos;</span><br><span class="line">    option dns &apos;192.168.0.1&apos;</span><br><span class="line"></span><br><span class="line">$ service network restart</span><br></pre></td></tr></table></figure>
+<p><code>http://192.168.0.66</code> 就是登录入口</p>
+<h4 id="2-vm网络模式设置为NAT，lan网卡设置为DHCP"><a href="#2-vm网络模式设置为NAT，lan网卡设置为DHCP" class="headerlink" title="2. vm网络模式设置为NAT，lan网卡设置为DHCP"></a>2. vm网络模式设置为NAT，lan网卡设置为DHCP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/config/network</span><br><span class="line"></span><br><span class="line">config interface &apos;lan&apos;</span><br><span class="line">    option type &apos;bridge&apos;</span><br><span class="line">    option ifname &apos;eth0&apos;</span><br><span class="line">    option proto &apos;dhcp&apos;</span><br><span class="line"></span><br><span class="line">$ service network restart</span><br><span class="line">$ ifconfig eth0</span><br><span class="line">****网络信息****</span><br></pre></td></tr></table></figure>
+<p><code>http://192.168.**.**</code> 就是登录入口</p>
+<h3 id="三、作为旁路由"><a href="#三、作为旁路由" class="headerlink" title="三、作为旁路由"></a>三、作为旁路由</h3><p>TODO</p>
 
       
     </div>
@@ -651,8 +675,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -669,7 +702,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">342</span>
+                    <span class="site-state-item-count">343</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -997,6 +1030,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Vmware镜像，开箱即用"><span class="nav-number">1.</span> <span class="nav-text">一、Vmware镜像，开箱即用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、官方IMG镜像vmdk磁盘"><span class="nav-number">2.</span> <span class="nav-text">二、官方IMG镜像vmdk磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-vm网络模式可以用桥接，lan网卡设置为静态模式"><span class="nav-number">2.1.</span> <span class="nav-text">1. vm网络模式可以用桥接，lan网卡设置为静态模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-vm网络模式设置为NAT，lan网卡设置为DHCP"><span class="nav-number">2.2.</span> <span class="nav-text">2. vm网络模式设置为NAT，lan网卡设置为DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、作为旁路由"><span class="nav-number">3.</span> <span class="nav-text">三、作为旁路由</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
