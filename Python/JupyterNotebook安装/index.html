@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Jupyter 是一个编程语言的交互式计算的web服务，简单来说：jupyter作为一个web服务，可以在线在浏览器编程。 jupyter 主要有两个产品：  jupyter notebook 在线文档应用，可以在笔记文档里运行python代码，并显示结果。 jupyter lab 是 notebook 的加强升级版，用于笔记、代码和数据的最新的基于web的交互式开发环境。  对于学习者，比如我在">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JupyterNotebook安装">
+<meta property="og:url" content="http://yoursite.com/Python/JupyterNotebook安装/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="Jupyter 是一个编程语言的交互式计算的web服务，简单来说：jupyter作为一个web服务，可以在线在浏览器编程。 jupyter 主要有两个产品：  jupyter notebook 在线文档应用，可以在笔记文档里运行python代码，并显示结果。 jupyter lab 是 notebook 的加强升级版，用于笔记、代码和数据的最新的基于web的交互式开发环境。  对于学习者，比如我在">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-06-28T13:51:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JupyterNotebook安装">
+<meta name="twitter:description" content="Jupyter 是一个编程语言的交互式计算的web服务，简单来说：jupyter作为一个web服务，可以在线在浏览器编程。 jupyter 主要有两个产品：  jupyter notebook 在线文档应用，可以在笔记文档里运行python代码，并显示结果。 jupyter lab 是 notebook 的加强升级版，用于笔记、代码和数据的最新的基于web的交互式开发环境。  对于学习者，比如我在">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Python/JupyterNotebook安装/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JupyterNotebook安装 | 咸鱼</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咸鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-git命令">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-android-&-jdk新特性">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-java资源">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-hexo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Python/JupyterNotebook安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JupyterNotebook安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2023-06-28 21:51:36" itemprop="dateCreated datePublished" datetime="2023-06-28T21:51:36+08:00">2023-06-28</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter</a> 是一个编程语言的交互式计算的web服务，简单来说：jupyter作为一个web服务，可以在线在浏览器编程。</p>
+<p>jupyter 主要有两个产品：</p>
+<ul>
+<li><code>jupyter notebook</code> 在线文档应用，可以在笔记文档里运行python代码，并显示结果。</li>
+<li><code>jupyter lab</code> 是 <code>notebook</code> 的加强升级版，用于笔记、代码和数据的最新的基于web的交互式开发环境。</li>
+</ul>
+<p>对于学习者，比如我在学Python，我要做笔记：</p>
+<ul>
+<li>一般情况：我在编辑器或IDE写代码，运行代码，把代码和运行结果拷贝到笔记。</li>
+<li>使用<code>jupyter</code>：在浏览器里写笔记和代码，而笔记里面的代码是可以直接运行的，直观的很。</li>
+</ul>
+<h3 id="如何安装？"><a href="#如何安装？" class="headerlink" title="如何安装？"></a>如何安装？</h3><p><a href="https://jupyter.org/install" target="_blank" rel="noopener">很简单，直接通过pip就可以安装。</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">$ pip install jupyterlab</span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ jupyter-lab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">$ pip install notebook</span><br><span class="line"><span class="comment"># 启动（会自动打开浏览器，默认端口: 8888）</span></span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：jupyterlab 和 jupyter notebook 仅需要安装其中一个。</p>
+</blockquote>
+<h3 id="jupyter-notebook-常用命令"><a href="#jupyter-notebook-常用命令" class="headerlink" title="jupyter notebook 常用命令"></a>jupyter notebook 常用命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 帮助</span></span><br><span class="line">$ jupyter notebook -h</span><br><span class="line"><span class="comment"># 指定端口</span></span><br><span class="line">$ jupyter notebook --port &lt;port_number&gt;</span><br><span class="line"><span class="comment"># 启动时不自动打开浏览器</span></span><br><span class="line">$ jupyter notebook --no-browser</span><br></pre></td></tr></table></figure>
+<h3 id="jupyter-notebook-配置"><a href="#jupyter-notebook-配置" class="headerlink" title="jupyter notebook 配置"></a>jupyter notebook 配置</h3><p><code>jupyter notebook</code> 默认是home路径，上面很多私人文档文件，所以需修改默认目录<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看配置文件路径，如果没有配置文件会新生成一个</span></span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ jupyter notebook --generate-config</span><br><span class="line">Writing default config to: /home/<span class="built_in">test</span>/.jupyter/jupyter_notebook_config.py</span><br><span class="line"><span class="comment"># vim编辑配置文件</span></span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ vim /home/<span class="built_in">test</span>/.jupyter/jupyter_notebook_config.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到 'notebook_dir' 关键字，设置路径</span></span><br><span class="line"><span class="comment">## The directory to use for notebooks and kernels.</span></span><br><span class="line"><span class="comment">#  Default: ''</span></span><br><span class="line"><span class="comment"># c.NotebookApp.notebook_dir = ''</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">'/home/test/notebooks'</span></span><br></pre></td></tr></table></figure></p>
+<p>重启 <code>jupyter notebook</code> 服务，浏览器显示的就是当前设置的目录</p>
+<h3 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h3><p><code>jupyter notebook</code> 是一个web服务，默认仅支持在本地访问，通过修改配置文件，可支持其他PC远程访问。</p>
+<blockquote>
+<p>可以在服务器部署，客户机在浏览器上使用。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 允许远程连接</span></span><br><span class="line">c.NotebookApp.allow_remote_access = True</span><br><span class="line"><span class="comment"># 所有IP可访问</span></span><br><span class="line">c.NotebookApp.ip=<span class="string">'*'</span> </span><br><span class="line"><span class="comment"># 可选，如果是作为一个服务运行，则无需自动打开本地浏览器</span></span><br><span class="line">c.NotebookApp.open_browser = False</span><br></pre></td></tr></table></figure>
+<p>重启 <code>jupyter notebook</code> 服务，拷贝日志输出的URL，里面带有token参数是身份认证。</p>
+<h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>默认的Token值是很长一串字符，很难记忆，可配置为密码登录。</p>
+<ol>
+<li><p>生成密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ipython</span><br><span class="line">In [1]: from notebook.auth import passwd</span><br><span class="line">In [2]: passwd()</span><br><span class="line">Enter password: (这里输入密码)</span><br><span class="line">Verify password: (这里再次输入密码)</span><br><span class="line">Out[2]: &apos;密文&apos;  (这里是生成的密码加密数据)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>密码放置到配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.password = u&apos;密文&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>重启，刷新浏览器，输入密码登录。</p>
+<h3 id="jupyter-notebook-安装日志"><a href="#jupyter-notebook-安装日志" class="headerlink" title="jupyter notebook 安装日志"></a>jupyter notebook 安装日志</h3><blockquote>
+<p>备注： 此日志是桌边版的Ubuntu上安装<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ pip install jupyter</span><br><span class="line">Defaulting to user installation because normal site-packages is not writeable</span><br><span class="line">Collecting jupyter</span><br><span class="line">  Downloading jupyter-1.0.0-py2.py3-none-any.whl (2.7 kB)</span><br><span class="line">Collecting qtconsole</span><br><span class="line">  Downloading qtconsole-5.4.3-py3-none-any.whl (121 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.9/121.9 KB 698.9 kB/s eta 0:00:00</span><br><span class="line">Collecting ipykernel</span><br><span class="line">  Downloading ipykernel-6.23.3-py3-none-any.whl (152 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.8/152.8 KB 3.5 MB/s eta 0:00:00</span><br><span class="line">Collecting notebook</span><br><span class="line">  Downloading notebook-6.5.4-py3-none-any.whl (529 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.8/529.8 KB 4.7 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyter-console</span><br><span class="line">  Downloading jupyter_console-6.6.3-py3-none-any.whl (24 kB)</span><br><span class="line">Collecting ipywidgets</span><br><span class="line">  Downloading ipywidgets-8.0.6-py3-none-any.whl (138 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 138.3/138.3 KB 6.9 MB/s eta 0:00:00</span><br><span class="line">Collecting nbconvert</span><br><span class="line">  Downloading nbconvert-7.6.0-py3-none-any.whl (290 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 290.4/290.4 KB 6.0 MB/s eta 0:00:00</span><br><span class="line">Collecting comm&gt;=0.1.1</span><br><span class="line">  Downloading comm-0.1.3-py3-none-any.whl (6.6 kB)</span><br><span class="line">Collecting nest-asyncio</span><br><span class="line">  Downloading nest_asyncio-1.5.6-py3-none-any.whl (5.2 kB)</span><br><span class="line">Collecting jupyter-client&gt;=6.1.12</span><br><span class="line">  Downloading jupyter_client-8.3.0-py3-none-any.whl (103 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 KB 8.0 MB/s eta 0:00:00</span><br><span class="line">Collecting pyzmq&gt;=20</span><br><span class="line">  Downloading pyzmq-25.1.0-cp310-cp310-manylinux_2_28_x86_64.whl (1.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 6.2 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyter-core!=5.0.*,&gt;=4.12</span><br><span class="line">  Downloading jupyter_core-5.3.1-py3-none-any.whl (93 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 93.7/93.7 KB 4.6 MB/s eta 0:00:00</span><br><span class="line">Collecting ipython&gt;=7.23.1</span><br><span class="line">  Downloading ipython-8.14.0-py3-none-any.whl (798 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.7/798.7 KB 5.6 MB/s eta 0:00:00</span><br><span class="line">Collecting psutil</span><br><span class="line">  Downloading psutil-5.9.5-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (282 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 282.1/282.1 KB 6.1 MB/s eta 0:00:00</span><br><span class="line">Collecting tornado&gt;=6.1</span><br><span class="line">  Downloading tornado-6.3.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (426 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 426.9/426.9 KB 5.2 MB/s eta 0:00:00</span><br><span class="line">Collecting traitlets&gt;=5.4.0</span><br><span class="line">  Downloading traitlets-5.9.0-py3-none-any.whl (117 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.4/117.4 KB 5.0 MB/s eta 0:00:00</span><br><span class="line">Collecting matplotlib-inline&gt;=0.1</span><br><span class="line">  Downloading matplotlib_inline-0.1.6-py3-none-any.whl (9.4 kB)</span><br><span class="line">Collecting packaging</span><br><span class="line">  Downloading packaging-23.1-py3-none-any.whl (48 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.9/48.9 KB 5.8 MB/s eta 0:00:00</span><br><span class="line">Collecting debugpy&gt;=1.6.5</span><br><span class="line">  Downloading debugpy-1.6.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 5.8 MB/s eta 0:00:00</span><br><span class="line">Collecting widgetsnbextension~=4.0.7</span><br><span class="line">  Downloading widgetsnbextension-4.0.7-py3-none-any.whl (2.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 5.9 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyterlab-widgets~=3.0.7</span><br><span class="line">  Downloading jupyterlab_widgets-3.0.7-py3-none-any.whl (198 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 198.2/198.2 KB 5.9 MB/s eta 0:00:00</span><br><span class="line">Collecting prompt-toolkit&gt;=3.0.30</span><br><span class="line">  Downloading prompt_toolkit-3.0.38-py3-none-any.whl (385 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 385.8/385.8 KB 6.6 MB/s eta 0:00:00</span><br><span class="line">Collecting pygments</span><br><span class="line">  Downloading Pygments-2.15.1-py3-none-any.whl (1.1 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 7.3 MB/s eta 0:00:00</span><br><span class="line">Collecting beautifulsoup4</span><br><span class="line">  Downloading beautifulsoup4-4.12.2-py3-none-any.whl (142 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 143.0/143.0 KB 6.4 MB/s eta 0:00:00</span><br><span class="line">Collecting nbclient&gt;=0.5.0</span><br><span class="line">  Downloading nbclient-0.8.0-py3-none-any.whl (73 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 KB 8.5 MB/s eta 0:00:00</span><br><span class="line">Collecting mistune&lt;4,&gt;=2.0.3</span><br><span class="line">  Downloading mistune-3.0.1-py3-none-any.whl (47 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.0/48.0 KB 13.5 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyterlab-pygments</span><br><span class="line">  Downloading jupyterlab_pygments-0.2.2-py2.py3-none-any.whl (21 kB)</span><br><span class="line">Collecting bleach!=5.0.0</span><br><span class="line">  Downloading bleach-6.0.0-py3-none-any.whl (162 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.5/162.5 KB 8.1 MB/s eta 0:00:00</span><br><span class="line">Requirement already satisfied: jinja2&gt;=3.0 <span class="keyword">in</span> ./.<span class="built_in">local</span>/lib/python3.10/site-packages (from nbconvert-&gt;jupyter) (3.1.2)</span><br><span class="line">Requirement already satisfied: markupsafe&gt;=2.0 <span class="keyword">in</span> ./.<span class="built_in">local</span>/lib/python3.10/site-packages (from nbconvert-&gt;jupyter) (2.1.3)</span><br><span class="line">Collecting nbformat&gt;=5.7</span><br><span class="line">  Downloading nbformat-5.9.0-py3-none-any.whl (77 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.6/77.6 KB 8.1 MB/s eta 0:00:00</span><br><span class="line">Collecting defusedxml</span><br><span class="line">  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)</span><br><span class="line">Collecting pandocfilters&gt;=1.4.1</span><br><span class="line">  Downloading pandocfilters-1.5.0-py2.py3-none-any.whl (8.7 kB)</span><br><span class="line">Collecting tinycss2</span><br><span class="line">  Downloading tinycss2-1.2.1-py3-none-any.whl (21 kB)</span><br><span class="line">Collecting Send2Trash&gt;=1.8.0</span><br><span class="line">  Downloading Send2Trash-1.8.2-py3-none-any.whl (18 kB)</span><br><span class="line">Collecting prometheus-client</span><br><span class="line">  Downloading prometheus_client-0.17.0-py3-none-any.whl (60 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 KB 4.2 MB/s eta 0:00:00</span><br><span class="line">Collecting nbclassic&gt;=0.4.7</span><br><span class="line">  Downloading nbclassic-1.0.0-py3-none-any.whl (10.0 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 6.6 MB/s eta 0:00:00</span><br><span class="line">Collecting ipython-genutils</span><br><span class="line">  Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)</span><br><span class="line">Collecting argon2-cffi</span><br><span class="line">  Downloading argon2_cffi-21.3.0-py3-none-any.whl (14 kB)</span><br><span class="line">Collecting terminado&gt;=0.8.3</span><br><span class="line">  Downloading terminado-0.17.1-py3-none-any.whl (17 kB)</span><br><span class="line">Collecting qtpy&gt;=2.0.1</span><br><span class="line">  Downloading QtPy-2.3.1-py3-none-any.whl (84 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.9/84.9 KB 10.4 MB/s eta 0:00:00</span><br><span class="line">Requirement already satisfied: six&gt;=1.9.0 <span class="keyword">in</span> /usr/lib/python3/dist-packages (from bleach!=5.0.0-&gt;nbconvert-&gt;jupyter) (1.16.0)</span><br><span class="line">Collecting webencodings</span><br><span class="line">  Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)</span><br><span class="line">Collecting stack-data</span><br><span class="line">  Downloading stack_data-0.6.2-py3-none-any.whl (24 kB)</span><br><span class="line">Collecting pickleshare</span><br><span class="line">  Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)</span><br><span class="line">Collecting jedi&gt;=0.16</span><br><span class="line">  Downloading jedi-0.18.2-py2.py3-none-any.whl (1.6 MB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 6.7 MB/s eta 0:00:00</span><br><span class="line">Collecting backcall</span><br><span class="line">  Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)</span><br><span class="line">Requirement already satisfied: pexpect&gt;4.3 <span class="keyword">in</span> /usr/lib/python3/dist-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter) (4.8.0)</span><br><span class="line">Collecting decorator</span><br><span class="line">  Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)</span><br><span class="line">Collecting python-dateutil&gt;=2.8.2</span><br><span class="line">  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 KB 5.6 MB/s eta 0:00:00</span><br><span class="line">Collecting platformdirs&gt;=2.5</span><br><span class="line">  Downloading platformdirs-3.8.0-py3-none-any.whl (16 kB)</span><br><span class="line">Collecting notebook-shim&gt;=0.2.3</span><br><span class="line">  Downloading notebook_shim-0.2.3-py3-none-any.whl (13 kB)</span><br><span class="line">Collecting jupyter-server&gt;=1.8</span><br><span class="line">  Downloading jupyter_server-2.7.0-py3-none-any.whl (375 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 375.1/375.1 KB 6.9 MB/s eta 0:00:00</span><br><span class="line">Collecting fastjsonschema</span><br><span class="line">  Downloading fastjsonschema-2.17.1-py3-none-any.whl (23 kB)</span><br><span class="line">Collecting jsonschema&gt;=2.6</span><br><span class="line">  Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 KB 8.2 MB/s eta 0:00:00</span><br><span class="line">Collecting wcwidth</span><br><span class="line">  Downloading wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)</span><br><span class="line">Requirement already satisfied: ptyprocess <span class="keyword">in</span> /usr/lib/python3/dist-packages (from terminado&gt;=0.8.3-&gt;notebook-&gt;jupyter) (0.7.0)</span><br><span class="line">Collecting argon2-cffi-bindings</span><br><span class="line">  Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.2/86.2 KB 8.7 MB/s eta 0:00:00</span><br><span class="line">Collecting soupsieve&gt;1.2</span><br><span class="line">  Downloading soupsieve-2.4.1-py3-none-any.whl (36 kB)</span><br><span class="line">Collecting parso&lt;0.9.0,&gt;=0.8.0</span><br><span class="line">  Downloading parso-0.8.3-py2.py3-none-any.whl (100 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.8/100.8 KB 9.6 MB/s eta 0:00:00</span><br><span class="line">Collecting attrs&gt;=17.4.0</span><br><span class="line">  Downloading attrs-23.1.0-py3-none-any.whl (61 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 7.1 MB/s eta 0:00:00</span><br><span class="line">Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0</span><br><span class="line">  Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 KB 10.0 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyter-events&gt;=0.6.0</span><br><span class="line">  Downloading jupyter_events-0.6.3-py3-none-any.whl (18 kB)</span><br><span class="line">Collecting overrides</span><br><span class="line">  Downloading overrides-7.3.1-py3-none-any.whl (17 kB)</span><br><span class="line">Collecting websocket-client</span><br><span class="line">  Downloading websocket_client-1.6.1-py3-none-any.whl (56 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.9/56.9 KB 5.7 MB/s eta 0:00:00</span><br><span class="line">Collecting anyio&gt;=3.1.0</span><br><span class="line">  Downloading anyio-3.7.0-py3-none-any.whl (80 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.9/80.9 KB 5.6 MB/s eta 0:00:00</span><br><span class="line">Collecting jupyter-server-terminals</span><br><span class="line">  Downloading jupyter_server_terminals-0.4.4-py3-none-any.whl (13 kB)</span><br><span class="line">Collecting cffi&gt;=1.0.1</span><br><span class="line">  Downloading cffi-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (441 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 441.8/441.8 KB 4.8 MB/s eta 0:00:00</span><br><span class="line">Collecting asttokens&gt;=2.1.0</span><br><span class="line">  Downloading asttokens-2.2.1-py2.py3-none-any.whl (26 kB)</span><br><span class="line">Collecting executing&gt;=1.2.0</span><br><span class="line">  Downloading executing-1.2.0-py2.py3-none-any.whl (24 kB)</span><br><span class="line">Collecting pure-eval</span><br><span class="line">  Downloading pure_eval-0.2.2-py3-none-any.whl (11 kB)</span><br><span class="line">Collecting exceptiongroup</span><br><span class="line">  Downloading exceptiongroup-1.1.1-py3-none-any.whl (14 kB)</span><br><span class="line">Collecting sniffio&gt;=1.1</span><br><span class="line">  Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)</span><br><span class="line">Requirement already satisfied: idna&gt;=2.8 <span class="keyword">in</span> /usr/lib/python3/dist-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter) (3.3)</span><br><span class="line">Collecting pycparser</span><br><span class="line">  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 KB 7.6 MB/s eta 0:00:00</span><br><span class="line">Collecting python-json-logger&gt;=2.0.4</span><br><span class="line">  Downloading python_json_logger-2.0.7-py3-none-any.whl (8.1 kB)</span><br><span class="line">Collecting rfc3986-validator&gt;=0.1.1</span><br><span class="line">  Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)</span><br><span class="line">Requirement already satisfied: pyyaml&gt;=5.3 <span class="keyword">in</span> /usr/lib/python3/dist-packages (from jupyter-events&gt;=0.6.0-&gt;jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter) (5.4.1)</span><br><span class="line">Collecting rfc3339-validator</span><br><span class="line">  Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)</span><br><span class="line">Collecting webcolors&gt;=1.11</span><br><span class="line">  Downloading webcolors-1.13-py3-none-any.whl (14 kB)</span><br><span class="line">Collecting fqdn</span><br><span class="line">  Downloading fqdn-1.5.1-py3-none-any.whl (9.1 kB)</span><br><span class="line">Collecting isoduration</span><br><span class="line">  Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)</span><br><span class="line">Collecting uri-template</span><br><span class="line">  Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)</span><br><span class="line">Collecting jsonpointer&gt;1.13</span><br><span class="line">  Downloading jsonpointer-2.4-py2.py3-none-any.whl (7.8 kB)</span><br><span class="line">Collecting arrow&gt;=0.15.0</span><br><span class="line">  Downloading arrow-1.2.3-py3-none-any.whl (66 kB)</span><br><span class="line">     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.4/66.4 KB 3.6 MB/s eta 0:00:00</span><br><span class="line">Installing collected packages: webencodings, wcwidth, pure-eval, pickleshare, ipython-genutils, fastjsonschema, executing, backcall, widgetsnbextension, websocket-client, webcolors, uri-template, traitlets, tornado, tinycss2, soupsieve, sniffio, Send2Trash, rfc3986-validator, rfc3339-validator, pyzmq, python-json-logger, python-dateutil, pyrsistent, pygments, pycparser, psutil, prompt-toolkit, prometheus-client, platformdirs, parso, pandocfilters, packaging, overrides, nest-asyncio, mistune, jupyterlab-widgets, jupyterlab-pygments, jsonpointer, fqdn, exceptiongroup, defusedxml, decorator, debugpy, bleach, attrs, asttokens, terminado, stack-data, qtpy, matplotlib-inline, jupyter-core, jsonschema, jedi, comm, cffi, beautifulsoup4, arrow, anyio, nbformat, jupyter-server-terminals, jupyter-client, isoduration, ipython, argon2-cffi-bindings, nbclient, ipykernel, argon2-cffi, qtconsole, nbconvert, jupyter-events, jupyter-console, ipywidgets, jupyter-server, notebook-shim, nbclassic, notebook, jupyter</span><br><span class="line">Successfully installed Send2Trash-1.8.2 anyio-3.7.0 argon2-cffi-21.3.0 argon2-cffi-bindings-21.2.0 arrow-1.2.3 asttokens-2.2.1 attrs-23.1.0 backcall-0.2.0 beautifulsoup4-4.12.2 bleach-6.0.0 cffi-1.15.1 comm-0.1.3 debugpy-1.6.7 decorator-5.1.1 defusedxml-0.7.1 exceptiongroup-1.1.1 executing-1.2.0 fastjsonschema-2.17.1 fqdn-1.5.1 ipykernel-6.23.3 ipython-8.14.0 ipython-genutils-0.2.0 ipywidgets-8.0.6 isoduration-20.11.0 jedi-0.18.2 jsonpointer-2.4 jsonschema-4.17.3 jupyter-1.0.0 jupyter-client-8.3.0 jupyter-console-6.6.3 jupyter-core-5.3.1 jupyter-events-0.6.3 jupyter-server-2.7.0 jupyter-server-terminals-0.4.4 jupyterlab-pygments-0.2.2 jupyterlab-widgets-3.0.7 matplotlib-inline-0.1.6 mistune-3.0.1 nbclassic-1.0.0 nbclient-0.8.0 nbconvert-7.6.0 nbformat-5.9.0 nest-asyncio-1.5.6 notebook-6.5.4 notebook-shim-0.2.3 overrides-7.3.1 packaging-23.1 pandocfilters-1.5.0 parso-0.8.3 pickleshare-0.7.5 platformdirs-3.8.0 prometheus-client-0.17.0 prompt-toolkit-3.0.38 psutil-5.9.5 pure-eval-0.2.2 pycparser-2.21 pygments-2.15.1 pyrsistent-0.19.3 python-dateutil-2.8.2 python-json-logger-2.0.7 pyzmq-25.1.0 qtconsole-5.4.3 qtpy-2.3.1 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 sniffio-1.3.0 soupsieve-2.4.1 stack-data-0.6.2 terminado-0.17.1 tinycss2-1.2.1 tornado-6.3.2 traitlets-5.9.0 uri-template-1.3.0 wcwidth-0.2.6 webcolors-1.13 webencodings-0.5.1 websocket-client-1.6.1 widgetsnbextension-4.0.7</span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ </span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ </span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ </span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ </span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line"><span class="built_in">test</span>@<span class="built_in">test</span>-vm:~$ jupyter notebook</span><br><span class="line">[I 14:37:19.716 NotebookApp] Writing notebook server cookie secret to /home/<span class="built_in">test</span>/.<span class="built_in">local</span>/share/jupyter/runtime/notebook_cookie_secret</span><br><span class="line"></span><br><span class="line">  _   _          _      _</span><br><span class="line"> | | | |_ __  __| |__ _| |_ ___</span><br><span class="line"> | |_| | <span class="string">'_ \/ _` / _` |  _/ -_)</span></span><br><span class="line"><span class="string">  \___/| .__/\__,_\__,_|\__\___|</span></span><br><span class="line"><span class="string">       |_|</span></span><br><span class="line"><span class="string">                       </span></span><br><span class="line"><span class="string">Read the migration plan to Notebook 7 to learn about the new features and the actions to take if you are using extensions.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">https://jupyter-notebook.readthedocs.io/en/latest/migrate_to_notebook7.html</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please note that updating to Notebook 7 might break some of your extensions.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[I 14:37:19.976 NotebookApp] Serving notebooks from local directory: /home/test</span></span><br><span class="line"><span class="string">[I 14:37:19.976 NotebookApp] Jupyter Notebook 6.5.4 is running at:</span></span><br><span class="line"><span class="string">[I 14:37:19.977 NotebookApp] http://localhost:8888/?token=eff1fc5fd6b900077d0c1d6a05594d665bfbf506eb72306d</span></span><br><span class="line"><span class="string">[I 14:37:19.977 NotebookApp]  or http://127.0.0.1:8888/?token=eff1fc5fd6b900077d0c1d6a05594d665bfbf506eb72306d</span></span><br><span class="line"><span class="string">[I 14:37:19.977 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Pytorch/安装Pytorch环境/" rel="next" title="安装Pytorch环境">
+                <i class="fa fa-chevron-left"></i> 安装Pytorch环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Web后端/MySql客户端工具/" rel="prev" title="MySql客户端工具">
+                MySql客户端工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
+            
+              <p class="site-author-name" itemprop="name">KevinWen</p>
+              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">353</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">94</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何安装？"><span class="nav-number">1.</span> <span class="nav-text">如何安装？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-notebook-常用命令"><span class="nav-number">2.</span> <span class="nav-text">jupyter notebook 常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-notebook-配置"><span class="nav-number">3.</span> <span class="nav-text">jupyter notebook 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程连接"><span class="nav-number">4.</span> <span class="nav-text">远程连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置密码"><span class="nav-number">5.</span> <span class="nav-text">设置密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-notebook-安装日志"><span class="nav-number">6.</span> <span class="nav-text">jupyter notebook 安装日志</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

@@ -136,19 +136,19 @@
 
 
 
-  <meta name="description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:1$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /">
+  <meta name="description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:【文档】 1234# 20230614最新版本$ sudo  curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3、Docker-Compose">
 <meta property="og:url" content="http://yoursite.com/docker/3、Docker-Compose/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:1$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /">
+<meta property="og:description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:【文档】 1234# 20230614最新版本$ sudo  curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Web后端/compose编排多个服务.png">
-<meta property="og:updated_time" content="2022-10-31T07:38:30.939Z">
+<meta property="og:updated_time" content="2023-06-14T02:50:33.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3、Docker-Compose">
-<meta name="twitter:description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:1$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /">
+<meta name="twitter:description" content="Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。 下载 Docker Compose:【文档】 1234# 20230614最新版本$ sudo  curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux">
 <meta name="twitter:image" content="http://yoursite.com/images/Web后端/compose编排多个服务.png">
 
 
@@ -508,7 +508,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-10-31 15:38:30" itemprop="dateModified" datetime="2022-10-31T15:38:30+08:00">2022-10-31</time>
+                <time title="修改时间：2023-06-14 10:50:33" itemprop="dateModified" datetime="2023-06-14T10:50:33+08:00">2023-06-14</time>
               
             
           </span>
@@ -560,8 +560,9 @@
 
       
         <p>Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。</p>
-<h2 id="下载-Docker-Compose"><a href="#下载-Docker-Compose" class="headerlink" title="下载 Docker Compose:"></a>下载 Docker Compose:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L <span class="string">"https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="variable">$(uname -s)</span>-<span class="variable">$(uname -m)</span>"</span> -o /usr/<span class="built_in">local</span>/bin/docker-compose</span></span><br></pre></td></tr></table></figure>
-<h2 id="修改为可执行文件"><a href="#修改为可执行文件" class="headerlink" title="修改为可执行文件:"></a>修改为可执行文件:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果提示找不到命令，则看下面方法环境变量</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim ~/.bashrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 最后一行加入</span></span><br><span class="line">alias sudo="sudo env PATH=$PATH"</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ~/.bashrc </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看版本即成功</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker-compose version</span></span><br><span class="line">docker-compose version 1.29.2, build 5becea4c</span><br><span class="line">docker-py version: 5.0.0</span><br><span class="line">CPython version: 3.7.10</span><br><span class="line">OpenSSL version: OpenSSL 1.1.0l  10 Sep 2019</span><br></pre></td></tr></table></figure>
+<h2 id="下载-Docker-Compose"><a href="#下载-Docker-Compose" class="headerlink" title="下载 Docker Compose:"></a>下载 Docker Compose:</h2><p><a href="https://docs.docker.com/compose/install/linux/#install-the-plugin-manually" target="_blank" rel="noopener">【文档】</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 20230614最新版本</span><br><span class="line"><span class="meta">$</span> sudo  curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<h2 id="修改为可执行文件"><a href="#修改为可执行文件" class="headerlink" title="修改为可执行文件:"></a>修改为可执行文件:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line"><span class="meta">#</span> 如果提示找不到命令，则看下面方法环境变量</span><br><span class="line"><span class="meta">$</span> vim ~/.bashrc</span><br><span class="line"><span class="meta">#</span> 最后一行加入</span><br><span class="line">alias sudo="sudo env PATH=$PATH"</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> source ~/.bashrc </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 查看版本即成功</span><br><span class="line"><span class="meta">$</span> docker-compose version</span><br><span class="line">docker-compose version 1.29.2, build 5becea4c</span><br><span class="line">docker-py version: 5.0.0</span><br><span class="line">CPython version: 3.7.10</span><br><span class="line">OpenSSL version: OpenSSL 1.1.0l  10 Sep 2019</span><br></pre></td></tr></table></figure>
 <h2 id="compose编排一个服务"><a href="#compose编排一个服务" class="headerlink" title="compose编排一个服务"></a>compose编排一个服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir test-tomcat</span><br><span class="line">$ cd test-tomcat</span><br><span class="line">$ vim docker-compose.yml </span><br><span class="line">version: &apos;3.7&apos;</span><br><span class="line">services: </span><br><span class="line">  mytomcat:</span><br><span class="line">    restart: always</span><br><span class="line">    image: tomcat</span><br><span class="line">    container_name: mytomcat</span><br><span class="line">    ports: </span><br><span class="line">     - &quot;8080:8080&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="compose编排多个服务"><a href="#compose编排多个服务" class="headerlink" title="compose编排多个服务"></a>compose编排多个服务</h2><p><img src="/images/Web后端/compose编排多个服务.png" alt="compose编排多个服务.png"></p>
 <h2 id="compose启动"><a href="#compose启动" class="headerlink" title="compose启动"></a>compose启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose up</span><br></pre></td></tr></table></figure>
@@ -687,7 +688,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">348</span>
+                    <span class="site-state-item-count">353</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -752,7 +753,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -947,7 +950,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">91</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">94</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
