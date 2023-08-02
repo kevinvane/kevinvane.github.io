@@ -1,167 +1,47 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="原文Android P 为用户和开发者引入众多新特性和新功能。  本文重点介绍面向开发者的新功能。 要了解新 API，请阅读 API 差异报告或访问 Android API 参考 — 为醒目起见，将突出显示新 API。 请务必查阅 Android P 行为变更以了解平台变更可能给您的应用带来哪些方面的影响。 利用 Wi-Fi RTT 进行室内定位Android P 添加了对 IEEE 802.1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android P(9.0) 功能和 API">
-<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android P(9.0) 功能和 API/index.html">
+<meta property="og:url" content="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android%20P(9.0)%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API/index.html">
 <meta property="og:site_name" content="咸鱼">
 <meta property="og:description" content="原文Android P 为用户和开发者引入众多新特性和新功能。  本文重点介绍面向开发者的新功能。 要了解新 API，请阅读 API 差异报告或访问 Android API 参考 — 为醒目起见，将突出显示新 API。 请务必查阅 Android P 行为变更以了解平台变更可能给您的应用带来哪些方面的影响。 利用 Wi-Fi RTT 进行室内定位Android P 添加了对 IEEE 802.1">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://developer.android.google.cn/preview/images/emulator-devoptions-cutout_2x.png">
-<meta property="og:updated_time" content="2022-08-30T06:41:22.477Z">
+<meta property="article:published_time" content="2018-05-12T01:52:36.000Z">
+<meta property="article:modified_time" content="2022-08-30T06:41:22.477Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android P(9.0) 功能和 API">
-<meta name="twitter:description" content="原文Android P 为用户和开发者引入众多新特性和新功能。  本文重点介绍面向开发者的新功能。 要了解新 API，请阅读 API 差异报告或访问 Android API 参考 — 为醒目起见，将突出显示新 API。 请务必查阅 Android P 行为变更以了解平台变更可能给您的应用带来哪些方面的影响。 利用 Wi-Fi RTT 进行室内定位Android P 添加了对 IEEE 802.1">
 <meta name="twitter:image" content="https://developer.android.google.cn/preview/images/emulator-devoptions-cutout_2x.png">
 
+<link rel="canonical" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android%20P(9.0)%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API/">
 
 
-
-
-
-  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android P(9.0) 功能和 API/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -173,381 +53,203 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android P(9.0) 功能和 API/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android%20P(9.0)%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Android P(9.0) 功能和 API
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Android P(9.0) 功能和 API
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2018-05-12 09:52:36" itemprop="dateCreated datePublished" datetime="2018-05-12T09:52:36+08:00">2018-05-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2022-08-30 14:41:22" itemprop="dateModified" datetime="2022-08-30T14:41:22+08:00">2022-08-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -555,27 +257,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <blockquote>
-<p><a href="https://developer.android.google.cn/preview/features" target="_blank" rel="noopener">原文</a><br>Android P 为用户和开发者引入众多新特性和新功能。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/preview/features">原文</a><br>Android P 为用户和开发者引入众多新特性和新功能。</p>
 </blockquote>
 <p>本文重点介绍面向开发者的新功能。 要了解新 API，请阅读 API 差异报告或访问 Android API 参考 — 为醒目起见，将突出显示新 API。 请务必查阅 Android P 行为变更以了解平台变更可能给您的应用带来哪些方面的影响。</p>
 <h4 id="利用-Wi-Fi-RTT-进行室内定位"><a href="#利用-Wi-Fi-RTT-进行室内定位" class="headerlink" title="利用 Wi-Fi RTT 进行室内定位"></a>利用 Wi-Fi RTT 进行室内定位</h4><p>Android P 添加了对 IEEE 802.11mc Wi-Fi 协议（也称为 Wi-Fi Round-Trip-Time (RTT)）的平台支持，从而让您的应用可以利用室内定位功能。<br>在提供硬件支持的 Android P 设备上，应用可以使用全新的 RTT API 来测量与附近支持 RTT 的 Wi-Fi 接入点 (AP) 的距离。 设备必须已启用定位并开启了 Wi-Fi 扫描（在 Settings &gt; Location 下），同时您的应用必须具有 ACCESS_FINE_LOCATION 权限。 设备不需要连接至 AP 即可使用 RTT。 为保证隐私性，只有手机可以确定与 AP 的距离；AP 不具备该信息。</p>
 <p>如果您的设备测量与 3 个或更多 AP 的距离，您可以使用一个多点定位算法来预估与这些测量值最相符的设备位置。 结果通常精准至 1 至 2 米。</p>
 <p>通过这种精确性，您可以打造新的体验，例如楼内导航、基于精细位置的服务，如无歧义语音控制（例如，“打开这盏灯”），以及基于位置的信息（如 “此产品是否有特别优惠？”）。</p>
-<h4 id="屏幕缺口支持-刘海屏"><a href="#屏幕缺口支持-刘海屏" class="headerlink" title="屏幕缺口支持(刘海屏)"></a>屏幕缺口支持(刘海屏)</h4><p><img src="https://developer.android.google.cn/preview/images/emulator-devoptions-cutout_2x.png" alt><br>Android P 支持最新的全面屏以及为摄像头和扬声器预留空间的凹口屏幕。 通过全新的 DisplayCutout 类，可以确定非功能区域的位置和形状，这些区域不应显示内容。 要确定这些凹口屏幕区域是否存在及其位置，请使用 getDisplayCutout() 函数。</p>
+<h4 id="屏幕缺口支持-刘海屏"><a href="#屏幕缺口支持-刘海屏" class="headerlink" title="屏幕缺口支持(刘海屏)"></a>屏幕缺口支持(刘海屏)</h4><p><img src="https://developer.android.google.cn/preview/images/emulator-devoptions-cutout_2x.png"><br>Android P 支持最新的全面屏以及为摄像头和扬声器预留空间的凹口屏幕。 通过全新的 DisplayCutout 类，可以确定非功能区域的位置和形状，这些区域不应显示内容。 要确定这些凹口屏幕区域是否存在及其位置，请使用 getDisplayCutout() 函数。</p>
 <p>您可以按如下方法在任何运行 Android P 的设备或模拟器上模拟屏幕缺口：</p>
 <pre><code>1. 启用开发者选项。
 2. 在 Developer options 屏幕中，向下滚动至 Drawing 部分并选择 Simulate a display with a cutout。
 3. 选择凹口屏幕的大小。
-</code></pre><p>注：我们建议您通过使用运行 Android P 的设备或模拟器测试凹口屏幕周围的内容显示。</p>
+</code></pre>
+<p>注：我们建议您通过使用运行 Android P 的设备或模拟器测试凹口屏幕周围的内容显示。</p>
 <h4 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h4><p>Android P 引入了多个通知增强功能，可供以 Android P 及更高版本作为目标平台的开发者使用。<br>从 Android 7.0（API 级别 24）开始，您可以添加一个操作以回复短信或直接从通知中输入其他文本。</p>
 <h4 id="渠道设置、广播和请勿打扰"><a href="#渠道设置、广播和请勿打扰" class="headerlink" title="渠道设置、广播和请勿打扰"></a>渠道设置、广播和请勿打扰</h4><p>Android O 引入了通知渠道，从而允许您为要显示的每种通知类型创建可由用户自定义的渠道。</p>
 <h4 id="多摄像头支持和摄像头更新"><a href="#多摄像头支持和摄像头更新" class="headerlink" title="多摄像头支持和摄像头更新"></a>多摄像头支持和摄像头更新</h4><p>现在，在运行 Android P 的设备上，您可以通过两个或更多物理摄像头来同时访问多个视频流。 在配备双前置摄像头或双后置摄像头的设备上，您可以创建只配备单摄像头的设备所不可能实现的创新功能，例如无缝缩放、虚化和立体成像。 通过此 API，您还可以调用逻辑或融合的摄像头视频流，该视频流可在两个或更多摄像头之间自动切换。</p>
 <p>摄像头方面的其他改进还包括新的会话参数和 Surface 共享，前者有助于降低首次拍照期间的延迟，而后者则让摄像头客户端能够处理各种用例，而无需停止并启动摄像头视频流。 我们还针对基于显示屏的 flash 支持和 OIS 时间戳访问新增了一些 API，用以实现应用级的图像稳定化和特效。</p>
-<p>在受支持的设备上，Android P 还支持外置 USB/UVC 摄像头。</p>
+<p>在受支持的设备上，Android P 还支持外置 USB&#x2F;UVC 摄像头。</p>
 <h4 id="适用于位图和可绘制对象的-ImageDecoder"><a href="#适用于位图和可绘制对象的-ImageDecoder" class="headerlink" title="适用于位图和可绘制对象的 ImageDecoder"></a>适用于位图和可绘制对象的 ImageDecoder</h4><p>Android P 引入 ImageDecoder ，以提供现代化的图像解码方法。 您应使用 ImageDecoder 来解码图像，而不是使用 BitmapFactory 和 BitmapFactory.Options API。</p>
 <p>ImageDecoder 让您可以从字节缓冲区、文件或 URI 来创建 Drawable 或 Bitmap。 要解码图像，请首先以编码图像的来源为参数，调用 createSource()。 然后，通过传递 ImageDecoder.Source 对象来调用 decodeBitmap() 或 decodeDrawable() ，从而创建 Bitmap或 Drawable。 要更改默认设置，请将 OnHeaderDecodedListener 传递给 decodeBitmap() 或 decodeDrawable()。 ImageDecoder 以图像的默认宽度和高度（若已知的话）为参数，调用onHeaderDecoded()。 如果编码图像是动画 GIF 或 WebP，decodeDrawable() 将返回 Drawable，后者是 AnimatedImageDrawable 类的一个实例。</p>
 <p>您可以使用不同的方法来设置图像属性。 这些方法包括：</p>
@@ -587,7 +287,7 @@
 <p>通过 ImageDecoder，您还可以为圆角或圆形遮罩之类的图像添加复杂的定制效果。 以 PostProcessor 类的一个实例作为参数，使用 setPostProcessor() 来执行您希望绘制命令执行的任何工作。 当您对 AnimatedImageDrawable 进行后处理时，这些效果会作用与所有框。</p>
 <h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>Android P 引入了一个新的 AnimatedImageDrawable 类，用于绘制和显示 GIF 和 WebP 动画图像。 AnimatedImageDrawable 的工作方式 AnimatedVectorDrawable 的相似之处在于，都是 RenderThread 驱动 AnimatedImageDrawable 的动画。 RenderThread 还使用工作线程进行解码，因此，解码不会干扰 RenderThread。 这种实现机制允许您的应用在使用动画图像时不必管理其更新，也不会干扰应用的界面线程。</p>
 <p>可使用新的 ImageDecoder 解码 AnimagedImageDrawable。 以下代码段演示如何使用 ImageDecoder 来解码 AnimatedImageDrawable：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Drawable d = ImageDecoder.decodeDrawable(...);</span><br><span class="line">if (d instanceof AnimatedImageDrawable) &#123;</span><br><span class="line">    ((AnimatedImageDrawable) d).start();   // Prior to start(), the first frame is displayed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Drawable d = ImageDecoder.decodeDrawable(...);</span><br><span class="line">if (d instanceof AnimatedImageDrawable) &#123;</span><br><span class="line">    ((AnimatedImageDrawable) d).start();   // Prior to start(), the first frame is displayed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ImageDecoder 有几种方法可用来进一步修改图像。 例如，您可以使用 setPostProcessor() 函数来修改图像的外观，例如应用圆形遮罩或圆角。</p>
 <h4 id="HDR-VP9-视频、HEIF-图像压缩和-Media-API"><a href="#HDR-VP9-视频、HEIF-图像压缩和-Media-API" class="headerlink" title="HDR VP9 视频、HEIF 图像压缩和 Media API"></a>HDR VP9 视频、HEIF 图像压缩和 Media API</h4><p>Android P 新增对 High Dynamic Range (HDR) VP9 Profile 2 的内置支持，因此，现在您可以在支持 HDR 的设备上为用户提供来自 YouTube、Play Movies 和其他来源的采用 HDR 的影片。</p>
 <p>Android P 为平台增加了对 HEIF (heic) 图像编码的支持。 MediaMuxer 和 MediaExtractor 类中可支持 HEIF 静态图像示例 HEIF 改进了压缩，可节省存储空间和网络数据流量。 借助 Android P 设备上的平台支持，从后端服务器发送和使用 HEIF 图像轻而易举。 确保应用兼容这种便于共享和显示的数据格式后，尝试在应用中使用 HEIF 作为图像存储格式。 您可以使用 ImageDecoder 或 BitmapFactory 进行 jpeg 到 heicto 的转换，以通过 jpeg 获取位图，并且可以使用全新支持库 alpha 版中的 HeifWriter 编写来自 YUV 字节缓冲区、Surface 或 Bitmap 的 HEIF 静态图像。</p>
@@ -629,7 +329,7 @@
 <p>Android P 引入了其他几项加密变更：</p>
 <ul>
 <li>使用 PBE 密钥时，如果 Bouncy Castle 需要初始化矢量 (IV)，而您的应用未提供 IV，则会收到一条警告消息。</li>
-<li>ARC4 加密的 Conscrypt 实现允许您指定 ARC4/ECB/NoPadding 或 ARC4/NONE/NoPadding。</li>
+<li>ARC4 加密的 Conscrypt 实现允许您指定 ARC4&#x2F;ECB&#x2F;NoPadding 或 ARC4&#x2F;NONE&#x2F;NoPadding。</li>
 <li>Crypto Java 加密架构 (JCA) 提供程序现已被移除。 因此，如果您的应用调用 SecureRandom.getInstance(“SHA1PRNG”, “Crypto”)，将会发生 NoSuchProviderException。</li>
 <li>如果您的应用从大于密钥结构的缓冲区中解析 RSA 密钥，将不会再发生异常。</li>
 </ul>
@@ -638,7 +338,7 @@
 <li>非最短形式的 UTF-8（例如 &lt;C0, AF&gt;）现在被视为格式不正确。</li>
 <li>替代形式的 UTF-8（例如 U+D800..U+DFFF）现在被视为格式不正确。</li>
 <li>最大的子部分被单个 U+FFFD 取代。 例如，在字节序列“41 C0 AF 41 F4 80 80 41”中，最大子部分为“C0”、“AF”和“F4 80 80”。其中“F4 80 80”可以是“F4 80 80 80”的初始子序列，但“C0”不能是任何形式正确的代码单位序列的初始子序列。 因此，输出应为“A\ufffd\ufffdA\ufffdA”。</li>
-<li>要在 Android P 中解码修改后的 UTF-8/CESU-8 序列，请使用 DataInputStream.readUTF() 函数或 NewStringUTF() JNI 函数。</li>
+<li>要在 Android P 中解码修改后的 UTF-8&#x2F;CESU-8 序列，请使用 DataInputStream.readUTF() 函数或 NewStringUTF() JNI 函数。</li>
 </ul>
 <h4 id="套接字标记"><a href="#套接字标记" class="headerlink" title="套接字标记"></a>套接字标记</h4><p>在 Android P 以前的平台版本上，如果使用 setThreadStatsTag() 函数标记某个套接字，则当使用带 ParcelFileDescriptor 容器的 binder IPC 将其发送给其他进程时，套接字会被取消标记。</p>
 <p>从 Android P 开始，利用 binder IPC 将套接字发送至其他进程时，其标记将得到保留。 此变更可能影响网络流量统计，例如，使用queryDetailsForUidTag() 函数时。 您可以通过先调用 untagSocket() 然后再将套接字发送至其他进程，保留以前的行为。</p>
@@ -647,7 +347,7 @@
 <p>注：在 Android N 之前，标志要求一直是期望的行为并被强制执行。 Android N 中的一个错误会临时阻止实施标志要求。</p>
 <h4 id="屏幕旋转变更"><a href="#屏幕旋转变更" class="headerlink" title="屏幕旋转变更"></a>屏幕旋转变更</h4><p>Android O 中的用户可以使用 Quicksettings 图块或 Display 设置在自动屏幕旋转和纵向旋转模式之间切换。 Android P 对纵向旋转模式做出了重大变更。 纵向模式已重命名为旋转锁定，它会在自动屏幕旋转关闭时启用。 自动屏幕旋转模式没有任何变更。</p>
 <p>当设备处于旋转锁定模式时，用户可将其屏幕锁定到顶层可见 Activity 所支持的任何旋转。 Activity 不应假定它将始终以纵向呈现。 如果顶层 Activity 可在自动屏幕旋转模式下以多种旋转呈现，则应在旋转锁定模式下提供相同的选项，根据 Activity 的 screenOrientation 设置，允许存在一些例外情况（见下表）。</p>
-<p>请求特定屏幕方向（例如，screenOrientation=landscape）的 Activity 会忽略用户锁定首选项，并且行为与 Android O 中的行为相同。</p>
+<p>请求特定屏幕方向（例如，screenOrientation&#x3D;landscape）的 Activity 会忽略用户锁定首选项，并且行为与 Android O 中的行为相同。</p>
 <p>可在 Android 清单中，或以编程方式通过 setRequestedOrientation()，在 Activity 一级设置屏幕方向首选项。</p>
 <p>旋转锁定模式通过设置 WindowManager 在处理 Activity 旋转时使用的用户旋转首选项来发挥作用。 用户旋转首选项可能在下列情况下发生变更。 请注意，恢复纵向模式存在偏差：</p>
 <ul>
@@ -659,1064 +359,217 @@
 <p>表格，看原文</p>
 </blockquote>
 <h4 id="完"><a href="#完" class="headerlink" title="完"></a>完</h4>
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%89%8D%E7%AB%AF/%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BDApp%E5%9B%BE%E6%A0%87Icon/" rel="prev" title="免费下载App图标Icon">
+      <i class="fa fa-chevron-left"></i> 免费下载App图标Icon
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/4%E3%80%81%E5%9F%BA%E4%BA%8ERopsten%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%E7%94%A8Remix%E5%8F%91%E5%B8%83Token(%E4%BB%A3%E5%B8%81)/" rel="next" title="4、基于Ropsten测试网络用Remix发布Token(代币)">
+      4、基于Ropsten测试网络用Remix发布Token(代币) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/前端/免费下载App图标Icon/" rel="next" title="免费下载App图标Icon">
-                <i class="fa fa-chevron-left"></i> 免费下载App图标Icon
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/区块链/4、基于Ropsten测试网络用Remix发布Token(代币)/" rel="prev" title="4、基于Ropsten测试网络用Remix发布Token(代币)">
-                4、基于Ropsten测试网络用Remix发布Token(代币) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用-Wi-Fi-RTT-进行室内定位"><span class="nav-number">1.</span> <span class="nav-text">利用 Wi-Fi RTT 进行室内定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#屏幕缺口支持-刘海屏"><span class="nav-number">2.</span> <span class="nav-text">屏幕缺口支持(刘海屏)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通知"><span class="nav-number">3.</span> <span class="nav-text">通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渠道设置、广播和请勿打扰"><span class="nav-number">4.</span> <span class="nav-text">渠道设置、广播和请勿打扰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多摄像头支持和摄像头更新"><span class="nav-number">5.</span> <span class="nav-text">多摄像头支持和摄像头更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适用于位图和可绘制对象的-ImageDecoder"><span class="nav-number">6.</span> <span class="nav-text">适用于位图和可绘制对象的 ImageDecoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画"><span class="nav-number">7.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDR-VP9-视频、HEIF-图像压缩和-Media-API"><span class="nav-number">8.</span> <span class="nav-text">HDR VP9 视频、HEIF 图像压缩和 Media API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JobScheduler-中的数据成本敏感度"><span class="nav-number">9.</span> <span class="nav-text">JobScheduler 中的数据成本敏感度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Neural-Networks-API-1-1"><span class="nav-number">10.</span> <span class="nav-text">Neural Networks API 1.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动填充框架"><span class="nav-number">11.</span> <span class="nav-text">自动填充框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全增强功能"><span class="nav-number">12.</span> <span class="nav-text">安全增强功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-备份的客户端加密"><span class="nav-number">13.</span> <span class="nav-text">Android 备份的客户端加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无障碍功能窗格标题"><span class="nav-number">14.</span> <span class="nav-text">无障碍功能窗格标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于标题的导航"><span class="nav-number">15.</span> <span class="nav-text">基于标题的导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#便捷操作"><span class="nav-number">16.</span> <span class="nav-text">便捷操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#窗口变更详情"><span class="nav-number">17.</span> <span class="nav-text">窗口变更详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转"><span class="nav-number">18.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内置-QR-码库"><span class="nav-number">19.</span> <span class="nav-text">内置 QR 码库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后台应用中的输入和数据隐私"><span class="nav-number">20.</span> <span class="nav-text">后台应用中的输入和数据隐私</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加密变更"><span class="nav-number">21.</span> <span class="nav-text">加密变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-UTF-解码器"><span class="nav-number">22.</span> <span class="nav-text">Java UTF 解码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#套接字标记"><span class="nav-number">23.</span> <span class="nav-text">套接字标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现在，强制执行-FLAG-ACTIVITY-NEW-TASK-要求"><span class="nav-number">24.</span> <span class="nav-text">现在，强制执行 FLAG_ACTIVITY_NEW_TASK 要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#屏幕旋转变更"><span class="nav-number">25.</span> <span class="nav-text">屏幕旋转变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完"><span class="nav-number">26.</span> <span class="nav-text">完</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-Wi-Fi-RTT-%E8%BF%9B%E8%A1%8C%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.</span> <span class="nav-text">利用 Wi-Fi RTT 进行室内定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E7%BC%BA%E5%8F%A3%E6%94%AF%E6%8C%81-%E5%88%98%E6%B5%B7%E5%B1%8F"><span class="nav-number">2.</span> <span class="nav-text">屏幕缺口支持(刘海屏)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5"><span class="nav-number">3.</span> <span class="nav-text">通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%A0%E9%81%93%E8%AE%BE%E7%BD%AE%E3%80%81%E5%B9%BF%E6%92%AD%E5%92%8C%E8%AF%B7%E5%8B%BF%E6%89%93%E6%89%B0"><span class="nav-number">4.</span> <span class="nav-text">渠道设置、广播和请勿打扰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%91%84%E5%83%8F%E5%A4%B4%E6%94%AF%E6%8C%81%E5%92%8C%E6%91%84%E5%83%8F%E5%A4%B4%E6%9B%B4%E6%96%B0"><span class="nav-number">5.</span> <span class="nav-text">多摄像头支持和摄像头更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E%E4%BD%8D%E5%9B%BE%E5%92%8C%E5%8F%AF%E7%BB%98%E5%88%B6%E5%AF%B9%E8%B1%A1%E7%9A%84-ImageDecoder"><span class="nav-number">6.</span> <span class="nav-text">适用于位图和可绘制对象的 ImageDecoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB"><span class="nav-number">7.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDR-VP9-%E8%A7%86%E9%A2%91%E3%80%81HEIF-%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E5%92%8C-Media-API"><span class="nav-number">8.</span> <span class="nav-text">HDR VP9 视频、HEIF 图像压缩和 Media API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JobScheduler-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%88%90%E6%9C%AC%E6%95%8F%E6%84%9F%E5%BA%A6"><span class="nav-number">9.</span> <span class="nav-text">JobScheduler 中的数据成本敏感度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Neural-Networks-API-1-1"><span class="nav-number">10.</span> <span class="nav-text">Neural Networks API 1.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E6%A1%86%E6%9E%B6"><span class="nav-number">11.</span> <span class="nav-text">自动填充框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">12.</span> <span class="nav-text">安全增强功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-%E5%A4%87%E4%BB%BD%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8A%A0%E5%AF%86"><span class="nav-number">13.</span> <span class="nav-text">Android 备份的客户端加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E9%9A%9C%E7%A2%8D%E5%8A%9F%E8%83%BD%E7%AA%97%E6%A0%BC%E6%A0%87%E9%A2%98"><span class="nav-number">14.</span> <span class="nav-text">无障碍功能窗格标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%A0%87%E9%A2%98%E7%9A%84%E5%AF%BC%E8%88%AA"><span class="nav-number">15.</span> <span class="nav-text">基于标题的导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%BF%E6%8D%B7%E6%93%8D%E4%BD%9C"><span class="nav-number">16.</span> <span class="nav-text">便捷操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%8F%98%E6%9B%B4%E8%AF%A6%E6%83%85"><span class="nav-number">17.</span> <span class="nav-text">窗口变更详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC"><span class="nav-number">18.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E7%BD%AE-QR-%E7%A0%81%E5%BA%93"><span class="nav-number">19.</span> <span class="nav-text">内置 QR 码库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E5%BA%94%E7%94%A8%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E6%95%B0%E6%8D%AE%E9%9A%90%E7%A7%81"><span class="nav-number">20.</span> <span class="nav-text">后台应用中的输入和数据隐私</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E5%8F%98%E6%9B%B4"><span class="nav-number">21.</span> <span class="nav-text">加密变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-UTF-%E8%A7%A3%E7%A0%81%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text">Java UTF 解码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A5%97%E6%8E%A5%E5%AD%97%E6%A0%87%E8%AE%B0"><span class="nav-number">23.</span> <span class="nav-text">套接字标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%B0%E5%9C%A8%EF%BC%8C%E5%BC%BA%E5%88%B6%E6%89%A7%E8%A1%8C-FLAG-ACTIVITY-NEW-TASK-%E8%A6%81%E6%B1%82"><span class="nav-number">24.</span> <span class="nav-text">现在，强制执行 FLAG_ACTIVITY_NEW_TASK 要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E5%8F%98%E6%9B%B4"><span class="nav-number">25.</span> <span class="nav-text">屏幕旋转变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C"><span class="nav-number">26.</span> <span class="nav-text">完</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

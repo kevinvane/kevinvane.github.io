@@ -1,165 +1,45 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。 参考：  【视频传输协议详解（RTMP、RTSP、HLS）】 【流媒体 RTSP/RTP/RTCP/RTMP H264】 【从零开始写一个RTSP服务器】  一、RTMPReal Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数">
+  <meta name="description" content="这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。 参考：  【视频传输协议详解（RTMP、RTSP、HLS）】 【流媒体 RTSP&#x2F;RTP&#x2F;RTCP&#x2F;RTMP H264】 【从零开始写一个RTSP服务器】  一、RTMPReal Time Messaging Protocol（实时消息传输协议）是 Adobe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="音视频推流协议RTSP和RTMP">
-<meta property="og:url" content="http://yoursite.com/音视频/音视频推流协议RTSP和RTMP/index.html">
+<meta property="og:url" content="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。 参考：  【视频传输协议详解（RTMP、RTSP、HLS）】 【流媒体 RTSP/RTP/RTCP/RTMP H264】 【从零开始写一个RTSP服务器】  一、RTMPReal Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-12-28T03:24:10.321Z">
+<meta property="og:description" content="这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。 参考：  【视频传输协议详解（RTMP、RTSP、HLS）】 【流媒体 RTSP&#x2F;RTP&#x2F;RTCP&#x2F;RTMP H264】 【从零开始写一个RTSP服务器】  一、RTMPReal Time Messaging Protocol（实时消息传输协议）是 Adobe">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-01T11:52:36.000Z">
+<meta property="article:modified_time" content="2021-12-28T03:24:10.321Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="音视频推流协议RTSP和RTMP">
-<meta name="twitter:description" content="这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。 参考：  【视频传输协议详解（RTMP、RTSP、HLS）】 【流媒体 RTSP/RTP/RTCP/RTMP H264】 【从零开始写一个RTSP服务器】  一、RTMPReal Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数">
+
+<link rel="canonical" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/音视频/音视频推流协议RTSP和RTMP/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -171,381 +51,203 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/音视频/音视频推流协议RTSP和RTMP/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">音视频推流协议RTSP和RTMP
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          音视频推流协议RTSP和RTMP
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-07-01 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-01T19:52:36+08:00">2020-07-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/音视频/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -553,17 +255,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。</p>
 <p>参考：</p>
 <ul>
-<li><a href="https://www.jianshu.com/p/c04d810b7562" target="_blank" rel="noopener">【视频传输协议详解（RTMP、RTSP、HLS）】</a></li>
-<li><a href="https://blog.csdn.net/wujian946110509/category_9288271.html" target="_blank" rel="noopener">【流媒体 RTSP/RTP/RTCP/RTMP H264】</a></li>
-<li><a href="https://blog.csdn.net/weixin_42462202/category_9293806.html" target="_blank" rel="noopener">【从零开始写一个RTSP服务器】</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c04d810b7562">【视频传输协议详解（RTMP、RTSP、HLS）】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wujian946110509/category_9288271.html">【流媒体 RTSP&#x2F;RTP&#x2F;RTCP&#x2F;RTMP H264】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42462202/category_9293806.html">【从零开始写一个RTSP服务器】</a></li>
 </ul>
-<h2 id="一、RTMP"><a href="#一、RTMP" class="headerlink" title="一、RTMP"></a>一、RTMP</h2><p>Real Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数据通信的网络协议，主要用来在Flash/AIR平台和支持RTMP协议的流媒体/交互服务器之间进行音视频和数据通信。</p>
+<h2 id="一、RTMP"><a href="#一、RTMP" class="headerlink" title="一、RTMP"></a>一、RTMP</h2><p>Real Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数据通信的网络协议，主要用来在Flash&#x2F;AIR平台和支持RTMP协议的流媒体&#x2F;交互服务器之间进行音视频和数据通信。</p>
 <p>基本架构：<code>采集端rtmp-client</code>-&gt; <code>web服务器rtmp-server</code> -&gt; <code>播放端rtmp-client</code><br>特点：</p>
 <h4 id="RTMP特性"><a href="#RTMP特性" class="headerlink" title="RTMP特性"></a>RTMP特性</h4><ol>
 <li>延迟较大</li>
@@ -576,7 +275,7 @@
 <ol>
 <li>网络直播（如斗鱼等平台）</li>
 </ol>
-<h2 id="二、RTSP"><a href="#二、RTSP" class="headerlink" title="二、RTSP"></a>二、RTSP</h2><p>Real Time Streaming Protocol（实时流媒体协议）在网络环境比较稳定的情况下，传输效率是比较高，虽然实时性比较好，用在互联网上可能会丢包。网络摄像头常采用RTSP协议，比如海康的摄像头。<br>RTSP只是一个实时流媒体协议（应用层文本协议，类HTTP），RTSP只负责会话,如建立连接、播放暂停控制等。而RTP协议（实时传输协议）负载传输音视频数据，RTP又分为 <code>rtp over tcp</code> 和 <code>rtp over udp</code>，<a href="https://blog.csdn.net/smilestone_322/article/details/17892967" target="_blank" rel="noopener">【RFC3984中文版】</a>、<a href="https://juejin.im/post/5a6877946fb9a01cb74e8c9f" target="_blank" rel="noopener">【RTP/RTCP协议与RTSP协议】</a>。</p>
+<h2 id="二、RTSP"><a href="#二、RTSP" class="headerlink" title="二、RTSP"></a>二、RTSP</h2><p>Real Time Streaming Protocol（实时流媒体协议）在网络环境比较稳定的情况下，传输效率是比较高，虽然实时性比较好，用在互联网上可能会丢包。网络摄像头常采用RTSP协议，比如海康的摄像头。<br>RTSP只是一个实时流媒体协议（应用层文本协议，类HTTP），RTSP只负责会话,如建立连接、播放暂停控制等。而RTP协议（实时传输协议）负载传输音视频数据，RTP又分为 <code> rtp over tcp</code> 和 <code> rtp over udp</code>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/smilestone_322/article/details/17892967">【RFC3984中文版】</a>、<a target="_blank" rel="noopener" href="https://juejin.im/post/5a6877946fb9a01cb74e8c9f">【RTP&#x2F;RTCP协议与RTSP协议】</a>。</p>
 <p>一般的cs架构如下：</p>
 <ul>
 <li>直播： <code>采集端rtps-client</code>-&gt; <code>web服务器rtsp-server</code> -&gt; <code>播放端rtsp-client</code></li>
@@ -588,7 +287,7 @@
 <ul>
 <li>RTSP协议：负责服务器与客户端之间的请求与响应</li>
 <li>RTP协议：负责传输媒体数据</li>
-<li>RTCP协议：在RTP传输过程中提供传输信息<br>来自<a href="https://blog.csdn.net/weixin_42462202/article/details/98986535" target="_blank" rel="noopener">RTSP协议讲解</a></li>
+<li>RTCP协议：在RTP传输过程中提供传输信息<br>来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42462202/article/details/98986535">RTSP协议讲解</a></li>
 </ul>
 </blockquote>
 <p>特点：</p>
@@ -604,43 +303,44 @@
 <li>IPTV</li>
 </ol>
 <h2 id="三、开源软件"><a href="#三、开源软件" class="headerlink" title="三、开源软件"></a>三、开源软件</h2><h4 id="Ⅰ、推流端"><a href="#Ⅰ、推流端" class="headerlink" title="Ⅰ、推流端"></a>Ⅰ、推流端</h4><ol>
-<li><a href="https://github.com/pedroSG94/rtmp-rtsp-stream-client-java" target="_blank" rel="noopener">【rtmp-rtsp-stream-client-java】</a><br> 纯Java编写的RTSP和RTMP推流Client（推荐学习其源码），直接封装Android的Camera层，非常容易使用，支持Camera1和Camera2 API。</li>
-<li><a href="https://github.com/begeekmyfriend/yasea" target="_blank" rel="noopener">【yasea】</a>  Android RTMP 推流 Client，它将摄像头YUV和麦克风PCM数据编码到H.264/AAC中，封装在FLV中。 依赖C库：libx264、libyuv、libenc</li>
-<li><a href="https://github.com/bytedeco/javacv" target="_blank" rel="noopener">【JavaCV推流】</a><br> JavaCV这个项目底层调用的ffmpeg，所以RTMP和RTSP都支持。</li>
-<li>OBS<br> PC桌面RTMP推流开源软件，现在网红主播用的主流软件(跨平台)。    </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pedroSG94/rtmp-rtsp-stream-client-java">【rtmp-rtsp-stream-client-java】</a><br> 纯Java编写的RTSP和RTMP推流Client（推荐学习其源码），直接封装Android的Camera层，非常容易使用，支持Camera1和Camera2 API。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/begeekmyfriend/yasea">【yasea】</a>  Android RTMP 推流 Client，它将摄像头YUV和麦克风PCM数据编码到H.264&#x2F;AAC中，封装在FLV中。 依赖C库：libx264、libyuv、libenc</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/bytedeco/javacv">【JavaCV推流】</a><br> JavaCV这个项目底层调用的ffmpeg，所以RTMP和RTSP都支持。</li>
+<li>OBS<br> PC桌面RTMP推流开源软件，现在网红主播用的主流软件(跨平台)。</li>
 </ol>
+<p>	</p>
 <h4 id="Ⅱ、服务端"><a href="#Ⅱ、服务端" class="headerlink" title="Ⅱ、服务端"></a>Ⅱ、服务端</h4><ol>
-<li><a href="https://github.com/arut/nginx-rtmp-module" target="_blank" rel="noopener">【nginx-rtmp-module】</a><br> 国人写的项目，仅支持rtmp，目前(20200708) start 9.7K ，它nginx的一个插件，需要自己编译一次nginx。</li>
-<li><a href="https://github.com/ossrs/srs" target="_blank" rel="noopener">【srs】 </a><br> 国人写的这是C++项目，目前(20200708) start 8.9K ，<a href="https://github.com/ossrs/srs/wiki/v1_CN_Product#release30" target="_blank" rel="noopener">项目介绍</a> ，支持RTMP/HLS/WebRTC/SRT/GB28181。<a href="https://github.com/ossrs/srs/pull/133" target="_blank" rel="noopener">新版本貌似RTSP也支持了？</a></li>
-<li><a href="https://github.com/EasyDarwin/EasyDarwin" target="_blank" rel="noopener">EasyDarwin</a><br> 国内公司写的Go项目，目前(20200708) start 4.1K ，高性能开源RTSP流媒体服务器，RTSP推模式转发、RTSP拉模式转发、录像、检索、回放、关键帧缓存、秒开画面、RESTful接口、WEB后台管理、分布式负载均衡。</li>
-<li><a href="https://github.com/sszhangpengfei/AndroidShow" target="_blank" rel="noopener">【AndroidShow】</a><br> 国人写的Android App项目，通过MediaProjectionManager采集Android屏幕视频流，手机采集端做<code>rtsp server</code>，通过<code>rtp over udp</code> 传输视频流，但还没有实现音频，具体看作者的博客：<a href="https://blog.csdn.net/ss182172633/article/details/79578372" target="_blank" rel="noopener">【Android录屏直播】</a><blockquote>
+<li><a target="_blank" rel="noopener" href="https://github.com/arut/nginx-rtmp-module">【nginx-rtmp-module】</a><br> 国人写的项目，仅支持rtmp，目前(20200708) start 9.7K ，它nginx的一个插件，需要自己编译一次nginx。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ossrs/srs">【srs】 </a><br> 国人写的这是C++项目，目前(20200708) start 8.9K ，<a target="_blank" rel="noopener" href="https://github.com/ossrs/srs/wiki/v1_CN_Product#release30">项目介绍</a> ，支持RTMP&#x2F;HLS&#x2F;WebRTC&#x2F;SRT&#x2F;GB28181。<a target="_blank" rel="noopener" href="https://github.com/ossrs/srs/pull/133">新版本貌似RTSP也支持了？</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/EasyDarwin/EasyDarwin">EasyDarwin</a><br> 国内公司写的Go项目，目前(20200708) start 4.1K ，高性能开源RTSP流媒体服务器，RTSP推模式转发、RTSP拉模式转发、录像、检索、回放、关键帧缓存、秒开画面、RESTful接口、WEB后台管理、分布式负载均衡。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sszhangpengfei/AndroidShow">【AndroidShow】</a><br> 国人写的Android App项目，通过MediaProjectionManager采集Android屏幕视频流，手机采集端做<code>rtsp server</code>，通过<code>rtp over udp</code> 传输视频流，但还没有实现音频，具体看作者的博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ss182172633/article/details/79578372">【Android录屏直播】</a><blockquote>
 <p>注：传输用的【spydroid-ipcamera】代码</p>
 </blockquote>
 </li>
-<li><a href="https://github.com/fyhertz/spydroid-ipcamera" target="_blank" rel="noopener">【spydroid-ipcamera】</a><br> 这是法国人写的Android App项目，很久远的项目了，第一次提交是2013年，它可以将您手机变成网络摄像头(提供RTSP Server)，项目不再维护，但是作者将这个项目独立为一个Java库:【libstreaming】。<blockquote>
-<p>注: <a href="https://www.jianshu.com/p/519c4a908000" target="_blank" rel="noopener">【spydroid-ipcamera源码分析】</a></p>
+<li><a target="_blank" rel="noopener" href="https://github.com/fyhertz/spydroid-ipcamera">【spydroid-ipcamera】</a><br> 这是法国人写的Android App项目，很久远的项目了，第一次提交是2013年，它可以将您手机变成网络摄像头(提供RTSP Server)，项目不再维护，但是作者将这个项目独立为一个Java库:【libstreaming】。<blockquote>
+<p>注: <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/519c4a908000">【spydroid-ipcamera源码分析】</a></p>
 </blockquote>
 </li>
-<li><a href="https://github.com/fyhertz/libstreaming" target="_blank" rel="noopener">【libstreaming】</a><br> 从【spydroid-ipcamera】独立出来的 Android Java库，目前(20200708) start 2.9K 。<blockquote>
-<p>注： <a href="https://github.com/fyhertz/libstreaming-examples" target="_blank" rel="noopener">【示例代码：libstreaming-examples】</a></p>
+<li><a target="_blank" rel="noopener" href="https://github.com/fyhertz/libstreaming">【libstreaming】</a><br> 从【spydroid-ipcamera】独立出来的 Android Java库，目前(20200708) start 2.9K 。<blockquote>
+<p>注： <a target="_blank" rel="noopener" href="https://github.com/fyhertz/libstreaming-examples">【示例代码：libstreaming-examples】</a></p>
 </blockquote>
 </li>
-<li>live555<br> c++编写的项目，RTSP点播服务器，不支持推/拉流转发。<a href="../Live555搭建流媒体服务器">【Live555 搭建流媒体服务器】</a></li>
-<li><a href="https://github.com/mutaphore/RTSP-Client-Server" target="_blank" rel="noopener">【RTSP-Client-Server】</a><br> 国外的Java Swing项目，目前(20200708) start 376 ，源码很少和简单（项目没有用IDE创建，用命令行编译），可读性强，运行效果是client点播server的Mjpeg文件，不依赖第三方。</li>
-<li><a href="https://github.com/zhouyinfei/rtsp-netty-server" target="_blank" rel="noopener">【rtsp-netty-server 】</a><br> 国人写的Java项目（Elicpse），目前(20200708) start 1 。 RTP数据部分依赖<a href="https://github.com/jitsi/libjitsi" target="_blank" rel="noopener">【libjitsi】</a>的RawPacket类。<blockquote>
-<p>注：【libjitsi】 实时音频/视频通信的高级Java媒体库，没有在mvnrepository发布，编译很麻烦，jitsi是做视频会议全套软件的。</p>
+<li>live555<br> c++编写的项目，RTSP点播服务器，不支持推&#x2F;拉流转发。<a href="../Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8">【Live555 搭建流媒体服务器】</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mutaphore/RTSP-Client-Server">【RTSP-Client-Server】</a><br> 国外的Java Swing项目，目前(20200708) start 376 ，源码很少和简单（项目没有用IDE创建，用命令行编译），可读性强，运行效果是client点播server的Mjpeg文件，不依赖第三方。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zhouyinfei/rtsp-netty-server">【rtsp-netty-server 】</a><br> 国人写的Java项目（Elicpse），目前(20200708) start 1 。 RTP数据部分依赖<a target="_blank" rel="noopener" href="https://github.com/jitsi/libjitsi">【libjitsi】</a>的RawPacket类。<blockquote>
+<p>注：【libjitsi】 实时音频&#x2F;视频通信的高级Java媒体库，没有在mvnrepository发布，编译很麻烦，jitsi是做视频会议全套软件的。</p>
 </blockquote>
 </li>
-<li><a href="https://github.com/langhuihui/monibuca" target="_blank" rel="noopener">【monibuca】</a>国内公司写的Go项目，目前(20200721) start 209 ，Monibuca 引擎 + 插件 = 定制化流媒体服务器。<a href="http://monibuca.com/" target="_blank" rel="noopener">官网</a>，这是一个新的项目，看commit记录，是2020年提交的项目。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/langhuihui/monibuca">【monibuca】</a>国内公司写的Go项目，目前(20200721) start 209 ，Monibuca 引擎 + 插件 &#x3D; 定制化流媒体服务器。<a target="_blank" rel="noopener" href="http://monibuca.com/">官网</a>，这是一个新的项目，看commit记录，是2020年提交的项目。</li>
 </ol>
 <h4 id="Ⅲ、播放端和拉流"><a href="#Ⅲ、播放端和拉流" class="headerlink" title="Ⅲ、播放端和拉流"></a>Ⅲ、播放端和拉流</h4><ol>
 <li>VLC</li>
 <li>ffplay</li>
 <li>ijkplayer</li>
 <li>JavaCV库拉流(底层调用的ffmpeg)</li>
-<li><a href="https://github.com/phyhw/rtsplib-java" target="_blank" rel="noopener">【code.google.com/p/rtsplib-java】</a>这是一个纯Java实现的 RTSPClient 远古时代的库(Eclipse)，只实现了RTSP部分的协议（PLAY等方法），可以基于它实现扩展其他方法。</li>
-<li><a href="https://github.com/srysduedu123/rtsp-h264-client/" target="_blank" rel="noopener">【srysduedu123/rtsp-h264-client】</a> 基于 <code>rtsplib-java</code> ，加了解析RTP和H264 。</li>
-<li><a href="https://github.com/htwahzs/Rtsp-Android-Client" target="_blank" rel="noopener">【htwahzs/Rtsp-Android-Client】</a> 不依赖其他库，纯java实现RTSP、RTP、RTCP和硬解码渲染，经测试能正常播放，出图速度比ijkpaler快 。但本身这个仓库只有纯Java类(完整)，不是一个完整的Android项目，我fork了此项目，做成一个Demo<a href="https://github.com/kevinvane/Rtsp-Android-Client" target="_blank" rel="noopener">【kevinvane/Rtsp-Android-Client】</a>。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/phyhw/rtsplib-java">【code.google.com&#x2F;p&#x2F;rtsplib-java】</a>这是一个纯Java实现的 RTSPClient 远古时代的库(Eclipse)，只实现了RTSP部分的协议（PLAY等方法），可以基于它实现扩展其他方法。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/srysduedu123/rtsp-h264-client/">【srysduedu123&#x2F;rtsp-h264-client】</a> 基于 <code>rtsplib-java</code> ，加了解析RTP和H264 。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/htwahzs/Rtsp-Android-Client">【htwahzs&#x2F;Rtsp-Android-Client】</a> 不依赖其他库，纯java实现RTSP、RTP、RTCP和硬解码渲染，经测试能正常播放，出图速度比ijkpaler快 。但本身这个仓库只有纯Java类(完整)，不是一个完整的Android项目，我fork了此项目，做成一个Demo<a target="_blank" rel="noopener" href="https://github.com/kevinvane/Rtsp-Android-Client">【kevinvane&#x2F;Rtsp-Android-Client】</a>。</li>
 </ol>
 <h2 id="四、利用开源软件搭建一套直播测试平台"><a href="#四、利用开源软件搭建一套直播测试平台" class="headerlink" title="四、利用开源软件搭建一套直播测试平台"></a>四、利用开源软件搭建一套直播测试平台</h2><ul>
 <li>rtsp-client推流： ffmpeg 推流 或者 rtmp-rtsp-stream-client-java (Android,集成到自己项目中推荐使用) </li>
@@ -653,1069 +353,221 @@
 <h2 id="五、流视频录制并存储方案"><a href="#五、流视频录制并存储方案" class="headerlink" title="五、流视频录制并存储方案"></a>五、流视频录制并存储方案</h2><ol>
 <li><p>JavaCV从流服务器拉取音视频录制<br>底层是调用的是ffmpeg拉流存储</p>
 </li>
-<li><p>EasyDarwin的方案<br>EasyDarwin自带录制功能，对外提供 RESTFUL API 详细文章 -&gt; <a href="https://blog.csdn.net/jyt0551/article/details/84189498" target="_blank" rel="noopener">【EasyDarwinGo录像功能发布】</a><br>底层也是调用的是ffmpeg拉流存储的方案，这是它默认配置文件：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[rtsp]</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">554</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; rtsp 超时时间，包括RTSP建立连接与数据收发。</span></span><br><span class="line"><span class="attr">timeout</span>=<span class="number">28800</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能gop cache。如果使能，服务器会缓存最后一个I帧以及其后的非I帧，以提高播放速度。但是可能在高并发的情况下带来内存压力。</span></span><br><span class="line"><span class="attr">gop_cache_enable</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能向服务器推流或者从服务器播放时验证用户名密码. [注意] 因为服务器端并不保存明文密码，所以推送或者播放时，客户端应该输入密码的md5后的值。</span></span><br><span class="line"><span class="comment">; password should be the hex of md5(original password)</span></span><br><span class="line"><span class="attr">authorization_enable</span>=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能推送的同事进行本地存储，使能后则可以进行录像查询与回放。</span></span><br><span class="line"><span class="attr">save_stream_to_local</span>=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;easydarwin使用ffmpeg工具来进行存储。这里表示ffmpeg的可执行程序的路径</span></span><br><span class="line"><span class="attr">ffmpeg_path</span>=/Users/ze/Downloads/ffmpeg-<span class="number">20180719</span>-<span class="number">9</span>cb3d8f-macos64-shared/bin/ffmpeg</span><br><span class="line"></span><br><span class="line"><span class="comment">;本地存储所将要保存的根目录。如果不存在，程序会尝试创建该目录。</span></span><br><span class="line"><span class="attr">m3u8_dir_path</span>=/Users/ze/Downloads/EasyDarwinGoM3u8</span><br><span class="line"></span><br><span class="line"><span class="comment">;切片文件时长。本地存储时，将以该时间段为标准来生成ts文件(该时间+一个I帧间隔)，单位秒。</span></span><br><span class="line"><span class="comment">;如果需要直播，这个值设小点，但是这样会产生很多ts文件；如果不需要直播，只要存储的话，可设大些。</span></span><br><span class="line"><span class="attr">ts_duration_second</span>=<span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;key为拉流时的自定义路径，value为ffmpeg转码格式，比如可设置为-c:v copy -c:a copy，表示copy源格式；default表示使用ffmpeg内置的输出格式，会进行转码。</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><p>EasyDarwin的方案<br>EasyDarwin自带录制功能，对外提供 RESTFUL API 详细文章 -&gt; <a target="_blank" rel="noopener" href="https://blog.csdn.net/jyt0551/article/details/84189498">【EasyDarwinGo录像功能发布】</a><br>底层也是调用的是ffmpeg拉流存储的方案，这是它默认配置文件：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[rtsp]</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">554</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; rtsp 超时时间，包括RTSP建立连接与数据收发。</span></span><br><span class="line"><span class="attr">timeout</span>=<span class="number">28800</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能gop cache。如果使能，服务器会缓存最后一个I帧以及其后的非I帧，以提高播放速度。但是可能在高并发的情况下带来内存压力。</span></span><br><span class="line"><span class="attr">gop_cache_enable</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能向服务器推流或者从服务器播放时验证用户名密码. [注意] 因为服务器端并不保存明文密码，所以推送或者播放时，客户端应该输入密码的md5后的值。</span></span><br><span class="line"><span class="comment">; password should be the hex of md5(original password)</span></span><br><span class="line"><span class="attr">authorization_enable</span>=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 是否使能推送的同事进行本地存储，使能后则可以进行录像查询与回放。</span></span><br><span class="line"><span class="attr">save_stream_to_local</span>=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;easydarwin使用ffmpeg工具来进行存储。这里表示ffmpeg的可执行程序的路径</span></span><br><span class="line"><span class="attr">ffmpeg_path</span>=/Users/ze/Downloads/ffmpeg-<span class="number">20180719</span>-<span class="number">9</span>cb3d8f-macos64-shared/bin/ffmpeg</span><br><span class="line"></span><br><span class="line"><span class="comment">;本地存储所将要保存的根目录。如果不存在，程序会尝试创建该目录。</span></span><br><span class="line"><span class="attr">m3u8_dir_path</span>=/Users/ze/Downloads/EasyDarwinGoM3u8</span><br><span class="line"></span><br><span class="line"><span class="comment">;切片文件时长。本地存储时，将以该时间段为标准来生成ts文件(该时间+一个I帧间隔)，单位秒。</span></span><br><span class="line"><span class="comment">;如果需要直播，这个值设小点，但是这样会产生很多ts文件；如果不需要直播，只要存储的话，可设大些。</span></span><br><span class="line"><span class="attr">ts_duration_second</span>=<span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;key为拉流时的自定义路径，value为ffmpeg转码格式，比如可设置为-c:v copy -c:a copy，表示copy源格式；default表示使用ffmpeg内置的输出格式，会进行转码。</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Linux/Ubuntu%20%E5%AE%89%E8%A3%85FFmpeg/" rel="prev" title="Ubuntu 安装FFmpeg">
+      <i class="fa fa-chevron-left"></i> Ubuntu 安装FFmpeg
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E5%BC%80%E6%BA%90%E7%9A%84H264%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6H264BSAnalyzer/" rel="next" title="开源的H264数据包分析软件H264BSAnalyzer">
+      开源的H264数据包分析软件H264BSAnalyzer <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Linux/Ubuntu 安装FFmpeg/" rel="next" title="Ubuntu 安装FFmpeg">
-                <i class="fa fa-chevron-left"></i> Ubuntu 安装FFmpeg
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/音视频/开源的H264数据包分析软件H264BSAnalyzer/" rel="prev" title="开源的H264数据包分析软件H264BSAnalyzer">
-                开源的H264数据包分析软件H264BSAnalyzer <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、RTMP"><span class="nav-number">1.</span> <span class="nav-text">一、RTMP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTMP特性"><span class="nav-number">1.0.1.</span> <span class="nav-text">RTMP特性</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#二、RTSP"><span class="nav-number">2.</span> <span class="nav-text">二、RTSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTSP特性"><span class="nav-number">2.0.1.</span> <span class="nav-text">RTSP特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、开源软件"><span class="nav-number">3.</span> <span class="nav-text">三、开源软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ⅰ、推流端"><span class="nav-number">3.0.1.</span> <span class="nav-text">Ⅰ、推流端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ⅱ、服务端"><span class="nav-number">3.0.2.</span> <span class="nav-text">Ⅱ、服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ⅲ、播放端和拉流"><span class="nav-number">3.0.3.</span> <span class="nav-text">Ⅲ、播放端和拉流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、利用开源软件搭建一套直播测试平台"><span class="nav-number">4.</span> <span class="nav-text">四、利用开源软件搭建一套直播测试平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、流视频录制并存储方案"><span class="nav-number">5.</span> <span class="nav-text">五、流视频录制并存储方案</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81RTMP"><span class="nav-number">1.</span> <span class="nav-text">一、RTMP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTMP%E7%89%B9%E6%80%A7"><span class="nav-number">1.0.1.</span> <span class="nav-text">RTMP特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81RTSP"><span class="nav-number">2.</span> <span class="nav-text">二、RTSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTSP%E7%89%B9%E6%80%A7"><span class="nav-number">2.0.1.</span> <span class="nav-text">RTSP特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">三、开源软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%85%A0%E3%80%81%E6%8E%A8%E6%B5%81%E7%AB%AF"><span class="nav-number">3.0.1.</span> <span class="nav-text">Ⅰ、推流端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%85%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="nav-number">3.0.2.</span> <span class="nav-text">Ⅱ、服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%85%A2%E3%80%81%E6%92%AD%E6%94%BE%E7%AB%AF%E5%92%8C%E6%8B%89%E6%B5%81"><span class="nav-number">3.0.3.</span> <span class="nav-text">Ⅲ、播放端和拉流</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%88%A9%E7%94%A8%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E5%A5%97%E7%9B%B4%E6%92%AD%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0"><span class="nav-number">4.</span> <span class="nav-text">四、利用开源软件搭建一套直播测试平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%B5%81%E8%A7%86%E9%A2%91%E5%BD%95%E5%88%B6%E5%B9%B6%E5%AD%98%E5%82%A8%E6%96%B9%E6%A1%88"><span class="nav-number">5.</span> <span class="nav-text">五、流视频录制并存储方案</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

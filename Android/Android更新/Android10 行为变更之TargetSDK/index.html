@@ -1,165 +1,45 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="【原文：behavior-changes-all】 Android 10 中加入了一些更新后的系统行为变更，这些变更可能会影响您的应用。本文档中列出的变更仅适用于以 API 级别 29 或更高级别为目标平台的应用。如果您的应用将 targetSdkVersion 设置为“29”或更高级别，则您应修改自己的应用，以适当地支持这些行为（如果适用）。 此外，请务必查看对在 Android 10 上运行的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="以 Android 10 为目标平台的应用行为变更">
-<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android10 行为变更之TargetSDK/index.html">
+<meta property="og:url" content="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android10%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/index.html">
 <meta property="og:site_name" content="咸鱼">
 <meta property="og:description" content="【原文：behavior-changes-all】 Android 10 中加入了一些更新后的系统行为变更，这些变更可能会影响您的应用。本文档中列出的变更仅适用于以 API 级别 29 或更高级别为目标平台的应用。如果您的应用将 targetSdkVersion 设置为“29”或更高级别，则您应修改自己的应用，以适当地支持这些行为（如果适用）。 此外，请务必查看对在 Android 10 上运行的">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-08-29T11:52:36.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-29T11:52:36.000Z">
+<meta property="article:modified_time" content="2022-08-29T11:52:36.000Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="以 Android 10 为目标平台的应用行为变更">
-<meta name="twitter:description" content="【原文：behavior-changes-all】 Android 10 中加入了一些更新后的系统行为变更，这些变更可能会影响您的应用。本文档中列出的变更仅适用于以 API 级别 29 或更高级别为目标平台的应用。如果您的应用将 targetSdkVersion 设置为“29”或更高级别，则您应修改自己的应用，以适当地支持这些行为（如果适用）。 此外，请务必查看对在 Android 10 上运行的">
+
+<link rel="canonical" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android10%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android10 行为变更之TargetSDK/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -171,365 +51,196 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android10 行为变更之TargetSDK/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android10%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">以 Android 10 为目标平台的应用行为变更
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          以 Android 10 为目标平台的应用行为变更
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2022-08-29 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-29T19:52:36+08:00">2022-08-29</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -537,1099 +248,250 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p><a href="https://developer.android.google.cn/about/versions/10/behavior-changes-10" target="_blank" rel="noopener">【原文：behavior-changes-all】</a></p>
+        <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/10/behavior-changes-10">【原文：behavior-changes-all】</a></p>
 <p>Android 10 中加入了一些更新后的系统行为变更，这些变更可能会影响您的应用。本文档中列出的变更仅适用于以 API 级别 29 或更高级别为目标平台的应用。如果您的应用将 <code>targetSdkVersion</code> 设置为“29”或更高级别，则您应修改自己的应用，以适当地支持这些行为（如果适用）。</p>
-<p>此外，请务必查看<a href="https://developer.android.google.cn/about/versions/10/behavior-changes-all" target="_blank" rel="noopener">对在 Android 10 上运行的所有应用都有影响的行为变更</a>列表。</p>
-<p><strong>注意</strong>：除了本页面所列的变更以外，Android 10 还引入了大量变更和限制，目的是加强用户隐私保护。要了解详情，请参阅<a href="https://developer.android.google.cn/about/versions/10/privacy" target="_blank" rel="noopener">隐私权</a>页面。</p>
-<h2 id="有关限制非-SDK-接口的更新"><a href="#有关限制非-SDK-接口的更新" class="headerlink" title="有关限制非 SDK 接口的更新"></a>有关限制非 SDK 接口的更新</h2><p>为了帮助确保应用的稳定性和兼容性，Android 平台开始限制应用在 Android 9（API 级别 28）中使用<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces" target="_blank" rel="noopener">非 SDK 接口</a>。Android 10 包含更新后的受限制非 SDK 接口列表（基于与 Android 开发者之间的协作以及最新的内部测试）。我们的目标是在限制使用非 SDK 接口之前确保有可用的公开替代方案。</p>
-<p>如果您不打算以 Android 10（API 级别 29）为目标平台，那么其中一些变更可能不会立即对您产生影响。虽然您目前仍然可以使用灰名单中的一些非 SDK 接口（取决于您的应用的<a href="https://developer.android.google.cn/distribute/best-practices/develop/target-sdk" target="_blank" rel="noopener">目标 API 级别</a>），但如果您使用任何非 SDK 方法或字段，则应用无法运行的风险终归较高。</p>
-<p>如果您不确定自己的应用是否使用了非 SDK 接口，则可以<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#test-for-non-sdk" target="_blank" rel="noopener">测试该应用</a>，进行确认。如果您的应用依赖于非 SDK 接口，则应该开始计划迁移到 SDK 替代方案。不过，我们知道某些应用具有使用非 SDK 接口的有效用例。如果您无法为应用中的某项功能找到使用非 SDK 接口的替代方案，则应该<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#feature-request" target="_blank" rel="noopener">请求新的公共 API</a>。</p>
-<p>要了解详情，请参阅<a href="https://developer.android.google.cn/about/versions/10/non-sdk-q" target="_blank" rel="noopener"> Android 10 中有关限制非 SDK 接口的更新</a>以及<a href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces" target="_blank" rel="noopener">针对非 SDK 接口的限制</a>。</p>
-<h2 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h2><p>Ashmem 更改了 /proc/<pid>/maps 中的 dalvik 映射的格式，这会影响那些直接解析映射文件的应用。如果应用依赖于 dalvik 映射格式，则应用开发者应该在搭载 Android 10 或更高版本的设备上测试 /proc/<pid>/maps 格式并相应地进行解析。</pid></pid></p>
-<p>以 Android 10 为目标平台的应用无法直接使用 ashmem (/dev/ashmem)，而必须通过 NDK 的 <a href="https://android.googlesource.com/platform/frameworks/base/+/master/native/android/sharedmem.cpp" target="_blank" rel="noopener"><code>ASharedMemory</code> 类</a>访问共享内存。此外，应用无法直接对现有 ashmem 文件描述符进行 IOCTL，而必须改为使用 NDK 的 <code>ASharedMemory</code> 类或 Android Java API 创建共享内存区域。这项变更可以提高使用共享内存时的安全性和稳健性，从而提高 Android 的整体性能和安全性。</p>
-<h2 id="移除了应用主目录的执行权限"><a href="#移除了应用主目录的执行权限" class="headerlink" title="移除了应用主目录的执行权限"></a>移除了应用主目录的执行权限</h2><p>以 Android 10 为目标平台的不可信应用无法再针对应用主目录中的文件调用 <code>exec()</code>。这种从可写应用的主目录执行文件的行为<a href="https://en.wikipedia.org/wiki/W^X" target="_blank" rel="noopener">违反了 W^X</a>。应用应该仅加载嵌入到应用的 APK 文件中的二进制代码。</p>
+<p>此外，请务必查看<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/10/behavior-changes-all">对在 Android 10 上运行的所有应用都有影响的行为变更</a>列表。</p>
+<p><strong>注意</strong>：除了本页面所列的变更以外，Android 10 还引入了大量变更和限制，目的是加强用户隐私保护。要了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/10/privacy">隐私权</a>页面。</p>
+<h2 id="有关限制非-SDK-接口的更新"><a href="#有关限制非-SDK-接口的更新" class="headerlink" title="有关限制非 SDK 接口的更新"></a>有关限制非 SDK 接口的更新</h2><p>为了帮助确保应用的稳定性和兼容性，Android 平台开始限制应用在 Android 9（API 级别 28）中使用<a target="_blank" rel="noopener" href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces">非 SDK 接口</a>。Android 10 包含更新后的受限制非 SDK 接口列表（基于与 Android 开发者之间的协作以及最新的内部测试）。我们的目标是在限制使用非 SDK 接口之前确保有可用的公开替代方案。</p>
+<p>如果您不打算以 Android 10（API 级别 29）为目标平台，那么其中一些变更可能不会立即对您产生影响。虽然您目前仍然可以使用灰名单中的一些非 SDK 接口（取决于您的应用的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/distribute/best-practices/develop/target-sdk">目标 API 级别</a>），但如果您使用任何非 SDK 方法或字段，则应用无法运行的风险终归较高。</p>
+<p>如果您不确定自己的应用是否使用了非 SDK 接口，则可以<a target="_blank" rel="noopener" href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#test-for-non-sdk">测试该应用</a>，进行确认。如果您的应用依赖于非 SDK 接口，则应该开始计划迁移到 SDK 替代方案。不过，我们知道某些应用具有使用非 SDK 接口的有效用例。如果您无法为应用中的某项功能找到使用非 SDK 接口的替代方案，则应该<a target="_blank" rel="noopener" href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces#feature-request">请求新的公共 API</a>。</p>
+<p>要了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/10/non-sdk-q"> Android 10 中有关限制非 SDK 接口的更新</a>以及<a target="_blank" rel="noopener" href="https://developer.android.google.cn/distribute/best-practices/develop/restrictions-non-sdk-interfaces">针对非 SDK 接口的限制</a>。</p>
+<h2 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h2><p>Ashmem 更改了 &#x2F;proc&#x2F;<pid>&#x2F;maps 中的 dalvik 映射的格式，这会影响那些直接解析映射文件的应用。如果应用依赖于 dalvik 映射格式，则应用开发者应该在搭载 Android 10 或更高版本的设备上测试 &#x2F;proc&#x2F;<pid>&#x2F;maps 格式并相应地进行解析。</p>
+<p>以 Android 10 为目标平台的应用无法直接使用 ashmem (&#x2F;dev&#x2F;ashmem)，而必须通过 NDK 的 <a target="_blank" rel="noopener" href="https://android.googlesource.com/platform/frameworks/base/+/master/native/android/sharedmem.cpp"><code>ASharedMemory</code> 类</a>访问共享内存。此外，应用无法直接对现有 ashmem 文件描述符进行 IOCTL，而必须改为使用 NDK 的 <code>ASharedMemory</code> 类或 Android Java API 创建共享内存区域。这项变更可以提高使用共享内存时的安全性和稳健性，从而提高 Android 的整体性能和安全性。</p>
+<h2 id="移除了应用主目录的执行权限"><a href="#移除了应用主目录的执行权限" class="headerlink" title="移除了应用主目录的执行权限"></a>移除了应用主目录的执行权限</h2><p>以 Android 10 为目标平台的不可信应用无法再针对应用主目录中的文件调用 <code>exec()</code>。这种从可写应用的主目录执行文件的行为<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/W^X">违反了 W^X</a>。应用应该仅加载嵌入到应用的 APK 文件中的二进制代码。</p>
 <p>此外，以 Android 10 为目标平台的应用无法针对已通过 <code>dlopen()</code> 打开的文件中的可执行代码进行内存中修改。这包括含有文本重定位的所有共享对象 (<code>.so</code>) 文件。</p>
 <h2 id="Android-运行时只接受系统生成的-OAT-文件"><a href="#Android-运行时只接受系统生成的-OAT-文件" class="headerlink" title="Android 运行时只接受系统生成的 OAT 文件"></a>Android 运行时只接受系统生成的 OAT 文件</h2><p>Android 运行时 (ART) 不再从应用进程调用 <code>dex2oat</code>。这项变更意味着 ART 将仅接受系统生成的 OAT 文件。</p>
 <h2 id="在-ART-中强制要求-AOT-正确性"><a href="#在-ART-中强制要求-AOT-正确性" class="headerlink" title="在 ART 中强制要求 AOT 正确性"></a>在 ART 中强制要求 AOT 正确性</h2><p>过去，如果编译时和运行时的类路径环境不同，则 Android Runtime (ART) 执行的预先 (AOT) 编译可能会导致运行时崩溃。Android 10 及更高版本始终要求这些环境相同，因而出现了以下行为变更：</p>
 <ul>
 <li>自定义类加载器（即应用编写的类加载器，与 <code>dalvik.system</code> 软件包中的类加载器不同）并不是预先 (AOT) 编译的。这是因为 ART 无法在运行时了解自定义的类查找实现。</li>
 <li>辅助 dex 文件（即由主 APK 外的应用手动加载的 dex 文件）是在后台 AOT 编译的。这是因为首次使用编译可能代价过高，会导致在执行前出现意外的延迟。请注意，对于应用，建议您采用拆分方法，并弃用辅助 dex 文件。</li>
-<li>Android 中的共享库（Android 清单中的 <library> 和 <uses-library> 条目）在实现时使用的类加载器层次结构与先前版本的平台中所用的不同。</uses-library></library></li>
+<li>Android 中的共享库（Android 清单中的 <library> 和 <uses-library> 条目）在实现时使用的类加载器层次结构与先前版本的平台中所用的不同。</li>
 </ul>
-<h2 id="针对全屏-Intent-的权限变更"><a href="#针对全屏-Intent-的权限变更" class="headerlink" title="针对全屏 Intent 的权限变更"></a>针对全屏 Intent 的权限变更</h2><p>如果应用以 Android 10 或更高版本为目标平台并使用涉及<a href="https://developer.android.google.cn/training/notify-user/build-notification#urgent-message" target="_blank" rel="noopener">全屏 intent</a> 的通知，则必须在应用的清单文件中请求 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#USE_FULL_SCREEN_INTENT" target="_blank" rel="noopener"><code>USE_FULL_SCREEN_INTENT</code></a> 权限。这是<a href="https://developer.android.google.cn/guide/topics/permissions/normal-permissions" target="_blank" rel="noopener">普通权限</a>，因此，系统会自动为请求权限的应用授予此权限。</p>
+<h2 id="针对全屏-Intent-的权限变更"><a href="#针对全屏-Intent-的权限变更" class="headerlink" title="针对全屏 Intent 的权限变更"></a>针对全屏 Intent 的权限变更</h2><p>如果应用以 Android 10 或更高版本为目标平台并使用涉及<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/notify-user/build-notification#urgent-message">全屏 intent</a> 的通知，则必须在应用的清单文件中请求 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/Manifest.permission#USE_FULL_SCREEN_INTENT"><code>USE_FULL_SCREEN_INTENT</code></a> 权限。这是<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/permissions/normal-permissions">普通权限</a>，因此，系统会自动为请求权限的应用授予此权限。</p>
 <p>如果以 Android 10 或更高版本为目标平台的应用尝试创建使用全屏 intent 的通知而未请求必要权限，则系统会忽略此全屏 intent 并输出以下日志消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package your-package-name: Use of fullScreenIntent requires the USE_FULL_SCREEN_INTENT permission</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Package your-package-name: Use of fullScreenIntent requires the USE_FULL_SCREEN_INTENT permission</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h2 id="支持可折叠设备"><a href="#支持可折叠设备" class="headerlink" title="支持可折叠设备"></a>支持可折叠设备</h2><p>Android 10 包含支持可折叠设备和大屏设备的变更。</p>
-<p>当应用在 Android 10 上运行时，<a href="https://developer.android.google.cn/reference/android/app/Activity#onResume(" target="_blank" rel="noopener"><code>onResume()</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/app/Activity#onPause(" target="_blank" rel="noopener"><code>onPause()</code></a>) 方法的工作原理是不同的。当多个应用同时在多窗口模式或多显示屏模式下显示时，可见堆栈中所有可设置为焦点的顶层 Activity 都处于“已恢复”状态，但实际上焦点仅位于其中一个 Activity 上，即“在最顶层处于已恢复状态”的 Activity。在 Android 10 之前的版本中运行时，一次只能恢复系统中的一个 Activity，而所有其他可见 Activity 都处于已暂停状态。</p>
+<p>当应用在 Android 10 上运行时，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Activity#onResume()"><code>onResume()</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Activity#onPause()"><code>onPause()</code></a> 方法的工作原理是不同的。当多个应用同时在多窗口模式或多显示屏模式下显示时，可见堆栈中所有可设置为焦点的顶层 Activity 都处于“已恢复”状态，但实际上焦点仅位于其中一个 Activity 上，即“在最顶层处于已恢复状态”的 Activity。在 Android 10 之前的版本中运行时，一次只能恢复系统中的一个 Activity，而所有其他可见 Activity 都处于已暂停状态。</p>
 <p>请不要将“焦点位于”的 Activity 与“在最顶层处于已恢复状态”的 Activity 混淆。系统会根据 Z-Order 来为 Activity 分配优先级，以便为用户最后进行互动的 Activity 提供更高的优先级。Activity 可能在顶层处于已恢复状态，但焦点却并不位于其上（例如，如果通知栏展开）。</p>
-<p>在 Android 10（API 级别 29）及更高版本中，您可以订阅 <a href="https://developer.android.google.cn/reference/android/app/Activity#onTopResumedActivityChanged(boolean" target="_blank" rel="noopener"><code>onTopResumedActivityChanged()</code></a>) 回调，以便在 Activity 获取或失去在最顶层处于已恢复状态的位置后收到通知。这相当于 Android 10 之前版本中的已恢复状态；如果您的应用使用的专用或单一资源可能需要与其他应用共享，这可以作为有用的提示。</p>
-<p><a href="https://developer.android.google.cn/guide/topics/ui/multi-window#resizeableActivity" target="_blank" rel="noopener"><code>resizeableActivity</code></a> 清单属性的行为也发生了变化。如果某个应用在 Android 10（API 级别 29）或更高版本中设置 <code>resizeableActivity=false</code>，则当可用屏幕尺寸发生变化或者该应用从一个屏幕移到另一屏幕时，它可能处于兼容模式下。</p>
-<p>应用可使用 Android 10 中引入的 <a href="https://developer.android.google.cn/reference/android/R.attr#minAspectRatio" target="_blank" rel="noopener"><code>android:minAspectRatio</code></a> 属性来指示您的应用支持的<a href="https://developer.android.google.cn/preview/features/foldables#new_screen_ratios" target="_blank" rel="noopener">屏幕宽高比</a>。</p>
+<p>在 Android 10（API 级别 29）及更高版本中，您可以订阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Activity#onTopResumedActivityChanged(boolean)"><code>onTopResumedActivityChanged()</code></a> 回调，以便在 Activity 获取或失去在最顶层处于已恢复状态的位置后收到通知。这相当于 Android 10 之前版本中的已恢复状态；如果您的应用使用的专用或单一资源可能需要与其他应用共享，这可以作为有用的提示。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/multi-window#resizeableActivity"><code>resizeableActivity</code></a> 清单属性的行为也发生了变化。如果某个应用在 Android 10（API 级别 29）或更高版本中设置 <code>resizeableActivity=false</code>，则当可用屏幕尺寸发生变化或者该应用从一个屏幕移到另一屏幕时，它可能处于兼容模式下。</p>
+<p>应用可使用 Android 10 中引入的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/R.attr#minAspectRatio"><code>android:minAspectRatio</code></a> 属性来指示您的应用支持的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/preview/features/foldables#new_screen_ratios">屏幕宽高比</a>。</p>
 <p>从版本 3.5 开始，Android Studio 的模拟器工具将包含 7.3” 和 8” 的虚拟设备，以便您使用较大屏幕测试代码。</p>
-<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/foldables" target="_blank" rel="noopener">打造适用于可折叠设备的应用</a>。</p>
-<h2 id="java-io-FileChannel-map-更改"><a href="#java-io-FileChannel-map-更改" class="headerlink" title="java.io.FileChannel.map() 更改"></a>java.io.FileChannel.map() 更改</h2><p>从 Android 10 开始，非标准文件（例如 <code>/dev/zero</code>，其大小无法使用 <a href="http://man7.org/linux/man-pages/man2/truncate.2.html" target="_blank" rel="noopener"><code>truncate()</code></a> 进行更改）已不再支持 <code>FileChannel.map()</code>。之前的 Android 版本会生吞掉 <code>truncate()</code> 返回的错误，但 Android 10 会抛出 IOException。如果您需要旧行为，则必须使用原生代码。</p>
+<p>如需了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/foldables">打造适用于可折叠设备的应用</a>。</p>
+<h2 id="java-io-FileChannel-map-更改"><a href="#java-io-FileChannel-map-更改" class="headerlink" title="java.io.FileChannel.map() 更改"></a>java.io.FileChannel.map() 更改</h2><p>从 Android 10 开始，非标准文件（例如 <code>/dev/zero</code>，其大小无法使用 <a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/truncate.2.html"><code>truncate()</code></a> 进行更改）已不再支持 <code>FileChannel.map()</code>。之前的 Android 版本会生吞掉 <code>truncate()</code> 返回的错误，但 Android 10 会抛出 IOException。如果您需要旧行为，则必须使用原生代码。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android10%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/" rel="prev" title="Android10 所有应用行为变更">
+      <i class="fa fa-chevron-left"></i> Android10 所有应用行为变更
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android10%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/" rel="next" title="Android10 功能和 API 概览">
+      Android10 功能和 API 概览 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Android/Android更新/Android10 功能和 API 概览/" rel="next" title="Android10 功能和 API 概览">
-                <i class="fa fa-chevron-left"></i> Android10 功能和 API 概览
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Android/Android更新/Android11 行为变更之TargetSDK/" rel="prev" title="以 Android 11 为目标平台的应用行为变更">
-                以 Android 11 为目标平台的应用行为变更 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#有关限制非-SDK-接口的更新"><span class="nav-number">1.</span> <span class="nav-text">有关限制非 SDK 接口的更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共享内存"><span class="nav-number">2.</span> <span class="nav-text">共享内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除了应用主目录的执行权限"><span class="nav-number">3.</span> <span class="nav-text">移除了应用主目录的执行权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-运行时只接受系统生成的-OAT-文件"><span class="nav-number">4.</span> <span class="nav-text">Android 运行时只接受系统生成的 OAT 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-ART-中强制要求-AOT-正确性"><span class="nav-number">5.</span> <span class="nav-text">在 ART 中强制要求 AOT 正确性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#针对全屏-Intent-的权限变更"><span class="nav-number">6.</span> <span class="nav-text">针对全屏 Intent 的权限变更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持可折叠设备"><span class="nav-number">7.</span> <span class="nav-text">支持可折叠设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-io-FileChannel-map-更改"><span class="nav-number">8.</span> <span class="nav-text">java.io.FileChannel.map() 更改</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E9%99%90%E5%88%B6%E9%9D%9E-SDK-%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">有关限制非 SDK 接口的更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="nav-number">2.</span> <span class="nav-text">共享内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E4%BA%86%E5%BA%94%E7%94%A8%E4%B8%BB%E7%9B%AE%E5%BD%95%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90"><span class="nav-number">3.</span> <span class="nav-text">移除了应用主目录的执行权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8F%AA%E6%8E%A5%E5%8F%97%E7%B3%BB%E7%BB%9F%E7%94%9F%E6%88%90%E7%9A%84-OAT-%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">Android 运行时只接受系统生成的 OAT 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-ART-%E4%B8%AD%E5%BC%BA%E5%88%B6%E8%A6%81%E6%B1%82-AOT-%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">在 ART 中强制要求 AOT 正确性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E5%85%A8%E5%B1%8F-Intent-%E7%9A%84%E6%9D%83%E9%99%90%E5%8F%98%E6%9B%B4"><span class="nav-number">6.</span> <span class="nav-text">针对全屏 Intent 的权限变更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%8F%AF%E6%8A%98%E5%8F%A0%E8%AE%BE%E5%A4%87"><span class="nav-number">7.</span> <span class="nav-text">支持可折叠设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-io-FileChannel-map-%E6%9B%B4%E6%94%B9"><span class="nav-number">8.</span> <span class="nav-text">java.io.FileChannel.map() 更改</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

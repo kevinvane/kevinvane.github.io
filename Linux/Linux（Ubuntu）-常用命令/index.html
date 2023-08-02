@@ -1,165 +1,45 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="压缩打包tar123456# 仅打包(不压缩)$ tar -cvf /tmp/etc.tar /etc# gzip格式压缩（ z参数 .tar.gz 或 .tgz）$ tar -czvf /tmp/etc.tar.gz /etc# bzip2格式压缩（j 参数 .tar.bz2）$ tar -cjvf /tmp/etc.tar.bz2 /etc zip 打包目录1$ zip -r -o -9  t">
+  <meta name="description" content="压缩打包tar123456# 仅打包(不压缩)$ tar -cvf &#x2F;tmp&#x2F;etc.tar &#x2F;etc# gzip格式压缩（ z参数 .tar.gz 或 .tgz）$ tar -czvf &#x2F;tmp&#x2F;etc.tar.gz &#x2F;etc# bzip2格式压缩（j 参数 .tar.bz2）$ tar -cjvf &#x2F;tmp&#x2F;etc.tar.bz2 &#x2F;etc  zip 打包目录1$ zip -r -o -9">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux（Ubuntu）-常用命令">
-<meta property="og:url" content="http://yoursite.com/Linux/Linux（Ubuntu）-常用命令/index.html">
+<meta property="og:url" content="http://yoursite.com/Linux/Linux%EF%BC%88Ubuntu%EF%BC%89-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="压缩打包tar123456# 仅打包(不压缩)$ tar -cvf /tmp/etc.tar /etc# gzip格式压缩（ z参数 .tar.gz 或 .tgz）$ tar -czvf /tmp/etc.tar.gz /etc# bzip2格式压缩（j 参数 .tar.bz2）$ tar -cjvf /tmp/etc.tar.bz2 /etc zip 打包目录1$ zip -r -o -9  t">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-12-28T03:24:10.167Z">
+<meta property="og:description" content="压缩打包tar123456# 仅打包(不压缩)$ tar -cvf &#x2F;tmp&#x2F;etc.tar &#x2F;etc# gzip格式压缩（ z参数 .tar.gz 或 .tgz）$ tar -czvf &#x2F;tmp&#x2F;etc.tar.gz &#x2F;etc# bzip2格式压缩（j 参数 .tar.bz2）$ tar -cjvf &#x2F;tmp&#x2F;etc.tar.bz2 &#x2F;etc  zip 打包目录1$ zip -r -o -9">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-08-30T01:52:36.000Z">
+<meta property="article:modified_time" content="2021-12-28T03:24:10.167Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux（Ubuntu）-常用命令">
-<meta name="twitter:description" content="压缩打包tar123456# 仅打包(不压缩)$ tar -cvf /tmp/etc.tar /etc# gzip格式压缩（ z参数 .tar.gz 或 .tgz）$ tar -czvf /tmp/etc.tar.gz /etc# bzip2格式压缩（j 参数 .tar.bz2）$ tar -cjvf /tmp/etc.tar.bz2 /etc zip 打包目录1$ zip -r -o -9  t">
+
+<link rel="canonical" href="http://yoursite.com/Linux/Linux%EF%BC%88Ubuntu%EF%BC%89-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/Linux/Linux（Ubuntu）-常用命令/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -171,381 +51,203 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Linux（Ubuntu）-常用命令/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Linux%EF%BC%88Ubuntu%EF%BC%89-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Linux（Ubuntu）-常用命令
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Linux（Ubuntu）-常用命令
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-08-30T09:52:36+08:00">2017-08-30</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -553,18 +255,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h2 id="压缩打包"><a href="#压缩打包" class="headerlink" title="压缩打包"></a>压缩打包</h2><h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 仅打包(不压缩)</span></span><br><span class="line">$ tar -cvf /tmp/etc.tar /etc</span><br><span class="line"><span class="comment"># gzip格式压缩（ z参数 .tar.gz 或 .tgz）</span></span><br><span class="line">$ tar -czvf /tmp/etc.tar.gz /etc</span><br><span class="line"><span class="comment"># bzip2格式压缩（j 参数 .tar.bz2）</span></span><br><span class="line">$ tar -cjvf /tmp/etc.tar.bz2 /etc</span><br></pre></td></tr></table></figure>
+
 <h4 id="zip-打包目录"><a href="#zip-打包目录" class="headerlink" title="zip 打包目录"></a>zip 打包目录</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -o -9  test.zip <span class="built_in">test</span>/</span><br></pre></td></tr></table></figure>
 <p>-r 递归 ，-o 输出文件 ， -9 压缩比例(1~9)</p>
 <h2 id="查看哪个目录占用空间大（比较耗时）"><a href="#查看哪个目录占用空间大（比较耗时）" class="headerlink" title="查看哪个目录占用空间大（比较耗时）"></a>查看哪个目录占用空间大（比较耗时）</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:/<span class="comment"># du -s /* | sort -nr</span></span><br><span class="line">9199072	/usr</span><br><span class="line">1943584	/var</span><br><span class="line">1858812	/root</span><br><span class="line">746372	/home</span><br><span class="line">733020	/lib</span><br><span class="line">104728	/boot</span><br><span class="line">20356	/lost+found</span><br><span class="line">13616	/sbin</span><br><span class="line">12644	/bin</span><br><span class="line">9308	/etc</span><br><span class="line">6068	/run</span><br><span class="line">3952	/lib32</span><br><span class="line">172	/dump</span><br><span class="line">48	/tmp</span><br><span class="line">20	/data</span><br><span class="line">16	/opt</span><br><span class="line">12	/media</span><br><span class="line">8	/srv</span><br><span class="line">4	/mnt</span><br><span class="line">4	/lib64</span><br><span class="line">0	/vmlinuz.old</span><br><span class="line">0	/vmlinuz</span><br><span class="line">0	/sys</span><br><span class="line">0	/proc</span><br><span class="line">0	/initrd.img.old</span><br><span class="line">0	/initrd.img</span><br><span class="line">0	/dev</span><br></pre></td></tr></table></figure>
-<h2 id="查看当前目录文件大小情况"><a href="#查看当前目录文件大小情况" class="headerlink" title="查看当前目录文件大小情况"></a>查看当前目录文件大小情况</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ du -h</span><br><span class="line"></span><br><span class="line">8.0K	./.cmake/packages/libwebsockets</span><br><span class="line">12K	./.cmake/packages</span><br><span class="line">128K	./.java</span><br><span class="line">8.0K	./.vim</span><br><span class="line">...省略</span><br><span class="line">16K	./.aptitude</span><br><span class="line">12K	./.w3m</span><br><span class="line">8.0K	./.config/configstore</span><br><span class="line">12K	./.config</span><br><span class="line">54M	.</span><br></pre></td></tr></table></figure>
-<h2 id="创建一个有sudo权限的用户"><a href="#创建一个有sudo权限的用户" class="headerlink" title="创建一个有sudo权限的用户"></a>创建一个有sudo权限的用户</h2><p><a href="https://www.cnblogs.com/xiaouisme/p/10891994.html" target="_blank" rel="noopener">参考</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~$ adduser user1</span><br><span class="line">root@bogon:~$ passwd user1</span><br><span class="line">root@bogon:~$ usermod -aG sudo user1 <span class="comment">#添加到sudo组（必须）</span></span><br><span class="line">root@bogon:~$ id user1 <span class="comment"># 确认组信息</span></span><br><span class="line">root@bogon:~$ sudo ls -l /root <span class="comment"># 测试sudo命令</span></span><br><span class="line">root@bogon:~$</span><br></pre></td></tr></table></figure></p>
-<h2 id="用户shell环境"><a href="#用户shell环境" class="headerlink" title="用户shell环境"></a>用户shell环境</h2><p>通过 <code>adduser</code> 新建的用户，登录之后没有shell环境，终端不会显示用户名和路径,<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~$ vim /etc/passwd # 编辑passwd文件</span><br><span class="line"> 46 user1:x:1003:1003::/home/user1:/bin/bash #给用户增加 /bin/bash</span><br></pre></td></tr></table></figure></p>
+
+<h2 id="查看当前目录文件大小情况"><a href="#查看当前目录文件大小情况" class="headerlink" title="查看当前目录文件大小情况"></a>查看当前目录文件大小情况</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">du</span> -h</span><br><span class="line"></span><br><span class="line">8.0K	./.cmake/packages/libwebsockets</span><br><span class="line">12K	./.cmake/packages</span><br><span class="line">128K	./.java</span><br><span class="line">8.0K	./.vim</span><br><span class="line">...省略</span><br><span class="line">16K	./.aptitude</span><br><span class="line">12K	./.w3m</span><br><span class="line">8.0K	./.config/configstore</span><br><span class="line">12K	./.config</span><br><span class="line">54M	.</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="创建一个有sudo权限的用户"><a href="#创建一个有sudo权限的用户" class="headerlink" title="创建一个有sudo权限的用户"></a>创建一个有sudo权限的用户</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaouisme/p/10891994.html">参考</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~$ adduser user1</span><br><span class="line">root@bogon:~$ passwd user1</span><br><span class="line">root@bogon:~$ usermod -aG sudo user1 <span class="comment">#添加到sudo组（必须）</span></span><br><span class="line">root@bogon:~$ <span class="built_in">id</span> user1 <span class="comment"># 确认组信息</span></span><br><span class="line">root@bogon:~$ sudo <span class="built_in">ls</span> -l /root <span class="comment"># 测试sudo命令</span></span><br><span class="line">root@bogon:~$ </span><br></pre></td></tr></table></figure>
+
+<h2 id="用户shell环境"><a href="#用户shell环境" class="headerlink" title="用户shell环境"></a>用户shell环境</h2><p>通过 <code>adduser</code> 新建的用户，登录之后没有shell环境，终端不会显示用户名和路径,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~$ vim /etc/passwd # 编辑passwd文件</span><br><span class="line"> 46 user1:x:1003:1003::/home/user1:/bin/bash #给用户增加 /bin/bash</span><br></pre></td></tr></table></figure>
+
 <h2 id="修改用户所属的组"><a href="#修改用户所属的组" class="headerlink" title="修改用户所属的组"></a>修改用户所属的组</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~$ usermod -g root user1 <span class="comment">#修改到root组</span></span><br><span class="line">root@bogon:~$ usermod -d /home/samwen  samwen <span class="comment">#修改用户登入时的目录</span></span><br></pre></td></tr></table></figure>
-<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><h4 id="chmod修改权限"><a href="#chmod修改权限" class="headerlink" title="chmod修改权限"></a>chmod修改权限</h4><p>Linux的文件权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">samwen@bogon:~$ mkdir test</span><br><span class="line">samwen@bogon:~$ vim hello.txt</span><br><span class="line">samwen@bogon:~$ ls -ll</span><br><span class="line">drwxrwxr-x  2 samwen samwen 4096 Aug  7 17:27 test</span><br><span class="line">-rw-rw-r--  1 samwen samwen    6 Aug  7 17:33 hello.txt</span><br></pre></td></tr></table></figure></p>
+
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><h4 id="chmod修改权限"><a href="#chmod修改权限" class="headerlink" title="chmod修改权限"></a>chmod修改权限</h4><p>Linux的文件权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">samwen@bogon:~$ mkdir test</span><br><span class="line">samwen@bogon:~$ vim hello.txt</span><br><span class="line">samwen@bogon:~$ ls -ll</span><br><span class="line">drwxrwxr-x  2 samwen samwen 4096 Aug  7 17:27 test</span><br><span class="line">-rw-rw-r--  1 samwen samwen    6 Aug  7 17:33 hello.txt</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -576,8 +285,7 @@
 <th>总值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>test</td>
 <td>d</td>
 <td>rwx</td>
@@ -593,1084 +301,246 @@
 <td>r–</td>
 <td>664</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><code>r</code> ： 只读权限，值等于 <code>4</code> 。</p>
 <p><code>w</code> ： 只写权限，值等于 <code>2</code> 。</p>
 <p><code>x</code> ： 执行权限，值等于 <code>1</code> 。</p>
 <p><code>-</code>： 无权限，值等于 <code>0</code> 。</p>
 <p>修改权限</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:/home/bogon# chmod -R 760 mydir</span><br></pre></td></tr></table></figure>
-<p> <code>760</code> 的意思是：用户读/写/执行权限、组用户读/写权限、其他用户无权限。</p>
+
+<p> <code>760</code> 的意思是：用户读&#x2F;写&#x2F;执行权限、组用户读&#x2F;写权限、其他用户无权限。</p>
 <p>常用的权限值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">775：默认创建目录的权限</span><br><span class="line">664：默认创建文件的权限</span><br><span class="line">600：只有所有者有读和写的权限</span><br><span class="line">644：所有者有读和写的权限，组用户只有读的权限</span><br><span class="line">666：每个人都有读和写的权限</span><br><span class="line">700：只有所有者有读和写以及执行的权限</span><br><span class="line">777：每个人都有读和写以及执行的权限</span><br></pre></td></tr></table></figure>
-<h4 id="查看文件的所有者等信息"><a href="#查看文件的所有者等信息" class="headerlink" title="查看文件的所有者等信息"></a>查看文件的所有者等信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">显示文件夹信息 http://man.linuxde.net/ls</span></span><br><span class="line">ls -ld mydir/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">显示文件夹内信息</span></span><br><span class="line">ls -lh mydir/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">775：默认创建目录的权限</span><br><span class="line">664：默认创建文件的权限</span><br><span class="line">600：只有所有者有读和写的权限</span><br><span class="line">644：所有者有读和写的权限，组用户只有读的权限</span><br><span class="line">666：每个人都有读和写的权限</span><br><span class="line">700：只有所有者有读和写以及执行的权限</span><br><span class="line">777：每个人都有读和写以及执行的权限</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看文件的所有者等信息"><a href="#查看文件的所有者等信息" class="headerlink" title="查看文件的所有者等信息"></a>查看文件的所有者等信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示文件夹信息 http://man.linuxde.net/ls</span></span><br><span class="line">ls -ld mydir/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示文件夹内信息</span></span><br><span class="line">ls -lh mydir/</span><br></pre></td></tr></table></figure>
+
 <h4 id="chown修改文件所有者和组"><a href="#chown修改文件所有者和组" class="headerlink" title="chown修改文件所有者和组"></a>chown修改文件所有者和组</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown -R 组:用户 目录/</span><br><span class="line"></span><br><span class="line">chown -R bogon:bogon mydir</span><br></pre></td></tr></table></figure>
-<h2 id="查找软件的目录"><a href="#查找软件的目录" class="headerlink" title="查找软件的目录"></a>查找软件的目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查找软件的目录</span><br><span class="line">root@openapi:~# whereis iptables</span><br><span class="line">iptables: /sbin/iptables /usr/share/iptables /usr/share/man/man8/iptables.8.gz</span><br></pre></td></tr></table></figure>
-<h2 id="查看所有端口和使用者"><a href="#查看所有端口和使用者" class="headerlink" title="查看所有端口和使用者"></a>查看所有端口和使用者</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看所有端口和使用者</span><br><span class="line">root@bogon:~/apache-tomcat/bin# netstat -tnlp</span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1007/sshd       </span><br><span class="line">tcp        0      0 0.0.0.0:8060            0.0.0.0:*               LISTEN      928/nginx       </span><br><span class="line">tcp        0      0 127.0.0.1:9121          0.0.0.0:*               LISTEN      917/redis_exporter</span><br><span class="line">tcp        0      0 127.0.0.1:9090          0.0.0.0:*               LISTEN      927/prometheus  </span><br><span class="line">tcp        0      0 127.0.0.1:9187          0.0.0.0:*               LISTEN      934/postgres_export</span><br><span class="line">tcp        0      0 127.0.0.1:9100          0.0.0.0:*               LISTEN      923/node_exporter</span><br><span class="line">tcp        0      0 127.0.0.1:9168          0.0.0.0:*               LISTEN      935/ruby        </span><br><span class="line">tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      928/nginx       </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      1007/sshd       </span><br><span class="line">tcp6       0      0 :::8009                 :::*                    LISTEN      110928/java     </span><br><span class="line">tcp6       0      0 :::8080                 :::*                    LISTEN      110928/java     </span><br><span class="line">tcp6       0      0 ::1:9168                :::*                    LISTEN      935/ruby</span><br></pre></td></tr></table></figure>
-<h2 id="查看是谁用了某个端口"><a href="#查看是谁用了某个端口" class="headerlink" title="查看是谁用了某个端口"></a>查看是谁用了某个端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看是谁用了某个端口</span><br><span class="line">root@bogon:/etc/init.d# lsof -i:1883</span><br><span class="line">COMMAND   PID      USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">mosquitto 733 mosquitto    3u  IPv4  11835      0t0  TCP *:1883 (LISTEN)</span><br><span class="line">mosquitto 733 mosquitto    4u  IPv6  11836      0t0  TCP *:1883 (LISTEN)</span><br></pre></td></tr></table></figure>
-<h2 id="管理启动服务"><a href="#管理启动服务" class="headerlink" title="管理启动服务"></a>管理启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通过sysv-rc-conf 管理启动服务</span><br><span class="line">#sudo apt-get install sysv-rc-conf</span><br></pre></td></tr></table></figure>
-<h2 id="开机启动脚本目录"><a href="#开机启动脚本目录" class="headerlink" title="开机启动脚本目录"></a>开机启动脚本目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 开机启动脚本目录（/etc/init.d）</span><br><span class="line">root@bogon:/etc/init.d# ls</span><br><span class="line">acpid              glances      postfix          reboot          sudo</span><br><span class="line">apparmor           grub-common  postgresql       redis-server    udev</span><br><span class="line">apport             halt         pppd-dns         resolvconf      umountfs</span><br><span class="line">atd                irqbalance   procps           rsync           umountnfs.sh</span><br><span class="line">console-setup      killprocs    rabbitmq-server  rsyslog         umountroot</span><br><span class="line">cron               kmod         rc               screen-cleanup  unattended-upgrades</span><br><span class="line">dbus               mysql        rc.local         sendsigs        urandom</span><br><span class="line">dns-clean          netdata      rclocal.backup   single          x11-common</span><br><span class="line">emqttd.dpkg-new    networking   rcS              skeleton</span><br><span class="line">friendly-recovery  ondemand     README           ssh</span><br><span class="line">root@bogon:/etc/init.d#</span><br></pre></td></tr></table></figure>
-<h2 id="每个开发人员都应该知道的-10-个-Linux-命令"><a href="#每个开发人员都应该知道的-10-个-Linux-命令" class="headerlink" title="每个开发人员都应该知道的 10 个 Linux 命令"></a>每个开发人员都应该知道的 10 个 Linux 命令</h2><p><a href="https://mp.weixin.qq.com/s/63My8SMHZc_mRL-R9SMeYw" target="_blank" rel="noopener">来源</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10. file</span><br><span class="line"></span><br><span class="line">返回一个指定文件的信息。例如，你可以用它来输出一个图片文件的尺寸信息。</span><br><span class="line"></span><br><span class="line">file logo.png</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"></span><br><span class="line">&gt; PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced</span><br><span class="line"></span><br><span class="line">9. iotop, powertop, nethogs</span><br><span class="line"></span><br><span class="line">你如何监控Linux系统中发生了什么？这三个命令可以帮上大忙；</span><br><span class="line"></span><br><span class="line">* iotop: 将进程按磁盘写次数排序，并且显示程序写磁盘的次数和频率。</span><br><span class="line"></span><br><span class="line">* powertop: 将进程按能量消耗列表显示。这是一个重要的命令，尤其是当你在外面不能为你的电脑充电的时候。</span><br><span class="line"></span><br><span class="line">* nethogs: 将进程按网络流量列表显示。</span><br><span class="line"></span><br><span class="line">8. tee</span><br><span class="line"></span><br><span class="line">tee 将程序的输出结果重定向，使得我们可以同时显示和保存结果，例如，添加一个新的条目到hosts文件中:</span><br><span class="line"></span><br><span class="line">echo &quot;127.0.0.1 foobar&quot; | sudo tee -a /etc/hosts</span><br><span class="line"></span><br><span class="line">7. pidof, kill and pkill</span><br><span class="line"></span><br><span class="line">这三个重要命令帮助你控制系统中运行的程序。</span><br><span class="line"></span><br><span class="line">pidof 打印出正在运行程序的进程ID。例如，下面的命令将输出nginx的进程ID:</span><br><span class="line"></span><br><span class="line">pidof nginx</span><br><span class="line"></span><br><span class="line">你可以把nginx的进程ID输入到 kill 命令来终止它。</span><br><span class="line"></span><br><span class="line">kill -USR2 $(pidof nginx)&apos;</span><br><span class="line"></span><br><span class="line">pkill 是一个快捷命令，可以终止匹配的进程:</span><br><span class="line"></span><br><span class="line">pkill -f nginx</span><br><span class="line"></span><br><span class="line">6. tmux</span><br><span class="line"></span><br><span class="line">如果还你没有安装tmux，请一定安装它。 tmux是你终端的优秀窗口和会话管理器。</span><br><span class="line"></span><br><span class="line">5. tree</span><br><span class="line"></span><br><span class="line">以树状格式列出目录的内容。它有简洁的选项，比如只显示目录;</span><br><span class="line"></span><br><span class="line">tree -d</span><br><span class="line">6. dpkg -L</span><br><span class="line">查看某个软件安装了哪些文件,比如查看vsftpd：dpkg -L vsftpd |tac</span><br></pre></td></tr></table></figure></p>
 
-      
+<h2 id="查找软件的目录"><a href="#查找软件的目录" class="headerlink" title="查找软件的目录"></a>查找软件的目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查找软件的目录</span><br><span class="line">root@openapi:~# whereis iptables</span><br><span class="line">iptables: /sbin/iptables /usr/share/iptables /usr/share/man/man8/iptables.8.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看所有端口和使用者"><a href="#查看所有端口和使用者" class="headerlink" title="查看所有端口和使用者"></a>查看所有端口和使用者</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看所有端口和使用者</span><br><span class="line">root@bogon:~/apache-tomcat/bin# netstat -tnlp</span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1007/sshd       </span><br><span class="line">tcp        0      0 0.0.0.0:8060            0.0.0.0:*               LISTEN      928/nginx       </span><br><span class="line">tcp        0      0 127.0.0.1:9121          0.0.0.0:*               LISTEN      917/redis_exporter</span><br><span class="line">tcp        0      0 127.0.0.1:9090          0.0.0.0:*               LISTEN      927/prometheus  </span><br><span class="line">tcp        0      0 127.0.0.1:9187          0.0.0.0:*               LISTEN      934/postgres_export</span><br><span class="line">tcp        0      0 127.0.0.1:9100          0.0.0.0:*               LISTEN      923/node_exporter</span><br><span class="line">tcp        0      0 127.0.0.1:9168          0.0.0.0:*               LISTEN      935/ruby        </span><br><span class="line">tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      928/nginx       </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      1007/sshd       </span><br><span class="line">tcp6       0      0 :::8009                 :::*                    LISTEN      110928/java     </span><br><span class="line">tcp6       0      0 :::8080                 :::*                    LISTEN      110928/java     </span><br><span class="line">tcp6       0      0 ::1:9168                :::*                    LISTEN      935/ruby        </span><br></pre></td></tr></table></figure>
+
+<h2 id="查看是谁用了某个端口"><a href="#查看是谁用了某个端口" class="headerlink" title="查看是谁用了某个端口"></a>查看是谁用了某个端口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看是谁用了某个端口</span><br><span class="line">root@bogon:/etc/init.d# lsof -i:1883</span><br><span class="line">COMMAND   PID      USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">mosquitto 733 mosquitto    3u  IPv4  11835      0t0  TCP *:1883 (LISTEN)</span><br><span class="line">mosquitto 733 mosquitto    4u  IPv6  11836      0t0  TCP *:1883 (LISTEN)</span><br></pre></td></tr></table></figure>
+
+<h2 id="管理启动服务"><a href="#管理启动服务" class="headerlink" title="管理启动服务"></a>管理启动服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通过sysv-rc-conf 管理启动服务</span><br><span class="line">#sudo apt-get install sysv-rc-conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="开机启动脚本目录"><a href="#开机启动脚本目录" class="headerlink" title="开机启动脚本目录"></a>开机启动脚本目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 开机启动脚本目录（/etc/init.d）</span><br><span class="line">root@bogon:/etc/init.d# ls</span><br><span class="line">acpid              glances      postfix          reboot          sudo</span><br><span class="line">apparmor           grub-common  postgresql       redis-server    udev</span><br><span class="line">apport             halt         pppd-dns         resolvconf      umountfs</span><br><span class="line">atd                irqbalance   procps           rsync           umountnfs.sh</span><br><span class="line">console-setup      killprocs    rabbitmq-server  rsyslog         umountroot</span><br><span class="line">cron               kmod         rc               screen-cleanup  unattended-upgrades</span><br><span class="line">dbus               mysql        rc.local         sendsigs        urandom</span><br><span class="line">dns-clean          netdata      rclocal.backup   single          x11-common</span><br><span class="line">emqttd.dpkg-new    networking   rcS              skeleton</span><br><span class="line">friendly-recovery  ondemand     README           ssh</span><br><span class="line">root@bogon:/etc/init.d#</span><br></pre></td></tr></table></figure>
+
+<h2 id="每个开发人员都应该知道的-10-个-Linux-命令"><a href="#每个开发人员都应该知道的-10-个-Linux-命令" class="headerlink" title="每个开发人员都应该知道的 10 个 Linux 命令"></a>每个开发人员都应该知道的 10 个 Linux 命令</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/63My8SMHZc_mRL-R9SMeYw">来源</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10. file</span><br><span class="line"></span><br><span class="line">返回一个指定文件的信息。例如，你可以用它来输出一个图片文件的尺寸信息。</span><br><span class="line"></span><br><span class="line">file logo.png</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"></span><br><span class="line">&gt; PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced</span><br><span class="line"></span><br><span class="line">9. iotop, powertop, nethogs</span><br><span class="line"></span><br><span class="line">你如何监控Linux系统中发生了什么？这三个命令可以帮上大忙；</span><br><span class="line"></span><br><span class="line">* iotop: 将进程按磁盘写次数排序，并且显示程序写磁盘的次数和频率。</span><br><span class="line"></span><br><span class="line">* powertop: 将进程按能量消耗列表显示。这是一个重要的命令，尤其是当你在外面不能为你的电脑充电的时候。</span><br><span class="line"></span><br><span class="line">* nethogs: 将进程按网络流量列表显示。</span><br><span class="line"></span><br><span class="line">8. tee</span><br><span class="line"></span><br><span class="line">tee 将程序的输出结果重定向，使得我们可以同时显示和保存结果，例如，添加一个新的条目到hosts文件中:</span><br><span class="line"></span><br><span class="line">echo &quot;127.0.0.1 foobar&quot; | sudo tee -a /etc/hosts</span><br><span class="line"></span><br><span class="line">7. pidof, kill and pkill</span><br><span class="line"></span><br><span class="line">这三个重要命令帮助你控制系统中运行的程序。</span><br><span class="line"></span><br><span class="line">pidof 打印出正在运行程序的进程ID。例如，下面的命令将输出nginx的进程ID:</span><br><span class="line"></span><br><span class="line">pidof nginx</span><br><span class="line"></span><br><span class="line">你可以把nginx的进程ID输入到 kill 命令来终止它。</span><br><span class="line"></span><br><span class="line">kill -USR2 $(pidof nginx)&#x27;</span><br><span class="line"></span><br><span class="line">pkill 是一个快捷命令，可以终止匹配的进程:</span><br><span class="line"></span><br><span class="line">pkill -f nginx</span><br><span class="line"></span><br><span class="line">6. tmux</span><br><span class="line"></span><br><span class="line">如果还你没有安装tmux，请一定安装它。 tmux是你终端的优秀窗口和会话管理器。</span><br><span class="line"></span><br><span class="line">5. tree</span><br><span class="line"></span><br><span class="line">以树状格式列出目录的内容。它有简洁的选项，比如只显示目录;</span><br><span class="line"></span><br><span class="line">tree -d</span><br><span class="line">6. dpkg -L</span><br><span class="line">查看某个软件安装了哪些文件,比如查看vsftpd：dpkg -L vsftpd |tac</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Linux/systemctl-%E5%91%BD%E4%BB%A4/" rel="prev" title="systemctl-命令">
+      <i class="fa fa-chevron-left"></i> systemctl-命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Linux/Java-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9C%BC%E4%B8%AD%E7%9A%84-Linux/" rel="next" title="Java-程序员眼中的-Linux">
+      Java-程序员眼中的-Linux <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Linux/systemctl-命令/" rel="next" title="systemctl-命令">
-                <i class="fa fa-chevron-left"></i> systemctl-命令
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Linux/Java-程序员眼中的-Linux/" rel="prev" title="Java-程序员眼中的-Linux">
-                Java-程序员眼中的-Linux <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩打包"><span class="nav-number">1.</span> <span class="nav-text">压缩打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar"><span class="nav-number">1.0.1.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip-打包目录"><span class="nav-number">1.0.2.</span> <span class="nav-text">zip 打包目录</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#查看哪个目录占用空间大（比较耗时）"><span class="nav-number">2.</span> <span class="nav-text">查看哪个目录占用空间大（比较耗时）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前目录文件大小情况"><span class="nav-number">3.</span> <span class="nav-text">查看当前目录文件大小情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个有sudo权限的用户"><span class="nav-number">4.</span> <span class="nav-text">创建一个有sudo权限的用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户shell环境"><span class="nav-number">5.</span> <span class="nav-text">用户shell环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改用户所属的组"><span class="nav-number">6.</span> <span class="nav-text">修改用户所属的组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">7.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod修改权限"><span class="nav-number">7.0.1.</span> <span class="nav-text">chmod修改权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看文件的所有者等信息"><span class="nav-number">7.0.2.</span> <span class="nav-text">查看文件的所有者等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chown修改文件所有者和组"><span class="nav-number">7.0.3.</span> <span class="nav-text">chown修改文件所有者和组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找软件的目录"><span class="nav-number">8.</span> <span class="nav-text">查找软件的目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看所有端口和使用者"><span class="nav-number">9.</span> <span class="nav-text">查看所有端口和使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看是谁用了某个端口"><span class="nav-number">10.</span> <span class="nav-text">查看是谁用了某个端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理启动服务"><span class="nav-number">11.</span> <span class="nav-text">管理启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开机启动脚本目录"><span class="nav-number">12.</span> <span class="nav-text">开机启动脚本目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个开发人员都应该知道的-10-个-Linux-命令"><span class="nav-number">13.</span> <span class="nav-text">每个开发人员都应该知道的 10 个 Linux 命令</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E6%89%93%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">压缩打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar"><span class="nav-number">1.0.1.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip-%E6%89%93%E5%8C%85%E7%9B%AE%E5%BD%95"><span class="nav-number">1.0.2.</span> <span class="nav-text">zip 打包目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%93%AA%E4%B8%AA%E7%9B%AE%E5%BD%95%E5%8D%A0%E7%94%A8%E7%A9%BA%E9%97%B4%E5%A4%A7%EF%BC%88%E6%AF%94%E8%BE%83%E8%80%97%E6%97%B6%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">查看哪个目录占用空间大（比较耗时）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E6%83%85%E5%86%B5"><span class="nav-number">3.</span> <span class="nav-text">查看当前目录文件大小情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%9C%89sudo%E6%9D%83%E9%99%90%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text">创建一个有sudo权限的用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7shell%E7%8E%AF%E5%A2%83"><span class="nav-number">5.</span> <span class="nav-text">用户shell环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E6%89%80%E5%B1%9E%E7%9A%84%E7%BB%84"><span class="nav-number">6.</span> <span class="nav-text">修改用户所属的组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-number">7.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="nav-number">7.0.1.</span> <span class="nav-text">chmod修改权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%80%E6%9C%89%E8%80%85%E7%AD%89%E4%BF%A1%E6%81%AF"><span class="nav-number">7.0.2.</span> <span class="nav-text">查看文件的所有者等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chown%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85%E5%92%8C%E7%BB%84"><span class="nav-number">7.0.3.</span> <span class="nav-text">chown修改文件所有者和组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-number">8.</span> <span class="nav-text">查找软件的目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3%E5%92%8C%E4%BD%BF%E7%94%A8%E8%80%85"><span class="nav-number">9.</span> <span class="nav-text">查看所有端口和使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%98%AF%E8%B0%81%E7%94%A8%E4%BA%86%E6%9F%90%E4%B8%AA%E7%AB%AF%E5%8F%A3"><span class="nav-number">10.</span> <span class="nav-text">查看是谁用了某个端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">11.</span> <span class="nav-text">管理启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E7%9B%AE%E5%BD%95"><span class="nav-number">12.</span> <span class="nav-text">开机启动脚本目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84-10-%E4%B8%AA-Linux-%E5%91%BD%E4%BB%A4"><span class="nav-number">13.</span> <span class="nav-text">每个开发人员都应该知道的 10 个 Linux 命令</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

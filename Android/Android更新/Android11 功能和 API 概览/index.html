@@ -1,165 +1,45 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="【原文：功能和 API 概览】 Android 11 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。  如需了解平台变更可能会在哪些方面影响您的应用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android11 功能和 API 概览">
-<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android11 功能和 API 概览/index.html">
+<meta property="og:url" content="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android11%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/index.html">
 <meta property="og:site_name" content="咸鱼">
 <meta property="og:description" content="【原文：功能和 API 概览】 Android 11 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。  如需了解平台变更可能会在哪些方面影响您的应用">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-08-30T11:52:36.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-30T11:52:36.000Z">
+<meta property="article:modified_time" content="2022-08-30T11:52:36.000Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android11 功能和 API 概览">
-<meta name="twitter:description" content="【原文：功能和 API 概览】 Android 11 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。  有关新增、修改和移除的 API 的详细列表，请参阅 API 差异报告。  如需详细了解新的 API，请访问 Android API 参考文档 - 新 API 会突出显示以方便查看。  如需了解平台变更可能会在哪些方面影响您的应用">
+
+<link rel="canonical" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android11%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android11 功能和 API 概览/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -171,365 +51,196 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android11 功能和 API 概览/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android11%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Android11 功能和 API 概览
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Android11 功能和 API 概览
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2022-08-30 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-30T19:52:36+08:00">2022-08-30</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -537,90 +248,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p><a href="https://developer.android.google.cn/about/versions/11/features" target="_blank" rel="noopener">【原文：功能和 API 概览】</a></p>
+        <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features">【原文：功能和 API 概览】</a></p>
 <p>Android 11 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。</p>
 <ul>
-<li><p>有关新增、修改和移除的 API 的详细列表，请参阅 <a href="https://developer.android.google.cn/sdk/api_diff/30/changes" target="_blank" rel="noopener">API 差异报告</a>。</p>
+<li><p>有关新增、修改和移除的 API 的详细列表，请参阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/sdk/api_diff/30/changes">API 差异报告</a>。</p>
 </li>
-<li><p>如需详细了解新的 API，请访问 <a href="https://developer.android.google.cn/reference" target="_blank" rel="noopener">Android API 参考文档</a> - 新 API 会突出显示以方便查看。</p>
+<li><p>如需详细了解新的 API，请访问 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference">Android API 参考文档</a> - 新 API 会突出显示以方便查看。</p>
 </li>
-<li><p>如需了解平台变更可能会在哪些方面影响您的应用，请务必查看会影响<a href="https://developer.android.google.cn/about/versions/11/behavior-changes-11" target="_blank" rel="noopener">以 Android R 为目标平台的应用</a>和<a href="https://developer.android.google.cn/about/versions/11/behavior-changes-all" target="_blank" rel="noopener">所有应用</a>的 Android 11 行为变更，以及<a href="https://developer.android.google.cn/about/versions/11/privacy" target="_blank" rel="noopener">隐私权变更</a>。</p>
+<li><p>如需了解平台变更可能会在哪些方面影响您的应用，请务必查看会影响<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/behavior-changes-11">以 Android R 为目标平台的应用</a>和<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/behavior-changes-all">所有应用</a>的 Android 11 行为变更，以及<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy">隐私权变更</a>。</p>
 </li>
 </ul>
-<h2 id="新体验"><a href="#新体验" class="headerlink" title="新体验"></a>新体验</h2><h3 id="设备控件"><a href="#设备控件" class="headerlink" title="设备控件"></a>设备控件</h3><p>Android 11 包含一个新的 <a href="https://developer.android.google.cn/reference/android/service/controls/ControlsProviderService" target="_blank" rel="noopener"><code>ControlsProviderService</code></a> API，可用于提供所连接的外部设备的控件。这些控件显示于 Android 电源菜单中的<strong>设备控制器</strong>下。如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/device-control" target="_blank" rel="noopener">控制外部设备</a>。</p>
+<h2 id="新体验"><a href="#新体验" class="headerlink" title="新体验"></a>新体验</h2><h3 id="设备控件"><a href="#设备控件" class="headerlink" title="设备控件"></a>设备控件</h3><p>Android 11 包含一个新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/service/controls/ControlsProviderService"><code>ControlsProviderService</code></a> API，可用于提供所连接的外部设备的控件。这些控件显示于 Android 电源菜单中的<strong>设备控制器</strong>下。如需了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/device-control">控制外部设备</a>。</p>
 <h3 id="媒体控件"><a href="#媒体控件" class="headerlink" title="媒体控件"></a>媒体控件</h3><p>Android 11 更新了媒体控件的显示方式。媒体控件显示于快捷设置旁。来自多个应用的会话排列在一个可滑动的轮播界面中，其中包括在手机本地播放的会话流、远程会话流（例如在外部设备上检测到的会话或投射会话）以及可继续播放的以前的会话（按上次播放的顺序排列）。</p>
 <p>用户无需启动相关应用即可在轮播界面中重新开始播放以前的会话。当播放开始后，用户可按常规方式与媒体控件互动。</p>
-<p>如需了解详情，请参阅<a href="https://developer.android.google.cn/guide/topics/media/media-controls" target="_blank" rel="noopener">媒体控件</a>。</p>
-<h3 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h3><h4 id="更好地支持瀑布屏"><a href="#更好地支持瀑布屏" class="headerlink" title="更好地支持瀑布屏"></a>更好地支持瀑布屏</h4><p>Android 11 提供了一些 API 以支持瀑布屏，这是一种无边框的全面屏。这种显示屏被视为刘海屏的变体。现有的 <a href="https://developer.android.google.cn/reference/android/view/DisplayCutout" target="_blank" rel="noopener"><code>DisplayCutout</code></a><code>.getSafeInset…()</code> 方法现在会返回能够避开瀑布区域以及刘海的安全边衬区。如需在瀑布区域中呈现您的应用内容，请执行以下操作：</p>
+<p>如需了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/media/media-controls">媒体控件</a>。</p>
+<h3 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h3><h4 id="更好地支持瀑布屏"><a href="#更好地支持瀑布屏" class="headerlink" title="更好地支持瀑布屏"></a>更好地支持瀑布屏</h4><p>Android 11 提供了一些 API 以支持瀑布屏，这是一种无边框的全面屏。这种显示屏被视为刘海屏的变体。现有的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/DisplayCutout"><code>DisplayCutout</code></a><code>.getSafeInset…()</code> 方法现在会返回能够避开瀑布区域以及刘海的安全边衬区。如需在瀑布区域中呈现您的应用内容，请执行以下操作：</p>
 <ul>
-<li>调用 <a href="https://developer.android.google.cn/reference/android/view/DisplayCutout#getWaterfallInsets(" target="_blank" rel="noopener"><code>DisplayCutout.getWaterfallInsets()</code></a>) 以获取瀑布边衬区的精确尺寸。</li>
-<li>将窗口布局属性 <code>layoutInDisplayCutoutMode</code> 设为 <a href="https://developer.android.google.cn/reference/android/view/WindowManager.LayoutParams#LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS" target="_blank" rel="noopener"><code>LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS</code></a>，以允许窗口延伸到屏幕各个边缘上的刘海和瀑布区域。您必须确保刘海或瀑布区域中没有重要的内容。</li>
+<li>调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/DisplayCutout#getWaterfallInsets()"><code>DisplayCutout.getWaterfallInsets()</code></a> 以获取瀑布边衬区的精确尺寸。</li>
+<li>将窗口布局属性 <code>layoutInDisplayCutoutMode</code> 设为 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowManager.LayoutParams#LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS"><code>LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS</code></a>，以允许窗口延伸到屏幕各个边缘上的刘海和瀑布区域。您必须确保刘海或瀑布区域中没有重要的内容。</li>
 </ul>
 <p><strong>注意</strong>：如果您未将上述窗口布局属性设为 <code>LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS</code>，Android 会在黑边模式下显示窗口，从而避开缺口和瀑布区域。</p>
-<h4 id="合页角度传感器和可折叠设备"><a href="#合页角度传感器和可折叠设备" class="headerlink" title="合页角度传感器和可折叠设备"></a>合页角度传感器和可折叠设备</h4><p>使用 Android 11，可以通过以下方法使运行在采用合页式屏幕配置的设备上的应用能够确定合页角度：提供具有 <a href="https://developer.android.google.cn/reference/android/hardware/Sensor#TYPE_HINGE_ANGLE" target="_blank" rel="noopener"><code>TYPE_HINGE_ANGLE</code></a> 的新传感器，以及新的 <a href="https://developer.android.google.cn/reference/android/hardware/SensorEvent" target="_blank" rel="noopener"><code>SensorEvent</code></a>，后者可以监控合页角度，并提供设备的两部分之间的角度测量值。您可以使用这些原始测量值在用户操作设备时执行精细的动画显示。</p>
-<p>请参阅<a href="https://developer.android.google.cn/guide/topics/ui/foldables#hinge_angle" target="_blank" rel="noopener">可折叠设备</a>。</p>
+<h4 id="合页角度传感器和可折叠设备"><a href="#合页角度传感器和可折叠设备" class="headerlink" title="合页角度传感器和可折叠设备"></a>合页角度传感器和可折叠设备</h4><p>使用 Android 11，可以通过以下方法使运行在采用合页式屏幕配置的设备上的应用能够确定合页角度：提供具有 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/Sensor#TYPE_HINGE_ANGLE"><code>TYPE_HINGE_ANGLE</code></a> 的新传感器，以及新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/SensorEvent"><code>SensorEvent</code></a>，后者可以监控合页角度，并提供设备的两部分之间的角度测量值。您可以使用这些原始测量值在用户操作设备时执行精细的动画显示。</p>
+<p>请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/foldables#hinge_angle">可折叠设备</a>。</p>
 <h3 id="对话"><a href="#对话" class="headerlink" title="对话"></a>对话</h3><h4 id="改进了会话"><a href="#改进了会话" class="headerlink" title="改进了会话"></a>改进了会话</h4><p>Android 11 对会话的处理方式进行了多项改进。会话是两人或更多人之间的实时双向通信。这些会话具有特殊的重要性，并且用户在如何与其进行交互方面有多个新的选项可以选择。</p>
-<p>如需详细了解对话以及您的应用如何支持对话，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/conversations" target="_blank" rel="noopener">人与对话</a>。</p>
-<h4 id="聊天气泡"><a href="#聊天气泡" class="headerlink" title="聊天气泡"></a>聊天气泡</h4><p>现已面向开发者推出<a href="https://developer.android.google.cn/guide/topics/ui/bubbles" target="_blank" rel="noopener">气泡</a>功能，该功能有助于在系统中显示会话。对话泡是 Android 10 中的一项实验性功能，通过开发者选项启用；在 Android 11 中，这项功能不再是必选功能。</p>
-<p>如果应用以 Android 11（API 级别 30）或更高版本为目标平台，除非其通知满足新的<a href="https://developer.android.google.cn/guide/topics/ui/conversations" target="_blank" rel="noopener">对话要求</a>，否则不会以Android 10对话泡形式显示。具体而言，通知必须与快捷方式关联。</p>
+<p>如需详细了解对话以及您的应用如何支持对话，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/conversations">人与对话</a>。</p>
+<h4 id="聊天气泡"><a href="#聊天气泡" class="headerlink" title="聊天气泡"></a>聊天气泡</h4><p>现已面向开发者推出<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/bubbles">气泡</a>功能，该功能有助于在系统中显示会话。对话泡是 Android 10 中的一项实验性功能，通过开发者选项启用；在 Android 11 中，这项功能不再是必选功能。</p>
+<p>如果应用以 Android 11（API 级别 30）或更高版本为目标平台，除非其通知满足新的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/conversations">对话要求</a>，否则不会以Android 10对话泡形式显示。具体而言，通知必须与快捷方式关联。</p>
 <p>在 Android 11 之前，如果您希望通知以气泡形式显示，需要明确指定将其设为始终在文档界面模式下启动。从 Android 11 开始，您不再需要明确进行这项设置；如果通知以对话泡形式显示，平台会自动将其设为始终在文档界面模式下启动。</p>
 <p>对话泡功能有多项改进，用户可以更灵活地在每个应用中启用和停用对话泡功能。对于实现了实验性支持的开发者，Android 11 中的 API 有一些变更：</p>
 <ul>
-<li>不带参数的 <a href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder(" target="_blank" rel="noopener"><code>BubbleMetadata.Builder()</code></a>) 构造函数已弃用。请改为使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder(android.app.PendingIntent, android.graphics.drawable.Icon" target="_blank" rel="noopener"><code>BubbleMetadata.Builder(PendingIntent, Icon)</code></a>) 或 <a href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder(java.lang.String" target="_blank" rel="noopener"><code>BubbleMetadata.Builder(String)</code></a>) 这两个新构造函数中的任意一个。</li>
-<li>通过调用 <code>BubbleMetadata.Builder(String)</code>，根据快捷方式 ID 创建 <a href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata" target="_blank" rel="noopener"><code>BubbleMetadata</code></a>。传递的字符串应与提供给 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder" target="_blank" rel="noopener"><code>Notification.Builder</code></a> 的快捷方式 ID 一致。</li>
-<li>使用 <a href="https://developer.android.google.cn/reference/android/graphics/drawable/Icon#createWithContentUri(java.lang.String" target="_blank" rel="noopener"><code>Icon.createWithContentUri()</code></a>) 或新方法 <a href="https://developer.android.google.cn/reference/android/graphics/drawable/Icon#createWithAdaptiveBitmapContentUri(java.lang.String" target="_blank" rel="noopener"><code>createWithAdaptiveBitmapContentUri()</code></a>) 创建气泡图标。</li>
+<li>不带参数的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder()"><code>BubbleMetadata.Builder()</code></a> 构造函数已弃用。请改为使用 [<code>BubbleMetadata.Builder(PendingIntent, Icon)</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder">https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder</a>(android.app.PendingIntent, android.graphics.drawable.Icon)) 或 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata.Builder#Notification.BubbleMetadata.Builder(java.lang.String)"><code>BubbleMetadata.Builder(String)</code></a> 这两个新构造函数中的任意一个。</li>
+<li>通过调用 <code>BubbleMetadata.Builder(String)</code>，根据快捷方式 ID 创建 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.BubbleMetadata"><code>BubbleMetadata</code></a>。传递的字符串应与提供给 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder"><code>Notification.Builder</code></a> 的快捷方式 ID 一致。</li>
+<li>使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/graphics/drawable/Icon#createWithContentUri(java.lang.String)"><code>Icon.createWithContentUri()</code></a> 或新方法 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/graphics/drawable/Icon#createWithAdaptiveBitmapContentUri(java.lang.String)"><code>createWithAdaptiveBitmapContentUri()</code></a> 创建气泡图标。</li>
 </ul>
-<h3 id="5G-图标显示"><a href="#5G-图标显示" class="headerlink" title="5G 图标显示"></a>5G 图标显示</h3><p>如需了解如何在用户的设备上显示 5G 图标，请参阅<a href="https://developer.android.google.cn/training/connectivity/enhance-with-5g#indicator" target="_blank" rel="noopener">在用户连接到 5G 网络时显示相关信息</a>。</p>
+<h3 id="5G-图标显示"><a href="#5G-图标显示" class="headerlink" title="5G 图标显示"></a>5G 图标显示</h3><p>如需了解如何在用户的设备上显示 5G 图标，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/connectivity/enhance-with-5g#indicator">在用户连接到 5G 网络时显示相关信息</a>。</p>
 <h2 id="隐私权"><a href="#隐私权" class="headerlink" title="隐私权"></a>隐私权</h2><p>Android 11 引入了大量变更和限制，目的是加强用户隐私保护。</p>
 <h2 id="重大隐私权变更"><a href="#重大隐私权变更" class="headerlink" title="重大隐私权变更"></a>重大隐私权变更</h2><p>下表汇总了 Android 11 中与隐私权相关的主要变更。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">隐私权变更</th>
-<th style="text-align:left">受影响的应用</th>
-<th style="text-align:left">缓解策略</th>
+<th align="left">隐私权变更</th>
+<th align="left">受影响的应用</th>
+<th align="left">缓解策略</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>强制执行分区存储机制</strong> 以 Android 11 或更高版本为目标平台的应用始终会受分区存储行为的影响</td>
-<td style="text-align:left">以 Android 11 或更高版本为目标平台的应用，以及以 Android 10 为目标平台且未将 <code>requestLegacyExternalStorage</code> 设为 <code>true</code> 以停用分区存储的应用</td>
-<td style="text-align:left">更新您的应用以使用分区存储 <a href="https://developer.android.google.cn/about/versions/11/privacy/storage" target="_blank" rel="noopener">详细了解分区存储变更</a></td>
+<tbody><tr>
+<td align="left"><strong>强制执行分区存储机制</strong> 以 Android 11 或更高版本为目标平台的应用始终会受分区存储行为的影响</td>
+<td align="left">以 Android 11 或更高版本为目标平台的应用，以及以 Android 10 为目标平台且未将 <code>requestLegacyExternalStorage</code> 设为 <code>true</code> 以停用分区存储的应用</td>
+<td align="left">更新您的应用以使用分区存储 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy/storage">详细了解分区存储变更</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>单次授权</strong> 使用单次授权功能，用户可以授予对位置信息、麦克风和摄像头的临时访问权限</td>
-<td style="text-align:left">在 Android 11 或更高版本上运行且请求位置信息、麦克风或摄像头权限的应用</td>
-<td style="text-align:left">在尝试访问受某项权限保护的数据之前，检查您的应用是否具有该权限 <a href="https://developer.android.google.cn/training/permissions/requesting" target="_blank" rel="noopener">遵循请求权限方面的最佳做法</a></td>
+<td align="left"><strong>单次授权</strong> 使用单次授权功能，用户可以授予对位置信息、麦克风和摄像头的临时访问权限</td>
+<td align="left">在 Android 11 或更高版本上运行且请求位置信息、麦克风或摄像头权限的应用</td>
+<td align="left">在尝试访问受某项权限保护的数据之前，检查您的应用是否具有该权限 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/permissions/requesting">遵循请求权限方面的最佳做法</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>自动重置权限</strong> 如果用户在 Android 11 或更高版本上几个月未与应用互动，系统会自动重置应用的敏感权限</td>
-<td style="text-align:left">以 Android 11 或更高版本为目标平台且在后台执行大部分工作的应用</td>
-<td style="text-align:left">要求用户阻止系统重置应用的权限 <a href="https://developer.android.google.cn/about/versions/11/privacy/permissions#auto-reset" target="_blank" rel="noopener">详细了解自动重置权限</a></td>
+<td align="left"><strong>自动重置权限</strong> 如果用户在 Android 11 或更高版本上几个月未与应用互动，系统会自动重置应用的敏感权限</td>
+<td align="left">以 Android 11 或更高版本为目标平台且在后台执行大部分工作的应用</td>
+<td align="left">要求用户阻止系统重置应用的权限 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy/permissions#auto-reset">详细了解自动重置权限</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>后台位置信息访问权限</strong> Android 11 更改了用户向应用授予后台位置信息权限的方式</td>
-<td style="text-align:left">以 Android 11 或更高版本为目标平台且需要<a href="https://developer.android.google.cn/training/location/permissions#background" target="_blank" rel="noopener">在后台访问位置信息</a>的应用</td>
-<td style="text-align:left">通过对权限请求方法的多次单独调用，逐步请求在前台（粗略或精确）和后台访问位置信息的权限。必要时，说明用户授予该权限所能得到的益处 <a href="https://developer.android.google.cn/about/versions/11/privacy/location#background-location" target="_blank" rel="noopener">详细了解 Android 11 中的在后台访问位置信息的权限</a></td>
+<td align="left"><strong>后台位置信息访问权限</strong> Android 11 更改了用户向应用授予后台位置信息权限的方式</td>
+<td align="left">以 Android 11 或更高版本为目标平台且需要<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/location/permissions#background">在后台访问位置信息</a>的应用</td>
+<td align="left">通过对权限请求方法的多次单独调用，逐步请求在前台（粗略或精确）和后台访问位置信息的权限。必要时，说明用户授予该权限所能得到的益处 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy/location#background-location">详细了解 Android 11 中的在后台访问位置信息的权限</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>软件包可见性</strong> Android 11 更改了应用查询同一设备上的其他已安装应用及与之互动的方式</td>
-<td style="text-align:left">以 Android 11 或更高版本为目标平台且与设备上的其他已安装应用交互的应用</td>
-<td style="text-align:left">将 <code></code> 元素添加到应用的清单 <a href="https://developer.android.google.cn/about/versions/11/privacy/package-visibility" target="_blank" rel="noopener">详细了解软件包可见性</a></td>
+<td align="left"><strong>软件包可见性</strong> Android 11 更改了应用查询同一设备上的其他已安装应用及与之互动的方式</td>
+<td align="left">以 Android 11 或更高版本为目标平台且与设备上的其他已安装应用交互的应用</td>
+<td align="left">将 &#96;&#96; 元素添加到应用的清单 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy/package-visibility">详细了解软件包可见性</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>前台服务</strong> Android 11 更改了前台服务访问位置信息、摄像头和麦克风相关数据的方式</td>
-<td style="text-align:left">在 Android 11 或更高版本上运行且在前台服务中访问位置信息、摄像头或麦克风的应用</td>
-<td style="text-align:left">分别针对需要访问摄像头和麦克风的前台服务，声明 <code>camera</code> 和 <code>microphone</code> 前台服务类型。但请注意，应用在后台运行时启动的前台服务通常无法访问位置信息、摄像头或麦克风。 <a href="https://developer.android.google.cn/about/versions/11/privacy/foreground-services" target="_blank" rel="noopener">详细了解前台服务的变更</a></td>
+<td align="left"><strong>前台服务</strong> Android 11 更改了前台服务访问位置信息、摄像头和麦克风相关数据的方式</td>
+<td align="left">在 Android 11 或更高版本上运行且在前台服务中访问位置信息、摄像头或麦克风的应用</td>
+<td align="left">分别针对需要访问摄像头和麦克风的前台服务，声明 <code>camera</code> 和 <code>microphone</code> 前台服务类型。但请注意，应用在后台运行时启动的前台服务通常无法访问位置信息、摄像头或麦克风。 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/privacy/foreground-services">详细了解前台服务的变更</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h3 id="生物识别身份验证机制更新"><a href="#生物识别身份验证机制更新" class="headerlink" title="生物识别身份验证机制更新"></a>生物识别身份验证机制更新</h3><p>为了帮助您控制应用数据的安全级别，Android 11 对生物识别身份验证机制进行了多项改进。这些变更也会在 <a href="https://developer.android.google.cn/jetpack/androidx/releases/biometric" target="_blank" rel="noopener">Jetpack Biometric 库</a>中显示。</p>
-<h4 id="身份验证类型"><a href="#身份验证类型" class="headerlink" title="身份验证类型"></a>身份验证类型</h4><p>Android 11 引入了 <a href="https://developer.android.google.cn/reference/kotlin/android/hardware/biometrics/BiometricManager.Authenticators" target="_blank" rel="noopener"><code>BiometricManager.Authenticators</code></a> 接口，可用于<a href="https://developer.android.google.cn/training/sign-in/biometric-auth#declare-supported-authentication-types" target="_blank" rel="noopener">声明您的应用支持的身份验证类型</a>。</p>
-<h4 id="确定用户所用的身份验证类型"><a href="#确定用户所用的身份验证类型" class="headerlink" title="确定用户所用的身份验证类型"></a>确定用户所用的身份验证类型</h4><p>在用户进行身份验证后，您可以通过调用 <a href="https://developer.android.google.cn/reference/kotlin/android/hardware/biometrics/BiometricPrompt.AuthenticationResult#getauthenticationtype" target="_blank" rel="noopener"><code>getAuthenticationType()</code></a> 检查用户是使用设备凭据还是生物识别凭据进行的身份验证。</p>
-<h4 id="对“每次使用时进行身份验证”密钥的额外支持"><a href="#对“每次使用时进行身份验证”密钥的额外支持" class="headerlink" title="对“每次使用时进行身份验证”密钥的额外支持"></a>对“每次使用时进行身份验证”密钥的额外支持</h4><p>Android 11 提供了对<a href="https://developer.android.google.cn/about/versions/11/features#auth-per-use-keys" target="_blank" rel="noopener">“每次使用时进行身份验证”密钥</a>的更多支持。</p>
+</tbody></table>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h3 id="生物识别身份验证机制更新"><a href="#生物识别身份验证机制更新" class="headerlink" title="生物识别身份验证机制更新"></a>生物识别身份验证机制更新</h3><p>为了帮助您控制应用数据的安全级别，Android 11 对生物识别身份验证机制进行了多项改进。这些变更也会在 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/releases/biometric">Jetpack Biometric 库</a>中显示。</p>
+<h4 id="身份验证类型"><a href="#身份验证类型" class="headerlink" title="身份验证类型"></a>身份验证类型</h4><p>Android 11 引入了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/hardware/biometrics/BiometricManager.Authenticators"><code>BiometricManager.Authenticators</code></a> 接口，可用于<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/sign-in/biometric-auth#declare-supported-authentication-types">声明您的应用支持的身份验证类型</a>。</p>
+<h4 id="确定用户所用的身份验证类型"><a href="#确定用户所用的身份验证类型" class="headerlink" title="确定用户所用的身份验证类型"></a>确定用户所用的身份验证类型</h4><p>在用户进行身份验证后，您可以通过调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/hardware/biometrics/BiometricPrompt.AuthenticationResult#getauthenticationtype"><code>getAuthenticationType()</code></a> 检查用户是使用设备凭据还是生物识别凭据进行的身份验证。</p>
+<h4 id="对“每次使用时进行身份验证”密钥的额外支持"><a href="#对“每次使用时进行身份验证”密钥的额外支持" class="headerlink" title="对“每次使用时进行身份验证”密钥的额外支持"></a>对“每次使用时进行身份验证”密钥的额外支持</h4><p>Android 11 提供了对<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#auth-per-use-keys">“每次使用时进行身份验证”密钥</a>的更多支持。</p>
 <h4 id="已弃用的方法"><a href="#已弃用的方法" class="headerlink" title="已弃用的方法"></a>已弃用的方法</h4><p>Android 11 弃用了以下方法：</p>
 <ul>
 <li><code>setDeviceCredentialAllowed()</code> 方法。</li>
@@ -628,15 +334,15 @@
 <li>不带任何参数的 <code>canAuthenticate()</code> 过载版本。</li>
 </ul>
 <h3 id="安全共享大型数据集"><a href="#安全共享大型数据集" class="headerlink" title="安全共享大型数据集"></a>安全共享大型数据集</h3><p>在某些情况下，例如涉及机器学习或媒体播放时，您的应用可能需要与其他应用使用同一个大型数据集。在较早的 Android 版本中，您的应用与其他应用需要各自单独下载该数据集。</p>
-<p>为帮助减少网络中和磁盘上的数据冗余，Android 11 允许使用共享数据 blob 在设备上缓存这些大型数据集。如需详细了解如何共享数据集，请参阅<a href="https://developer.android.google.cn/about/versions/11/features/shared-datasets" target="_blank" rel="noopener">有关共享大型数据集的深度指南</a>。</p>
-<h3 id="因-OTA-更新而重启设备后在未提供用户凭据的情况下执行文件级加密"><a href="#因-OTA-更新而重启设备后在未提供用户凭据的情况下执行文件级加密" class="headerlink" title="因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密"></a>因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密</h3><p>设备完成 OTA 更新并重启后，放在受凭据保护的存储空间中的凭据加密 (CE) 密钥可立即用于执行<a href="https://source.android.google.cn/security/encryption/file-based" target="_blank" rel="noopener">文件级加密 (FBE)</a> 操作。这意味着，完成 OTA 更新后，您的应用可以在用户输入其 PIN 码、解锁图案或密码之前恢复需要 CE 密钥的操作。</p>
-<p><strong>注意</strong>：此变更仅影响因 OTA 更新而发生的设备重启。如果您的应用在设备重启后用户输入其 PIN 码、解锁图案或密码之前始终需要访问 CE 密钥，请继续<a href="https://developer.android.google.cn/training/articles/direct-boot" target="_blank" rel="noopener">支持直接启动</a>。</p>
+<p>为帮助减少网络中和磁盘上的数据冗余，Android 11 允许使用共享数据 blob 在设备上缓存这些大型数据集。如需详细了解如何共享数据集，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features/shared-datasets">有关共享大型数据集的深度指南</a>。</p>
+<h3 id="因-OTA-更新而重启设备后在未提供用户凭据的情况下执行文件级加密"><a href="#因-OTA-更新而重启设备后在未提供用户凭据的情况下执行文件级加密" class="headerlink" title="因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密"></a>因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密</h3><p>设备完成 OTA 更新并重启后，放在受凭据保护的存储空间中的凭据加密 (CE) 密钥可立即用于执行<a target="_blank" rel="noopener" href="https://source.android.google.cn/security/encryption/file-based">文件级加密 (FBE)</a> 操作。这意味着，完成 OTA 更新后，您的应用可以在用户输入其 PIN 码、解锁图案或密码之前恢复需要 CE 密钥的操作。</p>
+<p><strong>注意</strong>：此变更仅影响因 OTA 更新而发生的设备重启。如果您的应用在设备重启后用户输入其 PIN 码、解锁图案或密码之前始终需要访问 CE 密钥，请继续<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/articles/direct-boot">支持直接启动</a>。</p>
 <h2 id="性能和质量"><a href="#性能和质量" class="headerlink" title="性能和质量"></a>性能和质量</h2><h3 id="无线调试"><a href="#无线调试" class="headerlink" title="无线调试"></a>无线调试</h3><p>Android 11 支持通过 Android 调试桥 (adb) 从工作站以无线方式部署和调试应用。例如，您可以将可调试的应用部署到多台远程设备，而无需通过 USB 实际连接您的设备，从而避免常见的 USB 连接问题（例如驱动程序安装方面的问题）。</p>
 <p>如需使用无线调试，您需要使用配对码将您的设备与工作站配对。您的工作站和设备必须连接到同一无线网络。如需连接到您的设备，请按以下步骤操作：</p>
 <ol>
-<li><p>在您的工作站上，更新到最新版本的 <a href="https://developer.android.google.cn/studio/releases/platform-tools" target="_blank" rel="noopener">SDK 平台工具</a>。</p>
+<li><p>在您的工作站上，更新到最新版本的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/releases/platform-tools">SDK 平台工具</a>。</p>
 </li>
-<li><p>在设备上启用<a href="https://developer.android.google.cn/studio/debug/dev-options" target="_blank" rel="noopener">开发者选项</a>。</p>
+<li><p>在设备上启用<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/debug/dev-options">开发者选项</a>。</p>
 </li>
 <li><p>启用<strong>无线调试</strong>选项。</p>
 </li>
@@ -649,18 +355,19 @@
 <li><p>运行 <code>adb pair ipaddr:port</code>。使用第 5 步中的 IP 地址和端口号。</p>
 </li>
 <li><p>当系统提示时，输入您在第 5 步中获得的配对码。系统会显示一条消息，表明您的设备已成功配对。</p>
-<p><code>Enter pairing code: 482924 Successfully paired to 192.168.1.130:37099 [guid=adb-235XY]</code></p>
+<p><code>Enter pairing code: 482924 Successfully paired to 192.168.1.130:37099 [guid=adb-235XY] </code></p>
 </li>
 <li><p>（仅适用于 Linux 或 Microsoft Windows）运行 <code>adb connect ipaddr:port</code>。使用<strong>无线调试</strong>下的 IP 地址和端口（参见下图）。</p>
 </li>
 </ol>
-<h3 id="ADB-增量-APK-安装"><a href="#ADB-增量-APK-安装" class="headerlink" title="ADB 增量 APK 安装"></a>ADB 增量 APK 安装</h3><p>在设备上安装大型（2GB 以上）APK 可能需要很长的时间，即使应用只是稍作更改也是如此。ADB（Android 调试桥）增量 APK 安装可以安装足够的 APK 以启动应用，同时在后台流式传输剩余数据，从而加速这一过程。如果设备支持该功能，并且您安装了最新的 <a href="https://developer.android.google.cn/studio/releases/platform-tools" target="_blank" rel="noopener">SDK 平台工具</a>，<code>adb install</code> 将自动使用此功能。如果不支持，系统会自动使用默认安装方法。</p>
-<p>运行以下 <a href="https://developer.android.google.cn/studio/command-line/adb#incremental" target="_blank" rel="noopener">adb 命令</a>以使用该功能。如果设备不支持增量安装，该命令将会失败并输出详细的解释。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install --incremental</span><br></pre></td></tr></table></figure>
-<p>在运行 ADB 增量 APK 安装之前，您必须先为 APK 签名并创建一个 <a href="https://developer.android.google.cn/studio/command-line/apksigner#v4-signing-enabled" target="_blank" rel="noopener">APK 签名方案 v4 文件</a>。必须将 v4 签名文件放在 APK 旁边，才能使此功能正常运行。</p>
-<h3 id="使用原生内存分配器进行错误检测"><a href="#使用原生内存分配器进行错误检测" class="headerlink" title="使用原生内存分配器进行错误检测"></a>使用原生内存分配器进行错误检测</h3><p>GWP-ASan 是一种原生内存分配器功能，可帮助查找释放后使用和堆缓冲区溢出错误。您可以全局启用此功能，也可以为应用的特定子进程启用此功能。如需了解详情，请参阅 <a href="https://developer.android.google.cn/ndk/guides/gwp-asan" target="_blank" rel="noopener">GWP-Asan 指南</a>。</p>
-<h3 id="Neural-Networks-API-1-3"><a href="#Neural-Networks-API-1-3" class="headerlink" title="Neural Networks API 1.3"></a>Neural Networks API 1.3</h3><p>Android 11 扩展并改进了 <a href="https://developer.android.google.cn/ndk/guides/neuralnetworks" target="_blank" rel="noopener">Neural Networks API (NNAPI)</a>。</p>
-<h4 id="新运算方式"><a href="#新运算方式" class="headerlink" title="新运算方式"></a>新运算方式</h4><p>NNAPI 1.3 引入了新的运算数类型 <code>TENSOR_QUANT8_ASYMM_SIGNED</code>，以支持 <a href="https://tensorflow.google.cn/lite/performance/quantization_spec" target="_blank" rel="noopener">TensorFlow Lite 的新量化方案</a>。</p>
+<h3 id="ADB-增量-APK-安装"><a href="#ADB-增量-APK-安装" class="headerlink" title="ADB 增量 APK 安装"></a>ADB 增量 APK 安装</h3><p>在设备上安装大型（2GB 以上）APK 可能需要很长的时间，即使应用只是稍作更改也是如此。ADB（Android 调试桥）增量 APK 安装可以安装足够的 APK 以启动应用，同时在后台流式传输剩余数据，从而加速这一过程。如果设备支持该功能，并且您安装了最新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/releases/platform-tools">SDK 平台工具</a>，<code>adb install</code> 将自动使用此功能。如果不支持，系统会自动使用默认安装方法。</p>
+<p>运行以下 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/adb#incremental">adb 命令</a>以使用该功能。如果设备不支持增量安装，该命令将会失败并输出详细的解释。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install --incremental</span><br></pre></td></tr></table></figure>
+
+<p>在运行 ADB 增量 APK 安装之前，您必须先为 APK 签名并创建一个 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/apksigner#v4-signing-enabled">APK 签名方案 v4 文件</a>。必须将 v4 签名文件放在 APK 旁边，才能使此功能正常运行。</p>
+<h3 id="使用原生内存分配器进行错误检测"><a href="#使用原生内存分配器进行错误检测" class="headerlink" title="使用原生内存分配器进行错误检测"></a>使用原生内存分配器进行错误检测</h3><p>GWP-ASan 是一种原生内存分配器功能，可帮助查找释放后使用和堆缓冲区溢出错误。您可以全局启用此功能，也可以为应用的特定子进程启用此功能。如需了解详情，请参阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/gwp-asan">GWP-Asan 指南</a>。</p>
+<h3 id="Neural-Networks-API-1-3"><a href="#Neural-Networks-API-1-3" class="headerlink" title="Neural Networks API 1.3"></a>Neural Networks API 1.3</h3><p>Android 11 扩展并改进了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/neuralnetworks">Neural Networks API (NNAPI)</a>。</p>
+<h4 id="新运算方式"><a href="#新运算方式" class="headerlink" title="新运算方式"></a>新运算方式</h4><p>NNAPI 1.3 引入了新的运算数类型 <code>TENSOR_QUANT8_ASYMM_SIGNED</code>，以支持 <a target="_blank" rel="noopener" href="https://tensorflow.google.cn/lite/performance/quantization_spec">TensorFlow Lite 的新量化方案</a>。</p>
 <p>此外，NNAPI 1.3 还引入了以下新运算：</p>
 <ul>
 <li><code>QUANTIZED_LSTM</code></li>
@@ -675,109 +382,111 @@
 <ul>
 <li><p><strong>QoS API</strong>：新的 Quality of Service API 使用以下新函数，支持在 NNAPI 中进行优先排序和任务截止时间设定：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksdevice_wait" target="_blank" rel="noopener"><code>ANeuralNetworksDevice_wait()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworkscompilation_setpriority" target="_blank" rel="noopener"><code>ANeuralNetworksCompilation_setPriority()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworkscompilation_settimeout" target="_blank" rel="noopener"><code>ANeuralNetworksCompilation_setTimeout()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_settimeout" target="_blank" rel="noopener"><code>ANeuralNetworksExecution_setTimeout()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksdevice_wait"><code>ANeuralNetworksDevice_wait()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworkscompilation_setpriority"><code>ANeuralNetworksCompilation_setPriority()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworkscompilation_settimeout"><code>ANeuralNetworksCompilation_setTimeout()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_settimeout"><code>ANeuralNetworksExecution_setTimeout()</code></a></li>
 </ul>
 </li>
-<li><p><strong>内存域输入/输出</strong>：NNAPI 1.3 支持将内存域作为执行的输入和输出。这样可以移除不同系统组件之间不必要的相同数据，从而提高 Android 神经网络的运行时性能。此功能添加了一组用于与 <a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#group___neural_networks_1ga92661bd0904009e8d0c9e8e1bf40bd84" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc</code></a> 和 <a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#group___neural_networks_1ga9a6b7719f0613ba9e2c93cffd97ebfc0" target="_blank" rel="noopener"><code>ANeuralNetworkMemory</code></a> 对象结合使用的新 NDK API，包括以下函数：</p>
+<li><p><strong>内存域输入&#x2F;输出</strong>：NNAPI 1.3 支持将内存域作为执行的输入和输出。这样可以移除不同系统组件之间不必要的相同数据，从而提高 Android 神经网络的运行时性能。此功能添加了一组用于与 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#group___neural_networks_1ga92661bd0904009e8d0c9e8e1bf40bd84"><code>ANeuralNetworksMemoryDesc</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#group___neural_networks_1ga9a6b7719f0613ba9e2c93cffd97ebfc0"><code>ANeuralNetworkMemory</code></a> 对象结合使用的新 NDK API，包括以下函数：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_create" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_create()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_free" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_free()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_addinputrole" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_addInputRole()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_addoutputrole" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_addOutputRole()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_setdimensions" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_setDimensions()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_finish" target="_blank" rel="noopener"><code>ANeuralNetworksMemoryDesc_finish()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemory_createfromdesc" target="_blank" rel="noopener"><code>ANeuralNetworksMemory_createFromDesc()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemory_copy" target="_blank" rel="noopener"><code>ANeuralNetworksMemory_copy()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_create"><code>ANeuralNetworksMemoryDesc_create()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_free"><code>ANeuralNetworksMemoryDesc_free()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_addinputrole"><code>ANeuralNetworksMemoryDesc_addInputRole()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_addoutputrole"><code>ANeuralNetworksMemoryDesc_addOutputRole()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_setdimensions"><code>ANeuralNetworksMemoryDesc_setDimensions()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemorydesc_finish"><code>ANeuralNetworksMemoryDesc_finish()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemory_createfromdesc"><code>ANeuralNetworksMemory_createFromDesc()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmemory_copy"><code>ANeuralNetworksMemory_copy()</code></a></li>
 </ul>
-<p>如需了解详情，请参阅<a href="https://github.com/android/ndk-samples/tree/develop/nn-samples/sequence" target="_blank" rel="noopener">神经网络内存域示例</a>。</p>
+<p>如需了解详情，请参阅<a target="_blank" rel="noopener" href="https://github.com/android/ndk-samples/tree/develop/nn-samples/sequence">神经网络内存域示例</a>。</p>
 </li>
 <li><p><strong>Dependency API 和同步栅栏支持</strong>：NNAPI 1.3 支持使用依赖项实现异步计算，这样可以大大减少调用小型链式模型时产生的开销。此功能添加了以下新函数：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksevent_createfromsyncfencefd" target="_blank" rel="noopener"><code>ANeuralNetworksEvent_createFromSyncFenceFd()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksevent_getsyncfencefd" target="_blank" rel="noopener"><code>ANeuralNetworksEvent_getSyncFenceFd()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_startcomputewithdependencies" target="_blank" rel="noopener"><code>ANeuralNetworksExecution_startComputeWithDependencies()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksevent_createfromsyncfencefd"><code>ANeuralNetworksEvent_createFromSyncFenceFd()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksevent_getsyncfencefd"><code>ANeuralNetworksEvent_getSyncFenceFd()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_startcomputewithdependencies"><code>ANeuralNetworksExecution_startComputeWithDependencies()</code></a></li>
 </ul>
 </li>
 <li><p><strong>控制流</strong>：NNAPI 1.3 支持使用新的图表运算 <code>ANEURALNETWORKS_IF</code> 和 <code>ANEURALNETWORKS_WHILE</code> 实现常规控制流，这些运算使用新的 <code>ANEURALNETWORKS_MODEL</code> 运算数类型接受其他模型作为参数。此外，此功能还添加了以下新函数：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmodel_setoperandvaluefrommodel" target="_blank" rel="noopener"><code>ANeuralNetworksModel_setOperandValueFromModel()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworks_getdefaultlooptimeout" target="_blank" rel="noopener"><code>ANeuralNetworks_getDefaultLoopTimeout()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworks_getmaximumlooptimeout" target="_blank" rel="noopener"><code>ANeuralNetworks_getMaximumLoopTimeout()</code></a></li>
-<li><a href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_setlooptimeout" target="_blank" rel="noopener"><code>ANeuralNetworksExecution_setLoopTimeout()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksmodel_setoperandvaluefrommodel"><code>ANeuralNetworksModel_setOperandValueFromModel()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworks_getdefaultlooptimeout"><code>ANeuralNetworks_getDefaultLoopTimeout()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworks_getmaximumlooptimeout"><code>ANeuralNetworks_getMaximumLoopTimeout()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/neural-networks#aneuralnetworksexecution_setlooptimeout"><code>ANeuralNetworksExecution_setLoopTimeout()</code></a></li>
 </ul>
 </li>
 </ul>
-<h4 id="NDK-Thermal-API"><a href="#NDK-Thermal-API" class="headerlink" title="NDK Thermal API"></a>NDK Thermal API</h4><p>当设备过热时，它们可能会限制 CPU 和/或 GPU，而这可能会以意想不到的方式影响应用。如果应用或游戏包含复杂图形，大量计算或持续网络活动，它们就更容易遇到问题。</p>
-<p>在 Android 11 中使用 <a href="https://developer.android.google.cn/ndk/reference/group/thermal" target="_blank" rel="noopener">NDK Thermal API</a> 监控设备上的温度变化，然后采取相应措施以降低耗电量和设备温度。该 API 类似于<a href="https://developer.android.google.cn/about/versions/10/features#thermal" target="_blank" rel="noopener">Java Thermal API</a>；您可以使用它接收任何热状态更改的通知或直接轮询当前状态。</p>
+<h4 id="NDK-Thermal-API"><a href="#NDK-Thermal-API" class="headerlink" title="NDK Thermal API"></a>NDK Thermal API</h4><p>当设备过热时，它们可能会限制 CPU 和&#x2F;或 GPU，而这可能会以意想不到的方式影响应用。如果应用或游戏包含复杂图形，大量计算或持续网络活动，它们就更容易遇到问题。</p>
+<p>在 Android 11 中使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/thermal">NDK Thermal API</a> 监控设备上的温度变化，然后采取相应措施以降低耗电量和设备温度。该 API 类似于<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/10/features#thermal">Java Thermal API</a>；您可以使用它接收任何热状态更改的通知或直接轮询当前状态。</p>
 <h3 id="文本和输入"><a href="#文本和输入" class="headerlink" title="文本和输入"></a>文本和输入</h3><h4 id="改进了-IME-转换"><a href="#改进了-IME-转换" class="headerlink" title="改进了 IME 转换"></a>改进了 IME 转换</h4><p>Android 11 引入了新的 API 以改进输入法 (IME) 的转换，例如屏幕键盘。这些 API 可让您更轻松地调整应用内容，与 IME 的出现和消失以及状态和导航栏等其他元素保持同步。</p>
 <p>如需在聚焦至任何 <code>EditText</code> 时显示 IME，请调用 <code>view.getInsetsController().show(Type.ime())</code>（您可以在与聚焦的 <code>EditText</code> 相同层次结构中的任何视图上调用此方法，无需专门在 <code>EditText</code> 上调用它）。如需隐藏 IME，请调用 <code>view.getInsetsController().hide(Type.ime())</code>。您可以通过调用 <code>view.getRootWindowInsets().isVisible(Type.ime())</code> 检查 IME 当前是否可见。</p>
-<p>如需同步应用的视图与 IME 的显示和消失，请通过提供 <a href="https://developer.android.google.cn/reference/android/view/View#setWindowInsetsAnimationCallback(android.view.WindowInsetsAnimation.Callback" target="_blank" rel="noopener"><code>WindowInsetsAnimation.Callback</code></a>) 到 <a href="https://developer.android.google.cn/reference/android/view/View#setWindowInsetsAnimationCallback(android.view.WindowInsetsAnimation.Callback" target="_blank" rel="noopener"><code>View.setWindowInsetsAnimationCallback()</code></a>) 在视图上设置监听器（您可以在任何视图上设置该监听器，它不一定必须为 <code>EditText</code>）。IME 会调用监听器的 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onPrepare(android.view.WindowInsetsAnimation" target="_blank" rel="noopener"><code>onPrepare()</code></a>) 方法，之后会在转换开始时调用 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onStart(android.view.WindowInsetsAnimation, android.view.WindowInsetsAnimation.Bounds" target="_blank" rel="noopener"><code>onStart()</code></a>)。然后，它会在每次转换的过程中调用 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onProgress(android.view.WindowInsets, java.util.List" target="_blank" rel="noopener"><code>onProgress()</code></a>)。转换完成后，IME 会调用 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onEnd(android.view.WindowInsetsAnimation" target="_blank" rel="noopener"><code>onEnd()</code></a>)。在转换过程中，您随时可以调用 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation#getFraction(" target="_blank" rel="noopener"><code>WindowInsetsAnimation.getFraction()</code></a>) 以了解转换的进度。</p>
-<p>有关如何使用这些 API 的示例，请参阅新的 <a href="https://github.com/android/user-interface-samples/tree/master/WindowInsetsAnimation" target="_blank" rel="noopener">WindowInsetsAnimation</a> 代码示例。</p>
-<h5 id="控制-IME-动画"><a href="#控制-IME-动画" class="headerlink" title="控制 IME 动画"></a>控制 IME 动画</h5><p>您还可以控制 IME 动画或其他系统栏（如导航栏）的动画。如需执行此操作，请先调用 <a href="https://developer.android.google.cn/reference/android/view/View#setOnApplyWindowInsetsListener(android.view.View.OnApplyWindowInsetsListener" target="_blank" rel="noopener"><code>setOnApplyWindowInsetsListener()</code></a>)，为窗口边衬区更改设置新的监听器：</p>
-<p><a href="https://developer.android.google.cn/about/versions/11/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/11/features#java" target="_blank" rel="noopener">Java</a></p>
+<p>如需同步应用的视图与 IME 的显示和消失，请通过提供 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/View#setWindowInsetsAnimationCallback(android.view.WindowInsetsAnimation.Callback)"><code>WindowInsetsAnimation.Callback</code></a> 到 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/View#setWindowInsetsAnimationCallback(android.view.WindowInsetsAnimation.Callback)"><code>View.setWindowInsetsAnimationCallback()</code></a> 在视图上设置监听器（您可以在任何视图上设置该监听器，它不一定必须为 <code>EditText</code>）。IME 会调用监听器的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onPrepare(android.view.WindowInsetsAnimation)"><code>onPrepare()</code></a> 方法，之后会在转换开始时调用 [<code>onStart()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onStart">https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onStart</a>(android.view.WindowInsetsAnimation, android.view.WindowInsetsAnimation.Bounds))。然后，它会在每次转换的过程中调用 [<code>onProgress()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onProgress">https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onProgress</a>(android.view.WindowInsets, java.util.List))。转换完成后，IME 会调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation.Callback#onEnd(android.view.WindowInsetsAnimation)"><code>onEnd()</code></a>。在转换过程中，您随时可以调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsAnimation#getFraction()"><code>WindowInsetsAnimation.getFraction()</code></a> 以了解转换的进度。</p>
+<p>有关如何使用这些 API 的示例，请参阅新的 <a target="_blank" rel="noopener" href="https://github.com/android/user-interface-samples/tree/master/WindowInsetsAnimation">WindowInsetsAnimation</a> 代码示例。</p>
+<h5 id="控制-IME-动画"><a href="#控制-IME-动画" class="headerlink" title="控制 IME 动画"></a>控制 IME 动画</h5><p>您还可以控制 IME 动画或其他系统栏（如导航栏）的动画。如需执行此操作，请先调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/View#setOnApplyWindowInsetsListener(android.view.View.OnApplyWindowInsetsListener)"><code>setOnApplyWindowInsetsListener()</code></a>，为窗口边衬区更改设置新的监听器：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#kotlin">Kotlin</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#java">Java</a></p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">rootView.setOnApplyWindowInsetsListener &#123; rootView, windowInsets -&gt;</span><br><span class="line">    <span class="keyword">val</span> barsIme = windowInsets.getInsets(Type.systemBars() or Type.ime())</span><br><span class="line">    rootView.setPadding(barsIme.left, barsIme.top, barsIme.right,</span><br><span class="line">                          barsIme.bottom)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// We return the new WindowInsets.CONSUMED to stop the insets being</span></span><br><span class="line">      <span class="comment">// dispatched any further into the view hierarchy. This replaces the</span></span><br><span class="line">      <span class="comment">// deprecated WindowInsets.consumeSystemWindowInsets() and related</span></span><br><span class="line">      <span class="comment">// functions.</span></span><br><span class="line">    WindowInsets.CONSUMED</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如需移动 IME 或其他系统栏，请调用控制器的 <a href="https://developer.android.google.cn/reference/android/view/WindowInsetsController#controlWindowInsetsAnimation(int, long, android.view.animation.Interpolator, android.view.WindowInsetsAnimationControlListener" target="_blank" rel="noopener"><code>controlWindowInsetsAnimation()</code></a>) 方法：</p>
-<p><a href="https://developer.android.google.cn/about/versions/11/features#kotlin" target="_blank" rel="noopener">Kotlin</a><a href="https://developer.android.google.cn/about/versions/11/features#java" target="_blank" rel="noopener">Java</a></p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">view.windowInsetsController.controlWindowInsetsAnimation(</span><br><span class="line">       Type.ime(),</span><br><span class="line">       <span class="number">1000</span>,</span><br><span class="line">       LinearInterpolator(),</span><br><span class="line">       cancellationSignal,</span><br><span class="line">       <span class="keyword">object</span> : WindowInsetsAnimationControlListener() &#123;</span><br><span class="line">           <span class="function"><span class="keyword">fun</span> <span class="title">onReady</span><span class="params">(controller: <span class="type">WindowInsetsAnimationController</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                         types: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">               <span class="comment">// update IME inset</span></span><br><span class="line">             controller.setInsetsAndAlpha(Insets.of(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, inset),</span><br><span class="line">                           <span class="number">1f</span> <span class="comment">/* alpha */</span>, <span class="number">0.1</span> <span class="comment">/* fraction progress */</span>)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h4 id="ICU-库更新"><a href="#ICU-库更新" class="headerlink" title="ICU 库更新"></a>ICU 库更新</h4><p>Android 11 更新了 <code>android.icu</code> 软件包，以使用 <a href="http://site.icu-project.org/" target="_blank" rel="noopener">ICU 库</a>版本 66，而 Android 10 中使用的是版本 63。新版库包含更新的 CLDR 语言区域数据以及众多对于 Android 中的国际化支持的增强功能。</p>
+
+<p>如需移动 IME 或其他系统栏，请调用控制器的 [<code>controlWindowInsetsAnimation()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/WindowInsetsController#controlWindowInsetsAnimation">https://developer.android.google.cn/reference/android/view/WindowInsetsController#controlWindowInsetsAnimation</a>(int, long, android.view.animation.Interpolator, android.view.WindowInsetsAnimationControlListener)) 方法：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#kotlin">Kotlin</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#java">Java</a></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">view.windowInsetsController.controlWindowInsetsAnimation(</span><br><span class="line">       Type.ime(),</span><br><span class="line">       <span class="number">1000</span>,</span><br><span class="line">       LinearInterpolator(),</span><br><span class="line">       cancellationSignal,</span><br><span class="line">       <span class="keyword">object</span> : WindowInsetsAnimationControlListener() &#123;</span><br><span class="line">           <span class="function"><span class="keyword">fun</span> <span class="title">onReady</span><span class="params">(controller: <span class="type">WindowInsetsAnimationController</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">                         types: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">               <span class="comment">// update IME inset</span></span><br><span class="line">             controller.setInsetsAndAlpha(Insets.of(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, inset),</span><br><span class="line">                           <span class="number">1f</span> <span class="comment">/* alpha */</span>, <span class="number">0.1</span> <span class="comment">/* fraction progress */</span>)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="ICU-库更新"><a href="#ICU-库更新" class="headerlink" title="ICU 库更新"></a>ICU 库更新</h4><p>Android 11 更新了 <code>android.icu</code> 软件包，以使用 <a target="_blank" rel="noopener" href="http://site.icu-project.org/">ICU 库</a>版本 66，而 Android 10 中使用的是版本 63。新版库包含更新的 CLDR 语言区域数据以及众多对于 Android 中的国际化支持的增强功能。</p>
 <p>新版库包含以下主要变更：</p>
 <ul>
 <li>许多格式化 API 现在都支持可扩展 <code>FormattedValue</code> 的新返回对象类型。</li>
-<li><code>LocaleMatcher</code> API 在以下方面得到增强：提供了构建器类，支持 <a href="https://developer.android.google.cn/reference/kotlin/java/util/Locale" target="_blank" rel="noopener"><code>java.util.Locale</code></a> 类型，并且结果类可提供有关匹配的额外数据。</li>
+<li><code>LocaleMatcher</code> API 在以下方面得到增强：提供了构建器类，支持 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/java/util/Locale"><code>java.util.Locale</code></a> 类型，并且结果类可提供有关匹配的额外数据。</li>
 <li>现在支持 Unicode 13。</li>
 </ul>
 <h3 id="媒体"><a href="#媒体" class="headerlink" title="媒体"></a>媒体</h3><h4 id="分配-MediaCodec-缓冲区"><a href="#分配-MediaCodec-缓冲区" class="headerlink" title="分配 MediaCodec 缓冲区"></a>分配 MediaCodec 缓冲区</h4><p>Android 11 包含一个新的 <code>MediaCodec</code> API，可让应用在分配输入和输出缓冲区时获得更多控制。这样可以让您的应用更高效地管理内存。</p>
 <h5 id="新类："><a href="#新类：" class="headerlink" title="新类："></a>新类：</h5><ul>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.LinearBlock" target="_blank" rel="noopener"><code>MediaCodec.LinearBlock</code></a></li>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.OutputFrame" target="_blank" rel="noopener"><code>MediaCodec.OutputFrame</code></a></li>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.QueueRequest" target="_blank" rel="noopener"><code>MediaCodec.QueueRequest</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.LinearBlock"><code>MediaCodec.LinearBlock</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.OutputFrame"><code>MediaCodec.OutputFrame</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.QueueRequest"><code>MediaCodec.QueueRequest</code></a></li>
 </ul>
 <h5 id="新方法："><a href="#新方法：" class="headerlink" title="新方法："></a>新方法：</h5><ul>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#getQueueRequest(kotlin.Int" target="_blank" rel="noopener"><code>MediaCodec.getQueueRequest()</code></a>)</li>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#getOutputFrame(kotlin.Int" target="_blank" rel="noopener"><code>MediaCodec.getOutputFrame()</code></a>)</li>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.LinearBlock#isCodecCopyFreeCompatible(kotlin.Array" target="_blank" rel="noopener"><code>MediaCodec.LinearBlock.isCodecCopyFreeCompatible()</code></a>)</li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#getQueueRequest(kotlin.Int)"><code>MediaCodec.getQueueRequest()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#getOutputFrame(kotlin.Int)"><code>MediaCodec.getOutputFrame()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.LinearBlock#isCodecCopyFreeCompatible(kotlin.Array)"><code>MediaCodec.LinearBlock.isCodecCopyFreeCompatible()</code></a></li>
 </ul>
-<p>此外，<a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback" target="_blank" rel="noopener"><code>MediaCodec.Callback()</code></a> 中两种方法的行为也发生了变化：</p>
+<p>此外，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback"><code>MediaCodec.Callback()</code></a> 中两种方法的行为也发生了变化：</p>
 <ul>
-<li><p><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onInputBufferAvailable(android.media.MediaCodec, kotlin.Int" target="_blank" rel="noopener"><code>onInputBufferAvailable()</code></a>)</p>
-<p>如果配置为使用 Block Model API，应用应通过索引使用 <code>MediaCodec.getQueueRequest</code>，并将 LinearBlock/HardwareBuffer 附加到插槽，而不是通过索引调用 <code>MediaCodec.getInputBuffer()</code> 和 <code>MediaCodec.queueInputBuffer()</code>。</p>
+<li><p>[<code>onInputBufferAvailable()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onInputBufferAvailable">https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onInputBufferAvailable</a>(android.media.MediaCodec, kotlin.Int))</p>
+<p>如果配置为使用 Block Model API，应用应通过索引使用 <code>MediaCodec.getQueueRequest</code>，并将 LinearBlock&#x2F;HardwareBuffer 附加到插槽，而不是通过索引调用 <code>MediaCodec.getInputBuffer()</code> 和 <code>MediaCodec.queueInputBuffer()</code>。</p>
 </li>
-<li><p><a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onOutputBufferAvailable(android.media.MediaCodec, kotlin.Int, android.media.MediaCodec.BufferInfo" target="_blank" rel="noopener"><code>onOutputBufferAvailable()</code></a>)</p>
-<p>应用可以通过索引使用 <code>MediaCodec.getOutputFrame()</code> 获取包含更多信息的 <code>OutputFrame</code> 对象和 LinearBlock/HardwareBuffer 缓冲区，而不是通过索引调用 <code>MediaCodec.getOutputBuffer()</code>。</p>
+<li><p>[<code>onOutputBufferAvailable()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onOutputBufferAvailable">https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec.Callback#onOutputBufferAvailable</a>(android.media.MediaCodec, kotlin.Int, android.media.MediaCodec.BufferInfo))</p>
+<p>应用可以通过索引使用 <code>MediaCodec.getOutputFrame()</code> 获取包含更多信息的 <code>OutputFrame</code> 对象和 LinearBlock&#x2F;HardwareBuffer 缓冲区，而不是通过索引调用 <code>MediaCodec.getOutputBuffer()</code>。</p>
 </li>
 </ul>
-<h4 id="MediaCodec-低延时解码"><a href="#MediaCodec-低延时解码" class="headerlink" title="MediaCodec 低延时解码"></a>MediaCodec 低延时解码</h4><p>Android 11 增强了 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec" target="_blank" rel="noopener"><code>MediaCodec</code></a>，针对游戏和其他实时应用支持低延时解码。您可以将 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodecInfo.CodecCapabilities#feature_lowlatency" target="_blank" rel="noopener"><code>FEATURE_LowLatency</code></a> 传递到 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodecInfo.CodecCapabilities#isfeaturesupported" target="_blank" rel="noopener"><code>MediaCodecInfo.CodecCapabilities.isFeatureSupported()</code></a>，检查编解码器是否支持低延时解码。</p>
+<h4 id="MediaCodec-低延时解码"><a href="#MediaCodec-低延时解码" class="headerlink" title="MediaCodec 低延时解码"></a>MediaCodec 低延时解码</h4><p>Android 11 增强了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec"><code>MediaCodec</code></a>，针对游戏和其他实时应用支持低延时解码。您可以将 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodecInfo.CodecCapabilities#feature_lowlatency"><code>FEATURE_LowLatency</code></a> 传递到 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodecInfo.CodecCapabilities#isfeaturesupported"><code>MediaCodecInfo.CodecCapabilities.isFeatureSupported()</code></a>，检查编解码器是否支持低延时解码。</p>
 <p>如需启用或停用低延时解码，请执行以下任一操作：</p>
 <ul>
-<li>使用 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#configure" target="_blank" rel="noopener"><code>MediaCodec.configure()</code></a> 将新键 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaFormat#key_low_latency" target="_blank" rel="noopener"><code>KEY_LOW_LATENCY</code></a> 设置为 0 或 1。</li>
-<li>使用 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#setparameters" target="_blank" rel="noopener"><code>MediaCodec.setParameters()</code></a> 将新参数键 <a href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#parameter_key_low_latency" target="_blank" rel="noopener"><code>PARAMETER_KEY_LOW_LATENCY</code></a> 设置为 0 或 1。</li>
+<li>使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#configure"><code>MediaCodec.configure()</code></a> 将新键 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaFormat#key_low_latency"><code>KEY_LOW_LATENCY</code></a> 设置为 0 或 1。</li>
+<li>使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#setparameters"><code>MediaCodec.setParameters()</code></a> 将新参数键 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/media/MediaCodec#parameter_key_low_latency"><code>PARAMETER_KEY_LOW_LATENCY</code></a> 设置为 0 或 1。</li>
 </ul>
 <p><strong>注意</strong>：支持低延时解码可能需要额外的资源，例如更高的功耗。仅在必要时使用低延时解码。</p>
-<h4 id="新的-AAudio-函数-AAudioStream-release"><a href="#新的-AAudio-函数-AAudioStream-release" class="headerlink" title="新的 AAudio 函数 AAudioStream_release()"></a>新的 AAudio 函数 AAudioStream_release()</h4><p>函数 <a href="https://developer.android.google.cn/ndk/reference/group/audio#group___audio_1gad5f5e59999bb4f4b5ec6f5efcd09520b" target="_blank" rel="noopener"><code>AAudioStream_close()</code></a> 会同时释放和关闭音频流。这可能很危险。如果其他进程在音频流关闭后尝试对其进行访问，该进程将会崩溃。</p>
-<p>新函数 <a href="https://developer.android.google.cn/ndk/reference/group/audio#group___audio_1ga3a3f524d1a36022ff0300699bb0c8f7b" target="_blank" rel="noopener"><code>AAudioStream_release()</code></a> 会释放音频流，但不会将其关闭。这样会释放其资源并使音频流处于已知状态。该对象将一直存在，直到您调用 <code>AAudioStream_close()</code>。</p>
-<h4 id="MediaParser-API"><a href="#MediaParser-API" class="headerlink" title="MediaParser API"></a>MediaParser API</h4><p><a href="https://developer.android.google.cn/reference/android/media/MediaParser" target="_blank" rel="noopener">MediaParser</a> 是用于媒体提取的新型低级别 API。它比 <a href="https://developer.android.google.cn/reference/android/media/MediaExtractor" target="_blank" rel="noopener">MediaExtractor</a> 更灵活，并提供对媒体提取功能的额外控制。</p>
-<h4 id="通过-USB-设备捕获音频"><a href="#通过-USB-设备捕获音频" class="headerlink" title="通过 USB 设备捕获音频"></a>通过 USB 设备捕获音频</h4><p>当没有 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#RECORD_AUDIO" target="_blank" rel="noopener"><code>RECORD_AUDIO</code></a> 权限的应用使用 <a href="https://developer.android.google.cn/reference/android/hardware/usb/UsbManager#openDevice(android.hardware.usb.UsbDevice" target="_blank" rel="noopener"><code>UsbManager</code></a>) 请求直接访问具备音频捕获功能的 USB 音频设备（如 USB 耳机）时，系统会显示一条新的警告消息，要求用户确认设备使用权限。系统会忽略任何“始终使用”选项，因此应用每次请求访问时，用户都必须确认警告消息并授予相应权限。</p>
+<h4 id="新的-AAudio-函数-AAudioStream-release"><a href="#新的-AAudio-函数-AAudioStream-release" class="headerlink" title="新的 AAudio 函数 AAudioStream_release()"></a>新的 AAudio 函数 AAudioStream_release()</h4><p>函数 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/audio#group___audio_1gad5f5e59999bb4f4b5ec6f5efcd09520b"><code>AAudioStream_close()</code></a> 会同时释放和关闭音频流。这可能很危险。如果其他进程在音频流关闭后尝试对其进行访问，该进程将会崩溃。</p>
+<p>新函数 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/audio#group___audio_1ga3a3f524d1a36022ff0300699bb0c8f7b"><code>AAudioStream_release()</code></a> 会释放音频流，但不会将其关闭。这样会释放其资源并使音频流处于已知状态。该对象将一直存在，直到您调用 <code>AAudioStream_close()</code>。</p>
+<h4 id="MediaParser-API"><a href="#MediaParser-API" class="headerlink" title="MediaParser API"></a>MediaParser API</h4><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/media/MediaParser">MediaParser</a> 是用于媒体提取的新型低级别 API。它比 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/media/MediaExtractor">MediaExtractor</a> 更灵活，并提供对媒体提取功能的额外控制。</p>
+<h4 id="通过-USB-设备捕获音频"><a href="#通过-USB-设备捕获音频" class="headerlink" title="通过 USB 设备捕获音频"></a>通过 USB 设备捕获音频</h4><p>当没有 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/Manifest.permission#RECORD_AUDIO"><code>RECORD_AUDIO</code></a> 权限的应用使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/usb/UsbManager#openDevice(android.hardware.usb.UsbDevice)"><code>UsbManager</code></a> 请求直接访问具备音频捕获功能的 USB 音频设备（如 USB 耳机）时，系统会显示一条新的警告消息，要求用户确认设备使用权限。系统会忽略任何“始终使用”选项，因此应用每次请求访问时，用户都必须确认警告消息并授予相应权限。</p>
 <p>为了避免这种行为，您的应用应请求 <code>RECORD_AUDIO</code> 权限。</p>
-<p><strong>注意</strong>：此行为仅适用于使用 <a href="https://developer.android.google.cn/reference/android/hardware/usb/UsbManager#openDevice(android.hardware.usb.UsbDevice" target="_blank" rel="noopener"><code>UsbManager</code> API</a>) 直接连接到 USB 外围设备的应用。绝大多数媒体播放器、游戏和通信应用使用的是音频 API，因此不会受到此变更的影响。</p>
-<h4 id="并发访问麦克风"><a href="#并发访问麦克风" class="headerlink" title="并发访问麦克风"></a>并发访问麦克风</h4><p>Android 11 向 <code>AudioRecord</code>、<code>MediaRecorder</code> 和 <code>AAudioStream</code> API 添加了一些新方法。不管选择的用例是什么，这些方法均可启用和停用并发捕获的功能。请参阅<a href="https://developer.android.google.cn/guide/topics/media/sharing-audio-input#concurrent-capture-r" target="_blank" rel="noopener">共享音频输入</a>。</p>
+<p><strong>注意</strong>：此行为仅适用于使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/usb/UsbManager#openDevice(android.hardware.usb.UsbDevice)"><code>UsbManager</code> API</a> 直接连接到 USB 外围设备的应用。绝大多数媒体播放器、游戏和通信应用使用的是音频 API，因此不会受到此变更的影响。</p>
+<h4 id="并发访问麦克风"><a href="#并发访问麦克风" class="headerlink" title="并发访问麦克风"></a>并发访问麦克风</h4><p>Android 11 向 <code>AudioRecord</code>、<code>MediaRecorder</code> 和 <code>AAudioStream</code> API 添加了一些新方法。不管选择的用例是什么，这些方法均可启用和停用并发捕获的功能。请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/media/sharing-audio-input#concurrent-capture-r">共享音频输入</a>。</p>
 <h4 id="输出切换器"><a href="#输出切换器" class="headerlink" title="输出切换器"></a>输出切换器</h4><p>Android 11 针对使用 Cast 和 MediaRouter API 的应用实现了新行为。</p>
-<p>除了可从应用内访问投射选项外，切换选项也显示于系统媒体播放器中。当用户改变视听环境时（例如在厨房中观看视频与在手机上观看之间切换，或者在家中收听音频与在车中收听之间切换），这有助于为用户提供无缝切换设备的流畅体验。请参阅<a href="https://developer.android.google.cn/guide/topics/media/media-routing#output-switcher" target="_blank" rel="noopener">输出切换器</a>。</p>
+<p>除了可从应用内访问投射选项外，切换选项也显示于系统媒体播放器中。当用户改变视听环境时（例如在厨房中观看视频与在手机上观看之间切换，或者在家中收听音频与在车中收听之间切换），这有助于为用户提供无缝切换设备的流畅体验。请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/media/media-routing#output-switcher">输出切换器</a>。</p>
 <h3 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h3><h4 id="Wi-Fi-Passpoint-增强功能"><a href="#Wi-Fi-Passpoint-增强功能" class="headerlink" title="Wi-Fi Passpoint 增强功能"></a>Wi-Fi Passpoint 增强功能</h4><p>通过 Passpoint，应用可以自动静默地执行身份验证并连接到安全的 Wi-Fi 热点。以 API 级别 30 及更高级别为目标平台的应用可以使用 Passpoint 的以下其他功能。</p>
 <ul>
 <li><p>失效日期强制执行和通知</p>
 <p>对个人资料强制执行失效日期可让框架避免使用过期凭据自动连接到接入点，该操作必定会失败。这样可以阻止无线连接，并节省电量和后端带宽。当用户的个人资料位于范围内但已过期时，该功能会向用户显示通知。</p>
 </li>
 <li><p>FQDN 匹配</p>
-<p>允许使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/hotspot2/pps/Credential" target="_blank" rel="noopener">PerProviderSubscription (PPS) 管理对象 (MO)</a> 中的 Extension/Android 节点，配置独立于接入网络查询协议 (ANQP) 完全限定域名 (FQDN) 的命名 AAA 域。</p>
+<p>允许使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/hotspot2/pps/Credential">PerProviderSubscription (PPS) 管理对象 (MO)</a> 中的 Extension&#x2F;Android 节点，配置独立于接入网络查询协议 (ANQP) 完全限定域名 (FQDN) 的命名 AAA 域。</p>
 </li>
 <li><p>自签名的私人 CA</p>
 <p>对于 Passpoint R1 个人资料，Android 接受采用私人自签名 CA 进行连接身份验证。</p>
 </li>
 <li><p>允许使用具有相同 FQDN 的多个个人资料</p>
-<p>允许安装具有相同 FQDN 的多个 Passpoint 个人资料。FQDN 不用作个人资料的键。需要 FQDN 的现有 Passpoint API（如 <a href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#removePasspointConfiguration(java.lang.String" target="_blank" rel="noopener"><code>remove</code></a>)）会将请求应用于具有相同 FQDN 的所有匹配的个人资料。</p>
+<p>允许安装具有相同 FQDN 的多个 Passpoint 个人资料。FQDN 不用作个人资料的键。需要 FQDN 的现有 Passpoint API（如 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#removePasspointConfiguration(java.lang.String)"><code>remove</code></a>）会将请求应用于具有相同 FQDN 的所有匹配的个人资料。</p>
 </li>
 <li><p>允许安装没有根 CA 证书的个人资料</p>
 <p>允许使用没有根 CA 证书的个人资料。在这种情况下，系统会根据安装在信任库中的公共根 CA 证书验证 AAA 服务器证书。</p>
@@ -786,14 +495,14 @@
 <p>系统会匹配家庭网络或漫游网络，而不考虑所通告的身份验证方法。此外，还增加了对 <code>OtherHomePartners</code> 和 <code>HomeOIList</code> 列表的家庭网络匹配功能的支持。</p>
 </li>
 </ul>
-<h4 id="Wi-Fi-Suggestion-API-扩展"><a href="#Wi-Fi-Suggestion-API-扩展" class="headerlink" title="Wi-Fi Suggestion API 扩展"></a>Wi-Fi Suggestion API 扩展</h4><p>Android 11 扩展了 <a href="https://developer.android.google.cn/guide/topics/connectivity/wifi-suggest" target="_blank" rel="noopener">Wi-Fi Suggestion API</a>，以提高应用的网络管理能力，包括：</p>
+<h4 id="Wi-Fi-Suggestion-API-扩展"><a href="#Wi-Fi-Suggestion-API-扩展" class="headerlink" title="Wi-Fi Suggestion API 扩展"></a>Wi-Fi Suggestion API 扩展</h4><p>Android 11 扩展了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/connectivity/wifi-suggest">Wi-Fi Suggestion API</a>，以提高应用的网络管理能力，包括：</p>
 <ul>
 <li>连接管理应用可以通过允许断开连接请求管理自己的网络。</li>
 <li>Passpoint 网络集成到 Suggestion API 中，可以推荐给用户。</li>
 <li>通过 Analytics API，您可以获取有关网络质量的信息。</li>
 </ul>
-<h4 id="CallScreeningService-更新"><a href="#CallScreeningService-更新" class="headerlink" title="CallScreeningService 更新"></a>CallScreeningService 更新</h4><p>从 Android 11 开始，<a href="https://developer.android.google.cn/reference/android/telecom/CallScreeningService" target="_blank" rel="noopener">CallScreeningService</a> 可以针对来电请求有关 STIR/SHAKEN 验证状态 (verstat) 的信息。此信息将包含在来电的<a href="https://developer.android.google.cn/reference/android/telecom/Call.Details" target="_blank" rel="noopener">通话详情</a>中。</p>
-<p>如果 <code>CallScreeningService</code> 持有 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#READ_CONTACTS" target="_blank" rel="noopener"><code>READ_CONTACTS</code></a> 权限，当用户通讯录中的号码有来电或向用户通讯录中的号码去电时，应用会收到通知。</p>
+<h4 id="CallScreeningService-更新"><a href="#CallScreeningService-更新" class="headerlink" title="CallScreeningService 更新"></a>CallScreeningService 更新</h4><p>从 Android 11 开始，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/telecom/CallScreeningService">CallScreeningService</a> 可以针对来电请求有关 STIR&#x2F;SHAKEN 验证状态 (verstat) 的信息。此信息将包含在来电的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/telecom/Call.Details">通话详情</a>中。</p>
+<p>如果 <code>CallScreeningService</code> 持有 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/Manifest.permission#READ_CONTACTS"><code>READ_CONTACTS</code></a> 权限，当用户通讯录中的号码有来电或向用户通讯录中的号码去电时，应用会收到通知。</p>
 <h4 id="Open-Mobile-API-更新"><a href="#Open-Mobile-API-更新" class="headerlink" title="Open Mobile API 更新"></a>Open Mobile API 更新</h4><p>从 Android 11 开始，Open Mobile API (OMAPI) 有了额外的功能：</p>
 <ul>
 <li>解析运营商权限的规则。</li>
@@ -805,1122 +514,277 @@
 </li>
 <li>为读取器提供清晰的指示符，以便应用过滤设备功能。</li>
 </ul>
-<h4 id="高性能-VPN"><a href="#高性能-VPN" class="headerlink" title="高性能 VPN"></a>高性能 VPN</h4><p>以 API 级别 30 及更高级别为目标平台的应用或在搭载 API 级别 29 及更高级别的设备上运行的应用可以将 IKEv2/IPsec 应用于 VPN（包括用户配置的 VPN 和基于应用的 VPN）。</p>
-<p>VPN 本身在操作系统上运行，从而简化了在应用中建立 IKEv2/IPset VPN 连接所需的代码。</p>
-<h4 id="每个进程的网络访问控制"><a href="#每个进程的网络访问控制" class="headerlink" title="每个进程的网络访问控制"></a>每个进程的网络访问控制</h4><p>如需了解如何针对各进程启用网络访问权限，请参阅<a href="https://developer.android.google.cn/training/basics/network-ops/managing#manage-usage" target="_blank" rel="noopener">管理网络使用情况</a>。</p>
-<h4 id="允许安装的多种-Passpoint-配置具有相同的-FQDN"><a href="#允许安装的多种-Passpoint-配置具有相同的-FQDN" class="headerlink" title="允许安装的多种 Passpoint 配置具有相同的 FQDN"></a>允许安装的多种 Passpoint 配置具有相同的 FQDN</h4><p>从 Android 11 开始，您可以使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/hotspot2/PasspointConfiguration#getUniqueId(" target="_blank" rel="noopener"><code>PasspointConfiguration.getUniqueId()</code></a>) 获取 <code>PasspointConfiguration</code> 对象的专有标识符，这样可让使用应用的用户安装多个具有相同完全限定域名 (FQDN) 的配置文件。</p>
-<p>当运营商在其网络上部署多个移动设备国家/地区代码 (MCC) 和移动网络代码 (MNC) 组合，但只有一个 FQDN 时，此功能非常有用。在 Android 11 及更高版本中，当用户安装具有 MCC 或 MNC 的 SIM 卡时，可以安装多个具有相同 FQDN（它将与家庭网络服务提供商提供的网络匹配）的配置文件。</p>
-<p><strong>注意</strong>：各配置由唯一键进行标识，该键取决于配置的内容。如需更新现有配置文件，您必须使用 <a href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#removePasspointConfiguration(java.lang.String" target="_blank" rel="noopener"><code>WifiManager.removePasspointConfiguration()</code></a>) 将其移除。如果不移除现有配置，会导致添加一个包含两种配置的新配置文件。</p>
-<h4 id="GNSS-天线支持"><a href="#GNSS-天线支持" class="headerlink" title="GNSS 天线支持"></a>GNSS 天线支持</h4><p>Android 11 引入了 <a href="https://developer.android.google.cn/reference/kotlin/android/location/GnssAntennaInfo" target="_blank" rel="noopener"><code>GnssAntennaInfo</code></a> 类，让您的应用能够更多地利用全球导航卫星系统 (GNSS) 提供的厘米精度定位。</p>
-<p>如需了解详情，请参阅有关<a href="https://developer.android.google.cn/guide/topics/sensors/gnss#antenna-calibration-information" target="_blank" rel="noopener">天线校准信息</a>的指南。</p>
-<h3 id="图形"><a href="#图形" class="headerlink" title="图形"></a>图形</h3><h4 id="NDK-图像解码器"><a href="#NDK-图像解码器" class="headerlink" title="NDK 图像解码器"></a>NDK 图像解码器</h4><p>NDK <a href="https://developer.android.google.cn/ndk/reference/group/image-decoder" target="_blank" rel="noopener"><code>ImageDecoder</code></a> API 提供了一种标准 API，供 Android C/C++ 应用直接解码图像。应用开发者不再需要使用框架 API（通过 JNI）或捆绑第三方图像解码库。有关详情，请参阅<a href="https://developer.android.google.cn/ndk/guides/image-decoder" target="_blank" rel="noopener">图像解码器开发者指南</a>。</p>
-<h4 id="Frame-rate-API"><a href="#Frame-rate-API" class="headerlink" title="Frame rate API"></a>Frame rate API</h4><p>Android 11 提供了一个 API，可让应用告知系统其预期帧速率，从而减少支持多个刷新率的设备上的抖动。有关如何使用此 API 的信息，请参阅<a href="https://developer.android.google.cn/guide/topics/media/frame-rate" target="_blank" rel="noopener">帧速率指南</a>。</p>
-<h4 id="请求并检查低延时支持"><a href="#请求并检查低延时支持" class="headerlink" title="请求并检查低延时支持"></a>请求并检查低延时支持</h4><p>特定的显示屏可以执行图形后期处理，例如某些外部显示屏和电视。此类后期处理改善了图形质量，但可能会增加延时。支持 HDMI 2.1 的新款显示屏具有自动低延时模式（ALLM，也称为游戏模式），该模式可以通过关闭后期处理以最大限度地缩短延时。如需详细了解 ALLM，请参阅 <a href="https://www.hdmi.org/spec/hdmi2_1" target="_blank" rel="noopener">HDMI 2.1 规范</a>。</p>
+<h4 id="高性能-VPN"><a href="#高性能-VPN" class="headerlink" title="高性能 VPN"></a>高性能 VPN</h4><p>以 API 级别 30 及更高级别为目标平台的应用或在搭载 API 级别 29 及更高级别的设备上运行的应用可以将 IKEv2&#x2F;IPsec 应用于 VPN（包括用户配置的 VPN 和基于应用的 VPN）。</p>
+<p>VPN 本身在操作系统上运行，从而简化了在应用中建立 IKEv2&#x2F;IPset VPN 连接所需的代码。</p>
+<h4 id="每个进程的网络访问控制"><a href="#每个进程的网络访问控制" class="headerlink" title="每个进程的网络访问控制"></a>每个进程的网络访问控制</h4><p>如需了解如何针对各进程启用网络访问权限，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/basics/network-ops/managing#manage-usage">管理网络使用情况</a>。</p>
+<h4 id="允许安装的多种-Passpoint-配置具有相同的-FQDN"><a href="#允许安装的多种-Passpoint-配置具有相同的-FQDN" class="headerlink" title="允许安装的多种 Passpoint 配置具有相同的 FQDN"></a>允许安装的多种 Passpoint 配置具有相同的 FQDN</h4><p>从 Android 11 开始，您可以使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/hotspot2/PasspointConfiguration#getUniqueId()"><code>PasspointConfiguration.getUniqueId()</code></a> 获取 <code>PasspointConfiguration</code> 对象的专有标识符，这样可让使用应用的用户安装多个具有相同完全限定域名 (FQDN) 的配置文件。</p>
+<p>当运营商在其网络上部署多个移动设备国家&#x2F;地区代码 (MCC) 和移动网络代码 (MNC) 组合，但只有一个 FQDN 时，此功能非常有用。在 Android 11 及更高版本中，当用户安装具有 MCC 或 MNC 的 SIM 卡时，可以安装多个具有相同 FQDN（它将与家庭网络服务提供商提供的网络匹配）的配置文件。</p>
+<p><strong>注意</strong>：各配置由唯一键进行标识，该键取决于配置的内容。如需更新现有配置文件，您必须使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#removePasspointConfiguration(java.lang.String)"><code>WifiManager.removePasspointConfiguration()</code></a> 将其移除。如果不移除现有配置，会导致添加一个包含两种配置的新配置文件。</p>
+<h4 id="GNSS-天线支持"><a href="#GNSS-天线支持" class="headerlink" title="GNSS 天线支持"></a>GNSS 天线支持</h4><p>Android 11 引入了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/location/GnssAntennaInfo"><code>GnssAntennaInfo</code></a> 类，让您的应用能够更多地利用全球导航卫星系统 (GNSS) 提供的厘米精度定位。</p>
+<p>如需了解详情，请参阅有关<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/sensors/gnss#antenna-calibration-information">天线校准信息</a>的指南。</p>
+<h3 id="图形"><a href="#图形" class="headerlink" title="图形"></a>图形</h3><h4 id="NDK-图像解码器"><a href="#NDK-图像解码器" class="headerlink" title="NDK 图像解码器"></a>NDK 图像解码器</h4><p>NDK <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/reference/group/image-decoder"><code>ImageDecoder</code></a> API 提供了一种标准 API，供 Android C&#x2F;C++ 应用直接解码图像。应用开发者不再需要使用框架 API（通过 JNI）或捆绑第三方图像解码库。有关详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/image-decoder">图像解码器开发者指南</a>。</p>
+<h4 id="Frame-rate-API"><a href="#Frame-rate-API" class="headerlink" title="Frame rate API"></a>Frame rate API</h4><p>Android 11 提供了一个 API，可让应用告知系统其预期帧速率，从而减少支持多个刷新率的设备上的抖动。有关如何使用此 API 的信息，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/media/frame-rate">帧速率指南</a>。</p>
+<h4 id="请求并检查低延时支持"><a href="#请求并检查低延时支持" class="headerlink" title="请求并检查低延时支持"></a>请求并检查低延时支持</h4><p>特定的显示屏可以执行图形后期处理，例如某些外部显示屏和电视。此类后期处理改善了图形质量，但可能会增加延时。支持 HDMI 2.1 的新款显示屏具有自动低延时模式（ALLM，也称为游戏模式），该模式可以通过关闭后期处理以最大限度地缩短延时。如需详细了解 ALLM，请参阅 <a target="_blank" rel="noopener" href="https://www.hdmi.org/spec/hdmi2_1">HDMI 2.1 规范</a>。</p>
 <p>窗口可以请求使用自动低延时模式（如果可用）。ALLM 对于游戏和视频会议等应用特别有用，因为对于这些应用而言，低延时的重要性要高于拥有最佳的图形质量。</p>
-<p>如需开启或关闭最低限度的后期处理，请调用 <a href="https://developer.android.google.cn/reference/android/view/Window#setPreferMinimalPostProcessing(boolean" target="_blank" rel="noopener"><code>Window.setPreferMinimalPostProcessing()</code></a>)，或将窗口的 <a href="https://developer.android.google.cn/reference/android/R.attr#preferMinimalPostProcessing" target="_blank" rel="noopener"><code>preferMinimalPostProcessing</code></a> 属性设置为 <code>true</code>。并非所有的显示屏都支持最低限度的后期处理；如需了解某个显示屏是否支持该功能，可调用新方法 <a href="https://developer.android.google.cn/reference/android/view/Display#isMinimalPostProcessingSupported(" target="_blank" rel="noopener"><code>Display.isMinimalPostProcessingSupported()</code></a>)。</p>
+<p>如需开启或关闭最低限度的后期处理，请调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/Window#setPreferMinimalPostProcessing(boolean)"><code>Window.setPreferMinimalPostProcessing()</code></a>，或将窗口的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/R.attr#preferMinimalPostProcessing"><code>preferMinimalPostProcessing</code></a> 属性设置为 <code>true</code>。并非所有的显示屏都支持最低限度的后期处理；如需了解某个显示屏是否支持该功能，可调用新方法 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/view/Display#isMinimalPostProcessingSupported()"><code>Display.isMinimalPostProcessingSupported()</code></a>。</p>
 <p><strong>注意</strong>：如果用户停用最低限度的后期处理，或者显示屏不支持低延时模式，那么调用 <code>Window.setPreferMinimalPostProcessing()</code> 不会有任何作用。</p>
-<h4 id="高性能图形调试层注入"><a href="#高性能图形调试层注入" class="headerlink" title="高性能图形调试层注入"></a>高性能图形调试层注入</h4><p>应用现在可以将外部图形层（<a href="https://developer.android.google.cn/ndk/guides/rootless-debug-gles" target="_blank" rel="noopener">GLES</a>、<a href="https://developer.android.google.cn/ndk/guides/graphics/validation-layer" target="_blank" rel="noopener">Vulkan</a>）加载到原生应用代码中，可以在不产生性能开销的前提下，提供与可调试应用相同的功能。在使用 <a href="https://gapid.dev/" target="_blank" rel="noopener">GAPID</a> 等工具对应用进行性能剖析时，此功能尤为重要。如需对应用进行性能剖析，只需要在应用清单文件中添加以下<a href="https://developer.android.google.cn/guide/topics/manifest/meta-data-element" target="_blank" rel="noopener">元数据元素</a>，而无需让应用变成可调试应用：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">...</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"com.android.graphics.injectLayers.enable"</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="图片和相机"><a href="#图片和相机" class="headerlink" title="图片和相机"></a>图片和相机</h3><h4 id="在主动拍摄期间关闭通知提示音和振动"><a href="#在主动拍摄期间关闭通知提示音和振动" class="headerlink" title="在主动拍摄期间关闭通知提示音和振动"></a>在主动拍摄期间关闭通知提示音和振动</h4><p>从 Android 11 开始，在主动使用相机时，您的应用可以使用 <a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraDevice#setCameraAudioRestriction(int" target="_blank" rel="noopener"><code>setCameraAudioRestriction()</code></a>) 以仅关闭振动、同时关闭声音和振动或都不关闭。</p>
-<h4 id="Android-模拟器中的相机支持扩展"><a href="#Android-模拟器中的相机支持扩展" class="headerlink" title="Android 模拟器中的相机支持扩展"></a>Android 模拟器中的相机支持扩展</h4><p>如需了解自 Android 11 起模拟器中的相机支持扩展，请参阅<a href="https://developer.android.google.cn/studio/run/emulator#camera" target="_blank" rel="noopener">相机支持</a>。</p>
+<h4 id="高性能图形调试层注入"><a href="#高性能图形调试层注入" class="headerlink" title="高性能图形调试层注入"></a>高性能图形调试层注入</h4><p>应用现在可以将外部图形层（<a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/rootless-debug-gles">GLES</a>、<a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/graphics/validation-layer">Vulkan</a>）加载到原生应用代码中，可以在不产生性能开销的前提下，提供与可调试应用相同的功能。在使用 <a target="_blank" rel="noopener" href="https://gapid.dev/">GAPID</a> 等工具对应用进行性能剖析时，此功能尤为重要。如需对应用进行性能剖析，只需要在应用清单文件中添加以下<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/manifest/meta-data-element">元数据元素</a>，而无需让应用变成可调试应用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">...</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.android.graphics.injectLayers.enable&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">android:value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="图片和相机"><a href="#图片和相机" class="headerlink" title="图片和相机"></a>图片和相机</h3><h4 id="在主动拍摄期间关闭通知提示音和振动"><a href="#在主动拍摄期间关闭通知提示音和振动" class="headerlink" title="在主动拍摄期间关闭通知提示音和振动"></a>在主动拍摄期间关闭通知提示音和振动</h4><p>从 Android 11 开始，在主动使用相机时，您的应用可以使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraDevice#setCameraAudioRestriction(int)"><code>setCameraAudioRestriction()</code></a> 以仅关闭振动、同时关闭声音和振动或都不关闭。</p>
+<h4 id="Android-模拟器中的相机支持扩展"><a href="#Android-模拟器中的相机支持扩展" class="headerlink" title="Android 模拟器中的相机支持扩展"></a>Android 模拟器中的相机支持扩展</h4><p>如需了解自 Android 11 起模拟器中的相机支持扩展，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/run/emulator#camera">相机支持</a>。</p>
 <h3 id="支持并发使用多个摄像头"><a href="#支持并发使用多个摄像头" class="headerlink" title="支持并发使用多个摄像头"></a>支持并发使用多个摄像头</h3><p>Android 11 添加了 API 以查询对同时使用多个摄像头（包括前置摄像头和后置摄像头）的支持。</p>
 <p>如需在运行应用的设备上检查支持情况，请使用以下方法：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraManager#getConcurrentCameraIds(" target="_blank" rel="noopener"><code>getConcurrentCameraIds()</code></a>) 可返回摄像头 ID 组合 <code>Set</code>，这些组合可与有保证的数据流组合并发进行流式传输（如果它们是由同一应用进程配置的）。</li>
-<li><a href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraManager#isConcurrentSessionConfigurationSupported(java.util.Map" target="_blank" rel="noopener"><code>isConcurrentSessionConfigurationSupported()</code></a>) 可查询摄像头设备是否可以并发支持相应的会话配置。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraManager#getConcurrentCameraIds()"><code>getConcurrentCameraIds()</code></a> 可返回摄像头 ID 组合 <code>Set</code>，这些组合可与有保证的数据流组合并发进行流式传输（如果它们是由同一应用进程配置的）。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/hardware/camera2/CameraManager#isConcurrentSessionConfigurationSupported(java.util.Map)"><code>isConcurrentSessionConfigurationSupported()</code></a> 可查询摄像头设备是否可以并发支持相应的会话配置。</li>
 </ul>
-<h4 id="更好地支持包含多个帧的-HEIF-图片"><a href="#更好地支持包含多个帧的-HEIF-图片" class="headerlink" title="更好地支持包含多个帧的 HEIF 图片"></a>更好地支持包含多个帧的 HEIF 图片</h4><p>从 Android 11 开始，如果您调用 <a href="https://developer.android.google.cn/reference/android/graphics/ImageDecoder#decodeDrawable(android.graphics.ImageDecoder.Source" target="_blank" rel="noopener"><code>ImageDecoder.decodeDrawable()</code></a>) 并传递包含帧序列的 HEIF 图片（如动画或连拍照片），则该方法会返回包含整个图片序列的 <a href="https://developer.android.google.cn/reference/android/graphics/drawable/AnimatedImageDrawable" target="_blank" rel="noopener"><code>AnimatedImageDrawable</code></a>。在较低版本的 Android 系统中，该方法会返回仅包含单个帧的 <code>BitmapDrawable</code>。</p>
-<p>如果 HEIF 图片包含的多个帧不在一个序列中，您可以通过调用 <a href="https://developer.android.google.cn/reference/android/media/MediaMetadataRetriever#getImageAtIndex(int" target="_blank" rel="noopener"><code>MediaMetadataRetriever.getImageAtIndex()</code></a>) 检索各个帧。</p>
+<h4 id="更好地支持包含多个帧的-HEIF-图片"><a href="#更好地支持包含多个帧的-HEIF-图片" class="headerlink" title="更好地支持包含多个帧的 HEIF 图片"></a>更好地支持包含多个帧的 HEIF 图片</h4><p>从 Android 11 开始，如果您调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/graphics/ImageDecoder#decodeDrawable(android.graphics.ImageDecoder.Source)"><code>ImageDecoder.decodeDrawable()</code></a> 并传递包含帧序列的 HEIF 图片（如动画或连拍照片），则该方法会返回包含整个图片序列的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/graphics/drawable/AnimatedImageDrawable"><code>AnimatedImageDrawable</code></a>。在较低版本的 Android 系统中，该方法会返回仅包含单个帧的 <code>BitmapDrawable</code>。</p>
+<p>如果 HEIF 图片包含的多个帧不在一个序列中，您可以通过调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/media/MediaMetadataRetriever#getImageAtIndex(int)"><code>MediaMetadataRetriever.getImageAtIndex()</code></a> 检索各个帧。</p>
 <h3 id="无障碍功能"><a href="#无障碍功能" class="headerlink" title="无障碍功能"></a>无障碍功能</h3><h4 id="面向无障碍服务开发者的更新"><a href="#面向无障碍服务开发者的更新" class="headerlink" title="面向无障碍服务开发者的更新"></a>面向无障碍服务开发者的更新</h4><p>如果您创建自定义无障碍服务，可以在 Android 11 中使用以下功能：</p>
 <ul>
 <li>在无障碍服务的面向用户的解释中，除了纯文本之外，现在还允许使用 HTML 和图片。这种灵活性可让您更轻松地向最终用户解释您的服务有何功能以及对他们有何帮助。</li>
 <li>如需使用比 <code>contentDescription</code> 在语义上更有意义的界面元素的状态说明，请调用 <code>getStateDescription()</code> 方法。</li>
-<li>如需请求触摸事件绕过系统的触摸浏览器，请调用 <a href="https://developer.android.google.cn/reference/kotlin/android/accessibilityservice/AccessibilityService#setTouchExplorationPassthroughRegion" target="_blank" rel="noopener"><code>setTouchExplorationPassthroughRegion()</code></a>。同样，如需请求手势绕过系统的手势检测器，请调用 <a href="https://developer.android.google.cn/reference/kotlin/android/accessibilityservice/AccessibilityService#setGestureDetectionPassthroughRegion(kotlin.Int, android.graphics.Region" target="_blank" rel="noopener"><code>setGestureDetectionPassthroughRegion()</code></a>)。</li>
+<li>如需请求触摸事件绕过系统的触摸浏览器，请调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/accessibilityservice/AccessibilityService#setTouchExplorationPassthroughRegion"><code>setTouchExplorationPassthroughRegion()</code></a>。同样，如需请求手势绕过系统的手势检测器，请调用 [<code>setGestureDetectionPassthroughRegion()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/accessibilityservice/AccessibilityService#setGestureDetectionPassthroughRegion">https://developer.android.google.cn/reference/kotlin/android/accessibilityservice/AccessibilityService#setGestureDetectionPassthroughRegion</a>(kotlin.Int, android.graphics.Region))。</li>
 <li>您可以请求 IME 操作（如“输入”和“下一个”），以及不启用 <code>FLAG_SECURE</code> 标记的窗口的屏幕截图。</li>
 </ul>
-<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="应用进程退出原因"><a href="#应用进程退出原因" class="headerlink" title="应用进程退出原因"></a>应用进程退出原因</h3><p>Android 11 引入了 <a href="https://developer.android.google.cn/reference/kotlin/android/app/ActivityManager#gethistoricalprocessexitreasons" target="_blank" rel="noopener"><code>ActivityManager.getHistoricalProcessExitReasons()</code></a> 方法，用于报告近期任何进程终止的原因。应用可以使用此方法收集崩溃诊断信息，例如进程终止是由于 ANR、内存问题还是其他原因所致。此外，您还可以使用新的 <a href="https://developer.android.google.cn/reference/android/app/ActivityManager#setProcessStateSummary(byte[]" target="_blank" rel="noopener"><code>setProcessStateSummary()</code></a>) 方法存储自定义状态信息，以便日后进行分析。</p>
-<p><code>getHistoricalProcessExitReasons()</code> 方法会返回 <a href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo" target="_blank" rel="noopener"><code>ApplicationExitInfo</code></a> 类的实例，该类包含与应用进程终止相关的信息。通过对此类的实例调用 <code>getReason()</code>，您可以确定应用进程终止的原因。例如，返回值为 <code>REASON_CRASH</code> 表示您的应用中发生了未处理的异常。如果您的应用需要确保退出事件的唯一性，它可以维护一个应用专用的标识符，如基于来自 <a href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo#gettimestamp" target="_blank" rel="noopener"><code>getTimestamp()</code></a> 方法的时间戳的哈希值。</p>
-<p><strong>注意</strong>：某些设备无法报告内存不足终止事件。在这些设备上，<code>getHistoricalProcessExitReasons()</code> 方法会返回 <code>REASON_SIGNALED</code> 而不是 <code>REASON_LOW_MEMORY</code>，并且 <a href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo#getstatus" target="_blank" rel="noopener"><code>getStatus()</code></a> 的返回值为 <code>SIGKILL</code>。</p>
-<p>如需检查设备是否可以报告内存不足终止事件，请调用 <a href="https://developer.android.google.cn/reference/kotlin/android/app/ActivityManager#islowmemorykillreportsupported" target="_blank" rel="noopener"><code>ActivityManager.isLowMemoryKillReportSupported()</code></a>。</p>
-<h3 id="资源加载器"><a href="#资源加载器" class="headerlink" title="资源加载器"></a>资源加载器</h3><p>Android 11 引入了一个新 API，允许应用动态扩展资源的搜索和加载方式。新的 API 类 <a href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesLoader" target="_blank" rel="noopener"><code>ResourcesLoader</code></a> 和 <a href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesProvider" target="_blank" rel="noopener"><code>ResourcesProvider</code></a> 主要负责提供新功能。两者协同作用，可以提供额外的资源，或修改现有资源的值。</p>
-<p><code>ResourcesLoader</code> 对象是向应用的 <a href="https://developer.android.google.cn/reference/kotlin/android/content/res/Resources" target="_blank" rel="noopener"><code>Resources</code></a> 实例提供 <code>ResourcesProvider</code> 对象的容器，而 <code>ResourcesProvider</code> 对象提供从 APK 和资源表加载资源数据的方法。</p>
-<p>此 API 的一个主要用例是自定义资源加载。您可以使用 <a href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesProvider#loadfromdirectory" target="_blank" rel="noopener"><code>loadFromDirectory()</code></a> 创建一个 <code>ResourcesProvider</code>，用于重定向基于文件的资源的解析，从而让其搜索特定目录，而不是应用 APK。您可以通过 <a href="https://developer.android.google.cn/reference/kotlin/android/content/res/AssetManager" target="_blank" rel="noopener"><code>AssetManager</code></a> API 类中的 <code>open()</code> 系列方法访问这些资源，就像访问 APK 中绑定的资源一样。</p>
-<h3 id="APK-签名方案-v4"><a href="#APK-签名方案-v4" class="headerlink" title="APK 签名方案 v4"></a>APK 签名方案 v4</h3><p>Android 11 添加了对 <a href="https://developer.android.google.cn/studio/command-line/apksigner#v4-signing-enabled" target="_blank" rel="noopener">APK 签名方案 v4</a> 的支持。此方案会在单独的文件 (<code>apk-name.apk.idsig</code>) 中生成一种新的签名，但在其他方面与 v2 和 v3 类似。没有对 APK 进行任何更改。此方案支持 <a href="https://developer.android.google.cn/about/versions/11/features#incremental" target="_blank" rel="noopener">ADB 增量 APK 安装</a>，这样会加快 APK 安装速度。</p>
-<h3 id="动态-intent-过滤器"><a href="#动态-intent-过滤器" class="headerlink" title="动态 intent 过滤器"></a>动态 intent 过滤器</h3><p>如需接收 intent，应用必须通过在其清单中定义 <a href="https://developer.android.google.cn/guide/components/intents-filters#Receiving" target="_blank" rel="noopener">intent 过滤器</a>，在编译时声明它能够接收哪些类型的数据。在 Android 10 及更低版本中，应用无法在运行时更改其 intent 过滤器。这对于虚拟化应用（如虚拟机和远程桌面）而言是一个问题，因为这些应用无法确切得知用户将在它们内部安装什么软件。</p>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="应用进程退出原因"><a href="#应用进程退出原因" class="headerlink" title="应用进程退出原因"></a>应用进程退出原因</h3><p>Android 11 引入了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/app/ActivityManager#gethistoricalprocessexitreasons"><code>ActivityManager.getHistoricalProcessExitReasons()</code></a> 方法，用于报告近期任何进程终止的原因。应用可以使用此方法收集崩溃诊断信息，例如进程终止是由于 ANR、内存问题还是其他原因所致。此外，您还可以使用新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/ActivityManager#setProcessStateSummary(byte[])"><code>setProcessStateSummary()</code></a> 方法存储自定义状态信息，以便日后进行分析。</p>
+<p><code>getHistoricalProcessExitReasons()</code> 方法会返回 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo"><code>ApplicationExitInfo</code></a> 类的实例，该类包含与应用进程终止相关的信息。通过对此类的实例调用 <code>getReason()</code>，您可以确定应用进程终止的原因。例如，返回值为 <code>REASON_CRASH</code> 表示您的应用中发生了未处理的异常。如果您的应用需要确保退出事件的唯一性，它可以维护一个应用专用的标识符，如基于来自 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo#gettimestamp"><code>getTimestamp()</code></a> 方法的时间戳的哈希值。</p>
+<p><strong>注意</strong>：某些设备无法报告内存不足终止事件。在这些设备上，<code>getHistoricalProcessExitReasons()</code> 方法会返回 <code>REASON_SIGNALED</code> 而不是 <code>REASON_LOW_MEMORY</code>，并且 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/app/ApplicationExitInfo#getstatus"><code>getStatus()</code></a> 的返回值为 <code>SIGKILL</code>。</p>
+<p>如需检查设备是否可以报告内存不足终止事件，请调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/app/ActivityManager#islowmemorykillreportsupported"><code>ActivityManager.isLowMemoryKillReportSupported()</code></a>。</p>
+<h3 id="资源加载器"><a href="#资源加载器" class="headerlink" title="资源加载器"></a>资源加载器</h3><p>Android 11 引入了一个新 API，允许应用动态扩展资源的搜索和加载方式。新的 API 类 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesLoader"><code>ResourcesLoader</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesProvider"><code>ResourcesProvider</code></a> 主要负责提供新功能。两者协同作用，可以提供额外的资源，或修改现有资源的值。</p>
+<p><code>ResourcesLoader</code> 对象是向应用的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/res/Resources"><code>Resources</code></a> 实例提供 <code>ResourcesProvider</code> 对象的容器，而 <code>ResourcesProvider</code> 对象提供从 APK 和资源表加载资源数据的方法。</p>
+<p>此 API 的一个主要用例是自定义资源加载。您可以使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/res/loader/ResourcesProvider#loadfromdirectory"><code>loadFromDirectory()</code></a> 创建一个 <code>ResourcesProvider</code>，用于重定向基于文件的资源的解析，从而让其搜索特定目录，而不是应用 APK。您可以通过 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/res/AssetManager"><code>AssetManager</code></a> API 类中的 <code>open()</code> 系列方法访问这些资源，就像访问 APK 中绑定的资源一样。</p>
+<h3 id="APK-签名方案-v4"><a href="#APK-签名方案-v4" class="headerlink" title="APK 签名方案 v4"></a>APK 签名方案 v4</h3><p>Android 11 添加了对 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/apksigner#v4-signing-enabled">APK 签名方案 v4</a> 的支持。此方案会在单独的文件 (<code>apk-name.apk.idsig</code>) 中生成一种新的签名，但在其他方面与 v2 和 v3 类似。没有对 APK 进行任何更改。此方案支持 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/11/features#incremental">ADB 增量 APK 安装</a>，这样会加快 APK 安装速度。</p>
+<h3 id="动态-intent-过滤器"><a href="#动态-intent-过滤器" class="headerlink" title="动态 intent 过滤器"></a>动态 intent 过滤器</h3><p>如需接收 intent，应用必须通过在其清单中定义 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/intents-filters#Receiving">intent 过滤器</a>，在编译时声明它能够接收哪些类型的数据。在 Android 10 及更低版本中，应用无法在运行时更改其 intent 过滤器。这对于虚拟化应用（如虚拟机和远程桌面）而言是一个问题，因为这些应用无法确切得知用户将在它们内部安装什么软件。</p>
 <p>Android 11 引入了 MIME 组，这是一个新的清单元素，可让应用在 intent 过滤器中声明一组动态的 MIME 类型，并在运行时以编程方式对其进行修改。如需使用 MIME 组，请使用新的 <code>android:mimeGroup</code> 属性在应用清单中添加一个数据元素：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.SEND"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeGroup</span>=<span class="string">"myMimeGroup"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>android:mimeGroup</code> 属性的值是任意字符串 ID，用于在运行时标识 MIME 组。您可以通过将某个 MIME 组的 ID 传递给 <a href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager" target="_blank" rel="noopener"><code>PackageManager</code></a> API 类中的以下新方法，访问和更新该 MIME 组的内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.SEND&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.DEFAULT&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeGroup</span>=<span class="string">&quot;myMimeGroup&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>android:mimeGroup</code> 属性的值是任意字符串 ID，用于在运行时标识 MIME 组。您可以通过将某个 MIME 组的 ID 传递给 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager"><code>PackageManager</code></a> API 类中的以下新方法，访问和更新该 MIME 组的内容：</p>
 <ul>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager#getmimegroup" target="_blank" rel="noopener"><code>getMimeGroup()</code></a></li>
-<li><a href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager#setmimegroup" target="_blank" rel="noopener"><code>setMimeGroup()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager#getmimegroup"><code>getMimeGroup()</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/content/pm/PackageManager#setmimegroup"><code>setMimeGroup()</code></a></li>
 </ul>
 <p>如果您以编程方式将 MIME 类型添加到 MIME 组，其运作方式与清单中明确声明的静态 MIME 类型完全相同。</p>
 <p><strong>注意</strong>：<code>mimeGroup</code> 字符串是基于每个软件包定义的。在同一软件包中，您可以在多个 intent 过滤器或组件中使用相同的 <code>mimeGroup</code> 字符串以声明它们之间共享的 MIME 组。不同的软件包不能共享 MIME 组，但它们可以使用相同的 <code>mimeGroup</code> 字符串，而不相互干扰。</p>
 <h3 id="自动填充增强功能"><a href="#自动填充增强功能" class="headerlink" title="自动填充增强功能"></a>自动填充增强功能</h3><p>Android 11 改进了自动填充服务。</p>
-<h4 id="AssistStructure-ViewNode-中的提示标识符"><a href="#AssistStructure-ViewNode-中的提示标识符" class="headerlink" title="AssistStructure.ViewNode 中的提示标识符"></a>AssistStructure.ViewNode 中的提示标识符</h4><p>对自动填充服务来说，根据视图的属性计算视图的签名哈希值通常很有用。在计算签名哈希值时，<a href="https://developer.android.google.cn/guide/topics/text/autofill-optimize#hints" target="_blank" rel="noopener">视图提示</a>是一个非常值得参考的属性，但提示字符串可能会随着手机的语言区域而发生变化。为了解决此问题，Android 11 使用新的 <a href="https://developer.android.google.cn/reference/android/app/assist/AssistStructure.ViewNode#getHintIdEntry(" target="_blank" rel="noopener"><code>getHintIdEntry()</code></a>) 方法扩展了 <a href="https://developer.android.google.cn/reference/android/app/assist/AssistStructure.ViewNode" target="_blank" rel="noopener"><code>AssistStructure.ViewNode</code></a>，该方法会返回视图提示文本的资源标识符。此方法提供一个与语言区域无关的值，可用于计算签名哈希值。</p>
-<h4 id="提供了数据集的事件"><a href="#提供了数据集的事件" class="headerlink" title="提供了数据集的事件"></a>提供了数据集的事件</h4><p>为了帮助自动填充服务提高建议内容的质量，Android 11 提供了一种方法以识别自动填充服务提供了数据集但用户未选择任何数据集的情况。在 Android 11 中，<a href="https://developer.android.google.cn/reference/kotlin/android/service/autofill/FillEventHistory" target="_blank" rel="noopener"><code>FillEventHistory</code></a> 会报告一种新的 <a href="https://developer.android.google.cn/reference/android/service/autofill/FillEventHistory.Event#TYPE_DATASETS_SHOWN" target="_blank" rel="noopener"><code>TYPE_DATASETS_SHOWN</code></a> 事件类型。每当自动填充服务向用户提供一个或多个数据集时，<code>FillEventHistory</code> 就会记录此类型的事件。自动填充服务可以将这些事件与现有的 <a href="https://developer.android.google.cn/reference/android/service/autofill/FillEventHistory.Event#TYPE_DATASET_SELECTED" target="_blank" rel="noopener"><code>TYPE_DATASET_SELECTED</code></a> 事件结合使用来确定用户是否选择了任何提供的自动填充选项。</p>
-<h4 id="IME-集成"><a href="#IME-集成" class="headerlink" title="IME 集成"></a>IME 集成</h4><p>键盘及其他 IME 现在可以在建议栏或类似的界面中以内嵌方式显示自动填充建议，而不是在下拉菜单中显示这些建议。为了保护密码和信用卡号等敏感信息，系统会将建议显示给用户，但在用户选择某条建议之前，IME 并不知道这些建议。如需了解 IME 和密码管理器如何支持此功能，请参阅<a href="https://developer.android.google.cn/guide/topics/text/features/ime-autofill" target="_blank" rel="noopener">将自动填充功能与键盘集成</a>。</p>
+<h4 id="AssistStructure-ViewNode-中的提示标识符"><a href="#AssistStructure-ViewNode-中的提示标识符" class="headerlink" title="AssistStructure.ViewNode 中的提示标识符"></a>AssistStructure.ViewNode 中的提示标识符</h4><p>对自动填充服务来说，根据视图的属性计算视图的签名哈希值通常很有用。在计算签名哈希值时，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/text/autofill-optimize#hints">视图提示</a>是一个非常值得参考的属性，但提示字符串可能会随着手机的语言区域而发生变化。为了解决此问题，Android 11 使用新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/assist/AssistStructure.ViewNode#getHintIdEntry()"><code>getHintIdEntry()</code></a> 方法扩展了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/assist/AssistStructure.ViewNode"><code>AssistStructure.ViewNode</code></a>，该方法会返回视图提示文本的资源标识符。此方法提供一个与语言区域无关的值，可用于计算签名哈希值。</p>
+<h4 id="提供了数据集的事件"><a href="#提供了数据集的事件" class="headerlink" title="提供了数据集的事件"></a>提供了数据集的事件</h4><p>为了帮助自动填充服务提高建议内容的质量，Android 11 提供了一种方法以识别自动填充服务提供了数据集但用户未选择任何数据集的情况。在 Android 11 中，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/service/autofill/FillEventHistory"><code>FillEventHistory</code></a> 会报告一种新的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/service/autofill/FillEventHistory.Event#TYPE_DATASETS_SHOWN"><code>TYPE_DATASETS_SHOWN</code></a> 事件类型。每当自动填充服务向用户提供一个或多个数据集时，<code>FillEventHistory</code> 就会记录此类型的事件。自动填充服务可以将这些事件与现有的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/service/autofill/FillEventHistory.Event#TYPE_DATASET_SELECTED"><code>TYPE_DATASET_SELECTED</code></a> 事件结合使用来确定用户是否选择了任何提供的自动填充选项。</p>
+<h4 id="IME-集成"><a href="#IME-集成" class="headerlink" title="IME 集成"></a>IME 集成</h4><p>键盘及其他 IME 现在可以在建议栏或类似的界面中以内嵌方式显示自动填充建议，而不是在下拉菜单中显示这些建议。为了保护密码和信用卡号等敏感信息，系统会将建议显示给用户，但在用户选择某条建议之前，IME 并不知道这些建议。如需了解 IME 和密码管理器如何支持此功能，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/text/features/ime-autofill">将自动填充功能与键盘集成</a>。</p>
 <h3 id="与内容捕获服务共享数据"><a href="#与内容捕获服务共享数据" class="headerlink" title="与内容捕获服务共享数据"></a>与内容捕获服务共享数据</h3><p>从 Android 11 开始，应用可以与设备的内容捕获服务共享数据。借助此功能，设备可以更轻松地提供情境智能，例如显示用户环境中正在播放的歌曲的名称。</p>
-<p>如需将应用中的数据共享给内容捕获服务，请对 <code>ContentCaptureManager</code> 的实例调用 <a href="https://developer.android.google.cn/reference/kotlin/android/view/contentcapture/ContentCaptureManager#sharedata" target="_blank" rel="noopener"><code>shareData()</code></a> 方法。如果系统接受数据共享请求，应用会收到将与内容捕获服务共享的只写文件描述符。</p>
+<p>如需将应用中的数据共享给内容捕获服务，请对 <code>ContentCaptureManager</code> 的实例调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/view/contentcapture/ContentCaptureManager#sharedata"><code>shareData()</code></a> 方法。如果系统接受数据共享请求，应用会收到将与内容捕获服务共享的只写文件描述符。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android11%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/" rel="prev" title="以 Android 11 为目标平台的应用行为变更">
+      <i class="fa fa-chevron-left"></i> 以 Android 11 为目标平台的应用行为变更
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/" rel="next" title="Android12 所有应用行为变更">
+      Android12 所有应用行为变更 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Android/Android更新/Android11 行为变更之TargetSDK/" rel="next" title="以 Android 11 为目标平台的应用行为变更">
-                <i class="fa fa-chevron-left"></i> 以 Android 11 为目标平台的应用行为变更
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Android/Android更新/Android11 行为变更之所有应用/" rel="prev" title="Android11 所有应用行为变更">
-                Android11 所有应用行为变更 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新体验"><span class="nav-number">1.</span> <span class="nav-text">新体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设备控件"><span class="nav-number">1.1.</span> <span class="nav-text">设备控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体控件"><span class="nav-number">1.2.</span> <span class="nav-text">媒体控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕"><span class="nav-number">1.3.</span> <span class="nav-text">屏幕</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更好地支持瀑布屏"><span class="nav-number">1.3.1.</span> <span class="nav-text">更好地支持瀑布屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合页角度传感器和可折叠设备"><span class="nav-number">1.3.2.</span> <span class="nav-text">合页角度传感器和可折叠设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对话"><span class="nav-number">1.4.</span> <span class="nav-text">对话</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#改进了会话"><span class="nav-number">1.4.1.</span> <span class="nav-text">改进了会话</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聊天气泡"><span class="nav-number">1.4.2.</span> <span class="nav-text">聊天气泡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5G-图标显示"><span class="nav-number">1.5.</span> <span class="nav-text">5G 图标显示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐私权"><span class="nav-number">2.</span> <span class="nav-text">隐私权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重大隐私权变更"><span class="nav-number">3.</span> <span class="nav-text">重大隐私权变更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全"><span class="nav-number">4.</span> <span class="nav-text">安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生物识别身份验证机制更新"><span class="nav-number">4.1.</span> <span class="nav-text">生物识别身份验证机制更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#身份验证类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">身份验证类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确定用户所用的身份验证类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">确定用户所用的身份验证类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对“每次使用时进行身份验证”密钥的额外支持"><span class="nav-number">4.1.3.</span> <span class="nav-text">对“每次使用时进行身份验证”密钥的额外支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#已弃用的方法"><span class="nav-number">4.1.4.</span> <span class="nav-text">已弃用的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全共享大型数据集"><span class="nav-number">4.2.</span> <span class="nav-text">安全共享大型数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因-OTA-更新而重启设备后在未提供用户凭据的情况下执行文件级加密"><span class="nav-number">4.3.</span> <span class="nav-text">因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能和质量"><span class="nav-number">5.</span> <span class="nav-text">性能和质量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无线调试"><span class="nav-number">5.1.</span> <span class="nav-text">无线调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADB-增量-APK-安装"><span class="nav-number">5.2.</span> <span class="nav-text">ADB 增量 APK 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用原生内存分配器进行错误检测"><span class="nav-number">5.3.</span> <span class="nav-text">使用原生内存分配器进行错误检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Neural-Networks-API-1-3"><span class="nav-number">5.4.</span> <span class="nav-text">Neural Networks API 1.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新运算方式"><span class="nav-number">5.4.1.</span> <span class="nav-text">新运算方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新的机器学习控件"><span class="nav-number">5.4.2.</span> <span class="nav-text">新的机器学习控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDK-Thermal-API"><span class="nav-number">5.4.3.</span> <span class="nav-text">NDK Thermal API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本和输入"><span class="nav-number">5.5.</span> <span class="nav-text">文本和输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#改进了-IME-转换"><span class="nav-number">5.5.1.</span> <span class="nav-text">改进了 IME 转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#控制-IME-动画"><span class="nav-number">5.5.1.1.</span> <span class="nav-text">控制 IME 动画</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ICU-库更新"><span class="nav-number">5.5.2.</span> <span class="nav-text">ICU 库更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体"><span class="nav-number">5.6.</span> <span class="nav-text">媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分配-MediaCodec-缓冲区"><span class="nav-number">5.6.1.</span> <span class="nav-text">分配 MediaCodec 缓冲区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新类："><span class="nav-number">5.6.1.1.</span> <span class="nav-text">新类：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新方法："><span class="nav-number">5.6.1.2.</span> <span class="nav-text">新方法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MediaCodec-低延时解码"><span class="nav-number">5.6.2.</span> <span class="nav-text">MediaCodec 低延时解码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新的-AAudio-函数-AAudioStream-release"><span class="nav-number">5.6.3.</span> <span class="nav-text">新的 AAudio 函数 AAudioStream_release()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MediaParser-API"><span class="nav-number">5.6.4.</span> <span class="nav-text">MediaParser API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过-USB-设备捕获音频"><span class="nav-number">5.6.5.</span> <span class="nav-text">通过 USB 设备捕获音频</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发访问麦克风"><span class="nav-number">5.6.6.</span> <span class="nav-text">并发访问麦克风</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出切换器"><span class="nav-number">5.6.7.</span> <span class="nav-text">输出切换器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络连接"><span class="nav-number">5.7.</span> <span class="nav-text">网络连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wi-Fi-Passpoint-增强功能"><span class="nav-number">5.7.1.</span> <span class="nav-text">Wi-Fi Passpoint 增强功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wi-Fi-Suggestion-API-扩展"><span class="nav-number">5.7.2.</span> <span class="nav-text">Wi-Fi Suggestion API 扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CallScreeningService-更新"><span class="nav-number">5.7.3.</span> <span class="nav-text">CallScreeningService 更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Open-Mobile-API-更新"><span class="nav-number">5.7.4.</span> <span class="nav-text">Open Mobile API 更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高性能-VPN"><span class="nav-number">5.7.5.</span> <span class="nav-text">高性能 VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#每个进程的网络访问控制"><span class="nav-number">5.7.6.</span> <span class="nav-text">每个进程的网络访问控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#允许安装的多种-Passpoint-配置具有相同的-FQDN"><span class="nav-number">5.7.7.</span> <span class="nav-text">允许安装的多种 Passpoint 配置具有相同的 FQDN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GNSS-天线支持"><span class="nav-number">5.7.8.</span> <span class="nav-text">GNSS 天线支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形"><span class="nav-number">5.8.</span> <span class="nav-text">图形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NDK-图像解码器"><span class="nav-number">5.8.1.</span> <span class="nav-text">NDK 图像解码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frame-rate-API"><span class="nav-number">5.8.2.</span> <span class="nav-text">Frame rate API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求并检查低延时支持"><span class="nav-number">5.8.3.</span> <span class="nav-text">请求并检查低延时支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高性能图形调试层注入"><span class="nav-number">5.8.4.</span> <span class="nav-text">高性能图形调试层注入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片和相机"><span class="nav-number">5.9.</span> <span class="nav-text">图片和相机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在主动拍摄期间关闭通知提示音和振动"><span class="nav-number">5.9.1.</span> <span class="nav-text">在主动拍摄期间关闭通知提示音和振动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-模拟器中的相机支持扩展"><span class="nav-number">5.9.2.</span> <span class="nav-text">Android 模拟器中的相机支持扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持并发使用多个摄像头"><span class="nav-number">5.10.</span> <span class="nav-text">支持并发使用多个摄像头</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更好地支持包含多个帧的-HEIF-图片"><span class="nav-number">5.10.1.</span> <span class="nav-text">更好地支持包含多个帧的 HEIF 图片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无障碍功能"><span class="nav-number">5.11.</span> <span class="nav-text">无障碍功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向无障碍服务开发者的更新"><span class="nav-number">5.11.1.</span> <span class="nav-text">面向无障碍服务开发者的更新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他功能"><span class="nav-number">6.</span> <span class="nav-text">其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用进程退出原因"><span class="nav-number">6.1.</span> <span class="nav-text">应用进程退出原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源加载器"><span class="nav-number">6.2.</span> <span class="nav-text">资源加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APK-签名方案-v4"><span class="nav-number">6.3.</span> <span class="nav-text">APK 签名方案 v4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态-intent-过滤器"><span class="nav-number">6.4.</span> <span class="nav-text">动态 intent 过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动填充增强功能"><span class="nav-number">6.5.</span> <span class="nav-text">自动填充增强功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AssistStructure-ViewNode-中的提示标识符"><span class="nav-number">6.5.1.</span> <span class="nav-text">AssistStructure.ViewNode 中的提示标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提供了数据集的事件"><span class="nav-number">6.5.2.</span> <span class="nav-text">提供了数据集的事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IME-集成"><span class="nav-number">6.5.3.</span> <span class="nav-text">IME 集成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与内容捕获服务共享数据"><span class="nav-number">6.6.</span> <span class="nav-text">与内容捕获服务共享数据</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E4%BD%93%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">新体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">设备控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AA%92%E4%BD%93%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">媒体控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95"><span class="nav-number">1.3.</span> <span class="nav-text">屏幕</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E5%A5%BD%E5%9C%B0%E6%94%AF%E6%8C%81%E7%80%91%E5%B8%83%E5%B1%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">更好地支持瀑布屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E9%A1%B5%E8%A7%92%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E5%92%8C%E5%8F%AF%E6%8A%98%E5%8F%A0%E8%AE%BE%E5%A4%87"><span class="nav-number">1.3.2.</span> <span class="nav-text">合页角度传感器和可折叠设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%AF%9D"><span class="nav-number">1.4.</span> <span class="nav-text">对话</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E4%BA%86%E4%BC%9A%E8%AF%9D"><span class="nav-number">1.4.1.</span> <span class="nav-text">改进了会话</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%8A%E5%A4%A9%E6%B0%94%E6%B3%A1"><span class="nav-number">1.4.2.</span> <span class="nav-text">聊天气泡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5G-%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA"><span class="nav-number">1.5.</span> <span class="nav-text">5G 图标显示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E7%A7%81%E6%9D%83"><span class="nav-number">2.</span> <span class="nav-text">隐私权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%A4%A7%E9%9A%90%E7%A7%81%E6%9D%83%E5%8F%98%E6%9B%B4"><span class="nav-number">3.</span> <span class="nav-text">重大隐私权变更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8"><span class="nav-number">4.</span> <span class="nav-text">安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E7%89%A9%E8%AF%86%E5%88%AB%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E6%9B%B4%E6%96%B0"><span class="nav-number">4.1.</span> <span class="nav-text">生物识别身份验证机制更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.1.1.</span> <span class="nav-text">身份验证类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E7%94%A8%E6%88%B7%E6%89%80%E7%94%A8%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.1.2.</span> <span class="nav-text">确定用户所用的身份验证类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E2%80%9C%E6%AF%8F%E6%AC%A1%E4%BD%BF%E7%94%A8%E6%97%B6%E8%BF%9B%E8%A1%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E2%80%9D%E5%AF%86%E9%92%A5%E7%9A%84%E9%A2%9D%E5%A4%96%E6%94%AF%E6%8C%81"><span class="nav-number">4.1.3.</span> <span class="nav-text">对“每次使用时进行身份验证”密钥的额外支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E5%BC%83%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.4.</span> <span class="nav-text">已弃用的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%85%B1%E4%BA%AB%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">4.2.</span> <span class="nav-text">安全共享大型数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A0-OTA-%E6%9B%B4%E6%96%B0%E8%80%8C%E9%87%8D%E5%90%AF%E8%AE%BE%E5%A4%87%E5%90%8E%E5%9C%A8%E6%9C%AA%E6%8F%90%E4%BE%9B%E7%94%A8%E6%88%B7%E5%87%AD%E6%8D%AE%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BA%A7%E5%8A%A0%E5%AF%86"><span class="nav-number">4.3.</span> <span class="nav-text">因 OTA 更新而重启设备后在未提供用户凭据的情况下执行文件级加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%92%8C%E8%B4%A8%E9%87%8F"><span class="nav-number">5.</span> <span class="nav-text">性能和质量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%BA%BF%E8%B0%83%E8%AF%95"><span class="nav-number">5.1.</span> <span class="nav-text">无线调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADB-%E5%A2%9E%E9%87%8F-APK-%E5%AE%89%E8%A3%85"><span class="nav-number">5.2.</span> <span class="nav-text">ADB 增量 APK 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9F%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%99%A8%E8%BF%9B%E8%A1%8C%E9%94%99%E8%AF%AF%E6%A3%80%E6%B5%8B"><span class="nav-number">5.3.</span> <span class="nav-text">使用原生内存分配器进行错误检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Neural-Networks-API-1-3"><span class="nav-number">5.4.</span> <span class="nav-text">Neural Networks API 1.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F"><span class="nav-number">5.4.1.</span> <span class="nav-text">新运算方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6"><span class="nav-number">5.4.2.</span> <span class="nav-text">新的机器学习控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NDK-Thermal-API"><span class="nav-number">5.4.3.</span> <span class="nav-text">NDK Thermal API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%92%8C%E8%BE%93%E5%85%A5"><span class="nav-number">5.5.</span> <span class="nav-text">文本和输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E4%BA%86-IME-%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.5.1.</span> <span class="nav-text">改进了 IME 转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6-IME-%E5%8A%A8%E7%94%BB"><span class="nav-number">5.5.1.1.</span> <span class="nav-text">控制 IME 动画</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ICU-%E5%BA%93%E6%9B%B4%E6%96%B0"><span class="nav-number">5.5.2.</span> <span class="nav-text">ICU 库更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AA%92%E4%BD%93"><span class="nav-number">5.6.</span> <span class="nav-text">媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%85%8D-MediaCodec-%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">5.6.1.</span> <span class="nav-text">分配 MediaCodec 缓冲区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E7%B1%BB%EF%BC%9A"><span class="nav-number">5.6.1.1.</span> <span class="nav-text">新类：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">5.6.1.2.</span> <span class="nav-text">新方法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MediaCodec-%E4%BD%8E%E5%BB%B6%E6%97%B6%E8%A7%A3%E7%A0%81"><span class="nav-number">5.6.2.</span> <span class="nav-text">MediaCodec 低延时解码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E7%9A%84-AAudio-%E5%87%BD%E6%95%B0-AAudioStream-release"><span class="nav-number">5.6.3.</span> <span class="nav-text">新的 AAudio 函数 AAudioStream_release()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MediaParser-API"><span class="nav-number">5.6.4.</span> <span class="nav-text">MediaParser API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-USB-%E8%AE%BE%E5%A4%87%E6%8D%95%E8%8E%B7%E9%9F%B3%E9%A2%91"><span class="nav-number">5.6.5.</span> <span class="nav-text">通过 USB 设备捕获音频</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E8%AE%BF%E9%97%AE%E9%BA%A6%E5%85%8B%E9%A3%8E"><span class="nav-number">5.6.6.</span> <span class="nav-text">并发访问麦克风</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%88%87%E6%8D%A2%E5%99%A8"><span class="nav-number">5.6.7.</span> <span class="nav-text">输出切换器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="nav-number">5.7.</span> <span class="nav-text">网络连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wi-Fi-Passpoint-%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">5.7.1.</span> <span class="nav-text">Wi-Fi Passpoint 增强功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wi-Fi-Suggestion-API-%E6%89%A9%E5%B1%95"><span class="nav-number">5.7.2.</span> <span class="nav-text">Wi-Fi Suggestion API 扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CallScreeningService-%E6%9B%B4%E6%96%B0"><span class="nav-number">5.7.3.</span> <span class="nav-text">CallScreeningService 更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Open-Mobile-API-%E6%9B%B4%E6%96%B0"><span class="nav-number">5.7.4.</span> <span class="nav-text">Open Mobile API 更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD-VPN"><span class="nav-number">5.7.5.</span> <span class="nav-text">高性能 VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="nav-number">5.7.6.</span> <span class="nav-text">每个进程的网络访问控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%AE%89%E8%A3%85%E7%9A%84%E5%A4%9A%E7%A7%8D-Passpoint-%E9%85%8D%E7%BD%AE%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84-FQDN"><span class="nav-number">5.7.7.</span> <span class="nav-text">允许安装的多种 Passpoint 配置具有相同的 FQDN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GNSS-%E5%A4%A9%E7%BA%BF%E6%94%AF%E6%8C%81"><span class="nav-number">5.7.8.</span> <span class="nav-text">GNSS 天线支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2"><span class="nav-number">5.8.</span> <span class="nav-text">图形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NDK-%E5%9B%BE%E5%83%8F%E8%A7%A3%E7%A0%81%E5%99%A8"><span class="nav-number">5.8.1.</span> <span class="nav-text">NDK 图像解码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frame-rate-API"><span class="nav-number">5.8.2.</span> <span class="nav-text">Frame rate API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%B9%B6%E6%A3%80%E6%9F%A5%E4%BD%8E%E5%BB%B6%E6%97%B6%E6%94%AF%E6%8C%81"><span class="nav-number">5.8.3.</span> <span class="nav-text">请求并检查低延时支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD%E5%9B%BE%E5%BD%A2%E8%B0%83%E8%AF%95%E5%B1%82%E6%B3%A8%E5%85%A5"><span class="nav-number">5.8.4.</span> <span class="nav-text">高性能图形调试层注入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%92%8C%E7%9B%B8%E6%9C%BA"><span class="nav-number">5.9.</span> <span class="nav-text">图片和相机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E5%8A%A8%E6%8B%8D%E6%91%84%E6%9C%9F%E9%97%B4%E5%85%B3%E9%97%AD%E9%80%9A%E7%9F%A5%E6%8F%90%E7%A4%BA%E9%9F%B3%E5%92%8C%E6%8C%AF%E5%8A%A8"><span class="nav-number">5.9.1.</span> <span class="nav-text">在主动拍摄期间关闭通知提示音和振动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-%E6%A8%A1%E6%8B%9F%E5%99%A8%E4%B8%AD%E7%9A%84%E7%9B%B8%E6%9C%BA%E6%94%AF%E6%8C%81%E6%89%A9%E5%B1%95"><span class="nav-number">5.9.2.</span> <span class="nav-text">Android 模拟器中的相机支持扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E6%91%84%E5%83%8F%E5%A4%B4"><span class="nav-number">5.10.</span> <span class="nav-text">支持并发使用多个摄像头</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E5%A5%BD%E5%9C%B0%E6%94%AF%E6%8C%81%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E5%B8%A7%E7%9A%84-HEIF-%E5%9B%BE%E7%89%87"><span class="nav-number">5.10.1.</span> <span class="nav-text">更好地支持包含多个帧的 HEIF 图片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E9%9A%9C%E7%A2%8D%E5%8A%9F%E8%83%BD"><span class="nav-number">5.11.</span> <span class="nav-text">无障碍功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%97%A0%E9%9A%9C%E7%A2%8D%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="nav-number">5.11.1.</span> <span class="nav-text">面向无障碍服务开发者的更新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E5%8E%9F%E5%9B%A0"><span class="nav-number">6.1.</span> <span class="nav-text">应用进程退出原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">6.2.</span> <span class="nav-text">资源加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APK-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88-v4"><span class="nav-number">6.3.</span> <span class="nav-text">APK 签名方案 v4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81-intent-%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">6.4.</span> <span class="nav-text">动态 intent 过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">6.5.</span> <span class="nav-text">自动填充增强功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AssistStructure-ViewNode-%E4%B8%AD%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">6.5.1.</span> <span class="nav-text">AssistStructure.ViewNode 中的提示标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B%E4%BA%86%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-number">6.5.2.</span> <span class="nav-text">提供了数据集的事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IME-%E9%9B%86%E6%88%90"><span class="nav-number">6.5.3.</span> <span class="nav-text">IME 集成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E5%86%85%E5%AE%B9%E6%8D%95%E8%8E%B7%E6%9C%8D%E5%8A%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE"><span class="nav-number">6.6.</span> <span class="nav-text">与内容捕获服务共享数据</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

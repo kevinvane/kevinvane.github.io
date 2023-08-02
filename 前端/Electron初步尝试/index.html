@@ -1,169 +1,49 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="按照官网的 【Quick Start】 教程做一遍  一、创建工程123456789101112131415161718192021222324252627282930313233$ mkdir electron-app$ cd electron-app/$ yarn init 或者 npm init$ lspackage.json$ cat package.json&amp;#123;  &quot;name&quot;">
-<meta name="keywords" content="Electron">
+  <meta name="description" content="按照官网的 【Quick Start】 教程做一遍  一、创建工程12345678910111213141516171819202122232425262728293031323334$ mkdir electron-app$ cd electron-app&#x2F;$ yarn init 或者 npm init$ lspackage.json$ cat package.json&amp;#123;  &amp;quo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron初步尝试">
-<meta property="og:url" content="http://yoursite.com/前端/Electron初步尝试/index.html">
+<meta property="og:url" content="http://yoursite.com/%E5%89%8D%E7%AB%AF/Electron%E5%88%9D%E6%AD%A5%E5%B0%9D%E8%AF%95/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="按照官网的 【Quick Start】 教程做一遍  一、创建工程123456789101112131415161718192021222324252627282930313233$ mkdir electron-app$ cd electron-app/$ yarn init 或者 npm init$ lspackage.json$ cat package.json&amp;#123;  &quot;name&quot;">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/前端/electron1.png">
-<meta property="og:image" content="http://yoursite.com/images/前端/electron2.png">
-<meta property="og:updated_time" content="2022-01-05T07:04:16.549Z">
+<meta property="og:description" content="按照官网的 【Quick Start】 教程做一遍  一、创建工程12345678910111213141516171819202122232425262728293031323334$ mkdir electron-app$ cd electron-app&#x2F;$ yarn init 或者 npm init$ lspackage.json$ cat package.json&amp;#123;  &amp;quo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/%E5%89%8D%E7%AB%AF/electron1.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%89%8D%E7%AB%AF/electron2.png">
+<meta property="article:published_time" content="2022-01-04T11:52:36.000Z">
+<meta property="article:modified_time" content="2022-01-05T07:04:16.549Z">
+<meta property="article:author" content="KevinWen">
+<meta property="article:tag" content="Electron">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Electron初步尝试">
-<meta name="twitter:description" content="按照官网的 【Quick Start】 教程做一遍  一、创建工程123456789101112131415161718192021222324252627282930313233$ mkdir electron-app$ cd electron-app/$ yarn init 或者 npm init$ lspackage.json$ cat package.json&amp;#123;  &quot;name&quot;">
-<meta name="twitter:image" content="http://yoursite.com/images/前端/electron1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/%E5%89%8D%E7%AB%AF/electron1.png">
+
+<link rel="canonical" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Electron%E5%88%9D%E6%AD%A5%E5%B0%9D%E8%AF%95/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/前端/Electron初步尝试/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -175,381 +55,203 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/前端/Electron初步尝试/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Electron%E5%88%9D%E6%AD%A5%E5%B0%9D%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Electron初步尝试
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Electron初步尝试
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2022-01-04 19:52:36" itemprop="dateCreated datePublished" datetime="2022-01-04T19:52:36+08:00">2022-01-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2022-01-05 15:04:16" itemprop="dateModified" datetime="2022-01-05T15:04:16+08:00">2022-01-05</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -557,1124 +259,288 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <blockquote>
-<p>按照官网的 <a href="https://www.electronjs.org/zh/docs/latest/tutorial/quick-start" target="_blank" rel="noopener">【Quick Start】</a> 教程做一遍</p>
+<p>按照官网的 <a target="_blank" rel="noopener" href="https://www.electronjs.org/zh/docs/latest/tutorial/quick-start">【Quick Start】</a> 教程做一遍</p>
 </blockquote>
-<h2 id="一、创建工程"><a href="#一、创建工程" class="headerlink" title="一、创建工程"></a>一、创建工程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir electron-app</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> electron-app/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn init 或者 npm init</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">package.json</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-demo",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "author": "demo",</span><br><span class="line">  "license": "MIT"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装electron开发依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn --registry=https://registry.npm.taobao.org add --dev electron</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm --registry=https://registry.npm.taobao.org install --save-dev electron</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">node_modules/  package.json  yarn.lock</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-demo",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "author": "demo",</span><br><span class="line">  "license": "MIT",</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "electron": "^16.0.6"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二、增加命令"><a href="#二、增加命令" class="headerlink" title="二、增加命令"></a>二、增加命令</h2><p>package.json 增加一条 start 命令<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"electron-demo"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"this is demo"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"demo"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"electron"</span>: <span class="string">"^16.0.6"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"electron ."</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、Demo代码"><a href="#三、Demo代码" class="headerlink" title="三、Demo代码"></a>三、Demo代码</h2><p>index.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"script-src 'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">    'unsafe-inline';"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        We are using Node.js <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"node-version"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line">        Chromium <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"chrome-version"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line">        and Electron <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"electron-version"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 您也可以此进程中运行其他文件 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script src="./renderer.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>index.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 控制应用生命周期和创建原生浏览器窗口的模组</span></span><br><span class="line"><span class="keyword">const</span> &#123; app, BrowserWindow &#125; = <span class="built_in">require</span>(<span class="string">'electron'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> win = <span class="keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">    width: <span class="number">800</span>,</span><br><span class="line">    height: <span class="number">600</span>,</span><br><span class="line">    webPreferences: &#123;</span><br><span class="line">      preload: path.join(__dirname, <span class="string">'preload.js'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  win.loadFile(<span class="string">'index.html'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 打开开发工具</span></span><br><span class="line">  <span class="comment">// mainWindow.webContents.openDevTools()</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这段程序将会在 Electron 结束初始化</span></span><br><span class="line"><span class="comment">// 和创建浏览器窗口的时候调用</span></span><br><span class="line"><span class="comment">// 部分 API 在 ready 事件触发后才能使用。</span></span><br><span class="line">app.whenReady().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  createWindow()</span><br><span class="line"></span><br><span class="line">  app.on(<span class="string">'activate'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// 通常在 macOS 上，当点击 dock 中的应用程序图标时，如果没有其他</span></span><br><span class="line">    <span class="comment">// 打开的窗口，那么程序会重新创建一个窗口。</span></span><br><span class="line">    <span class="keyword">if</span> (BrowserWindow.getAllWindows().length === <span class="number">0</span>) &#123;</span><br><span class="line">      createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 除了 macOS 外，当所有窗口都被关闭的时候退出程序。 因此，通常对程序和它们在</span></span><br><span class="line"><span class="comment">// 任务栏上的图标来说，应当保持活跃状态，直到用户使用 Cmd + Q 退出。</span></span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">    app.quit()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在这个文件中，你可以包含应用程序剩余的所有部分的代码，</span></span><br><span class="line"><span class="comment">// 也可以拆分成几个文件，然后用 require 导入。</span></span><br></pre></td></tr></table></figure></p>
-<p>preload.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有Node.js API都可以在预加载过程中使用。</span></span><br><span class="line"><span class="comment">// 它拥有与Chrome扩展一样的沙盒。</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> replaceText = <span class="function">(<span class="params">selector, text</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> element = <span class="built_in">document</span>.getElementById(selector)</span><br><span class="line">      <span class="keyword">if</span> (element) element.innerText = text</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> type <span class="keyword">of</span> [<span class="string">'chrome'</span>, <span class="string">'node'</span>, <span class="string">'electron'</span>]) &#123;</span><br><span class="line">      replaceText(<span class="string">`<span class="subst">$&#123;type&#125;</span>-version`</span>, process.versions[type])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="四、启动"><a href="#四、启动" class="headerlink" title="四、启动"></a>四、启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> yarn start 或者 npm start</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/前端/electron1.png" alt></p>
-<p>占用内存大概67MB<br><img src="/images/前端/electron2.png" alt></p>
-<h2 id="五、打包分发"><a href="#五、打包分发" class="headerlink" title="五、打包分发"></a>五、打包分发</h2><p><a href="https://www.electronjs.org/zh/docs/latest/tutorial/application-distribution" target="_blank" rel="noopener">官网介绍</a>可以使用以下工具来分发您的应用程序：</p>
+<h2 id="一、创建工程"><a href="#一、创建工程" class="headerlink" title="一、创建工程"></a>一、创建工程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> electron-app</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> electron-app/</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn init 或者 npm init</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span></span></span><br><span class="line">package.json</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装electron开发依赖</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn --registry=https://registry.npm.taobao.org add --dev electron</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm --registry=https://registry.npm.taobao.org install --save-dev electron</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span></span></span><br><span class="line">node_modules/  package.json  yarn.lock</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;electron&quot;: &quot;^16.0.6&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、增加命令"><a href="#二、增加命令" class="headerlink" title="二、增加命令"></a>二、增加命令</h2><p>package.json 增加一条 start 命令</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;electron-demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;this is demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;index.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;MIT&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;electron&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^16.0.6&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;electron .&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Demo代码"><a href="#三、Demo代码" class="headerlink" title="三、Demo代码"></a>三、Demo代码</h2><p>index.html </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Security-Policy&quot;</span> <span class="attr">content</span>=<span class="string">&quot;script-src &#x27;self&#x27; </span></span></span><br><span class="line"><span class="string"><span class="tag">    &#x27;unsafe-inline&#x27;;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        We are using Node.js <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;node-version&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line">        Chromium <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;chrome-version&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line">        and Electron <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;electron-version&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 您也可以此进程中运行其他文件 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script src=&quot;./renderer.js&quot;&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 控制应用生命周期和创建原生浏览器窗口的模组</span></span><br><span class="line"><span class="keyword">const</span> &#123; app, <span class="title class_">BrowserWindow</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;electron&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createWindow</span> () &#123;</span><br><span class="line">  <span class="keyword">const</span> win = <span class="keyword">new</span> <span class="title class_">BrowserWindow</span>(&#123;</span><br><span class="line">    <span class="attr">width</span>: <span class="number">800</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">600</span>,</span><br><span class="line">    <span class="attr">webPreferences</span>: &#123;</span><br><span class="line">      <span class="attr">preload</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;preload.js&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  win.<span class="title function_">loadFile</span>(<span class="string">&#x27;index.html&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 打开开发工具</span></span><br><span class="line">  <span class="comment">// mainWindow.webContents.openDevTools()</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这段程序将会在 Electron 结束初始化</span></span><br><span class="line"><span class="comment">// 和创建浏览器窗口的时候调用</span></span><br><span class="line"><span class="comment">// 部分 API 在 ready 事件触发后才能使用。</span></span><br><span class="line">app.<span class="title function_">whenReady</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">createWindow</span>()</span><br><span class="line"></span><br><span class="line">  app.<span class="title function_">on</span>(<span class="string">&#x27;activate&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通常在 macOS 上，当点击 dock 中的应用程序图标时，如果没有其他</span></span><br><span class="line">    <span class="comment">// 打开的窗口，那么程序会重新创建一个窗口。</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title class_">BrowserWindow</span>.<span class="title function_">getAllWindows</span>().<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="title function_">createWindow</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 除了 macOS 外，当所有窗口都被关闭的时候退出程序。 因此，通常对程序和它们在</span></span><br><span class="line"><span class="comment">// 任务栏上的图标来说，应当保持活跃状态，直到用户使用 Cmd + Q 退出。</span></span><br><span class="line">app.<span class="title function_">on</span>(<span class="string">&#x27;window-all-closed&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (process.<span class="property">platform</span> !== <span class="string">&#x27;darwin&#x27;</span>) &#123;</span><br><span class="line">    app.<span class="title function_">quit</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在这个文件中，你可以包含应用程序剩余的所有部分的代码，</span></span><br><span class="line"><span class="comment">// 也可以拆分成几个文件，然后用 require 导入。</span></span><br></pre></td></tr></table></figure>
+
+<p>preload.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有Node.js API都可以在预加载过程中使用。</span></span><br><span class="line"><span class="comment">// 它拥有与Chrome扩展一样的沙盒。</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">replaceText</span> = (<span class="params">selector, text</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(selector)</span><br><span class="line">      <span class="keyword">if</span> (element) element.<span class="property">innerText</span> = text</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> type <span class="keyword">of</span> [<span class="string">&#x27;chrome&#x27;</span>, <span class="string">&#x27;node&#x27;</span>, <span class="string">&#x27;electron&#x27;</span>]) &#123;</span><br><span class="line">      <span class="title function_">replaceText</span>(<span class="string">`<span class="subst">$&#123;type&#125;</span>-version`</span>, process.<span class="property">versions</span>[type])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<h2 id="四、启动"><a href="#四、启动" class="headerlink" title="四、启动"></a>四、启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn start 或者 npm start</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E5%89%8D%E7%AB%AF/electron1.png"></p>
+<p>占用内存大概67MB<br><img src="/images/%E5%89%8D%E7%AB%AF/electron2.png"></p>
+<h2 id="五、打包分发"><a href="#五、打包分发" class="headerlink" title="五、打包分发"></a>五、打包分发</h2><p><a target="_blank" rel="noopener" href="https://www.electronjs.org/zh/docs/latest/tutorial/application-distribution">官网介绍</a>可以使用以下工具来分发您的应用程序：</p>
 <ul>
-<li><a href="https://github.com/electron-userland/electron-forge" target="_blank" rel="noopener">electron-forge</a></li>
-<li><a href="https://github.com/electron-userland/electron-builder" target="_blank" rel="noopener">electron-builder</a></li>
-<li><a href="https://github.com/electron/electron-packager" target="_blank" rel="noopener">electron-packager</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/electron-userland/electron-forge">electron-forge</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/electron-userland/electron-builder">electron-builder</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/electron/electron-packager">electron-packager</a></li>
 </ul>
-<p><code>electron-forge</code> 官网介绍这是最快捷的打包方式。<br><code>electron-builder</code>(推荐) <a href="https://www.electron.build" target="_blank" rel="noopener">官网</a>介绍这是一个完备的Electron应用打包和分发解决方案，它致力于软件开发的集成体验，另外还带有在线更新的功能。<br><code>electron-packager</code> 直接打包为单文件，不支持跨平台打包，打包后体积较大。</p>
+<p><code>electron-forge</code> 官网介绍这是最快捷的打包方式。<br><code>electron-builder</code>(推荐) <a target="_blank" rel="noopener" href="https://www.electron.build/">官网</a>介绍这是一个完备的Electron应用打包和分发解决方案，它致力于软件开发的集成体验，另外还带有在线更新的功能。<br><code>electron-packager</code> 直接打包为单文件，不支持跨平台打包，打包后体积较大。</p>
 <h3 id="5-1、electron-forge快捷打包"><a href="#5-1、electron-forge快捷打包" class="headerlink" title="5.1、electron-forge快捷打包"></a>5.1、electron-forge快捷打包</h3><p>forge可以自动检测你的系统，然后打包成对应的可执行文件，但是可配置项目比较少。</p>
-<h4 id="5-1-1、-安装forge依赖"><a href="#5-1-1、-安装forge依赖" class="headerlink" title="5.1.1、 安装forge依赖"></a>5.1.1、 安装forge依赖</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> yarn --registry=https://registry.npm.taobao.org add --dev @electron-forge/cli</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm --registry=https://registry.npm.taobao.org install --save-dev @electron-forge/cli</span></span><br><span class="line">npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142</span><br><span class="line">npm WARN deprecated har-validator@5.1.5: this library is no longer supported</span><br><span class="line">npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> lzma-native@8.0.1 install D:\electron-app\node_modules\lzma-native</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> node-gyp-build</span></span><br><span class="line"></span><br><span class="line">npm WARN electron-app@1.0.0 No repository field.</span><br><span class="line"></span><br><span class="line">+ @electron-forge/cli@6.0.0-beta.61</span><br><span class="line">added 472 packages from 359 contributors in 51.968s</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> npx electron-forge import</span></span><br><span class="line">- Checking your system</span><br><span class="line">‼ You are running Node.js version 12.9.1, but Electron Forge requires Node.js &gt;= 12.13.0.</span><br><span class="line">√ Checking your system</span><br><span class="line">It looks like you are missing some dependencies you need to get Electron running.</span><br><span class="line">Make sure you have git installed and Node.js version &gt;= 12.13.0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装nodejs版本[v12.16.0](https://nodejs.org/download/release/v12.16.0/)，重新来一次</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这个命令是初始化electron-forge，会自动修改 package.json 的内容: 添加几个打包的指令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npx electron-forge import</span></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Initializing Git Repository</span><br><span class="line">√ Initializing Git Repository</span><br><span class="line">- Writing modified package.json file</span><br><span class="line">√ Writing modified package.json file</span><br><span class="line">- Installing dependencies</span><br><span class="line">√ Installing dependencies</span><br><span class="line">- Writing modified package.json file</span><br><span class="line">√ Writing modified package.json file</span><br><span class="line">- Fixing .gitignore</span><br><span class="line">√ Fixing .gitignore</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">We have ATTEMPTED to convert your app to be in a format that electron-forge understands.</span><br><span class="line"></span><br><span class="line">Thanks for using "electron-forge"!!!</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-app",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "authors": "demo",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "license": "MIT",</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "@electron-forge/cli": "^6.0.0-beta.61",</span><br><span class="line">    "@electron-forge/maker-deb": "^6.0.0-beta.61",</span><br><span class="line">    "@electron-forge/maker-rpm": "^6.0.0-beta.61",</span><br><span class="line">    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",</span><br><span class="line">    "@electron-forge/maker-zip": "^6.0.0-beta.61",</span><br><span class="line">    "electron": "^16.0.6"</span><br><span class="line">  &#125;,</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "electron-forge start",</span><br><span class="line">    "package": "electron-forge package",</span><br><span class="line">    "make": "electron-forge make"</span><br><span class="line">  &#125;,</span><br><span class="line">  "dependencies": &#123;</span><br><span class="line">    "electron-squirrel-startup": "^1.0.0"</span><br><span class="line">  &#125;,</span><br><span class="line">  "config": &#123;</span><br><span class="line">    "forge": &#123;</span><br><span class="line">      "packagerConfig": &#123;&#125;,</span><br><span class="line">      "makers": [</span><br><span class="line">        &#123;</span><br><span class="line">          "name": "@electron-forge/maker-squirrel",</span><br><span class="line">          "config": &#123;</span><br><span class="line">            "name": "electron_app"</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          "name": "@electron-forge/maker-zip",</span><br><span class="line">          "platforms": [</span><br><span class="line">            "darwin"</span><br><span class="line">          ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          "name": "@electron-forge/maker-deb",</span><br><span class="line">          "config": &#123;&#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          "name": "@electron-forge/maker-rpm",</span><br><span class="line">          "config": &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-1-2、-forge-make-编译"><a href="#5-1-2、-forge-make-编译" class="headerlink" title="5.1.2、 forge make 编译"></a>5.1.2、 forge make 编译</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run package</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-app@1.0.0 package D:\gitlab\electron-app</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-forge package</span></span><br><span class="line"></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Preparing to Package Application for arch: x64</span><br><span class="line">√ Preparing to Package Application for arch: x64</span><br><span class="line">- Preparing native dependencies</span><br><span class="line">√ Preparing native dependencies</span><br><span class="line">- Packaging Application</span><br><span class="line">√ Packaging Application</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm run make</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意: package.json 中不能缺少 authors\description .</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-app@1.0.0 make D:\electron-app</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-forge make</span></span><br><span class="line"></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Resolving Forge Config</span><br><span class="line">√ Resolving Forge Config</span><br><span class="line">We need to package your application before we can make it</span><br><span class="line">- Preparing to Package Application for arch: x64</span><br><span class="line">√ Preparing to Package Application for arch: x64</span><br><span class="line">- Preparing native dependencies</span><br><span class="line">√ Preparing native dependencies</span><br><span class="line">- Packaging Application</span><br><span class="line">√ Packaging Application</span><br><span class="line">Making for the following targets: squirrel</span><br><span class="line">- Making for target: squirrel - On platform: win32 - For arch: x64</span><br><span class="line">√ Making for target: squirrel - On platform: win32 - For arch: x64</span><br></pre></td></tr></table></figure>
+<h4 id="5-1-1、-安装forge依赖"><a href="#5-1-1、-安装forge依赖" class="headerlink" title="5.1.1、 安装forge依赖"></a>5.1.1、 安装forge依赖</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn --registry=https://registry.npm.taobao.org add --dev @electron-forge/cli</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm --registry=https://registry.npm.taobao.org install --save-dev @electron-forge/cli</span></span><br><span class="line">npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142</span><br><span class="line">npm WARN deprecated har-validator@5.1.5: this library is no longer supported</span><br><span class="line">npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">lzma-native@8.0.1 install D:\electron-app\node_modules\lzma-native</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node-gyp-build</span></span><br><span class="line"></span><br><span class="line">npm WARN electron-app@1.0.0 No repository field.</span><br><span class="line"></span><br><span class="line">+ @electron-forge/cli@6.0.0-beta.61</span><br><span class="line">added 472 packages from 359 contributors in 51.968s</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npx electron-forge import</span></span><br><span class="line">- Checking your system</span><br><span class="line">‼ You are running Node.js version 12.9.1, but Electron Forge requires Node.js &gt;= 12.13.0.</span><br><span class="line">√ Checking your system</span><br><span class="line">It looks like you are missing some dependencies you need to get Electron running.</span><br><span class="line">Make sure you have git installed and Node.js version &gt;= 12.13.0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装nodejs版本[v12.16.0](https://nodejs.org/download/release/v12.16.0/)，重新来一次</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这个命令是初始化electron-forge，会自动修改 package.json 的内容: 添加几个打包的指令</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npx electron-forge import</span></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Initializing Git Repository</span><br><span class="line">√ Initializing Git Repository</span><br><span class="line">- Writing modified package.json file</span><br><span class="line">√ Writing modified package.json file</span><br><span class="line">- Installing dependencies</span><br><span class="line">√ Installing dependencies</span><br><span class="line">- Writing modified package.json file</span><br><span class="line">√ Writing modified package.json file</span><br><span class="line">- Fixing .gitignore</span><br><span class="line">√ Fixing .gitignore</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">We have ATTEMPTED to convert your app to be in a format that electron-forge understands.</span><br><span class="line"></span><br><span class="line">Thanks for using &quot;electron-forge&quot;!!!</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-app&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;authors&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;@electron-forge/cli&quot;: &quot;^6.0.0-beta.61&quot;,</span><br><span class="line">    &quot;@electron-forge/maker-deb&quot;: &quot;^6.0.0-beta.61&quot;,</span><br><span class="line">    &quot;@electron-forge/maker-rpm&quot;: &quot;^6.0.0-beta.61&quot;,</span><br><span class="line">    &quot;@electron-forge/maker-squirrel&quot;: &quot;^6.0.0-beta.61&quot;,</span><br><span class="line">    &quot;@electron-forge/maker-zip&quot;: &quot;^6.0.0-beta.61&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;^16.0.6&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;electron-forge start&quot;,</span><br><span class="line">    &quot;package&quot;: &quot;electron-forge package&quot;,</span><br><span class="line">    &quot;make&quot;: &quot;electron-forge make&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;electron-squirrel-startup&quot;: &quot;^1.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;config&quot;: &#123;</span><br><span class="line">    &quot;forge&quot;: &#123;</span><br><span class="line">      &quot;packagerConfig&quot;: &#123;&#125;,</span><br><span class="line">      &quot;makers&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;name&quot;: &quot;@electron-forge/maker-squirrel&quot;,</span><br><span class="line">          &quot;config&quot;: &#123;</span><br><span class="line">            &quot;name&quot;: &quot;electron_app&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;name&quot;: &quot;@electron-forge/maker-zip&quot;,</span><br><span class="line">          &quot;platforms&quot;: [</span><br><span class="line">            &quot;darwin&quot;</span><br><span class="line">          ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;name&quot;: &quot;@electron-forge/maker-deb&quot;,</span><br><span class="line">          &quot;config&quot;: &#123;&#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;name&quot;: &quot;@electron-forge/maker-rpm&quot;,</span><br><span class="line">          &quot;config&quot;: &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="5-1-2、-forge-make-编译"><a href="#5-1-2、-forge-make-编译" class="headerlink" title="5.1.2、 forge make 编译"></a>5.1.2、 forge make 编译</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm run package</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-app@1.0.0 package D:\gitlab\electron-app</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-forge package</span></span><br><span class="line"></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Preparing to Package Application for arch: x64</span><br><span class="line">√ Preparing to Package Application for arch: x64</span><br><span class="line">- Preparing native dependencies</span><br><span class="line">√ Preparing native dependencies</span><br><span class="line">- Packaging Application</span><br><span class="line">√ Packaging Application</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm run make</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意: package.json 中不能缺少 authors\description .</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-app@1.0.0 make D:\electron-app</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-forge make</span></span><br><span class="line"></span><br><span class="line">- Checking your system</span><br><span class="line">√ Checking your system</span><br><span class="line">- Resolving Forge Config</span><br><span class="line">√ Resolving Forge Config</span><br><span class="line">We need to package your application before we can make it</span><br><span class="line">- Preparing to Package Application for arch: x64</span><br><span class="line">√ Preparing to Package Application for arch: x64</span><br><span class="line">- Preparing native dependencies</span><br><span class="line">√ Preparing native dependencies</span><br><span class="line">- Packaging Application</span><br><span class="line">√ Packaging Application</span><br><span class="line">Making for the following targets: squirrel</span><br><span class="line">- Making for target: squirrel - On platform: win32 - For arch: x64</span><br><span class="line">√ Making for target: squirrel - On platform: win32 - For arch: x64</span><br></pre></td></tr></table></figure>
+
 <p>编译后的文件在 <code>out</code> 目录下：</p>
 <ul>
 <li><code>electron-app-win32-x64</code> 目录是打包(<code>electron-forge package</code>)目录，所有文件187MB，一般用于调试，不是分发。</li>
 <li><code>make/squirrel.windows/x64</code> 目录是编译(<code>electron-forge make</code>) 目录，只有一个文件79.5MB，这就是可以分发的包。</li>
 </ul>
 <p>运行占用内存72MB</p>
-<h4 id="5-1-3、-forge-跨平台打包"><a href="#5-1-3、-forge-跨平台打包" class="headerlink" title="5.1.3、 forge 跨平台打包"></a>5.1.3、 forge 跨平台打包</h4><p><a href="https://www.electronforge.io/config/makers" target="_blank" rel="noopener">【参考 electronforge makers 配置】</a></p>
+<h4 id="5-1-3、-forge-跨平台打包"><a href="#5-1-3、-forge-跨平台打包" class="headerlink" title="5.1.3、 forge 跨平台打包"></a>5.1.3、 forge 跨平台打包</h4><p><a target="_blank" rel="noopener" href="https://www.electronforge.io/config/makers">【参考 electronforge makers 配置】</a></p>
 <p>好像forge目前只能打包当前机器的平台，我在Win10平台通过修改配置，每次依然只输出Win平台，forge 并不会打包 linux 和 macos 平台的包，或者说我还没尝试成功？</p>
 <blockquote>
 <p>如果实在不支持跨平台打包，可以在Linux、MacOS平台进行打包。</p>
 </blockquote>
-<h3 id="5-2、-electron-builder打包"><a href="#5-2、-electron-builder打包" class="headerlink" title="5.2、 electron-builder打包"></a>5.2、 electron-builder打包</h3><p>本以为<code>electron-builder</code> 对跨平台构建支持的很好，但打开<a href="https://www.electron.build/multi-platform-build" target="_blank" rel="noopener">官网多平台构建</a>看到的第一段话却是：</p>
+<h3 id="5-2、-electron-builder打包"><a href="#5-2、-electron-builder打包" class="headerlink" title="5.2、 electron-builder打包"></a>5.2、 electron-builder打包</h3><p>本以为<code>electron-builder</code> 对跨平台构建支持的很好，但打开<a target="_blank" rel="noopener" href="https://www.electron.build/multi-platform-build">官网多平台构建</a>看到的第一段话却是：</p>
 <blockquote>
 <p>Don’t expect that you can build app for all platforms on one platform.<br>不要期望你可以在一个平台上创建适用于所有平台的应用。  </p>
 </blockquote>
 <p>本来 <code>electron-builder</code> 提供了一个在线跨平台构建的服务，但后来停掉了。</p>
-<p>现在<a href="https://www.electron.build/multi-platform-build#docker" target="_blank" rel="noopener">【官网】</a>推荐使用Docker镜像来做跨平台构建。<br><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> --rm -ti \</span></span><br><span class="line"><span class="bash"> --env-file &lt;(env | grep -iE <span class="string">'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_'</span>) \</span></span><br><span class="line"><span class="bash"> --env ELECTRON_CACHE=<span class="string">"/root/.cache/electron"</span> \</span></span><br><span class="line"><span class="bash"> --env ELECTRON_BUILDER_CACHE=<span class="string">"/root/.cache/electron-builder"</span> \</span></span><br><span class="line"><span class="bash"> -v <span class="variable">$&#123;PWD&#125;</span>:/project \</span></span><br><span class="line"><span class="bash"> -v <span class="variable">$&#123;PWD##*/&#125;</span>-node-modules:/project/node_modules \</span></span><br><span class="line"><span class="bash"> -v ~/.cache/electron:/root/.cache/electron \</span></span><br><span class="line"><span class="bash"> -v ~/.cache/electron-builder:/root/.cache/electron-builder \</span></span><br><span class="line"><span class="bash"> electronuserland/builder:wine</span></span><br></pre></td></tr></table></figure></p>
+<p>现在<a target="_blank" rel="noopener" href="https://www.electron.build/multi-platform-build#docker">【官网】</a>推荐使用Docker镜像来做跨平台构建。</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> --<span class="built_in">rm</span> -ti \</span></span><br><span class="line"><span class="language-bash"> --env-file &lt;(<span class="built_in">env</span> | grep -iE <span class="string">&#x27;DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_&#x27;</span>) \</span></span><br><span class="line"><span class="language-bash"> --<span class="built_in">env</span> ELECTRON_CACHE=<span class="string">&quot;/root/.cache/electron&quot;</span> \</span></span><br><span class="line"><span class="language-bash"> --<span class="built_in">env</span> ELECTRON_BUILDER_CACHE=<span class="string">&quot;/root/.cache/electron-builder&quot;</span> \</span></span><br><span class="line"><span class="language-bash"> -v <span class="variable">$&#123;PWD&#125;</span>:/project \</span></span><br><span class="line"><span class="language-bash"> -v <span class="variable">$&#123;PWD##*/&#125;</span>-node-modules:/project/node_modules \</span></span><br><span class="line"><span class="language-bash"> -v ~/.cache/electron:/root/.cache/electron \</span></span><br><span class="line"><span class="language-bash"> -v ~/.cache/electron-builder:/root/.cache/electron-builder \</span></span><br><span class="line"><span class="language-bash"> electronuserland/builder:wine</span></span><br></pre></td></tr></table></figure>
+
 <p>但还是不要想着跨平台构建了，说不定很多坑位呢？而且Windows上用Docker也是不少坑位的吧!<br>还是老老实实在相应的平台做构建吧！</p>
-<h4 id="5-2-1、-安装electron-builder依赖"><a href="#5-2-1、-安装electron-builder依赖" class="headerlink" title="5.2.1、 安装electron-builder依赖"></a>5.2.1、 安装electron-builder依赖</h4><p><a href="https://www.electron.build/#electron-builder" target="_blank" rel="noopener">官网参考</a></p>
+<h4 id="5-2-1、-安装electron-builder依赖"><a href="#5-2-1、-安装electron-builder依赖" class="headerlink" title="5.2.1、 安装electron-builder依赖"></a>5.2.1、 安装electron-builder依赖</h4><p><a target="_blank" rel="noopener" href="https://www.electron.build/#electron-builder">官网参考</a></p>
 <blockquote>
-<p>node 版本要求 &gt;=14.0.0</p>
+<p>node 版本要求 &gt;&#x3D;14.0.0</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">index.html  index.js  node_modules/  package.json  preload.js  yarn.lock</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-demo",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "author": "demo",</span><br><span class="line">  "license": "MIT",</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "electron": "^16.0.6"</span><br><span class="line">  &#125;,</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "electron ."</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn --registry=https://registry.npm.taobao.org add --dev electron-builder</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm --registry=https://registry.npm.taobao.org install --save-dev electron-builder</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-demo",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "author": "demo",</span><br><span class="line">  "license": "MIT",</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "electron": "^16.0.6",</span><br><span class="line">    "electron-builder": "^22.14.5"</span><br><span class="line">  &#125;,</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "electron ."</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim package.json</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  "name": "electron-demo",</span><br><span class="line">  "version": "1.0.0",</span><br><span class="line">  "description": "this is demo",</span><br><span class="line">  "main": "index.js",</span><br><span class="line">  "author": "demo",</span><br><span class="line">  "license": "MIT",</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "electron": "^16.0.6",</span><br><span class="line">    "electron-builder": "^22.14.5"</span><br><span class="line">  &#125;,</span><br><span class="line">  "build": &#123;</span><br><span class="line">      "productName": "demo",</span><br><span class="line">      "appId": "com.github.demo",</span><br><span class="line">      "asar": false,    // 是否将前端代码打包</span><br><span class="line">      "copyright": "© demo 2022",</span><br><span class="line">      "directories": &#123;</span><br><span class="line">        "output": "dist"</span><br><span class="line">      &#125;,</span><br><span class="line">      "nsis": &#123;</span><br><span class="line">        "oneClick": false,</span><br><span class="line">        "allowElevation": true,</span><br><span class="line">        "allowToChangeInstallationDirectory": true, // 允许用户自定义安装目录</span><br><span class="line">        "installerIcon": "favicon.ico",</span><br><span class="line">        "uninstallerIcon": "favicon.ico",</span><br><span class="line">        "installerHeaderIcon": "favicon.ico",</span><br><span class="line">        "createDesktopShortcut": true,</span><br><span class="line">        "createStartMenuShortcut": true,</span><br><span class="line">        "shortcutName": "demo"</span><br><span class="line">      &#125;,</span><br><span class="line">      "win": &#123;</span><br><span class="line">        "icon": "favicon.ico",</span><br><span class="line">        "requestedExecutionLevel": "requireAdministrator",  // 获取管理员权限</span><br><span class="line">        "target": [</span><br><span class="line">          &#123;</span><br><span class="line">            "target": "nsis",</span><br><span class="line">            "arch": [</span><br><span class="line">              "x64"</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line">        "extraFiles": &#123; </span><br><span class="line">          "from": "./from/",</span><br><span class="line">          "to": "to"</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    "scripts": &#123;</span><br><span class="line">      "start": "electron .",</span><br><span class="line">      "distOS": "electron-builder --mac",</span><br><span class="line">      "distWin64": "electron-builder --win --x64",</span><br><span class="line">      "distWin32": "electron-builder --win --ia32",</span><br><span class="line">      "postinstall": "electron-builder install-app-deps"</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span></span></span><br><span class="line">index.html  index.js  node_modules/  package.json  preload.js  yarn.lock</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;electron&quot;: &quot;^16.0.6&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;electron .&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn --registry=https://registry.npm.taobao.org add --dev electron-builder</span></span><br><span class="line">或者</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm --registry=https://registry.npm.taobao.org install --save-dev electron-builder</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;electron&quot;: &quot;^16.0.6&quot;,</span><br><span class="line">    &quot;electron-builder&quot;: &quot;^22.14.5&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;electron .&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim package.json</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;this is demo&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;demo&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;electron&quot;: &quot;^16.0.6&quot;,</span><br><span class="line">    &quot;electron-builder&quot;: &quot;^22.14.5&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;build&quot;: &#123;</span><br><span class="line">      &quot;productName&quot;: &quot;demo&quot;,</span><br><span class="line">      &quot;appId&quot;: &quot;com.github.demo&quot;,</span><br><span class="line">      &quot;asar&quot;: false,    // 是否将前端代码打包</span><br><span class="line">      &quot;copyright&quot;: &quot;© demo 2022&quot;,</span><br><span class="line">      &quot;directories&quot;: &#123;</span><br><span class="line">        &quot;output&quot;: &quot;dist&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;nsis&quot;: &#123;</span><br><span class="line">        &quot;oneClick&quot;: false,</span><br><span class="line">        &quot;allowElevation&quot;: true,</span><br><span class="line">        &quot;allowToChangeInstallationDirectory&quot;: true, // 允许用户自定义安装目录</span><br><span class="line">        &quot;installerIcon&quot;: &quot;favicon.ico&quot;,</span><br><span class="line">        &quot;uninstallerIcon&quot;: &quot;favicon.ico&quot;,</span><br><span class="line">        &quot;installerHeaderIcon&quot;: &quot;favicon.ico&quot;,</span><br><span class="line">        &quot;createDesktopShortcut&quot;: true,</span><br><span class="line">        &quot;createStartMenuShortcut&quot;: true,</span><br><span class="line">        &quot;shortcutName&quot;: &quot;demo&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;win&quot;: &#123;</span><br><span class="line">        &quot;icon&quot;: &quot;favicon.ico&quot;,</span><br><span class="line">        &quot;requestedExecutionLevel&quot;: &quot;requireAdministrator&quot;,  // 获取管理员权限</span><br><span class="line">        &quot;target&quot;: [</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;target&quot;: &quot;nsis&quot;,</span><br><span class="line">            &quot;arch&quot;: [</span><br><span class="line">              &quot;x64&quot;</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line">        &quot;extraFiles&quot;: &#123; </span><br><span class="line">          &quot;from&quot;: &quot;./from/&quot;,</span><br><span class="line">          &quot;to&quot;: &quot;to&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">      &quot;start&quot;: &quot;electron .&quot;,</span><br><span class="line">      &quot;distOS&quot;: &quot;electron-builder --mac&quot;,</span><br><span class="line">      &quot;distWin64&quot;: &quot;electron-builder --win --x64&quot;,</span><br><span class="line">      &quot;distWin32&quot;: &quot;electron-builder --win --ia32&quot;,</span><br><span class="line">      &quot;postinstall&quot;: &quot;electron-builder install-app-deps&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>favicon.ico 文件尺寸必须是256 * 256</p>
 </blockquote>
-<p>在User根目录的 <code>.npmrc</code> 文件 （如果没有则新建一个），设置以下镜像地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/</span><br></pre></td></tr></table></figure></p>
-<h4 id="5-2-2、-electron-builder执行构建"><a href="#5-2-2、-electron-builder执行构建" class="headerlink" title="5.2.2、 electron-builder执行构建"></a>5.2.2、 electron-builder执行构建</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run distWin64</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-demo@1.0.0 distWin64</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> electron-builder --win --x64</span></span><br><span class="line"></span><br><span class="line">  • electron-builder  version=22.14.5 os=10.0.18362</span><br><span class="line">  • loaded configuration  file=package.json ("build" field)</span><br><span class="line">  • packaging       platform=win32 arch=x64 electron=16.0.6 appOutDir=dist\win-unpacked</span><br><span class="line">  • asar usage is disabled — this is strongly not recommended  solution=enable asar and use asarUnpack to unpack files that must be externally available</span><br><span class="line">  • file source doesn't exist  from=C:\Users\Administrator\Desktop\electron-app2\from</span><br><span class="line">  • asar usage is disabled — this is strongly not recommended  solution=enable asar and use asarUnpack to unpack files that must be externally available</span><br><span class="line">  • building        target=nsis file=dist\demo Setup 1.0.0.exe archs=x64 oneClick=false perMachine=false</span><br><span class="line">  ⨯ Get "https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z": dial tcp 20.205.243.166:443: connectex: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 换一下电脑的DNS为 `119.29.29.29` 重新试一下就可以了。</span></span><br><span class="line"></span><br><span class="line">  • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z size=1.4 MB parts=1</span><br><span class="line">  • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z duration=18.361s</span><br><span class="line">  • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z size=731 kB parts=1</span><br><span class="line">  • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z duration=2.328s</span><br><span class="line">  • building block map  blockMapFile=dist\demo Setup 1.0.0.exe.blockmap</span><br></pre></td></tr></table></figure>
+<p>在User根目录的 <code>.npmrc</code> 文件 （如果没有则新建一个），设置以下镜像地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2-2、-electron-builder执行构建"><a href="#5-2-2、-electron-builder执行构建" class="headerlink" title="5.2.2、 electron-builder执行构建"></a>5.2.2、 electron-builder执行构建</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm run distWin64</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-demo@1.0.0 distWin64</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">electron-builder --win --x64</span></span><br><span class="line"></span><br><span class="line">  • electron-builder  version=22.14.5 os=10.0.18362</span><br><span class="line">  • loaded configuration  file=package.json (&quot;build&quot; field)</span><br><span class="line">  • packaging       platform=win32 arch=x64 electron=16.0.6 appOutDir=dist\win-unpacked</span><br><span class="line">  • asar usage is disabled — this is strongly not recommended  solution=enable asar and use asarUnpack to unpack files that must be externally available</span><br><span class="line">  • file source doesn&#x27;t exist  from=C:\Users\Administrator\Desktop\electron-app2\from</span><br><span class="line">  • asar usage is disabled — this is strongly not recommended  solution=enable asar and use asarUnpack to unpack files that must be externally available</span><br><span class="line">  • building        target=nsis file=dist\demo Setup 1.0.0.exe archs=x64 oneClick=false perMachine=false</span><br><span class="line">  ⨯ Get &quot;https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z&quot;: dial tcp 20.205.243.166:443: connectex: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">换一下电脑的DNS为 `119.29.29.29` 重新试一下就可以了。</span></span><br><span class="line"></span><br><span class="line">  • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z size=1.4 MB parts=1</span><br><span class="line">  • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.2/nsis-3.0.4.2.7z duration=18.361s</span><br><span class="line">  • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z size=731 kB parts=1</span><br><span class="line">  • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z duration=2.328s</span><br><span class="line">  • building block map  blockMapFile=dist\demo Setup 1.0.0.exe.blockmap</span><br></pre></td></tr></table></figure>
+
 <p>构建好的文件在dist目录下，<code>demo Setup 1.0.0.exe</code> 文件大小为 <code>57.8MB</code>，这是一个nsis安装包，可以自定义安装的目录。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Electron/" rel="tag"># Electron</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Java/Quarkus微服务框架/" rel="next" title="Quarkus微服务框架">
-                <i class="fa fa-chevron-left"></i> Quarkus微服务框架
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Electron/" rel="tag"># Electron</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/随笔/网络安全测试工具Goby/" rel="prev" title="网络安全测试工具Goby">
-                网络安全测试工具Goby <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Java/Quarkus%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" rel="prev" title="Quarkus微服务框架">
+      <i class="fa fa-chevron-left"></i> Quarkus微服务框架
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9A%8F%E7%AC%94/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7Goby/" rel="next" title="网络安全测试工具Goby">
+      网络安全测试工具Goby <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、创建工程"><span class="nav-number">1.</span> <span class="nav-text">一、创建工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、增加命令"><span class="nav-number">2.</span> <span class="nav-text">二、增加命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Demo代码"><span class="nav-number">3.</span> <span class="nav-text">三、Demo代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、启动"><span class="nav-number">4.</span> <span class="nav-text">四、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、打包分发"><span class="nav-number">5.</span> <span class="nav-text">五、打包分发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1、electron-forge快捷打包"><span class="nav-number">5.1.</span> <span class="nav-text">5.1、electron-forge快捷打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-1、-安装forge依赖"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1、 安装forge依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-2、-forge-make-编译"><span class="nav-number">5.1.2.</span> <span class="nav-text">5.1.2、 forge make 编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-3、-forge-跨平台打包"><span class="nav-number">5.1.3.</span> <span class="nav-text">5.1.3、 forge 跨平台打包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2、-electron-builder打包"><span class="nav-number">5.2.</span> <span class="nav-text">5.2、 electron-builder打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1、-安装electron-builder依赖"><span class="nav-number">5.2.1.</span> <span class="nav-text">5.2.1、 安装electron-builder依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2、-electron-builder执行构建"><span class="nav-number">5.2.2.</span> <span class="nav-text">5.2.2、 electron-builder执行构建</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">一、创建工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A2%9E%E5%8A%A0%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">二、增加命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Demo%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">三、Demo代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%90%AF%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">四、启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91"><span class="nav-number">5.</span> <span class="nav-text">五、打包分发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1%E3%80%81electron-forge%E5%BF%AB%E6%8D%B7%E6%89%93%E5%8C%85"><span class="nav-number">5.1.</span> <span class="nav-text">5.1、electron-forge快捷打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-1%E3%80%81-%E5%AE%89%E8%A3%85forge%E4%BE%9D%E8%B5%96"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1、 安装forge依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-2%E3%80%81-forge-make-%E7%BC%96%E8%AF%91"><span class="nav-number">5.1.2.</span> <span class="nav-text">5.1.2、 forge make 编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-3%E3%80%81-forge-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%89%93%E5%8C%85"><span class="nav-number">5.1.3.</span> <span class="nav-text">5.1.3、 forge 跨平台打包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2%E3%80%81-electron-builder%E6%89%93%E5%8C%85"><span class="nav-number">5.2.</span> <span class="nav-text">5.2、 electron-builder打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1%E3%80%81-%E5%AE%89%E8%A3%85electron-builder%E4%BE%9D%E8%B5%96"><span class="nav-number">5.2.1.</span> <span class="nav-text">5.2.1、 安装electron-builder依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2%E3%80%81-electron-builder%E6%89%A7%E8%A1%8C%E6%9E%84%E5%BB%BA"><span class="nav-number">5.2.2.</span> <span class="nav-text">5.2.2、 electron-builder执行构建</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

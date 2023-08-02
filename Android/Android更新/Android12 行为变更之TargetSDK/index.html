@@ -1,170 +1,50 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="【原文：behavior-changes-12】 与早期版本一样，Android 12 包含一些行为变更，这些变更可能会影响您的应用。以下行为变更仅影响以 Android 12 或更高版本为目标平台的应用。如果您的应用以 Android 12 为目标平台，您应该修改自己的应用以适当地支持这些行为（如果适用）。 此外，请务必查看对 Android 12 上运行的所有应用都有影响的行为变更列表。 用户">
 <meta property="og:type" content="article">
 <meta property="og:title" content="以 Android 12 为目标平台的应用行为变更">
-<meta property="og:url" content="http://yoursite.com/Android/Android更新/Android12 行为变更之TargetSDK/index.html">
+<meta property="og:url" content="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/index.html">
 <meta property="og:site_name" content="咸鱼">
 <meta property="og:description" content="【原文：behavior-changes-12】 与早期版本一样，Android 12 包含一些行为变更，这些变更可能会影响您的应用。以下行为变更仅影响以 Android 12 或更高版本为目标平台的应用。如果您的应用以 Android 12 为目标平台，您应该修改自己的应用以适当地支持这些行为（如果适用）。 此外，请务必查看对 Android 12 上运行的所有应用都有影响的行为变更列表。 用户">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://developer.android.google.cn/static/images/about/versions/12/customizable-area.png">
 <meta property="og:image" content="https://developer.android.google.cn/static/images/about/versions/12/custom-collapsed-view.png">
 <meta property="og:image" content="https://developer.android.google.cn/static/images/about/versions/12/custom-expanded-view.png">
 <meta property="og:image" content="https://developer.android.google.cn/static/images/toast.png">
-<meta property="og:updated_time" content="2022-08-31T11:52:36.000Z">
+<meta property="article:published_time" content="2022-08-31T11:52:36.000Z">
+<meta property="article:modified_time" content="2022-08-31T11:52:36.000Z">
+<meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="以 Android 12 为目标平台的应用行为变更">
-<meta name="twitter:description" content="【原文：behavior-changes-12】 与早期版本一样，Android 12 包含一些行为变更，这些变更可能会影响您的应用。以下行为变更仅影响以 Android 12 或更高版本为目标平台的应用。如果您的应用以 Android 12 为目标平台，您应该修改自己的应用以适当地支持这些行为（如果适用）。 此外，请务必查看对 Android 12 上运行的所有应用都有影响的行为变更列表。 用户">
 <meta name="twitter:image" content="https://developer.android.google.cn/static/images/about/versions/12/customizable-area.png">
 
+<link rel="canonical" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/">
 
 
-
-
-
-  <link rel="canonical" href="http://yoursite.com/Android/Android更新/Android12 行为变更之TargetSDK/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -176,365 +56,196 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android更新/Android12 行为变更之TargetSDK/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">以 Android 12 为目标平台的应用行为变更
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          以 Android 12 为目标平台的应用行为变更
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2022-08-31 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:52:36+08:00">2022-08-31</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -542,21 +253,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p><a href="https://developer.android.google.cn/about/versions/12/behavior-changes-12" target="_blank" rel="noopener">【原文：behavior-changes-12】</a></p>
+        <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-12">【原文：behavior-changes-12】</a></p>
 <p>与早期版本一样，Android 12 包含一些行为变更，这些变更可能会影响您的应用。以下行为变更仅影响以 Android 12 或更高版本为目标平台的应用。如果您的应用以 Android 12 为目标平台，您应该修改自己的应用以适当地支持这些行为（如果适用）。</p>
-<p>此外，请务必查看<a href="https://developer.android.google.cn/about/versions/12/behavior-changes-all" target="_blank" rel="noopener">对 Android 12 上运行的所有应用都有影响的行为变更</a>列表。</p>
-<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="自定义通知"><a href="#自定义通知" class="headerlink" title="自定义通知"></a>自定义通知</h3><p>Android 12 更改了完全<a href="https://developer.android.google.cn/training/notify-user/custom-notification" target="_blank" rel="noopener">自定义通知</a>的外观和行为。以前，自定义通知能够使用整个通知区域并提供自己的布局和样式。由此产生的反模式可能会令用户困惑，或在不同设备上引发布局兼容性问题。</p>
-<p>对于以 Android 12 为目标平台的应用，包含自定义内容视图的通知将不再使用完整通知区域；相反，系统会应用标准模板。此模板可确保自定义通知在所有状态下都与其他通知相同，例如，在收起状态下的通知图标和展开功能，以及在展开状态下的通知图标、应用名称和收起功能。此行为与 <a href="https://developer.android.google.cn/reference/android/app/Notification.DecoratedCustomViewStyle" target="_blank" rel="noopener"><code>Notification.DecoratedCustomViewStyle</code></a> 的行为几乎完全相同。</p>
+<p>此外，请务必查看<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-all">对 Android 12 上运行的所有应用都有影响的行为变更</a>列表。</p>
+<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="自定义通知"><a href="#自定义通知" class="headerlink" title="自定义通知"></a>自定义通知</h3><p>Android 12 更改了完全<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/notify-user/custom-notification">自定义通知</a>的外观和行为。以前，自定义通知能够使用整个通知区域并提供自己的布局和样式。由此产生的反模式可能会令用户困惑，或在不同设备上引发布局兼容性问题。</p>
+<p>对于以 Android 12 为目标平台的应用，包含自定义内容视图的通知将不再使用完整通知区域；相反，系统会应用标准模板。此模板可确保自定义通知在所有状态下都与其他通知相同，例如，在收起状态下的通知图标和展开功能，以及在展开状态下的通知图标、应用名称和收起功能。此行为与 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.DecoratedCustomViewStyle"><code>Notification.DecoratedCustomViewStyle</code></a> 的行为几乎完全相同。</p>
 <p>通过这种方式，Android 12 通过为用户提供可看到且熟悉的通知展开功能，使所有通知保持外观一致且易于浏览。</p>
 <p>下图显示了标准模板中的自定义通知：</p>
 <p><img src="https://developer.android.google.cn/static/images/about/versions/12/customizable-area.png" alt="img"></p>
 <p>以下示例展示了在收起状态和展开状态下呈现的自定义通知：</p>
 <p><img src="https://developer.android.google.cn/static/images/about/versions/12/custom-collapsed-view.png" alt="img"></p>
 <p><img src="https://developer.android.google.cn/static/images/about/versions/12/custom-expanded-view.png" alt="img"></p>
-<p>Android 12 中的变更会影响某些定义 <a href="https://developer.android.google.cn/reference/android/app/Notification.Style" target="_blank" rel="noopener"><code>Notification.Style</code></a> 的自定义子类的应用，<br>或使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder" target="_blank" rel="noopener"><code>Notification.Builder</code></a> 的方法 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomContentView(android.widget.RemoteViews" target="_blank" rel="noopener"><code>setCustomContentView(RemoteViews)</code></a>) 、 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomBigContentView(android.widget.RemoteViews" target="_blank" rel="noopener"><code>setCustomBigContentView(RemoteViews)</code></a>) 和 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomHeadsUpContentView(android.widget.RemoteViews" target="_blank" rel="noopener"><code>setCustomHeadsUpContentView(RemoteViews)</code></a>) 的应用。</p>
+<p>Android 12 中的变更会影响某些定义 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Style"><code>Notification.Style</code></a> 的自定义子类的应用，<br>或使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder"><code>Notification.Builder</code></a> 的方法 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomContentView(android.widget.RemoteViews)"><code>setCustomContentView(RemoteViews)</code></a> 、 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomBigContentView(android.widget.RemoteViews)"><code>setCustomBigContentView(RemoteViews)</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomHeadsUpContentView(android.widget.RemoteViews)"><code>setCustomHeadsUpContentView(RemoteViews)</code></a> 的应用。</p>
 <p>如果您的应用使用的是完全自定义的通知，我们建议您尽快使用新模板进行测试。</p>
 <ol>
 <li>启用自定义通知变更：<ol>
@@ -567,21 +275,21 @@
 </li>
 <li>测试所有使用自定义视图的通知，确保这些通知在通知栏中看起来符合预期。在测试时，请考虑以下注意事项并进行必要的调整：<ul>
 <li>自定义视图的尺寸已更改。一般来说，提供给自定义通知的高度比之前小。在收起状态下，自定义内容的最大高度已从 106dp 减少到 48dp。此外，水平空间也减小了。</li>
-<li>对于以 Android 12 为目标平台的应用，所有通知都是可展开的。通常，这意味着，如果您使用的是 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomContentView(android.widget.RemoteViews" target="_blank" rel="noopener"><code>setCustomContentView</code></a>)，则还需要使用 <a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomBigContentView(android.widget.RemoteViews" target="_blank" rel="noopener"><code>setBigCustomContentView</code></a>)，以确保收起状态和展开状态保持一致。</li>
+<li>对于以 Android 12 为目标平台的应用，所有通知都是可展开的。通常，这意味着，如果您使用的是 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomContentView(android.widget.RemoteViews)"><code>setCustomContentView</code></a>，则还需要使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setCustomBigContentView(android.widget.RemoteViews)"><code>setBigCustomContentView</code></a>，以确保收起状态和展开状态保持一致。</li>
 <li>为了确保“浮动通知”状态看起来符合您的预期，请勿忘记将通知渠道的重要性提升至“高”（在屏幕中弹出）。</li>
 </ul>
 </li>
 </ol>
-<h3 id="Android-App-Links-验证的变更"><a href="#Android-App-Links-验证的变更" class="headerlink" title="Android App Links 验证的变更"></a>Android App Links 验证的变更</h3><p>对于以 Android 12 或更高版本为目标平台的应用，系统对 <a href="https://developer.android.google.cn/training/app-links/verify-site-associations#auto-verification" target="_blank" rel="noopener">Android App Links 的验证</a>方式进行了一些更改。这些更改会提升应用链接体验的可靠性，并且可让应用开发者和最终用户更好地进行控制。</p>
-<p>如果您依靠 Android App Links 验证在应用中打开网页链接，那么，在为 Android App Links 验证<a href="https://developer.android.google.cn/training/app-links/verify-site-associations#add-intent-filters" target="_blank" rel="noopener">添加 intent 过滤器</a>时，请确保使用正确的格式。尤其需要注意的是，确保这些 intent 过滤器包含 <code>BROWSABLE</code> 类别并支持 <code>https</code> 方案。</p>
-<p>您还可以<a href="https://developer.android.google.cn/training/app-links/verify-site-associations#auto-verification" target="_blank" rel="noopener">手动验证</a>应用的链接，来测试声明的可靠性。</p>
-<h3 id="画中画行为改进"><a href="#画中画行为改进" class="headerlink" title="画中画行为改进"></a>画中画行为改进</h3><p>Android 12 针对画中画 (PiP) 模式引入了行为改进。如需了解详情，请参阅<a href="https://developer.android.google.cn/about/versions/12/features/pip-improvements" target="_blank" rel="noopener">画中画改进</a>。</p>
-<h3 id="消息框重新设计"><a href="#消息框重新设计" class="headerlink" title="消息框重新设计"></a>消息框重新设计</h3><p>在 Android 12 中，<a href="https://developer.android.google.cn/reference/android/widget/Toast" target="_blank" rel="noopener">消息框</a>视图已经过重新设计。现在，消息框上限为两行文本，并且必须在文本旁边显示应用图标。</p>
+<h3 id="Android-App-Links-验证的变更"><a href="#Android-App-Links-验证的变更" class="headerlink" title="Android App Links 验证的变更"></a>Android App Links 验证的变更</h3><p>对于以 Android 12 或更高版本为目标平台的应用，系统对 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/app-links/verify-site-associations#auto-verification">Android App Links 的验证</a>方式进行了一些更改。这些更改会提升应用链接体验的可靠性，并且可让应用开发者和最终用户更好地进行控制。</p>
+<p>如果您依靠 Android App Links 验证在应用中打开网页链接，那么，在为 Android App Links 验证<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/app-links/verify-site-associations#add-intent-filters">添加 intent 过滤器</a>时，请确保使用正确的格式。尤其需要注意的是，确保这些 intent 过滤器包含 <code>BROWSABLE</code> 类别并支持 <code>https</code> 方案。</p>
+<p>您还可以<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/app-links/verify-site-associations#auto-verification">手动验证</a>应用的链接，来测试声明的可靠性。</p>
+<h3 id="画中画行为改进"><a href="#画中画行为改进" class="headerlink" title="画中画行为改进"></a>画中画行为改进</h3><p>Android 12 针对画中画 (PiP) 模式引入了行为改进。如需了解详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/features/pip-improvements">画中画改进</a>。</p>
+<h3 id="消息框重新设计"><a href="#消息框重新设计" class="headerlink" title="消息框重新设计"></a>消息框重新设计</h3><p>在 Android 12 中，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/widget/Toast">消息框</a>视图已经过重新设计。现在，消息框上限为两行文本，并且必须在文本旁边显示应用图标。</p>
 <p><img src="https://developer.android.google.cn/static/images/toast.png" alt="Android 设备屏幕截图，其中在应用图标旁边显示弹出式消息框“正在发送邮件”"></p>
-<p>如需了解更多详情，请参阅<a href="https://developer.android.google.cn/guide/topics/ui/notifiers/toasts" target="_blank" rel="noopener">消息框概览</a>。</p>
-<h2 id="安全和隐私设置"><a href="#安全和隐私设置" class="headerlink" title="安全和隐私设置"></a>安全和隐私设置</h2><h3 id="大致位置"><a href="#大致位置" class="headerlink" title="大致位置"></a>大致位置</h3><p>在搭载 Android 12 或更高版本的设备上，<a href="https://developer.android.google.cn/training/location/permissions#approximate-request" target="_blank" rel="noopener">用户可以要求您的应用仅获取大致位置信息</a>。</p>
-<p><strong>注意</strong>：在某些 Android 12 版本中，无论您的应用的目标 SDK 版本为何，<a href="https://developer.android.google.cn/about/versions/12/behavior-changes-all#approximate-location" target="_blank" rel="noopener">始终会受此变更影响</a>。</p>
-<h3 id="WebView-中的现代-SameSite-Cookie"><a href="#WebView-中的现代-SameSite-Cookie" class="headerlink" title="WebView 中的现代 SameSite Cookie"></a>WebView 中的现代 SameSite Cookie</h3><p>Android 的 WebView 组件基于为 Google 的 Chrome 浏览器提供支持的开源项目 <a href="https://www.chromium.org/" target="_blank" rel="noopener">Chromium</a>。Chromium 变更了对第三方 Cookie 的处理方式，目的是为了更好地保护用户的安全和隐私，并赋予用户更高的透明度和控制权。从 Android 12 开始，当应用以 Android 12（API 级别 31）或更高版本为目标平台时，<code>WebView</code> 中也会包含这些变更。</p>
+<p>如需了解更多详情，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/notifiers/toasts">消息框概览</a>。</p>
+<h2 id="安全和隐私设置"><a href="#安全和隐私设置" class="headerlink" title="安全和隐私设置"></a>安全和隐私设置</h2><h3 id="大致位置"><a href="#大致位置" class="headerlink" title="大致位置"></a>大致位置</h3><p>在搭载 Android 12 或更高版本的设备上，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/location/permissions#approximate-request">用户可以要求您的应用仅获取大致位置信息</a>。</p>
+<p><strong>注意</strong>：在某些 Android 12 版本中，无论您的应用的目标 SDK 版本为何，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-all#approximate-location">始终会受此变更影响</a>。</p>
+<h3 id="WebView-中的现代-SameSite-Cookie"><a href="#WebView-中的现代-SameSite-Cookie" class="headerlink" title="WebView 中的现代 SameSite Cookie"></a>WebView 中的现代 SameSite Cookie</h3><p>Android 的 WebView 组件基于为 Google 的 Chrome 浏览器提供支持的开源项目 <a target="_blank" rel="noopener" href="https://www.chromium.org/">Chromium</a>。Chromium 变更了对第三方 Cookie 的处理方式，目的是为了更好地保护用户的安全和隐私，并赋予用户更高的透明度和控制权。从 Android 12 开始，当应用以 Android 12（API 级别 31）或更高版本为目标平台时，<code>WebView</code> 中也会包含这些变更。</p>
 <p>Cookie 的 <code>SameSite</code> 属性决定了它是可以与任何请求一起发送，还是只能与同站点请求一起发送。以下隐私保护方面的变更改善了对第三方 Cookie 的默认处理方式，并可帮助防止意外跨站点共享：</p>
 <ul>
 <li>没有 <code>SameSite</code> 属性的 Cookie 被视为 <code>SameSite=Lax</code>。</li>
@@ -589,1175 +297,335 @@
 <li>站点的 HTTP 版本和 HTTPS 版本之间的链接现在被视为跨站点请求，因此除非将 Cookie 正确标记为 <code>SameSite=None; Secure</code>，否则 Cookie 不会被发送。</li>
 </ul>
 <p>对于开发者而言，一般指导意见是识别关键用户流中的跨站点 Cookie 依赖项，并确保在需要时使用适当的值显式设置 <code>SameSite</code> 属性。您必须显式指定允许在不同网站上运行的 Cookie，或适用于从 HTTP 切换到 HTTPS 进行同站点导航的 Cookie。</p>
-<p>如需了解有关这些变更的网站开发者完整指南，请参阅 <a href="https://web.dev/samesite-cookies-explained/" target="_blank" rel="noopener">SameSite Cookie 说明</a>和 <a href="https://web.dev/schemeful-samesite/" target="_blank" rel="noopener">Schemeful SameSite</a>。</p>
+<p>如需了解有关这些变更的网站开发者完整指南，请参阅 <a target="_blank" rel="noopener" href="https://web.dev/samesite-cookies-explained/">SameSite Cookie 说明</a>和 <a target="_blank" rel="noopener" href="https://web.dev/schemeful-samesite/">Schemeful SameSite</a>。</p>
 <h4 id="在您的应用中测试-SameSite-行为"><a href="#在您的应用中测试-SameSite-行为" class="headerlink" title="在您的应用中测试 SameSite 行为"></a>在您的应用中测试 SameSite 行为</h4><p>如果您的应用使用 WebView，或者您需要管理使用 Cookie 的网站或服务，我们建议您在 Android 12 WebView 上测试您的数据流。 如果发现问题，您可能需要更新 Cookie 以支持新的 SameSite 行为。</p>
 <p>留意登录和嵌入式内容中存在的问题，以及用户从不安全的页面启动并转到安全页面的登录流、购买和其他身份验证流。</p>
 <p>如需使用 WebView 测试应用，您必须完成以下任一步骤，为需要测试的应用启用新的 SameSite 行为：</p>
 <ul>
-<li><p>在 <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/android_webview/docs/developer-ui.md#launching-webview-devtools" target="_blank" rel="noopener">WebView devtools</a> 中<a href="https://chromium.googlesource.com/chromium/src/+/HEAD/android_webview/docs/developer-ui.md#Flag-UI" target="_blank" rel="noopener">切换界面标志 webview-enable-modern-cookie-same-site</a>，在测试设备上手动启用 SameSite 行为。</p>
+<li><p>在 <a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/HEAD/android_webview/docs/developer-ui.md#launching-webview-devtools">WebView devtools</a> 中<a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/HEAD/android_webview/docs/developer-ui.md#Flag-UI">切换界面标志 webview-enable-modern-cookie-same-site</a>，在测试设备上手动启用 SameSite 行为。</p>
 <p>此方法允许您在任何搭载 Android 5.0（API 级别 21）或更高版本（包括 Android 12）和 WebView 版本 89.0.4385.0 或更高版本的设备上进行测试。</p>
 </li>
-<li><p>通过 <a href="https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#target" target="_blank" rel="noopener"><code>targetSdkVersion</code></a> 编译您的应用，使其以 Android 12（API 级别 31）为目标平台。</p>
+<li><p>通过 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element#target"><code>targetSdkVersion</code></a> 编译您的应用，使其以 Android 12（API 级别 31）为目标平台。</p>
 <p>如果您使用此方法，则必须使用搭载 Android 12 的设备。</p>
 </li>
 </ul>
-<p>如需了解 Android 上的 WebView 远程调试，请参阅 <a href="https://developers.google.cn/web/tools/chrome-devtools/remote-debugging/" target="_blank" rel="noopener">Android 设备的远程调试入门</a>。</p>
-<h4 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h4><p>如需详细了解 SameSite 现代行为及其在 Chrome 和 WebView 中的部署，请访问 <a href="https://www.chromium.org/updates/same-site" target="_blank" rel="noopener">Chromium SameSite 更新页面</a>。如果您在 WebView 或 Chromium 中发现了 bug，您可以在公开的 <a href="https://bit.ly/2lJMd5c" target="_blank" rel="noopener">Chromium 问题跟踪器</a>中报告该 bug。</p>
+<p>如需了解 Android 上的 WebView 远程调试，请参阅 <a target="_blank" rel="noopener" href="https://developers.google.cn/web/tools/chrome-devtools/remote-debugging/">Android 设备的远程调试入门</a>。</p>
+<h4 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h4><p>如需详细了解 SameSite 现代行为及其在 Chrome 和 WebView 中的部署，请访问 <a target="_blank" rel="noopener" href="https://www.chromium.org/updates/same-site">Chromium SameSite 更新页面</a>。如果您在 WebView 或 Chromium 中发现了 bug，您可以在公开的 <a target="_blank" rel="noopener" href="https://bit.ly/2lJMd5c">Chromium 问题跟踪器</a>中报告该 bug。</p>
 <h3 id="移动传感器有采样率限制"><a href="#移动传感器有采样率限制" class="headerlink" title="移动传感器有采样率限制"></a>移动传感器有采样率限制</h3><p>为了保护有关用户的潜在敏感信息，如果您的应用以 Android 12 或更高版本为目标平台，系统会对来自某些移动传感器和位置传感器的数据的刷新率施加限制。</p>
-<p>详细了解<a href="https://developer.android.google.cn/guide/topics/sensors/sensors_overview#sensors-rate-limiting" target="_blank" rel="noopener">传感器采样率限制</a>。</p>
-<h3 id="应用休眠"><a href="#应用休眠" class="headerlink" title="应用休眠"></a>应用休眠</h3><p>Android 12 在 Android 11（API 级别 30）中引入的<a href="https://developer.android.google.cn/training/permissions/requesting#auto-reset-permissions-unused-apps" target="_blank" rel="noopener">自动重置权限行为</a>的基础上进行了扩展。如果您的应用以 Android 12 为目标平台，并且用户有几个月未与您的应用互动，则系统会自动重置授予的所有权限并将您的应用置于休眠状态。</p>
-<p>如需了解详情，请参阅有关<a href="https://developer.android.google.cn/topic/performance/app-hibernation" target="_blank" rel="noopener">应用休眠</a>的指南。</p>
-<h3 id="数据访问审核中的归因声明"><a href="#数据访问审核中的归因声明" class="headerlink" title="数据访问审核中的归因声明"></a>数据访问审核中的归因声明</h3><p>在 Android 11（API 级别 30）中引入的数据访问审核 API 可让您根据应用的用例<a href="https://developer.android.google.cn/guide/topics/data/audit-access#audit-by-attribution-tag" target="_blank" rel="noopener">创建归因标记</a>。这些标记可让您更轻松地确定应用的哪一部分执行特定类型的数据访问。</p>
-<p>如果您的应用以 Android 12 或更高版本为目标平台，您必须在应用的清单文件中<a href="https://developer.android.google.cn/guide/topics/data/audit-access#declare-attribution-tags" target="_blank" rel="noopener">声明这些归因标记</a>。</p>
+<p>详细了解<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/sensors/sensors_overview#sensors-rate-limiting">传感器采样率限制</a>。</p>
+<h3 id="应用休眠"><a href="#应用休眠" class="headerlink" title="应用休眠"></a>应用休眠</h3><p>Android 12 在 Android 11（API 级别 30）中引入的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/permissions/requesting#auto-reset-permissions-unused-apps">自动重置权限行为</a>的基础上进行了扩展。如果您的应用以 Android 12 为目标平台，并且用户有几个月未与您的应用互动，则系统会自动重置授予的所有权限并将您的应用置于休眠状态。</p>
+<p>如需了解详情，请参阅有关<a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/performance/app-hibernation">应用休眠</a>的指南。</p>
+<h3 id="数据访问审核中的归因声明"><a href="#数据访问审核中的归因声明" class="headerlink" title="数据访问审核中的归因声明"></a>数据访问审核中的归因声明</h3><p>在 Android 11（API 级别 30）中引入的数据访问审核 API 可让您根据应用的用例<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/audit-access#audit-by-attribution-tag">创建归因标记</a>。这些标记可让您更轻松地确定应用的哪一部分执行特定类型的数据访问。</p>
+<p>如果您的应用以 Android 12 或更高版本为目标平台，您必须在应用的清单文件中<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/audit-access#declare-attribution-tags">声明这些归因标记</a>。</p>
 <h3 id="ADB-备份限制"><a href="#ADB-备份限制" class="headerlink" title="ADB 备份限制"></a>ADB 备份限制</h3><p>为了保护私有应用数据，Android 12 变更了 <code>adb backup</code> 命令的默认行为。对于以 Android 12（API 级别 31）或更高版本为目标平台的应用，用户运行 <code>adb backup</code> 命令时，从设备导出的任何其他系统数据都不包含应用数据。</p>
-<p>如果您的测试或开发工作流程依赖于使用 <code>adb backup</code> 的应用数据，现在您可以选择通过在应用的清单文件中将 <a href="https://developer.android.google.cn/guide/topics/manifest/application-element#debug" target="_blank" rel="noopener"><code>android:debuggable</code></a> 设置为 <code>true</code> 来导出应用数据。</p>
+<p>如果您的测试或开发工作流程依赖于使用 <code>adb backup</code> 的应用数据，现在您可以选择通过在应用的清单文件中将 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/manifest/application-element#debug"><code>android:debuggable</code></a> 设置为 <code>true</code> 来导出应用数据。</p>
 <p><strong>注意</strong>：为了帮助保护应用数据，请务必在发布应用前将 <code>android:debuggable</code> 设置为 <code>false</code>。</p>
-<h3 id="更安全的组件导出"><a href="#更安全的组件导出" class="headerlink" title="更安全的组件导出"></a>更安全的组件导出</h3><p>如果您的应用以 Android 12 或更高版本为目标平台，且包含使用 <a href="https://developer.android.google.cn/guide/components/intents-filters#Receiving" target="_blank" rel="noopener">intent 过滤器</a>的 <a href="https://developer.android.google.cn/guide/components/activities/intro-activities" target="_blank" rel="noopener">activity</a>、<a href="https://developer.android.google.cn/guide/components/services" target="_blank" rel="noopener">服务</a>或<a href="https://developer.android.google.cn/guide/components/broadcasts" target="_blank" rel="noopener">广播接收器</a>，您必须为这些应用组件显式声明 <a href="https://developer.android.google.cn/guide/topics/manifest/activity-element#exported" target="_blank" rel="noopener"><code>android:exported</code></a> 属性。</p>
+<h3 id="更安全的组件导出"><a href="#更安全的组件导出" class="headerlink" title="更安全的组件导出"></a>更安全的组件导出</h3><p>如果您的应用以 Android 12 或更高版本为目标平台，且包含使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/intents-filters#Receiving">intent 过滤器</a>的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/activities/intro-activities">activity</a>、<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/services">服务</a>或<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/broadcasts">广播接收器</a>，您必须为这些应用组件显式声明 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/manifest/activity-element#exported"><code>android:exported</code></a> 属性。</p>
 <p><strong>警告</strong>：如果 activity、服务或广播接收器使用 intent 过滤器，并且未显式声明 <code>android:exported</code> 的值，您的应用将无法在搭载 Android 12 或更高版本的设备上进行安装。</p>
-<p>如果应用组件包含 <a href="https://developer.android.google.cn/reference/android/content/Intent#CATEGORY_LAUNCHER" target="_blank" rel="noopener"><code>LAUNCHER</code></a> 类别，请将 <code>android:exported</code> 设置为 <code>true</code>。在大多数其他情况下，请将 <code>android:exported</code> 设置为 <code>false</code>。</p>
+<p>如果应用组件包含 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/content/Intent#CATEGORY_LAUNCHER"><code>LAUNCHER</code></a> 类别，请将 <code>android:exported</code> 设置为 <code>true</code>。在大多数其他情况下，请将 <code>android:exported</code> 设置为 <code>false</code>。</p>
 <p>以下代码段显示了一个服务示例，该服务包含一个 <code>android:exported</code> 属性设置为 <code>false</code> 的 intent 过滤器：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"com.example.app.backgroundService"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">android:exported</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"com.example.app.START_BACKGROUND"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">&quot;com.example.app.backgroundService&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">android:exported</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;com.example.app.START_BACKGROUND&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="Android-Studio-中的消息"><a href="#Android-Studio-中的消息" class="headerlink" title="Android Studio 中的消息"></a>Android Studio 中的消息</h4><p>如果您的应用包含使用 intent 过滤器的 activity、服务或广播接收器但未声明 <code>android:exported</code>，系统会显示以下警告消息，具体取决于您使用的 Android Studio 版本：</p>
 <h5 id="Android-Studio-2020-3-1-Canary-11-或更高版本"><a href="#Android-Studio-2020-3-1-Canary-11-或更高版本" class="headerlink" title="Android Studio 2020.3.1 Canary 11 或更高版本"></a>Android Studio 2020.3.1 Canary 11 或更高版本</h5><p>系统会显示以下消息：</p>
 <ol>
 <li><p>清单文件中会显示以下 lint 警告：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">When using intent filters, please specify android:exported as well</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">When using intent filters, please specify android:exported as well</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>当您尝试编译应用时，系统会显示以下 build 错误消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Manifest merger failed : Apps targeting Android 12 and higher are required \</span><br><span class="line">to specify an explicit value for android:exported when the corresponding \</span><br><span class="line">component has an intent filter defined.</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Manifest merger failed : Apps targeting Android 12 and higher are required \</span><br><span class="line">to specify an explicit value for android:exported when the corresponding \</span><br><span class="line">component has an intent filter defined.</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h5 id="较低的-Android-Studio-版本"><a href="#较低的-Android-Studio-版本" class="headerlink" title="较低的 Android Studio 版本"></a>较低的 Android Studio 版本</h5><p>如果您尝试安装应用，<a href="https://developer.android.google.cn/studio/command-line/logcat" target="_blank" rel="noopener">Logcat</a> 会显示以下错误消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Installation did not succeed.</span><br><span class="line">The application could not be installed: INSTALL_FAILED_VERIFICATION_FAILURE</span><br><span class="line">List of apks:</span><br><span class="line">[0] &apos;.../build/outputs/apk/debug/app-debug.apk&apos;</span><br><span class="line">Installation failed due to: &apos;null&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="待处理-intent-可变性"><a href="#待处理-intent-可变性" class="headerlink" title="待处理 intent 可变性"></a>待处理 intent 可变性</h3><p>如果您的应用以 Android 12 为目标平台，您必须为应用创建的每个 <a href="https://developer.android.google.cn/reference/android/app/PendingIntent" target="_blank" rel="noopener"><code>PendingIntent</code></a> 对象<a href="https://developer.android.google.cn/guide/components/intents-filters#DeclareMutabilityPendingIntent" target="_blank" rel="noopener">指定可变性</a>。这项额外的要求可提高应用的安全性。</p>
-<h4 id="测试待处理的-intent-可变性变更"><a href="#测试待处理的-intent-可变性变更" class="headerlink" title="测试待处理的 intent 可变性变更"></a>测试待处理的 intent 可变性变更</h4><p>如需确定您的应用是否缺少可变性声明，请在 Android Studio 中查找以下 <a href="https://developer.android.google.cn/studio/write/lint" target="_blank" rel="noopener">lint 警告</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing PendingIntent mutability flag [UnspecifiedImmutableFlag]</span><br></pre></td></tr></table></figure>
-<h3 id="不安全的-intent-启动"><a href="#不安全的-intent-启动" class="headerlink" title="不安全的 intent 启动"></a>不安全的 intent 启动</h3><p>为了提高平台安全性，Android 12 及更高版本提供了一种调试功能，用于<a href="https://developer.android.google.cn/guide/components/intents-filters#DetectUnsafeIntentLaunches" target="_blank" rel="noopener">检测不安全的 intent 启动</a>。当系统检测到此类不安全的启动时，就会发生 <a href="https://developer.android.google.cn/reference/android/os/StrictMode" target="_blank" rel="noopener">StrictMode</a> 违反事件。</p>
-<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><h3 id="前台服务启动限制"><a href="#前台服务启动限制" class="headerlink" title="前台服务启动限制"></a>前台服务启动限制</h3><p>以 Android 12 或更高版本为目标平台的应用无法<a href="https://developer.android.google.cn/guide/components/foreground-services#background-start-restrictions" target="_blank" rel="noopener">在后台运行时启动前台服务</a>，<a href="https://developer.android.google.cn/guide/components/foreground-services#background-start-restriction-exemptions" target="_blank" rel="noopener">少数特殊情况</a>除外。如果应用尝试在后台运行时启动前台服务，则会引发异常（少数特殊情况除外）。</p>
-<p>当您的应用在后台运行时，请考虑使用 WorkManager 来计划和启动<a href="https://developer.android.google.cn/topic/libraries/architecture/workmanager/how-to/define-work#expedited" target="_blank" rel="noopener">加急工作</a>。如需完成用户请求的紧急操作，请按照<a href="https://developer.android.google.cn/training/scheduling/alarms#exact" target="_blank" rel="noopener">精确的闹钟</a>启动前台服务。</p>
-<h3 id="精确的闹钟权限"><a href="#精确的闹钟权限" class="headerlink" title="精确的闹钟权限"></a>精确的闹钟权限</h3><p>为了鼓励应用节省系统资源，以 Android 12 及更高版本为目标平台且设置了<a href="https://developer.android.google.cn/training/scheduling/alarms#exact" target="_blank" rel="noopener">精确的闹钟</a>的应用必须能够访问“闹钟和提醒”功能，该功能显示在系统设置的<strong>特殊应用访问权限</strong>屏幕中。</p>
-<p>如需获取这种特殊应用访问权限，请在清单中请求 <a href="https://developer.android.google.cn/reference/android/Manifest.permission#SCHEDULE_EXACT_ALARM" target="_blank" rel="noopener"><code>SCHEDULE_EXACT_ALARM</code></a> 权限。</p>
-<p>精确的闹钟只能用于面向用户的功能。详细了解<a href="https://developer.android.google.cn/training/scheduling/alarms#exact-acceptable-use-cases" target="_blank" rel="noopener">设置精确闹钟的可接受用例</a>。</p>
-<h4 id="停用行为变更"><a href="#停用行为变更" class="headerlink" title="停用行为变更"></a>停用行为变更</h4><p>当您准备应用以将 Android 12 作为目标平台时，您可以出于测试目的暂时停用可调试的 <a href="https://developer.android.google.cn/studio/build/build-variants" target="_blank" rel="noopener">build 变体</a>中的行为变更。为此，请完成以下任一任务：</p>
+<h5 id="较低的-Android-Studio-版本"><a href="#较低的-Android-Studio-版本" class="headerlink" title="较低的 Android Studio 版本"></a>较低的 Android Studio 版本</h5><p>如果您尝试安装应用，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/logcat">Logcat</a> 会显示以下错误消息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Installation did not succeed.</span><br><span class="line">The application could not be installed: INSTALL_FAILED_VERIFICATION_FAILURE</span><br><span class="line">List of apks:</span><br><span class="line">[0] &#x27;.../build/outputs/apk/debug/app-debug.apk&#x27;</span><br><span class="line">Installation failed due to: &#x27;null&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="待处理-intent-可变性"><a href="#待处理-intent-可变性" class="headerlink" title="待处理 intent 可变性"></a>待处理 intent 可变性</h3><p>如果您的应用以 Android 12 为目标平台，您必须为应用创建的每个 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/PendingIntent"><code>PendingIntent</code></a> 对象<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/intents-filters#DeclareMutabilityPendingIntent">指定可变性</a>。这项额外的要求可提高应用的安全性。</p>
+<h4 id="测试待处理的-intent-可变性变更"><a href="#测试待处理的-intent-可变性变更" class="headerlink" title="测试待处理的 intent 可变性变更"></a>测试待处理的 intent 可变性变更</h4><p>如需确定您的应用是否缺少可变性声明，请在 Android Studio 中查找以下 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/write/lint">lint 警告</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Missing PendingIntent mutability flag [UnspecifiedImmutableFlag]</span><br></pre></td></tr></table></figure>
+
+<h3 id="不安全的-intent-启动"><a href="#不安全的-intent-启动" class="headerlink" title="不安全的 intent 启动"></a>不安全的 intent 启动</h3><p>为了提高平台安全性，Android 12 及更高版本提供了一种调试功能，用于<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/intents-filters#DetectUnsafeIntentLaunches">检测不安全的 intent 启动</a>。当系统检测到此类不安全的启动时，就会发生 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/os/StrictMode">StrictMode</a> 违反事件。</p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><h3 id="前台服务启动限制"><a href="#前台服务启动限制" class="headerlink" title="前台服务启动限制"></a>前台服务启动限制</h3><p>以 Android 12 或更高版本为目标平台的应用无法<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/foreground-services#background-start-restrictions">在后台运行时启动前台服务</a>，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/foreground-services#background-start-restriction-exemptions">少数特殊情况</a>除外。如果应用尝试在后台运行时启动前台服务，则会引发异常（少数特殊情况除外）。</p>
+<p>当您的应用在后台运行时，请考虑使用 WorkManager 来计划和启动<a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/workmanager/how-to/define-work#expedited">加急工作</a>。如需完成用户请求的紧急操作，请按照<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/scheduling/alarms#exact">精确的闹钟</a>启动前台服务。</p>
+<h3 id="精确的闹钟权限"><a href="#精确的闹钟权限" class="headerlink" title="精确的闹钟权限"></a>精确的闹钟权限</h3><p>为了鼓励应用节省系统资源，以 Android 12 及更高版本为目标平台且设置了<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/scheduling/alarms#exact">精确的闹钟</a>的应用必须能够访问“闹钟和提醒”功能，该功能显示在系统设置的<strong>特殊应用访问权限</strong>屏幕中。</p>
+<p>如需获取这种特殊应用访问权限，请在清单中请求 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/Manifest.permission#SCHEDULE_EXACT_ALARM"><code>SCHEDULE_EXACT_ALARM</code></a> 权限。</p>
+<p>精确的闹钟只能用于面向用户的功能。详细了解<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/scheduling/alarms#exact-acceptable-use-cases">设置精确闹钟的可接受用例</a>。</p>
+<h4 id="停用行为变更"><a href="#停用行为变更" class="headerlink" title="停用行为变更"></a>停用行为变更</h4><p>当您准备应用以将 Android 12 作为目标平台时，您可以出于测试目的暂时停用可调试的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/build/build-variants">build 变体</a>中的行为变更。为此，请完成以下任一任务：</p>
 <ul>
-<li><p>在<strong>开发者选项</strong>设置屏幕中，选择<strong>应用兼容性变更</strong>。在随即显示的屏幕上，点按应用的名称，然后关闭 <a href="https://developer.android.google.cn/about/versions/12/reference/compat-framework-changes#require_exact_alarm_permission" target="_blank" rel="noopener"><strong>REQUIRE_EXACT_ALARM_PERMISSION</strong></a>。</p>
+<li><p>在<strong>开发者选项</strong>设置屏幕中，选择<strong>应用兼容性变更</strong>。在随即显示的屏幕上，点按应用的名称，然后关闭 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/reference/compat-framework-changes#require_exact_alarm_permission"><strong>REQUIRE_EXACT_ALARM_PERMISSION</strong></a>。</p>
 </li>
 <li><p>在开发机器上的终端窗口中，运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am compat disable REQUIRE_EXACT_ALARM_PERMISSION PACKAGE_NAME</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am compat disable REQUIRE_EXACT_ALARM_PERMISSION PACKAGE_NAME</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="通知-trampoline-限制"><a href="#通知-trampoline-限制" class="headerlink" title="通知 trampoline 限制"></a>通知 trampoline 限制</h3><p>当用户与<a href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications" target="_blank" rel="noopener">通知</a>互动时，某些应用会启动一个<a href="https://developer.android.google.cn/guide/components/fundamentals#Components" target="_blank" rel="noopener">应用组件</a>来响应通知点按操作，该应用组件最终会启动用户最终看到并与之互动的 activity。此应用组件被称为通知 trampoline。</p>
-<p>为了改进应用性能和用户体验，以 Android 12 或更高版本为目标平台的应用无法从用作通知 trampoline 的<a href="https://developer.android.google.cn/guide/components/services" target="_blank" rel="noopener">服务</a>或<a href="https://developer.android.google.cn/guide/components/broadcasts" target="_blank" rel="noopener">广播接收器</a>中启动 activity。换言之，当用户点按通知或通知中的<a href="https://developer.android.google.cn/training/notify-user/build-notification#Actions" target="_blank" rel="noopener">操作按钮</a>时，您的应用无法在服务或广播接收器内调用 <a href="https://developer.android.google.cn/reference/android/content/Context#startActivity(android.content.Intent" target="_blank" rel="noopener"><code>startActivity()</code></a>)。</p>
-<p>当您的应用尝试从充当通知 trampoline 的服务或广播接收器启动 activity 时，系统会阻止该 activity 启动，并在 <a href="https://developer.android.google.cn/studio/command-line/logcat" target="_blank" rel="noopener">Logcat</a> 中显示以下消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Indirect notification activity start (trampoline) from PACKAGE_NAME, \</span><br><span class="line">this should be avoided for performance reasons.</span><br></pre></td></tr></table></figure>
+<h3 id="通知-trampoline-限制"><a href="#通知-trampoline-限制" class="headerlink" title="通知 trampoline 限制"></a>通知 trampoline 限制</h3><p>当用户与<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications">通知</a>互动时，某些应用会启动一个<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/fundamentals#Components">应用组件</a>来响应通知点按操作，该应用组件最终会启动用户最终看到并与之互动的 activity。此应用组件被称为通知 trampoline。</p>
+<p>为了改进应用性能和用户体验，以 Android 12 或更高版本为目标平台的应用无法从用作通知 trampoline 的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/services">服务</a>或<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/broadcasts">广播接收器</a>中启动 activity。换言之，当用户点按通知或通知中的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/notify-user/build-notification#Actions">操作按钮</a>时，您的应用无法在服务或广播接收器内调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/content/Context#startActivity(android.content.Intent)"><code>startActivity()</code></a>。</p>
+<p>当您的应用尝试从充当通知 trampoline 的服务或广播接收器启动 activity 时，系统会阻止该 activity 启动，并在 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/logcat">Logcat</a> 中显示以下消息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Indirect notification activity start (trampoline) from PACKAGE_NAME, \</span><br><span class="line">this should be avoided for performance reasons.</span><br></pre></td></tr></table></figure>
+
 <h4 id="识别哪些应用组件充当通知-trampoline"><a href="#识别哪些应用组件充当通知-trampoline" class="headerlink" title="识别哪些应用组件充当通知 trampoline"></a>识别哪些应用组件充当通知 trampoline</h4><p>测试您的应用时，点按通知后，您可以识别哪个服务或广播接收器在您的应用中充当通知 trampoline。为此，请查看以下终端命令的输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys activity service \</span><br><span class="line">  com.android.systemui/.dump.SystemUIAuxiliaryDumpService</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys activity service \</span><br><span class="line">  com.android.systemui/.dump.SystemUIAuxiliaryDumpService</span><br></pre></td></tr></table></figure>
+
 <p>输出的某一部分包含文本“NotifInteractionLog”。此部分包含识别因点按通知而启动的组件所需的信息。</p>
 <h4 id="更新应用"><a href="#更新应用" class="headerlink" title="更新应用"></a>更新应用</h4><p>如果您的应用从充当通知 trampoline 的服务或广播接收器启动 activity，请完成以下迁移步骤：</p>
 <ol>
-<li>创建一个与用户点按通知后看到的 activity 关联的 <a href="https://developer.android.google.cn/reference/android/app/PendingIntent" target="_blank" rel="noopener"><code>PendingIntent</code></a> 对象。</li>
-<li>在<a href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setContentIntent(android.app.PendingIntent" target="_blank" rel="noopener">构建通知</a>)的过程中，使用您在上一步中创建的 <code>PendingIntent</code> 对象。</li>
+<li>创建一个与用户点按通知后看到的 activity 关联的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/PendingIntent"><code>PendingIntent</code></a> 对象。</li>
+<li>在<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Notification.Builder#setContentIntent(android.app.PendingIntent)">构建通知</a>的过程中，使用您在上一步中创建的 <code>PendingIntent</code> 对象。</li>
 </ol>
-<p>如需识别 activity 的来源，例如为了执行日志记录，请在发布通知时使用 extra。对于集中式日志记录，请使用 <a href="https://developer.android.google.cn/reference/android/app/Application.ActivityLifecycleCallbacks" target="_blank" rel="noopener">ActivityLifecycleCallbacks</a> 或 <a href="https://developer.android.google.cn/topic/libraries/architecture/lifecycle" target="_blank" rel="noopener">Jetpack 生命周期观察器</a>。</p>
+<p>如需识别 activity 的来源，例如为了执行日志记录，请在发布通知时使用 extra。对于集中式日志记录，请使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/app/Application.ActivityLifecycleCallbacks">ActivityLifecycleCallbacks</a> 或 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/lifecycle">Jetpack 生命周期观察器</a>。</p>
 <h4 id="切换行为"><a href="#切换行为" class="headerlink" title="切换行为"></a>切换行为</h4><p>在测试应用的可调试版本时，您可以使用 <code>NOTIFICATION_TRAMPOLINE_BLOCK</code> 应用兼容性标志启用和停用此限制。</p>
 <h2 id="备份和恢复"><a href="#备份和恢复" class="headerlink" title="备份和恢复"></a>备份和恢复</h2><p>对于搭载 Android 12（API 级别 31）且以其为目标平台的应用，备份和恢复的工作方式发生了变更。Android 备份和恢复有两种形式：</p>
 <ul>
 <li><strong>云端备份</strong>：用户数据存储在用户的 Google 云端硬盘中，以便之后可以在相应设备或新设备上恢复。</li>
 <li><strong>设备到设备 (D2D) 传输</strong>：用户数据直接从用户的旧设备发送到其新设备，如通过使用数据线。</li>
 </ul>
-<p>如需详细了解如何备份和恢复数据，请参阅<a href="https://developer.android.google.cn/guide/topics/data/autobackup" target="_blank" rel="noopener">通过自动备份功能备份用户数据</a>和<a href="https://developer.android.google.cn/guide/topics/data/keyvaluebackup" target="_blank" rel="noopener">使用 Android Backup Service 备份键值对</a>。</p>
+<p>如需详细了解如何备份和恢复数据，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/autobackup">通过自动备份功能备份用户数据</a>和<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/keyvaluebackup">使用 Android Backup Service 备份键值对</a>。</p>
 <h3 id="D2D-传输功能变更"><a href="#D2D-传输功能变更" class="headerlink" title="D2D 传输功能变更"></a>D2D 传输功能变更</h3><p>对于在 Android 12 及更高版本上运行且以其为目标平台的应用：</p>
 <ul>
 <li>指定 <code>android:allowBackup=&quot;false&quot;</code> 会禁止备份到 Google 云端硬盘，但不会停用应用的 D2D 传输这种方式。</li>
-<li>使用 XML 配置机制<a href="https://developer.android.google.cn/guide/topics/data/autobackup#IncludingFiles" target="_blank" rel="noopener">指定包含和排除规则</a>不再影响 D2D 传输，不过仍影响 Google 云端硬盘备份。如需指定 D2D 传输的规则，您必须使用下一部分中所述的新配置。</li>
+<li>使用 XML 配置机制<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/autobackup#IncludingFiles">指定包含和排除规则</a>不再影响 D2D 传输，不过仍影响 Google 云端硬盘备份。如需指定 D2D 传输的规则，您必须使用下一部分中所述的新配置。</li>
 </ul>
 <h3 id="新的包含和排除格式"><a href="#新的包含和排除格式" class="headerlink" title="新的包含和排除格式"></a>新的包含和排除格式</h3><p>在 Android 12 及更高版本上运行且以其为目标平台的应用对 XML 配置使用不同的格式。这种格式要求您分别为云端备份和 D2D 传输指定包含和排除规则，从而明确区分 Google 云端硬盘备份和 D2D 传输。</p>
 <p>（可选）您还可以使用它来指定备份规则，在这种情况下，搭载 Android 12 或更高版本的设备会忽略旧配置。搭载 Android 11 或更低版本的设备仍然需要使用旧配置。</p>
 <p><strong>注意</strong>：如果您使用新的配置格式，您的应用在搭载 Android 12 或更高版本的设备上运行时将使用新行为，即使您尚未以 Android 12 为目标平台也是如此。</p>
 <h4 id="XML-格式变更"><a href="#XML-格式变更" class="headerlink" title="XML 格式变更"></a>XML 格式变更</h4><p>下面是 Android 11 及更低版本中用于备份和恢复配置的格式：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">full-backup-content</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                     "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">requireFlags</span>=<span class="string">[</span>"<span class="attr">clientSideEncryption</span>" | "<span class="attr">deviceToDeviceTransfer</span>"] /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                     "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">full-backup-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">full-backup-content</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                     &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">requireFlags</span>=<span class="string">[</span>&quot;<span class="attr">clientSideEncryption</span>&quot; | &quot;<span class="attr">deviceToDeviceTransfer</span>&quot;] /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                     &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">full-backup-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>下面以粗体显示了格式的变更。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">data-extraction-rules</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cloud-backup</span> [<span class="attr">disableIfNoEncryptionCapabilities</span>=<span class="string">"true|false"</span>]&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                        "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                        "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">cloud-backup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">device-transfer</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                        "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>"<span class="attr">file</span>" | "<span class="attr">database</span>" | "<span class="attr">sharedpref</span>" | "<span class="attr">external</span>" |</span></span><br><span class="line"><span class="tag">                        "<span class="attr">root</span>"] <span class="attr">path</span>=<span class="string">"string"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">device-transfer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">data-extraction-rules</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如需了解详情，请参阅介绍如何使用自动备份功能备份用户数据的指南中的<a href="https://developer.android.google.cn/guide/topics/data/autobackup#xml-syntax-android-12" target="_blank" rel="noopener">相应部分</a>。</p>
-<h4 id="应用的清单标志"><a href="#应用的清单标志" class="headerlink" title="应用的清单标志"></a>应用的清单标志</h4><p>通过在清单文件中使用 <a href="https://developer.android.google.cn/reference/android/R.attr#dataExtractionRules" target="_blank" rel="noopener"><code>android:dataExtractionRules</code></a> 属性，将您的应用指向新的 XML 配置。当您指向新的 XML 配置时，搭载 Android 12 或更高版本的设备会忽略指向旧配置的 <code>android:fullBackupContent</code> 属性。以下代码示例展示了新的清单文件条目：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">...</span></span></span><br><span class="line">    &lt;!-- The below attribute is ignored. --&gt;</span><br><span class="line">    android:fullBackupContent="old_config.xml"</span><br><span class="line">    <span class="comment">&lt;!-- You can point to your new configuration using the new</span></span><br><span class="line"><span class="comment">         dataExtractionRules attribute . --&gt;</span></span><br><span class="line">    android:dataExtractionRules="new_config.xml"</span><br><span class="line">    ...&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">data-extraction-rules</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cloud-backup</span> [<span class="attr">disableIfNoEncryptionCapabilities</span>=<span class="string">&quot;true|false&quot;</span>]&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                        &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                        &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">cloud-backup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">device-transfer</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                        &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">exclude</span> <span class="attr">domain</span>=<span class="string">[</span>&quot;<span class="attr">file</span>&quot; | &quot;<span class="attr">database</span>&quot; | &quot;<span class="attr">sharedpref</span>&quot; | &quot;<span class="attr">external</span>&quot; |</span></span><br><span class="line"><span class="tag">                        &quot;<span class="attr">root</span>&quot;] <span class="attr">path</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">device-transfer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">data-extraction-rules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如需了解详情，请参阅介绍如何使用自动备份功能备份用户数据的指南中的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/data/autobackup#xml-syntax-android-12">相应部分</a>。</p>
+<h4 id="应用的清单标志"><a href="#应用的清单标志" class="headerlink" title="应用的清单标志"></a>应用的清单标志</h4><p>通过在清单文件中使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/R.attr#dataExtractionRules"><code>android:dataExtractionRules</code></a> 属性，将您的应用指向新的 XML 配置。当您指向新的 XML 配置时，搭载 Android 12 或更高版本的设备会忽略指向旧配置的 <code>android:fullBackupContent</code> 属性。以下代码示例展示了新的清单文件条目：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">...</span></span></span><br><span class="line"><span class="tag">    &lt;!<span class="attr">--</span> <span class="attr">The</span> <span class="attr">below</span> <span class="attr">attribute</span> <span class="attr">is</span> <span class="attr">ignored.</span> <span class="attr">--</span>&gt;</span></span><br><span class="line">    android:fullBackupContent=&quot;old_config.xml&quot;</span><br><span class="line">    <span class="comment">&lt;!-- You can point to your new configuration using the new</span></span><br><span class="line"><span class="comment">         dataExtractionRules attribute . --&gt;</span></span><br><span class="line">    android:dataExtractionRules=&quot;new_config.xml&quot;</span><br><span class="line">    ...&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h2><h3 id="并发点对点-互联网连接"><a href="#并发点对点-互联网连接" class="headerlink" title="并发点对点 + 互联网连接"></a>并发点对点 + 互联网连接</h3><p>对于以 Android 12（API 级别 31）或更高版本为目标平台的应用，支持并发点对点和互联网连接的设备可以同时与对等设备和互联网提供的主要网络建立 Wi-Fi 连接，从而提供更加顺畅的用户体验。以 Android 11（API 级别 30）或更低版本为目标平台的应用仍延续旧行为，即主 Wi-Fi 网络在连接到对等设备之前断开连接。</p>
-<h4 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h4><p><a href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#getConnectionInfo(" target="_blank" rel="noopener"><code>WifiManager.getConnectionInfo()</code></a>) 只能返回一个网络的 <a href="https://developer.android.google.cn/reference/android/net/wifi/WifiInfo" target="_blank" rel="noopener"><code>WifiInfo</code></a>。因此，该 API 的行为在 Android 12 及更高版本中从以下几个方面发生了变化：</p>
+<h4 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h4><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/WifiManager#getConnectionInfo()"><code>WifiManager.getConnectionInfo()</code></a> 只能返回一个网络的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/wifi/WifiInfo"><code>WifiInfo</code></a>。因此，该 API 的行为在 Android 12 及更高版本中从以下几个方面发生了变化：</p>
 <ul>
 <li>如果只有一个 Wi-Fi 网络可用，则返回其 <code>WifiInfo</code>。</li>
 <li>如果有多个 Wi-Fi 网络可用，并且发起调用的应用触发了点对点连接，则返回与对等设备对应的 <code>WifiInfo</code>。</li>
 <li>如果有多个 Wi-Fi 网络可用，并且发起调用的应用未触发点对点连接，则返回互联网提供的主要连接的 <code>WifiInfo</code>。</li>
 </ul>
-<p>为了在支持双并发 Wi-Fi 网络的设备上提供更好的用户体验，我们建议所有应用（特别是触发点对点连接的应用）脱离调用 <code>WifiManager.getConnectionInfo()</code>，而改用 <a href="https://developer.android.google.cn/reference/android/net/ConnectivityManager.NetworkCallback#onCapabilitiesChanged(android.net.Network, android.net.NetworkCapabilities" target="_blank" rel="noopener"><code>NetworkCallback.onCapabilitiesChanged()</code></a>)，以获取与用于注册 <code>NetworkCallback</code> 的 <code>NetworkRequest</code> 匹配的所有 <code>WifiInfo</code> 对象。从 Android 12 开始，弃用了 <code>getConnectionInfo()</code>。</p>
+<p>为了在支持双并发 Wi-Fi 网络的设备上提供更好的用户体验，我们建议所有应用（特别是触发点对点连接的应用）脱离调用 <code>WifiManager.getConnectionInfo()</code>，而改用 [<code>NetworkCallback.onCapabilitiesChanged()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/net/ConnectivityManager.NetworkCallback#onCapabilitiesChanged">https://developer.android.google.cn/reference/android/net/ConnectivityManager.NetworkCallback#onCapabilitiesChanged</a>(android.net.Network, android.net.NetworkCapabilities))，以获取与用于注册 <code>NetworkCallback</code> 的 <code>NetworkRequest</code> 匹配的所有 <code>WifiInfo</code> 对象。从 Android 12 开始，弃用了 <code>getConnectionInfo()</code>。</p>
 <p>以下代码示例展示了如何在 <code>NetworkCallback</code> 中获取 <code>WifiInfo</code>：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> networkCallback = <span class="keyword">object</span> : ConnectivityManager.NetworkCallback() &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCapabilitiesChanged</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">           network : <span class="type">Network</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">           networkCapabilities : <span class="type">NetworkCapabilities</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> transportInfo = networkCapabilities.getTransportInfo()</span><br><span class="line">    <span class="keyword">if</span> (transportInfo !<span class="keyword">is</span> WifiInfo) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">val</span> wifiInfo : WifiInfo = transportInfo</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="mDNSReplyer-原生-API"><a href="#mDNSReplyer-原生-API" class="headerlink" title="mDNSReplyer 原生 API"></a>mDNSReplyer 原生 API</h3><p>Android 12 更改了应用可以使用 <a href="https://android.googlesource.com/platform/external/mdnsresponder/" target="_blank" rel="noopener">mDNSResponseser 原生 API</a> 与 mDNSReplyer 守护程序进行交互的时间。以前，当应用<a href="https://developer.android.google.cn/training/connect-devices-wirelessly/nsd#register" target="_blank" rel="noopener">在网络中注册服务</a>并调用 <a href="https://developer.android.google.cn/reference/android/content/Context#getSystemService(java.lang.String" target="_blank" rel="noopener"><code>getSystemService()</code></a>) 方法时，系统的 NSD 服务会启动 mDNSReplyer 守护程序，即使应用尚未调用任何 <code>NsdManager</code> 方法也是如此。然后，守护程序将设备订阅到包含所有节点的多播组，这导致系统更频繁地唤醒并消耗额外的电量。为了最大限度地降低电池用量，在 Android 12 及更高版本中，现在系统仅在 NSD 事件需要时才会启动 mDNSReplyer 守护程序，并在之后停止该守护程序。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> networkCallback = <span class="keyword">object</span> : ConnectivityManager.NetworkCallback() &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCapabilitiesChanged</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">           network : <span class="type">Network</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">           networkCapabilities : <span class="type">NetworkCapabilities</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> transportInfo = networkCapabilities.getTransportInfo()</span><br><span class="line">    <span class="keyword">if</span> (transportInfo !<span class="keyword">is</span> WifiInfo) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">val</span> wifiInfo : WifiInfo = transportInfo</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="mDNSReplyer-原生-API"><a href="#mDNSReplyer-原生-API" class="headerlink" title="mDNSReplyer 原生 API"></a>mDNSReplyer 原生 API</h3><p>Android 12 更改了应用可以使用 <a target="_blank" rel="noopener" href="https://android.googlesource.com/platform/external/mdnsresponder/">mDNSResponseser 原生 API</a> 与 mDNSReplyer 守护程序进行交互的时间。以前，当应用<a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/connect-devices-wirelessly/nsd#register">在网络中注册服务</a>并调用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/content/Context#getSystemService(java.lang.String)"><code>getSystemService()</code></a> 方法时，系统的 NSD 服务会启动 mDNSReplyer 守护程序，即使应用尚未调用任何 <code>NsdManager</code> 方法也是如此。然后，守护程序将设备订阅到包含所有节点的多播组，这导致系统更频繁地唤醒并消耗额外的电量。为了最大限度地降低电池用量，在 Android 12 及更高版本中，现在系统仅在 NSD 事件需要时才会启动 mDNSReplyer 守护程序，并在之后停止该守护程序。</p>
 <p>由于此变更会影响 mDNSReplyer 守护程序何时可用，因此，认为在调用 <code>getSystemService()</code> 方法后将启动 mDNSReplyer 守护程序的应用可能会收到来自系统的消息，指出 mDNSReplyer 守护程序不可用。使用 <code>NsdManager</code> 且未使用 mDNSReplyer 原生 API 的应用不受此变更的影响。</p>
-<h2 id="供应商库"><a href="#供应商库" class="headerlink" title="供应商库"></a>供应商库</h2><h3 id="供应商提供的原生共享库"><a href="#供应商提供的原生共享库" class="headerlink" title="供应商提供的原生共享库"></a>供应商提供的原生共享库</h3><p>如果应用以 Android 12（API 级别 31）或更高版本为目标平台，默认情况下无法访问由芯片供应商或设备制造商提供的<a href="https://source.android.google.cn/devices/tech/config/namespaces_libraries#adding-additional-native-libraries" target="_blank" rel="noopener">非 NDK 原生共享库</a>。只有在使用 <a href="https://developer.android.google.cn/guide/topics/manifest/uses-native-library-element" target="_blank" rel="noopener"><code></code></a> 标记明确请求时，才能访问这些库。</p>
-<p>如果应用以 Android 11（API 级别 30）或更低版本为目标平台，则无需使用 <code></code> 标记。在这种情况下，任何原生共享库均可访问，而不管它是否为 NDK 库。</p>
+<h2 id="供应商库"><a href="#供应商库" class="headerlink" title="供应商库"></a>供应商库</h2><h3 id="供应商提供的原生共享库"><a href="#供应商提供的原生共享库" class="headerlink" title="供应商提供的原生共享库"></a>供应商提供的原生共享库</h3><p>如果应用以 Android 12（API 级别 31）或更高版本为目标平台，默认情况下无法访问由芯片供应商或设备制造商提供的<a target="_blank" rel="noopener" href="https://source.android.google.cn/devices/tech/config/namespaces_libraries#adding-additional-native-libraries">非 NDK 原生共享库</a>。只有在使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/manifest/uses-native-library-element">&#96;&#96;</a> 标记明确请求时，才能访问这些库。</p>
+<p>如果应用以 Android 11（API 级别 30）或更低版本为目标平台，则无需使用 &#96;&#96; 标记。在这种情况下，任何原生共享库均可访问，而不管它是否为 NDK 库。</p>
 <h2 id="更新后的非-SDK-限制"><a href="#更新后的非-SDK-限制" class="headerlink" title="更新后的非 SDK 限制"></a>更新后的非 SDK 限制</h2><p>Android 12 包含更新后的受限制非 SDK 接口列表（基于与 Android 开发者之间的协作以及最新的内部测试）。在限制使用非 SDK 接口之前，我们会尽可能确保有可用的公开替代方案。</p>
-<p>如果您的应用并非以 Android 12 为目标平台，其中一些变更可能不会立即对您产生影响。然而，虽然您目前仍可以使用一些非 SDK 接口（<a href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#list-names" target="_blank" rel="noopener">具体取决于应用的目标 API 级别</a>），但只要您使用任何非 SDK 方法或字段，终归存在导致应用出问题的显著风险。</p>
-<p>如果您不确定自己的应用是否使用了非 SDK 接口，则可以<a href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#test-for-non-sdk" target="_blank" rel="noopener">测试您的应用</a>来进行确认。如果您的应用依赖于非 SDK 接口，您应该开始计划迁移到 SDK 替代方案。然而，我们知道某些应用具有使用非 SDK 接口的有效用例。如果您无法为应用中的某项功能找到使用非 SDK 接口的替代方案，应<a href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#feature-request" target="_blank" rel="noopener">请求新的公共 API</a>。</p>
-<p>如需详细了解此 Android 版本中的变更，请参阅 <a href="https://developer.android.google.cn/about/versions/12/non-sdk-12" target="_blank" rel="noopener">Android 12 中有关限制非 SDK 接口的更新</a>。如需全面了解有关非 SDK 接口的详细信息，请参阅<a href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces" target="_blank" rel="noopener">对非 SDK 接口的限制</a>。</p>
+<p>如果您的应用并非以 Android 12 为目标平台，其中一些变更可能不会立即对您产生影响。然而，虽然您目前仍可以使用一些非 SDK 接口（<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#list-names">具体取决于应用的目标 API 级别</a>），但只要您使用任何非 SDK 方法或字段，终归存在导致应用出问题的显著风险。</p>
+<p>如果您不确定自己的应用是否使用了非 SDK 接口，则可以<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#test-for-non-sdk">测试您的应用</a>来进行确认。如果您的应用依赖于非 SDK 接口，您应该开始计划迁移到 SDK 替代方案。然而，我们知道某些应用具有使用非 SDK 接口的有效用例。如果您无法为应用中的某项功能找到使用非 SDK 接口的替代方案，应<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#feature-request">请求新的公共 API</a>。</p>
+<p>如需详细了解此 Android 版本中的变更，请参阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/non-sdk-12">Android 12 中有关限制非 SDK 接口的更新</a>。如需全面了解有关非 SDK 接口的详细信息，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces">对非 SDK 接口的限制</a>。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/" rel="prev" title="Android12 所有应用行为变更">
+      <i class="fa fa-chevron-left"></i> Android12 所有应用行为变更
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/" rel="next" title="Android12 功能和 API 概览">
+      Android12 功能和 API 概览 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Android/Android更新/Android12 功能和 API 概览/" rel="next" title="Android12 功能和 API 概览">
-                <i class="fa fa-chevron-left"></i> Android12 功能和 API 概览
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Android/Android更新/Android13 行为变更之所有应用/" rel="prev" title="Android13 所有应用行为变更">
-                Android13 所有应用行为变更 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验"><span class="nav-number">1.</span> <span class="nav-text">用户体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义通知"><span class="nav-number">1.1.</span> <span class="nav-text">自定义通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-App-Links-验证的变更"><span class="nav-number">1.2.</span> <span class="nav-text">Android App Links 验证的变更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画中画行为改进"><span class="nav-number">1.3.</span> <span class="nav-text">画中画行为改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息框重新设计"><span class="nav-number">1.4.</span> <span class="nav-text">消息框重新设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全和隐私设置"><span class="nav-number">2.</span> <span class="nav-text">安全和隐私设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大致位置"><span class="nav-number">2.1.</span> <span class="nav-text">大致位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebView-中的现代-SameSite-Cookie"><span class="nav-number">2.2.</span> <span class="nav-text">WebView 中的现代 SameSite Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在您的应用中测试-SameSite-行为"><span class="nav-number">2.2.1.</span> <span class="nav-text">在您的应用中测试 SameSite 行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他资源"><span class="nav-number">2.2.2.</span> <span class="nav-text">其他资源</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动传感器有采样率限制"><span class="nav-number">2.3.</span> <span class="nav-text">移动传感器有采样率限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用休眠"><span class="nav-number">2.4.</span> <span class="nav-text">应用休眠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据访问审核中的归因声明"><span class="nav-number">2.5.</span> <span class="nav-text">数据访问审核中的归因声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADB-备份限制"><span class="nav-number">2.6.</span> <span class="nav-text">ADB 备份限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更安全的组件导出"><span class="nav-number">2.7.</span> <span class="nav-text">更安全的组件导出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Studio-中的消息"><span class="nav-number">2.7.1.</span> <span class="nav-text">Android Studio 中的消息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Android-Studio-2020-3-1-Canary-11-或更高版本"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">Android Studio 2020.3.1 Canary 11 或更高版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#较低的-Android-Studio-版本"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">较低的 Android Studio 版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待处理-intent-可变性"><span class="nav-number">2.8.</span> <span class="nav-text">待处理 intent 可变性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#测试待处理的-intent-可变性变更"><span class="nav-number">2.8.1.</span> <span class="nav-text">测试待处理的 intent 可变性变更</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不安全的-intent-启动"><span class="nav-number">2.9.</span> <span class="nav-text">不安全的 intent 启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">3.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前台服务启动限制"><span class="nav-number">3.1.</span> <span class="nav-text">前台服务启动限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精确的闹钟权限"><span class="nav-number">3.2.</span> <span class="nav-text">精确的闹钟权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#停用行为变更"><span class="nav-number">3.2.1.</span> <span class="nav-text">停用行为变更</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知-trampoline-限制"><span class="nav-number">3.3.</span> <span class="nav-text">通知 trampoline 限制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#识别哪些应用组件充当通知-trampoline"><span class="nav-number">3.3.1.</span> <span class="nav-text">识别哪些应用组件充当通知 trampoline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新应用"><span class="nav-number">3.3.2.</span> <span class="nav-text">更新应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换行为"><span class="nav-number">3.3.3.</span> <span class="nav-text">切换行为</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份和恢复"><span class="nav-number">4.</span> <span class="nav-text">备份和恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#D2D-传输功能变更"><span class="nav-number">4.1.</span> <span class="nav-text">D2D 传输功能变更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的包含和排除格式"><span class="nav-number">4.2.</span> <span class="nav-text">新的包含和排除格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-格式变更"><span class="nav-number">4.2.1.</span> <span class="nav-text">XML 格式变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用的清单标志"><span class="nav-number">4.2.2.</span> <span class="nav-text">应用的清单标志</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接性"><span class="nav-number">5.</span> <span class="nav-text">连接性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并发点对点-互联网连接"><span class="nav-number">5.1.</span> <span class="nav-text">并发点对点 + 互联网连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容性"><span class="nav-number">5.1.1.</span> <span class="nav-text">兼容性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mDNSReplyer-原生-API"><span class="nav-number">5.2.</span> <span class="nav-text">mDNSReplyer 原生 API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#供应商库"><span class="nav-number">6.</span> <span class="nav-text">供应商库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#供应商提供的原生共享库"><span class="nav-number">6.1.</span> <span class="nav-text">供应商提供的原生共享库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新后的非-SDK-限制"><span class="nav-number">7.</span> <span class="nav-text">更新后的非 SDK 限制</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">用户体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%9A%E7%9F%A5"><span class="nav-number">1.1.</span> <span class="nav-text">自定义通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-App-Links-%E9%AA%8C%E8%AF%81%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">Android App Links 验证的变更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%BB%E4%B8%AD%E7%94%BB%E8%A1%8C%E4%B8%BA%E6%94%B9%E8%BF%9B"><span class="nav-number">1.3.</span> <span class="nav-text">画中画行为改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E6%A1%86%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.4.</span> <span class="nav-text">消息框重新设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%92%8C%E9%9A%90%E7%A7%81%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">安全和隐私设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E8%87%B4%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">大致位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebView-%E4%B8%AD%E7%9A%84%E7%8E%B0%E4%BB%A3-SameSite-Cookie"><span class="nav-number">2.2.</span> <span class="nav-text">WebView 中的现代 SameSite Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%82%A8%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%AD%E6%B5%8B%E8%AF%95-SameSite-%E8%A1%8C%E4%B8%BA"><span class="nav-number">2.2.1.</span> <span class="nav-text">在您的应用中测试 SameSite 行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90"><span class="nav-number">2.2.2.</span> <span class="nav-text">其他资源</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E4%BC%A0%E6%84%9F%E5%99%A8%E6%9C%89%E9%87%87%E6%A0%B7%E7%8E%87%E9%99%90%E5%88%B6"><span class="nav-number">2.3.</span> <span class="nav-text">移动传感器有采样率限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E4%BC%91%E7%9C%A0"><span class="nav-number">2.4.</span> <span class="nav-text">应用休眠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%AE%A1%E6%A0%B8%E4%B8%AD%E7%9A%84%E5%BD%92%E5%9B%A0%E5%A3%B0%E6%98%8E"><span class="nav-number">2.5.</span> <span class="nav-text">数据访问审核中的归因声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADB-%E5%A4%87%E4%BB%BD%E9%99%90%E5%88%B6"><span class="nav-number">2.6.</span> <span class="nav-text">ADB 备份限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%AE%89%E5%85%A8%E7%9A%84%E7%BB%84%E4%BB%B6%E5%AF%BC%E5%87%BA"><span class="nav-number">2.7.</span> <span class="nav-text">更安全的组件导出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Studio-%E4%B8%AD%E7%9A%84%E6%B6%88%E6%81%AF"><span class="nav-number">2.7.1.</span> <span class="nav-text">Android Studio 中的消息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Android-Studio-2020-3-1-Canary-11-%E6%88%96%E6%9B%B4%E9%AB%98%E7%89%88%E6%9C%AC"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">Android Studio 2020.3.1 Canary 11 或更高版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BE%83%E4%BD%8E%E7%9A%84-Android-Studio-%E7%89%88%E6%9C%AC"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">较低的 Android Studio 版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%85%E5%A4%84%E7%90%86-intent-%E5%8F%AF%E5%8F%98%E6%80%A7"><span class="nav-number">2.8.</span> <span class="nav-text">待处理 intent 可变性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%BE%85%E5%A4%84%E7%90%86%E7%9A%84-intent-%E5%8F%AF%E5%8F%98%E6%80%A7%E5%8F%98%E6%9B%B4"><span class="nav-number">2.8.1.</span> <span class="nav-text">测试待处理的 intent 可变性变更</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84-intent-%E5%90%AF%E5%8A%A8"><span class="nav-number">2.9.</span> <span class="nav-text">不安全的 intent 启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E9%99%90%E5%88%B6"><span class="nav-number">3.1.</span> <span class="nav-text">前台服务启动限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E7%A1%AE%E7%9A%84%E9%97%B9%E9%92%9F%E6%9D%83%E9%99%90"><span class="nav-number">3.2.</span> <span class="nav-text">精确的闹钟权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E7%94%A8%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4"><span class="nav-number">3.2.1.</span> <span class="nav-text">停用行为变更</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5-trampoline-%E9%99%90%E5%88%B6"><span class="nav-number">3.3.</span> <span class="nav-text">通知 trampoline 限制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%86%E5%88%AB%E5%93%AA%E4%BA%9B%E5%BA%94%E7%94%A8%E7%BB%84%E4%BB%B6%E5%85%85%E5%BD%93%E9%80%9A%E7%9F%A5-trampoline"><span class="nav-number">3.3.1.</span> <span class="nav-text">识别哪些应用组件充当通知 trampoline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8"><span class="nav-number">3.3.2.</span> <span class="nav-text">更新应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E8%A1%8C%E4%B8%BA"><span class="nav-number">3.3.3.</span> <span class="nav-text">切换行为</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D"><span class="nav-number">4.</span> <span class="nav-text">备份和恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#D2D-%E4%BC%A0%E8%BE%93%E5%8A%9F%E8%83%BD%E5%8F%98%E6%9B%B4"><span class="nav-number">4.1.</span> <span class="nav-text">D2D 传输功能变更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E7%9A%84%E5%8C%85%E5%90%AB%E5%92%8C%E6%8E%92%E9%99%A4%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">新的包含和排除格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-%E6%A0%BC%E5%BC%8F%E5%8F%98%E6%9B%B4"><span class="nav-number">4.2.1.</span> <span class="nav-text">XML 格式变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%9A%84%E6%B8%85%E5%8D%95%E6%A0%87%E5%BF%97"><span class="nav-number">4.2.2.</span> <span class="nav-text">应用的清单标志</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">连接性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E7%82%B9%E5%AF%B9%E7%82%B9-%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%9E%E6%8E%A5"><span class="nav-number">5.1.</span> <span class="nav-text">并发点对点 + 互联网连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">5.1.1.</span> <span class="nav-text">兼容性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mDNSReplyer-%E5%8E%9F%E7%94%9F-API"><span class="nav-number">5.2.</span> <span class="nav-text">mDNSReplyer 原生 API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E5%BA%94%E5%95%86%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">供应商库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9B%E5%BA%94%E5%95%86%E6%8F%90%E4%BE%9B%E7%9A%84%E5%8E%9F%E7%94%9F%E5%85%B1%E4%BA%AB%E5%BA%93"><span class="nav-number">6.1.</span> <span class="nav-text">供应商提供的原生共享库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E9%9D%9E-SDK-%E9%99%90%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">更新后的非 SDK 限制</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

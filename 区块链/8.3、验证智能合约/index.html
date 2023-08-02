@@ -1,177 +1,57 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico?v=6.6.0">
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="为什么要验证合约？源代码验证为与智能合约交互的用户提供了透明性。通过上传源代码，Etherscan将编译后的代码与区块链上的代码匹配。就像合同一样，“智能合约”应该为最终用户提供更多关于他们“数字签名”的信息，并让用户有机会审计代码，以独立地验证代码实际上做了应该做的事情。  ABI文件公开？目前我的Dapp做法需要将编译的合约 json 文件和WebApp放在一起，通过ajax读取 json 文">
-<meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8.3、验证发布到Ropsten网络的智能合约">
-<meta property="og:url" content="http://yoursite.com/区块链/8.3、验证智能合约/index.html">
+<meta property="og:url" content="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/8.3%E3%80%81%E9%AA%8C%E8%AF%81%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html">
 <meta property="og:site_name" content="咸鱼">
 <meta property="og:description" content="为什么要验证合约？源代码验证为与智能合约交互的用户提供了透明性。通过上传源代码，Etherscan将编译后的代码与区块链上的代码匹配。就像合同一样，“智能合约”应该为最终用户提供更多关于他们“数字签名”的信息，并让用户有机会审计代码，以独立地验证代码实际上做了应该做的事情。  ABI文件公开？目前我的Dapp做法需要将编译的合约 json 文件和WebApp放在一起，通过ajax读取 json 文">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约1.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约2.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约3.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约4.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约5.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约6.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约7-成功加载页面.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约8-通过人机校验.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约9-验证成功.png">
-<meta property="og:image" content="http://yoursite.com/images/blockchain/验证合约10-查看验证通过的合约.png">
-<meta property="og:updated_time" content="2019-07-04T13:52:36.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A61.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A62.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A63.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A64.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A65.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A66.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A67-%E6%88%90%E5%8A%9F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A68-%E9%80%9A%E8%BF%87%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A69-%E9%AA%8C%E8%AF%81%E6%88%90%E5%8A%9F.png">
+<meta property="og:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A610-%E6%9F%A5%E7%9C%8B%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84%E5%90%88%E7%BA%A6.png">
+<meta property="article:published_time" content="2018-08-09T15:55:36.000Z">
+<meta property="article:modified_time" content="2019-07-04T13:52:36.000Z">
+<meta property="article:author" content="KevinWen">
+<meta property="article:tag" content="区块链">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8.3、验证发布到Ropsten网络的智能合约">
-<meta name="twitter:description" content="为什么要验证合约？源代码验证为与智能合约交互的用户提供了透明性。通过上传源代码，Etherscan将编译后的代码与区块链上的代码匹配。就像合同一样，“智能合约”应该为最终用户提供更多关于他们“数字签名”的信息，并让用户有机会审计代码，以独立地验证代码实际上做了应该做的事情。  ABI文件公开？目前我的Dapp做法需要将编译的合约 json 文件和WebApp放在一起，通过ajax读取 json 文">
-<meta name="twitter:image" content="http://yoursite.com/images/blockchain/验证合约1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A61.png">
+
+<link rel="canonical" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/8.3%E3%80%81%E9%AA%8C%E8%AF%81%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/区块链/8.3、验证智能合约/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -183,381 +63,203 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">咸鱼</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">咸鱼是以盐腌渍后，晒干的鱼</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-git命令">
+        <li class="menu-item menu-item-git">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/git-help/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Git命令</a>
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-android-&-jdk新特性">
+        <li class="menu-item menu-item-android-&-jdk">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/jdk-features/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Android & JDK新特性</a>
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-java资源">
+        <li class="menu-item menu-item-java资源">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/awesome-java/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Java资源</a>
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-hexo">
+        <li class="menu-item menu-item-hexo">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/hexo/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>hexo</a>
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/区块链/8.3、验证智能合约/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/8.3%E3%80%81%E9%AA%8C%E8%AF%81%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
       <meta itemprop="name" content="KevinWen">
       <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="咸鱼">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">8.3、验证发布到Ropsten网络的智能合约
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          8.3、验证发布到Ropsten网络的智能合约
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2018-08-09 23:55:36" itemprop="dateCreated datePublished" datetime="2018-08-09T23:55:36+08:00">2018-08-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-07-04 21:52:36" itemprop="dateModified" datetime="2019-07-04T21:52:36+08:00">2019-07-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -565,41 +267,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h2 id="为什么要验证合约？"><a href="#为什么要验证合约？" class="headerlink" title="为什么要验证合约？"></a>为什么要验证合约？</h2><p>源代码验证为与智能合约交互的用户提供了透明性。通过上传源代码，Etherscan将编译后的代码与区块链上的代码匹配。就像合同一样，“智能合约”应该为最终用户提供更多关于他们“数字签名”的信息，并让用户有机会审计代码，以独立地验证代码实际上做了应该做的事情。</p>
 <blockquote>
 <p>ABI文件公开？目前我的Dapp做法需要将编译的合约 json 文件和WebApp放在一起，通过ajax读取 json 文件初始化合约。</p>
 </blockquote>
 <h2 id="如何验证？"><a href="#如何验证？" class="headerlink" title="如何验证？"></a>如何验证？</h2><p>具体就是将代码上传到<a href="etherscan.io">etherscan.io</a>，只需几步操作。</p>
-<p>在 Etherscan 上打开你的合约地址： <code>https://ropsten.etherscan.io/address/{合约地址}#contracts</code></p>
-<p><img src="/images/blockchain/验证合约1.png" alt><br><img src="/images/blockchain/验证合约2.png" alt><br><img src="/images/blockchain/验证合约3.png" alt><br><img src="/images/blockchain/验证合约4.png" alt></p>
+<p>在 Etherscan 上打开你的合约地址： <code>https://ropsten.etherscan.io/address/&#123;合约地址&#125;#contracts</code></p>
+<p><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A61.png"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A62.png"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A63.png"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A64.png"></p>
 <p>但是，我每次面对的都是500错误，被搞的抓狂。</p>
-<p><img src="/images/blockchain/验证合约5.png" alt></p>
+<p><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A65.png"></p>
 <h2 id="坑坑"><a href="#坑坑" class="headerlink" title="坑坑"></a>坑坑</h2><ol>
-<li>网上很多文章说Etherscan 不支持import，那是因为老版本<a href="https://ropsten.etherscan.io/verifyContract2" target="_blank" rel="noopener">verifyContract2</a>的原因，现在<a href="https://ropsten.etherscan.io/verifyContract" target="_blank" rel="noopener">verifyContract</a>是支持import的,选择多文件上传即可。</li>
+<li>网上很多文章说Etherscan 不支持import，那是因为老版本<a target="_blank" rel="noopener" href="https://ropsten.etherscan.io/verifyContract2">verifyContract2</a>的原因，现在<a target="_blank" rel="noopener" href="https://ropsten.etherscan.io/verifyContract">verifyContract</a>是支持import的,选择多文件上传即可。</li>
 <li>单文件HelloWorld合约提交也是500错误（这个最坑）</li>
 </ol>
 <h2 id="错误500的原因"><a href="#错误500的原因" class="headerlink" title="错误500的原因"></a>错误500的原因</h2><p>合约提交500错误很烦，尝试了各种方法，网上说要用VPN，VPN也用上了，但是无奈当时是因为此VPN出了点状况，没能上Google。</p>
-<p><strong> 这个500错误就是网络的问题，正确的判断是“提交的页面”有没有出现“人机身份验证”。</strong></p>
+<p>** 这个500错误就是网络的问题，正确的判断是“提交的页面”有没有出现“人机身份验证”。**</p>
 <p>查看了一下Chrome的网络，可以看到有一个js文件请求失败了，这就是Google的“人机身份验证”。（坑：加载失败了没提示错误？？？没通过“人机身份验证”提示报错？？？）</p>
-<p><img src="/images/blockchain/验证合约6.png" alt></p>
+<p><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A66.png"></p>
 <h2 id="成功爬坑"><a href="#成功爬坑" class="headerlink" title="成功爬坑"></a>成功爬坑</h2><ol>
 <li>首先要用VPN科学上网，确认能上Google</li>
 <li>在提交代码页面确认出现了“人机身份验证”</li>
 <li>正常提交就OK了。</li>
 </ol>
 <p>下面是用HelloWorld合约测试的结果：</p>
-<p><img src="/images/blockchain/验证合约7-成功加载页面.png" alt="成功加载页面"><br><img src="/images/blockchain/验证合约8-通过人机校验.png" alt="通过人机校验"><br><img src="/images/blockchain/验证合约9-验证成功.png" alt="验证成功"><br><img src="/images/blockchain/验证合约10-查看验证通过的合约.png" alt="查看验证通过的合约"></p>
+<p><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A67-%E6%88%90%E5%8A%9F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2.png" alt="成功加载页面"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A68-%E9%80%9A%E8%BF%87%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C.png" alt="通过人机校验"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A69-%E9%AA%8C%E8%AF%81%E6%88%90%E5%8A%9F.png" alt="验证成功"><br><img src="/images/blockchain/%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A610-%E6%9F%A5%E7%9C%8B%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84%E5%90%88%E7%BA%A6.png" alt="查看验证通过的合约"></p>
 <h2 id="合并工具"><a href="#合并工具" class="headerlink" title="合并工具"></a>合并工具</h2><p>如果依赖一些第三方库，而合约文件比较多，可以利用合并工具进行合并为单一文件。同时现在也是支持多文件和imports的。</p>
-<h5 id="1-SolidityFlattery"><a href="#1-SolidityFlattery" class="headerlink" title="1. SolidityFlattery"></a>1. <a href="https://github.com/akombalabs/SolidityFlattery" target="_blank" rel="noopener">SolidityFlattery</a></h5><p>这是Golang写的工具，直接下载 github 中 <code>flat</code> 可执行文件，丢在 <code>/usr/bin</code> 目录就可以使用了</p>
+<h5 id="1-SolidityFlattery"><a href="#1-SolidityFlattery" class="headerlink" title="1. SolidityFlattery"></a>1. <a target="_blank" rel="noopener" href="https://github.com/akombalabs/SolidityFlattery">SolidityFlattery</a></h5><p>这是Golang写的工具，直接下载 github 中 <code>flat</code> 可执行文件，丢在 <code>/usr/bin</code> 目录就可以使用了</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ flat -input MetaCoin.sol -output SourceCode</span><br></pre></td></tr></table></figure>
-<h5 id="2-solidity-flattener"><a href="#2-solidity-flattener" class="headerlink" title="2. solidity-flattener"></a>2. <a href="https://github.com/BlockCatIO/solidity-flattener" target="_blank" rel="noopener">solidity-flattener</a></h5><p>这个是Python3写的工具，依赖Python。</p>
+
+<h5 id="2-solidity-flattener"><a href="#2-solidity-flattener" class="headerlink" title="2. solidity-flattener"></a>2. <a target="_blank" rel="noopener" href="https://github.com/BlockCatIO/solidity-flattener">solidity-flattener</a></h5><p>这个是Python3写的工具，依赖Python。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install solidity-flattener</span><br><span class="line">$ solidity_flattener –output SourceCode.sol MetaCoin.sol</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>以下是参考的资料和摘录</p>
 <ul>
-<li><a href="https://cloud.tencent.com/developer/article/1413381" target="_blank" rel="noopener">《如何在Etherscan中支持合约接口调用》</a><blockquote>
+<li><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1413381">《如何在Etherscan中支持合约接口调用》</a></p>
+<blockquote>
 <p>实现步骤</p>
 <ol>
 <li>合并合约：将所有import导入的合约和库（library）都写到一个文件中</li>
@@ -608,9 +310,7 @@
 </ol>
 </blockquote>
 </li>
-</ul>
-<ul>
-<li><p><a href="https://uzzz.org/2018/02/13/924cb7f660caab962ebbecf6d1bf03ac.html" target="_blank" rel="noopener">《如何发布你自己的 ICO》</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://uzzz.org/2018/02/13/924cb7f660caab962ebbecf6d1bf03ac.html">《如何发布你自己的 ICO》</a></p>
 <blockquote>
 <p>在填写表单时有以下注意事项:</p>
 <ol>
@@ -620,1104 +320,255 @@
 <p>虽然 solidity 支持 import 语法，但 Etherscan 对使用 import 进行开发的合约支持很鸡肋，目前它要求你需要把库文件也当作合约发布至网络才能够在表单中填写进行验证。<br>当然我们也可以选择手动把 import 库文件的内容手动复制粘贴到代码框里，注意要保留全部内容，包括 pragma 声明一行。</p>
 </blockquote>
 </li>
-<li><p><a href="https://www.jianshu.com/p/e2763ef9fcb0" target="_blank" rel="noopener">《验证ETH智能合约》</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e2763ef9fcb0">《验证ETH智能合约》</a></p>
 <blockquote>
-<p>利用 <a href="https://github.com/akombalabs/SolidityFlattery" target="_blank" rel="noopener">SolidityFlattery</a> 工具来删除 import 和合并合约</p>
+<p>利用 <a target="_blank" rel="noopener" href="https://github.com/akombalabs/SolidityFlattery">SolidityFlattery</a> 工具来删除 import 和合并合约</p>
 </blockquote>
 </li>
-<li><a href="https://docs.ethlinker.com/faq/token/verify_etherscan.html?q=" target="_blank" rel="noopener">《如何在Etherscan验证代币合约》</a><blockquote>
+<li><p><a target="_blank" rel="noopener" href="https://docs.ethlinker.com/faq/token/verify_etherscan.html?q=">《如何在Etherscan验证代币合约》</a></p>
+<blockquote>
 <p>验证需要科学上网，否则会因网络问题造成验证失败</p>
 </blockquote>
 </li>
-<li><p><a href="https://etherscancom.freshdesk.com/support/solutions/articles/35000022165-contract-verification-constructor-arguments" target="_blank" rel="noopener">《3份有构造参数的合约验证示例》</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://etherscancom.freshdesk.com/support/solutions/articles/35000022165-contract-verification-constructor-arguments">《3份有构造参数的合约验证示例》</a></p>
 <blockquote>
 <ol start="0">
-<li><a href="https://ropsten.etherscan.io/address/0xcd4d737151d14742d9c75e2b9ef838e3b69bd00c#code" target="_blank" rel="noopener">https://ropsten.etherscan.io/address/0xcd4d737151d14742d9c75e2b9ef838e3b69bd00c#code</a></li>
-<li><a href="https://etherscan.io/address/0x38c6A68304cdEfb9BEc48BbFaABA5C5B47818bb2#contracts" target="_blank" rel="noopener">https://etherscan.io/address/0x38c6A68304cdEfb9BEc48BbFaABA5C5B47818bb2#contracts</a></li>
-<li><a href="https://etherscan.io/address/0x7da82c7ab4771ff031b66538d2fb9b0b047f6cf9#code" target="_blank" rel="noopener">https://etherscan.io/address/0x7da82c7ab4771ff031b66538d2fb9b0b047f6cf9#code</a></li>
-<li><a href="https://etherscan.io/address/0x85bc00724203d53536072b000c44a2cc16cd12c5#code" target="_blank" rel="noopener">https://etherscan.io/address/0x85bc00724203d53536072b000c44a2cc16cd12c5#code</a></li>
-<li><a href="https://etherscan.io/address/0x63091244180ae240c87d1f528f5f269134cb07b3#code" target="_blank" rel="noopener">https://etherscan.io/address/0x63091244180ae240c87d1f528f5f269134cb07b3#code</a></li>
+<li><a target="_blank" rel="noopener" href="https://ropsten.etherscan.io/address/0xcd4d737151d14742d9c75e2b9ef838e3b69bd00c#code">https://ropsten.etherscan.io/address/0xcd4d737151d14742d9c75e2b9ef838e3b69bd00c#code</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/address/0x38c6A68304cdEfb9BEc48BbFaABA5C5B47818bb2#contracts">https://etherscan.io/address/0x38c6A68304cdEfb9BEc48BbFaABA5C5B47818bb2#contracts</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/address/0x7da82c7ab4771ff031b66538d2fb9b0b047f6cf9#code">https://etherscan.io/address/0x7da82c7ab4771ff031b66538d2fb9b0b047f6cf9#code</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/address/0x85bc00724203d53536072b000c44a2cc16cd12c5#code">https://etherscan.io/address/0x85bc00724203d53536072b000c44a2cc16cd12c5#code</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/address/0x63091244180ae240c87d1f528f5f269134cb07b3#code">https://etherscan.io/address/0x63091244180ae240c87d1f528f5f269134cb07b3#code</a></li>
 </ol>
 </blockquote>
 </li>
-<li><p><a href="https://etherscan.io/sourcecode-demo.html" target="_blank" rel="noopener">《Demo HTTP Post for using the Source Code Verfication Submission API》</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://etherscan.io/sourcecode-demo.html">《Demo HTTP Post for using the Source Code Verfication Submission API》</a></p>
 <blockquote>
 <p>Contracts that use “imports” will need to have the ode concatenated into one file as we do not support “imports” in separate files. You can try using the Blockcat solidity-flattener or SolidityFlattery<br>合约中使用了“imports”的，需要代码连接到一个文件中，因为我们不支持在单独的文件中使用“imports”。你可以尝试使用 <code>Blockcat solidity-flattener</code> 或 <code>SolidityFlattery</code></p>
 </blockquote>
 </li>
-<li><p><a href="https://blog.csdn.net/liudaoqiang_tj/article/details/81160513" target="_blank" rel="noopener">Ropsten部署合约-2</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liudaoqiang_tj/article/details/81160513">Ropsten部署合约-2</a></p>
 <blockquote>
 <p>这个作者的情况和我遇到的很相似。</p>
 </blockquote>
 </li>
-<li><p><a href="https://www.yidaibi.me/blog/how-to-verify-ethereum-smart-contracts-source-code.html" target="_blank" rel="noopener">如何验证Ethereum smart contract的源代码</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.yidaibi.me/blog/how-to-verify-ethereum-smart-contracts-source-code.html">如何验证Ethereum smart contract的源代码</a></p>
 </li>
 </ul>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/区块链/" rel="tag"># 区块链</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/区块链/8.2、基于truffle发布Token到Ropsten测试网络/" rel="next" title="8.2、基于truffle发布Token到Ropsten测试网络">
-                <i class="fa fa-chevron-left"></i> 8.2、基于truffle发布Token到Ropsten测试网络
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"># 区块链</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Android/Android Studio 离线安装Gradle/" rel="prev" title="Android Studio 离线安装Gradle">
-                Android Studio 离线安装Gradle <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/8.2%E3%80%81%E5%9F%BA%E4%BA%8Etruffle%E5%8F%91%E5%B8%83Token%E5%88%B0Ropsten%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C/" rel="prev" title="8.2、基于truffle发布Token到Ropsten测试网络">
+      <i class="fa fa-chevron-left"></i> 8.2、基于truffle发布Token到Ropsten测试网络
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Android/Android%20Studio%20%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Gradle/" rel="next" title="Android Studio 离线安装Gradle">
+      Android Studio 离线安装Gradle <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/custom/avatar_samwen.jpg" alt="KevinWen">
-            
-              <p class="site-author-name" itemprop="name">KevinWen</p>
-              <p class="site-description motion-element" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">354</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">94</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/kevinvane" title="GitHub &rarr; https://github.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/kevinvane@gmail.com" title="E-Mail &rarr; kevinvane@gmail.com"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/kevinvane" title="Weibo &rarr; https://weibo.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://plus.google.com/kevinvane" title="Google &rarr; https://plus.google.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://twitter.com/kevinvane" title="Twitter &rarr; https://twitter.com/kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要验证合约？"><span class="nav-number">1.</span> <span class="nav-text">为什么要验证合约？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何验证？"><span class="nav-number">2.</span> <span class="nav-text">如何验证？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑坑"><span class="nav-number">3.</span> <span class="nav-text">坑坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误500的原因"><span class="nav-number">4.</span> <span class="nav-text">错误500的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成功爬坑"><span class="nav-number">5.</span> <span class="nav-text">成功爬坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并工具"><span class="nav-number">6.</span> <span class="nav-text">合并工具</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-SolidityFlattery"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">1. SolidityFlattery</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-solidity-flattener"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">2. solidity-flattener</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2023</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KevinWen</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">为什么要验证合约？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">如何验证？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%91%E5%9D%91"><span class="nav-number">3.</span> <span class="nav-text">坑坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF500%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">4.</span> <span class="nav-text">错误500的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E7%88%AC%E5%9D%91"><span class="nav-number">5.</span> <span class="nav-text">成功爬坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">合并工具</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-SolidityFlattery"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">1. SolidityFlattery</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-solidity-flattener"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">2. solidity-flattener</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
 
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 
