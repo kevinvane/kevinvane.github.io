@@ -199,6 +199,334 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/5%E3%80%81Docker-%E6%8B%89%E9%95%9C%E5%83%8F%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docker/5%E3%80%81Docker-%E6%8B%89%E9%95%9C%E5%83%8F%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/" class="post-title-link" itemprop="url">5、Docker-拉镜像网络错误</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-19 19:55:36" itemprop="dateCreated datePublished" datetime="2019-04-19T19:55:36+08:00">2019-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-31 15:42:10" itemprop="dateModified" datetime="2022-10-31T15:42:10+08:00">2022-10-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>当访问 <code>registry-1.docker.io</code> 出错时，可能是DNS问题，可以通过手动加HOST记录来临时解决。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:~/# docker-compose up</span><br><span class="line">Pulling db (mysql:5.7)...</span><br><span class="line">ERROR: Get https://registry-1.docker.io/v2/library/mysql/manifests/5.7: Get https://auth.docker.io/token?scope=repository%3Alibrary%2Fmysql%3Apull&amp;service=registry.docker.io: dial tcp: lookup auth.docker.io: Temporary failure in name resolution</span><br><span class="line"></span><br><span class="line"># 通过dig查找可用IP</span><br><span class="line">root@ubuntu:~/# dig @114.114.114.114 registry-1.docker.io</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.11.3-1ubuntu1.7-Ubuntu &lt;&lt;&gt;&gt; @114.114.114.114 registry-1.docker.io</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 56865</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 8, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 4096</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;registry-1.docker.io.		IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">registry-1.docker.io.	33	IN	A	52.22.201.61</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.199.77.19</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.233.151.211</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.228.211.243</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.232.31.24</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.206.236.31</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.201.236.93</span><br><span class="line">registry-1.docker.io.	33	IN	A	34.201.196.144</span><br><span class="line"></span><br><span class="line">;; Query time: 25 msec</span><br><span class="line">;; SERVER: 114.114.114.114#53(114.114.114.114)</span><br><span class="line">;; WHEN: Wed Jun 19 10:33:14 CST 2019</span><br><span class="line">;; MSG SIZE  rcvd: 177</span><br><span class="line"></span><br><span class="line"># 将某条记录加上hosts文件</span><br><span class="line">root@ubuntu:~/# vim /etc/hosts</span><br><span class="line"></span><br><span class="line">34.199.77.19 registry-1.docker.io</span><br><span class="line"># 重试</span><br><span class="line">root@ubuntu:~/# docker-compose up</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/4%E3%80%81Docker-%E7%A7%81%E6%9C%8D%E9%95%9C%E5%83%8FRegistry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docker/4%E3%80%81Docker-%E7%A7%81%E6%9C%8D%E9%95%9C%E5%83%8FRegistry/" class="post-title-link" itemprop="url">4、Docker-私服镜像Registry</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-19 19:54:36" itemprop="dateCreated datePublished" datetime="2019-04-19T19:54:36+08:00">2019-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-31 15:42:05" itemprop="dateModified" datetime="2022-10-31T15:42:05+08:00">2022-10-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>私服镜像管理：registry<br>私服镜像WebUI：konradkleine&#x2F;docker-registry-frontend:v2</p>
+<p>registry只提供一个RESTful API，docker-registry-frontend是第三方开发者实现的可视化，典型的前后端分离架构。</p>
+<h2 id="docker命令启动"><a href="#docker命令启动" class="headerlink" title="docker命令启动"></a>docker命令启动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull registry</span><br><span class="line">$ docker run -d -p 5000:5000 --restart=always --name registry registry:2</span><br></pre></td></tr></table></figure>
+
+<h2 id="单独registry的compose文件"><a href="#单独registry的compose文件" class="headerlink" title="单独registry的compose文件"></a>单独registry的compose文件</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/docker/4%E3%80%81Docker-%E7%A7%81%E6%9C%8D%E9%95%9C%E5%83%8FRegistry/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/3%E3%80%81Docker-Compose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docker/3%E3%80%81Docker-Compose/" class="post-title-link" itemprop="url">3、Docker-Compose</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-19 19:53:36" itemprop="dateCreated datePublished" datetime="2019-04-19T19:53:36+08:00">2019-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-14 10:50:33" itemprop="dateModified" datetime="2023-06-14T10:50:33+08:00">2023-06-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Docker Compose 是 Docker 官方编排（Orchestration）项目之一，负责快速的部署分布式应用。</p>
+<h2 id="下载-Docker-Compose"><a href="#下载-Docker-Compose" class="headerlink" title="下载 Docker Compose:"></a>下载 Docker Compose:</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/install/linux/#install-the-plugin-manually">【文档】</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">20230614最新版本</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo  curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改为可执行文件"><a href="#修改为可执行文件" class="headerlink" title="修改为可执行文件:"></a>修改为可执行文件:</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/docker/3%E3%80%81Docker-Compose/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/2%E3%80%81DockerCE-%E5%9C%A8Centos7%E4%B8%8A%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docker/2%E3%80%81DockerCE-%E5%9C%A8Centos7%E4%B8%8A%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">2、DockerCE-在Centos7上安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-19 19:52:37" itemprop="dateCreated datePublished" datetime="2019-04-19T19:52:37+08:00">2019-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-31 15:38:46" itemprop="dateModified" datetime="2022-10-31T15:38:46+08:00">2022-10-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo yum install -y yum-utils \</span></span><br><span class="line"><span class="language-bash">  device-mapper-persistent-data \</span></span><br><span class="line"><span class="language-bash">  lvm</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可以选择国内的一些源地址(阿里云)</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo yum-config-manager \</span></span><br><span class="line"><span class="language-bash">    --add-repo \</span></span><br><span class="line"><span class="language-bash">    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo yum install docker-ce</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo systemctl start docker</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改docker镜像源"><a href="#修改docker镜像源" class="headerlink" title="修改docker镜像源"></a>修改docker镜像源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://h0ulrp80.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">$ systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/docker/2%E3%80%81DockerCE-%E5%9C%A8Centos7%E4%B8%8A%E5%AE%89%E8%A3%85/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/1%E3%80%81DockerCE-%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1547,334 +1875,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20P(9.0)%20WiFi%E7%9A%84%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%E5%8F%98%E6%9B%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20P(9.0)%20WiFi%E7%9A%84%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%E5%8F%98%E6%9B%B4/" class="post-title-link" itemprop="url">Android P(9.0) WiFi信息获取变更</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-08 09:52:36" itemprop="dateCreated datePublished" datetime="2019-01-08T09:52:36+08:00">2019-01-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在开发IoT App往往需要WiFi配网功能，所以需要用到获取当前SSID的API接口，在Android9.0上获取的权限更加严格。</p>
-<p><img src="/images/android/android9-wifi.png" alt="android9-wifi.png"></p>
-<h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><ul>
-<li><p>ACCESS_FINE_LOCATION <strong>或</strong> ACCESS_COARSE_LOCATION (需要动态申请)</p>
-</li>
-<li><p>ACCESS_WIFI_STATE 和 ACCESS_NETWORK_STATE</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot; /&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20P(9.0)%20WiFi%E7%9A%84%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%E5%8F%98%E6%9B%B4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Preview%E7%A9%BA%E7%99%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20Preview%E7%A9%BA%E7%99%BD/" class="post-title-link" itemprop="url">Android Preview空白</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-04 19:07:00" itemprop="dateCreated datePublished" datetime="2019-01-04T19:07:00+08:00">2019-01-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>工程 <code>compileSdkVersion 28</code>，<code>preview</code> 一片空白，无法预览布局，降低 <code>sdk</code> 版本也不行。</p>
-<p>点击旁边的 <code>红色圆点叹号</code>，出现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to load AppCompat ActionBar with unknown error.</span><br></pre></td></tr></table></figure>
-
-<p>应该是 <code>ActionBar</code> 出了问题，按照以下修改可预览：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;AppTheme&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20Preview%E7%A9%BA%E7%99%BD/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/14%E3%80%81%E5%88%9B%E5%BB%BA%E6%81%A2%E5%A4%8D%E9%92%B1%E5%8C%85%E8%BA%AB%E4%BB%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/14%E3%80%81%E5%88%9B%E5%BB%BA%E6%81%A2%E5%A4%8D%E9%92%B1%E5%8C%85%E8%BA%AB%E4%BB%BD/" class="post-title-link" itemprop="url">14、创建/恢复ETH钱包身份</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-12-29 21:52:36" itemprop="dateCreated datePublished" datetime="2018-12-29T21:52:36+08:00">2018-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-27 21:52:36" itemprop="dateModified" datetime="2019-07-27T21:52:36+08:00">2019-07-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>借助网上的一段描述：</p>
-<blockquote>
-<p>若以银行账户为类比，这 5 个词分别对应内容如下：</p>
-<p>地址&#x3D;银行卡号<br>密码&#x3D;银行卡密码<br>私钥&#x3D;银行卡号+银行卡密码<br>助记词&#x3D;银行卡号+银行卡密码<br>Keystore+密码&#x3D;银行卡号+银行卡密码<br>Keystore ≠ 银行卡号</p>
-</blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">&#x27;org.web3j:core:3.3.1-android&#x27;</span></span><br><span class="line">implementation <span class="string">&#x27;io.github.novacrypto:BIP39:0.1.9&#x27;</span><span class="comment">//用于生成助记词</span></span><br></pre></td></tr></table></figure>
-
-<p><code>org.web3j:core</code> 这个库是Java的，<code>org.web3j:core:x-android</code> 是兼容Android平台，所有接口和工具类都是为Java应用设计的，所以在Android上使用的时候要注意变通一下。</p>
-<h3 id="创建数字身份"><a href="#创建数字身份" class="headerlink" title="创建数字身份"></a>创建数字身份</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%8C%BA%E5%9D%97%E9%93%BE/14%E3%80%81%E5%88%9B%E5%BB%BA%E6%81%A2%E5%A4%8D%E9%92%B1%E5%8C%85%E8%BA%AB%E4%BB%BD/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/13%E3%80%81Android%E9%80%9A%E8%BF%87web3j%E4%BA%A4%E6%98%93%E4%BB%A3%E5%B8%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/13%E3%80%81Android%E9%80%9A%E8%BF%87web3j%E4%BA%A4%E6%98%93%E4%BB%A3%E5%B8%81/" class="post-title-link" itemprop="url">13、Android通过web3j交易代币</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-12-27 23:52:36" itemprop="dateCreated datePublished" datetime="2018-12-27T23:52:36+08:00">2018-12-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="测试“生成合约的Java代码”环境"><a href="#测试“生成合约的Java代码”环境" class="headerlink" title="测试“生成合约的Java代码”环境"></a>测试“生成合约的Java代码”环境</h3><p>下载<a target="_blank" rel="noopener" href="https://github.com/web3j/web3j/releases/download/v3.4.0/web3j-3.4.0.zip">web3j-3.4.0</a><br>解压目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── bin</span><br><span class="line">│   ├── web3j</span><br><span class="line">│   └── web3j.bat</span><br><span class="line">└── lib</span><br></pre></td></tr></table></figure>
-
-<p>进入bin目录，编写一个测试合约代码 SimpleStorage.sol</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.17</span>;</span><br><span class="line"></span><br><span class="line">contract <span class="title class_">SimpleStorage</span> &#123;</span><br><span class="line">	uint storedData;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">set</span>(<span class="params">uint x</span>) public &#123;</span><br><span class="line">	storedData = x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">get</span>(<span class="params"></span>) public view returns (uint) &#123;</span><br><span class="line">	<span class="keyword">return</span> storedData;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%8C%BA%E5%9D%97%E9%93%BE/13%E3%80%81Android%E9%80%9A%E8%BF%87web3j%E4%BA%A4%E6%98%93%E4%BB%A3%E5%B8%81/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1945,7 +1945,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">358</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在Docker中构建包含Java应用程序的镜像有两种方法: 1. 使用Dockerfile构建镜像可以编写一个Dockerfile,在其中定义构建镜像的所有步骤,比如安装JDK,复制Jar包,设置启动命令等。然后使用docker build命令构建镜像。 优点是可以自定义每个构建步骤,灵活控制镜像的内容。 2. 在docker-compose中构建镜像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker部署&amp;编排自己的Java Web服务">
+<meta property="og:url" content="http://yoursite.com/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="在Docker中构建包含Java应用程序的镜像有两种方法: 1. 使用Dockerfile构建镜像可以编写一个Dockerfile,在其中定义构建镜像的所有步骤,比如安装JDK,复制Jar包,设置启动命令等。然后使用docker build命令构建镜像。 优点是可以自定义每个构建步骤,灵活控制镜像的内容。 2. 在docker-compose中构建镜像">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-17T12:22:36.000Z">
+<meta property="article:modified_time" content="2023-08-17T10:19:15.672Z">
+<meta property="article:author" content="KevinWen">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Docker部署&编排自己的Java Web服务 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Docker部署&编排自己的Java Web服务
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-17 20:22:36 / 修改时间：18:19:15" itemprop="dateCreated datePublished" datetime="2023-08-17T20:22:36+08:00">2023-08-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在Docker中构建包含Java应用程序的镜像有两种方法:</p>
+<h4 id="1-使用Dockerfile构建镜像"><a href="#1-使用Dockerfile构建镜像" class="headerlink" title="1. 使用Dockerfile构建镜像"></a>1. 使用Dockerfile构建镜像</h4><p>可以编写一个Dockerfile,在其中定义构建镜像的所有步骤,比如安装JDK,复制Jar包,设置启动命令等。然后使用<code>docker build</code>命令构建镜像。</p>
+<p>优点是可以自定义每个构建步骤,灵活控制镜像的内容。</p>
+<h4 id="2-在docker-compose中构建镜像"><a href="#2-在docker-compose中构建镜像" class="headerlink" title="2. 在docker-compose中构建镜像"></a>2. 在docker-compose中构建镜像</h4><p>可以在docker-compose.yml的services下面直接定义build参数,在这里构建镜像。</p>
+<p>优点是归集了应用程序的镜像构建和运行设置在一个文件,方便管理。</p>
+<h4 id="3-如何选择？？？"><a href="#3-如何选择？？？" class="headerlink" title="3. 如何选择？？？"></a>3. 如何选择？？？</h4><p>对于哪种方式更好,需要根据具体情况决定:</p>
+<ul>
+<li>如果需要自动化定制镜像构建,则Dockerfile更灵活</li>
+<li>如果仅仅是简单构建jar文件的镜像,则docker-compose更方便</li>
+</ul>
+<p>另外,也可以结合两者,在docker-compose中使用Dockerfile构建定制镜像。</p>
+<h3 id="一、构建运行Java-jar文件的简单Dockerfile"><a href="#一、构建运行Java-jar文件的简单Dockerfile" class="headerlink" title="一、构建运行Java jar文件的简单Dockerfile"></a>一、构建运行Java jar文件的简单Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础镜像使用官方的OpenJDK镜像</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置maintainer</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将jar包复制到容器里</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> /path/to/your-app.jar /opt/app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 暴露端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置容器内的工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义默认执行命令,启动jar包</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>使用步骤:</p>
+<ol>
+<li><p>将该Dockerfile和your-app.jar放在同一目录下</p>
+</li>
+<li><p>构建镜像:</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t your-image-name .</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>运行容器:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 your-image-name</span><br></pre></td></tr></table></figure>
+
+<p>这会一个包含 jar的镜像,并在容器内启动该jar应用。</p>
+<p>可以根据需要修改基础镜像,添加更多构建步骤等。这是一个简单的Java应用Docker化的示例,可以作为参考。</p>
+<h3 id="二、使用docker-compose构建运行"><a href="#二、使用docker-compose构建运行" class="headerlink" title="二、使用docker-compose构建运行"></a>二、使用docker-compose构建运行</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">app</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br></pre></td></tr></table></figure>
+
+<p>这个docker-compose.yml假设在同一目录下存在:</p>
+<ul>
+<li>Dockerfile,用于构建镜像</li>
+<li>app.jar,Java应用的jar包</li>
+</ul>
+<p>Dockerfile可以类似之前的示例:</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> app.jar /opt/app.jar</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/opt/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>构建和运行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker-compose build</span><br><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
+
+<p>这会构建一个名为app的镜像,并启动一个容器运行app.jar。</p>
+<p>docker-compose使得通过一个文件就可以定义镜像构建流程和运行参数,方便管理。</p>
+<p>可以根据需要调整Dockerfile,添加更多服务等。这是一个简单可运行的docker-compose Java应用示例。</p>
+<h3 id="三、Spring-Boot应用连接docker-compose中的redis服务"><a href="#三、Spring-Boot应用连接docker-compose中的redis服务" class="headerlink" title="三、Spring Boot应用连接docker-compose中的redis服务:"></a>三、Spring Boot应用连接docker-compose中的redis服务:</h3><p>如果Java应用程序依赖redis服务,可以在docker-compose.yml中定义两个服务:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">myredis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:alpine</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mynet</span> </span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mynet</span>  </span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">myredis</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">    <span class="attr">mynet:</span></span><br><span class="line">      <span class="attr">driver:</span> <span class="string">bridge</span>   </span><br></pre></td></tr></table></figure>
+
+<p>这里添加了一个<code>myredis</code>服务,使用官方的redis镜像。</p>
+<p>app服务通过<code>depends_on</code>指明它依赖<code>myredis</code>服务。</p>
+<p>这样在启动容器时,会先启动<code>myredis</code>容器,然后再启动app容器。</p>
+<p>在Spring Boot应用中,通过<code>redis.host</code>属性指定redis服务的主机名:</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.redis.host</span>=<span class="string">myredis</span></span><br><span class="line"><span class="attr">spring.redis.port</span>=<span class="string">6379</span></span><br></pre></td></tr></table></figure>
+
+
+<p>这样Spring Boot应用就可以通过主机名<code>myredis</code>连接到docker-compose网络中的<code>myredis</code>服务了。</p>
+<p>也可以直接使用域名<code>redis</code>访问,如果两个容器在同一个网络中,Docker会处理服务名的解析。</p>
+<p>使用Docker网络和服务名,可以方便地在应用程序中引用其他服务,而不需要硬编码IP和端口。</p>
+<h3 id="四、挂载宿主机的数据"><a href="#四、挂载宿主机的数据" class="headerlink" title="四、挂载宿主机的数据"></a>四、挂载宿主机的数据</h3><p>使用 volumes 在 docker-compose 中将宿主机上的 MongoDB 数据目录映射到 MongoDB 服务容器里:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mongodb:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mongo:4.2</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/path/to/host/mongodb:/data/db</span></span><br></pre></td></tr></table></figure>
+
+<p>上面我将宿主机上的 <code>/path/to/host/mongodb</code> 目录挂载到了容器内的 <code>/data/db</code>目录。</p>
+<p>这个 <code>/data/db</code> 是 MongoDB 的默认数据目录。</p>
+<p>这样当 MongoDB 服务启动时,就可以访问宿主机上已有的 MongoDB 数据文件了。</p>
+<p>每次启动该服务时,都会使用宿主机上该目录下最新的 MongoDB 数据。</p>
+<p>需要注意:</p>
+<ol>
+<li><p>宿主机上的 MongoDB 数据目录必须与容器内的映射目录匹配,权限正确</p>
+</li>
+<li><p>如果要用已有的数据启动,需要配置 MongoDB 服务不要重新初始化数据</p>
+</li>
+<li><p>可以考虑用 docker volume 而不是直接映射宿主机目录,增强可移植性</p>
+</li>
+</ol>
+<p>这样以来,我们就可以非常方便的使用 docker-compose 来管理 MongoDB 服务,并持久化存储数据了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Web%E5%90%8E%E7%AB%AF/Letsencrypt%E8%AF%81%E4%B9%A6Certbot%E5%AE%89%E8%A3%85/" rel="prev" title="Letsencrypt证书-Certbot安装">
+      <i class="fa fa-chevron-left"></i> Letsencrypt证书-Certbot安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81Html+JS%E5%8E%8B%E7%BC%A9/" rel="next" title="静态Html+JS压缩">
+      静态Html+JS压缩 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8Dockerfile%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">1. 使用Dockerfile构建镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9C%A8docker-compose%E4%B8%AD%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">2. 在docker-compose中构建镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">3. 如何选择？？？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8CJava-jar%E6%96%87%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95Dockerfile"><span class="nav-number"></span> <span class="nav-text">一、构建运行Java jar文件的简单Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8docker-compose%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8C"><span class="nav-number"></span> <span class="nav-text">二、使用docker-compose构建运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81Spring-Boot%E5%BA%94%E7%94%A8%E8%BF%9E%E6%8E%A5docker-compose%E4%B8%AD%E7%9A%84redis%E6%9C%8D%E5%8A%A1"><span class="nav-number"></span> <span class="nav-text">三、Spring Boot应用连接docker-compose中的redis服务:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%8C%82%E8%BD%BD%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number"></span> <span class="nav-text">四、挂载宿主机的数据</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">358</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

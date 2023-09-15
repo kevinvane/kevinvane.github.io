@@ -2281,21 +2281,6 @@
       </categories>
   </entry>
   <entry>
-    <title>idea插件</title>
-    <url>/IDE/IDEA%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<p>实用的插件，idea默认没有带的，自己可以安装。</p>
-<h2 id="ignore"><a href="#ignore" class="headerlink" title=".ignore"></a>.ignore</h2><p>可以帮助你创建相关项目的.gitignore文件</p>
-<h2 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h2><p>快速生成JSON类</p>
-<blockquote>
-<p>2021-11-11:今天发现插件市场搜不到这个插件了，只有一个 GsonFormat-Plus（功能更加多，基于GsonFormat开发，作者也不同），感觉还是GsonFormat好用，可以手动下载安装：<a href="https://plugins.jetbrains.com/plugin/7654-gsonformat/versions">https://plugins.jetbrains.com/plugin/7654-gsonformat/versions</a> 最后更新是2017年。</p>
-</blockquote>
-<h2 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h2><p>Lombok注解</p>
-]]></content>
-      <categories>
-        <category>IDE</category>
-      </categories>
-  </entry>
-  <entry>
     <title>IDEA插件代码绘图PlantUML</title>
     <url>/IDE/IDEA%E6%8F%92%E4%BB%B6%E4%BB%A3%E7%A0%81%E7%BB%98%E5%9B%BEPlantUML/</url>
     <content><![CDATA[<p>现在国内免费的流程图画图软件网页版的居多，如 ProcessOn 、 GitMind 、DrawIO 等。现在发现一个新的选择，IDEA上的PlantUML是一个开源的插件，可以使用代码来画图。</p>
@@ -6511,11 +6496,13 @@
 <li>使用<code>jupyter</code>：在浏览器里写笔记和代码，而笔记里面的代码是可以直接运行的，直观的很。</li>
 </ul>
 <h3 id="如何安装？"><a href="#如何安装？" class="headerlink" title="如何安装？"></a>如何安装？</h3><p><a href="https://jupyter.org/install">很简单，直接通过pip就可以安装。</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">$ pip install jupyterlab</span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ jupyter-lab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">$ pip install notebook</span><br><span class="line"><span class="comment"># 启动（会自动打开浏览器，默认端口: 8888）</span></span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 JupyterLab </span></span><br><span class="line">$ pip install jupyterlab</span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ jupyter-lab</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 经典 Jupyter Notebook</span></span><br><span class="line">$ pip install jupyter  <span class="comment"># 下面的日志是安装了这个</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ pip install notebook <span class="comment"># 官网推荐是安装这个</span></span><br><span class="line"><span class="comment"># 启动（会自动打开浏览器，默认端口: 8888）</span></span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：jupyterlab 和 jupyter notebook 仅需要安装其中一个。</p>
 </blockquote>
+<p><strong>后续补充</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在一台新的机器执行安装，发现配置文件变了</span></span><br><span class="line"><span class="comment"># 而且也安装上了 jupyterlab，扩展安装不上（可能版本更替，不支持，或者自带）</span></span><br><span class="line"><span class="comment"># Web界面也有变化</span></span><br><span class="line">$ pip install notebook --index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line"><span class="comment"># 可能源比较新，安装了notebook+jupyterlab，而且启动日志和配置文件都不一样了</span></span><br><span class="line">$ jupyter --version</span><br><span class="line">Selected Jupyter core packages...</span><br><span class="line">IPython          : 8.14.0</span><br><span class="line">ipykernel        : 6.25.0</span><br><span class="line">ipywidgets       : not installed</span><br><span class="line">jupyter_client   : 8.3.0</span><br><span class="line">jupyter_core     : 5.3.1</span><br><span class="line">jupyter_server   : 2.7.0</span><br><span class="line">jupyterlab       : 4.0.3</span><br><span class="line">nbclient         : 0.8.0</span><br><span class="line">nbconvert        : 7.7.3</span><br><span class="line">nbformat         : 5.9.2</span><br><span class="line">notebook         : 7.0.1</span><br><span class="line">qtconsole        : not installed</span><br><span class="line">traitlets        : 5.9.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当前只要启动jupyter就可以使用notebook和lab</span></span><br><span class="line"><span class="comment"># http://localhost:80 默认是 notebook 主页</span></span><br><span class="line"><span class="comment"># http://localhost:80/lab 是 jupyterlab 主页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ jupyter notebook</span><br><span class="line">[546 ServerApp] ServerApp.password config is deprecated <span class="keyword">in</span> 2.0. Use PasswordIdentityProvider.hashed_password.</span><br><span class="line">[552 ServerApp] Package notebook took 0.0000s to import</span><br><span class="line">[560 ServerApp] Package jupyter_lsp took 0.0076s to import</span><br><span class="line">[560 ServerApp] A `_jupyter_server_extension_points` <span class="keyword">function</span> was not found <span class="keyword">in</span> jupyter_lsp. Instead, a `_jupyter_server_extension_paths` <span class="keyword">function</span> was found and will be used <span class="keyword">for</span> now. This <span class="keyword">function</span> name will be deprecated <span class="keyword">in</span> future releases of Jupyter Server.</span><br><span class="line">[564 ServerApp] Package jupyter_server_terminals took 0.0032s to import</span><br><span class="line">[564 ServerApp] Package jupyterlab took 0.0000s to import</span><br><span class="line">[586 ServerApp] Package notebook_shim took 0.0000s to import</span><br><span class="line">[586 ServerApp] A `_jupyter_server_extension_points` <span class="keyword">function</span> was not found <span class="keyword">in</span> notebook_shim. Instead, a `_jupyter_server_extension_paths` <span class="keyword">function</span> was found and will be used <span class="keyword">for</span> now. This <span class="keyword">function</span> name will be deprecated <span class="keyword">in</span> future releases of Jupyter Server.</span><br><span class="line">[586 ServerApp] jupyter_lsp | extension was successfully linked.</span><br><span class="line">[590 ServerApp] jupyter_server_terminals | extension was successfully linked.</span><br><span class="line">[593 ServerApp] jupyterlab | extension was successfully linked.</span><br><span class="line">[597 ServerApp] notebook | extension was successfully linked.</span><br><span class="line">[755 ServerApp] notebook_shim | extension was successfully linked.</span><br><span class="line">[767 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.</span><br><span class="line">[768 ServerApp] notebook_shim | extension was successfully loaded.</span><br><span class="line">[769 ServerApp] jupyter_lsp | extension was successfully loaded.</span><br><span class="line">[770 ServerApp] jupyter_server_terminals | extension was successfully loaded.</span><br><span class="line">[771 LabApp] JupyterLab extension loaded from /usr/local/lib/python3.10/dist-packages/jupyterlab</span><br><span class="line">[771 LabApp] JupyterLab application directory is /usr/local/share/jupyter/lab</span><br><span class="line">[772 LabApp] Extension Manager is <span class="string">&#x27;pypi&#x27;</span>.</span><br><span class="line">[774 ServerApp] jupyterlab | extension was successfully loaded.</span><br><span class="line">[776 ServerApp] notebook | extension was successfully loaded.</span><br><span class="line">[776 ServerApp] Serving notebooks from <span class="built_in">local</span> directory: /usr/local/notebooks</span><br><span class="line">[776 ServerApp] Jupyter Server 2.7.0 is running at:</span><br><span class="line">[776 ServerApp] http://localhost:80/tree</span><br><span class="line">[776 ServerApp]     http://127.0.0.1:80/tree</span><br><span class="line">[776 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ jupyter lab</span><br><span class="line">[290 ServerApp] ServerApp.password config is deprecated <span class="keyword">in</span> 2.0. Use PasswordIdentityProvider.hashed_password.</span><br><span class="line">[296 ServerApp] Package jupyterlab took 0.0000s to import</span><br><span class="line">[303 ServerApp] Package jupyter_lsp took 0.0072s to import</span><br><span class="line">[303 ServerApp] A `_jupyter_server_extension_points` <span class="keyword">function</span> was not found <span class="keyword">in</span> jupyter_lsp. Instead, a `_jupyter_server_extension_paths` <span class="keyword">function</span> was found and will be used <span class="keyword">for</span> now. This <span class="keyword">function</span> name will be deprecated <span class="keyword">in</span> future releases of Jupyter Server.</span><br><span class="line">[307 ServerApp] Package jupyter_server_terminals took 0.0031s to import</span><br><span class="line">[307 ServerApp] Package notebook took 0.0000s to import</span><br><span class="line">[308 ServerApp] Package notebook_shim took 0.0000s to import</span><br><span class="line">[308 ServerApp] A `_jupyter_server_extension_points` <span class="keyword">function</span> was not found <span class="keyword">in</span> notebook_shim. Instead, a `_jupyter_server_extension_paths` <span class="keyword">function</span> was found and will be used <span class="keyword">for</span> now. This <span class="keyword">function</span> name will be deprecated <span class="keyword">in</span> future releases of Jupyter Server.</span><br><span class="line">[309 ServerApp] jupyter_lsp | extension was successfully linked.</span><br><span class="line">[312 ServerApp] jupyter_server_terminals | extension was successfully linked.</span><br><span class="line">[315 ServerApp] jupyterlab | extension was successfully linked.</span><br><span class="line">[318 ServerApp] notebook | extension was successfully linked.</span><br><span class="line">[478 ServerApp] notebook_shim | extension was successfully linked.</span><br><span class="line">[488 ServerApp] WARNING: The Jupyter server is listening on all IP addresses and not using encryption. This is not recommended.</span><br><span class="line">[488 ServerApp] notebook_shim | extension was successfully loaded.</span><br><span class="line">[490 ServerApp] jupyter_lsp | extension was successfully loaded.</span><br><span class="line">[490 ServerApp] jupyter_server_terminals | extension was successfully loaded.</span><br><span class="line">[491 LabApp] JupyterLab extension loaded from /usr/local/lib/python3.10/dist-packages/jupyterlab</span><br><span class="line">[491 LabApp] JupyterLab application directory is /usr/local/share/jupyter/lab</span><br><span class="line">[492 LabApp] Extension Manager is <span class="string">&#x27;pypi&#x27;</span>.</span><br><span class="line">[494 ServerApp] jupyterlab | extension was successfully loaded.</span><br><span class="line">[495 ServerApp] notebook | extension was successfully loaded.</span><br><span class="line">[496 ServerApp] The port 80 is already <span class="keyword">in</span> use, trying another port.</span><br><span class="line">[496 ServerApp] Serving notebooks from <span class="built_in">local</span> directory: /usr/local/notebooks</span><br><span class="line">[496 ServerApp] Jupyter Server 2.7.0 is running at:</span><br><span class="line">[496 ServerApp] http://localhost:81/lab</span><br><span class="line">[496 ServerApp]     http://127.0.0.1:81/lab</span><br><span class="line">[496 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br><span class="line">[499 ServerApp] No web browser found: Error(<span class="string">&#x27;could not locate runnable browser&#x27;</span>).</span><br><span class="line">[513 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server</span><br><span class="line">[566 LabApp] 302 GET /lab (@192.168.0.42) 0.66ms</span><br><span class="line">[609 ServerApp] User d3e21b90649743bf9e75a909ff5fc6f8 logged <span class="keyword">in</span>.</span><br><span class="line">[610 ServerApp] 302 POST /login?next=%2Flab (d3e21b90649743bf9e75a909ff5fc6f8@192.168.0.42) 59.69ms</span><br><span class="line">[220 LabApp] Could not determine jupyterlab build status without nodejs</span><br><span class="line">[487 ServerApp] interrupted</span><br><span class="line">[487 ServerApp] Serving notebooks from <span class="built_in">local</span> directory: /usr/local/notebooks</span><br></pre></td></tr></table></figure>
+
 <h3 id="jupyter-notebook-常用命令"><a href="#jupyter-notebook-常用命令" class="headerlink" title="jupyter notebook 常用命令"></a>jupyter notebook 常用命令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 帮助</span></span><br><span class="line">$ jupyter notebook -h</span><br><span class="line"><span class="comment"># 指定端口</span></span><br><span class="line">$ jupyter notebook --port &lt;port_number&gt;</span><br><span class="line"><span class="comment"># 启动时不自动打开浏览器</span></span><br><span class="line">$ jupyter notebook --no-browser</span><br></pre></td></tr></table></figure>
 
 <h3 id="jupyter-notebook-配置"><a href="#jupyter-notebook-配置" class="headerlink" title="jupyter notebook 配置"></a>jupyter notebook 配置</h3><p><code>jupyter notebook</code> 默认是home路径，上面很多私人文档文件，所以需修改默认目录</p>
@@ -15679,5 +15666,164 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       <categories>
         <category>Android</category>
       </categories>
+  </entry>
+  <entry>
+    <title>idea插件</title>
+    <url>/IDE/idea%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<p>实用的插件，idea默认没有带的，自己可以安装。</p>
+<h2 id="ignore"><a href="#ignore" class="headerlink" title=".ignore"></a>.ignore</h2><p>可以帮助你创建相关项目的.gitignore文件</p>
+<h2 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h2><p>快速生成JSON类</p>
+<blockquote>
+<p>2021-11-11:今天发现插件市场搜不到这个插件了，只有一个 GsonFormat-Plus（功能更加多，基于GsonFormat开发，作者也不同），感觉还是GsonFormat好用，可以手动下载安装：<a href="https://plugins.jetbrains.com/plugin/7654-gsonformat/versions">https://plugins.jetbrains.com/plugin/7654-gsonformat/versions</a> 最后更新是2017年。</p>
+</blockquote>
+<h2 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h2><p>Lombok注解</p>
+]]></content>
+      <categories>
+        <category>IDE</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ubuntu关闭SSH终端登录广告</title>
+    <url>/Linux/Ubuntu%E5%85%B3%E9%97%ADSSH%E7%BB%88%E7%AB%AF%E7%99%BB%E5%BD%95%E5%B9%BF%E5%91%8A/</url>
+    <content><![CDATA[<p>通过SSH登录 <code>Ubuntu Server</code> 会打印文字广告</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-78-generic x86_64)</span><br><span class="line"></span><br><span class="line"> * Documentation:  https://help.ubuntu.com</span><br><span class="line"> * Management:     https://landscape.canonical.com</span><br><span class="line"> * Support:        https://ubuntu.com/advantage</span><br><span class="line"></span><br><span class="line">  System information as of Thu Aug  3 06:37:55 AM UTC 2023</span><br><span class="line"></span><br><span class="line">  System load:  0.24560546875      Processes:              210</span><br><span class="line">  Usage of /:   3.6% of 195.80GB   Users logged <span class="keyword">in</span>:        1</span><br><span class="line">  Memory usage: 9%                 IPv4 address <span class="keyword">for</span> ens33: ****</span><br><span class="line">  Swap usage:   0%</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Expanded Security Maintenance <span class="keyword">for</span> Applications is not enabled.</span><br><span class="line"></span><br><span class="line">0 updates can be applied immediately.</span><br><span class="line"></span><br><span class="line">Enable ESM Apps to receive additional future security updates.</span><br><span class="line">See https://ubuntu.com/esm or run: sudo pro status</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关闭广告</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ vim /etc/pam.d/sshd </span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the message of the day upon successful login.</span></span><br><span class="line"><span class="comment"># This includes a dynamically generated part from /run/motd.dynamic</span></span><br><span class="line"><span class="comment"># and a static (admin-editable) part from /etc/motd.</span></span><br><span class="line"><span class="comment"># 注释掉这两行</span></span><br><span class="line">session    optional     pam_motd.so  motd=/run/motd.dynamic</span><br><span class="line">session    optional     pam_motd.so noupdate</span><br></pre></td></tr></table></figure>
+<p>下次登录就不会有这个广告了。</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu动画</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker部署&amp;编排自己的Java Web服务</title>
+    <url>/docker/Docker%E9%83%A8%E7%BD%B2&amp;%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<p>在Docker中构建包含Java应用程序的镜像有两种方法:</p>
+<h4 id="1-使用Dockerfile构建镜像"><a href="#1-使用Dockerfile构建镜像" class="headerlink" title="1. 使用Dockerfile构建镜像"></a>1. 使用Dockerfile构建镜像</h4><p>可以编写一个Dockerfile,在其中定义构建镜像的所有步骤,比如安装JDK,复制Jar包,设置启动命令等。然后使用<code>docker build</code>命令构建镜像。</p>
+<p>优点是可以自定义每个构建步骤,灵活控制镜像的内容。</p>
+<h4 id="2-在docker-compose中构建镜像"><a href="#2-在docker-compose中构建镜像" class="headerlink" title="2. 在docker-compose中构建镜像"></a>2. 在docker-compose中构建镜像</h4><p>可以在docker-compose.yml的services下面直接定义build参数,在这里构建镜像。</p>
+<p>优点是归集了应用程序的镜像构建和运行设置在一个文件,方便管理。</p>
+<h4 id="3-如何选择？？？"><a href="#3-如何选择？？？" class="headerlink" title="3. 如何选择？？？"></a>3. 如何选择？？？</h4><p>对于哪种方式更好,需要根据具体情况决定:</p>
+<ul>
+<li>如果需要自动化定制镜像构建,则Dockerfile更灵活</li>
+<li>如果仅仅是简单构建jar文件的镜像,则docker-compose更方便</li>
+</ul>
+<p>另外,也可以结合两者,在docker-compose中使用Dockerfile构建定制镜像。</p>
+<h3 id="一、构建运行Java-jar文件的简单Dockerfile"><a href="#一、构建运行Java-jar文件的简单Dockerfile" class="headerlink" title="一、构建运行Java jar文件的简单Dockerfile"></a>一、构建运行Java jar文件的简单Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 基础镜像使用官方的OpenJDK镜像</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置maintainer</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将jar包复制到容器里</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> /path/to/your-app.jar /opt/app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 暴露端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置容器内的工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义默认执行命令,启动jar包</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>使用步骤:</p>
+<ol>
+<li><p>将该Dockerfile和your-app.jar放在同一目录下</p>
+</li>
+<li><p>构建镜像:</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t your-image-name .</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>运行容器:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -p 8080:8080 your-image-name</span><br></pre></td></tr></table></figure>
+
+<p>这会一个包含 jar的镜像,并在容器内启动该jar应用。</p>
+<p>可以根据需要修改基础镜像,添加更多构建步骤等。这是一个简单的Java应用Docker化的示例,可以作为参考。</p>
+<h3 id="二、使用docker-compose构建运行"><a href="#二、使用docker-compose构建运行" class="headerlink" title="二、使用docker-compose构建运行"></a>二、使用docker-compose构建运行</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">app</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br></pre></td></tr></table></figure>
+
+<p>这个docker-compose.yml假设在同一目录下存在:</p>
+<ul>
+<li>Dockerfile,用于构建镜像</li>
+<li>app.jar,Java应用的jar包</li>
+</ul>
+<p>Dockerfile可以类似之前的示例:</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> app.jar /opt/app.jar</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/opt/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>构建和运行:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose build</span><br><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
+
+<p>这会构建一个名为app的镜像,并启动一个容器运行app.jar。</p>
+<p>docker-compose使得通过一个文件就可以定义镜像构建流程和运行参数,方便管理。</p>
+<p>可以根据需要调整Dockerfile,添加更多服务等。这是一个简单可运行的docker-compose Java应用示例。</p>
+<h3 id="三、Spring-Boot应用连接docker-compose中的redis服务"><a href="#三、Spring-Boot应用连接docker-compose中的redis服务" class="headerlink" title="三、Spring Boot应用连接docker-compose中的redis服务:"></a>三、Spring Boot应用连接docker-compose中的redis服务:</h3><p>如果Java应用程序依赖redis服务,可以在docker-compose.yml中定义两个服务:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">myredis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:alpine</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mynet</span> </span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mynet</span>  </span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">myredis</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">    <span class="attr">mynet:</span></span><br><span class="line">      <span class="attr">driver:</span> <span class="string">bridge</span>   </span><br></pre></td></tr></table></figure>
+
+<p>这里添加了一个<code>myredis</code>服务,使用官方的redis镜像。</p>
+<p>app服务通过<code>depends_on</code>指明它依赖<code>myredis</code>服务。</p>
+<p>这样在启动容器时,会先启动<code>myredis</code>容器,然后再启动app容器。</p>
+<p>在Spring Boot应用中,通过<code>redis.host</code>属性指定redis服务的主机名:</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring.redis.host</span>=<span class="string">myredis</span></span><br><span class="line"><span class="attr">spring.redis.port</span>=<span class="string">6379</span></span><br></pre></td></tr></table></figure>
+
+
+<p>这样Spring Boot应用就可以通过主机名<code>myredis</code>连接到docker-compose网络中的<code>myredis</code>服务了。</p>
+<p>也可以直接使用域名<code>redis</code>访问,如果两个容器在同一个网络中,Docker会处理服务名的解析。</p>
+<p>使用Docker网络和服务名,可以方便地在应用程序中引用其他服务,而不需要硬编码IP和端口。</p>
+<h3 id="四、挂载宿主机的数据"><a href="#四、挂载宿主机的数据" class="headerlink" title="四、挂载宿主机的数据"></a>四、挂载宿主机的数据</h3><p>使用 volumes 在 docker-compose 中将宿主机上的 MongoDB 数据目录映射到 MongoDB 服务容器里:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mongodb:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mongo:4.2</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/path/to/host/mongodb:/data/db</span></span><br></pre></td></tr></table></figure>
+
+<p>上面我将宿主机上的 <code>/path/to/host/mongodb</code> 目录挂载到了容器内的 <code>/data/db</code>目录。</p>
+<p>这个 <code>/data/db</code> 是 MongoDB 的默认数据目录。</p>
+<p>这样当 MongoDB 服务启动时,就可以访问宿主机上已有的 MongoDB 数据文件了。</p>
+<p>每次启动该服务时,都会使用宿主机上该目录下最新的 MongoDB 数据。</p>
+<p>需要注意:</p>
+<ol>
+<li><p>宿主机上的 MongoDB 数据目录必须与容器内的映射目录匹配,权限正确</p>
+</li>
+<li><p>如果要用已有的数据启动,需要配置 MongoDB 服务不要重新初始化数据</p>
+</li>
+<li><p>可以考虑用 docker volume 而不是直接映射宿主机目录,增强可移植性</p>
+</li>
+</ol>
+<p>这样以来,我们就可以非常方便的使用 docker-compose 来管理 MongoDB 服务,并持久化存储数据了。</p>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>静态Html+JS压缩</title>
+    <url>/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81Html+JS%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<p>有一个静态网站，本来直接部署就可以，但想着，是不是可以压缩一下代码，使得代码更小，访问更快一点呢？</p>
+<p>前端 <code>Vue2.0</code> &#x2F; <code>React</code> 打包工具都是 <code>WebPack</code> ，大工程模板化打包神器，用来打包静态文件实属是杀鸡用牛刀，不过尽管试试。</p>
+<h3 id="尝试WebPack压缩静态文件"><a href="#尝试WebPack压缩静态文件" class="headerlink" title="尝试WebPack压缩静态文件"></a>尝试WebPack压缩静态文件</h3><ol>
+<li>创建一个目录 <code>webpack-demo</code> ，安装一下依赖<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> webpack-demo</span><br><span class="line"><span class="comment"># 安装webpack</span></span><br><span class="line">$ npm install webpack webpack-cli -g</span><br><span class="line"><span class="comment"># 安装插件</span></span><br><span class="line">$ npm install html-webpack-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 源码</span></span><br><span class="line">$ <span class="built_in">ls</span> src</span><br><span class="line">index.html main.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件</span></span><br><span class="line">$ vim webpack.config.js</span><br><span class="line"></span><br><span class="line">const HtmlWebpackPlugin = require(<span class="string">&#x27;html-webpack-plugin&#x27;</span>);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  mode: <span class="string">&#x27;production&#x27;</span>,</span><br><span class="line">  entry: <span class="string">&#x27;./src/main.js&#x27;</span>, // 这里是你的入口 JavaScript 文件路径</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&#x27;main.min.js&#x27;</span>, // 输出的压缩后的 JavaScript 文件名</span><br><span class="line">    path: __dirname + <span class="string">&#x27;/dist&#x27;</span> // 输出目录</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">      template: <span class="string">&#x27;./src/index.html&#x27;</span>, // 这里是你的 HTML 模板文件路径</span><br><span class="line">      filename: <span class="string">&#x27;index.min.html&#x27;</span>, // 输出的压缩后的 HTML 文件名</span><br><span class="line">      minify: &#123;</span><br><span class="line">        removeComments: <span class="literal">true</span>, // 去掉注释</span><br><span class="line">        collapseWhitespace: <span class="literal">true</span>, // 去掉空格</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行打包</span></span><br><span class="line">$ webpack</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">ls</span> dist</span><br><span class="line">index.min.html main.min.js</span><br></pre></td></tr></table></figure>
+这样就完成啦！不过，<code>Webpack</code> 确实是更适合 <code>nodejs</code> 项目</li>
+</ol>
+<blockquote>
+<p>尝试用cssnano、MiniCssExtractPlugin 压缩css，没有成功，不适合这样做。</p>
+</blockquote>
+<h3 id="更好的选择"><a href="#更好的选择" class="headerlink" title="更好的选择"></a>更好的选择</h3><p><code>WebPack</code> 是一个好东西，不过对于以上需求有些勉强和大材小用。</p>
+<p>如果只是压缩一下单独的一个文件或者静态文件，推荐使用以下方案：</p>
+<ul>
+<li><code>vscode</code> 的插件 <code>Minify</code> </li>
+<li><a href="../%E5%89%8D%E7%AB%AF/Gulp%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md">【Gulp】</a></li>
+</ul>
+<h3 id="尝试压缩css失败"><a href="#尝试压缩css失败" class="headerlink" title="尝试压缩css失败"></a>尝试压缩css失败</h3><blockquote>
+<p>失败：执行webpack命令没有处理和生成css文件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">HtmlWebpackPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MiniCssExtractPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;mini-css-extract-plugin&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;production&#x27;</span>,</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&#x27;./src/main.js&#x27;</span>, <span class="comment">// 这里是你的入口 JavaScript 文件路径</span></span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;main.js&#x27;</span>, <span class="comment">// 输出的压缩后的 JavaScript 文件名</span></span><br><span class="line">    <span class="attr">path</span>: __dirname + <span class="string">&#x27;/dist&#x27;</span> <span class="comment">// 输出目录</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">          <span class="attr">use</span>: [</span><br><span class="line">            <span class="title class_">MiniCssExtractPlugin</span>.<span class="property">loader</span>,</span><br><span class="line">            <span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="attr">loader</span>: <span class="string">&#x27;postcss-loader&#x27;</span>, </span><br><span class="line">              <span class="attr">options</span>: &#123;</span><br><span class="line">                <span class="attr">plugins</span>: <span class="function">() =&gt;</span> [</span><br><span class="line">                  <span class="built_in">require</span>(<span class="string">&#x27;cssnano&#x27;</span>)()</span><br><span class="line">                ]</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">MiniCssExtractPlugin</span>(&#123;</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;style.css&#x27;</span>, <span class="comment">// 输出的压缩后的 css 文件名</span></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">HtmlWebpackPlugin</span>(&#123;</span><br><span class="line">      <span class="attr">template</span>: <span class="string">&#x27;./src/index.html&#x27;</span>, <span class="comment">// 这里是你的 HTML 模板文件路径</span></span><br><span class="line">      <span class="attr">filename</span>: <span class="string">&#x27;index.html&#x27;</span>, <span class="comment">// 输出的压缩后的 HTML 文件名</span></span><br><span class="line">      <span class="attr">minify</span>: &#123;</span><br><span class="line">        <span class="attr">removeComments</span>: <span class="literal">true</span>, <span class="comment">// 去掉注释</span></span><br><span class="line">        <span class="attr">collapseWhitespace</span>: <span class="literal">true</span>, <span class="comment">// 去掉空格</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>pip镜像源</title>
+    <url>/Python/pip%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+    <content><![CDATA[<p>配置清华源镜像</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ pip config <span class="built_in">set</span> global.index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line">Writing to /root/.config/pip/pip.conf</span><br></pre></td></tr></table></figure>
+
+<p>或者临时指定镜像源</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ pip install notebook --index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
 </search>

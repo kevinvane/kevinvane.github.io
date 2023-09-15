@@ -199,6 +199,340 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20MediaCodec%E7%A1%AC%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20MediaCodec%E7%A1%AC%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8/" class="post-title-link" itemprop="url">Android MediaCodec硬编解码器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-10 19:52:36" itemprop="dateCreated datePublished" datetime="2021-03-10T19:52:36+08:00">2021-03-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Android 的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/media/MediaCodec?hl=en">MediaCodec</a> 可以编&#x2F;解码音频视频，支持同步和异步两种使用方式。</p>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><p>参考官网的文档</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MediaCodec</span> <span class="variable">codec</span> <span class="operator">=</span> MediaCodec.createByCodecName(name);</span><br><span class="line"> MediaFormat mOutputFormat; <span class="comment">// member variable</span></span><br><span class="line"> codec.setCallback(<span class="keyword">new</span> <span class="title class_">MediaCodec</span>.Callback() &#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">onInputBufferAvailable</span><span class="params">(MediaCodec mc, <span class="type">int</span> inputBufferId)</span> &#123;</span><br><span class="line">    <span class="type">ByteBuffer</span> <span class="variable">inputBuffer</span> <span class="operator">=</span> codec.getInputBuffer(inputBufferId);</span><br><span class="line">    <span class="comment">// fill inputBuffer with valid data</span></span><br><span class="line">    …</span><br><span class="line">    codec.queueInputBuffer(inputBufferId, …);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">onOutputBufferAvailable</span><span class="params">(MediaCodec mc, <span class="type">int</span> outputBufferId, …)</span> &#123;</span><br><span class="line">    <span class="type">ByteBuffer</span> <span class="variable">outputBuffer</span> <span class="operator">=</span> codec.getOutputBuffer(outputBufferId);</span><br><span class="line">    <span class="type">MediaFormat</span> <span class="variable">bufferFormat</span> <span class="operator">=</span> codec.getOutputFormat(outputBufferId); <span class="comment">// option A</span></span><br><span class="line">    <span class="comment">// bufferFormat is equivalent to mOutputFormat</span></span><br><span class="line">    <span class="comment">// outputBuffer is ready to be processed or rendered.</span></span><br><span class="line">    …</span><br><span class="line">    codec.releaseOutputBuffer(outputBufferId, …);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">onOutputFormatChanged</span><span class="params">(MediaCodec mc, MediaFormat format)</span> &#123;</span><br><span class="line">    <span class="comment">// Subsequent data will conform to new format.</span></span><br><span class="line">    <span class="comment">// Can ignore if using getOutputFormat(outputBufferId)</span></span><br><span class="line">    mOutputFormat = format; <span class="comment">// option B</span></span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">onError</span><span class="params">(…)</span> &#123;</span><br><span class="line">    …</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;);</span><br><span class="line"> codec.configure(format, …);</span><br><span class="line"> mOutputFormat = codec.getOutputFormat(); <span class="comment">// option B</span></span><br><span class="line"> codec.start();</span><br><span class="line"> <span class="comment">// wait for processing to complete</span></span><br><span class="line"> codec.stop();</span><br><span class="line"> codec.release();</span><br></pre></td></tr></table></figure>
+
+<p>音频和视频的用法差不多，差异在于配置上，编码和解码也是。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20MediaCodec%E7%A1%AC%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Ndk%E7%BC%96%E8%AF%91FAAC%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20Ndk%E7%BC%96%E8%AF%91FAAC%E5%BA%93/" class="post-title-link" itemprop="url">Android Ndk编译开源库（FAAC）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-07 22:52:36" itemprop="dateCreated datePublished" datetime="2021-03-07T22:52:36+08:00">2021-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>想在Android下实现PCM编码为AAC，已经用Android硬编码实现过AAC编码，但想了解一下FAAC这个库，比较一下两者的差异。</p>
+<p>FAAC是开源的C语言库，查了一下网络上的文章，在Linux上编译FAAC，大多数都是编写一个脚本<code>build_android.sh</code> ，脚本里是用make编译，最终只有一个平台的共享库so或者静态库a文件。如：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30379689/article/details/78145796">【AAC在Linux下编译】</a></p>
+<p>而Android上使用共享库一般会有如下几个平台：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">├── arm64-v8a</span><br><span class="line">│   └── libxx.so</span><br><span class="line">├── armeabi</span><br><span class="line">│   └── libxx.so</span><br><span class="line">├── armeabi-v7a</span><br><span class="line">│   └── libxx.so</span><br><span class="line">├── x86</span><br><span class="line">│   └── libxx.so</span><br><span class="line">└── x86_64</span><br><span class="line">    └── libxx.so</span><br></pre></td></tr></table></figure>
+
+<p>所以借着FAAC，记录一下Android如何通过NDK使用开源C&#x2F;C++库。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20Ndk%E7%BC%96%E8%AF%91FAAC%E5%BA%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20%E5%BD%95%E9%9F%B3%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20%E5%BD%95%E9%9F%B3%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/" class="post-title-link" itemprop="url">Android 录音简单示例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-07 22:52:36" itemprop="dateCreated datePublished" datetime="2021-03-07T22:52:36+08:00">2021-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requestPermissions(<span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;android.permission.RECORD_AUDIO&quot;</span>&#125;,<span class="number">1009</span>);</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RecordAudioThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>&#123;</span><br><span class="line"></span><br><span class="line">        AudioRecord recorder;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="built_in">super</span>.run();</span><br><span class="line">            <span class="type">int</span> <span class="variable">minBufferSize</span> <span class="operator">=</span> AudioRecord.getMinBufferSize(</span><br><span class="line">                    <span class="number">8000</span>,</span><br><span class="line">                    AudioFormat.CHANNEL_IN_MONO,</span><br><span class="line">                    AudioFormat.ENCODING_PCM_16BIT);</span><br><span class="line">            recorder = <span class="keyword">new</span> <span class="title class_">AudioRecord</span>(</span><br><span class="line">                    MediaRecorder.AudioSource.MIC,</span><br><span class="line">                    <span class="number">8000</span>,</span><br><span class="line">                    AudioFormat.CHANNEL_IN_MONO,</span><br><span class="line">                    AudioFormat.ENCODING_PCM_16BIT,</span><br><span class="line">                    minBufferSize);</span><br><span class="line">            recorder.startRecording();</span><br><span class="line"></span><br><span class="line">            <span class="type">byte</span>[] audio = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">readLength</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (!isInterrupted())&#123;</span><br><span class="line">                readLength = recorder.read(audio,<span class="number">0</span>,audio.length);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(readLength &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    Log.d(TAG, <span class="string">&quot;录音长度：&quot;</span> + readLength);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            recorder.stop();</span><br><span class="line">            recorder.release();</span><br><span class="line">            Log.i(Thread.currentThread().getName() , <span class="string">&quot;录音结束&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Ndk%E4%BD%BF%E7%94%A8%E9%A2%84%E6%9E%84%E5%BB%BA%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20Ndk%E4%BD%BF%E7%94%A8%E9%A2%84%E6%9E%84%E5%BB%BA%E5%BA%93/" class="post-title-link" itemprop="url">Android Ndk使用预构建库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-26 19:52:36" itemprop="dateCreated datePublished" datetime="2021-02-26T19:52:36+08:00">2021-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>fork <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/prebuilts?hl=zh_cn">【官网指导页面】</a></p>
+<p> <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/android_mk?hl=zh_cn">【Android.mk语法】</a><br> <a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/guides/application_mk?hl=zh_cn">【Application.mk语法】</a></p>
+<p>NDK 支持使用预构建库（同时支持静态库和共享库）。此功能有以下两个主要用例：</p>
+<pre><code>* 向第三方 NDK 开发者分发您自己的库，而不分发您的源代码。
+* 使用您自己的库的预构建版本来提升构建速度。
+</code></pre>
+<p>声明预构建库</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20Ndk%E4%BD%BF%E7%94%A8%E9%A2%84%E6%9E%84%E5%BB%BA%E5%BA%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E6%89%8B%E6%9C%BA%E8%AE%BE%E8%AE%A1%E5%B0%BA%E5%AF%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1558,322 +1892,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">黑马程序员JVM学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 21:52:36" itemprop="dateCreated datePublished" datetime="2020-08-03T21:52:36+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是<a target="_blank" rel="noopener" href="https://b23.tv/AYSxdj"><strong>【黑马程序员JVM完整教程，全网超高评价，全程干货不拖沓-哔哩哔哩】</strong></a>教学视频学习所做的笔记</p>
-<blockquote>
-<p>部分笔记内容拷贝自<a target="_blank" rel="noopener" href="https://nyimac.gitee.io/2020/07/03/JVM%E5%AD%A6%E4%B9%A0/#1%E3%80%81%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8">【JVM学习】</a></p>
-</blockquote>
-<p><img src="/images/java/jvm/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.png"></p>
-<h2 id="一、什么是JVM"><a href="#一、什么是JVM" class="headerlink" title="一、什么是JVM"></a>一、什么是JVM</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Linux%E4%B8%8Bjar%E5%8C%85%E5%81%9A%E6%88%90%20systemctl%20%E6%9C%8D%E5%8A%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Linux%E4%B8%8Bjar%E5%8C%85%E5%81%9A%E6%88%90%20systemctl%20%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">Linux下jar包做成 systemctl 服务</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-01 22:52:36" itemprop="dateCreated datePublished" datetime="2020-08-01T22:52:36+08:00">2020-08-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-05 17:01:06" itemprop="dateModified" datetime="2022-03-05T17:01:06+08:00">2022-03-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim /etc/systemd/system/myjar.service</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=myjar-server</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在哪个服务之后启动</span></span><br><span class="line">After=syslog.target network.target remote-fs.target nss-lookup.target</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动命令</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ExecStart=java -jar /usr/local/myjar.jar --spring.profiles.active=pro</span></span><br><span class="line">ExecStart=java -jar /usr/local/myjar.jar --spring.profiles.active=pro</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">nohup</span>命令无效</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">ExecStart=<span class="built_in">nohup</span> java -jar /usr/local/myjar.jar --spring.profiles.active=pro &gt;&gt;/usr/local/myjar.log&amp;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">ExecStop=/bin/kill -s QUIT $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">开启开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">enable</span> myjar</span></span><br><span class="line">Created symlink /etc/systemd/system/multi-user.target.wants/myjar.service → /etc/systemd/system/myjar.service.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看服务是否开机启动：</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl is-enabled myjar</span></span><br><span class="line">enabled</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">禁止开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> myjar</span></span><br><span class="line">Removed /etc/systemd/system/multi-user.target.wants/myjar.service.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看服务状态</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl status myjar</span> </span><br><span class="line">● myjar.service - myjar-server</span><br><span class="line">     Loaded: loaded (/etc/systemd/system/myjar.service; disabled; vendor prese&gt;</span><br><span class="line">     Active: inactive (dead)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看服务详情</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl show myjar</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">手动启动服务</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl start myjar</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">手动停止服务</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop myjar</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">journalctl -u myjar</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Linux%E4%B8%8Bnohup%E8%BF%90%E8%A1%8C%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8&%E5%81%9C%E6%AD%A2%E8%84%9A%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Linux%E4%B8%8Bnohup%E8%BF%90%E8%A1%8C%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8&%E5%81%9C%E6%AD%A2%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">Linux下nohup运行后台服务启动&停止脚本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-01 22:52:36" itemprop="dateCreated datePublished" datetime="2020-08-01T22:52:36+08:00">2020-08-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-15 15:10:00" itemprop="dateModified" datetime="2022-08-15T15:10:00+08:00">2022-08-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="手动启动停止后台服务"><a href="#手动启动停止后台服务" class="headerlink" title="手动启动停止后台服务"></a>手动启动停止后台服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行一个后台服务</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">nohup</span> jar -jar test.jar &gt;&gt; myout.log &amp;</span> </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当要停止此服务时，先查询pid，再<span class="built_in">kill</span>掉</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ps -ef|grep v680</span></span><br><span class="line">root        522133       1  0 12:10 pts/0    00:00:20 java -jar test.jar </span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">kill</span> -9 522133</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="记录后台服务PID"><a href="#记录后台服务PID" class="headerlink" title="记录后台服务PID"></a>记录后台服务PID</h3><p>shell脚本中，可以用 <code>$!</code> 获取到当前进程的PID。<br>则 <strong>开始脚本</strong> 通过 <code>echo $! &gt; my.pid</code> 将PID写入到一个文件中；<br><strong>停止脚本</strong> 从文件中读出PID，执行Kill命令杀掉进程。</p>
-<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Linux/Linux%E4%B8%8Bnohup%E8%BF%90%E8%A1%8C%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8&%E5%81%9C%E6%AD%A2%E8%84%9A%E6%9C%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%2018.04%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81IP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Ubuntu%2018.04%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81IP/" class="post-title-link" itemprop="url">Ubuntu 18.04~20.04配置静态IP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-01 21:52:36" itemprop="dateCreated datePublished" datetime="2020-08-01T21:52:36+08:00">2020-08-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-05 16:19:15" itemprop="dateModified" datetime="2022-03-05T16:19:15+08:00">2022-03-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看IP信息</span></span><br><span class="line">$ ip addr</span><br><span class="line"></span><br><span class="line">$ sudo vim /etc/netplan/50-cloud-init.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># This file is generated from information provided by</span></span><br><span class="line"><span class="comment"># the datasource.  Changes to it will not persist across an instance.</span></span><br><span class="line"><span class="comment"># To disable cloud-init&#x27;s network configuration capabilities, write a file</span></span><br><span class="line"><span class="comment"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:</span></span><br><span class="line"><span class="comment"># network: &#123;config: disabled&#125;</span></span><br><span class="line">network:</span><br><span class="line">    ethernets:</span><br><span class="line">        ens33:</span><br><span class="line">            dhcp4: <span class="literal">false</span></span><br><span class="line">            addresses: [192.168.0.66/24]</span><br><span class="line">            optional: <span class="literal">true</span></span><br><span class="line">            gateway4: 192.168.0.1</span><br><span class="line">            nameservers:</span><br><span class="line">                addresses: [8.8.8.8,4.4.4.4]</span><br><span class="line">    version: 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用修改</span></span><br><span class="line">$ sudo netplan apply</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1944,7 +1962,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">358</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

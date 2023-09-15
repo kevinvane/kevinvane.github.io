@@ -199,6 +199,173 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81Html+JS%E5%8E%8B%E7%BC%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81Html+JS%E5%8E%8B%E7%BC%A9/" class="post-title-link" itemprop="url">静态Html+JS压缩</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-20 19:52:36" itemprop="dateCreated datePublished" datetime="2023-08-20T19:52:36+08:00">2023-08-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-21 14:20:19" itemprop="dateModified" datetime="2023-08-21T14:20:19+08:00">2023-08-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有一个静态网站，本来直接部署就可以，但想着，是不是可以压缩一下代码，使得代码更小，访问更快一点呢？</p>
+<p>前端 <code>Vue2.0</code> &#x2F; <code>React</code> 打包工具都是 <code>WebPack</code> ，大工程模板化打包神器，用来打包静态文件实属是杀鸡用牛刀，不过尽管试试。</p>
+<h3 id="尝试WebPack压缩静态文件"><a href="#尝试WebPack压缩静态文件" class="headerlink" title="尝试WebPack压缩静态文件"></a>尝试WebPack压缩静态文件</h3><ol>
+<li>创建一个目录 <code>webpack-demo</code> ，安装一下依赖<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> webpack-demo</span><br><span class="line"><span class="comment"># 安装webpack</span></span><br><span class="line">$ npm install webpack webpack-cli -g</span><br><span class="line"><span class="comment"># 安装插件</span></span><br><span class="line">$ npm install html-webpack-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 源码</span></span><br><span class="line">$ <span class="built_in">ls</span> src</span><br><span class="line">index.html main.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件</span></span><br><span class="line">$ vim webpack.config.js</span><br><span class="line"></span><br><span class="line">const HtmlWebpackPlugin = require(<span class="string">&#x27;html-webpack-plugin&#x27;</span>);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  mode: <span class="string">&#x27;production&#x27;</span>,</span><br><span class="line">  entry: <span class="string">&#x27;./src/main.js&#x27;</span>, // 这里是你的入口 JavaScript 文件路径</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&#x27;main.min.js&#x27;</span>, // 输出的压缩后的 JavaScript 文件名</span><br><span class="line">    path: __dirname + <span class="string">&#x27;/dist&#x27;</span> // 输出目录</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">      template: <span class="string">&#x27;./src/index.html&#x27;</span>, // 这里是你的 HTML 模板文件路径</span><br><span class="line">      filename: <span class="string">&#x27;index.min.html&#x27;</span>, // 输出的压缩后的 HTML 文件名</span><br><span class="line">      minify: &#123;</span><br><span class="line">        removeComments: <span class="literal">true</span>, // 去掉注释</span><br><span class="line">        collapseWhitespace: <span class="literal">true</span>, // 去掉空格</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行打包</span></span><br><span class="line">$ webpack</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">ls</span> dist</span><br><span class="line">index.min.html main.min.js</span><br></pre></td></tr></table></figure>
+这样就完成啦！不过，<code>Webpack</code> 确实是更适合 <code>nodejs</code> 项目</li>
+</ol>
+<blockquote>
+<p>尝试用cssnano、MiniCssExtractPlugin 压缩css，没有成功，不适合这样做。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81Html+JS%E5%8E%8B%E7%BC%A9/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">Docker部署&编排自己的Java Web服务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-17 20:22:36 / 修改时间：18:19:15" itemprop="dateCreated datePublished" datetime="2023-08-17T20:22:36+08:00">2023-08-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在Docker中构建包含Java应用程序的镜像有两种方法:</p>
+<h4 id="1-使用Dockerfile构建镜像"><a href="#1-使用Dockerfile构建镜像" class="headerlink" title="1. 使用Dockerfile构建镜像"></a>1. 使用Dockerfile构建镜像</h4><p>可以编写一个Dockerfile,在其中定义构建镜像的所有步骤,比如安装JDK,复制Jar包,设置启动命令等。然后使用<code>docker build</code>命令构建镜像。</p>
+<p>优点是可以自定义每个构建步骤,灵活控制镜像的内容。</p>
+<h4 id="2-在docker-compose中构建镜像"><a href="#2-在docker-compose中构建镜像" class="headerlink" title="2. 在docker-compose中构建镜像"></a>2. 在docker-compose中构建镜像</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/docker/Docker%E9%83%A8%E7%BD%B2&%E7%BC%96%E6%8E%92%E8%87%AA%E5%B7%B1%E7%9A%84Java%20Web%E6%9C%8D%E5%8A%A1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/Letsencrypt%E8%AF%81%E4%B9%A6Certbot%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -265,6 +432,92 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/Letsencrypt%E8%AF%81%E4%B9%A6Certbot%E5%AE%89%E8%A3%85/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E5%85%B3%E9%97%ADSSH%E7%BB%88%E7%AB%AF%E7%99%BB%E5%BD%95%E5%B9%BF%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E5%85%B3%E9%97%ADSSH%E7%BB%88%E7%AB%AF%E7%99%BB%E5%BD%95%E5%B9%BF%E5%91%8A/" class="post-title-link" itemprop="url">Ubuntu关闭SSH终端登录广告</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-18 19:52:36" itemprop="dateCreated datePublished" datetime="2023-07-18T19:52:36+08:00">2023-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>通过SSH登录 <code>Ubuntu Server</code> 会打印文字广告</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-78-generic x86_64)</span><br><span class="line"></span><br><span class="line"> * Documentation:  https://help.ubuntu.com</span><br><span class="line"> * Management:     https://landscape.canonical.com</span><br><span class="line"> * Support:        https://ubuntu.com/advantage</span><br><span class="line"></span><br><span class="line">  System information as of Thu Aug  3 06:37:55 AM UTC 2023</span><br><span class="line"></span><br><span class="line">  System load:  0.24560546875      Processes:              210</span><br><span class="line">  Usage of /:   3.6% of 195.80GB   Users logged <span class="keyword">in</span>:        1</span><br><span class="line">  Memory usage: 9%                 IPv4 address <span class="keyword">for</span> ens33: ****</span><br><span class="line">  Swap usage:   0%</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Expanded Security Maintenance <span class="keyword">for</span> Applications is not enabled.</span><br><span class="line"></span><br><span class="line">0 updates can be applied immediately.</span><br><span class="line"></span><br><span class="line">Enable ESM Apps to receive additional future security updates.</span><br><span class="line">See https://ubuntu.com/esm or run: sudo pro status</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关闭广告</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/pam.d/sshd </span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the message of the day upon successful login.</span></span><br><span class="line"><span class="comment"># This includes a dynamically generated part from /run/motd.dynamic</span></span><br><span class="line"><span class="comment"># and a static (admin-editable) part from /etc/motd.</span></span><br><span class="line"><span class="comment"># 注释掉这两行</span></span><br><span class="line">session    optional     pam_motd.so  motd=/run/motd.dynamic</span><br><span class="line">session    optional     pam_motd.so noupdate</span><br></pre></td></tr></table></figure>
+<p>下次登录就不会有这个广告了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%E5%85%B3%E9%97%ADSSH%E7%BB%88%E7%AB%AF%E7%99%BB%E5%BD%95%E5%B9%BF%E5%91%8A/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -436,6 +689,76 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Python/pip%E9%95%9C%E5%83%8F%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Python/pip%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-title-link" itemprop="url">pip镜像源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-28 21:51:36" itemprop="dateCreated datePublished" datetime="2023-06-28T21:51:36+08:00">2023-06-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>配置清华源镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip config <span class="built_in">set</span> global.index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line">Writing to /root/.config/pip/pip.conf</span><br></pre></td></tr></table></figure>
+
+<p>或者临时指定镜像源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install notebook --index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1504,318 +1827,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android13%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android13%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">Android13 所有应用行为变更</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-31 19:53:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:53:36+08:00">2022-08-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/13/behavior-changes-all">【原文：behavior-changes-all】</a></p>
-<p>Android 13 平台包含一些可能会影响您的应用的行为变更。以下行为变更会影响在 Android 13 上运行的所有应用，无论采用哪种 <code>targetSdkVersion</code> 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更。</p>
-<p>此外，请务必查看<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/13/behavior-changes-13">仅影响以 Android 13 为目标平台的应用的行为变更</a>列表。</p>
-<h2 id="性能和电池"><a href="#性能和电池" class="headerlink" title="性能和电池"></a>性能和电池</h2><h3 id="前台服务-FGS-任务管理器"><a href="#前台服务-FGS-任务管理器" class="headerlink" title="前台服务 (FGS) 任务管理器"></a>前台服务 (FGS) 任务管理器</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%E6%9B%B4%E6%96%B0/Android13%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/" class="post-title-link" itemprop="url">Android12 功能和 API 概览</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-31 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:52:36+08:00">2022-08-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/features">【原文：功能和 API 概览】</a></p>
-<p>Android 12 面向开发者引入了一些出色的新功能和 API。以下几部分内容可帮助您了解适用于您的应用的功能并开始使用相关 API。</p>
-<ul>
-<li>有关新增、修改和移除的 API 的详细列表，请参阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/sdk/api_diff/s-dp1/changes">API 差异报告</a>。</li>
-<li>如需详细了解新的 API，请访问 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference">Android API 参考文档</a> - 新 API 会突出显示以方便查看。</li>
-<li>如需了解平台变更可能会在哪些方面影响您的应用，请务必查看会影响<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-12">以 Android 12 为目标平台的应用</a>和<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-all">所有应用</a>的 Android 12 行为变更。</li>
-</ul>
-<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="Material-You"><a href="#Material-You" class="headerlink" title="Material You"></a>Material You</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E5%8A%9F%E8%83%BD%E5%92%8C%20API%20%E6%A6%82%E8%A7%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/" class="post-title-link" itemprop="url">以 Android 12 为目标平台的应用行为变更</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-31 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:52:36+08:00">2022-08-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-12">【原文：behavior-changes-12】</a></p>
-<p>与早期版本一样，Android 12 包含一些行为变更，这些变更可能会影响您的应用。以下行为变更仅影响以 Android 12 或更高版本为目标平台的应用。如果您的应用以 Android 12 为目标平台，您应该修改自己的应用以适当地支持这些行为（如果适用）。</p>
-<p>此外，请务必查看<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-all">对 Android 12 上运行的所有应用都有影响的行为变更</a>列表。</p>
-<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="自定义通知"><a href="#自定义通知" class="headerlink" title="自定义通知"></a>自定义通知</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8BTargetSDK/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">Android12 所有应用行为变更</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-31 19:52:36" itemprop="dateCreated datePublished" datetime="2022-08-31T19:52:36+08:00">2022-08-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-all">【原文：behavior-changes-all】</a></p>
-<p>Android 12 平台包含一些行为变更，这些变更可能会影响您的应用。以下行为变更将影响在 Android 12 上运行的<em>所有应用</em>，无论采用哪种 <code>targetSdkVersion</code> 都不例外。您应该测试您的应用，然后根据需要进行修改，以适当地支持这些变更。</p>
-<p>此外，请务必查看<a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/12/behavior-changes-12">仅影响以 Android 12 为目标平台的应用的行为变更</a>列表。</p>
-<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="拉伸滚动效果"><a href="#拉伸滚动效果" class="headerlink" title="拉伸滚动效果"></a>拉伸滚动效果</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%E6%9B%B4%E6%96%B0/Android12%20%E8%A1%8C%E4%B8%BA%E5%8F%98%E6%9B%B4%E4%B9%8B%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1886,7 +1897,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">358</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

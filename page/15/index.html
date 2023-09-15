@@ -199,6 +199,337 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">SSH公钥免密码登录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-28 22:52:36" itemprop="dateCreated datePublished" datetime="2018-03-28T22:52:36+08:00">2018-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h2><ol>
+<li>客户机Winows</li>
+<li>服务器Linux (192.168.0.66)</li>
+</ol>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol>
+<li>客户端公钥</li>
+</ol>
+<p>一般安装了Git，本地都有ssh公钥，在目录 <code>C:\Users\xxx\.ssh</code> (即 <code> ~/.ssh</code> )下<br>如果没有，执行ssh-keygen生成。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/SSH%E7%99%BB%E5%BD%95%E7%BC%93%E6%85%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/SSH%E7%99%BB%E5%BD%95%E7%BC%93%E6%85%A2/" class="post-title-link" itemprop="url">SSH登录缓慢</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-28 22:52:36" itemprop="dateCreated datePublished" datetime="2018-03-28T22:52:36+08:00">2018-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-18 18:31:42" itemprop="dateModified" datetime="2022-05-18T18:31:42+08:00">2022-05-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在局域网通过SSH登录Ubuntu服务器，发现很慢，10秒左右，修改SSH配置解决：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/ssh_config</span><br><span class="line"><span class="comment">#GSSAPIAuthentication yes</span></span><br><span class="line">GSSAPIAuthentication no</span><br><span class="line"></span><br><span class="line">$ systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>GSSAPI ( Generic Security Services Application Programming Interface) 是一套类似Kerberos 5 的通用网络安全系统接口。<br>该接口是对各种不同的客户端服务器安全机制的封装，以消除安全接口的不同，降低编程难度。但该接口在目标机器无域名解析时会有问题。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Python/Python%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Python/Python%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">Python测试代码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-27 21:52:36" itemprop="dateCreated datePublished" datetime="2018-03-27T21:52:36+08:00">2018-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="截取字符串"><a href="#截取字符串" class="headerlink" title="截取字符串"></a>截取字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&quot;ABCDEFGFEE03&quot;</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">str</span>[<span class="number">10</span>:<span class="number">12</span>])</span><br><span class="line"><span class="comment"># 输出：03</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="分割字符串取倒数第一个"><a href="#分割字符串取倒数第一个" class="headerlink" title="分割字符串取倒数第一个"></a>分割字符串取倒数第一个</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&quot;HELLO6CF51D000003&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.split(<span class="string">&#x27;0000&#x27;</span>)[-<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 输出：03</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="列表中的字符串排序"><a href="#列表中的字符串排序" class="headerlink" title="列表中的字符串排序"></a>列表中的字符串排序</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Python/Python%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBoot2.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/SpringBoot/SpringBoot2.0/" class="post-title-link" itemprop="url">springboot2.0</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-27 21:52:36" itemprop="dateCreated datePublished" datetime="2018-03-27T21:52:36+08:00">2018-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在是否升级的考虑上，虽然不着急升级，但是要考虑以后发展的方向，比如2.0不支持的，我们在1.x中也要少用，方便以后升级。</p>
+<ul>
+<li>Spring Boot 2.0 支持Java 9 ，最低 Java 8版本。</li>
+<li>Spring Boot 1.x版本明确说明了没有对Java 9的支持计划。</li>
+<li>要求Gradle最低版本为3.4。</li>
+<li>要求Tomcat最低版本为8.5。</li>
+<li>要求Jetty最低版本为9.4。</li>
+<li>spring-boot-starter-mustache和spring-boot-starter-thymeleaf不再依赖spring-boot-starter-web，现在你要自己选择并添加spring-boot-starter-web或spring-boot-starter-webflux作为依赖。</li>
+</ul>
+<blockquote>
+<p>更详细的访问以下文章</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.didispace.com/spring-boot-2-release/">Spring Boot 2.0 正式发布，升还是不升呢？</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.didispace.com/Spring-Boot-2-0-%E6%96%B0%E7%89%B9%E6%80%A7%E5%92%8C%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91/">Spring Boot 2.0 新特性和发展方向</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.didispace.com/Spring-Boot-2.0%E4%B8%8EJava-9/">Spring Boot 2.0 与 Java 9</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBootWebFlux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1544,334 +1875,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E7%81%AB%E7%8B%90%E6%8F%92%E4%BB%B6-%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E7%9A%84%E6%9E%B6%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E7%81%AB%E7%8B%90%E6%8F%92%E4%BB%B6-%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E7%9A%84%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">火狐插件-查看网站的架构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-12-16 09:52:36" itemprop="dateCreated datePublished" datetime="2017-12-16T09:52:36+08:00">2017-12-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>wappalyzer,可以大概知道一个网站的服务器软件，使用的js库等信息。<br>原理的话，应该是网站响应的header信息。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E4%BD%BF%E7%94%A8fmod%E6%A8%A1%E4%BB%BFQQ%E5%8F%98%E5%A3%B0%E7%89%B9%E6%95%88-NDK/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E4%BD%BF%E7%94%A8fmod%E6%A8%A1%E4%BB%BFQQ%E5%8F%98%E5%A3%B0%E7%89%B9%E6%95%88-NDK/" class="post-title-link" itemprop="url">使用fmod模仿QQ变声特效-NDK</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 19:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T19:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/99a2ad03cd58">http://www.jianshu.com/p/99a2ad03cd58</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/Nginx%E5%B1%8F%E8%94%BDIP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/Nginx%E5%B1%8F%E8%94%BDIP/" class="post-title-link" itemprop="url">Nginx屏蔽IP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:37" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:37+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>以下是手动屏蔽固定的IP，还有一些方法可以自动将IP屏蔽待以后需要再研究。</p>
-<h3 id="1-假设nginx的配置中有如下一个server"><a href="#1-假设nginx的配置中有如下一个server" class="headerlink" title="1. 假设nginx的配置中有如下一个server"></a>1. 假设nginx的配置中有如下一个server</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name localhost;</span><br><span class="line"></span><br><span class="line">	location / &#123;</span><br><span class="line"></span><br><span class="line">		root   /var/www/localhost;</span><br><span class="line">		index  index.html index.htm;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-如果现在我需要屏蔽两个IP，加入以下三行到server节点中："><a href="#2-如果现在我需要屏蔽两个IP，加入以下三行到server节点中：" class="headerlink" title="2. 如果现在我需要屏蔽两个IP，加入以下三行到server节点中："></a>2. 如果现在我需要屏蔽两个IP，加入以下三行到server节点中：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># allow 一定要在 deny 前面</span></span><br><span class="line">allow all;</span><br><span class="line">deny 123.123.123.123;</span><br><span class="line">deny 123.123.123.124;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/Nginx%E5%B1%8F%E8%94%BDIP/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Linux%E4%B8%8BC%E8%AF%AD%E8%A8%80HTTP%E9%80%9A%E8%AE%AF%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Linux%E4%B8%8BC%E8%AF%AD%E8%A8%80HTTP%E9%80%9A%E8%AE%AF%E5%BA%93/" class="post-title-link" itemprop="url">Linux下C语言HTTP通讯库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>很多嵌入式设备都有接入网络的功能，那么在Linux下的C，用什么HTTP库比较合适呢？嵌入式设备资源都比较紧张，大的库肯定不是一个好的选择。<br>由于不是专业的，只能找到以下库：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://curl.haxx.se/download.html">libcurl</a><br>curl-7.56.1.zip 大小是5.27MB,里面包含了supporting HTTP, HTTPS, FTP, FTPS, GOPHER, TFTP, SCP, SFTP, SMB, TELNET, DICT, LDAP, LDAPS, FILE, IMAP, SMTP, POP3, RTSP and RTMP. 所以能精简出来HTTP是没有5.27MB那么大。</p>
-<p>而且一般linux系统都带有curl的库，c语言可以直接引入curl的头文件。</p>
-<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/cy_cai/article/details/41941161">libcurl基本知识post和get请求</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/mao834099514/article/details/54947625">c&#x2F;c++调用libcurl库发送http请求的两种基本用法</a></p>
-<p>示例：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;curl/curl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    CURL *curl;             <span class="comment">//定义CURL类型的指针</span></span><br><span class="line">    CURLcode res;           <span class="comment">//定义CURLcode类型的变量，保存返回状态码</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: file &lt;url&gt;;\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    curl = curl_easy_init();       <span class="comment">//初始化一个CURL类型的指针</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(curl!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//设置curl选项.其中CURLOPT_URL是让用户指定url.argv[1]中存放的命令行传进来的网址</span></span><br><span class="line">        curl_easy_setopt(curl,CURLOPT_URL, argv[<span class="number">1</span>]);       </span><br><span class="line">        <span class="comment">//调用curl_easy_perform执行我们的设置.并进行相关的操作.在这里只在屏幕上显示出来.</span></span><br><span class="line">        res = curl_easy_perform(curl);</span><br><span class="line">        <span class="comment">//清除curl操作.</span></span><br><span class="line">        curl_easy_cleanup(curl);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">编译和运行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">gcc test_curl.c -o <span class="built_in">test</span> -lcurl</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test www.baidu.com</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/EZLippi/Tinyhttpd">Tinyhttpd</a><br>​Tinyhttpd 是J. David Blackstone在1999年写的一个不到 500 行的超轻量型 Http Server</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.boa.org/">Boa</a><br>​Boa是一个非常小巧的web服务器,其可执行代码只有约60Kb</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://www.fifi.org/doc/libghttp-dev/html/ghttp.html">ghttp</a><br>官网没有下载了，但根据其他下载站来看，只有144KB，要源码可以去<a target="_blank" rel="noopener" href="https://github.com/sknown/libghttp">github</a>搜一下。<a target="_blank" rel="noopener" href="http://blog.csdn.net/len_yue_mo_fu/article/details/75158686">封装示例</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/mrtazz/restclient-cpp">C++ client for making HTTP&#x2F;REST requests</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/whoshuu/cpr">C++ Requests: Curl for People</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/tboox/tbox/blob/master/README_zh.md">tbox的http模块</a> </p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://blog.csdn.net/hanbo622/article/details/51598724">自己拼包</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/getopenmono/mono_framework/tree/899a5820ac850a1f5b3b205bfe3892556ae064ca">无意中发现的一个库，里面封装了一些 HTTPClient 和其他IO的库</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/mrtazz/restclient-cpp">C++ client for making HTTP&#x2F;REST requests</a></p>
-<p>​</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1942,7 +1945,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">358</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
