@@ -199,6 +199,462 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9A%84%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb%E7%89%88%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Web%E5%90%8E%E7%AB%AF/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9A%84%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb%E7%89%88%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">阿里云的云数据库MongoDb版使用记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-30 19:52:36" itemprop="dateCreated datePublished" datetime="2021-03-30T19:52:36+08:00">2021-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>不经常登录阿里云控制台管理数据库，时间久了就遗忘了，记录一下方便以后使用。</p>
+<ol>
+<li><p>购买“云数据库MongoDb版”打开控制台<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/1.png"></p>
+</li>
+<li><p>点击 “登录数据库” 跳转到阿里的 “数据管理DMS”<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/2.png"></p>
+</li>
+<li><p>“数据管理DMS”<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/3.png"></p>
+</li>
+<li><p>DMS登录实例<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/4.png"><br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/5.png"></p>
+</li>
+<li><p>DMS控制台<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/6.png"></p>
+</li>
+<li><p>DMS创建新的数据库<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/7.png"><br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/8.png"></p>
+</li>
+<li><p>为新的数据库创建连接用户<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/9.png"><br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/10.png"><br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/11.png"></p>
+</li>
+<li><p>DMS打开数据库<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/12.png"></p>
+</li>
+<li><p>DMS执行查询命令<br><img src="/images/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb/13.png"></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/" class="post-title-link" itemprop="url">Android集成HMS推送</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-28 19:52:36" itemprop="dateCreated datePublished" datetime="2021-03-28T19:52:36+08:00">2021-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一、-创建项目"><a href="#一、-创建项目" class="headerlink" title="一、 创建项目"></a>一、 创建项目</h3><p><img src="/images/hms/HMS1.png"><br><img src="/images/hms/HMS2.png"></p>
+<h3 id="二、-添加应用"><a href="#二、-添加应用" class="headerlink" title="二、 添加应用"></a>二、 添加应用</h3><p><img src="/images/hms/HMS3.png"><br><img src="/images/hms/HMS4.png"></p>
+<p>添加完应用会自动跳转到 “接入指南”</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E9%9B%86%E6%88%90%E5%B0%8F%E7%B1%B3%E6%8E%A8%E9%80%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%E9%9B%86%E6%88%90%E5%B0%8F%E7%B1%B3%E6%8E%A8%E9%80%81/" class="post-title-link" itemprop="url">Android集成小米推送</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-28 19:52:36" itemprop="dateCreated datePublished" datetime="2021-03-28T19:52:36+08:00">2021-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一、-开通开发者"><a href="#一、-开通开发者" class="headerlink" title="一、 开通开发者"></a>一、 开通开发者</h3><p>省略</p>
+<h3 id="二、-创建应用"><a href="#二、-创建应用" class="headerlink" title="二、 创建应用"></a>二、 创建应用</h3><p>省略，创建完应用，到“推送服务”开启你的应用推送服务。</p>
+<h3 id="三、-集成到Android项目"><a href="#三、-集成到Android项目" class="headerlink" title="三、 集成到Android项目"></a>三、 集成到Android项目</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%E9%9B%86%E6%88%90%E5%B0%8F%E7%B1%B3%E6%8E%A8%E9%80%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%AE%9D%E5%AE%98%E6%96%B9%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%AE%9D%E5%AE%98%E6%96%B9%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/" class="post-title-link" itemprop="url">微信支付宝官方设计资源下载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-26 19:53:36" itemprop="dateCreated datePublished" datetime="2021-03-26T19:53:36+08:00">2021-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-26 14:07:26" itemprop="dateModified" datetime="2022-03-26T14:07:26+08:00">2022-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://wechat.design/standard/download/brand#%E6%A0%87%E5%BF%97%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90">【微信官方设计资源】</a></p>
+<p><a target="_blank" rel="noopener" href="https://opendocs.alipay.com/open/204/0191v1">【App 支付界面规范】</a><br><a target="_blank" rel="noopener" href="https://gw.alipayobjects.com/os/bmw-prod/31d3311f-1703-44b0-abdf-aedcc43946d3.zip">【支付宝收银台视觉规范和素材】</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 16 新特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-16 19:51:41" itemprop="dateCreated datePublished" datetime="2021-03-16T19:51:41+08:00">2021-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-23 10:03:23" itemprop="dateModified" datetime="2022-08-23T10:03:23+08:00">2022-08-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2021年03月16 <code>JDK 16</code> 发布，非 LTS 版本。</p>
+<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/16/">新特性: http://openjdk.java.net/projects/jdk/16/</a></p>
+<ul>
+<li>338: 	Vector API (Incubator)</li>
+<li>347: 	Enable C++14 Language Features</li>
+<li>357: 	Migrate from Mercurial to Git</li>
+<li>369: 	Migrate to GitHub</li>
+<li>376: 	ZGC: Concurrent Thread-Stack Processing</li>
+<li>380: 	Unix-Domain Socket Channels</li>
+<li>386: 	Alpine Linux Port</li>
+<li>387: 	Elastic Metaspace</li>
+<li>388: 	Windows&#x2F;AArch64 Port</li>
+<li>389: 	Foreign Linker API (Incubator)</li>
+<li>390: 	Warnings for Value-Based Classes</li>
+<li>392: 	Packaging Tool</li>
+<li>393: 	Foreign-Memory Access API (Third Incubator)</li>
+<li>394: 	Pattern Matching for instanceof</li>
+<li>395: 	Records</li>
+<li>396: 	Strongly Encapsulate JDK Internals by Default</li>
+<li>397: 	Sealed Classes (Second Preview)</li>
+</ul>
+<p>中文</p>
+<ul>
+<li>338: 	提供了Vector API (jdk.incubator.vector)来用于矢量计算</li>
+<li>347: 	在JDK C++的源码中允许使用C++14的语言特性</li>
+<li>357: 	OpenJDK源码的版本控制从Mercurial (hg) 迁移到git</li>
+<li>369: 	将OpenJDK源码的版本控制迁移到 GitHub</li>
+<li>376: 	ZGC: 实现了并发thread-stack处理来降低GC safepoints的负担</li>
+<li>380: 	对 Socket Channels 及 Server ocket Channels的api提供对unix domain socket的支持</li>
+<li>386: 	将glibc的jdk移植到使用musl的alpine linux上</li>
+<li>387: 	支持不再使用的class metadata归还内存给操作系统，降低内存占用</li>
+<li>388: 	移植JDK到Windows&#x2F;AArch64</li>
+<li>389: 	提供jdk.incubator.foreign来简化native code的调用</li>
+<li>390: 	提供 @jdk.internal.ValueBased 来用于标注作为value-based的类</li>
+<li>392: 	jpackage在JDK14引入，JDK15作为incubating工具，在JDK16转正</li>
+<li>393: 	Foreign-Memory Access API在JDK14首次引入作为incubating API，在JDK15处于第二轮incubating，在JDK16处于第三轮incubating</li>
+<li>394: 	instanceof的模式匹配在JDK14作为preview，在JDK15作为第二轮的preview，在JDK16转正</li>
+<li>395: 	Record类型在JDK14作为preview，在JDK15处于第二轮preview，在JDK16转正</li>
+<li>396: 	对内部的api进行更多的封装，鼓励开发者从使用内部的方法迁移到标准的API</li>
+<li>397: 	Sealed Classes在JDK15作为preview引入，在JDK16作为第二轮preview</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20MediaCodec%E7%A1%AC%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1454,448 +1910,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2015%20%E6%96%B0%E7%89%B9%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/JDK%2015%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 15 新特性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-15 19:51:41" itemprop="dateCreated datePublished" datetime="2020-09-15T19:51:41+08:00">2020-09-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-23 10:00:58" itemprop="dateModified" datetime="2022-08-23T10:00:58+08:00">2022-08-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2020年9月15日 <code>JDK 15</code> 发布，非 LTS 版本。</p>
-<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/15/">新特性: http://openjdk.java.net/projects/jdk/15/</a></p>
-<ul>
-<li>339: 	Edwards-Curve Digital Signature Algorithm (EdDSA)</li>
-<li>360: 	Sealed Classes (Preview)</li>
-<li>371: 	Hidden Classes </li>
-<li>372: 	Remove the Nashorn JavaScript Engine</li>
-<li>373: 	Reimplement the Legacy DatagramSocket API</li>
-<li>374: 	Disable and Deprecate Biased Locking</li>
-<li>375: 	Pattern Matching for instanceof (Second Preview)</li>
-<li>377: 	ZGC: A Scalable Low-Latency Garbage Collector</li>
-<li>378: 	Text Blocks</li>
-<li>379: 	Shenandoah: A Low-Pause-Time Garbage Collector</li>
-<li>381: 	Remove the Solaris and SPARC Ports</li>
-<li>383: 	Foreign-Memory Access API (Second Incubator)</li>
-<li>384: 	Records (Second Preview)</li>
-<li>385: 	Deprecate RMI Activation for Removal</li>
-</ul>
-<p>中文</p>
-<ul>
-<li>339: 	使用Edwards-Curve数字签名算法（EdDSA）实现加密签名</li>
-<li>360: 	密封类 Sealed Classes (Preview) </li>
-<li>371: 	隐藏类 Hidden Classes </li>
-<li>372: 	删除Nashorn JavaScript脚本引擎和API，以及jjs工具</li>
-<li>373: 	重新实现旧版DatagramSocket API，代替java.net.DatagramSocket和java.net.MulticastSocketAPI的基础实现</li>
-<li>374: 	默认情况下禁用偏向锁，并弃用所有相关的命令行选项。</li>
-<li>375: 	通过对instanceof运算符进行模式匹配来增强Java编程语言(Second Preview)</li>
-<li>377: 	将ZGC垃圾收集器从实验功能更改为产品功能。</li>
-<li>378: 	将文本块添加到Java语言</li>
-<li>379: 	Shenandoah垃圾回收从实验特性变为产品特性。</li>
-<li>381: 	删除源代码并构建对Solaris&#x2F;SPARC，Solaris&#x2F;x64和Linux&#x2F;SPARC端口的支持</li>
-<li>383: 	引入一个API，以允许Java程序安全有效地访问Java堆之外的外部内存。</li>
-<li>384: 	Records提供了一种紧凑的语法来声明类，以帮助开发者写出更简洁的代码(Second Preview)</li>
-<li>385: 	弃用RMI激活机制以便将来删除</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/JDK%2015%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Kotlin/from-java-to-kotlin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Kotlin/from-java-to-kotlin/" class="post-title-link" itemprop="url">from-java-to-kotlin</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-25 22:52:36" itemprop="dateCreated datePublished" datetime="2020-08-25T22:52:36+08:00">2020-08-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Kotlin/" itemprop="url" rel="index"><span itemprop="name">Kotlin</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>根据 <a target="_blank" rel="noopener" href="https://github.com/MindorksOpenSource/from-java-to-kotlin">from-java-to-kotlin</a> 的学习笔记</p>
-<h2 id="null声明"><a href="#null声明" class="headerlink" title="null声明"></a>null声明</h2><ul>
-<li>Java</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String otherName;</span><br><span class="line">otherName = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Kotlin</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Kotlin/from-java-to-kotlin/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">黑马程序员并发编程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 21:52:39" itemprop="dateCreated datePublished" datetime="2020-08-03T21:52:39+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av81461839"><strong>【黑马程序员并发编程-哔哩哔哩】</strong></a>教学视频学习所做的笔记</p>
-<h2 id="一、XXX"><a href="#一、XXX" class="headerlink" title="一、XXX"></a>一、XXX</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">黑马程序员JMM学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 21:52:38" itemprop="dateCreated datePublished" datetime="2020-08-03T21:52:38+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是<a target="_blank" rel="noopener" href="https://b23.tv/AYSxdj"><strong>【黑马程序员JVM完整教程，全网超高评价，全程干货不拖沓-哔哩哔哩】</strong></a>教学视频学习所做的笔记</p>
-<h2 id="四、什么是-JMM"><a href="#四、什么是-JMM" class="headerlink" title="四、什么是 JMM"></a>四、什么是 JMM</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Java内存模型 Java Memory Model ( JMM )</p>
-<p>简单来说，JMM定义了一套在多线程读写共享内存时（成员变量、数组），对数据的可见性、有序性、原子性的规则和保障。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%AD%97%E8%8A%82%E7%A0%81%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%AD%97%E8%8A%82%E7%A0%81%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">黑马程序员JVM类加载与字节码笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 21:52:37" itemprop="dateCreated datePublished" datetime="2020-08-03T21:52:37+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是<a target="_blank" rel="noopener" href="https://b23.tv/AYSxdj"><strong>【黑马程序员JVM完整教程，全网超高评价，全程干货不拖沓-哔哩哔哩】</strong></a>教学视频学习所做的笔记</p>
-<blockquote>
-<p>部分笔记内容拷贝自<a target="_blank" rel="noopener" href="https://nyimac.gitee.io/2020/07/03/JVM%E5%AD%A6%E4%B9%A0/#1%E3%80%81%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8">【JVM学习】</a></p>
-</blockquote>
-<h3 id="三、类加载与字节码笔"><a href="#三、类加载与字节码笔" class="headerlink" title="三、类加载与字节码笔"></a>三、类加载与字节码笔</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1962,14 +1980,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">358</span>
+          <span class="site-state-item-count">363</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

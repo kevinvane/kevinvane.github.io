@@ -199,6 +199,459 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/Springboot%20JPA%20MongoDb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/SpringBoot/Springboot%20JPA%20MongoDb/" class="post-title-link" itemprop="url">Springboot JPA MongoDb</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-19 19:52:36" itemprop="dateCreated datePublished" datetime="2022-05-19T19:52:36+08:00">2022-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-30 09:47:39" itemprop="dateModified" datetime="2023-03-30T09:47:39+08:00">2023-03-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="MongoDb索引"><a href="#MongoDb索引" class="headerlink" title="MongoDb索引"></a>MongoDb索引</h3><h4 id="注解索引"><a href="#注解索引" class="headerlink" title="注解索引"></a>注解索引</h4><p>Springboot JPA 默认不开启自动创建索引，需在yml配置开启，并且只在【新创建的集合】才会生效。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">data:</span></span><br><span class="line">    <span class="attr">mongodb:</span></span><br><span class="line">      <span class="attr">auto-index-creation:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>标注字段，在创建数据库的时候，会自动创建索引。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Indexed(unique = true, direction = IndexDirection.DESCENDING)</span></span><br><span class="line"><span class="keyword">private</span> String username;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合索引，在创建数据库的时候，会自动创建索引。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CompoundIndexes(&#123;</span></span><br><span class="line"><span class="meta">@CompoundIndex(name = &quot;username_age&quot;, def = &quot;&#123;&#x27;username&#x27;: 1, &#x27;age&#x27;: 1&#125;&quot;, unique = true)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/SpringBoot/Springboot%20JPA%20MongoDb/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2018%20%E6%96%B0%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/JDK%2018%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 18 新特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-23 19:51:41" itemprop="dateCreated datePublished" datetime="2022-03-23T19:51:41+08:00">2022-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-23 10:22:01" itemprop="dateModified" datetime="2022-08-23T10:22:01+08:00">2022-08-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2022年03月22 <code>JDK 18</code> 发布，是 短期维护版本。</p>
+<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/18/">新特性: http://openjdk.java.net/projects/jdk/18/</a></p>
+<p>Features</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>400:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/400">UTF-8 by Default</a></td>
+</tr>
+<tr>
+<td>408:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/408">Simple Web Server</a></td>
+</tr>
+<tr>
+<td>413:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/413">Code Snippets in Java API Documentation</a></td>
+</tr>
+<tr>
+<td>416:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/416">Reimplement Core Reflection with Method Handles</a></td>
+</tr>
+<tr>
+<td>417:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/417">Vector API (Third Incubator)</a></td>
+</tr>
+<tr>
+<td>418:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/418">Internet-Address Resolution SPI</a></td>
+</tr>
+<tr>
+<td>419:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/419">Foreign Function &amp; Memory API (Second Incubator)</a></td>
+</tr>
+<tr>
+<td>420:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/420">Pattern Matching for switch (Second Preview)</a></td>
+</tr>
+<tr>
+<td>421:</td>
+<td><a target="_blank" rel="noopener" href="https://openjdk.java.net/jeps/421">Deprecate Finalization for Removal</a></td>
+</tr>
+</tbody></table>
+<h3 id="400-默认编码为-UTF-8"><a href="#400-默认编码为-UTF-8" class="headerlink" title="400: 默认编码为 UTF-8"></a>400: 默认编码为 UTF-8</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/JDK%2018%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">集成极光认证服务本机号码一键登录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-02-18 19:52:36 / 修改时间：10:49:14" itemprop="dateCreated datePublished" datetime="2022-02-18T19:52:36+08:00">2022-02-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>极光的文档很详细，这里做一下笔记。</p>
+<h2 id="一、账号实名认证"><a href="#一、账号实名认证" class="headerlink" title="一、账号实名认证"></a>一、账号实名认证</h2><p>需要账号实名认证，否则这个服务用不了，认证通过过，会赠送1000条认证。</p>
+<h2 id="二、创建应用"><a href="#二、创建应用" class="headerlink" title="二、创建应用"></a>二、创建应用</h2><p>这就不记录了，简单的网页可视化操作流程，要注意的是：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Eclipse%20MQTT%E9%81%BF%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20Eclipse%20MQTT%E9%81%BF%E5%9D%91/" class="post-title-link" itemprop="url">Android Eclipse MQTT避坑</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-02-10 19:52:36 / 修改时间：16:21:30" itemprop="dateCreated datePublished" datetime="2022-02-10T19:52:36+08:00">2022-02-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>现在兼容库主流都是使用了<code>androidx</code>，在使用 <code>org.eclipse.paho:org.eclipse.paho.android.service:1.1.1</code>发现依赖的<code>LocalBroadcastManager</code>是v4的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.NoClassDefFoundError: Failed resolution of: Landroid/support/v4/content/LocalBroadcastManager;</span><br><span class="line">at org.eclipse.paho.android.service.MqttAndroidClient.registerReceiver(MqttAndroidClient.java:450)</span><br></pre></td></tr></table></figure>
+
+<p>这个坑位避开有两个方法:</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>在 <code>gradle.properties</code> 加入 <code>android.enableJetifier=true</code> 重新编译就可以。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20Eclipse%20MQTT%E9%81%BF%E5%9D%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Studio%20Bumblebee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20Studio%20Bumblebee/" class="post-title-link" itemprop="url">Android Studio Bumblebee</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-02-09 19:52:36 / 修改时间：11:51:55" itemprop="dateCreated datePublished" datetime="2022-02-09T19:52:36+08:00">2022-02-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><p>2022-02-09 当前版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Android Studio Arctic Fox | 2020.3.1 Patch 4</span><br><span class="line">Build #AI-203.7717.56.2031.7935034, built on November 21, 2021</span><br><span class="line">Runtime version: 11.0.10+0-b96-7249189 amd64</span><br><span class="line">VM: OpenJDK 64-Bit Server VM by Oracle Corporation</span><br><span class="line">Windows 10 10.0</span><br><span class="line">GC: G1 Young Generation, G1 Old Generation</span><br><span class="line">Memory: 2280M</span><br><span class="line">Cores: 4</span><br><span class="line">Registry: external.system.auto.import.disabled=true</span><br><span class="line">Non-Bundled Plugins: wu.seal.tool.jsontokotlin</span><br></pre></td></tr></table></figure>
+
+<p>点击 “检查更新” 升级到最新版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">The latest stable release of Android Studio is now available for download.</span><br><span class="line">Android Studio Bumblebee | 2021.1.1 Patch 1 is a major new release and includes performance improvements, bug fixes and new features.</span><br><span class="line">Intellij 2021.1.1 Platform Update</span><br><span class="line">New Device Manager</span><br><span class="line">ADB over Wi-Fi</span><br><span class="line">Run Instrumented Tests in Android Studio using Gradle</span><br><span class="line">Android Gradle Plugin Upgrade Assistant now updates API usage</span><br><span class="line">Non-Transitive R classes on for new projects</span><br><span class="line">Apple Silicon Support Update</span><br><span class="line">Jank detection track in Profilers</span><br><span class="line">Profileable app profiling support in Studio Profilers</span><br><span class="line">Network Inspection and ability to capture Layout Inspector snapshots</span><br><span class="line">Support for Compose semantics in the Layout Inspector</span><br><span class="line">Interactive Preview</span><br><span class="line">Animated Vector Drawables Preview</span><br><span class="line">Updated Device picker for Design Tools</span><br><span class="line">Important After updating, you need to restart Android Studio to apply any memory settings you migrate from an earlier version of the IDE.</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20Studio%20Bumblebee/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/EMQX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1430,420 +1883,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85IDEA%E8%AE%BE%E7%BD%AE%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85IDEA%E8%AE%BE%E7%BD%AE%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87/" class="post-title-link" itemprop="url">Ubuntu中安装IDEA设置桌面图标</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-28 22:52:36" itemprop="dateCreated datePublished" datetime="2021-10-28T22:52:36+08:00">2021-10-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在Ubuntu桌面版中安装IDEA，Jetbrains只提供 <code>tar.gz</code> 格式包，解压即可使用，但需要执行 <code>idea.sh</code> ，没有快捷方式对桌面系统很不友好。</p>
-<p>我们可以手动编辑一个快捷方式，在桌面创建一个名为 <code>idea.desktop</code>的文件，假如我们解压目录地址为 <code>/usr/local</code> 内容为：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Version=2021.2.2</span><br><span class="line"></span><br><span class="line">Type=Application</span><br><span class="line"></span><br><span class="line">Name=IDEA</span><br><span class="line"></span><br><span class="line">Comment=IntelliJ IDEA</span><br><span class="line"></span><br><span class="line">Exec=sh /usr/local/idea/bin/idea.sh</span><br><span class="line"></span><br><span class="line">Terminal=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">Icon=/usr/local/idea/bin/idea.png</span><br><span class="line"></span><br><span class="line">Terminal=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">Encoding=UTF-8</span><br><span class="line"></span><br><span class="line">Categories=Development;</span><br></pre></td></tr></table></figure>
-
-<p>还需要给这个文件赋予运行权限：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="built_in">chmod</span> +x idea.desktop</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Linux/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85IDEA%E8%AE%BE%E7%BD%AE%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/Undertow%20request%20failed%20HttpServerExchange/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/SpringBoot/Undertow%20request%20failed%20HttpServerExchange/" class="post-title-link" itemprop="url">Undertow request failed HttpServerExchange</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-12 21:52:36" itemprop="dateCreated datePublished" datetime="2021-10-12T21:52:36+08:00">2021-10-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>部署一个简单的 Springboot Web 项目在阿里云ESC公网，web容器由Tomcat切换为Undertow。</p>
-<h3 id="1-异常信息"><a href="#1-异常信息" class="headerlink" title="1. 异常信息"></a>1. 异常信息</h3><p>跑一段时间后，在日志中经常出现一些其他域名相关的奇怪异常，而且很难复现。如下：</p>
-<blockquote>
-<p>以下只贴出带有域名的异常，其实IP的异常居多</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2021-09-30 09:14:02.935 ERROR 18684 --- [   XNIO-1 I/O-1] io.undertow.request                      :</span><br><span class="line">UT005071: Undertow request failed HttpServerExchange&#123; CONNECT www.baidu.com:443&#125;</span><br><span class="line"></span><br><span class="line">java.lang.IllegalArgumentException: UT000068: Servlet path match failed</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatchesData.getServletHandlerByPath(ServletPathMatchesData.java:83) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatches.getServletHandlerByPath(ServletPathMatches.java:88) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletInitialHandler.handleRequest(ServletInitialHandler.java:146) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.handlers.HttpContinueReadHandler.handleRequest(HttpContinueReadHandler.java:65) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:255) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:136) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:162) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:100) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:57) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:291) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:286) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.QueuedNioTcpServer<span class="variable">$1</span>.run(QueuedNioTcpServer.java:129) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.safeRun(WorkerThread.java:582) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.run(WorkerThread.java:466) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2021-10-02 01:57:00.626 ERROR 18684 --- [   XNIO-1 I/O-1] io.undertow.request                      :</span><br><span class="line">UT005071: Undertow request failed HttpServerExchange&#123; GET ab2h&#125;</span><br><span class="line"></span><br><span class="line">java.lang.IllegalArgumentException: UT000068: Servlet path match failed</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatchesData.getServletHandlerByPath(ServletPathMatchesData.java:83) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatches.getServletHandlerByPath(ServletPathMatches.java:88) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletInitialHandler.handleRequest(ServletInitialHandler.java:146) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.handlers.HttpContinueReadHandler.handleRequest(HttpContinueReadHandler.java:65) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:255) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:136) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:59) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.conduits.ReadReadyHandler<span class="variable">$ChannelListenerHandler</span>.readReady(ReadReadyHandler.java:66) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:88) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.run(WorkerThread.java:561) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2021-10-10 22:14:39.423 ERROR 18684 --- [   XNIO-1 I/O-1] io.undertow.request                      : </span><br><span class="line">UT005071: Undertow request failed HttpServerExchange&#123; CONNECT www.sogo.com:443&#125;</span><br><span class="line"></span><br><span class="line">java.lang.IllegalArgumentException: UT000068: Servlet path match failed</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatchesData.getServletHandlerByPath(ServletPathMatchesData.java:83) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatches.getServletHandlerByPath(ServletPathMatches.java:88) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletInitialHandler.handleRequest(ServletInitialHandler.java:146) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.handlers.HttpContinueReadHandler.handleRequest(HttpContinueReadHandler.java:65) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:255) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:136) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:162) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:100) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:57) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:291) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:286) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.QueuedNioTcpServer<span class="variable">$1</span>.run(QueuedNioTcpServer.java:129) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.safeRun(WorkerThread.java:582) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.run(WorkerThread.java:466) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2021-10-11 19:53:54.083 ERROR 10473 --- [   XNIO-2 I/O-2] io.undertow.request                      : </span><br><span class="line">UT005071: Undertow request failed HttpServerExchange&#123; CONNECT hotmail-com.olc.protection.outlook.com:25&#125;</span><br><span class="line"></span><br><span class="line">java.lang.IllegalArgumentException: UT000068: Servlet path match failed</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatchesData.getServletHandlerByPath(ServletPathMatchesData.java:83) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletPathMatches.getServletHandlerByPath(ServletPathMatches.java:88) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.servlet.handlers.ServletInitialHandler.handleRequest(ServletInitialHandler.java:146) ~[undertow-servlet-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.handlers.accesslog.AccessLogHandler.handleRequest(AccessLogHandler.java:148) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.handlers.HttpContinueReadHandler.handleRequest(HttpContinueReadHandler.java:65) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:255) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:136) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:162) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:100) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:57) ~[undertow-core-2.0.29.Final.jar!/:2.0.29.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:291) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners<span class="variable">$10</span>.handleEvent(ChannelListeners.java:286) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.QueuedNioTcpServer<span class="variable">$1</span>.run(QueuedNioTcpServer.java:129) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.safeRun(WorkerThread.java:582) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br><span class="line">	at org.xnio.nio.WorkerThread.run(WorkerThread.java:466) ~[xnio-nio-3.3.8.Final.jar!/:3.3.8.Final]</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/SpringBoot/Undertow%20request%20failed%20HttpServerExchange/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/IDE/DB%20Browser%20for%20SQLite/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/IDE/DB%20Browser%20for%20SQLite/" class="post-title-link" itemprop="url">DB Browser for SQLite</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-29 20:52:36" itemprop="dateCreated datePublished" datetime="2021-09-29T20:52:36+08:00">2021-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-01 14:51:26" itemprop="dateModified" datetime="2023-03-01T14:51:26+08:00">2023-03-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://www.sqlitebrowser.org/">【DB Browser for SQLite】</a>是一个可视化SQLlite数据库管理工具,其主要实现了高质量、可视化、免费开源、设计与编辑与SQLite兼容的数据库文件。</p>
-<p><img src="http://www.sqlitebrowser.org/images/screenshot.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/IDE/IDEA%E6%8F%92%E4%BB%B6%E4%BB%A3%E7%A0%81%E7%BB%98%E5%9B%BEPlantUML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/IDE/IDEA%E6%8F%92%E4%BB%B6%E4%BB%A3%E7%A0%81%E7%BB%98%E5%9B%BEPlantUML/" class="post-title-link" itemprop="url">IDEA插件代码绘图PlantUML</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-29 20:52:36" itemprop="dateCreated datePublished" datetime="2021-09-29T20:52:36+08:00">2021-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>现在国内免费的流程图画图软件网页版的居多，如 ProcessOn 、 GitMind 、DrawIO 等。现在发现一个新的选择，IDEA上的PlantUML是一个开源的插件，可以使用代码来画图。</p>
-<blockquote>
-<p>Visio是商业软件 ，MasterMind 和 XMind 可以长期免费试用，只是导出文件有水印。</p>
-</blockquote>
-<p>安装方法很简单，在插件市场上直接搜索安装。<br><img src="/images/IDE/UML/%E5%AE%89%E8%A3%85.png"></p>
-<p>创建一个PlantUML文件，选择图形类型，新文件会有示例代码<br><img src="/images/IDE/UML/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.png"></p>
-<p>支持的类型挺多的，这里截图我关注的几个类型，效果还不错：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/IDE/IDEA%E6%8F%92%E4%BB%B6%E4%BB%A3%E7%A0%81%E7%BB%98%E5%9B%BEPlantUML/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/IDE/%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7Excalidraw/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/IDE/%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7Excalidraw/" class="post-title-link" itemprop="url">绘图工具Excalidraw</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-29 20:52:36" itemprop="dateCreated datePublished" datetime="2021-09-29T20:52:36+08:00">2021-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-13 11:44:41" itemprop="dateModified" datetime="2023-01-13T11:44:41+08:00">2023-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p><a target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a>是一款非常轻量的<a target="_blank" rel="noopener" href="https://github.com/excalidraw/excalidraw">开源</a>在线白板工具，手绘风格。可以直接在浏览器打开，轻松绘制具有手绘风格的图形。</p>
-<h3 id="二、在线或独立部署"><a href="#二、在线或独立部署" class="headerlink" title="二、在线或独立部署"></a>二、在线或独立部署</h3><p><a target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a> 在线使用，很方便。<br>也可以本地部署，支持docker。</p>
-<p>工作界面<br><img src="/images/excalidraw/excalidraw_preview.png" alt="工作界面"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/IDE/%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7Excalidraw/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1910,14 +1953,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">358</span>
+          <span class="site-state-item-count">363</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -199,6 +199,433 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/" class="post-title-link" itemprop="url">FFmpeg推流RTSP和RTMP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-04 17:52:36" itemprop="dateCreated datePublished" datetime="2020-07-04T17:52:36+08:00">2020-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="RTSP推流到本地"><a href="#RTSP推流到本地" class="headerlink" title="RTSP推流到本地"></a>RTSP推流到本地</h2><p>用UDP传输</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -re -i h264.mp4 -vcodec copy -f h264 udp://127.0.0.1:8554</span><br><span class="line"></span><br><span class="line"><span class="comment">#循环文件推流（默认UDP）</span></span><br><span class="line">ffmpeg -re  -stream_loop -1 -i move.mp4 -vcodec copy -codec copy -f rtsp rtsp://192.168.0.223:554/test/</span><br><span class="line"><span class="comment">#循环文件推流（指定TCP）</span></span><br><span class="line">ffmpeg -re  -stream_loop -1 -i move.mp4 -vcodec copy -codec copy -rtsp_transport tcp -f rtsp rtsp://192.168.0.223:554/test/</span><br></pre></td></tr></table></figure>
+
+<p>在本地用ffplay播放（ffplay是ffmpeg的附带命令行工具）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ffplay  udp://127.0.0.1:8554</span><br><span class="line">$ ffplay -f h264 udp://127.0.0.1:8554</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/" class="post-title-link" itemprop="url">Ubuntu 编译 ijplayer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 23:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T23:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于项目<a target="_blank" rel="noopener" href="https://github.com/bilibili/ijkplayer">【ijkplayer】</a>提供编译好的库没有支持RTSP，而ijkplayer这个项目比较强大之处就是可以根据需要进行裁剪编译，所以我要自己编译一次Android版本，开启RTSP协议。</p>
+<h2 id="一、软件环境"><a href="#一、软件环境" class="headerlink" title="一、软件环境"></a>一、软件环境</h2><ol>
+<li>Ubuntu16.04 Server</li>
+<li>Android SDK</li>
+<li>NDK（不要安装最新的版本，14b版本能用）和cmake</li>
+<li>ijkplayer-k0.8.8 (commit cced91e3ae3730f5c63f3605b00d25eafcf5b97b)</li>
+<li>其他一些编译c的环境，系统本身就有，就不一样列出。</li>
+</ol>
+<p>编译所需软件大概有这些，引用参考文章的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install vim openssh-server git curl wget tar unzip</span><br><span class="line">$ sudo apt install build-essential openjdk-8-jdk yasm python</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/" class="post-title-link" itemprop="url">Ubuntu Server 扩展磁盘空间LVM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:53:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:53:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在《VMWare为Ubuntu添加硬盘》一文中，我尝试为虚拟机增加一块磁盘挂载了 <code>/data</code> 路径下，这可以解决在“出现磁盘耗尽预警”之前增加磁盘，尽量将新的文件都放到 <code>/data</code> 路径下。</p>
+<p>如果应用的数据无法迁移，需扩展根分区  <code>/</code> 的空间， 上面的方法则无法满足我的需求。</p>
+<h2 id="GParted"><a href="#GParted" class="headerlink" title="GParted"></a>GParted</h2><p>对于VMWare虚拟机，还可以考虑对虚拟机磁盘进行扩容，如：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%20CD-DVD%20%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%20CD-DVD%20%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">VMWare CD/DVD 驱动器的类型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>CD/DVD</code> 驱动器的类型：</p>
+<ol>
+<li>如果选择操作系统为XP的话，<code>CD/DVD</code> 驱动器默认是IDE类型。</li>
+<li>如果选择操作系统为Win7的话，<code>CD/DVD</code> 驱动器默认是SATA类型。</li>
+</ol>
+<p> <code>CD/DVD</code> 驱动器底下有一个“高级”按钮，可以修改驱动器的类型。</p>
+<p><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%85%89%E9%A9%B1XP%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B.png"><br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%85%89%E9%A9%B1%E8%AE%BE%E7%BD%AE.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/" class="post-title-link" itemprop="url">VMWare为Ubuntu添加硬盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>VMWare中的Ubuntu虚拟机当初创建时只分配了20G硬盘，结果现在硬盘爆满了，记得VMWare可以加硬盘的，所以给它加了一块虚拟硬盘，记录一下过程。</p>
+<ol>
+<li>添加虚拟硬盘</li>
+</ol>
+<p>VM关机，在“编辑虚拟机设置” 中“硬件”给虚拟机实例添加一块硬盘。</p>
+<ol start="2">
+<li>开机进入Ubuntu（这里是root身份登录，所以命令没有加sudo）</li>
+</ol>
+<p>查看所有的硬盘，其中 <code>/dev/sdb</code> 是我们的第二块硬盘。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%AE%89%E8%A3%85CHOST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1493,451 +1920,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MongoDb%E5%A4%87%E4%BB%BD&%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/MongoDb%E5%A4%87%E4%BB%BD&%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">MongoDb备份&恢复数据</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-08 09:52:36" itemprop="dateCreated datePublished" datetime="2020-03-08T09:52:36+08:00">2020-03-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-28 10:56:38" itemprop="dateModified" datetime="2022-12-28T10:56:38+08:00">2022-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>记录通过命令行备份和恢复的过程</p>
-<h3 id="本地备份"><a href="#本地备份" class="headerlink" title="本地备份"></a>本地备份</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ mongo</span><br><span class="line">MongoDB shell version v3.6.3</span><br><span class="line">connecting to: mongodb://127.0.0.1:27017</span><br><span class="line">MongoDB server version: 3.6.3</span><br><span class="line">Welcome to the MongoDB shell.</span><br><span class="line">&gt; show dbs</span><br><span class="line">admin         0.000GB</span><br><span class="line">mshop         0.000GB</span><br><span class="line">jeel          0.001GB</span><br><span class="line"><span class="built_in">local</span>         0.000GB</span><br><span class="line">home          0.001GB</span><br><span class="line">pymongo_test  0.000GB</span><br><span class="line">&gt; <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">bye</span></span><br><span class="line">$ mongodump -h localhost -d mshop -o ./</span><br><span class="line">$ mongodump -h localhost -d pymongo_test -o ./</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">mshop pymongo_test</span><br></pre></td></tr></table></figure>
-<p>这里备份了两个数据库，分别在两个目录下。</p>
-<p>这里是将两个目录迁移到另外一个服务器，执行以下操作：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/MongoDb%E5%A4%87%E4%BB%BD&%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MongoDb%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/MongoDb%E5%BF%98%E8%AE%B0%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">MongoDb忘记管理员密码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-08 09:52:36" itemprop="dateCreated datePublished" datetime="2020-03-08T09:52:36+08:00">2020-03-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-28 10:33:40" itemprop="dateModified" datetime="2022-12-28T10:33:40+08:00">2022-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>忘记管理员密码对于创建数据库等操作会有影响，本文基于Mongo v3.4.10将做一次处理这个问题的示例，整体方向就是删除所有的管理员用户，重新创建。</p>
-<ol>
-<li><p>关闭mongod的认证</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#security:</span><br><span class="line"># authorization: enabled</span><br></pre></td></tr></table></figure></li>
-<li><p>重启mongod</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mongod restart</span><br></pre></td></tr></table></figure></li>
-<li><p>登录mongo命令行,删除所有admim数据库中的账号</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mongo</span><br><span class="line">&gt; use admin </span><br><span class="line">&gt; db.system.users.find()</span><br><span class="line">&gt; db.system.users.remove(&#123;&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建超级管理员root</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.createUser(&#123;user:&#x27;root&#x27;,pwd:&#x27;123456&#x27;,roles:[&#123;&quot;role&quot;:&quot;root&quot;,&quot;db&quot;:&quot;admin&quot;&#125;]&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>验证root密码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.auth(&#x27;root&#x27;,&#x27;123456&#x27;)</span><br></pre></td></tr></table></figure></li>
-<li><p>创建一个示例数据库：testdb</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; use testdb</span><br></pre></td></tr></table></figure></li>
-<li><p>为示例数据库：testdb 创建一个可读写的用户</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.createUser(&#123;user:&#x27;testuser&#x27;,pwd:&#x27;123456&#x27;,roles:[&#123;&quot;role&quot;:&quot;readWrite&quot;,&quot;db&quot;:&quot;testdb&quot;&#125;]&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>认证</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.auth(&#x27;testuser&#x27;,&#x27;123456&#x27;)</span><br></pre></td></tr></table></figure></li>
-<li><p>在testdb的col(collection)插入一条数据（不然不会创建数据库）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.col.insert(&#123;&#x27;test&#x27;:&#x27;123&#x27;&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>开启认证<br>去掉注释,重启mongod</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">security:authorization: enabled</span><br></pre></td></tr></table></figure></li>
-<li><p>与mongo同一台机器安装adminMongo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/mrvautin/adminMongo.git</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> adminMongo</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim /config/app.json</span></span><br><span class="line">&#123;</span><br><span class="line">    &quot;app&quot;: &#123;</span><br><span class="line">        &quot;host&quot;: &quot;0.0.0.0&quot;,</span><br><span class="line">        &quot;port&quot;: 4321,</span><br><span class="line">        &quot;docs_per_page&quot;: 20,</span><br><span class="line">        &quot;password&quot;: &quot;adm123&quot;,</span><br><span class="line">        &quot;locale&quot;: &quot;en&quot;,</span><br><span class="line">        &quot;context&quot;: &quot;dbApp&quot;,</span><br><span class="line">        &quot;monitoring&quot;: true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm start</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>IP：port 访问adminMongo，密码是app.json中设置的密码</p>
-</li>
-<li><p>adminMongo 用超级用户创建连接 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb://root:123456@127.0.0.1:27017</span><br></pre></td></tr></table></figure></li>
-<li><p>在adminMongo中试一下创建数据库，为数据库创建用户等操作，完成。</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Google%20Pixel%20%E4%B8%8D%E5%8F%AF%E8%AE%BF%E9%97%AE%E4%BA%92%E8%81%94%E7%BD%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Google%20Pixel%20%E4%B8%8D%E5%8F%AF%E8%AE%BF%E9%97%AE%E4%BA%92%E8%81%94%E7%BD%91/" class="post-title-link" itemprop="url">Google Pixel 显示不可访问互联网</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-01 09:52:36" itemprop="dateCreated datePublished" datetime="2020-03-01T09:52:36+08:00">2020-03-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-20 16:35:22" itemprop="dateModified" datetime="2022-06-20T16:35:22+08:00">2022-06-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Android原版系统，连接的WiFi是正常的，但显示“不可访问互联网”，应该检查某个域名发现无法访问。<br>如果觉得看着别扭，可以通过以下命令修复，给它改一个域名来检查。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_use_https 1</span><br><span class="line">adb shell settings put global captive_portal_http_url http://204.ustclug.org</span><br><span class="line">adb shell settings put global captive_portal_https_url https://204.ustclug.org</span><br><span class="line">adb shell settings put global captive_portal_mode 0</span><br></pre></td></tr></table></figure>
-<p>最后重启手机就没有显示“不可访问互联网”啦！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/%E7%94%A8%20Google%20Pixel%20%E5%88%B7%E6%9C%BA%E7%A4%BA%E4%BE%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/%E7%94%A8%20Google%20Pixel%20%E5%88%B7%E6%9C%BA%E7%A4%BA%E4%BE%8B/" class="post-title-link" itemprop="url">用 Google Pixel 刷机示例</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-01 09:52:36" itemprop="dateCreated datePublished" datetime="2020-03-01T09:52:36+08:00">2020-03-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="fastboot常用命令"><a href="#fastboot常用命令" class="headerlink" title="fastboot常用命令"></a>fastboot常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 解锁</span><br><span class="line">$ fastboot flashing unlock</span><br><span class="line"></span><br><span class="line"># 重启</span><br><span class="line">$ fastboot reboot</span><br><span class="line"></span><br><span class="line"># 刷入recovery</span><br><span class="line">$ fastboot flash recovery recovery.img</span><br><span class="line"></span><br><span class="line"># 启动临时recovery</span><br><span class="line">$ fastboot boot recovery.img</span><br></pre></td></tr></table></figure>
-
-<h2 id="Pixel解Bootloader锁"><a href="#Pixel解Bootloader锁" class="headerlink" title="Pixel解Bootloader锁"></a>Pixel解Bootloader锁</h2><p>想要刷ROM，解BL锁时第一步：</p>
-<ol>
-<li>在Android系统设置选项的开发者中，打开调试模式，打开OEM解锁，连接数据线。</li>
-<li>关机</li>
-<li>长按 “音量-“ + “电源”按键，进入Bootloader</li>
-<li><code>fastboot flashing unlock</code>命令解锁 (需要有platform-tools才能运行fastboot)</li>
-<li>如果成功就重启 <code>fastboot reboot</code></li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/%E7%94%A8%20Google%20Pixel%20%E5%88%B7%E6%9C%BA%E7%A4%BA%E4%BE%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/genymotion%E6%9B%B4%E6%94%B9%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/genymotion%E6%9B%B4%E6%94%B9%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">Genymotion更改模拟器的存放路径</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-10 19:52:36" itemprop="dateCreated datePublished" datetime="2020-01-10T19:52:36+08:00">2020-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Genymotion模拟器下载的虚拟机默认是在C盘，如果要修改虚拟机的路径，在设置里修改即可，但是先存的虚拟机genymotion不会帮你移动。</p>
-<p>我们手动移动虚拟机，比如移动到D盘，那这些的虚拟机都失效了，Genymotion并不支持导入。</p>
-<p>修改 C:\Users\用户名.VirtualBox\VirtualBox.xml 文件 :</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">MachineRegistry</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">MachineEntry</span> <span class="attr">uuid</span>=<span class="string">&quot;&#123;a9a20fe7-dc69-4869-8f8b-1feff2485745&#125;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;D:\GenymotionDevice\Google Pixel - 9.0\Google Pixel - 9.0.vbox&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">MachineEntry</span> <span class="attr">uuid</span>=<span class="string">&quot;&#123;a9a20fe7-dc69-4869-8f8b-1feff2485745&#125;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;D:\GenymotionDevice\Google Pixel - 8.0\Google Pixel - 8.0.vbox&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">MachineRegistry</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>将路径改正确即可，如果不小心删掉了，也可以在xml里面增加一个item，按照他的格式来写，其中uuid在虚拟机的vbox文件里面可以找到。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/genymotion%E6%9B%B4%E6%94%B9%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2004,14 +1990,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">358</span>
+          <span class="site-state-item-count">363</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
