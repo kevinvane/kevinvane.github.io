@@ -199,6 +199,344 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2010%20%E6%96%B0%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/JDK%2010%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 10 新特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-20 19:51:38" itemprop="dateCreated datePublished" datetime="2018-03-20T19:51:38+08:00">2018-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-23 10:02:15" itemprop="dateModified" datetime="2022-08-23T10:02:15+08:00">2022-08-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2018年3月20日 <code>JDK 10</code> 发布，非LTS 版本。</p>
+<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/10/">新特性: http://openjdk.java.net/projects/jdk/10/</a></p>
+<ul>
+<li>286: Local-Variable Type Inference</li>
+<li>296: Consolidate the JDK Forest into a Single Repository</li>
+<li>304: Garbage-Collector Interface</li>
+<li>307: Parallel Full GC for G1</li>
+<li>310: Application Class-Data Sharing</li>
+<li>312: Thread-Local Handshakes</li>
+<li>313: Remove the Native-Header Generation Tool (javah)</li>
+<li>314: Additional Unicode Language-Tag Extensions</li>
+<li>316: Heap Allocation on Alternative Memory Devices</li>
+<li>317: Experimental Java-Based JIT Compiler</li>
+<li>319: Root Certificates</li>
+<li>322: Time-Based Release Versioning</li>
+</ul>
+<h2 id="中文-286-局部变量类型推断-var-x-“hello”-296-Consolidate-the-JDK-Forest-into-a-Single-Repository-304-Garbage-Collector-Interface-307-G1并行全垃圾回收器-Parallel-Full-GC-for-G1-310-应用类数据共享-CDS-312-线程-局部变量管控-313-删除-Native-Header-自动生成工具-javah-314-额外的-Unicode-语言标签扩展-316-在备用存储装置上的堆分配-317-试验性的基于-Java-的-JIT-编译器-319-根证书Root-Certificates-322-基于时间的版本控制"><a href="#中文-286-局部变量类型推断-var-x-“hello”-296-Consolidate-the-JDK-Forest-into-a-Single-Repository-304-Garbage-Collector-Interface-307-G1并行全垃圾回收器-Parallel-Full-GC-for-G1-310-应用类数据共享-CDS-312-线程-局部变量管控-313-删除-Native-Header-自动生成工具-javah-314-额外的-Unicode-语言标签扩展-316-在备用存储装置上的堆分配-317-试验性的基于-Java-的-JIT-编译器-319-根证书Root-Certificates-322-基于时间的版本控制" class="headerlink" title="中文* 286: 局部变量类型推断 (var x &#x3D; “hello”)* 296: Consolidate the JDK Forest into a Single Repository* 304: Garbage-Collector Interface* 307: G1并行全垃圾回收器 Parallel Full GC for G1* 310: 应用类数据共享(CDS)* 312: 线程-局部变量管控* 313: 删除 Native-Header 自动生成工具 (javah)* 314: 额外的 Unicode 语言标签扩展* 316: 在备用存储装置上的堆分配* 317: 试验性的基于 Java 的 JIT 编译器* 319: 根证书Root Certificates* 322: 基于时间的版本控制"></a>中文<br>* 286: 局部变量类型推断 (var x &#x3D; “hello”)<br>* 296: Consolidate the JDK Forest into a Single Repository<br>* 304: Garbage-Collector Interface<br>* 307: G1并行全垃圾回收器 Parallel Full GC for G1<br>* 310: 应用类数据共享(CDS)<br>* 312: 线程-局部变量管控<br>* 313: 删除 Native-Header 自动生成工具 (javah)<br>* 314: 额外的 Unicode 语言标签扩展<br>* 316: 在备用存储装置上的堆分配<br>* 317: 试验性的基于 Java 的 JIT 编译器<br>* 319: 根证书Root Certificates<br>* 322: 基于时间的版本控制</h2><p>Java 10 正式发布于 2018 年 3 月 21 日，Java 10 版本带来了很多新特性，其中最备受广大开发者关注的莫过于局部变量类型推断。除此之外，还有其他包括垃圾收集器改善、GC 改进、性能提升、线程管控等一批新特性。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/JDK%2010%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982018/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982018/" class="post-title-link" itemprop="url">GitHub资源备忘2018</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-16 09:52:36" itemprop="dateCreated datePublished" datetime="2018-03-16T09:52:36+08:00">2018-03-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://github.com/trending/java">https://github.com/trending/java</a></p>
+<h2 id="头像生成"><a href="#头像生成" class="headerlink" title="头像生成"></a>头像生成</h2><p><a target="_blank" rel="noopener" href="https://github.com/fangpenlin/avataaars-geneator">Github</a><br><a target="_blank" rel="noopener" href="https://getavataaars.com/">预览地址</a></p>
+<h2 id="VerticalSlideView"><a href="#VerticalSlideView" class="headerlink" title="VerticalSlideView"></a>VerticalSlideView</h2><p>类似淘宝的商品详情页，继续拖动查看详情，其中拖动增加了阻尼，并且重写了ListView，GridView，ScrollView，WebView，RecyclerView 的 dispatchTouchEvent 方法，使用的时候无须额外的代码，可以任意嵌套使用。<br><a target="_blank" rel="noopener" href="https://github.com/jeasonlzy/VerticalSlideView">Github</a><br><img src="http://7xss53.com2.z0.glb.clouddn.com/verticalslideview/demo2.gif" width="180" align="center"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982018/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/%E5%88%A9%E7%94%A8SSH%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/%E5%88%A9%E7%94%A8SSH%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-title-link" itemprop="url">利用SSH进行内网穿透</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-14 10:32:31" itemprop="dateCreated datePublished" datetime="2018-03-14T10:32:31+08:00">2018-03-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="使用场景举例"><a href="#使用场景举例" class="headerlink" title="使用场景举例"></a>使用场景举例</h5><ol>
+<li>在家里的电脑用 putty 登录到公司内网的测试服务器</li>
+<li>将内网的测试服务（如 HTTP&#x2F;Git&#x2F;Svn，只要是基于 TCP 的就行）提供到公网</li>
+</ol>
+<blockquote>
+<p>场景二 还可以通过路由器端口映射转发来实现，但是不是每个人都能控制公司的路由器，没有固定 IP 也是一个麻烦事。另外还可以通过 ngrok 等工具来转发，ngrok 还是有点慢，没有公网服务器时是一个不错的选择。</p>
+</blockquote>
+<h5 id="部署条件"><a href="#部署条件" class="headerlink" title="部署条件"></a>部署条件</h5><ol>
+<li>有一台公网服务器，如阿里云的ESC。</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/%E5%88%A9%E7%94%A8SSH%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/ElasticSearch%E7%9A%84%E4%BC%98%E5%8A%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Web%E5%90%8E%E7%AB%AF/ElasticSearch%E7%9A%84%E4%BC%98%E5%8A%BF/" class="post-title-link" itemprop="url">ElasticSearch的优势</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-02-01 16:11:29" itemprop="dateCreated datePublished" datetime="2018-02-01T16:11:29+08:00">2018-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><p>ES非常适用于搜索，速度快，使用简单。</p>
+</li>
+<li><p>全文搜索——一种传统数据库很难实现的功能</p>
+</li>
+<li><p>非常容易进行分布式 &#x2F; 集群部署。</p>
+</li>
+<li><p>想到再写。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/exit/blog/751385">上车</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/%E5%90%91%E6%82%A8%E7%9A%84Android%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0C%E5%92%8CC++%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1563,349 +1901,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/Nginx%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/Nginx%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">nginx日志管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-最简单的全局日志"><a href="#1-最简单的全局日志" class="headerlink" title="1. 最简单的全局日志"></a>1. 最简单的全局日志</h3><p>全部server的日志都记录再统计一个log文件。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Logging Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line"></span><br><span class="line">    access_log /var/log/nginx/access.log;</span><br><span class="line">    error_log /var/log/nginx/error.log;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    server&#123;</span><br><span class="line">    	***</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server&#123;</span><br><span class="line">    	***</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-server局部日志"><a href="#2-server局部日志" class="headerlink" title="2. server局部日志"></a>2. server局部日志</h3><p>每个server单独分配一个log文件，可以避免不同server之间的日志混淆，可以更加清晰的分析日志。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/Nginx%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982017/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982017/" class="post-title-link" itemprop="url">GitHub资源备忘2017</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-03-16 09:52:36" itemprop="dateModified" datetime="2018-03-16T09:52:36+08:00">2018-03-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://github.com/trending/java">https://github.com/trending/java</a></p>
-<h2 id="anproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具-Java"><a href="#anproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具-Java" class="headerlink" title="anproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具 (Java)"></a>anproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具 (Java)</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/fengfei/lanproxy">Gitee</a></p>
-<h2 id="P2P传输-流媒体-P2P-SDK库，功能强大的内网穿透（UDP打洞）库，支持rtmp、hls、sip等多种协议-C-库"><a href="#P2P传输-流媒体-P2P-SDK库，功能强大的内网穿透（UDP打洞）库，支持rtmp、hls、sip等多种协议-C-库" class="headerlink" title="P2P传输(流媒体+P2P)SDK库，功能强大的内网穿透（UDP打洞）库，支持rtmp、hls、sip等多种协议(C++库)"></a>P2P传输(流媒体+P2P)SDK库，功能强大的内网穿透（UDP打洞）库，支持rtmp、hls、sip等多种协议(C++库)</h2><p><a target="_blank" rel="noopener" href="https://github.com/dengzy401/ppeasy">Github</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982017/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">搭建一个完整的视频直播系统</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是对知乎的问答进行感兴趣知识提取，内容太多，以下是不完全提取，阅读原文 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/42162310/answers/created">传送门</a></p>
-<h3 id="直播Android主播端解决方案"><a href="#直播Android主播端解决方案" class="headerlink" title="直播Android主播端解决方案"></a>直播Android主播端解决方案</h3><p><a target="_blank" rel="noopener" href="https://github.com/beautifulSoup/RtmpRecoder">github</a></p>
-<p>他推流用的是 <a target="_blank" rel="noopener" href="https://github.com/bytedeco/javacv">JavaCV 库</a> ，JavaCV 是一款开源的视觉处理库，基于GPLv2协议，对各种常用计算机视觉库封装后的一组jar包，其中就有ffmpeg，可以直接拿来作为推流用。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.tangokk.com/blog/2016/01/29/%E7%9B%B4%E6%92%AD%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E7%9B%B4%E6%92%AD%E5%B9%B3%E5%8F%B0/">视频直播解决方案</a><br><a target="_blank" rel="noopener" href="http://www.tangokk.com/blog/2016/01/29/%E7%9B%B4%E6%92%AD%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E7%9B%B4%E6%92%AD%E5%B9%B3%E5%8F%B0/">Android使用FFMpeg实现推送视频直播流到服务器</a><br><a target="_blank" rel="noopener" href="http://www.tangokk.com/blog/2016/01/30/%E5%9C%A8%E5%90%84%E7%AB%AF%E5%AE%9E%E7%8E%B0Rtmp%E5%92%8Chls%E6%B5%81%E8%A7%86%E9%A2%91%E7%9A%84%E6%92%AD%E6%94%BE/">如何在网页端和移动端播放Rtmp和hls视频流</a></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E7%B3%BB%E7%BB%9F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABCMU-Sphinx%E8%B5%84%E6%96%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%ABCMU-Sphinx%E8%B5%84%E6%96%99/" class="post-title-link" itemprop="url">语音识别CMU-Sphinx资料</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p><a target="_blank" rel="noopener" href="http://www.dataguru.cn/article-11656-1.html">2017-6-27 11:33 横向对比5大开源语音识别工具包，CMU Sphinx最佳 </a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/yin52133/archive/2012/07/12/2588201.html">2012-07-12 Sphinx语音识别学习记录 （四）-小范围语音中文识别</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://zuoshu.iteye.com/blog/1463867">Android平台使用PocketSphinx做离线语音识别，小范围语音99%识别率</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/huanghuang/archive/2011/07/14/2106579.html">Sphinx武林秘籍(上)使用现有的语言模型与声学模型(C语言)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/cmusphinx">cmusphinx</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/cmusphinx/sphinx4">sphinx4(Java实现的cmusphinx)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/cmusphinx/pocketsphinx-android-demo">pocketsphinx-android-demo</a></p>
-</li>
-</ul>
-<p>…</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1976,7 +1971,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">363</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

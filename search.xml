@@ -15883,7 +15883,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-React.js简单语法总结</title>
+    <title>声明式UI-ArkTs简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/ArkTs%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
@@ -15895,7 +15895,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-ArkTs简单语法总结</title>
+    <title>声明式UI-React.js简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/React.js%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
@@ -15936,7 +15936,8 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
 
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else-if</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
+<p>执行简单的判断，但注意不要使用 <code>&#123;&#123; &#125;&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;Math.random() &gt; 0.5&quot;</span>&gt;</span></span><br><span class="line">  Now you see me</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Now you don&#x27;t</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">&quot;ok&quot;</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -16113,6 +16114,63 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Component</span>(&#123;</span><br><span class="line">  <span class="attr">observers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;some.field.**&#x27;</span>: <span class="keyword">function</span>(<span class="params">field</span>) &#123;</span><br><span class="line">      <span class="comment">// 使用 setData 设置 this.data.some.field 本身或其下任何子数据字段时触发</span></span><br><span class="line">      <span class="comment">// （除此以外，使用 setData 设置 this.data.some 也会触发）</span></span><br><span class="line">      field === <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">some</span>.<span class="property">field</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">attached</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 这样会触发上面的 observer</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="string">&#x27;some.field&#x27;</span>: &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 这样也会触发上面的 observer</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="string">&#x27;some.field.xxx&#x27;</span>: &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 这样还是会触发上面的 observer</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="string">&#x27;some&#x27;</span>: &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
+]]></content>
+      <categories>
+        <category>声明式UI</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Flutter语法总结</title>
+    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/Flutter%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<blockquote>
+<p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
+</blockquote>
+<p>TODO</p>
+]]></content>
+      <categories>
+        <category>声明式UI</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JetPack Compose语法总结</title>
+    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/JetPackCompose%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<blockquote>
+<p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
+</blockquote>
+<p>TODO</p>
+]]></content>
+      <categories>
+        <category>声明式UI</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>声明式UI-SwiftUI简单语法总结</title>
+    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/SwiftUI%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<blockquote>
+<p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
+</blockquote>
+<p>TODO</p>
+]]></content>
+      <categories>
+        <category>声明式UI</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>声明式UI总结</title>
+    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%A3%B0%E6%98%8E%E5%BC%8FUI%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>前端的原理都差不多，但各自的特点也是有的，比如Vue.js 与 微信小程序虽然都是用js语言，但写法两个还是有一点差异。</p>
+<p>本系列简单的总结一下：</p>
+<h3 id="前端："><a href="#前端：" class="headerlink" title="前端："></a>前端：</h3><ul>
+<li>React.js</li>
+<li>Vue.js </li>
+<li>微信小程序</li>
+</ul>
+<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><ul>
+<li>Android Jetpack Compose</li>
+<li>Flutter</li>
+<li>ArkTs UI</li>
+<li>Swift UI</li>
+</ul>
 ]]></content>
       <categories>
         <category>声明式UI</category>

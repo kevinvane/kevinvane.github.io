@@ -199,6 +199,354 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">RTSP网络抓包分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-16 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-16T19:52:36+08:00">2020-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>抓包文件在附件中…</p>
+</blockquote>
+<h3 id="一、Play-抓包-Over-TCP"><a href="#一、Play-抓包-Over-TCP" class="headerlink" title="一、Play 抓包 Over TCP"></a>一、Play 抓包 Over TCP</h3><ul>
+<li>推流Client端rtmp-rtsp-stream-client-java</li>
+<li>server端EasyDarwin</li>
+<li>播放Client端 Javacv 录制（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<p>tcp追踪流</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">CSeq: 1</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 1</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Public: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">Accept: application/sdp</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 2</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Content-Length: 444</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/32000/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1290; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=1 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 3</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=0 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 4</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line"></span><br><span class="line">PLAY rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">Range: npt=0.000-</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 5</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Range: npt=0.000-</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是紧接着一帧一帧rtp包（rtp over tcp）</span></span><br><span class="line">701ce71cfb29c8ff28ed6843080045000524c1c240004006f1c3c0a800dfc0a8001e022ae383d37e23f074458e0a501800feecab0000240004f88060447500bd14102e9f0a407c85b803f06fe00f0e157e880381bc15565f8c35982ddba36a0312c81fd3800a814eb570c928a7818974f2303f010e39d505ae59ae3ebb42bbe706078d36e0997a0e00020011c000fff70000fea1d04f4480006968249f20dad1f9b600a5b19018a3c169c190e22c754f401f5cb5f3a4fa0736d00d6cbcb19670584cc24d248c1c51ef552de01e01807565e81e0ce8185fc160dbbeea53228011496146e44add661440a93ca0b20a0e6b2455413b9964320ed088f5cb751a24effc030f6b65c1d423a60fcf96247b9e7de03c0ef60020a1d76ad07eab06ad7584bfea63cfc9f5af1516029898299d30daa09cbff265002a099de41d7fa2262cc9a2957e885747b2bfd24b95583fd2007b1dc8060c63d0f9cb6000201a7968ad6b1eb03fc4932ee1efbc13b7a1ef52167acab89f939b0d039dad33c4b541c6ee759e541591f309071a007c130ffd1801818830226664c4db87bc2a00342111c8a630a654263ac5856721e37ed483ab31f8fa7a6797d9135039ffdfffa121bf11d0f440a84cbf443d5c9edd00010114f1c8298d5ad50b189ec1da94250a4826c50f3620d9da18cdffffb8ea614710240104fe5fa6886924bcc0d76987aa095427a80a08e13f0b935ca244c4ed4ff43b4ce7cd881a403cf8932bbffff695047712c3e0b19448ad5405308200306a59632f0a50e9a7a488da16040ece88915077f4299c947fff0794c028eba019c1036e548ce347af0cc3b1a18448fbaca4a4adaa8efd7b06f5be2dc1e7daec2ca97e2070654438fc5fe8dd06e0d30400f6fa7e09acc0c889df44c0a9cfda3c70f1cd3e0c9adcb6e208141e03bdfafd780400a3a3bf0f72fab2f7df9f8d0c701ff82c2105b6e2bcd85ea95fba2f79bbfd03539e2b4c412951d0bd4bf0581855cbcff519f54bd70d41c3b0a2f9bbe5fcf8aae3e87146bbe3c793a202ec6a5f5524a38c7fa7b6df5e90476add0f23a1539f71a2bdb6928320a0a01bdeb58527002d97c3826fcfdf7a6dc9e9a79909d71489e700531cc90d2f252aa97a97e9c1431a76fa785f03b42e60ee9f97fa6dedd63450c29b6f4d34fe3eb5c6b1d556ec510f6b6e6c8e31fede9a7ddfa939b8a9ad15b07e1e911cf2b358b776ee90de750f21b78eb8ad4ecc9c9859576c89856d2238b2feb87ca0a07f5f98bd655755bf2f6e66cb13c5b9cda6b50d605ddc4921c7a69f6fcf80aac42aaac56d5c98d6ec6b9f1e90d3183e9fc46623829bfef4b37de2d6d6d170c862ada69edb71f7723a98e6ad4bd289f42dfcb9cd90dd43cfdbd530a4e028320cdc846dd36e9ff6db77ffb8be74a93c98cce6c37ee9ca9ff1abd7d33b92dddd4d8ffaf2e0b703c21c342837a3460a8fe2002dae062608045068ace00a404e19d8d080527c354e368ce82406ab26eb61b0018c3b9991b036c07153560b53840bd0398c01e01e1c129b5b2e0efc55e32bae349338fa42a8a8c31427df5c18abc6f2f36aae5b55c78a648a6b4e3fdacd931184ea59d1e64cda61c0c0b2fb65e3ab07d70ff4b8988488acf3b25d56fa3039c123b28eff95e380c8dee9530e128920d476f47b28867b80fbb4e96af68a781b7e8bb9663c0130f8f752c7c9bbea0090e3e99b7797ff124528fc31a950e5fc651b85bdedf5ea5daa5ca41e2c2e7940ecb8e58448133afe9acaa6fb63badd2930240346a6eeda99aabb44822a41351c75d0725e36ad4d1fdc1086dbb9e6a5ee416d2df2ee372317b9541c6612d94cbb61357b2be0e37f981772c3880e02e2f4cc47e866</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">Live555搭建流媒体服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-06 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-06T19:52:36+08:00">2020-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Live555提供HTTP&#x2F;RTSP协议的多媒体流服务器和RTSP流代理中转。</p>
+<h2 id="下载源码编译"><a href="#下载源码编译" class="headerlink" title="下载源码编译"></a>下载源码编译</h2><p>需要g++编译环境</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ wget  http://www.live555.com/liveMedia/public/live555-latest.tar.gz</span><br><span class="line">$ tar -xzvf live555-latest.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> live</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">BasicUsageEnvironment       config.iphoneos                     config.solaris-32bit     liveMedia</span><br><span class="line">config.armeb-uclibc         config.iphone-simulator             config.solaris-64bit     Makefile.<span class="built_in">head</span></span><br><span class="line">config.armlinux             config.linux                        config.uClinux           Makefile.<span class="built_in">tail</span></span><br><span class="line">config.avr32-linux          config.linux-64bit                  configure                mediaServer</span><br><span class="line">config.bfin-linux-uclibc    config.linux-gdb                    COPYING                  proxyServer</span><br><span class="line">config.bfin-uclinux         config.linux-no-openssl             COPYING.LESSER           README</span><br><span class="line">config.bsplinux             config.linux-with-shared-libraries  fix-makefile             testProgs</span><br><span class="line">config.cris-axis-linux-gnu  config.macosx                       genMakefiles             UsageEnvironment</span><br><span class="line">config.cygwin               config.macosx-no-openssl            genWindowsMakefiles      win32config</span><br><span class="line">config.cygwin-for-vlc       config.mingw                        genWindowsMakefiles.cmd  win32config.Borland</span><br><span class="line">config.freebsd              config.openbsd                      groupsock                WindowsAudioInputDevice</span><br><span class="line">config.freebsd-no-openssl   config.qnx4                         hlsProxy</span><br><span class="line">$ ./genMakefiles linux-64bit <span class="comment">#linux-64bit这个参数是config.&lt;后缀&gt;获取得到的，是编译的目标平台</span></span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/" class="post-title-link" itemprop="url">Ubuntu 编译 FFmpeg</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-05 23:52:36" itemprop="dateCreated datePublished" datetime="2020-07-05T23:52:36+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-22 15:44:43" itemprop="dateModified" datetime="2022-07-22T15:44:43+08:00">2022-07-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>这次要编译一下FFmpeg的Android平台，采用版本v4.4.2，高版本有对 <code>--target-os=android</code> 支持，配置没那么麻烦。</p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>以前编译【ijplayer】库已经配置好环境，这次就在这个环境下编译： </p>
+<ul>
+<li>Ubuntu 20.04</li>
+<li>NDK 采用新的版本 21.3.6528147</li>
+<li>FFmpeg-4.4.2</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">HTTP边下边播MP4文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-04 17:52:36" itemprop="dateCreated datePublished" datetime="2020-07-04T17:52:36+08:00">2020-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="通过HTTP无法播放MP4视频？"><a href="#通过HTTP无法播放MP4视频？" class="headerlink" title="通过HTTP无法播放MP4视频？"></a>通过HTTP无法播放MP4视频？</h2><p>有一个摄像机录制的视频文件record.mp4 ，放在web服务器上边下边播（<code>http://mydomain.com/record.mp4</code> ），发现无法播放，下载到本地可以播放。<br>但是从抖音下载的视频douyin.mp4文件，同样放在web服务器上，可以边下边播（<code>http://mydomain.com/douyin.mp4</code> ）能正常播放。</p>
+<p>都是MP4封装格式 ，这两个文件有什么不同呢？</p>
+<p>通过 <code>Mp4Explorer</code> 这个软件，可以查看MP4的详细信息。</p>
+<blockquote>
+<p>moov 是box参数列表，可以粗暴理解为 <strong>配置信息</strong><br>mdata 是音视频数据</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1539,387 +1887,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20%E5%B8%A7%E5%8A%A8%E7%94%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20%E5%B8%A7%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">Android 帧动画</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-20 09:52:36" itemprop="dateCreated datePublished" datetime="2020-04-20T09:52:36+08:00">2020-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>&#x2F;drawable&#x2F;start.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">animation-list</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:oneshot</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@drawable/img1&quot;</span> <span class="attr">android:duration</span>=<span class="string">&quot;200&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">&quot;@drawable/img2&quot;</span> <span class="attr">android:duration</span>=<span class="string">&quot;100&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">animation-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>android:oneshot&#x3D;”false” 表示一直播放（循环）</p>
-</blockquote>
-<p>设置为background</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:id</span>=<span class="string">&quot;@+id/image&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">android:background</span>=<span class="string">&quot;@drawable/start&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20%E5%B8%A7%E5%8A%A8%E7%94%BB/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E5%B8%A6%E7%BB%93%E6%9E%9C%E7%9A%84%E5%90%AF%E5%8A%A8Activity%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8registerForActivityResult/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%E5%B8%A6%E7%BB%93%E6%9E%9C%E7%9A%84%E5%90%AF%E5%8A%A8Activity%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8registerForActivityResult/" class="post-title-link" itemprop="url">Android带结果的启动Activity推荐使用registerForActivityResult</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-20 09:52:36" itemprop="dateCreated datePublished" datetime="2020-04-20T09:52:36+08:00">2020-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-12 15:16:53" itemprop="dateModified" datetime="2022-07-12T15:16:53+08:00">2022-07-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="startActivityForResult过期"><a href="#startActivityForResult过期" class="headerlink" title="startActivityForResult过期"></a>startActivityForResult过期</h3><p>一直都是这样启动一个带返回结果的Activity</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">val</span> <span class="variable">intent</span> <span class="operator">=</span> Intent(<span class="built_in">this</span>, VideoPlaybackListPPCSActivity::class.java).apply &#123;</span><br><span class="line">    <span class="built_in">this</span>.putExtra(<span class="string">&quot;data&quot;</span>,<span class="number">111</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此方法已过期</span></span><br><span class="line"><span class="comment">// Deprecated</span></span><br><span class="line"><span class="comment">// use registerForActivityResult(ActivityResultContract, ActivityResultCallback) passing in a androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult object for the ActivityResultContract.</span></span><br><span class="line">startActivityForResult(intent,<span class="number">10090</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="使用registerForActivityResult跳转"><a href="#使用registerForActivityResult跳转" class="headerlink" title="使用registerForActivityResult跳转"></a>使用registerForActivityResult跳转</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化不能在按键事件等地方执行，建议在onCreate执行</span></span><br><span class="line"><span class="type">val</span> <span class="variable">launcher</span> <span class="operator">=</span> registerForActivityResult(object: ActivityResultContract&lt;String,String&gt;()&#123;</span><br><span class="line">    override fun <span class="title function_">createIntent</span><span class="params">(context: Context, input: String?)</span>: Intent &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Intent(<span class="built_in">this</span><span class="meta">@VideoPlayerPPCSActivity</span>, VideoPlaybackListPPCSActivity::class.java).apply&#123;</span><br><span class="line">            intent.extras?.let &#123; ext -&gt;</span><br><span class="line">                ext.putInt(<span class="string">&quot;session&quot;</span>,remoteCamera.getSession())</span><br><span class="line">                <span class="built_in">this</span>.putExtras(ext)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    override fun <span class="title function_">parseResult</span><span class="params">(resultCode: Int, intent: Intent?)</span>: String &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//解析Intent中的数据，返回给onActivityResult</span></span><br><span class="line">        <span class="comment">//这里不需要数据</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,object: ActivityResultCallback&lt;String&gt;&#123;</span><br><span class="line">    override fun <span class="title function_">onActivityResult</span><span class="params">(result: String?)</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//拿到数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要跳转时，这样执行 </span></span><br><span class="line"><span class="type">val</span> <span class="variable">intent</span> <span class="operator">=</span> Intent(<span class="built_in">this</span>, VideoPlaybackListPPCSActivity::class.java).apply &#123;</span><br><span class="line">    <span class="built_in">this</span>.putExtra(<span class="string">&quot;data&quot;</span>,<span class="number">111</span>)</span><br><span class="line">&#125;</span><br><span class="line">launcher.launch(intent)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%E5%B8%A6%E7%BB%93%E6%9E%9C%E7%9A%84%E5%90%AF%E5%8A%A8Activity%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8registerForActivityResult/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Notifications%E9%80%9A%E7%9F%A5%E5%85%BC%E5%AE%B9%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20Notifications%E9%80%9A%E7%9F%A5%E5%85%BC%E5%AE%B9%E6%80%A7/" class="post-title-link" itemprop="url">Android Notifications通知兼容性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-17 22:21:36" itemprop="dateCreated datePublished" datetime="2020-03-17T22:21:36+08:00">2020-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications">notifications docs</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications#compatibility">notifications 兼容性</a></p>
-</li>
-</ul>
-<p>请尽量使用：NotificationCompat 及其子类，以及 NotificationManagerCompat。<br>这样一来，您就无需编写条件代码来检查 API 级别，因为这些 API 会为您代劳。<br>但是要注意 NotificationManagerCompat 不能创建Android8.0以上所需要的Channel，创建Channel还是需要用NotificationManager。</p>
-<h2 id="简单的一个通知"><a href="#简单的一个通知" class="headerlink" title="简单的一个通知"></a>简单的一个通知</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">channelId</span> <span class="operator">=</span> <span class="string">&quot;news&quot;</span>;</span><br><span class="line">   NotificationCompat.<span class="type">Builder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationCompat</span>.Builder(getApplicationContext(),</span><br><span class="line">           channelId)</span><br><span class="line">           .setSmallIcon(R.mipmap.ic_launcher)</span><br><span class="line">           .setContentTitle(<span class="string">&quot;测试Title&quot;</span>)</span><br><span class="line">           .setContentText(<span class="string">&quot;一些简单的内容！！！&quot;</span>);</span><br><span class="line"></span><br><span class="line">   <span class="type">NotificationManagerCompat</span> <span class="variable">notificationManager</span> <span class="operator">=</span> NotificationManagerCompat.from(getApplicationContext());</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> <span class="variable">notifyId</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line">   notificationManager.notify(notifyId, builder.build());</span><br></pre></td></tr></table></figure>
-<p>但这个通知在Android8.0不能发出去，因为8.0规定必须将单个通知放入特定Channel中。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20Notifications%E9%80%9A%E7%9F%A5%E5%85%BC%E5%AE%B9%E6%80%A7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2014%20%E6%96%B0%E7%89%B9%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/JDK%2014%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 14 新特性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-17 09:51:41" itemprop="dateCreated datePublished" datetime="2020-03-17T09:51:41+08:00">2020-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-23 10:03:23" itemprop="dateModified" datetime="2022-08-23T10:03:23+08:00">2022-08-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2020年3月17日 <code>JDK 14</code> 发布，非 LTS 版本。</p>
-<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/14/">新特性: http://openjdk.java.net/projects/jdk/14/</a></p>
-<ul>
-<li>305: 	Pattern Matching for instanceof (Preview)</li>
-<li>343: 	Packaging Tool (Incubator)</li>
-<li>345: 	NUMA-Aware Memory Allocation for G1</li>
-<li>349: 	JFR Event Streaming</li>
-<li>352: 	Non-Volatile Mapped Byte Buffers</li>
-<li>358: 	Helpful NullPointerExceptions</li>
-<li>359: 	Records (Preview)</li>
-<li>361: 	Switch Expressions (Standard)</li>
-<li>362: 	Deprecate the Solaris and SPARC Ports</li>
-<li>363: 	Remove the Concurrent Mark Sweep (CMS) Garbage Collector</li>
-<li>364: 	ZGC on macOS</li>
-<li>365: 	ZGC on Windows</li>
-<li>366: 	Deprecate the ParallelScavenge + SerialOld GC Combination</li>
-<li>367: 	Remove the Pack200 Tools and API</li>
-<li>368: 	Text Blocks (Second Preview)</li>
-<li>370: 	Foreign-Memory Access API (Incubator)</li>
-</ul>
-<p>中文</p>
-<ul>
-<li>305: 	instanceof的模式匹配 (预览)</li>
-<li>343: 	打包工具 (Incubator)</li>
-<li>345: 	G1的NUMA内存分配优化</li>
-<li>349: 	JFR事件流</li>
-<li>352: 	非原子性的字节缓冲区映射</li>
-<li>358: 	友好的空指针异常</li>
-<li>359: 	Records (预览)</li>
-<li>361: 	Switch表达式扩展 (标准)</li>
-<li>362: 	弃用Solaris和SPARC端口</li>
-<li>363: 	移除CMS（Concurrent Mark Sweep）垃圾收集器</li>
-<li>364: 	macOS系统上的ZGC</li>
-<li>365: 	Windows系统上的ZGC</li>
-<li>366: 	弃用ParallelScavenge + SerialOld GC组合</li>
-<li>367: 	移除Pack200 Tools和API</li>
-<li>368: 	文本块 (第二个预览版)</li>
-<li>370: 	外部存储器API (Incubator)</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/JDK%2014%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1990,7 +1957,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">363</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

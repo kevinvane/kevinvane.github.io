@@ -199,6 +199,345 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android-%E6%B7%B7%E6%B7%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android-%E6%B7%B7%E6%B7%86/" class="post-title-link" itemprop="url">Android-混淆</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>拷贝以下的内容（<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html">https://developer.android.com/studio/build/shrink-code.html</a><br>），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。</p>
+<p>压缩代码和资源</p>
+<p>要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。<br>代码压缩通过 ProGuard 提供，ProGuard 会检测和移除封装应用中未使用的类、字段、方法和属性，包括自带代码库中的未使用项（这使其成为以变通方式解决 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/multidex.html">64k 引用限制</a>的有用工具）。ProGuard 还可优化字节码，移除未使用的代码指令，以及用短名称混淆其余的类、字段和方法。混淆过的代码可令您的 APK 难以被逆向工程，这在应用使用<a target="_blank" rel="noopener" href="https://developer.android.com/google/play/licensing/overview.html">许可验证</a>等安全敏感性功能时特别有用。<br>资源压缩通过适用于 Gradle 的 Android 插件提供，该插件会移除封装应用中未使用的资源，包括代码库中未使用的资源。它可与代码压缩发挥协同效应，使得在移除未使用的代码后，任何不再被引用的资源也能安全地移除。<br>本文介绍的功能依赖下列组件：<br><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/sdk-tools.html">SDK Tools</a> 25.0.10 或更高版本<br><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/gradle-plugin.html">适用于 Gradle 的 Android 插件</a> 2.0.0 或更高版本</p>
+<p>压缩代码</p>
+<p>要通过 ProGuard 启用代码压缩，请在 build.gradle<br> 文件内相应的构建类型中添加 minifyEnabled true<br>。<br>请注意，代码压缩会拖慢构建速度，因此您应该尽可能避免在调试构建中使用。不过，重要的是您一定要为用于测试的最终 APK 启用代码压缩，因为如果您不能充分地<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html#keep-code">自定义要保留的代码</a>，可能会引入错误。<br>例如，下面这段来自 build.gradle<br> 文件的代码用于为发布构建启用代码压缩：<br>android { buildTypes { release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } } …}<br><strong>注</strong>：Android Studio 会在使用 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/run/index.html#instant-run">Instant Run</a> 时停用 ProGuard。如果您需要为增量式构建压缩代码，请尝试<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html#gradle-shrinker">试用 Gradle 压缩器</a>。<br>除了 minifyEnabled<br> 属性外，还有用于定义 ProGuard 规则的 proguardFiles<br> 属性：<br>getDefaultProguardFile(‘proguard-android.txt’)<br> 方法可从 Android SDK tools&#x2F;proguard&#x2F;<br> 文件夹获取默认的 ProGuard 设置。<strong>提示</strong>：要想做进一步的代码压缩，请尝试使用位于同一位置的 proguard-android-optimize.txt<br> 文件。它包括相同的 ProGuard 规则，但还包括其他在字节码一级（方法内和方法间）执行分析的优化，以进一步减小 APK 大小和帮助提高其运行速度。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android-%E6%B7%B7%E6%B7%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Java%E5%92%8CAndroid%E7%9A%84Base64%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Java%E5%92%8CAndroid%E7%9A%84Base64%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" class="post-title-link" itemprop="url">Java和Android的Base64加密解密</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Java8"><a href="#Java8" class="headerlink" title="Java8"></a>Java8</h4><p>Java8上的自带Base64工具<code> java.util.Base64;</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编码</span></span><br><span class="line">Base64.getEncoder().encodeToString(<span class="string">&quot;Hello&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));  </span><br><span class="line"></span><br><span class="line"><span class="comment">//解码</span></span><br><span class="line"><span class="type">byte</span>[] asBytes = Base64.getDecoder().decode(<span class="string">&quot;SGVsbG8=&quot;</span>);  </span><br><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(asBytes, <span class="string">&quot;utf-8&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><p>Android SDK 自带 <code> android.util.Base64;</code></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Java%E5%92%8CAndroid%E7%9A%84Base64%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/MQTT-Client%E5%BA%93-org-fusesource-mqtt-client/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/MQTT-Client%E5%BA%93-org-fusesource-mqtt-client/" class="post-title-link" itemprop="url">MQTT-Client库-org-fusesource-mqtt-client</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于不太想用Eclipse的库，寻求其他库来试试。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fusesource/mqtt-client">org.fusesource.mqtt-client</a> 也是MQTT推荐 client 端的库，github的start也有<code>500+</code>吧，fork也有<code>200+</code>。</p>
+<p>引用库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &#x27;org.fusesource.mqtt-client:mqtt-client:1.12&#x27;</span><br></pre></td></tr></table></figure>
+<p>作者给出了三种使用方法：<code>1.阻塞；2.非阻塞（推荐）；3.Future（没理解？）</code></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/MQTT-Client%E5%BA%93-org-fusesource-mqtt-client/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/apktool/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/apktool/" class="post-title-link" itemprop="url">apktool</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-13 10:25:28" itemprop="dateModified" datetime="2022-09-13T10:25:28+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>apktool是apk反编译的核心，其他GUI工具内部都是用apktool来执行反编译任务。</p>
+<h3 id="主页和下载地址"><a href="#主页和下载地址" class="headerlink" title="主页和下载地址"></a>主页和下载地址</h3><p>主页地址： <a target="_blank" rel="noopener" href="https://ibotpeaches.github.io/Apktool/install/">https://ibotpeaches.github.io/Apktool/install/</a><br>下载apktool.jar： <a target="_blank" rel="noopener" href="https://bitbucket.org/iBotPeaches/apktool/downloads/">https://bitbucket.org/iBotPeaches/apktool/downloads/</a><br>下载apktool.bat：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/windows/apktool.bat">https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/windows/apktool.bat</a></p>
+<p>apktool.bat内容如下: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">if &quot;%PATH_BASE%&quot; == &quot;&quot; set PATH_BASE=%PATH%</span><br><span class="line">set PATH=%CD%;%PATH_BASE%;</span><br><span class="line">chcp 65001 2&gt;nul &gt;nul</span><br><span class="line">java -jar -Duser.language=en -Dfile.encoding=UTF8 &quot;%~dp0\apktool.jar&quot; %*</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/apktool/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/com-xym-ma%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1502,323 +1841,6 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20TextView%E8%B7%91%E9%A9%AC%E7%81%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20TextView%E8%B7%91%E9%A9%AC%E7%81%AF/" class="post-title-link" itemprop="url">Android TextView跑马灯</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-20 09:52:36" itemprop="dateCreated datePublished" datetime="2016-04-20T09:52:36+08:00">2016-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/tv&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">&quot;你好测试用例啊啊啊啊啊&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:fontFamily</span>=<span class="string">&quot;@font/square_pixel_16&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">&quot;200sp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:singleLine</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:scrollHorizontally</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:ellipsize</span>=<span class="string">&quot;marquee&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:focusable</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:focusableInTouchMode</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:marqueeRepeatLimit</span>=<span class="string">&quot;marquee_forever&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="post-title-link" itemprop="url">Java内存模型</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2015-08-30T09:52:36+08:00">2015-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Java的内存模型(JMM)规定了所有的变量都是存在于 <code>主内存(RAM)</code> 当中的，而每个线程都有自己的<code>工作内存或者本地内存</code>，线程对变量的所有操作都必须在自己的<code>工作内存</code>中进行，而不能直接对<code>主内存</code>操作，并且每个线程都不能访问<code>其他线程</code>的<code>工作内存或者本地内存</code> 。</p>
-<p>比如，在某个线程中对变量 <code>i</code> 的复制操作 <code>i=1</code>，改线程必须在本地内存中对 <code>i</code> 进行修改之后才能将其写入 <code>主内存</code> 之中。</p>
-<h2 id="Java内存模型-JMM-三大特性"><a href="#Java内存模型-JMM-三大特性" class="headerlink" title="Java内存模型(JMM)三大特性"></a>Java内存模型(JMM)三大特性</h2><h3 id="一、原子性"><a href="#一、原子性" class="headerlink" title="一、原子性"></a>一、原子性</h3><p>所有操作都执行或者都不执行</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="post-title-link" itemprop="url">Java线程池</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2015-08-30T09:52:36+08:00">2015-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">package com.demo;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.ExecutorService;</span><br><span class="line">import java.util.concurrent.Executors;</span><br><span class="line">import java.util.concurrent.ScheduledExecutorService;</span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		System.out.println(Runtime.getRuntime().availableProcessors());</span><br><span class="line">		//testSingleThreadExecutor();</span><br><span class="line">		//testFixedThreadPool();</span><br><span class="line">		//testCachedThreadPool();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待</span><br><span class="line">	 */</span><br><span class="line">	public static void testFixedThreadPool()&#123;</span><br><span class="line">		//因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。</span><br><span class="line">		//定长线程池的大小最好根据系统资源进行设置。如获取cpu核心数Runtime.getRuntime().availableProcessors()</span><br><span class="line">		ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);  </span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;  </span><br><span class="line">			final int index = i;  </span><br><span class="line">			fixedThreadPool.execute(new Runnable() &#123;  </span><br><span class="line">				public void run() &#123;  </span><br><span class="line">					try &#123;  </span><br><span class="line">						System.out.println(index);  </span><br><span class="line">						Thread.sleep(2000);  </span><br><span class="line">					&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">						e.printStackTrace();  </span><br><span class="line">					&#125;  </span><br><span class="line">				&#125;  </span><br><span class="line">			&#125;);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</span><br><span class="line">	 */</span><br><span class="line">	public static void testCachedThreadPool()&#123;</span><br><span class="line">		</span><br><span class="line">		ExecutorService cachedThreadPool = Executors.newCachedThreadPool();  </span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;  </span><br><span class="line">			final int index = i;  </span><br><span class="line">			try &#123;  </span><br><span class="line">				Thread.sleep(index * 1000);  </span><br><span class="line">			&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">				e.printStackTrace();  </span><br><span class="line">			&#125;  </span><br><span class="line">			cachedThreadPool.execute(new Runnable() &#123;  </span><br><span class="line">				public void run() &#123;  </span><br><span class="line">					System.out.println(index);  </span><br><span class="line">				&#125;  </span><br><span class="line">			&#125;);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行</span><br><span class="line">	 */</span><br><span class="line">	public static void testSingleThreadExecutor()&#123;</span><br><span class="line">		ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();  </span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;  </span><br><span class="line">			final int index = i;  </span><br><span class="line">			singleThreadExecutor.execute(new Runnable() &#123;  </span><br><span class="line">				public void run() &#123;  </span><br><span class="line">					try &#123;  </span><br><span class="line">						System.out.println(index);  </span><br><span class="line">						Thread.sleep(2000);</span><br><span class="line">					&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">						e.printStackTrace();  </span><br><span class="line">					&#125;  </span><br><span class="line">				&#125;  </span><br><span class="line">			&#125;);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 创建一个定长线程池，支持定时及周期性任务执行</span><br><span class="line">	 */</span><br><span class="line">	public static void testScheduledThreadPool()&#123;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);  </span><br><span class="line">		scheduledThreadPool.schedule(new Runnable() &#123;  </span><br><span class="line">			public void run() &#123;  </span><br><span class="line">				System.out.println(&quot;delay 3 seconds&quot;);  </span><br><span class="line">			&#125;  </span><br><span class="line">		//延迟3秒执行</span><br><span class="line">		&#125;, 3, TimeUnit.SECONDS); </span><br><span class="line">		//延迟1秒后每3秒执行一次。</span><br><span class="line">		//&#125;, 3, TimeUnit.SECONDS);  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E5%A4%87%E5%BF%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E5%A4%87%E5%BF%98/" class="post-title-link" itemprop="url">Android 启动模式备忘</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-04-20 09:52:36" itemprop="dateCreated datePublished" datetime="2014-04-20T09:52:36+08:00">2014-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-standard-标准模式"><a href="#1-standard-标准模式" class="headerlink" title="1.standard 标准模式"></a>1.standard 标准模式</h3><p>每次启动都new一个实例</p>
-<h3 id="2-singleTop-栈顶复用模式（栈顶单例模式）"><a href="#2-singleTop-栈顶复用模式（栈顶单例模式）" class="headerlink" title="2.singleTop 栈顶复用模式（栈顶单例模式）"></a>2.singleTop 栈顶复用模式（栈顶单例模式）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:launchMode=&quot;singleTop&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果Activity实例处于任务栈栈顶，再启动相同的Activity不会new出一个实例，只会有一个实例。</li>
-<li>如果Activity实例存在任务栈不处于栈顶，和<code>standard</code>一样new实例。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E5%A4%87%E5%BF%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1889,7 +1911,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">363</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

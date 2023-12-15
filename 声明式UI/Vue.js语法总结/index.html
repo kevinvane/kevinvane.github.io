@@ -26,7 +26,7 @@
 <meta property="og:description" content="此文档为了对比各个声明式UI编程语法，避免混淆。  0. 声明式渲染123&lt;div id&#x3D;&quot;app&quot;&gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&lt;&#x2F;div&gt;  123456var app &#x3D; new Vue(&amp;#123;  el: &amp;#x27;#app&amp;#x27;,  data: &amp;#123;    message: &amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-14T13:32:36.000Z">
-<meta property="article:modified_time" content="2023-12-14T10:49:08.553Z">
+<meta property="article:modified_time" content="2023-12-15T08:56:39.497Z">
 <meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
 
@@ -224,10 +224,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-12-14 21:32:36 / 修改时间：18:49:08" itemprop="dateCreated datePublished" datetime="2023-12-14T21:32:36+08:00">2023-12-14</time>
+              <time title="创建时间：2023-12-14 21:32:36" itemprop="dateCreated datePublished" datetime="2023-12-14T21:32:36+08:00">2023-12-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-15 16:56:39" itemprop="dateModified" datetime="2023-12-15T16:56:39+08:00">2023-12-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -276,7 +282,8 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else-if</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
+<p>执行简单的判断，但注意不要使用 <code>&#123;&#123; &#125;&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;Math.random() &gt; 0.5&quot;</span>&gt;</span></span><br><span class="line">  Now you see me</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Now you don&#x27;t</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">&quot;ok&quot;</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -373,12 +380,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="声明式UI-微信小程序简单语法总结">
-      <i class="fa fa-chevron-left"></i> 声明式UI-微信小程序简单语法总结
+    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/React.js%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="声明式UI-React.js简单语法总结">
+      <i class="fa fa-chevron-left"></i> 声明式UI-React.js简单语法总结
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/React.js%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="next" title="声明式UI-ArkTs简单语法总结">
-      声明式UI-ArkTs简单语法总结 <i class="fa fa-chevron-right"></i>
+    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="next" title="声明式UI-微信小程序简单语法总结">
+      声明式UI-微信小程序简单语法总结 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -453,7 +460,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">363</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

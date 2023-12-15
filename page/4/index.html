@@ -199,6 +199,345 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/AES%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/AES%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/" class="post-title-link" itemprop="url">AES加密实践</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-23 19:52:36" itemprop="dateCreated datePublished" datetime="2021-12-23T19:52:36+08:00">2021-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-03 16:23:52" itemprop="dateModified" datetime="2023-03-03T16:23:52+08:00">2023-03-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有项目对AES对称加密有需求，使用Java使用Aes过程中有些坑是要注意一下的。</p>
+<h2 id="跨平台问题"><a href="#跨平台问题" class="headerlink" title="跨平台问题"></a>跨平台问题</h2><p>AES是对称加密，利用秘钥，可以对内容加密和解密，于是我在PC开发电脑上尝试以下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">byte</span>[] encrypt(String content, String password) &#123;</span><br><span class="line">     <span class="type">KeyGenerator</span> <span class="variable">kgen</span> <span class="operator">=</span> KeyGenerator.getInstance(<span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     kgen.init(<span class="number">128</span>, <span class="keyword">new</span> <span class="title class_">SecureRandom</span>(password.getBytes()));</span><br><span class="line">     <span class="type">SecretKey</span> <span class="variable">secretKey</span> <span class="operator">=</span> kgen.generateKey();</span><br><span class="line">     <span class="type">byte</span>[] enCodeFormat = secretKey.getEncoded();</span><br><span class="line">     <span class="type">SecretKeySpec</span> <span class="variable">key</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SecretKeySpec</span>(enCodeFormat, <span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     <span class="type">Cipher</span> <span class="variable">cipher</span> <span class="operator">=</span> Cipher.getInstance(<span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     <span class="type">byte</span>[] byteContent = content.getBytes(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">     cipher.init(Cipher.ENCRYPT_MODE, key);</span><br><span class="line">     <span class="keyword">return</span> cipher.doFinal(byteContent);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">byte</span>[] decrypt(<span class="type">byte</span>[] content, String password) &#123;</span><br><span class="line">     <span class="type">KeyGenerator</span> <span class="variable">kgen</span> <span class="operator">=</span> KeyGenerator.getInstance(<span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     kgen.init(<span class="number">128</span>, <span class="keyword">new</span> <span class="title class_">SecureRandom</span>(password.getBytes()));</span><br><span class="line">     <span class="type">SecretKey</span> <span class="variable">secretKey</span> <span class="operator">=</span> kgen.generateKey();</span><br><span class="line">     <span class="type">byte</span>[] enCodeFormat = secretKey.getEncoded();</span><br><span class="line">     <span class="type">SecretKeySpec</span> <span class="variable">key</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SecretKeySpec</span>(enCodeFormat, <span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     <span class="type">Cipher</span> <span class="variable">cipher</span> <span class="operator">=</span> Cipher.getInstance(<span class="string">&quot;AES&quot;</span>);</span><br><span class="line">     cipher.init(Cipher.DECRYPT_MODE, key);</span><br><span class="line">     <span class="keyword">return</span> cipher.doFinal(content);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码在本机加密和解密都没问题，是正常的，但如果跨机器执行很大概率会解密失败，这是由于不同机器很大概率是安装了不同平台厂商的JDK和版本（特别是Android 平台）。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/AES%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/RSA%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/RSA%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E5%AE%9E%E8%B7%B5/" class="post-title-link" itemprop="url">RSA加密解密实践</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-23 19:52:36" itemprop="dateCreated datePublished" datetime="2021-12-23T19:52:36+08:00">2021-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-18 10:43:43" itemprop="dateModified" datetime="2022-02-18T10:43:43+08:00">2022-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>AES是非对称加密，有公钥&#x2F;私钥。</p>
+<h2 id="一、创建秘钥对"><a href="#一、创建秘钥对" class="headerlink" title="一、创建秘钥对"></a>一、创建秘钥对</h2><p>openssl和jdk都可以生成秘钥对，但要注意的是他们会有<strong>默认规范</strong>，这可能会导致在不同的平台上不通用。推荐在线生成。</p>
+<h3 id="1-在线生成"><a href="#1-在线生成" class="headerlink" title="1. 在线生成"></a>1. 在线生成</h3><p><a target="_blank" rel="noopener" href="http://www.metools.info/code/c80.html">【在线生成公钥私钥对，RSA公私钥生成】</a> 可以在线生成。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/RSA%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E5%AE%9E%E8%B7%B5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/git/Git%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95clone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/git/Git%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95clone/" class="post-title-link" itemprop="url">Git升级后无法clone</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-03 19:52:36" itemprop="dateCreated datePublished" datetime="2021-12-03T19:52:36+08:00">2021-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【2021-12-03】手贱在Win10的电脑管家上升级了Git至版本【2.34.0】，无意中发现无法执行clone命令克隆Gitlab上的仓库，Gitee、Github上的可以。</p>
+<p>Gitlab版本信息：</p>
+<blockquote>
+<p> GitLab 10.5.5<br> GitLab Shell 6.0.3<br> GitLab Workhorse v3.6.0<br> GitLab API v4<br> Ruby 2.3.6p384<br> Rails 4.2.10<br> postgresql 9.6.5 </p>
+</blockquote>
+<p>故障表现为：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@192.168.0.186:kevin/test.git</span><br><span class="line">Cloning into <span class="string">&#x27;INNC&#x27;</span>...</span><br><span class="line">git@192.168.0.186<span class="string">&#x27;s password:</span></span><br><span class="line"><span class="string">Permission denied, please try again.</span></span><br><span class="line"><span class="string">git@192.168.0.186&#x27;</span>s password:</span><br><span class="line">Permission denied, please try again.</span><br><span class="line">git@192.168.0.186<span class="string">&#x27;s password:</span></span><br><span class="line"><span class="string">git@192.168.0.186: Permission denied (publickey,password).</span></span><br><span class="line"><span class="string">fatal: Could not read from remote repository.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please make sure you have the correct access rights</span></span><br><span class="line"><span class="string">and the repository exists.</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/git/Git%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95clone/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/P2P/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91%E6%99%BA%E8%83%BD%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%B6%88%E8%B4%B9%E7%89%88%EF%BC%892.0%20Android%20SDK%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/P2P/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91%E6%99%BA%E8%83%BD%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%B6%88%E8%B4%B9%E7%89%88%EF%BC%892.0%20Android%20SDK%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">XX物联网智能视频服务（消费版）2.0 Android SDK使用总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-01 20:01:01" itemprop="dateCreated datePublished" datetime="2021-11-01T20:01:01+08:00">2021-11-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/p2p/" itemprop="url" rel="index"><span itemprop="name">p2p</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>SDK 1.0 和 2.0 差别挺大的，目前SDK 2.3.0是最新版本</p>
+</blockquote>
+<h2 id="一、资源文档"><a href="#一、资源文档" class="headerlink" title="一、资源文档"></a>一、资源文档</h2><h3 id="1-Github开源资源"><a href="#1-Github开源资源" class="headerlink" title="1. Github开源资源"></a>1. Github开源资源</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android">项目Github仓库</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android/blob/master/sdk/video-link-android/doc/VideoSDK%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E.md">VideoSDK接入说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android/blob/master/sdk/video-link-android/doc/VideoSDK%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E.md">VideoSDK接口说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android/blob/master/sdk/video-link-android/doc/%E8%AE%BE%E5%A4%87%E4%B8%8EAPP%E4%BA%A4%E4%BA%92%E6%8C%87%E5%BC%95.md">设备与APP交互指引</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android/blob/master/sdk/video-link-android/doc/%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%91.md">设备配网</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tencentyun/iot-link-android/blob/master/sdk/video-link-android/doc/VideoSDK%E9%94%99%E8%AF%AF%E7%A0%81%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%B4%E6%98%8E.md">VideoSDK错误码及常见问题说明</a></li>
+</ul>
+<h3 id="2-官网资源"><a href="#2-官网资源" class="headerlink" title="2. 官网资源"></a>2. 官网资源</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/P2P/%E8%85%BE%E8%AE%AF%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91%E6%99%BA%E8%83%BD%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%B6%88%E8%B4%B9%E7%89%88%EF%BC%892.0%20Android%20SDK%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85IDEA%E8%AE%BE%E7%BD%AE%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1556,361 +1895,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Word%E5%8F%A6%E5%AD%98%E4%B8%BAHtml%E8%AE%BE%E7%BD%AE%E7%BC%96%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/Word%E5%8F%A6%E5%AD%98%E4%B8%BAHtml%E8%AE%BE%E7%BD%AE%E7%BC%96%E7%A0%81/" class="post-title-link" itemprop="url">Word另存为Html设置编码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-02 19:52:36" itemprop="dateCreated datePublished" datetime="2021-06-02T19:52:36+08:00">2021-06-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Word文档另存为Html时，默认编码是 <code>gb2312</code> ，在浏览器打开中文容易乱码，手动改为 <code>UTF-8</code>是可以，但有点麻烦。</p>
-<p>其实Word可以支持修改编码，在 <code>另存为</code>窗口的 “工具” - “编码” 就可以选择保存所用的编码，选择 <code>UTF-8</code> 就行。</p>
-<p><img src="/images/%E5%89%8D%E7%AB%AF/word%E8%BD%AChtml%E9%80%89%E6%8B%A9%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982021/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982021/" class="post-title-link" itemprop="url">GitHub资源备忘2021+</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-24 12:42:45" itemprop="dateCreated datePublished" datetime="2021-05-24T12:42:45+08:00">2021-05-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-09 18:33:41" itemprop="dateModified" datetime="2023-10-09T18:33:41+08:00">2023-10-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Jetpack-Compose-UI组件库"><a href="#Jetpack-Compose-UI组件库" class="headerlink" title="Jetpack Compose UI组件库"></a>Jetpack Compose UI组件库</h2><p>这个库是用 <code>Jetpack Compose UI</code> 写的组件库，包含很多常用（实用）的组件。<br><a target="_blank" rel="noopener" href="https://github.com/yangqi1024/jetpack-compose-ui">Github</a><br>预览图很多，建议跳转到源仓库查看。</p>
-<p>组件：</p>
-<ul>
-<li>ActionSheet</li>
-<li>AddressList</li>
-<li>AnnotatedText</li>
-<li>Banner</li>
-<li>Cascade</li>
-<li>Category</li>
-<li>Cell</li>
-<li>Collapse</li>
-<li>Curtain</li>
-<li>GridCard</li>
-<li>Indicator</li>
-<li>NoticeBar</li>
-<li>NumberKeyboard</li>
-<li>Preview</li>
-<li>PrivacyPolicy</li>
-<li>Progress</li>
-<li>Rate</li>
-<li>SearchBar</li>
-<li>Segmented</li>
-<li>SelectCity</li>
-<li>SignaturePad</li>
-<li>Skeleton</li>
-<li>StatefulLayout</li>
-<li>Stepper</li>
-<li>Steps</li>
-<li>Swipe</li>
-<li>TimeSelect</li>
-<li>VerifyCode</li>
-</ul>
-<h2 id="轮播广告组件banner"><a href="#轮播广告组件banner" class="headerlink" title="轮播广告组件banner"></a>轮播广告组件banner</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/github/GitHub%E8%B5%84%E6%BA%90%E5%A4%87%E5%BF%982021/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Jetpack%E6%9E%B6%E6%9E%84%E7%BB%84%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20Jetpack%E6%9E%B6%E6%9E%84%E7%BB%84%E4%BB%B6/" class="post-title-link" itemprop="url">Android Jetpack架构组件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-27 19:52:36" itemprop="dateCreated datePublished" datetime="2021-04-27T19:52:36+08:00">2021-04-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/getting-started">【Android Jetpack 使用入门】</a><br><a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture">【Android 架构组件   Android Jetpack 的一部分。】</a></p>
-<p>Android 架构组件是一组库，可帮助您设计稳健、可测试且易维护的应用。您可以从管理界面组件生命周期和处理数据持久性的类着手。</p>
-<ul>
-<li>通过应用架构指南，学习有关汇编稳健应用的基础知识。</li>
-<li>管理应用的生命周期。新的生命周期感知型组件可帮助您管理 Activity 和 Fragment 的生命周期。在配置更改后继续有效、避免内存泄漏，以及将数据轻松加载到界面中。</li>
-<li>使用 LiveData 构建数据对象，在基础数据库改变时通知视图。</li>
-<li>ViewModel 存储界面相关的数据，这些数据不会在应用旋转时销毁。</li>
-<li>Room 是一个 SQLite 对象映射库。它可用来避免样板代码，还可以轻松地将 SQLite 表数据转换为 Java 对象。Room 提供 SQLite 语句的编译时检查，并且可以返回 RxJava、Flowable 和 LiveData 可观察对象。</li>
-</ul>
-<p>** Jetpack有很多部分，这里先整理一下最常用的两个：<code>ViewModel</code> 和 <code>LiveData</code> **</p>
-<h2 id="一、ViewModel"><a href="#一、ViewModel" class="headerlink" title="一、ViewModel"></a>一、ViewModel</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Android/Android%20Jetpack%E6%9E%B6%E6%9E%84%E7%BB%84%E4%BB%B6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20%E6%80%9D%E6%BA%90%E5%AD%97%E4%BD%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Android/Android%20%E6%80%9D%E6%BA%90%E5%AD%97%E4%BD%93/" class="post-title-link" itemprop="url">Android 思源字体</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-13 19:52:36" itemprop="dateCreated datePublished" datetime="2021-04-13T19:52:36+08:00">2021-04-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://www.google.cn/get/noto/">【思源字体下载】</a></p>
-<p>Google 已经将 <a target="_blank" rel="noopener" href="https://www.google.cn/get/noto/help/cjk/">【Noto Sans CJK】</a>(思源黑体的 Google 版)作为 Android 5.0 以后的系统字体，字体体积一个比如 Bold 就有 16MB，不过Android已经自带了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1981,7 +1965,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">363</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
