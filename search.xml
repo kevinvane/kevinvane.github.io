@@ -15883,11 +15883,16 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-ArkTs简单语法总结</title>
+    <title>声明式UI：ArkTs简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/ArkTs%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
 </blockquote>
+<p><a href="https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V3/arkts-get-started-0000001504769321-V3">ArkTs</a> 是 TypeScript 的超集。</p>
+<p>这是官网的一个 <code>Hello World</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@<span class="title class_">Entry</span></span><br><span class="line">@<span class="title class_">Component</span></span><br><span class="line">struct <span class="title class_">Hello</span>&#123;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">State</span> <span class="attr">myText</span>: string = <span class="string">&#x27;World&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">build</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="title class_">Column</span>()&#123;</span><br><span class="line">            <span class="title class_">Text</span>(<span class="string">`Hello <span class="subst">$&#123;<span class="variable language_">this</span>.myText&#125;</span>`</span>)</span><br><span class="line">              .<span class="title function_">fontSize</span>(<span class="number">50</span>)</span><br><span class="line">            <span class="title class_">Divider</span>()</span><br><span class="line">            <span class="title class_">Button</span>(<span class="string">&#x27;click me&#x27;</span>)</span><br><span class="line">              .<span class="title function_">onClick</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">                <span class="variable language_">this</span>.<span class="property">myText</span> - <span class="string">&quot;ArkUI&quot;</span></span><br><span class="line">              &#125;)</span><br><span class="line">              .<span class="title function_">height</span>(<span class="number">50</span>)</span><br><span class="line">              .<span class="title function_">width</span>(<span class="number">100</span>)</span><br><span class="line">              .<span class="title function_">margin</span>(&#123; <span class="attr">top</span>: <span class="number">20</span>&#125;)  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>TODO</p>
 ]]></content>
       <categories>
@@ -15895,19 +15900,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-React.js简单语法总结</title>
-    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/React.js%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<blockquote>
-<p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
-</blockquote>
-<p>TODO</p>
-]]></content>
-      <categories>
-        <category>声明式UI</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>声明式UI-Vue.js简单语法总结</title>
+    <title>声明式UI：Vue.js简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/Vue.js%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
@@ -16025,7 +16018,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-微信小程序简单语法总结</title>
+    <title>声明式UI：微信小程序简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
@@ -16120,11 +16113,18 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>Flutter语法总结</title>
+    <title>声明式UI：Flutter语法简单总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/Flutter%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
 </blockquote>
+<p>这是最简单的一个 <code>Hello World</code></p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(</span><br><span class="line">    <span class="keyword">const</span> Center(</span><br><span class="line">      child: Text(</span><br><span class="line">        <span class="string">&#x27;Hello, world!&#x27;</span>,</span><br><span class="line">        textDirection: TextDirection.ltr,</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Material主题有状态的计数 <code>Hello World</code></p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(<span class="keyword">const</span> MyApp());</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> MyApp(&#123;<span class="keyword">super</span>.key&#125;);</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> MaterialApp(</span><br><span class="line">      title: <span class="string">&#x27;Hello&#x27;</span>,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),</span><br><span class="line">        useMaterial3: <span class="keyword">true</span>,</span><br><span class="line">      ),</span><br><span class="line">      home: <span class="keyword">const</span> MyHomePage(title: <span class="string">&#x27;Home Page&#x27;</span>),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> MyHomePage(&#123;<span class="keyword">super</span>.key, <span class="keyword">required</span> <span class="keyword">this</span>.title&#125;);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//每个有状态的小部件（Stateful Widget）都需要一个相应的状态对象（State Object）</span></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  State&lt;MyHomePage&gt; createState() =&gt; _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// _MyHomePageState下划线表示该类时私有的</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> _incrementCounter() &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="comment">// `Scaffold`小部件为开发者提供了一个包含导航栏、抽屉菜单、底部导航栏和浮动操作按钮等。</span></span><br><span class="line">    <span class="comment">// 以下是一些`Scaffold`小部件提供的常见功能：</span></span><br><span class="line">    <span class="comment">// 1. AppBar（导航栏）。</span></span><br><span class="line">    <span class="comment">// 2. Body（正文）：可以放置应用程序的主要内容。</span></span><br><span class="line">    <span class="comment">// 3. Drawer（抽屉菜单）：可以在屏幕左侧显示一个抽屉菜单。</span></span><br><span class="line">    <span class="comment">// 4. BottomNavigationBar（底部导航栏）：可以在屏幕底部显示一个导航栏。</span></span><br><span class="line">    <span class="comment">// 5. FloatingActionButton（浮动操作按钮）：可以显示一个悬浮按钮。</span></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        backgroundColor: Theme.of(context).colorScheme.inversePrimary,</span><br><span class="line">        title: Text(widget.title),</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            <span class="keyword">const</span> Text(</span><br><span class="line">              <span class="string">&#x27;点击按钮，数字自增:&#x27;</span>,</span><br><span class="line">            ),</span><br><span class="line">            Text(</span><br><span class="line">              <span class="string">&#x27;<span class="subst">$_counter</span>&#x27;</span>,</span><br><span class="line">              style: Theme.of(context).textTheme.headlineMedium,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: <span class="string">&#x27;Increment&#x27;</span>,</span><br><span class="line">        child: <span class="keyword">const</span> Icon(Icons.add),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 <p>TODO</p>
 ]]></content>
       <categories>
@@ -16132,11 +16132,14 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>JetPack Compose语法总结</title>
+    <title>声明式UI：JetPack Compose语法简单总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/JetPackCompose%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
 </blockquote>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.testcompose</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> androidx.activity.ComponentActivity</span><br><span class="line"><span class="keyword">import</span> androidx.activity.compose.setContent</span><br><span class="line"><span class="keyword">import</span> androidx.compose.foundation.layout.Column</span><br><span class="line"><span class="keyword">import</span> androidx.compose.foundation.layout.fillMaxSize</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Button</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.MaterialTheme</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Surface</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Text</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.Composable</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.getValue</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.mutableStateOf</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.remember</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.setValue</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.Modifier</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.graphics.Color</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.text.font.FontStyle</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.text.font.FontWeight</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.unit.sp</span><br><span class="line"><span class="keyword">import</span> com.example.testcompose.ui.theme.TestComposeTheme</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloActivity</span> : <span class="type">ComponentActivity</span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContent &#123;</span><br><span class="line">            TestComposeTheme &#123;</span><br><span class="line">                <span class="comment">// A surface container using the &#x27;background&#x27; color from the theme</span></span><br><span class="line">                Surface(</span><br><span class="line">                    modifier = Modifier.fillMaxSize(),</span><br><span class="line">                    color = MaterialTheme.colorScheme.background</span><br><span class="line">                ) &#123;</span><br><span class="line">                    Column &#123;</span><br><span class="line">                        textDemo(<span class="string">&quot;Hello World !!!&quot;</span>, <span class="number">20f</span>)</span><br><span class="line">                        buttonDemo()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Composable</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">textDemo</span><span class="params">(msg: <span class="type">String</span>, fontSize: <span class="type">Float</span>)</span></span> &#123;</span><br><span class="line">        Text(</span><br><span class="line">            text = msg,</span><br><span class="line">            fontSize = fontSize.sp,</span><br><span class="line">            fontWeight = FontWeight.Bold</span><br><span class="line">        )</span><br><span class="line">        Text(</span><br><span class="line">            text = msg,</span><br><span class="line">            color = Color.Red,</span><br><span class="line">            fontSize = <span class="number">24.</span>sp,</span><br><span class="line">            fontStyle = FontStyle.Normal,</span><br><span class="line">            fontWeight = FontWeight.W700</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Composable</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">buttonDemo</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> isToggle <span class="keyword">by</span> remember &#123; mutableStateOf(<span class="literal">true</span>) &#125;</span><br><span class="line">        Button(</span><br><span class="line">            onClick = &#123; isToggle = !isToggle &#125;,</span><br><span class="line">        ) &#123;</span><br><span class="line">            Text(</span><br><span class="line">                text = <span class="keyword">if</span> (isToggle) <span class="string">&quot;我是一个按钮&quot;</span> <span class="keyword">else</span> <span class="string">&quot;我不是&quot;</span></span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 <p>TODO</p>
 ]]></content>
       <categories>
@@ -16144,11 +16147,14 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
   </entry>
   <entry>
-    <title>声明式UI-SwiftUI简单语法总结</title>
+    <title>声明式UI：SwiftUI简单语法总结</title>
     <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/SwiftUI%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
 </blockquote>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> SwiftUI</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ContentView</span>: <span class="title class_">View</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">VStack</span> &#123;</span><br><span class="line">            <span class="type">Image</span>(systemName: <span class="string">&quot;globe&quot;</span>)</span><br><span class="line">                .imageScale(.large)</span><br><span class="line">                .foregroundStyle(.tint)</span><br><span class="line">            <span class="type">Text</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        .padding()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#<span class="type">Preview</span> &#123;</span><br><span class="line">    <span class="type">ContentView</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>TODO</p>
 ]]></content>
       <categories>
@@ -16161,7 +16167,7 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
     <content><![CDATA[<p>前端的原理都差不多，但各自的特点也是有的，比如Vue.js 与 微信小程序虽然都是用js语言，但写法两个还是有一点差异。</p>
 <p>本系列简单的总结一下：</p>
 <h3 id="前端："><a href="#前端：" class="headerlink" title="前端："></a>前端：</h3><ul>
-<li>React.js</li>
+<li>React Native</li>
 <li>Vue.js </li>
 <li>微信小程序</li>
 </ul>
@@ -16171,6 +16177,28 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
 <li>ArkTs UI</li>
 <li>Swift UI</li>
 </ul>
+]]></content>
+      <categories>
+        <category>声明式UI</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>声明式UI：React Navict 简单语法总结</title>
+    <url>/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/ReactNative%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<blockquote>
+<p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
+</blockquote>
+<blockquote>
+<p>虽然 React Native 使用了声明式的组件和语法，但由于底层的原生视图系统的存在，它并不能完全称为严格的声明式 UI 框架。</p>
+</blockquote>
+<p>定义了一个名为 <code>HelloWorld</code> 的函数组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">View</span>, <span class="title class_">Text</span>, <span class="title class_">StyleSheet</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">HelloWorld</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.container&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.text&#125;</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = <span class="title class_">StyleSheet</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">container</span>: &#123;</span><br><span class="line">    <span class="attr">flex</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">justifyContent</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    <span class="attr">alignItems</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">text</span>: &#123;</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="number">24</span>,</span><br><span class="line">    <span class="attr">fontWeight</span>: <span class="string">&#x27;bold&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">HelloWorld</span>;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<p>主应用文件中，你可以使用 HelloWorld 组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">AppRegistry</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">HelloWorld</span> <span class="keyword">from</span> <span class="string">&#x27;./HelloWorld&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">AppRegistry</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;YourApp&#x27;</span>, <span class="function">() =&gt;</span> <span class="title class_">App</span>);</span><br></pre></td></tr></table></figure>
+
+
+<p>TODO</p>
 ]]></content>
       <categories>
         <category>声明式UI</category>

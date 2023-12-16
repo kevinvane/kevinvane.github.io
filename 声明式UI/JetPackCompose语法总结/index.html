@@ -18,15 +18,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="此文档为了对比各个声明式UI编程语法，避免混淆。  TODO">
+  <meta name="description" content="Jetpack Compose 是推荐用于构建原生 Android 界面的新工具包。它可简化并加快 Android 上的界面开发，使用更少的代码、强大的工具和直观的 Kotlin API，快速打造生动而精彩的应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JetPack Compose语法总结">
+<meta property="og:title" content="声明式UI：JetPack Compose语法简单总结">
 <meta property="og:url" content="http://yoursite.com/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/JetPackCompose%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="此文档为了对比各个声明式UI编程语法，避免混淆。  TODO">
+<meta property="og:description" content="Jetpack Compose 是推荐用于构建原生 Android 界面的新工具包。它可简化并加快 Android 上的界面开发，使用更少的代码、强大的工具和直观的 Kotlin API，快速打造生动而精彩的应用。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-14T13:34:36.000Z">
-<meta property="article:modified_time" content="2023-12-15T08:59:46.544Z">
+<meta property="article:modified_time" content="2023-12-16T07:44:43.888Z">
 <meta property="article:author" content="KevinWen">
 <meta name="twitter:card" content="summary">
 
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>JetPack Compose语法总结 | 咸鱼</title>
+  <title>声明式UI：JetPack Compose语法简单总结 | 咸鱼</title>
   
 
 
@@ -215,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JetPack Compose语法总结
+          声明式UI：JetPack Compose语法简单总结
         </h1>
 
         <div class="post-meta">
@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-15 16:59:46" itemprop="dateModified" datetime="2023-12-15T16:59:46+08:00">2023-12-15</time>
+                <time title="修改时间：2023-12-16 15:44:43" itemprop="dateModified" datetime="2023-12-16T15:44:43+08:00">2023-12-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,6 +245,7 @@
             </span>
 
           
+            <div class="post-description">Jetpack Compose 是推荐用于构建原生 Android 界面的新工具包。它可简化并加快 Android 上的界面开发，使用更少的代码、强大的工具和直观的 Kotlin API，快速打造生动而精彩的应用。</div>
 
         </div>
       </header>
@@ -258,6 +259,9 @@
         <blockquote>
 <p>此文档为了对比各个声明式UI编程语法，避免混淆。</p>
 </blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.testcompose</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> androidx.activity.ComponentActivity</span><br><span class="line"><span class="keyword">import</span> androidx.activity.compose.setContent</span><br><span class="line"><span class="keyword">import</span> androidx.compose.foundation.layout.Column</span><br><span class="line"><span class="keyword">import</span> androidx.compose.foundation.layout.fillMaxSize</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Button</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.MaterialTheme</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Surface</span><br><span class="line"><span class="keyword">import</span> androidx.compose.material3.Text</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.Composable</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.getValue</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.mutableStateOf</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.remember</span><br><span class="line"><span class="keyword">import</span> androidx.compose.runtime.setValue</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.Modifier</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.graphics.Color</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.text.font.FontStyle</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.text.font.FontWeight</span><br><span class="line"><span class="keyword">import</span> androidx.compose.ui.unit.sp</span><br><span class="line"><span class="keyword">import</span> com.example.testcompose.ui.theme.TestComposeTheme</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloActivity</span> : <span class="type">ComponentActivity</span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContent &#123;</span><br><span class="line">            TestComposeTheme &#123;</span><br><span class="line">                <span class="comment">// A surface container using the &#x27;background&#x27; color from the theme</span></span><br><span class="line">                Surface(</span><br><span class="line">                    modifier = Modifier.fillMaxSize(),</span><br><span class="line">                    color = MaterialTheme.colorScheme.background</span><br><span class="line">                ) &#123;</span><br><span class="line">                    Column &#123;</span><br><span class="line">                        textDemo(<span class="string">&quot;Hello World !!!&quot;</span>, <span class="number">20f</span>)</span><br><span class="line">                        buttonDemo()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Composable</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">textDemo</span><span class="params">(msg: <span class="type">String</span>, fontSize: <span class="type">Float</span>)</span></span> &#123;</span><br><span class="line">        Text(</span><br><span class="line">            text = msg,</span><br><span class="line">            fontSize = fontSize.sp,</span><br><span class="line">            fontWeight = FontWeight.Bold</span><br><span class="line">        )</span><br><span class="line">        Text(</span><br><span class="line">            text = msg,</span><br><span class="line">            color = Color.Red,</span><br><span class="line">            fontSize = <span class="number">24.</span>sp,</span><br><span class="line">            fontStyle = FontStyle.Normal,</span><br><span class="line">            fontWeight = FontWeight.W700</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Composable</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">buttonDemo</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> isToggle <span class="keyword">by</span> remember &#123; mutableStateOf(<span class="literal">true</span>) &#125;</span><br><span class="line">        Button(</span><br><span class="line">            onClick = &#123; isToggle = !isToggle &#125;,</span><br><span class="line">        ) &#123;</span><br><span class="line">            Text(</span><br><span class="line">                text = <span class="keyword">if</span> (isToggle) <span class="string">&quot;我是一个按钮&quot;</span> <span class="keyword">else</span> <span class="string">&quot;我不是&quot;</span></span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 <p>TODO</p>
 
     </div>
@@ -274,12 +278,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="声明式UI-微信小程序简单语法总结">
-      <i class="fa fa-chevron-left"></i> 声明式UI-微信小程序简单语法总结
+    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="声明式UI：微信小程序简单语法总结">
+      <i class="fa fa-chevron-left"></i> 声明式UI：微信小程序简单语法总结
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/Flutter%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="next" title="Flutter语法总结">
-      Flutter语法总结 <i class="fa fa-chevron-right"></i>
+    <a href="/%E5%A3%B0%E6%98%8E%E5%BC%8FUI/Flutter%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" rel="next" title="声明式UI：Flutter语法简单总结">
+      声明式UI：Flutter语法简单总结 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
