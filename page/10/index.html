@@ -199,6 +199,557 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" class="post-title-link" itemprop="url">Golang交叉编译</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-24 19:58:28" itemprop="dateCreated datePublished" datetime="2019-07-24T19:58:28+08:00">2019-07-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文以Windows平台下编译Linux应用举例，记录一下Golang交叉编译。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># help</span></span><br><span class="line">go get：获取远程包（需 提前安装 git或hg）</span><br><span class="line">go run：直接运行程序</span><br><span class="line">go build：测试编译，检查是否有编译错误</span><br><span class="line">go <span class="built_in">fmt</span>：格式化源码（部分IDE在保存时自动调用）</span><br><span class="line">go install：编译包文件并编译整个程序</span><br><span class="line">go <span class="built_in">test</span>：运行测试文件</span><br><span class="line">go doc：查看文档（CHM手册）</span><br></pre></td></tr></table></figure>
+
+<h2 id="一、设置环境变量"><a href="#一、设置环境变量" class="headerlink" title="一、设置环境变量"></a>一、设置环境变量</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> GOARCH=amd64</span><br><span class="line">$ <span class="built_in">set</span> GOOS=linux</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在终端CMD输入没用，我直接在环境变量设置了 <code>GOARCH</code> 和 <code>GOOS</code> 。这样就无法在Windows运行，因为 <code>go run</code> 的也是指linux平台。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Curl%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF/Curl%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" class="post-title-link" itemprop="url">Curl命令备忘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-23 19:52:36" itemprop="dateCreated datePublished" datetime="2019-07-23T19:52:36+08:00">2019-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="打印HTTP包信息"><a href="#打印HTTP包信息" class="headerlink" title="打印HTTP包信息"></a>打印HTTP包信息</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v URL</span><br><span class="line">$ curl --verbose URL</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -X POST http://localhost/ping</span><br><span class="line">&gt; POST /ping HTTP/1.1</span><br><span class="line">&gt; Host: localhost</span><br><span class="line">&gt; User-Agent: curl/7.47.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt; </span><br><span class="line">&lt; HTTP/1.1 200 </span><br><span class="line">&lt; Server: nginx</span><br><span class="line">&lt; Date: Tue, 23 Jul 2019 04:07:18 GMT</span><br><span class="line">&lt; Content-Type: text/plain;charset=UTF-8</span><br><span class="line">&lt; Content-Length: 5</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; </span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">深入解析HTTP--POST请求</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-20 19:52:36" itemprop="dateCreated datePublished" datetime="2019-07-20T19:52:36+08:00">2019-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前写的《深入解析HTTP–Chunk分块发送》 和 《深入解析HTTP–Multipart》 都是关于用POST请求上传文件，本文要讲的，是指POST请求传递字符数据。</p>
+<p>我们用PostMan作为客户端，SpringBoot作为服务端，Wireshark抓包，分析一下每个请求的包结构，了解一下其中的区别。</p>
+<h2 id="一、最简单的传参"><a href="#一、最简单的传参" class="headerlink" title="一、最简单的传参"></a>一、最简单的传参</h2><p>服务端代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/post&quot;)</span></span><br><span class="line"><span class="keyword">public</span> ResponseEntity <span class="title function_">testpost</span><span class="params">(<span class="meta">@RequestParam(&quot;name&quot;)</span> String name)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ResponseEntity.ok(<span class="string">&quot;ok:&quot;</span>+name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/" class="post-title-link" itemprop="url">网站文档sphinx-doc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-13 09:55:36" itemprop="dateCreated datePublished" datetime="2019-07-13T09:55:36+08:00">2019-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">docs文档工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p><a target="_blank" rel="noopener" href="https://github.com/readthedocs/sphinx_rtd_theme">【sphinx_rtd_theme】</a>主题<br><img src="/images/docs/sphinx-doc-web3.png" alt="web3.js文档"></p>
+<p>自带的sphinx主题<br><img src="/images/docs/sphinx-doc%E5%AE%98%E7%BD%91.png" alt="web3.js文档"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="http://www.sphinx-doc.org/">【sphinx-doc】</a>是基于python的文档生成器（使用文档推荐<a target="_blank" rel="noopener" href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">【这个】</a>），它使用 <code>reStructuredText</code> 语法(类似markdown)编写文档，通过编译，可以生成html,epub,man,pdf等多种格式，现在也可以通过安装扩展来支持简单的Markdown语法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/" class="post-title-link" itemprop="url">VMware安装OpenWrt</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-13 09:52:36" itemprop="dateCreated datePublished" datetime="2019-07-13T09:52:36+08:00">2019-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>建议首先看看此文：<a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/virtualization/vmware">【Openwrt&amp;VMware官方指导文档】</a></p>
+<p>VMware上安装OpenWrt的方法很多种，推荐：</p>
+<ol>
+<li>通过源码编译vmdk磁盘文件，<a target="_blank" rel="noopener" href="https://blog.csdn.net/a13698709128/article/details/78159833">【教程】</a>。</li>
+<li>通过下载官方的img镜像，转换为vmdk磁盘文件，<a target="_blank" rel="noopener" href="https://cokebar.info/archives/2444">【教程】</a>。</li>
+<li>直接下载vm镜像，开箱即用，但是安全性不高，<a target="_blank" rel="noopener" href="https://github.com/luoqeng/OpenWrt-on-VMware">【教程】</a>。</li>
+</ol>
+<p>其他文章：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/GaaraZ/article/details/129197344">【openwrt 好用的插件】</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ztxd/articles/15117255.html">【openwrt vmware 安装无法显示eth0网卡】</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/GreyWang/archive/2023/02/15/17124678.html">【openwrt vmware 作旁路由】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/mshxuyi/article/details/129043787">【openwrt vmware 作旁路由并配置PassWall】</a></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">VMWare资源配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-12 09:52:36" itemprop="dateCreated datePublished" datetime="2019-07-12T09:52:36+08:00">2019-07-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>现在普通的CPU都是有4核，在VM中如何配置虚拟机的CPU呢？</p>
+<p>个人推荐是 <code>CPU数量 * 核心 = X倍的内存</code></p>
+<p>2个CPU * 每个CPU2核 &#x3D;  4核 ，这时候最好给8G以上内存。<br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/%E5%A4%84%E7%90%86%E5%99%A8%E6%80%BB%E6%A0%B8%E6%95%B0.png"></p>
+<p>比如：<br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/CPU%E5%86%85%E5%AD%98%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/" class="post-title-link" itemprop="url">Ubuntu设置系统代理网络上网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-11 21:52:36" itemprop="dateCreated datePublished" datetime="2019-07-11T21:52:36+08:00">2019-07-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>VMWare中的Ubuntu系统有时候需要发行代币之类的工作，这时候就需要科学上网，Linux下的VxN客户端软件都做的不太好，这时候可以通过设置Linux系统的“网络代理”来使用宿主机的网络来访问网络。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>宿主机：Win10（安装了VxN）<br>虚拟机：Ubuntu 18.04</p>
+<h2 id="设置VMWare和虚拟机Ubuntu的网络"><a href="#设置VMWare和虚拟机Ubuntu的网络" class="headerlink" title="设置VMWare和虚拟机Ubuntu的网络"></a>设置VMWare和虚拟机Ubuntu的网络</h2><ol>
+<li>VM虚拟机网络模式</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E5%88%A0%E9%99%A4PPA%E6%BA%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -307,7 +858,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-31 15:42:17" itemprop="dateModified" datetime="2022-10-31T15:42:17+08:00">2022-10-31</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -394,7 +945,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-31 15:39:32" itemprop="dateModified" datetime="2022-10-31T15:39:32+08:00">2022-10-31</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -478,7 +1029,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-21 11:47:57" itemprop="dateModified" datetime="2022-01-21T11:47:57+08:00">2022-01-21</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -563,7 +1114,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -652,7 +1203,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -814,7 +1365,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -902,7 +1453,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -986,7 +1537,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1071,7 +1622,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1154,7 +1705,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1238,7 +1789,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-10-08 14:55:55" itemprop="dateModified" datetime="2023-10-08T14:55:55+08:00">2023-10-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1267,601 +1818,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Linux/Ubuntu%2016.04.4%20LTS%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/WebRTC%20TURN&STUN%20%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/WebRTC%20TURN&STUN%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">WebRTC STUN&TURN 服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-11 20:52:36" itemprop="dateCreated datePublished" datetime="2019-06-11T20:52:36+08:00">2019-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>coturn</code> 是一个开源的 <code>TURN/STUN</code> 服务器，支持 P2P 穿透。</p>
-<ul>
-<li>STUN 服务器用于获取设备的外部网络地址</li>
-<li>TURN 服务器是在点对点失败后用于通信中继。</li>
-</ul>
-<p>WebRTC 建立连接的步骤大概是这样的：</p>
-<ol>
-<li>客户端（浏览器）直接尝试直连；</li>
-<li>如果如果直连则通过 STUN 服务器进行穿透；</li>
-<li>如果无法穿透则通过 TURN 服务器进行中转。</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/WebRTC%20TURN&STUN%20%E6%9C%8D%E5%8A%A1%E5%99%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MQTT%20Broker%20Moquette/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/MQTT%20Broker%20Moquette/" class="post-title-link" itemprop="url">MQTT Broker Moquette</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-11 19:52:36" itemprop="dateCreated datePublished" datetime="2019-06-11T19:52:36+08:00">2019-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Moquette"><a href="#Moquette" class="headerlink" title="Moquette"></a>Moquette</h2><p><a target="_blank" rel="noopener" href="https://github.com/moquette-io/moquette">Moquette</a>是一款开源的MQTT消息代理，整个系统基于java开发，以netty编解码为基础完整实现了MQTT协议的，可以嵌入到你自己的项目中使用。</p>
-<h2 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h2><p><a target="_blank" rel="noopener" href="https://github.com/moquette-io/netty-mqtt5-codec">netty-mqtt5-codec</a><br><a target="_blank" rel="noopener" href="https://github.com/irubant/moquette">Moquette的改进项目</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%8A%A8%E7%94%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">前端动画</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-09 22:54:53" itemprop="dateCreated datePublished" datetime="2019-06-09T22:54:53+08:00">2019-06-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="aos-js"><a href="#aos-js" class="headerlink" title="aos.js"></a>aos.js</h3><p><a target="_blank" rel="noopener" href="https://github.com/michalsnik/aos">github</a> 和 <a target="_blank" rel="noopener" href="https://michalsnik.github.io/aos/">demo</a></p>
-<p>aos.js是一款效果超赞的页面滚动元素动画jQuery动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种easing效果。在页面往回滚动时，元素会恢复到原来的状态。</p>
-<h3 id="Flexslider-js"><a href="#Flexslider-js" class="headerlink" title="Flexslider.js"></a>Flexslider.js</h3><p>Flexslider - 响应式的 jQuery 内容滚动插件</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%8A%A8%E7%94%BB/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%85%8B%E9%9A%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%85%8B%E9%9A%86/" class="post-title-link" itemprop="url">静态网站克隆</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-31 19:53:36" itemprop="dateCreated datePublished" datetime="2019-05-31T19:53:36+08:00">2019-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>静态网站克隆，就是将网站的 <code>html/css/js</code> 和图片等文件下载到本地，能离线浏览。</p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在 linux 上，我们经常用 wget 下载文件，加上参数 <code>-r -k</code> 等参数，可以将静态网站整个下载下来，但是 wget 是单线程下载，可能会比较慢。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -r -p -np -k http://localhost</span><br></pre></td></tr></table></figure>
-
-<p>-r: 递归</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%85%8B%E9%9A%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/Vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/" class="post-title-link" itemprop="url">Vue父子组件通讯</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-31 09:53:36" itemprop="dateCreated datePublished" datetime="2019-05-31T09:53:36+08:00">2019-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="父组件传-值-给子组件"><a href="#父组件传-值-给子组件" class="headerlink" title="父组件传 值 给子组件"></a>父组件传 值 给子组件</h2><ol>
-<li>父组件调用子组件的时候 绑定动态属性 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;v-header :title=&quot;title&quot;&gt;&lt;/v-header&gt;</span><br></pre></td></tr></table></figure></li>
-<li>在子组件里面通过 props接收父组件传过来的数据 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">props:[&#x27;title&#x27;]</span><br><span class="line">或者</span><br><span class="line">props:&#123;</span><br><span class="line">&#x27;title&#x27;:String      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>直接在子组件里面使用</li>
-</ol>
-<h2 id="父组件传-函数-给子组件"><a href="#父组件传-函数-给子组件" class="headerlink" title="父组件传 函数 给子组件"></a>父组件传 函数 给子组件</h2><ol>
-<li>父组件调用子组件的时候 绑定函数 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;v-header :say-hello=&quot;parentSayHello&quot;&gt;&lt;/v-header&gt;</span><br></pre></td></tr></table></figure>
- 父组件的函数 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    parentSayHello(name)&#123;</span><br><span class="line">        console.log(name + &quot;say hello&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>在子组件里面通过 props接收父组件传过来的数据 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:&#123;</span><br><span class="line">    sayHello:&#123;</span><br><span class="line">        type: Function,</span><br><span class="line">        require: false,</span><br><span class="line">    &#125;,    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>直接在子组件里面使用 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=&quot;sayHello(&#x27;jack&#x27;)&quot;/&gt;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="父组件主动调用子组件属性、方法"><a href="#父组件主动调用子组件属性、方法" class="headerlink" title="父组件主动调用子组件属性、方法"></a>父组件主动调用子组件属性、方法</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/Vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E7%94%A8cnpm%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%BA%93%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E7%94%A8cnpm%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%BA%93%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">用cnpm安装软件库的一个问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-30 09:53:36" itemprop="dateCreated datePublished" datetime="2019-05-30T09:53:36+08:00">2019-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在一个 <code>Vue-Cli</code> 的项目中发现使用 <code>cnpm install</code>安装依赖库有些小问题，导致在WebStrom上无法识别库的<code>自定义标签</code>，也无法跳转到<code>自定义标签</code>的源码。</p>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install element-ui -S</span><br></pre></td></tr></table></figure>
-
-<p>使用标签 <code>&lt;el-button/&gt;</code> 时，webstrom提示 <code>Unknown html tag el-button</code></p>
-<p>查看 <code>node_modules</code> 目录，发现element-ui 有两个目录。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E7%94%A8cnpm%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%BA%93%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E6%AC%A3%E8%B5%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E6%AC%A3%E8%B5%8F/" class="post-title-link" itemprop="url">网站设计欣赏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-22 09:53:36" itemprop="dateCreated datePublished" datetime="2019-05-22T09:53:36+08:00">2019-05-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="站点"><a href="#站点" class="headerlink" title="站点"></a>站点</h2><ul>
-<li><a target="_blank" rel="noopener" href="http://www.iiimg.cn/">全球酷站中心</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.calltoidea.com/">收集优秀UI组件元素站点</a></li>
-<li><a target="_blank" rel="noopener" href="https://freebiesbug.com/">高质量设计网站</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.awwwards.com/">优秀的页面设计awwwards</a></li>
-</ul>
-<h2 id="模板站点"><a href="#模板站点" class="headerlink" title="模板站点"></a>模板站点</h2><p>国内搜索 <code>“网页模板”</code> 大多数是很旧很差的模板，到国外搜索 <code>“website templates free”</code> 或者再加上 <code>&quot;Bootstrap&quot;</code> 会找到相对优质一点的资源。</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://colorlib.com/wp/templates/page/1">600+ 个免费的Bootstrap HTML 模板 1</a> </li>
-<li><a target="_blank" rel="noopener" href="https://colorlib.com/wp/cat/bootstrap/page/1/">600+ 个免费的Bootstrap HTML 模板 2</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.free-css.com/template-categories/bootstrap">bootstrap 模板 free-css.com </a></li>
-<li><a target="_blank" rel="noopener" href="https://bootstrapmade.com/">bootstrap 模板 bootstrapmade.com</a></li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E6%AC%A3%E8%B5%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1951,14 +1907,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">374</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

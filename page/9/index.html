@@ -199,6 +199,573 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBoot%E6%B3%A8%E8%A7%A3@Validated%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/SpringBoot/SpringBoot%E6%B3%A8%E8%A7%A3@Validated%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/" class="post-title-link" itemprop="url">SpringBoot注解@Validated表单校验</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-30T19:52:36+08:00">2019-10-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>Spring3支持JSR-303验证框架，JSR-303 是Java EE 6 中的一项子规范，叫做BeanValidation，官方参考实现是hibernate Validator（与Hibernate ORM 没有关系），JSR 303 用于对Java Bean 中的字段的值进行验证。</p>
+</blockquote>
+<h2 id="1-表单属性"><a href="#1-表单属性" class="headerlink" title="1. 表单属性"></a>1. 表单属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;name不能为空&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Controller中开启验证"><a href="#2-Controller中开启验证" class="headerlink" title="2. Controller中开启验证"></a>2. Controller中开启验证</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.validation.annotation.Validated;</span><br><span class="line"></span><br><span class="line"><span class="meta">@PostMapping(&quot;/register&quot;)</span></span><br><span class="line">   <span class="keyword">public</span> ResponseEntity&lt;Void&gt; <span class="title function_">register</span><span class="params">(<span class="meta">@Validated</span> User user)</span> &#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> ResponseEntity.noContent().build();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/SpringBoot/SpringBoot%E6%B3%A8%E8%A7%A3@Validated%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/CentOS7%E9%85%8D%E7%BD%AEIPV4%E9%9D%99%E6%80%81%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/CentOS7%E9%85%8D%E7%BD%AEIPV4%E9%9D%99%E6%80%81%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">CentOS7配置IPV4静态网络</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:53:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:53:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在VM虚拟机中NAT网络转为桥接，客户机CentOS则要改为静态IP，下面是操作日志。</p>
+<p>ens33是默认的网卡，我们就修改这个网卡。<br>修改内容</p>
+<ol>
+<li>设置一个静态IP、网关</li>
+<li>启动IPV4，关闭IPV6</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图形编辑</span></span><br><span class="line">$ nmtui edit ens33</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等同于编辑文件</span></span><br><span class="line">$ vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line"></span><br><span class="line">$ service network restart</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/linux/centos7.png" alt="nmtui edit ens33"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/CentOS7%E9%85%8D%E7%BD%AEIPV4%E9%9D%99%E6%80%81%E7%BD%91%E7%BB%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/CentOS%E5%AE%89%E8%A3%85OpenJDK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/CentOS%E5%AE%89%E8%A3%85OpenJDK/" class="post-title-link" itemprop="url">CentOS安装OpenJDK</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:52:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>CentOS会自带OpenJDK，卸载自带的OpenJDK，再安装我们需要的版本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep jdk</span><br><span class="line"></span><br><span class="line">java-11-openjdk-headless-11.0.4.11-1.el7_7.x86_64</span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64</span><br><span class="line">copy-jdk-configs-3.3-10.el7_5.noarch</span><br><span class="line"></span><br><span class="line">$ rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64</span><br><span class="line">$ rpm -e --nodeps java-11-openjdk-headless-11.0.4.11-1.el7_7.x86_64</span><br><span class="line">$ rpm -e --nodeps copy-jdk-configs-3.3-10.el7_5.noarch</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum search openjdk | grep -i --color openjdk</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/CentOS%E5%AE%89%E8%A3%85OpenJDK/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E5%85%B3%E9%97%AD%E6%A1%8C%E9%9D%A2%E5%8A%A8%E7%94%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E5%85%B3%E9%97%AD%E6%A1%8C%E9%9D%A2%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">Ubuntu关闭桌面动画</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:52:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ubuntu 默认的Gnome桌面有很酷炫的动画，在GUI没有找到关闭动画的设置。</p>
+<p>为了省资源，可以通过以下指令控制桌面动画的开关。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings <span class="built_in">set</span> org.gnome.desktop.interface enable-animations <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E5%AE%89%E8%A3%85NodeJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E5%AE%89%E8%A3%85NodeJS/" class="post-title-link" itemprop="url">Ubuntu安装Nodejs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:52:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ubuntu默认安装的Nodejs版本都是比较低的（差很多），无法编译Vue，所以要安装最新版本。<br>思路是先安装旧版本，再升级到最新版本。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 先安装旧版</span></span><br><span class="line">$ sudo apt install -y nodejs npm</span><br><span class="line"><span class="comment"># 2. 换源</span></span><br><span class="line">$ sudo npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 3. 安装工具 n (管理 node 版本)</span></span><br><span class="line">$ sudo npm install n -g</span><br><span class="line"><span class="comment"># 4. node升级安装最新版本</span></span><br><span class="line">$ sudo n stable</span><br><span class="line"><span class="comment"># 5. npm升级安装最新版本(要先升级node再升级npm)</span></span><br><span class="line">$ sudo npm install -g npm</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E5%AE%89%E8%A3%85OpenJDK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E5%AE%89%E8%A3%85OpenJDK/" class="post-title-link" itemprop="url">Ubuntu安装OpenJDK</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:52:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ sudo add-apt-repository ppa:openjdk-r/ppa</span><br><span class="line"></span><br><span class="line">$ sudp apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装java8</span></span><br><span class="line">$ sudo apt-get install openjdk-8-jdk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装java11</span></span><br><span class="line">$ sudo apt-get install openjdk-11-jdk</span><br><span class="line"></span><br><span class="line">$ java -version</span><br><span class="line">openjdk version <span class="string">&quot;11.0.8&quot;</span> 2020-07-14</span><br><span class="line">OpenJDK Runtime Environment (build 11.0.8+10-post-Ubuntu-0ubuntu118.04.1)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 11.0.8+10-post-Ubuntu-0ubuntu118.04.1, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E5%AE%89%E8%A3%85PostgreSQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%E5%AE%89%E8%A3%85PostgreSQL/" class="post-title-link" itemprop="url">Ubuntu安装PostgreSQL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 19:52:36" itemprop="dateCreated datePublished" datetime="2019-10-18T19:52:36+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ubuntu默认安装的PostgreSQL版本都是比较低的（差很多），通过官方源来安装最新的版本。</p>
+<h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><p>参考<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/linux/ubuntu/">【Linux downloads (Ubuntu) 】</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo sh -c <span class="string">&#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt-get update</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt-get -y install postgresql</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo service postgresql status</span></span><br><span class="line">● postgresql.service - PostgreSQL RDBMS</span><br><span class="line">     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: active (exited) since Wed 2022-05-25 10:18:58 CST; 18min ago</span><br><span class="line">   Main PID: 4020835 (code=exited, status=0/SUCCESS)</span><br><span class="line">      Tasks: 0 (limit: 4578)</span><br><span class="line">     Memory: 0B</span><br><span class="line">     CGroup: /system.slice/postgresql.service</span><br><span class="line"></span><br><span class="line">May 25 10:18:58 cnubuntu systemd[1]: Starting PostgreSQL RDBMS...</span><br><span class="line">May 25 10:18:58 cnubuntu systemd[1]: Finished PostgreSQL RDBMS.</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、查看版本"><a href="#二、查看版本" class="headerlink" title="二、查看版本"></a>二、查看版本</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%E5%AE%89%E8%A3%85PostgreSQL/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/IDE/Gradle%E5%9B%BD%E5%86%85cdn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,7 +797,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -306,7 +873,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-31 15:32:13" itemprop="dateModified" datetime="2022-10-31T15:32:13+08:00">2022-10-31</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -392,7 +959,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-23 10:01:46" itemprop="dateModified" datetime="2022-08-23T10:01:46+08:00">2022-08-23</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -489,7 +1056,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -582,7 +1149,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-20 16:11:55" itemprop="dateModified" datetime="2022-06-20T16:11:55+08:00">2022-06-20</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -665,7 +1232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -751,7 +1318,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -835,7 +1402,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -924,7 +1491,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1013,7 +1580,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1100,7 +1667,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1187,7 +1754,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1265,7 +1832,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1296,557 +1863,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/Nginx%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD%E9%80%9F%E7%8E%87/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" class="post-title-link" itemprop="url">Golang交叉编译</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-24 19:58:28" itemprop="dateCreated datePublished" datetime="2019-07-24T19:58:28+08:00">2019-07-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文以Windows平台下编译Linux应用举例，记录一下Golang交叉编译。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># help</span></span><br><span class="line">go get：获取远程包（需 提前安装 git或hg）</span><br><span class="line">go run：直接运行程序</span><br><span class="line">go build：测试编译，检查是否有编译错误</span><br><span class="line">go <span class="built_in">fmt</span>：格式化源码（部分IDE在保存时自动调用）</span><br><span class="line">go install：编译包文件并编译整个程序</span><br><span class="line">go <span class="built_in">test</span>：运行测试文件</span><br><span class="line">go doc：查看文档（CHM手册）</span><br></pre></td></tr></table></figure>
-
-<h2 id="一、设置环境变量"><a href="#一、设置环境变量" class="headerlink" title="一、设置环境变量"></a>一、设置环境变量</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> GOARCH=amd64</span><br><span class="line">$ <span class="built_in">set</span> GOOS=linux</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在终端CMD输入没用，我直接在环境变量设置了 <code>GOARCH</code> 和 <code>GOOS</code> 。这样就无法在Windows运行，因为 <code>go run</code> 的也是指linux平台。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Golang/Golang%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/Curl%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/Curl%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" class="post-title-link" itemprop="url">Curl命令备忘</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-23 19:52:36" itemprop="dateCreated datePublished" datetime="2019-07-23T19:52:36+08:00">2019-07-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="打印HTTP包信息"><a href="#打印HTTP包信息" class="headerlink" title="打印HTTP包信息"></a>打印HTTP包信息</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v URL</span><br><span class="line">$ curl --verbose URL</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -X POST http://localhost/ping</span><br><span class="line">&gt; POST /ping HTTP/1.1</span><br><span class="line">&gt; Host: localhost</span><br><span class="line">&gt; User-Agent: curl/7.47.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt; </span><br><span class="line">&lt; HTTP/1.1 200 </span><br><span class="line">&lt; Server: nginx</span><br><span class="line">&lt; Date: Tue, 23 Jul 2019 04:07:18 GMT</span><br><span class="line">&lt; Content-Type: text/plain;charset=UTF-8</span><br><span class="line">&lt; Content-Length: 5</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; </span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">深入解析HTTP--POST请求</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-20 19:52:36" itemprop="dateCreated datePublished" datetime="2019-07-20T19:52:36+08:00">2019-07-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>之前写的《深入解析HTTP–Chunk分块发送》 和 《深入解析HTTP–Multipart》 都是关于用POST请求上传文件，本文要讲的，是指POST请求传递字符数据。</p>
-<p>我们用PostMan作为客户端，SpringBoot作为服务端，Wireshark抓包，分析一下每个请求的包结构，了解一下其中的区别。</p>
-<h2 id="一、最简单的传参"><a href="#一、最简单的传参" class="headerlink" title="一、最简单的传参"></a>一、最简单的传参</h2><p>服务端代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/post&quot;)</span></span><br><span class="line"><span class="keyword">public</span> ResponseEntity <span class="title function_">testpost</span><span class="params">(<span class="meta">@RequestParam(&quot;name&quot;)</span> String name)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ResponseEntity.ok(<span class="string">&quot;ok:&quot;</span>+name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HTTP--POST%E8%AF%B7%E6%B1%82/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/" class="post-title-link" itemprop="url">网站文档sphinx-doc</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-13 09:55:36" itemprop="dateCreated datePublished" datetime="2019-07-13T09:55:36+08:00">2019-07-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">docs文档工具</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p><a target="_blank" rel="noopener" href="https://github.com/readthedocs/sphinx_rtd_theme">【sphinx_rtd_theme】</a>主题<br><img src="/images/docs/sphinx-doc-web3.png" alt="web3.js文档"></p>
-<p>自带的sphinx主题<br><img src="/images/docs/sphinx-doc%E5%AE%98%E7%BD%91.png" alt="web3.js文档"></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="http://www.sphinx-doc.org/">【sphinx-doc】</a>是基于python的文档生成器（使用文档推荐<a target="_blank" rel="noopener" href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">【这个】</a>），它使用 <code>reStructuredText</code> 语法(类似markdown)编写文档，通过编译，可以生成html,epub,man,pdf等多种格式，现在也可以通过安装扩展来支持简单的Markdown语法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/docs%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%96%87%E6%A1%A3sphinx-doc/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/" class="post-title-link" itemprop="url">VMware安装OpenWrt</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-13 09:52:36" itemprop="dateCreated datePublished" datetime="2019-07-13T09:52:36+08:00">2019-07-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>建议首先看看此文：<a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/virtualization/vmware">【Openwrt&amp;VMware官方指导文档】</a></p>
-<p>VMware上安装OpenWrt的方法很多种，推荐：</p>
-<ol>
-<li>通过源码编译vmdk磁盘文件，<a target="_blank" rel="noopener" href="https://blog.csdn.net/a13698709128/article/details/78159833">【教程】</a>。</li>
-<li>通过下载官方的img镜像，转换为vmdk磁盘文件，<a target="_blank" rel="noopener" href="https://cokebar.info/archives/2444">【教程】</a>。</li>
-<li>直接下载vm镜像，开箱即用，但是安全性不高，<a target="_blank" rel="noopener" href="https://github.com/luoqeng/OpenWrt-on-VMware">【教程】</a>。</li>
-</ol>
-<p>其他文章：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/GaaraZ/article/details/129197344">【openwrt 好用的插件】</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ztxd/articles/15117255.html">【openwrt vmware 安装无法显示eth0网卡】</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/GreyWang/archive/2023/02/15/17124678.html">【openwrt vmware 作旁路由】</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/mshxuyi/article/details/129043787">【openwrt vmware 作旁路由并配置PassWall】</a></li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMware%E5%AE%89%E8%A3%85OpenWRT/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">VMWare资源配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-12 09:52:36" itemprop="dateCreated datePublished" datetime="2019-07-12T09:52:36+08:00">2019-07-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>现在普通的CPU都是有4核，在VM中如何配置虚拟机的CPU呢？</p>
-<p>个人推荐是 <code>CPU数量 * 核心 = X倍的内存</code></p>
-<p>2个CPU * 每个CPU2核 &#x3D;  4核 ，这时候最好给8G以上内存。<br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/%E5%A4%84%E7%90%86%E5%99%A8%E6%80%BB%E6%A0%B8%E6%95%B0.png"></p>
-<p>比如：<br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/CPU%E5%86%85%E5%AD%98%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/" class="post-title-link" itemprop="url">Ubuntu设置系统代理网络上网</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-11 21:52:36" itemprop="dateCreated datePublished" datetime="2019-07-11T21:52:36+08:00">2019-07-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>VMWare中的Ubuntu系统有时候需要发行代币之类的工作，这时候就需要科学上网，Linux下的VxN客户端软件都做的不太好，这时候可以通过设置Linux系统的“网络代理”来使用宿主机的网络来访问网络。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>宿主机：Win10（安装了VxN）<br>虚拟机：Ubuntu 18.04</p>
-<h2 id="设置VMWare和虚拟机Ubuntu的网络"><a href="#设置VMWare和虚拟机Ubuntu的网络" class="headerlink" title="设置VMWare和虚拟机Ubuntu的网络"></a>设置VMWare和虚拟机Ubuntu的网络</h2><ol>
-<li>VM虚拟机网络模式</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Linux/Ubuntu%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%BD%91/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1936,14 +1952,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">374</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

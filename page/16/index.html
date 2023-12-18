@@ -199,6 +199,596 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBootWebFlux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/SpringBoot/SpringBootWebFlux/" class="post-title-link" itemprop="url">spring-boot-starter-webflux简介</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-27 21:52:36" itemprop="dateCreated datePublished" datetime="2018-03-27T21:52:36+08:00">2018-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在Spring Boot2中引入了 <a target="_blank" rel="noopener" href="https://github.com/reactor/reactor-netty">Reactor Netty</a> ，不过名字叫 <a target="_blank" rel="noopener" href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html">Webflux</a> 。</p>
+<blockquote>
+<p><code>org.springframework.boot:spring-boot-starter-webflux</code> -&gt; <code>io.projectreactor.netty:reactor-netty</code> -&gt; <code>io.netty:netty-all</code></p>
+</blockquote>
+<p>要了解 WebFlux ，首先了解下什么是 Reactive Streams（响应式流） ：</p>
+<blockquote>
+<p>要真打算用weblux，感觉需要整体学一下Reactive响应式编程，否则很多东西不懂</p>
+</blockquote>
+<h4 id="Reactive-Streams-是-JVM-中面向流的库标准和规范："><a href="#Reactive-Streams-是-JVM-中面向流的库标准和规范：" class="headerlink" title="Reactive Streams 是 JVM 中面向流的库标准和规范："></a>Reactive Streams 是 JVM 中面向流的库标准和规范：</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/SpringBoot/SpringBootWebFlux/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MQ%E4%BA%A7%E5%93%81%E5%AF%B9%E6%AF%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Web%E5%90%8E%E7%AB%AF/MQ%E4%BA%A7%E5%93%81%E5%AF%B9%E6%AF%94/" class="post-title-link" itemprop="url">MQ产品对比</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-27 21:52:36" itemprop="dateCreated datePublished" datetime="2018-03-27T21:52:36+08:00">2018-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sonet-life/p/6957822.html">MQ产品比较-ActiveMQ-RocketMQ</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/oMaverick1/article/details/51331004">MQ选型对比文档</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.infoq.com/cn/news/2017/02/RocketMQ-future-idea">专访RocketMQ联合创始人：项目思路、技术细节和未来规划</a></p>
+</blockquote>
+<h4 id="ActiveMQ"><a href="#ActiveMQ" class="headerlink" title="ActiveMQ"></a>ActiveMQ</h4><p>Java开发的，Apache的项目，是JMS规范的参考实现，也是Apache旗下的老牌消息服务引擎，在该Apache顶级项目下拥有不少子项目，包括由HornetMQ演变而来的Artemis，基于Scala号称下一代AMQ的<code>Apollo</code>等。</p>
+<blockquote>
+<p>官网介绍：Apollo 是一个更快、更可靠、更容易维护的消息代理，它是由最初的ActiveMQ的基础构建的。它使用一个完全不同的线程和消息调度架构来实现这一点。与ActiveMQ一样，Apollo 是一个多协议代理，支持 STOMP、AMQP、MQTT、Openwire、SSL 和 WebSockets 。</p>
+</blockquote>
+<p>优点：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Web%E5%90%8E%E7%AB%AF/MQ%E4%BA%A7%E5%93%81%E5%AF%B9%E6%AF%94/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/2.2%E3%80%81solidity%E7%BC%96%E5%86%99%E9%94%81%E4%BB%93%E5%90%88%E7%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/2.2%E3%80%81solidity%E7%BC%96%E5%86%99%E9%94%81%E4%BB%93%E5%90%88%E7%BA%A6/" class="post-title-link" itemprop="url">2.2、solidity编写锁仓合约</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-26 11:55:36" itemprop="dateCreated datePublished" datetime="2018-03-26T11:55:36+08:00">2018-03-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>所谓“锁仓合约”是指，用合约作为第三方托管资金，进行两方交易，并且有时间限制。</p>
+<p>举个简单的例子：<br>一位老板雇佣一位工人工作10天，老板怕工人中途跑路，工人怕老板是奸商发不发工资，那么第三方托管是不错的选择，但是我们可以通过锁仓合约来实现，更加公正。</p>
+<p>实现：老板创建一个锁仓合约，把钱转到合约上，10天后工人可以申请释放金额，但是没有到10天（如第9天）工人都无法把钱取出。</p>
+<p>这个就是“时间锁”。</p>
+<p><code>OpenZeppelin</code> 项目已经实现了时间锁，我们可以基于它来修改适合我们的需求，来看看源码</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%8C%BA%E5%9D%97%E9%93%BE/2.2%E3%80%81solidity%E7%BC%96%E5%86%99%E9%94%81%E4%BB%93%E5%90%88%E7%BA%A6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/2.1%E3%80%81solidity%E7%BC%96%E5%86%99%E5%90%88%E7%BA%A6%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/2.1%E3%80%81solidity%E7%BC%96%E5%86%99%E5%90%88%E7%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">2.1、solidity编写合约学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-26 11:53:36" itemprop="dateCreated datePublished" datetime="2018-03-26T11:53:36+08:00">2018-03-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p><a target="_blank" rel="noopener" href="https://solidity.readthedocs.io/en/v0.5.10/">英文文档v0.5.10</a><br><a target="_blank" rel="noopener" href="https://solidity-cn.readthedocs.io/zh/develop/">中文文档develop</a></p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://ethereum.github.io/browser-solidity/">Remix IDE Github</a> – 推荐，速度快。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://remix.ethereum.org/">Remix IDE Org</a><br>基于浏览器的 IDE，集成了编译器和 Solidity 运行时环境，不需要服务端组件。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/9475-intellij-solidity">IntelliJ IDEA plugin</a><br>IntelliJ IDEA 的 Solidity 插件（可用于其他所有的 JetBrains IDE）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://packagecontrol.io/packages/Ethereum/">SublimeText — Solidity language syntax</a><br>SublimeText 编辑器的语法高亮包。</p>
+</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/1.2%E3%80%81%E5%9F%BA%E4%BA%8EGeth%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/1.2%E3%80%81%E5%9F%BA%E4%BA%8EGeth%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6/" class="post-title-link" itemprop="url">1.2、基于Geth部署合约</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-26 11:52:36" itemprop="dateCreated datePublished" datetime="2018-03-26T11:52:36+08:00">2018-03-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>智能合约，我理解它就是程序机器码，可以在区块链上执行的代码，好比 C语言的<code>*.o</code> 文件，Java的 <code>*.class</code> 文件。</p>
+<ol>
+<li><p>启动 私有链，我们的程序（合约）就跑在这条私有链上。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">geth --datadir data0 --networkid 1108 --nodiscover console</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看挖矿账户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">web3.eth.coinbase</span> </span><br><span class="line">&quot;0x5400ca57071e4d804e1d5f7c14f63a70fa90d541&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写solidity代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.0</span>;</span><br><span class="line"></span><br><span class="line">contract <span class="title class_">HelloWorld</span> &#123; </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">uint a</span>) constant <span class="title function_">returns</span>(<span class="params">uint d</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> a * <span class="number">8</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译为字节码和abi</p>
+<p><a target="_blank" rel="noopener" href="https://ethereum.github.io/browser-solidity">在线编译</a> ，<code>compile - Start To compile -&gt; Details</code></p>
+<p><code>bytecode</code> 只要 <code>object</code> 的值，abi 全部拷贝。</p>
+<blockquote>
+<p>注：Details -&gt; web3Deploy有部署的示例，但我们自己手动来一遍。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">bytecode</span></span><br><span class="line">6060604052341561000f57600080fd5b60b98061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806329e99f07146044575b600080fd5b3415604e57600080fd5b606a600480360381019080803590602001909291905050506080565b6040518082815260200191505060405180910390f35b60006008820290509190505600a165627a7a7230582079ee88ca1fe7e781407b09bc2c5497dcabc538d6930265a54386d2b71b0cd7510029</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">abi</span></span><br><span class="line">[</span><br><span class="line">	&#123;</span><br><span class="line">		&quot;constant&quot;: true,</span><br><span class="line">		&quot;inputs&quot;: [</span><br><span class="line">			&#123;</span><br><span class="line">				&quot;name&quot;: &quot;a&quot;,</span><br><span class="line">				&quot;type&quot;: &quot;uint256&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		],</span><br><span class="line">		&quot;name&quot;: &quot;test&quot;,</span><br><span class="line">		&quot;outputs&quot;: [</span><br><span class="line">			&#123;</span><br><span class="line">				&quot;name&quot;: &quot;d&quot;,</span><br><span class="line">				&quot;type&quot;: &quot;uint256&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		],</span><br><span class="line">		&quot;payable&quot;: false,</span><br><span class="line">		&quot;stateMutability&quot;: &quot;view&quot;,</span><br><span class="line">		&quot;type&quot;: &quot;function&quot;</span><br><span class="line">	&#125;</span><br><span class="line">]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">abi转义</span></span><br><span class="line">[&#123;\&quot;constant\&quot;:true,\&quot;inputs\&quot;:[&#123;\&quot;name\&quot;:\&quot;a\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;&#125;],\&quot;name\&quot;:\&quot;test\&quot;,\&quot;outputs\&quot;:[&#123;\&quot;name\&quot;:\&quot;d\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;&#125;],\&quot;payable\&quot;:false,\&quot;stateMutability\&quot;:\&quot;view\&quot;,\&quot;type\&quot;:\&quot;function\&quot;&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建合约对象</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">赋值为本地变量。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">因为是十六进制，加上 0x 赋值给 bytecode</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash">&gt; bytecode = <span class="string">&#x27;0x6060604052341561000f57600080fd5b60b98061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806329e99f07146044575b600080fd5b3415604e57600080fd5b606a600480360381019080803590602001909291905050506080565b6040518082815260200191505060405180910390f35b60006008820290509190505600a165627a7a7230582079ee88ca1fe7e781407b09bc2c5497dcabc538d6930265a54386d2b71b0cd7510029&#x27;</span></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># abi要解析为对象。</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">var abi = JSON.parse(<span class="string">&#x27;[&#123;\&quot;constant\&quot;:true,\&quot;inputs\&quot;:[&#123;\&quot;name\&quot;:\&quot;a\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;&#125;],\&quot;name\&quot;:\&quot;test\&quot;,\&quot;outputs\&quot;:[&#123;\&quot;name\&quot;:\&quot;d\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;&#125;],\&quot;payable\&quot;:false,\&quot;stateMutability\&quot;:\&quot;view\&quot;,\&quot;type\&quot;:\&quot;function\&quot;&#125;]&#x27;</span>)</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash">&gt; var helloWorldContract = web3.eth.contract(abi)</span></span><br><span class="line">undefined</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>预估部署合约的手续费</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">eth.estimateGas(&#123;data: bytecode&#125;)</span></span><br><span class="line">102074</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看余额，如果账户的余额不够，先挖矿。</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">account1 = web3.eth.coinbase</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">web3.eth.getBalance(account1)</span></span><br><span class="line">600000000000000000000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解锁</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">personal.unlockAccount(account1, <span class="string">&#x27;123456&#x27;</span>)</span> </span><br><span class="line">true</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署，gas 是手续费</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">var helloWorldContractInstance = helloWorldContract.new(&#123;data: bytecode ,gas: 2000000, from: account1&#125;)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者带上一个回调函数<span class="keyword">function</span>，用于打印日志</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">var helloWorldContractInstance = helloWorldContract.new(</span></span><br><span class="line">	&#123;</span><br><span class="line">	data: bytecode,</span><br><span class="line">	gas: 2000000,</span><br><span class="line">	from: account1</span><br><span class="line">	&#125;, function (e, contract)&#123;</span><br><span class="line">		console.log(e, contract);</span><br><span class="line">		if (typeof contract.address !== &#x27;undefined&#x27;) &#123;</span><br><span class="line">			 console.log(&#x27;Contract mined! address: &#x27; + contract.address + &#x27; transactionHash: &#x27; + contract.transactionHash);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从<span class="built_in">log</span>看到，合约已经创建</span></span><br><span class="line">INFO [03-30|20:50:12] Submitted contract creation              fullhash=0x583c5c0e6f8c2225cd8411b1ba0a58304505aea929d6c9cd1c0773c952657416 contract=0x05E4898E94785523c6C5AcBa4324B529B5197Bcf</span><br><span class="line">null [object Object]</span><br><span class="line">undefined</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合约等待挖矿，开始挖矿</p>
+<p>合约需要有节点在挖矿才能部署成功，所以我们先启动挖矿。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">miner.start()</span></span><br><span class="line">INFO [03-30|20:51:30] Updated mining threads                   threads=0</span><br><span class="line">INFO [03-30|20:51:30] Transaction pool price threshold updated price=18000000000</span><br><span class="line">null</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这里等待一会</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">INFO [03-30|20:51:30] Starting mining operation</span> </span><br><span class="line">INFO [03-30|20:51:30] Commit new mining work                   number=195 txs=1 uncles=0 elapsed=998.832µs</span><br><span class="line">INFO [03-30|20:51:46] Successfully sealed new block            number=195 hash=d60b89…65bffe</span><br><span class="line">INFO [03-30|20:51:46] 🔗 block reached canonical chain          number=190 hash=4159ba…196761</span><br><span class="line">INFO [03-30|20:51:46] 🔨 mined potential block                  number=195 hash=d60b89…65bffe</span><br><span class="line">INFO [03-30|20:51:46] Commit new mining work                   number=196 txs=0 uncles=0 elapsed=7.087ms</span><br><span class="line">null [object Object]</span><br><span class="line">Contract mined! address: 0x05e4898e94785523c6c5acba4324b529b5197bcf transactionHash: 0x583c5c0e6f8c2225cd8411b1ba0a58304505aea929d6c9cd1c0773c952657416</span><br><span class="line">INFO [03-30|20:51:55] Successfully sealed new block            number=196 hash=f6a947…15b0a4</span><br><span class="line">INFO [03-30|20:51:55] 🔗 block reached canonical chain          number=191 hash=c95b93…bdd2a6</span><br><span class="line">INFO [03-30|20:51:55] 🔨 mined potential block                  number=196 hash=f6a947…15b0a4</span><br><span class="line">INFO [03-30|20:51:55] Commit new mining work                   number=197 txs=0 uncles=0 elapsed=2.289ms</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只要挖矿成功了，就可以停止了</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">miner.stop()</span></span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查部署结果和调用合约方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">helloWorldContractInstance.address</span></span><br><span class="line">&quot;0x05e4898e94785523c6c5acba4324b529b5197bcf&quot;</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash">&gt; eth.getCode(helloWorldContractInstance.address)</span></span><br><span class="line">&quot;0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806329e99f07146044575b600080fd5b3415604e57600080fd5b606a600480360381019080803590602001909291905050506080565b6040518082815260200191505060405180910390f35b60006008820290509190505600a165627a7a7230582079ee88ca1fe7e781407b09bc2c5497dcabc538d6930265a54386d2b71b0cd7510029&quot;</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash">&gt;</span> </span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">helloWorldContractInstance.<span class="built_in">test</span>(4)</span></span><br><span class="line">32</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OK</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%8C%BA%E5%9D%97%E9%93%BE/1.1%E3%80%81%E5%9F%BA%E4%BA%8EGeth%E6%90%AD%E5%BB%BA%E7%A7%81%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/1.1%E3%80%81%E5%9F%BA%E4%BA%8EGeth%E6%90%AD%E5%BB%BA%E7%A7%81%E9%93%BE/" class="post-title-link" itemprop="url">1.1、基于Geth搭建私链</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-24 22:52:36" itemprop="dateCreated datePublished" datetime="2018-03-24T22:52:36+08:00">2018-03-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>为什么要搭建私有链？</p>
+<p>在以太坊的公有链上部署智能合约、发起交易需要花费以太币，要同步公有链数据块（xGB）。而在私有链，上面这些都不用，我们进行智能合约开发测试就很方便了，开发完成了，再部署到公有链。</p>
+</blockquote>
+<h5 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h5><p>vmware内的ubuntu14.04，字符终端，通过ssh连接。</p>
+<h5 id="安装Geth"><a href="#安装Geth" class="headerlink" title="安装Geth"></a>安装Geth</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo add-apt-repository -y ppa:ethereum/ethereum</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ethereum</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%8C%BA%E5%9D%97%E9%93%BE/1.1%E3%80%81%E5%9F%BA%E4%BA%8EGeth%E6%90%AD%E5%BB%BA%E7%A7%81%E9%93%BE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/%E6%90%AD%E5%BB%BASpringBoot%20initializer%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/SpringBoot/%E6%90%AD%E5%BB%BASpringBoot%20initializer%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">搭建SpringBoot initializer构建服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-22 11:52:36" itemprop="dateCreated datePublished" datetime="2018-03-22T11:52:36+08:00">2018-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>下载工程</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/spring-io/initializr.git</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构建打包</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> initializr/</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mvn compile</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mvn package -Dmaven.test.skip=<span class="literal">true</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者直接一条命令安装到本地maven库</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mvn clean install -Pfull</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">package打包，在initializr-service/target/下可以找到jar包</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">install的在 ~/.m2/repository/io/spring/initializr/initializr-service/x.x.x.BUILD-SNAPSHOT</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">java -jar init.jar --server.port=8089</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OK</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2010%20%E6%96%B0%E7%89%B9%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,7 +820,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-23 10:02:15" itemprop="dateModified" datetime="2022-08-23T10:02:15+08:00">2022-08-23</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -403,7 +993,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -493,7 +1083,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
 
           
@@ -568,7 +1158,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -657,7 +1247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -810,7 +1400,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
 
           
@@ -903,7 +1493,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -989,7 +1579,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1063,7 +1653,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1137,7 +1727,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1282,625 +1872,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner/" class="post-title-link" itemprop="url">打印Linux系统的Banner</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner1.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~# screenfetch</span><br><span class="line">                          ./+o+-       root@bogon</span><br><span class="line">                  yyyyy- -yyyyyy+      OS: Ubuntu 16.04 xenial</span><br><span class="line">               ://+//////-yyyyyyo      Kernel: x86_64 Linux 4.4.0-97-generic</span><br><span class="line">           .++ .:/++++++/-.+sss/`      Uptime: 2d 9h 14m</span><br><span class="line">         .:++o:  /++++++++/:--:/-      Packages: 1004</span><br><span class="line">        o:+o+:++.`..```.-/oo+++++/     Shell: bash 4.3.48</span><br><span class="line">       .:+o:+o/.          `+sssoo+/    CPU: 2x Intel Core i7-7500U CPU @ 2.904GHz</span><br><span class="line">  .++/+:+oo+o:`             /sssooo.   RAM: 638MiB / 974MiB</span><br><span class="line"> /+++//+:`oo+o               /::--:.  </span><br><span class="line"> \+/+o+++`o++o               ++////.  </span><br><span class="line">  .++.o+++oo+:`             /dddhhh.  </span><br><span class="line">       .+.o+oo:.          `oddhhhh+   </span><br><span class="line">        \+.++o+o``-````.:ohdhhhhh+    </span><br><span class="line">         `:o+++ `ohhhhhhhhyo++os:     </span><br><span class="line">           .o:`.syhhhhhhh/.oo++o`     </span><br><span class="line">               /osyyyyyyo++ooo+++/    </span><br><span class="line">                   ````` +oo+++o\:    </span><br><span class="line">                          `oo++.      </span><br><span class="line">root@bogon:~# </span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner2.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">root@bogon:~# linuxlogo</span><br><span class="line">        _,met$$$$$gg.                                                           </span><br><span class="line">     ,g$$$$$$$$$$$$$$$P.                                                        </span><br><span class="line">   ,g$$P&quot;&quot;       &quot;&quot;&quot;Y$$.&quot;.                                                      </span><br><span class="line">  ,$$P&#x27;              `$$$.                                                      </span><br><span class="line">&#x27;,$$P       ,ggs.     `$$b:                                                     </span><br><span class="line">`d$$&#x27;     ,$P&quot;&#x27;   .    $$$                               ,#.                    </span><br><span class="line"> $$P      d$&#x27;     ,    $$P      ##:          :##        :###:                   </span><br><span class="line"> $$:      $$.   -    ,d$$&#x27;      ##&#x27;          `##         `#&#x27;                    </span><br><span class="line"> $$;      Y$b._   _,d$P&#x27;    __  ##     __     ##  __      _     __          _   </span><br><span class="line"> Y$$.    `.`&quot;Y$$$$P&quot;&#x27;     ,####:##  ,######.  ##.#####. :### ,######. ###.####: </span><br><span class="line"> `$$b      &quot;-.__         ,##&#x27; `###  ##:  :##  ###&#x27; `###  ##&#x27; #:   `## `###&#x27; `##:</span><br><span class="line">  `Y$$b                  ##    `##  ##    ##  ##&#x27;   `##  ##    ___,##  ##:   `##</span><br><span class="line">   `Y$$.                 ##     ##  #######:  ##     ##  ##  .#######  ##&#x27;    ##</span><br><span class="line">     `$$b.               ##     ##  ##&#x27;       ##     ##  ##  ##&#x27;  `##  ##     ##</span><br><span class="line">       `Y$$b.            ##.   ,##  ##        ##    ,##  ##  ##    ##  ##     ##</span><br><span class="line">         `&quot;Y$b._         :#:._,###  ##:__,##  ##:__,##&#x27; ,##. ##.__:##. ##     ##</span><br><span class="line">             `&quot;&quot;&quot;&quot;       `:#### ###  ######&#x27;  `######&#x27;  #### `#####&quot;## ##     ##</span><br><span class="line"></span><br><span class="line">Linux Version 4.4.0-97-generic, Compiled #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017</span><br><span class="line">        Two 2.9GHz Intel i7 Processors, 1.9GB RAM, 11616 Bogomips Total</span><br><span class="line">                                     bogon</span><br><span class="line"></span><br><span class="line">root@bogon:~# </span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner3.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Linux/%E6%89%93%E5%8D%B0Linux%E7%B3%BB%E7%BB%9F%E7%9A%84Banner/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBoot%E4%BD%BF%E7%94%A8Admin%E7%9B%91%E6%8E%A7%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/SpringBoot/SpringBoot%E4%BD%BF%E7%94%A8Admin%E7%9B%91%E6%8E%A7%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">SpringBoot使用Admin监控应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>spring-boot-admin 分为两部分，server和client。<br>其中，server是监控端，client是被监控端，client就是我们的应用项目。</p>
-<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><ol>
-<li>创建一个springboot项目，创建项目时选择ops-actuator</li>
-<li>添加依赖，版本保持最新（参考网上教程写demo时，版本是1.3.2，一直启动不起来）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  &lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-admin-server&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.5.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-admin-server-ui&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.5.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
-<li>配置</li>
-</ol>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server.port=8090</span><br><span class="line">spring.application.name=Spring Boot Admin Web</span><br><span class="line">spring.boot.admin.url=http://localhost:$&#123;server.port&#125;</span><br><span class="line">spring.jackson.serialization.indent_output=true</span><br><span class="line">endpoints.health.sensitive=false</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p>在SpringBootAdminWebApplication上面添加注解</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package com.example.admin;</span><br><span class="line"></span><br><span class="line">import de.codecentric.boot.admin.config.EnableAdminServer;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableAdminServer</span><br><span class="line">public class SpringbootDemoAdminServerApplication &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		SpringApplication.run(SpringbootDemoAdminServerApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>启动，如果跑起来了就OK了。</p>
-</li>
-<li><p>浏览器访问 <code>http://localhost:8090</code><br>效果：<br><img src="/images/SpringBoot/SpringBoot%E4%BD%BF%E7%94%A8Admin%E7%9B%91%E6%8E%A7%E5%BA%94%E7%94%A81.png" alt="111111111111111.png"></p>
-</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/SpringBoot/SpringBoot%E4%BD%BF%E7%94%A8Admin%E7%9B%91%E6%8E%A7%E5%BA%94%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/SpringBoot%E6%89%93war%E5%8C%85%E9%83%A8%E7%BD%B2%E5%88%B0%E5%A4%96%E9%83%A8Tomcat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/SpringBoot/SpringBoot%E6%89%93war%E5%8C%85%E9%83%A8%E7%BD%B2%E5%88%B0%E5%A4%96%E9%83%A8Tomcat/" class="post-title-link" itemprop="url">springboot打war包部署到外部Tomcat</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>配置文件pom.xml<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line">-----------------------------------完美分割线</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">	&lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">-----------------------------------完美分割线</span><br><span class="line">&lt;build&gt;</span><br><span class="line">	&lt;finalName&gt;testJenkins&lt;/finalName&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></li>
-<li>application.properties<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># context-path 和 pom.xml的build-finalName 一致</span><br><span class="line">server.context-path=/testJenkins</span><br><span class="line"></span><br><span class="line">#如果有指定端口，可以去掉。</span><br><span class="line">#server.port=9990</span><br></pre></td></tr></table></figure></li>
-<li>编写启动类<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class TomcatServletInitializer extends SpringBootServletInitializer &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) &#123;</span><br><span class="line"></span><br><span class="line">        //Application.class就是springboot的 @SpringBootApplication 类</span><br><span class="line">        return application.sources(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>命令打包<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
-<a target="_blank" rel="noopener" href="http://blog.csdn.net/u014087707/article/details/51792482">参考了此文</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/Spring%E6%B3%A8%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/SpringBoot/Spring%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">Spring注解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Bean-声明注解"><a href="#Bean-声明注解" class="headerlink" title="Bean 声明注解"></a>Bean 声明注解</h3><ul>
-<li><p>@Service 业务逻辑层</p>
-</li>
-<li><p>@Component 组件</p>
-</li>
-<li><p>@Repository 数据访问层</p>
-</li>
-<li><p>@Controller Spring mvc 展现层</p>
-</li>
-<li><p>@Configurable 声明当前类是一个配置类！！！</p>
-</li>
-<li><p>@ComponentScan(“com.reachauto.cxn.book.test”)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置自动扫描包下面所有的</span><br><span class="line">  @Service @Component @Repository @Controller</span><br></pre></td></tr></table></figure></li>
-<li><p>@EnableAsync</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">开启异步任务支持</span><br></pre></td></tr></table></figure></li>
-<li><p>@PropertySource(“classpath:demo.properties”)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">@PropertySource(&quot;classpath:demo.properties&quot;)</span><br><span class="line">public class Demo &#123;</span><br><span class="line"></span><br><span class="line">  @Value(&quot;$&#123;kk.name&#125;&quot;)</span><br><span class="line">  private String aaa;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@EnableScheduling 注解开启对计划任务的支持</p>
-</li>
-</ul>
-<h3 id="Bean-注入注解"><a href="#Bean-注入注解" class="headerlink" title="Bean 注入注解"></a>Bean 注入注解</h3><ul>
-<li>@Autowired Spring 提供</li>
-<li><pre><code>@Resource JSR-250
-</code></pre>
-</li>
-<li><pre><code>@Value(&quot;xxxx&quot;) 注入普通字符串
-</code></pre>
-</li>
-<li><pre><code>@Value(&quot;$&#123;xxx.xxx&#125;&quot;) 注入配置文件中字符串
-</code></pre>
-</li>
-<li><pre><code>@PostConstruct 标注在方法上，在构造函数执行完毕后执行
-</code></pre>
-</li>
-<li><pre><code>@PreDestroy Bean 标注在方法上，销毁前执行
-</code></pre>
-</li>
-<li><pre><code>@Async 异步方法表明，若是在class上则全是
-</code></pre>
-</li>
-<li><pre><code>@Scheduled 声明方法是计划任务
-</code></pre>
-</li>
-<li><pre><code>@Conditional() 条件注解，当满足某条件时
-</code></pre>
-</li>
-</ul>
-<h3 id="Spring-MCV"><a href="#Spring-MCV" class="headerlink" title="Spring MCV"></a>Spring MCV</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/SpringBoot/Spring%E6%B3%A8%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SpringBoot/Spring%E6%B3%A8%E8%A7%A3@Component%E3%80%81@Repository%E3%80%81@Service%E3%80%81@Controller%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/SpringBoot/Spring%E6%B3%A8%E8%A7%A3@Component%E3%80%81@Repository%E3%80%81@Service%E3%80%81@Controller%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">Spring注解@Component、@Repository、@Service、@Controller区别</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://blog.csdn.net/zhang854429783/article/details/6785574">http://blog.csdn.net/zhang854429783/article/details/6785574</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/Nginx%E4%B8%8D%E8%BD%AC%E5%8F%91header/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/Nginx%E4%B8%8D%E8%BD%AC%E5%8F%91header/" class="post-title-link" itemprop="url">nginx不转发header</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>如果header有下划线，是不转发的，如果一定要下划线，要在配置 http{} 加入    underscores_in_headers on;</p>
-<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/loongshawn/article/details/78199977?locationNum=5&fps=1">参考</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%BF%9D%E7%95%99%E8%BF%9C%E7%A8%8BIP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Web%E5%90%8E%E7%AB%AF/Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%BF%9D%E7%95%99%E8%BF%9C%E7%A8%8BIP/" class="post-title-link" itemprop="url">nginx反向代理保留远程IP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-30 09:52:36" itemprop="dateCreated datePublished" datetime="2017-11-30T09:52:36+08:00">2017-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-28 11:24:10" itemprop="dateModified" datetime="2021-12-28T11:24:10+08:00">2021-12-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>如果使用Nginx做反向代理到本地的SpringBoot服务，那么SpringBoot服务获取的远程	地址IP是nginx的，如何获取客户端的IP呢？</p>
-<p>有一简单的方法是通过设置一个自定义Header来实现。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name 127.0.0.1:80;</span><br><span class="line">		location / &#123;</span><br><span class="line">                proxy_set_header Host $host;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">                proxy_pass http://127.0.0.1:8282/api/;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>SpringBoot内获取客户端的真实IP</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HttpServletRequest</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这里其实是nginx的IP，则本地。</span></span><br><span class="line"><span class="type">String</span> <span class="variable">nginxIP</span> <span class="operator">=</span> request.getRemoteAddr();        </span><br><span class="line"></span><br><span class="line"><span class="comment">//自己设置的自定义Header，为请求clicent端的IP。</span></span><br><span class="line"><span class="type">String</span> <span class="variable">clientIP</span> <span class="operator">=</span> request.getHeader(<span class="string">&quot;X-Real-IP&quot;</span>); </span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1971,14 +1942,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">374</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
