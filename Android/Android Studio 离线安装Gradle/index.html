@@ -18,18 +18,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Android Studio 下载 gradle 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。 以 gradle5.4.1 为例 下载gradle-5.4.1-all.zip 放置zip包">
+  <meta name="description" content="Android Studio 下载 gradle 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。 一、使用镜像服务器 （20240121新增）12345distributionUrl &#x3D; &quot;https:&#x2F;&#x2F;services.gradle.org&#x2F;distributions&#x2F;gradle-$gradleVersion-all.zip&quot;改为distributionUrl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Studio 离线安装Gradle">
 <meta property="og:url" content="http://yoursite.com/Android/Android%20Studio%20%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Gradle/index.html">
 <meta property="og:site_name" content="咸鱼">
-<meta property="og:description" content="Android Studio 下载 gradle 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。 以 gradle5.4.1 为例 下载gradle-5.4.1-all.zip 放置zip包">
+<meta property="og:description" content="Android Studio 下载 gradle 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。 一、使用镜像服务器 （20240121新增）12345distributionUrl &#x3D; &quot;https:&#x2F;&#x2F;services.gradle.org&#x2F;distributions&#x2F;gradle-$gradleVersion-all.zip&quot;改为distributionUrl">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/android/gradle_template.jpg">
 <meta property="article:published_time" content="2018-09-03T11:52:36.000Z">
-<meta property="article:modified_time" content="2023-08-09T02:26:25.217Z">
+<meta property="article:modified_time" content="2024-01-22T03:30:08.240Z">
 <meta property="article:author" content="KevinWen">
 <meta property="article:tag" content="Gradle">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/android/gradle_template.jpg">
 
 <link rel="canonical" href="http://yoursite.com/Android/Android%20Studio%20%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Gradle/">
 
@@ -233,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+                <time title="修改时间：2024-01-22 11:30:08" itemprop="dateModified" datetime="2024-01-22T11:30:08+08:00">2024-01-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,16 +259,28 @@
 
       
         <p><code>Android Studio</code> 下载 <code>gradle</code> 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。</p>
-<p>以 <code>gradle5.4.1</code> 为例</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a target="_blank" rel="noopener" href="https://downloads.gradle-dn.com/distributions/gradle-5.4.1-all.zip">gradle-5.4.1-all.zip</a></p>
-<h2 id="放置zip包"><a href="#放置zip包" class="headerlink" title="放置zip包"></a>放置zip包</h2><p>到 <code>.gradle</code> 目录下，如：</p>
+<h2 id="一、使用镜像服务器-（20240121新增）"><a href="#一、使用镜像服务器-（20240121新增）" class="headerlink" title="一、使用镜像服务器 （20240121新增）"></a>一、使用镜像服务器 （20240121新增）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl = &quot;https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip&quot;</span><br><span class="line"></span><br><span class="line">改为</span><br><span class="line"></span><br><span class="line">distributionUrl = &quot;https://mirrors.cloud.tencent.com/gradle/gradle-$gradleVersion-all.zip&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/android/gradle_template.jpg"></p>
+<blockquote>
+<p>备注：这个设置可能是Gradle Java 项目的，创建Android项目没生效。但还是可以手动修改的 <code>gradle-wrapper.properties</code> 文件的。</p>
+</blockquote>
+<p><code>Android studio 3.x</code> 可以修改 <code>plugins/android/lib/templates</code> 模板项目来实现，具体参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36707668/article/details/122595373">《跳转》</a>。</p>
+<p>但从 <code>Android studio  4.1</code>开始就没有此模板目录，应该是封装成jar包，如果要实现自定义模板项目，需要自己做成jar插件，具体参考:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7035938545919328269">【Android Studio自定义页面模板】</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7039225672945893390">【AndroidStudio Fox 编写自定义模板】</a></li>
+</ul>
+<h2 id="二、手动下载"><a href="#二、手动下载" class="headerlink" title="二、手动下载"></a>二、手动下载</h2><p>以 <code>gradle5.4.1</code> 为例</p>
+<h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p><a target="_blank" rel="noopener" href="https://downloads.gradle-dn.com/distributions/gradle-5.4.1-all.zip">gradle-5.4.1-all.zip</a></p>
+<h2 id="2-2-放置zip包"><a href="#2-2-放置zip包" class="headerlink" title="2.2 放置zip包"></a>2.2 放置zip包</h2><p>到 <code>.gradle</code> 目录下，如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\kevin\.gradle\wrapper\dists\gradle-5.4.1-all</span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果AS已经创建了类似 <code>12112jdfhdhuhudshfsrwx</code> 这种目录，则需要将zip包拷贝到这个目录下。</li>
 <li>否则，直接放在 <code>dists\gradle-5.4.1-all</code> 目录下。</li>
 <li>注意zip包不需要解压</li>
 </ul>
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>直接重启 <code>Android Studio</code> 或者点 <code>Sysc GRadle Files</code> 进行安装。</p>
+<h2 id="2-3-重启"><a href="#2-3-重启" class="headerlink" title="2.3 重启"></a>2.3 重启</h2><p>直接重启 <code>Android Studio</code> 或者点 <code>Sysc GRadle Files</code> 进行安装。</p>
 
     </div>
 
@@ -350,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BE%E7%BD%AEzip%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">放置zip包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF"><span class="nav-number">3.</span> <span class="nav-text">重启</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1%E5%99%A8-%EF%BC%8820240121%E6%96%B0%E5%A2%9E%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">一、使用镜像服务器 （20240121新增）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">二、手动下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%94%BE%E7%BD%AEzip%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">2.2 放置zip包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E9%87%8D%E5%90%AF"><span class="nav-number">4.</span> <span class="nav-text">2.3 重启</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,14 +379,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">374</span>
+          <span class="site-state-item-count">376</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -420,8 +434,8 @@
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

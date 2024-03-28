@@ -705,16 +705,28 @@
     <title>Android Studio 离线安装Gradle</title>
     <url>/Android/Android%20Studio%20%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Gradle/</url>
     <content><![CDATA[<p><code>Android Studio</code> 下载 <code>gradle</code> 一直很慢，或者是根本下载不了，而通过手动下载，则快很多。</p>
-<p>以 <code>gradle5.4.1</code> 为例</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://downloads.gradle-dn.com/distributions/gradle-5.4.1-all.zip">gradle-5.4.1-all.zip</a></p>
-<h2 id="放置zip包"><a href="#放置zip包" class="headerlink" title="放置zip包"></a>放置zip包</h2><p>到 <code>.gradle</code> 目录下，如：</p>
+<h2 id="一、使用镜像服务器-（20240121新增）"><a href="#一、使用镜像服务器-（20240121新增）" class="headerlink" title="一、使用镜像服务器 （20240121新增）"></a>一、使用镜像服务器 （20240121新增）</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">distributionUrl = &quot;https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip&quot;</span><br><span class="line"></span><br><span class="line">改为</span><br><span class="line"></span><br><span class="line">distributionUrl = &quot;https://mirrors.cloud.tencent.com/gradle/gradle-$gradleVersion-all.zip&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/android/gradle_template.jpg"></p>
+<blockquote>
+<p>备注：这个设置可能是Gradle Java 项目的，创建Android项目没生效。但还是可以手动修改的 <code>gradle-wrapper.properties</code> 文件的。</p>
+</blockquote>
+<p><code>Android studio 3.x</code> 可以修改 <code>plugins/android/lib/templates</code> 模板项目来实现，具体参考<a href="https://blog.csdn.net/qq_36707668/article/details/122595373">《跳转》</a>。</p>
+<p>但从 <code>Android studio  4.1</code>开始就没有此模板目录，应该是封装成jar包，如果要实现自定义模板项目，需要自己做成jar插件，具体参考:</p>
+<ul>
+<li><a href="https://juejin.cn/post/7035938545919328269">【Android Studio自定义页面模板】</a></li>
+<li><a href="https://juejin.cn/post/7039225672945893390">【AndroidStudio Fox 编写自定义模板】</a></li>
+</ul>
+<h2 id="二、手动下载"><a href="#二、手动下载" class="headerlink" title="二、手动下载"></a>二、手动下载</h2><p>以 <code>gradle5.4.1</code> 为例</p>
+<h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p><a href="https://downloads.gradle-dn.com/distributions/gradle-5.4.1-all.zip">gradle-5.4.1-all.zip</a></p>
+<h2 id="2-2-放置zip包"><a href="#2-2-放置zip包" class="headerlink" title="2.2 放置zip包"></a>2.2 放置zip包</h2><p>到 <code>.gradle</code> 目录下，如：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\kevin\.gradle\wrapper\dists\gradle-5.4.1-all</span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果AS已经创建了类似 <code>12112jdfhdhuhudshfsrwx</code> 这种目录，则需要将zip包拷贝到这个目录下。</li>
 <li>否则，直接放在 <code>dists\gradle-5.4.1-all</code> 目录下。</li>
 <li>注意zip包不需要解压</li>
 </ul>
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>直接重启 <code>Android Studio</code> 或者点 <code>Sysc GRadle Files</code> 进行安装。</p>
+<h2 id="2-3-重启"><a href="#2-3-重启" class="headerlink" title="2.3 重启"></a>2.3 重启</h2><p>直接重启 <code>Android Studio</code> 或者点 <code>Sysc GRadle Files</code> 进行安装。</p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -7405,73 +7417,6 @@ management.security.enabled: false 意思是不用授权或者登陆就可以访
 <p>例如：我的阿里云主机外网IP为：<code>10.8.7.0</code> ，在 <code>kafka/config/server.properties</code> 加入以下配置</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">port=8086</span><br><span class="line">listeners=PLAINTEXT://0.0.0.0:8086</span><br><span class="line">advertised.listeners=PLAINTEXT://10.8.7.0:8086</span><br><span class="line">advertised.host.name=10.8.7.0.9</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Web后端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Letsencrypt证书-Certbot安装</title>
-    <url>/Web%E5%90%8E%E7%AB%AF/Letsencrypt%E8%AF%81%E4%B9%A6Certbot%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>现在 <code>Letsencrypt</code> 官方是推荐使用<a href="https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7">【certbot】</a> 来安装证书。</p>
-<p>它用 <code>python</code> 做的工具，可以根据现有的 <code>非HTTPS服务</code> 自动申请证书部署，并且可以自动续签。</p>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>准备资源：</p>
-<ul>
-<li>一台服务器</li>
-<li>nginx </li>
-<li>域名</li>
-<li>http (80端口) 服务正常运行</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">snap install --classic certbot</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ln</span> -s /snap/bin/certbot /usr/bin/certbot</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">按照提示输入参数，自动读取 /etc/nginx/site-enable/XX-server 自动申请证书</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">手动配置nginx</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot certonly --nginx --email youremail@email.com -d www.你的域名.com</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">后台运行cron任务，定期更新证书</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot renew --dry-run</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="二、日志"><a href="#二、日志" class="headerlink" title="二、日志"></a>二、日志</h2><p>这是一个申请失败的日志（由于域名未备案，无法访问80端口）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line">Saving debug log to /var/log/letsencrypt/letsencrypt.log</span><br><span class="line">Enter email address (used for urgent renewal and security notices)</span><br><span class="line"> (Enter &#x27;c&#x27; to cancel): hello@qq.com</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Please read the Terms of Service at</span><br><span class="line">https://letsencrypt.org/documents/LE-SA-v1.3-September-21-2022.pdf. You must</span><br><span class="line">agree in order to register with the ACME server. Do you agree?</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">(Y)es/(N)o: y</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Would you be willing, once your first certificate is successfully issued, to</span><br><span class="line">share your email address with the Electronic Frontier Foundation, a founding</span><br><span class="line">partner of the Let&#x27;s Encrypt project and the non-profit organization that</span><br><span class="line">develops Certbot? We&#x27;d like to send you email about our work encrypting the web,</span><br><span class="line">EFF news, campaigns, and ways to support digital freedom.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">(Y)es/(N)o: y</span><br><span class="line">Account registered.</span><br><span class="line"></span><br><span class="line">Which names would you like to activate HTTPS for?</span><br><span class="line">We recommend selecting either all domains, or all domains in a VirtualHost/server block.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">1: www.你的域名.com</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Select the appropriate numbers separated by commas and/or spaces, or leave input</span><br><span class="line">blank to select all options shown (Enter &#x27;c&#x27; to cancel): </span><br><span class="line">Requesting a certificate for www.你的域名.com</span><br><span class="line"></span><br><span class="line">Certbot failed to authenticate some domains (authenticator: nginx). The Certificate Authority reported these problems:</span><br><span class="line">  Domain: www.你的域名.com</span><br><span class="line">  Type:   unauthorized</span><br><span class="line">  Detail: &#x27;你的服务器IP&#x27;: Invalid response from http://www.你的域名.com/.well-known/acme-challenge/xxxxx: 403</span><br><span class="line"></span><br><span class="line">Hint: The Certificate Authority failed to verify the temporary nginx configuration changes made by Certbot. Ensure the listed domains point to this nginx server and that it is accessible from the internet.</span><br><span class="line"></span><br><span class="line">Some challenges have failed.</span><br></pre></td></tr></table></figure>
-
-
-<p>服务正常后，重新运行，自动部署成功。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line">Saving debug log to /var/log/letsencrypt/letsencrypt.log</span><br><span class="line"></span><br><span class="line">Which names would you like to activate HTTPS for?</span><br><span class="line">We recommend selecting either all domains, or all domains in a VirtualHost/server block.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">1: api.你的域名.com</span><br><span class="line">2: www.你的域名.com</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Select the appropriate numbers separated by commas and/or spaces, or leave input</span><br><span class="line">blank to select all options shown (Enter &#x27;c&#x27; to cancel): </span><br><span class="line">Requesting a certificate for api.你的域名.com and www.你的域名.com</span><br><span class="line"></span><br><span class="line">Successfully received certificate.</span><br><span class="line">Certificate is saved at: /etc/letsencrypt/live/api.你的域名.com/fullchain.pem</span><br><span class="line">Key is saved at:         /etc/letsencrypt/live/api.你的域名.com/privkey.pem</span><br><span class="line">This certificate expires on 2023-10-18.</span><br><span class="line">These files will be updated when the certificate renews.</span><br><span class="line">Certbot has set up a scheduled task to automatically renew this certificate in the background.</span><br><span class="line"></span><br><span class="line">Deploying certificate</span><br><span class="line">Successfully deployed certificate for api.你的域名.com to /etc/nginx/sites-enabled/lime</span><br><span class="line">Successfully deployed certificate for www.你的域名.com to /etc/nginx/sites-enabled/default</span><br><span class="line">Congratulations! You have successfully enabled HTTPS on https://api.你的域名.com and https://www.你的域名.com</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">If you like Certbot, please consider supporting our work by:</span><br><span class="line"> * Donating to ISRG / Let&#x27;s Encrypt:   https://letsencrypt.org/donate</span><br><span class="line"> * Donating to EFF:                    https://eff.org/donate-le</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="三、摘取文档【certbot】-："><a href="#三、摘取文档【certbot】-：" class="headerlink" title="三、摘取文档【certbot】 ："></a>三、摘取文档<a href="https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7">【certbot】</a> ：</h2><h3 id="1-SSH-into-the-server"><a href="#1-SSH-into-the-server" class="headerlink" title="1. SSH into the server"></a>1. SSH into the server</h3><p>SSH into the server running your HTTP website as a user with sudo privileges.</p>
-<h3 id="2-Install-snapd"><a href="#2-Install-snapd" class="headerlink" title="2.  Install snapd"></a>2.  Install snapd</h3><p>You’ll need to install snapd and make sure you follow any instructions to enable classic snap support.</p>
-<p>Follow these instructions on <a href="https://snapcraft.io/docs/installing-snapd/">snapcraft’s site to install snapd</a>.</p>
-<p><a href="https://snapcraft.io/docs/installing-snapd/">install snapd</a></p>
-<h3 id="3-Remove-certbot-auto-and-any-Certbot-OS-packages"><a href="#3-Remove-certbot-auto-and-any-Certbot-OS-packages" class="headerlink" title="3. Remove certbot-auto and any Certbot OS packages"></a>3. Remove certbot-auto and any Certbot OS packages</h3><p>If you have any Certbot packages installed using an OS package manager like <code>apt</code>, <code>dnf</code>, or <code>yum</code>, you should remove them before installing the Certbot snap to ensure that when you run the command <code>certbot</code> the snap is used rather than the installation from your OS package manager. The exact command to do this depends on your OS, but common examples are <code>sudo apt-get remove certbot</code>, <code>sudo dnf remove certbot</code>, or <code>sudo yum remove certbot</code>.</p>
-<h3 id="4-Install-Certbot"><a href="#4-Install-Certbot" class="headerlink" title="4. Install Certbot"></a>4. Install Certbot</h3><p>Run this command on the command line on the machine to install Certbot.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo snap install --classic certbot</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-Prepare-the-Certbot-command"><a href="#5-Prepare-the-Certbot-command" class="headerlink" title="5. Prepare the Certbot command"></a>5. Prepare the Certbot command</h3><p>Execute the following instruction on the command line on the machine to ensure that the <code>certbot</code> command can be run.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-Choose-how-you’d-like-to-run-Certbot"><a href="#6-Choose-how-you’d-like-to-run-Certbot" class="headerlink" title="6. Choose how you’d like to run Certbot"></a>6. Choose how you’d like to run Certbot</h3><p>Either get and install your certificates…</p>
-<p>Run this command to get a certificate and have Certbot edit your  nginx configuration automatically to serve it, turning on HTTPS access  in a single step.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
-
-<p>Or, just get a certificate</p>
-<p>If you’re feeling more conservative and would like to make the changes to your nginx configuration by hand, run this command.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot certonly --nginx</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-Test-automatic-renewal"><a href="#7-Test-automatic-renewal" class="headerlink" title="7. Test automatic renewal"></a>7. Test automatic renewal</h3><p>The Certbot packages on your system come with a cron job or systemd timer that will renew your certificates automatically before they  expire. You will not need to run Certbot again, unless you change your  configuration. You can test automatic renewal for your certificates by  running this command:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
-
-<p>The command to renew certbot is installed in one of the following locations:</p>
-<ul>
-<li><code>/etc/crontab/</code></li>
-<li><code>/etc/cron.*/*</code></li>
-<li><code>systemctl list-timers</code></li>
-</ul>
-<h3 id="8-Confirm-that-Certbot-worked"><a href="#8-Confirm-that-Certbot-worked" class="headerlink" title="8. Confirm that Certbot worked"></a>8. Confirm that Certbot worked</h3><p>To confirm that your site is set up properly, visit <code>https://yourwebsite.com/</code> in your browser and look for the lock icon in the URL bar.</p>
-]]></content>
-      <categories>
-        <category>Web后端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Letsencrypt证书脚本acme.sh</title>
-    <url>/Web%E5%90%8E%E7%AB%AF/Letsencrypt%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<p><a href="https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E">acme.sh</a> 可以从 letsencrypt 生成免费的证书,自动更新.</p>
 ]]></content>
       <categories>
         <category>Web后端</category>
@@ -16433,6 +16378,115 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
 ]]></content>
       <categories>
         <category>前端-Vue2迁移到Vue3</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/%E5%89%8D%E7%AB%AF/Vue2%E8%BF%81%E7%A7%BB%E5%88%B0Vue3/test/</url>
+    <content><![CDATA[<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Glide在Kotlin上的小BUG</title>
+    <url>/Android/Glide%E5%9C%A8Kotlin%E4%B8%8A%E7%9A%84%E5%B0%8FBUG/</url>
+    <content><![CDATA[<p>依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">implementation &#x27;com.github.bumptech.glide:glide:4.16.0&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>调用示例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Glide.with(context)</span><br><span class="line">        .load(<span class="string">&quot;http://xxx&quot;</span>)</span><br><span class="line">        .into(holder.img)</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>androidx</code> + <code>kotlin</code> 的项目中运行，会出现警告日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Failed to find GeneratedAppGlideModule. You should include an annotationProcessor compile dependency on com.github.bumptech.glide:compiler in your application and a @GlideModule annotated AppGlideModule implementation or LibraryGlideModules will be silently ignored</span><br></pre></td></tr></table></figure>
+
+<p>解决办法：</p>
+<ol>
+<li>依赖增加compiler<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">implementation &#x27;com.github.bumptech.glide:glide:4.16.0&#x27;</span><br><span class="line">annotationProcessor &#x27;com.github.bumptech.glide:compiler:4.16.0&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>新增一个类<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@GlideModule</span><br><span class="line">public class MyGlideModule extends AppGlideModule &#123;</span><br><span class="line">    // 不用实现</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>这样就没有警告日志啦！</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Letsencrypt-SSL-证书-Certbot安装</title>
+    <url>/Web%E5%90%8E%E7%AB%AF/Letsencrypt-SSL-%E8%AF%81%E4%B9%A6Certbot%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>现在 <code>Letsencrypt</code> 官方是推荐使用<a href="https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7">【certbot】</a> 来安装证书。</p>
+<p>它用 <code>python</code> 做的工具，可以根据现有的 <code>HTTP</code> 自动申请证书部署 <code>HTTPS</code>，并且可以自动定期续签。</p>
+<h2 id="一、安装和申请"><a href="#一、安装和申请" class="headerlink" title="一、安装和申请"></a>一、安装和申请</h2><h4 id="1-1准备资源："><a href="#1-1准备资源：" class="headerlink" title="1.1准备资源："></a>1.1准备资源：</h4><ul>
+<li>一台Ubuntu服务器</li>
+<li>域名</li>
+</ul>
+<h4 id="1-2自动申请"><a href="#1-2自动申请" class="headerlink" title="1.2自动申请"></a>1.2自动申请</h4><ul>
+<li>nginx 已有http (80端口) 服务正常运行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 certbot</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">snap install --classic certbot</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ln</span> -s /snap/bin/certbot /usr/bin/certbot</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">自动读取 /etc/nginx/site-enable/XX-server 自动申请证书</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果有多个server，会弹出选项，你可以选择给特定server生成SSL证书</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3手动申请"><a href="#1-3手动申请" class="headerlink" title="1.3手动申请"></a>1.3手动申请</h4><p>如果服务器内没有nginx server http服务，可以手动输入邮箱和域名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">手动配置nginx</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot certonly --nginx --email youremail@email.com -d www.你的域名.com</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4定期更新"><a href="#1-4定期更新" class="headerlink" title="1.4定期更新"></a>1.4定期更新</h4><p>如果希望certbot在后台运行，并且定期更新证书</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">后台运行cron任务，定期更新证书</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot renew --dry-run</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、日志"><a href="#二、日志" class="headerlink" title="二、日志"></a>二、日志</h2><p>这是一个申请失败的日志（由于域名未备案，无法访问80端口）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line">Saving debug log to /var/log/letsencrypt/letsencrypt.log</span><br><span class="line">Enter email address (used for urgent renewal and security notices)</span><br><span class="line"> (Enter &#x27;c&#x27; to cancel): hello@qq.com</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Please read the Terms of Service at</span><br><span class="line">https://letsencrypt.org/documents/LE-SA-v1.3-September-21-2022.pdf. You must</span><br><span class="line">agree in order to register with the ACME server. Do you agree?</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">(Y)es/(N)o: y</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Would you be willing, once your first certificate is successfully issued, to</span><br><span class="line">share your email address with the Electronic Frontier Foundation, a founding</span><br><span class="line">partner of the Let&#x27;s Encrypt project and the non-profit organization that</span><br><span class="line">develops Certbot? We&#x27;d like to send you email about our work encrypting the web,</span><br><span class="line">EFF news, campaigns, and ways to support digital freedom.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">(Y)es/(N)o: y</span><br><span class="line">Account registered.</span><br><span class="line"></span><br><span class="line">Which names would you like to activate HTTPS for?</span><br><span class="line">We recommend selecting either all domains, or all domains in a VirtualHost/server block.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">1: www.你的域名.com</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Select the appropriate numbers separated by commas and/or spaces, or leave input</span><br><span class="line">blank to select all options shown (Enter &#x27;c&#x27; to cancel): </span><br><span class="line">Requesting a certificate for www.你的域名.com</span><br><span class="line"></span><br><span class="line">Certbot failed to authenticate some domains (authenticator: nginx). The Certificate Authority reported these problems:</span><br><span class="line">  Domain: www.你的域名.com</span><br><span class="line">  Type:   unauthorized</span><br><span class="line">  Detail: &#x27;你的服务器IP&#x27;: Invalid response from http://www.你的域名.com/.well-known/acme-challenge/xxxxx: 403</span><br><span class="line"></span><br><span class="line">Hint: The Certificate Authority failed to verify the temporary nginx configuration changes made by Certbot. Ensure the listed domains point to this nginx server and that it is accessible from the internet.</span><br><span class="line"></span><br><span class="line">Some challenges have failed.</span><br></pre></td></tr></table></figure>
+
+
+<p>服务正常后，重新运行，自动部署成功。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">certbot --nginx</span></span><br><span class="line">Saving debug log to /var/log/letsencrypt/letsencrypt.log</span><br><span class="line"></span><br><span class="line">Which names would you like to activate HTTPS for?</span><br><span class="line">We recommend selecting either all domains, or all domains in a VirtualHost/server block.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">1: api.你的域名.com</span><br><span class="line">2: www.你的域名.com</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Select the appropriate numbers separated by commas and/or spaces, or leave input</span><br><span class="line">blank to select all options shown (Enter &#x27;c&#x27; to cancel): </span><br><span class="line">Requesting a certificate for api.你的域名.com and www.你的域名.com</span><br><span class="line"></span><br><span class="line">Successfully received certificate.</span><br><span class="line">Certificate is saved at: /etc/letsencrypt/live/api.你的域名.com/fullchain.pem</span><br><span class="line">Key is saved at:         /etc/letsencrypt/live/api.你的域名.com/privkey.pem</span><br><span class="line">This certificate expires on 2023-10-18.</span><br><span class="line">These files will be updated when the certificate renews.</span><br><span class="line">Certbot has set up a scheduled task to automatically renew this certificate in the background.</span><br><span class="line"></span><br><span class="line">Deploying certificate</span><br><span class="line">Successfully deployed certificate for api.你的域名.com to /etc/nginx/sites-enabled/lime</span><br><span class="line">Successfully deployed certificate for www.你的域名.com to /etc/nginx/sites-enabled/default</span><br><span class="line">Congratulations! You have successfully enabled HTTPS on https://api.你的域名.com and https://www.你的域名.com</span><br><span class="line"></span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">If you like Certbot, please consider supporting our work by:</span><br><span class="line"> * Donating to ISRG / Let&#x27;s Encrypt:   https://letsencrypt.org/donate</span><br><span class="line"> * Donating to EFF:                    https://eff.org/donate-le</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="三、摘取文档【certbot】-："><a href="#三、摘取文档【certbot】-：" class="headerlink" title="三、摘取文档【certbot】 ："></a>三、摘取文档<a href="https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7">【certbot】</a> ：</h2><h3 id="1-SSH-into-the-server"><a href="#1-SSH-into-the-server" class="headerlink" title="1. SSH into the server"></a>1. SSH into the server</h3><p>SSH into the server running your HTTP website as a user with sudo privileges.</p>
+<h3 id="2-Install-snapd"><a href="#2-Install-snapd" class="headerlink" title="2.  Install snapd"></a>2.  Install snapd</h3><p>You’ll need to install snapd and make sure you follow any instructions to enable classic snap support.</p>
+<p>Follow these instructions on <a href="https://snapcraft.io/docs/installing-snapd/">snapcraft’s site to install snapd</a>.</p>
+<p><a href="https://snapcraft.io/docs/installing-snapd/">install snapd</a></p>
+<h3 id="3-Remove-certbot-auto-and-any-Certbot-OS-packages"><a href="#3-Remove-certbot-auto-and-any-Certbot-OS-packages" class="headerlink" title="3. Remove certbot-auto and any Certbot OS packages"></a>3. Remove certbot-auto and any Certbot OS packages</h3><p>If you have any Certbot packages installed using an OS package manager like <code>apt</code>, <code>dnf</code>, or <code>yum</code>, you should remove them before installing the Certbot snap to ensure that when you run the command <code>certbot</code> the snap is used rather than the installation from your OS package manager. The exact command to do this depends on your OS, but common examples are <code>sudo apt-get remove certbot</code>, <code>sudo dnf remove certbot</code>, or <code>sudo yum remove certbot</code>.</p>
+<h3 id="4-Install-Certbot"><a href="#4-Install-Certbot" class="headerlink" title="4. Install Certbot"></a>4. Install Certbot</h3><p>Run this command on the command line on the machine to install Certbot.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo snap install --classic certbot</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Prepare-the-Certbot-command"><a href="#5-Prepare-the-Certbot-command" class="headerlink" title="5. Prepare the Certbot command"></a>5. Prepare the Certbot command</h3><p>Execute the following instruction on the command line on the machine to ensure that the <code>certbot</code> command can be run.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Choose-how-you’d-like-to-run-Certbot"><a href="#6-Choose-how-you’d-like-to-run-Certbot" class="headerlink" title="6. Choose how you’d like to run Certbot"></a>6. Choose how you’d like to run Certbot</h3><p>Either get and install your certificates…</p>
+<p>Run this command to get a certificate and have Certbot edit your  nginx configuration automatically to serve it, turning on HTTPS access  in a single step.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+
+<p>Or, just get a certificate</p>
+<p>If you’re feeling more conservative and would like to make the changes to your nginx configuration by hand, run this command.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot certonly --nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-Test-automatic-renewal"><a href="#7-Test-automatic-renewal" class="headerlink" title="7. Test automatic renewal"></a>7. Test automatic renewal</h3><p>The Certbot packages on your system come with a cron job or systemd timer that will renew your certificates automatically before they  expire. You will not need to run Certbot again, unless you change your  configuration. You can test automatic renewal for your certificates by  running this command:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+
+<p>The command to renew certbot is installed in one of the following locations:</p>
+<ul>
+<li><code>/etc/crontab/</code></li>
+<li><code>/etc/cron.*/*</code></li>
+<li><code>systemctl list-timers</code></li>
+</ul>
+<h3 id="8-Confirm-that-Certbot-worked"><a href="#8-Confirm-that-Certbot-worked" class="headerlink" title="8. Confirm that Certbot worked"></a>8. Confirm that Certbot worked</h3><p>To confirm that your site is set up properly, visit <code>https://yourwebsite.com/</code> in your browser and look for the lock icon in the URL bar.</p>
+]]></content>
+      <categories>
+        <category>Web后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Letsencrypt-SSL-证书脚本acme.sh</title>
+    <url>/Web%E5%90%8E%E7%AB%AF/Letsencrypt-SSL-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p><a href="https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E">acme.sh</a> 可以从 letsencrypt 生成免费的证书,自动更新.</p>
+]]></content>
+      <categories>
+        <category>Web后端</category>
       </categories>
   </entry>
 </search>
