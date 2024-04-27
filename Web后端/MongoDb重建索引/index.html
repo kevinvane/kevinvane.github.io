@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="问题：原有的索引没有 unique 唯一属性，为其添加 unique 。 一、查询索引12345678910111213141516171819mgset-44912522:PRIMARY&gt; db.user.getIndexes()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDb重建索引">
+<meta property="og:url" content="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MongoDb%E9%87%8D%E5%BB%BA%E7%B4%A2%E5%BC%95/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="问题：原有的索引没有 unique 唯一属性，为其添加 unique 。 一、查询索引12345678910111213141516171819mgset-44912522:PRIMARY&gt; db.user.getIndexes()">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-15T13:52:36.000Z">
+<meta property="article:modified_time" content="2024-04-16T02:39:28.278Z">
+<meta property="article:author" content="KevinWen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MongoDb%E9%87%8D%E5%BB%BA%E7%B4%A2%E5%BC%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MongoDb重建索引 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Web%E5%90%8E%E7%AB%AF/MongoDb%E9%87%8D%E5%BB%BA%E7%B4%A2%E5%BC%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MongoDb重建索引
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-15 21:52:36" itemprop="dateCreated datePublished" datetime="2024-04-15T21:52:36+08:00">2024-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-16 10:39:28" itemprop="dateModified" datetime="2024-04-16T10:39:28+08:00">2024-04-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>问题：原有的索引没有 <code>unique</code> 唯一属性，为其添加 <code>unique</code> 。</p>
+<h3 id="一、查询索引"><a href="#一、查询索引" class="headerlink" title="一、查询索引"></a>一、查询索引</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">mgset-44912522:PRIMARY&gt; db.user.getIndexes()                                                                                    </span><br><span class="line">[                                                                                                                               </span><br><span class="line">        &#123;                                                                                                                       </span><br><span class="line">                &quot;v&quot; : 2,                                                                                                        </span><br><span class="line">                &quot;key&quot; : &#123;                                                                                                       </span><br><span class="line">                        &quot;_id&quot; : 1                                                                                               </span><br><span class="line">                &#125;,                                                                                                              </span><br><span class="line">                &quot;name&quot; : &quot;_id_&quot;,                                                                                                </span><br><span class="line">                &quot;ns&quot; : &quot;mydb.user&quot;                                                                                             </span><br><span class="line">        &#125;,                                                                                                                      </span><br><span class="line">        &#123;                                                                                                                       </span><br><span class="line">                &quot;v&quot; : 2,                                                                                                        </span><br><span class="line">                &quot;key&quot; : &#123;                                                                                                       </span><br><span class="line">                        &quot;username&quot; : 1                                                                                             </span><br><span class="line">                &#125;,                                                                                                              </span><br><span class="line">                &quot;name&quot; : &quot;username&quot;,                                                                                               </span><br><span class="line">                &quot;ns&quot; : &quot;mydb.user&quot;                                                                                             </span><br><span class="line">        &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>接下来，给username索引增加唯一属性，要先删除旧索引，再重新建立新的索引。</p>
+<h3 id="二、删除索引"><a href="#二、删除索引" class="headerlink" title="二、删除索引"></a>二、删除索引</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mgset-44912522:PRIMARY&gt; db.user.dropIndex(&#x27;username&#x27;)                                                                              </span><br><span class="line">&#123;                                                                                                                               </span><br><span class="line">        &quot;nIndexesWas&quot; : 3,                                                                                                      </span><br><span class="line">        &quot;ok&quot; : 1,                                                                                                               </span><br><span class="line">        &quot;$clusterTime&quot; : &#123;                                                                                                      </span><br><span class="line">                &quot;clusterTime&quot; : Timestamp(1713167379, 1),                                                                       </span><br><span class="line">                &quot;signature&quot; : &#123;                                                                                                 </span><br><span class="line">                        &quot;hash&quot; : BinData(0,&quot;sRHeElmSwQZdxoUt6OU0PIZhnOc=&quot;),                                                     </span><br><span class="line">                        &quot;keyId&quot; : NumberLong(&quot;7316702510742241281&quot;)                                                             </span><br><span class="line">                &#125;                                                                                                               </span><br><span class="line">        &#125;,                                                                                                                      </span><br><span class="line">        &quot;operationTime&quot; : Timestamp(1713167379, 1)                                                                              </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="三、重建索引"><a href="#三、重建索引" class="headerlink" title="三、重建索引"></a>三、重建索引</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mgset-44912522:PRIMARY&gt; db.user.createIndex(&#123; username: 1 &#125;, &#123; unique: true &#125;)        </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这个错误是由于数据中已经存在多个数据 &#123; username: \&quot;helloworld\&quot; &#125;，删除多余的保留一个即可。</span></span><br><span class="line">&#123;                                                                                                                               </span><br><span class="line">        &quot;operationTime&quot; : Timestamp(1713167425, 1),                                                                             </span><br><span class="line">        &quot;ok&quot; : 0,                                                                                                               </span><br><span class="line">        &quot;errmsg&quot; : &quot;E11000 duplicate key error collection: mydb.user index: username_1 dup key: &#123; username: \&quot;helloworld\&quot; &#125;&quot;,      </span><br><span class="line">        &quot;code&quot; : 11000,                                                                                                         </span><br><span class="line">        &quot;codeName&quot; : &quot;DuplicateKey&quot;,                                                                                            </span><br><span class="line">        &quot;keyPattern&quot; : &#123;                                                                                                        </span><br><span class="line">                &quot;username&quot; : 1                                                                                                     </span><br><span class="line">        &#125;,                                                                                                                      </span><br><span class="line">        &quot;keyValue&quot; : &#123;                                                                                                          </span><br><span class="line">                &quot;username&quot; : &quot;helloworld&quot;                                                                                         </span><br><span class="line">        &#125;,                                                                                                                      </span><br><span class="line">        &quot;$clusterTime&quot; : &#123;                                                                                                      </span><br><span class="line">                &quot;clusterTime&quot; : Timestamp(1713167425, 1),                                                                       </span><br><span class="line">                &quot;signature&quot; : &#123;                                                                                                 </span><br><span class="line">                        &quot;hash&quot; : BinData(0,&quot;Tbzv65r2RnDFtVf1NSsZHD+ptTU=&quot;),                                                     </span><br><span class="line">                        &quot;keyId&quot; : NumberLong(&quot;7316702510742241281&quot;)                                                             </span><br><span class="line">                &#125;                                                                                                               </span><br><span class="line">        &#125;                                                                                                                       </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>数据删除之后，重新执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mgset-44912522:PRIMARY&gt; db.user.createIndex(&#123; username: 1 &#125;, &#123; unique: true &#125;)                         </span><br><span class="line">&#123;                                                                                                   </span><br><span class="line">        &quot;createdCollectionAutomatically&quot; : false,                                                   </span><br><span class="line">        &quot;numIndexesBefore&quot; : 2,                                                                     </span><br><span class="line">        &quot;numIndexesAfter&quot; : 3,                                                                      </span><br><span class="line">        &quot;ok&quot; : 1,                                                                                   </span><br><span class="line">        &quot;$clusterTime&quot; : &#123;                                                                          </span><br><span class="line">                &quot;clusterTime&quot; : Timestamp(1713167572, 2),                                           </span><br><span class="line">                &quot;signature&quot; : &#123;                                                                     </span><br><span class="line">                        &quot;hash&quot; : BinData(0,&quot;7baxP78Ao5NVroY+BdehOEhyrE4=&quot;),                         </span><br><span class="line">                        &quot;keyId&quot; : NumberLong(&quot;7316702510742241281&quot;)                                 </span><br><span class="line">                &#125;                                                                                   </span><br><span class="line">        &#125;,                                                                                          </span><br><span class="line">        &quot;operationTime&quot; : Timestamp(1713167572, 2)                                                  </span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+
+<h3 id="四、再次查询索引"><a href="#四、再次查询索引" class="headerlink" title="四、再次查询索引"></a>四、再次查询索引</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mgset-44912522:PRIMARY&gt; db.user.getIndexes()</span><br><span class="line">[                                                                                                   </span><br><span class="line">        &#123;                                                                                           </span><br><span class="line">                &quot;v&quot; : 2,                                                                            </span><br><span class="line">                &quot;key&quot; : &#123;                                                                           </span><br><span class="line">                        &quot;_id&quot; : 1                                                                   </span><br><span class="line">                &#125;,                                                                                  </span><br><span class="line">                &quot;name&quot; : &quot;_id_&quot;,                                                                    </span><br><span class="line">                &quot;ns&quot; : &quot;mydb.user&quot;                                                                 </span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;                                                                                           </span><br><span class="line">                &quot;v&quot; : 2,                                                                            </span><br><span class="line">                &quot;unique&quot; : true,                                                                    </span><br><span class="line">                &quot;key&quot; : &#123;                                                                           </span><br><span class="line">                        &quot;username&quot; : 1                                                                 </span><br><span class="line">                &#125;,                                                                                  </span><br><span class="line">                &quot;name&quot; : &quot;username_1&quot;,                                                                 </span><br><span class="line">                &quot;ns&quot; : &quot;mydb.user&quot;                                                                 </span><br><span class="line">        &#125;                                                                                           </span><br><span class="line">] </span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Glide%E5%9C%A8Kotlin%E4%B8%8A%E7%9A%84%E5%B0%8FBUG/" rel="prev" title="Glide在Kotlin上的小BUG">
+      <i class="fa fa-chevron-left"></i> Glide在Kotlin上的小BUG
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9A%8F%E7%AC%94/Win%20PE%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%B7%A5%E5%85%B7/" rel="next" title="Win PE系统盘">
+      Win PE系统盘 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%9F%A5%E8%AF%A2%E7%B4%A2%E5%BC%95"><span class="nav-number">1.</span> <span class="nav-text">一、查询索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%A0%E9%99%A4%E7%B4%A2%E5%BC%95"><span class="nav-number">2.</span> <span class="nav-text">二、删除索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%87%8D%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="nav-number">3.</span> <span class="nav-text">三、重建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%86%8D%E6%AC%A1%E6%9F%A5%E8%AF%A2%E7%B4%A2%E5%BC%95"><span class="nav-number">4.</span> <span class="nav-text">四、再次查询索引</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">378</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
