@@ -13227,22 +13227,6 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </tags>
   </entry>
   <entry>
-    <title>免费的终端神器MobaXterm</title>
-    <url>/%E9%9A%8F%E7%AC%94/%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BB%88%E7%AB%AF%E7%A5%9E%E5%99%A8MobaXterm/</url>
-    <content><![CDATA[<p>官网：<a href="https://mobaxterm.mobatek.net/">https://mobaxterm.mobatek.net/</a></p>
-<p>有收费的，但开源免费版足够使用：<br><a href="https://download.mobatek.net/2052020102712115/MobaXterm_Portable_v20.5.zip">https://download.mobatek.net/2052020102712115/MobaXterm_Portable_v20.5.zip</a></p>
-<p>支持SSH，FTP，串口，VNC，X server和标签。</p>
-<ul>
-<li>优点：<br>占用内存小，开一个标签时就30MB左右，支持同时输入多台机器。内置的远程目录非常方便，可以随时上传&#x2F;下载文件。</li>
-<li>缺点：<br>进后台一段时间会触发屏保（企鹅），鼠标点击一下可以关闭屏保（收费版可以永久关闭），但关闭之后使用会有一点点卡的感觉，可能就是台省着用内存的原因（Tabby一上来就用了250MB内存）。</li>
-</ul>
-<p><img src="/images/%E9%9A%8F%E7%AC%94/MobaXterm1.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/MobaXterm2.png"></p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>搜索过滤掉某网站</title>
     <url>/%E9%9A%8F%E7%AC%94/%E6%90%9C%E7%B4%A2%E8%BF%87%E6%BB%A4%E6%8E%89%E6%9F%90%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<p>自己搜索的内容含有 csdn.net 的，但这个网站要登录才能看，所以这些搜索结果是无用的，所以要过滤掉这些无用的结果。<br>如某搜索，这样搜索：<code>关键字 -site:csdn.net</code> 就是过滤掉 csdn.net 的搜索结果。</p>
@@ -13260,20 +13244,6 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
 <p><a href="http://www.jianshu.com/p/1f0b295874eb">ASCII Art：使用纯文本流程图</a></p>
 <p><a href="https://github.com/stathissideris/ditaa">ditaa</a></p>
 <p><a href="https://github.com/dozingcat/AsciiCam">AsciiCam</a></p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>开源的终端神器Tabby</title>
-    <url>/%E9%9A%8F%E7%AC%94/%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BB%88%E7%AB%AF%E7%A5%9E%E5%99%A8Tabby/</url>
-    <content><![CDATA[<p>官网：<a href="https://tabby.sh/">https://tabby.sh/</a><br>开源地址：<a href="https://github.com/Eugeny/tabby">https://github.com/Eugeny/tabby</a><br>下载地址：<a href="https://github.com/Eugeny/tabby/releases/tag/v1.0.169">https://github.com/Eugeny/tabby/releases/tag/v1.0.169</a></p>
-<p><code>Tabby</code>（原名 <code>Terminus</code>）是一个简洁风格的终端，支持 <code>SSH</code> 、串口、<code>Raw Socket</code> 和 <code>Telent</code>，使用 <code>TypeScript</code> + <code>Electron</code> 开发。</p>
-<p>缺点：Electron开发的东西通病-&gt; 安装包大（解压大概338MB），占用内存高（一个标签大概要250MB内存）<br>优点：界面流畅、简洁</p>
-<p><img src="/images/%E9%9A%8F%E7%AC%94/tabby_1.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_1_a.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_2.png"></p>
-<p>新建一个SSH会话<br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_3.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_4.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_5.png"></p>
-<p>快捷入口&amp;连接历史<br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_6.png"></p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -16537,6 +16507,33 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
       <tags>
         <tag>PE,PE系统,U盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免费的终端神器</title>
+    <url>/%E9%9A%8F%E7%AC%94/%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BB%88%E7%AB%AF%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="MobaXterm"><a href="#MobaXterm" class="headerlink" title="MobaXterm"></a>MobaXterm</h2><p>官网：<a href="https://mobaxterm.mobatek.net/">https://mobaxterm.mobatek.net/</a></p>
+<p>有收费的，但开源免费版足够使用：<br><a href="https://download.mobatek.net/2052020102712115/MobaXterm_Portable_v20.5.zip">https://download.mobatek.net/2052020102712115/MobaXterm_Portable_v20.5.zip</a></p>
+<p>支持SSH，FTP，串口，VNC，X server和标签。</p>
+<ul>
+<li>优点：<br>占用内存小，开一个标签时就30MB左右，支持同时输入多台机器。内置的远程目录非常方便，可以随时上传&#x2F;下载文件。</li>
+<li>缺点：<br>进后台一段时间会触发屏保（企鹅），鼠标点击一下可以关闭屏保（收费版可以永久关闭），但关闭之后使用会有一点点卡的感觉，可能就是台省着用内存的原因（Tabby一上来就用了250MB内存）。</li>
+</ul>
+<p><img src="/images/%E9%9A%8F%E7%AC%94/MobaXterm1.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/MobaXterm2.png"></p>
+<h2 id="Tabby"><a href="#Tabby" class="headerlink" title="Tabby"></a>Tabby</h2><p>官网：<a href="https://tabby.sh/">https://tabby.sh/</a><br>开源地址：<a href="https://github.com/Eugeny/tabby">https://github.com/Eugeny/tabby</a><br>下载地址：<a href="https://github.com/Eugeny/tabby/releases/tag/v1.0.169">https://github.com/Eugeny/tabby/releases/tag/v1.0.169</a></p>
+<p><code>Tabby</code>（原名 <code>Terminus</code>）是一个简洁风格的终端，支持 <code>SSH</code> 、串口、<code>Raw Socket</code> 和 <code>Telent</code>，使用 <code>TypeScript</code> + <code>Electron</code> 开发。</p>
+<p>缺点：Electron开发的东西通病-&gt; 安装包大（解压大概338MB），占用内存高（一个标签大概要250MB内存）<br>优点：界面流畅、简洁</p>
+<p><img src="/images/%E9%9A%8F%E7%AC%94/tabby_1.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_1_a.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_2.png"></p>
+<p>新建一个SSH会话<br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_3.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_4.png"><br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_5.png"></p>
+<p>快捷入口&amp;连接历史<br><img src="/images/%E9%9A%8F%E7%AC%94/tabby_6.png"></p>
+<h2 id="Windterm"><a href="#Windterm" class="headerlink" title="Windterm"></a>Windterm</h2><p>官网: <a href="https://kingtoolbox.github.io/">https://kingtoolbox.github.io</a><br>开源地址：<a href="https://github.com/kingToolbox/WindTerm">https://github.com/kingToolbox/WindTerm</a></p>
+<p><img src="/images/%E9%9A%8F%E7%AC%94/windterm.png"></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>终端</tag>
       </tags>
   </entry>
 </search>
