@@ -6187,7 +6187,12 @@
     <title>Ubuntu安装Nodejs</title>
     <url>/Linux/Ubuntu%E5%AE%89%E8%A3%85NodeJS/</url>
     <content><![CDATA[<p>Ubuntu默认安装的Nodejs版本都是比较低的（差很多），无法编译Vue，所以要安装最新版本。<br>思路是先安装旧版本，再升级到最新版本。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 先安装旧版</span></span><br><span class="line">$ sudo apt install -y nodejs npm</span><br><span class="line"><span class="comment"># 2. 换源</span></span><br><span class="line">$ sudo npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 3. 安装工具 n (管理 node 版本)</span></span><br><span class="line">$ sudo npm install n -g</span><br><span class="line"><span class="comment"># 4. node升级安装最新版本</span></span><br><span class="line">$ sudo n stable</span><br><span class="line"><span class="comment"># 5. npm升级安装最新版本(要先升级node再升级npm)</span></span><br><span class="line">$ sudo npm install -g npm</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="安装（失效）"><a href="#安装（失效）" class="headerlink" title="安装（失效）"></a><del>安装（失效）</del></h2><blockquote>
+<p>网络原因，无法安装。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 先安装旧版</span></span><br><span class="line">$ sudo apt install -y nodejs npm</span><br><span class="line"><span class="comment"># 2. 换源</span></span><br><span class="line">$ sudo npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org （已停用）</span><br><span class="line">$ sudo npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：n方式安装，网络不通，装不了</span></span><br><span class="line"><span class="comment"># 3. 安装工具 n (管理 node 版本) </span></span><br><span class="line">$ sudo npm install n -g </span><br><span class="line"><span class="comment"># 4. node升级安装最新版本 </span></span><br><span class="line">$ sudo n stable </span><br><span class="line"><span class="comment"># 5. npm升级安装最新版本(要先升级node再升级npm) </span></span><br><span class="line">$ sudo npm install -g npm </span><br></pre></td></tr></table></figure>
+
+<h2 id="安装（推荐）"><a href="#安装（推荐）" class="headerlink" title="安装（推荐）"></a>安装（推荐）</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu</span></span><br><span class="line">$ curl-fsSLhttps://deb.nodesource.com/setup_20.x | sudo -Ebash -</span><br><span class="line">$ sudo apt update &amp;&amp; sudo apt install -y nodejs</span><br><span class="line">$ nodejs -v</span><br><span class="line">v20.17.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -16534,6 +16539,22 @@ console.log($.getParam(‘param‘,top.window.location.search)); //用于有ifra
       </categories>
       <tags>
         <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装 Gitlab Runner</title>
+    <url>/Linux/Ubuntu%E5%AE%89%E8%A3%85gitlab-runner/</url>
+    <content><![CDATA[<p>Gitlab流水线需要使用Gitlab Runner，这里介绍Ubuntu安装Gitlab Runner的方法。<br>Runner允许在一台机器上安装多个Runner，但每个Runner只能运行一个项目。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu</span></span><br><span class="line">$ curl -L<span class="string">&quot;https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh&quot;</span>| sudo bash</span><br><span class="line">$ sudo apt-get install gitlab-runner</span><br><span class="line"></span><br><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">$ curl -L<span class="string">&quot;https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh&quot;</span>| sudo bash</span><br><span class="line">$ sudo yum install gitlab-runner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动runner： 交互式</span></span><br><span class="line">sudo gitlab-runner register</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动runner： 无交互式</span></span><br><span class="line">sudo gitlab-runner register \</span><br><span class="line">  --non-interactive \</span><br><span class="line">  --url <span class="string">&quot;<span class="variable">$HOST</span>&quot;</span> \</span><br><span class="line">  --token <span class="string">&quot;<span class="variable">$RUNNER_TOKEN</span>&quot;</span> \</span><br><span class="line">  --executor: <span class="string">&quot;shell&quot;</span></span><br><span class="line">  --description <span class="string">&quot;shell runner&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数HOST是Gitlab地址，RUNNER_TOKEN是注册时生成的token</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>runner,gitlab</tag>
       </tags>
   </entry>
 </search>

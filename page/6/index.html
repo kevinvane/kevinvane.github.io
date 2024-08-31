@@ -199,6 +199,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">JDK 16 新特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-16 19:51:41" itemprop="dateCreated datePublished" datetime="2021-03-16T19:51:41+08:00">2021-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2021年03月16 <code>JDK 16</code> 发布，非 LTS 版本。</p>
+<p><a target="_blank" rel="noopener" href="http://openjdk.java.net/projects/jdk/16/">新特性: http://openjdk.java.net/projects/jdk/16/</a></p>
+<ul>
+<li>338: 	Vector API (Incubator)</li>
+<li>347: 	Enable C++14 Language Features</li>
+<li>357: 	Migrate from Mercurial to Git</li>
+<li>369: 	Migrate to GitHub</li>
+<li>376: 	ZGC: Concurrent Thread-Stack Processing</li>
+<li>380: 	Unix-Domain Socket Channels</li>
+<li>386: 	Alpine Linux Port</li>
+<li>387: 	Elastic Metaspace</li>
+<li>388: 	Windows&#x2F;AArch64 Port</li>
+<li>389: 	Foreign Linker API (Incubator)</li>
+<li>390: 	Warnings for Value-Based Classes</li>
+<li>392: 	Packaging Tool</li>
+<li>393: 	Foreign-Memory Access API (Third Incubator)</li>
+<li>394: 	Pattern Matching for instanceof</li>
+<li>395: 	Records</li>
+<li>396: 	Strongly Encapsulate JDK Internals by Default</li>
+<li>397: 	Sealed Classes (Second Preview)</li>
+</ul>
+<p>中文</p>
+<ul>
+<li>338: 	提供了Vector API (jdk.incubator.vector)来用于矢量计算</li>
+<li>347: 	在JDK C++的源码中允许使用C++14的语言特性</li>
+<li>357: 	OpenJDK源码的版本控制从Mercurial (hg) 迁移到git</li>
+<li>369: 	将OpenJDK源码的版本控制迁移到 GitHub</li>
+<li>376: 	ZGC: 实现了并发thread-stack处理来降低GC safepoints的负担</li>
+<li>380: 	对 Socket Channels 及 Server ocket Channels的api提供对unix domain socket的支持</li>
+<li>386: 	将glibc的jdk移植到使用musl的alpine linux上</li>
+<li>387: 	支持不再使用的class metadata归还内存给操作系统，降低内存占用</li>
+<li>388: 	移植JDK到Windows&#x2F;AArch64</li>
+<li>389: 	提供jdk.incubator.foreign来简化native code的调用</li>
+<li>390: 	提供 @jdk.internal.ValueBased 来用于标注作为value-based的类</li>
+<li>392: 	jpackage在JDK14引入，JDK15作为incubating工具，在JDK16转正</li>
+<li>393: 	Foreign-Memory Access API在JDK14首次引入作为incubating API，在JDK15处于第二轮incubating，在JDK16处于第三轮incubating</li>
+<li>394: 	instanceof的模式匹配在JDK14作为preview，在JDK15作为第二轮的preview，在JDK16转正</li>
+<li>395: 	Record类型在JDK14作为preview，在JDK15处于第二轮preview，在JDK16转正</li>
+<li>396: 	对内部的api进行更多的封装，鼓励开发者从使用内部的方法迁移到标准的API</li>
+<li>397: 	Sealed Classes在JDK15作为preview引入，在JDK16作为第二轮preview</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Java/JDK%2016%20%E6%96%B0%E7%89%B9%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20MediaCodec%E7%A1%AC%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1806,92 +1927,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
-      <meta itemprop="name" content="KevinWen">
-      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="咸鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">黑马程序员JVM学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 21:52:36" itemprop="dateCreated datePublished" datetime="2020-08-03T21:52:36+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-09 10:26:25" itemprop="dateModified" datetime="2023-08-09T10:26:25+08:00">2023-08-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文是<a target="_blank" rel="noopener" href="https://b23.tv/AYSxdj"><strong>【黑马程序员JVM完整教程，全网超高评价，全程干货不拖沓-哔哩哔哩】</strong></a>教学视频学习所做的笔记</p>
-<blockquote>
-<p>部分笔记内容拷贝自<a target="_blank" rel="noopener" href="https://nyimac.gitee.io/2020/07/03/JVM%E5%AD%A6%E4%B9%A0/#1%E3%80%81%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8">【JVM学习】</a></p>
-</blockquote>
-<p><img src="/images/java/jvm/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.png"></p>
-<h2 id="一、什么是JVM"><a href="#一、什么是JVM" class="headerlink" title="一、什么是JVM"></a>一、什么是JVM</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Java/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1962,7 +1997,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">377</span>
+          <span class="site-state-item-count">378</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1974,7 +2009,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
