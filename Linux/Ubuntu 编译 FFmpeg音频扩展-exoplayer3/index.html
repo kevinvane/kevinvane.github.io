@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="项目使用了【exoplayer3】 ，播放MP4 AAC音频硬解码不支持，切换到软解AAC效果不理想，考虑使用FFmpeg扩展来实现音频软解码 。 一、软件环境 Ubuntu 24.04 Server Android SDK NDK r25b (“ndk;25.1.8937393”) 和 cmake exoplayer3 release-1.5.0-alpha01  编译所需软件 12$ su$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 编译 FFmpeg 扩展 exoplayer3 音频软解码">
+<meta property="og:url" content="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg%E9%9F%B3%E9%A2%91%E6%89%A9%E5%B1%95-exoplayer3/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="项目使用了【exoplayer3】 ，播放MP4 AAC音频硬解码不支持，切换到软解AAC效果不理想，考虑使用FFmpeg扩展来实现音频软解码 。 一、软件环境 Ubuntu 24.04 Server Android SDK NDK r25b (“ndk;25.1.8937393”) 和 cmake exoplayer3 release-1.5.0-alpha01  编译所需软件 12$ su$">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-16T15:52:36.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:36:20.073Z">
+<meta property="article:author" content="KevinWen">
+<meta property="article:tag" content="exoplayer">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg%E9%9F%B3%E9%A2%91%E6%89%A9%E5%B1%95-exoplayer3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Ubuntu 编译 FFmpeg 扩展 exoplayer3 音频软解码 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg%E9%9F%B3%E9%A2%91%E6%89%A9%E5%B1%95-exoplayer3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 编译 FFmpeg 扩展 exoplayer3 音频软解码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-10-16 23:52:36" itemprop="dateCreated datePublished" datetime="2024-10-16T23:52:36+08:00">2024-10-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>项目使用了<a target="_blank" rel="noopener" href="https://github.com/androidx/media">【exoplayer3】</a> ，播放MP4 AAC音频硬解码不支持，切换到软解AAC效果不理想，考虑使用FFmpeg扩展来实现音频软解码 。</p>
+<h2 id="一、软件环境"><a href="#一、软件环境" class="headerlink" title="一、软件环境"></a>一、软件环境</h2><ol>
+<li>Ubuntu 24.04 Server</li>
+<li>Android SDK</li>
+<li>NDK r25b (“ndk;25.1.8937393”) 和 cmake</li>
+<li>exoplayer3 release-1.5.0-alpha01</li>
+</ol>
+<p>编译所需软件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su</span><br><span class="line">$ apt update &amp; apt install openjdk-17-jdk unzip -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、编译"><a href="#二、编译" class="headerlink" title="二、编译"></a>二、编译</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line">wget -q https://googledownloads.cn/android/repository/commandlinetools-linux-11076708_latest.zip</span><br><span class="line">&lt;!-- wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip--&gt;</span><br><span class="line">unzip -qq commandlinetools-linux-7583922_latest.zip</span><br><span class="line"><span class="built_in">mkdir</span> -p android-sdk/cmdline-tools &amp;&amp; <span class="built_in">mv</span> cmdline-tools <span class="variable">$_</span>/latest</span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=<span class="variable">$PWD</span>/android-sdk</span><br><span class="line"><span class="built_in">export</span> ANDROID_SDK_ROOT=<span class="variable">$ANDROID_HOME</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_HOME</span>/cmdline-tools/latest/bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> y | sdkmanager --update</span><br><span class="line"><span class="built_in">echo</span> y | sdkmanager --install <span class="string">&quot;ndk;25.1.8937393&quot;</span></span><br><span class="line"><span class="built_in">export</span> NDK_PATH=<span class="variable">$ANDROID_HOME</span>/ndk/25.1.8937393</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同意授权</span></span><br><span class="line"><span class="built_in">echo</span> y | sdkmanager --licenses</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果sdkmanager网络不通，可以手动下载NDK</span></span><br><span class="line"><span class="comment"># sdkmanager download ndk fail. change to wget download</span></span><br><span class="line"><span class="comment"># wget -q https://googledownloads.cn/android/repository/android-ndk-r27-linux.zip</span></span><br><span class="line"><span class="comment"># &lt;!-- wget -q https://dl.google.com/android/repository/android-ndk-r27-linux.zip--&gt;</span></span><br><span class="line"><span class="comment"># unzip -qq android-ndk-r27-linux.zip</span></span><br><span class="line"><span class="comment"># cd android-ndk-r27-linux</span></span><br><span class="line"><span class="comment"># export NDK_PATH=$PWD</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> -rf /usr/local/bin/cmake</span><br><span class="line"><span class="built_in">ln</span> -s <span class="variable">$NDK_PATH</span>/prebuilt/linux-x86_64/bin/make /usr/bin/make</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># release 1.4.1 分支有BUG，https://github.com/androidx/media/issues/992</span></span><br><span class="line"><span class="comment"># git checkout b930b40a16c06318e43c81771fa2b1024bdb3f29  此commit修复 992 BUG</span></span><br><span class="line">git <span class="built_in">clone</span> -b release-1.5.0-alpha01 https://github.com/androidx/media</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> MEDIA_PATH=<span class="string">&quot;<span class="variable">$PWD</span>/media&quot;</span></span><br><span class="line"><span class="built_in">export</span> FFMPEG_MODULE_PATH=<span class="string">&quot;<span class="variable">$MEDIA_PATH</span>/libraries/decoder_ffmpeg/src/main&quot;</span></span><br><span class="line"><span class="built_in">export</span> HOST_PLATFORM=<span class="string">&quot;linux-x86_64&quot;</span></span><br><span class="line"><span class="built_in">export</span> ANDROID_ABI=21</span><br><span class="line"><span class="comment"># export ENABLED_DECODERS=(vorbis opus flac alac pcm_mulaw pcm_alaw mp3 amrnb amrwb aac ac3 eac3 dca mlp truehd)</span></span><br><span class="line"><span class="comment"># 此处仅支持alac、aac</span></span><br><span class="line"><span class="built_in">export</span> ENABLED_DECODERS=(alac aac)</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$FFMPEG_MODULE_PATH</span>/jni</span><br><span class="line">git <span class="built_in">clone</span> -b <span class="string">&quot;release/6.0&quot;</span> git://source.ffmpeg.org/ffmpeg</span><br><span class="line"><span class="built_in">export</span> FFMPEG_PATH=<span class="variable">$PWD</span>/ffmpeg</span><br><span class="line"><span class="built_in">ln</span> -s <span class="string">&quot;<span class="variable">$FFMPEG_PATH</span>&quot;</span> ffmpeg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译 ffmpeg</span></span><br><span class="line">./build_ffmpeg.sh <span class="variable">$FFMPEG_MODULE_PATH</span> <span class="variable">$NDK_PATH</span> <span class="variable">$HOST_PLATFORM</span> <span class="variable">$ANDROID_ABI</span> <span class="variable">$&#123;ENABLED_DECODERS[@]&#125;</span></span><br><span class="line"><span class="comment"># 编译成功，库文件在 $FFMPEG_MODULE_PATH/jni/ffmpeg/android-libs</span></span><br><span class="line">tree <span class="variable">$FFMPEG_MODULE_PATH</span>/jni/ffmpeg/android-libs</span><br><span class="line"><span class="comment"># .</span></span><br><span class="line"><span class="comment"># ├── arm64-v8a</span></span><br><span class="line"><span class="comment"># │   ├── libavcodec.a</span></span><br><span class="line"><span class="comment"># │   ├── libavutil.a</span></span><br><span class="line"><span class="comment"># │   └── libswresample.a</span></span><br><span class="line"><span class="comment"># ├── armeabi-v7a</span></span><br><span class="line"><span class="comment"># │   ├── libavcodec.a</span></span><br><span class="line"><span class="comment"># │   ├── libavutil.a</span></span><br><span class="line"><span class="comment"># │   └── libswresample.a</span></span><br><span class="line"><span class="comment"># ├── x86</span></span><br><span class="line"><span class="comment"># │   ├── libavcodec.a</span></span><br><span class="line"><span class="comment"># │   ├── libavutil.a</span></span><br><span class="line"><span class="comment"># │   └── libswresample.a</span></span><br><span class="line"><span class="comment"># └── x86_64</span></span><br><span class="line"><span class="comment">#     ├── libavcodec.a</span></span><br><span class="line"><span class="comment">#     ├── libavutil.a</span></span><br><span class="line"><span class="comment">#     └── libswresample.a</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译 lib-decoder-ffmpeg</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$MEDIA_PATH</span></span><br><span class="line"><span class="comment"># 国内加速：distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-x-bin.zip</span></span><br><span class="line">./gradlew lib-decoder-ffmpeg:assembleRelease</span><br><span class="line"><span class="comment"># 编译产物</span></span><br><span class="line"><span class="built_in">cd</span> /media/libraries/decoder_ffmpeg/buildout/outputs/aar/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三、错误解决"><a href="#三、错误解决" class="headerlink" title="三、错误解决"></a>三、错误解决</h2><p><code>./gradlew lib-decoder-ffmpeg:assembleRelease</code> 编译发生了很多关于的C++错误，主要的原因还是版本的兼容问题。<br>比如： ndk 版本，<code>ANDROID_ABI</code> 版本等等。比如手动下载并指定了 <code>NDK 27</code> 版本，但是编译进行中C++工具链会指向 <code>ndk 25</code> 版本，导致编译失败。</p>
+<p>比如以下错误信息: </p>
+<p>环境变量 <code>export ANDROID_ABI=23</code> 在日志中看到 <code>aarch64-linux-android/21/liblog.so</code> 链接到了 <code>ABI-21</code>，然后发生错误.<br>** 改为 <code>ABI</code> 是 <code>21</code> 问题解决**</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">root@cnserver:/opt/media<span class="comment"># ./gradlew lib-decoder-ffmpeg:assembleRelease</span></span><br><span class="line"></span><br><span class="line">&gt; Configure project :demo</span><br><span class="line">WARNING: The option setting <span class="string">&#x27;android.jetifier.ignorelist=bcprov&#x27;</span> is experimental.</span><br><span class="line">WARNING: We recommend using a newer Android Gradle plugin to use compileSdk = 34</span><br><span class="line"></span><br><span class="line">This Android Gradle plugin (8.0.1) was tested up to compileSdk = 33.</span><br><span class="line"></span><br><span class="line">You are strongly encouraged to update your project to use a newer</span><br><span class="line">Android Gradle plugin that has been tested with compileSdk = 34.</span><br><span class="line"></span><br><span class="line">If you are already using the latest version of the Android Gradle plugin,</span><br><span class="line">you may need to <span class="built_in">wait</span> <span class="keyword">until</span> a newer version with support <span class="keyword">for</span> compileSdk = 34 is available.</span><br><span class="line"></span><br><span class="line">To suppress this warning, add/update</span><br><span class="line">    android.suppressUnsupportedCompileSdk=34</span><br><span class="line">to this project<span class="string">&#x27;s gradle.properties.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; Task :lib-decoder-ffmpeg:buildCMakeRelWithDebInfo[arm64-v8a] FAILED</span></span><br><span class="line"><span class="string">C/C++: ninja: Entering directory `/opt/media/libraries/decoder_ffmpeg/.cxx/RelWithDebInfo/3f254l4a/arm64-v8a&#x27;</span></span><br><span class="line">C/C++: : &amp;&amp; /opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --sysroot=/opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG  -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments    -Wl,-Bsymbolic -shared -Wl,-soname,libffmpegJNI.so -o /opt/media/libraries/decoder_ffmpeg/buildout/intermediates/cxx/RelWithDebInfo/3f254l4a/obj/arm64-v8a/libffmpegJNI.so CMakeFiles/ffmpegJNI.<span class="built_in">dir</span>/ffmpeg_jni.cc.o  -landroid  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libswresample.a  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavcodec.a  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a  /opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/liblog.so  -latomic -lm &amp;&amp; :</span><br><span class="line">C/C++: ld: error: undefined symbol: stderr</span><br><span class="line">C/C++: &gt;&gt;&gt; referenced by log.c:380 (libavutil/log.c:380)</span><br><span class="line">C/C++: &gt;&gt;&gt;               log.o:(av_log_default_callback) <span class="keyword">in</span> archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span><br><span class="line">C/C++: &gt;&gt;&gt; referenced by log.c:380 (libavutil/log.c:380)</span><br><span class="line">C/C++: &gt;&gt;&gt;               log.o:(av_log_default_callback) <span class="keyword">in</span> archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span><br><span class="line">C/C++: &gt;&gt;&gt; referenced by log.c:384 (libavutil/log.c:384)</span><br><span class="line">C/C++: &gt;&gt;&gt;               log.o:(av_log_default_callback) <span class="keyword">in</span> archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span><br><span class="line">C/C++: &gt;&gt;&gt; referenced 7 more <span class="built_in">times</span></span><br><span class="line">C/C++: clang++: error: linker <span class="built_in">command</span> failed with <span class="built_in">exit</span> code 1 (use -v to see invocation)</span><br><span class="line">C/C++: ninja: build stopped: subcommand failed.</span><br><span class="line"></span><br><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">&#x27;:lib-decoder-ffmpeg:buildCMakeRelWithDebInfo[arm64-v8a]&#x27;</span>.</span><br><span class="line">&gt; com.android.ide.common.process.ProcessException: ninja: Entering directory `/opt/media/libraries/decoder_ffmpeg/.cxx/RelWithDebInfo/3f254l4a/arm64-v8a<span class="string">&#x27;</span></span><br><span class="line"><span class="string">  [1/2] Building CXX object CMakeFiles/ffmpegJNI.dir/ffmpeg_jni.cc.o</span></span><br><span class="line"><span class="string">  [2/2] Linking CXX shared library /opt/media/libraries/decoder_ffmpeg/buildout/intermediates/cxx/RelWithDebInfo/3f254l4a/obj/arm64-v8a/libffmpegJNI.so</span></span><br><span class="line"><span class="string">  FAILED: /opt/media/libraries/decoder_ffmpeg/buildout/intermediates/cxx/RelWithDebInfo/3f254l4a/obj/arm64-v8a/libffmpegJNI.so </span></span><br><span class="line"><span class="string">  : &amp;&amp; /opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --sysroot=/opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG  -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments    -Wl,-Bsymbolic -shared -Wl,-soname,libffmpegJNI.so -o /opt/media/libraries/decoder_ffmpeg/buildout/intermediates/cxx/RelWithDebInfo/3f254l4a/obj/arm64-v8a/libffmpegJNI.so CMakeFiles/ffmpegJNI.dir/ffmpeg_jni.cc.o  -landroid  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libswresample.a  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavcodec.a  /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a  /opt/android-sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/liblog.so  -latomic -lm &amp;&amp; :</span></span><br><span class="line"><span class="string">  ld: error: undefined symbol: stderr</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt; referenced by log.c:380 (libavutil/log.c:380)</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt;               log.o:(av_log_default_callback) in archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt; referenced by log.c:380 (libavutil/log.c:380)</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt;               log.o:(av_log_default_callback) in archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt; referenced by log.c:384 (libavutil/log.c:384)</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt;               log.o:(av_log_default_callback) in archive /opt/media/libraries/decoder_ffmpeg/src/main/jni/ffmpeg/android-libs/arm64-v8a/libavutil.a</span></span><br><span class="line"><span class="string">  &gt;&gt;&gt; referenced 7 more times</span></span><br><span class="line"><span class="string">  clang++: error: linker command failed with exit code 1 (use -v to see invocation)</span></span><br><span class="line"><span class="string">  ninja: build stopped: subcommand failed.</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  C++ build system [build] failed while executing:</span></span><br><span class="line"><span class="string">      /opt/android-sdk/cmake/3.22.1/bin/ninja \</span></span><br><span class="line"><span class="string">        -C \</span></span><br><span class="line"><span class="string">        /opt/media/libraries/decoder_ffmpeg/.cxx/RelWithDebInfo/3f254l4a/arm64-v8a \</span></span><br><span class="line"><span class="string">        ffmpegJNI</span></span><br><span class="line"><span class="string">    from /opt/media/libraries/decoder_ffmpeg</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">* Try:</span></span><br><span class="line"><span class="string">&gt; Run with --stacktrace option to get the stack trace.</span></span><br><span class="line"><span class="string">&gt; Run with --info or --debug option to get more log output.</span></span><br><span class="line"><span class="string">&gt; Run with --scan to get full insights.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">* Get more help at https://help.gradle.org</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">BUILD FAILED in 1s</span></span><br><span class="line"><span class="string">2 actionable tasks: 2 executed</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/exoplayer/" rel="tag"># exoplayer</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Linux/Ubuntu%E5%AE%89%E8%A3%85gitlab-runner/" rel="prev" title="Ubuntu 安装 Gitlab Runner">
+      <i class="fa fa-chevron-left"></i> Ubuntu 安装 Gitlab Runner
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9A%8F%E7%AC%94/Windows%20Terminal%E7%BE%8E%E5%8C%962/" rel="next" title="Windows Terminal美化2">
+      Windows Terminal美化2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">一、软件环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E8%AF%91"><span class="nav-number">2.</span> <span class="nav-text">二、编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3"><span class="nav-number">3.</span> <span class="nav-text">三、错误解决</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

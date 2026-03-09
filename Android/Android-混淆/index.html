@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="拷贝以下的内容（https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;build&#x2F;shrink-code.html），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。 压缩代码和资源 要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。代码压缩通过 ProGuard">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android-混淆">
+<meta property="og:url" content="http://yoursite.com/Android/Android-%E6%B7%B7%E6%B7%86/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="拷贝以下的内容（https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;build&#x2F;shrink-code.html），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。 压缩代码和资源 要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。代码压缩通过 ProGuard">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-08-30T01:52:36.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:36:20.063Z">
+<meta property="article:author" content="KevinWen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/Android/Android-%E6%B7%B7%E6%B7%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android-混淆 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android-%E6%B7%B7%E6%B7%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android-混淆
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-30 09:52:36" itemprop="dateCreated datePublished" datetime="2016-08-30T09:52:36+08:00">2016-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>拷贝以下的内容（<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html">https://developer.android.com/studio/build/shrink-code.html</a><br>），以防平时不能访问 ，有条件的可以访问原文，排版更好，看得舒服。</p>
+<p>压缩代码和资源</p>
+<p>要尽可能减小 APK 文件，您应该启用压缩来移除发布构建中未使用的代码和资源。此页面介绍如何执行该操作，以及如何指定要在构建时保留或舍弃的代码和资源。<br>代码压缩通过 ProGuard 提供，ProGuard 会检测和移除封装应用中未使用的类、字段、方法和属性，包括自带代码库中的未使用项（这使其成为以变通方式解决 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/multidex.html">64k 引用限制</a>的有用工具）。ProGuard 还可优化字节码，移除未使用的代码指令，以及用短名称混淆其余的类、字段和方法。混淆过的代码可令您的 APK 难以被逆向工程，这在应用使用<a target="_blank" rel="noopener" href="https://developer.android.com/google/play/licensing/overview.html">许可验证</a>等安全敏感性功能时特别有用。<br>资源压缩通过适用于 Gradle 的 Android 插件提供，该插件会移除封装应用中未使用的资源，包括代码库中未使用的资源。它可与代码压缩发挥协同效应，使得在移除未使用的代码后，任何不再被引用的资源也能安全地移除。<br>本文介绍的功能依赖下列组件：<br><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/sdk-tools.html">SDK Tools</a> 25.0.10 或更高版本<br><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/gradle-plugin.html">适用于 Gradle 的 Android 插件</a> 2.0.0 或更高版本</p>
+<p>压缩代码</p>
+<p>要通过 ProGuard 启用代码压缩，请在 build.gradle<br> 文件内相应的构建类型中添加 minifyEnabled true<br>。<br>请注意，代码压缩会拖慢构建速度，因此您应该尽可能避免在调试构建中使用。不过，重要的是您一定要为用于测试的最终 APK 启用代码压缩，因为如果您不能充分地<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html#keep-code">自定义要保留的代码</a>，可能会引入错误。<br>例如，下面这段来自 build.gradle<br> 文件的代码用于为发布构建启用代码压缩：<br>android { buildTypes { release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } } …}<br><strong>注</strong>：Android Studio 会在使用 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/run/index.html#instant-run">Instant Run</a> 时停用 ProGuard。如果您需要为增量式构建压缩代码，请尝试<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html#gradle-shrinker">试用 Gradle 压缩器</a>。<br>除了 minifyEnabled<br> 属性外，还有用于定义 ProGuard 规则的 proguardFiles<br> 属性：<br>getDefaultProguardFile(‘proguard-android.txt’)<br> 方法可从 Android SDK tools&#x2F;proguard&#x2F;<br> 文件夹获取默认的 ProGuard 设置。<strong>提示</strong>：要想做进一步的代码压缩，请尝试使用位于同一位置的 proguard-android-optimize.txt<br> 文件。它包括相同的 ProGuard 规则，但还包括其他在字节码一级（方法内和方法间）执行分析的优化，以进一步减小 APK 大小和帮助提高其运行速度。</p>
+<p>proguard-rules.pro<br> 文件用于添加自定义 ProGuard 规则。默认情况下，该文件位于模块根目录（build.gradle<br> 文件旁）。</p>
+<p>要添加更多各构建变体专用的 ProGuard 规则，请在相应的 productFlavor<br> 代码块中再添加一个 proguardFiles<br> 属性。例如，以下 Gradle 文件会向 flavor2<br> 产品定制添加 flavor2-rules.pro<br>。现在 flavor2<br> 使用所有三个 ProGuard 规则，因为还应用了来自 release<br> 代码块的规则。<br>android { … buildTypes { release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } } productFlavors { flavor1 { } flavor2 { proguardFile ‘flavor2-rules.pro’ } }}<br>每次构建时 ProGuard 都会输出下列文件：<br>dump.txt</p>
+<p>说明 APK 中所有类文件的内部结构。<br>mapping.txt</p>
+<p>提供原始与混淆过的类、方法和字段名称之间的转换。<br>seeds.txt</p>
+<p>列出未进行混淆的类和成员。<br>usage.txt</p>
+<p>列出从 APK 移除的代码。</p>
+<p>这些文件保存在 <module-name>&#x2F;build&#x2F;outputs&#x2F;mapping&#x2F;release&#x2F;<br> 中。<br>自定义要保留的代码<br>对于某些情况，默认 ProGuard 配置文件 (proguard-android.txt<br>) 足以满足需要，ProGuard 会移除所有（并且只会移除）未使用的代码。不过，ProGuard 难以对许多情况进行正确分析，可能会移除应用真正需要的代码。举例来说，它可能错误移除代码的情况包括：<br>当应用引用的类只来自 AndroidManifest.xml<br> 文件时<br>当应用调用的方法来自 Java 原生接口 (JNI) 时<br>当应用在运行时（例如使用反射或自检）操作代码时</p>
+<p>测试应用应该能够发现因不当移除的代码而导致的错误，但您也可以通过查看 <module-name>&#x2F;build&#x2F;outputs&#x2F;mapping&#x2F;release&#x2F;<br> 中保存的 usage.txt<br> 输出文件来检查移除了哪些代码。<br>要修正错误并强制 ProGuard 保留特定代码，请在 ProGuard 配置文件中添加一行 <a target="_blank" rel="noopener" href="https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/usage.html">-keep</a><br> 代码。例如：<br>-keep public class MyClass<br>或者，您可以向您想保留的代码添加 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/support/annotation/Keep.html">@Keep</a><br> 注解。在类上添加 @Keep<br> 可原样保留整个类。在方法或字段上添加它可完整保留方法&#x2F;字段（及其名称）以及类名称。请注意，只有在使用<a target="_blank" rel="noopener" href="https://developer.android.com/studio/write/annotations.html">注解支持库</a>时，才能使用此注解。<br>在使用 -keep<br> 选项时，有许多事项需要考虑；如需了解有关自定义配置文件的详细信息，请阅读 <a target="_blank" rel="noopener" href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html">ProGuard 手册</a>。<a target="_blank" rel="noopener" href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html">问题排查</a>一章概述了您可能会在混淆代码时遇到的其他常见问题。<br>解码混淆过的堆叠追踪<br>在 ProGuard 压缩代码后，读取堆叠追踪变得困难（即使并非不可行），因为方法名称经过了混淆处理。幸运的是，ProGuard 每次运行时都会创建一个 mapping.txt<br> 文件，其中显示了与混淆过的名称对应的原始类名称、方法名称和字段名称。ProGuard 将该文件保存在应用的 <module-name>&#x2F;build&#x2F;outputs&#x2F;mapping&#x2F;release&#x2F;<br> 目录中。<br>请注意，您每次使用 ProGuard 创建发布构建时都会覆盖 mapping.txt<br> 文件，因此您每次发布新版本时都必须小心地保存一个副本。通过为每个发布构建保留一个 mapping.txt<br> 文件副本，您就可以在用户提交的已混淆堆叠追踪来自旧版本应用时对问题进行调试。<br>在 Google Play 上发布应用时，您可以上传每个 APK 版本的 mapping.txt<br> 文件。Google Play 将根据用户报告的问题对收到的堆叠追踪进行去混淆处理，以便您在 Google Play Developer Console 中进行检查。如需了解详细信息，请参阅帮助中心有关如何<a target="_blank" rel="noopener" href="https://support.google.com/googleplay/android-developer/answer/6295281">对崩溃堆叠追踪进行去混淆处理</a>的文章。<br>要自行将混淆过的堆叠追踪转换成可读的堆叠追踪，请使用 retrace<br> 脚本（在 Windows 上为 retrace.bat<br>；在 Mac&#x2F;Linux 上为 retrace.sh<br>）。它位于 <sdk-root>&#x2F;tools&#x2F;proguard&#x2F;<br> 目录中。该脚本利用 mapping.txt<br> 文件和您的堆叠追踪生成新的可读堆叠追踪。使用 retrace 工具的语法如下：<br>retrace.bat|retrace.sh [-verbose] mapping.txt [<stacktrace_file>]<br>例如：<br>retrace.bat -verbose mapping.txt obfuscated_trace.txt<br>如果您不指定堆叠追踪文件，retrace 工具会从标准输入读取。<br>通过 Instant Run 启用代码压缩<br>如果代码压缩在您增量构建应用时非常重要，请尝试<a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/gradle-plugin.html">适用于 Gradle 的 Android 插件</a>内置的试用代码压缩器。与 ProGuard 不同，此压缩器支持 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/run/index.html#instant-run">Instant Run</a>。<br>您也可以使用与 ProGuard 相同的配置文件来配置 Android 插件压缩器。但是，<strong>Android 插件压缩器不会对您的代码进行混淆处理或优化</strong>，它只会删除未使用的代码。因此，您应该仅将其用于调试构建，并为发布构建启用 ProGuard，以便对发布 APK 的代码进行混淆处理和优化。<br>要启用 Android 插件压缩器，只需在 “debug” 构建类型中将 useProguard<br> 设置为 false<br>（并保留 minifyEnabled<br> 设置 true<br>）：<br>android { buildTypes { debug { minifyEnabled true <strong>useProguard false</strong> proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } release { minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } }}<br><strong>注</strong>：如果 Android 插件压缩器最初删除了某个方法，但您之后更改了代码，使该方法可访问，Instant Run 会将其视为<a target="_blank" rel="noopener" href="https://developer.android.com/studio/run/index.html#ir-table">结构代码更改</a>并执行冷交换。<br>压缩资源<br>资源压缩只与代码压缩协同工作。代码压缩器移除所有未使用的代码后，资源压缩器便可确定应用仍然使用的资源。这在您添加包含资源的代码库时体现得尤为明显 - 您必须移除未使用的库代码，使库资源变为未引用资源，才能通过资源压缩器将它们移除。<br>要启用资源压缩，请在 build.gradle<br> 文件中将 shrinkResources<br> 属性设置为 true<br>（在用于代码压缩的 minifyEnabled<br> 旁边）。例如：<br>android { … buildTypes { release { shrinkResources true minifyEnabled true proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’ } }}<br>如果您尚未使用代码压缩用途的 minifyEnabled<br> 构建应用，请先尝试使用它，然后再启用 shrinkResources<br>，因为您可能需要编辑 proguard-rules.pro<br>文件以保留动态创建或调用的类或方法，然后再开始移除资源。<br><strong>注</strong>：资源压缩器目前不会移除 values&#x2F;<br> 文件夹中定义的资源（例如字符串、尺寸、样式和颜色）。这是因为 Android 资源打包工具 (AAPT) 不允许 Gradle 插件为资源指定预定义版本。有关详情，请参阅<a target="_blank" rel="noopener" href="https://code.google.com/p/android/issues/detail?id=70869">问题 70869</a>。<br>自定义要保留的资源<br>如果您有想要保留或舍弃的特定资源，请在您的项目中创建一个包含 <resources><br> 标记的 XML 文件，并在 tools:keep<br> 属性中指定每个要保留的资源，在 tools:discard<br> 属性中指定每个要舍弃的资源。这两个属性都接受逗号分隔的资源名称列表。您可以使用星号字符作为通配符。<br>例如：<br><?xml version="1.0" encoding="utf-8"?><resources xmlns:tools="http://schemas.android.com/tools"    tools:keep="@layout/l_used*_c,@layout/l_used_a,@layout/l_used_b*"    tools:discard="@layout/unused2" /><br>将该文件保存在项目资源中，例如，保存在 res&#x2F;raw&#x2F;keep.xml<br>。构建不会将该文件打包到 APK 之中。<br>指定要舍弃的资源可能看似愚蠢，因为您本可将它们删除，但在使用构建变体时，这样做可能很有用。例如，如果您明知给定资源表面上会在代码中使用（并因此不会被压缩器移除），但实际不会用于给定构建变体，就可以将所有资源放入公用项目目录，然后为每个构建变体创建一个不同的 keep.xml<br> 文件。构建工具也可能无法根据需要正确识别资源，这是因为编译器会添加内联资源 ID，而资源分析器可能不知道真正引用的资源和恰巧具有相同值的代码中的整数值之间的差别。<br>启用严格引用检查<br>正常情况下，资源压缩器可准确判定系统是否使用了资源。不过，如果您的代码调用 [Resources.getIdentifier()](<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier">https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier</a>(java.lang.String, java.lang.String, java.lang.String))<br>（或您的任何库进行了这一调用 - <a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/support-library/features.html#v7-appcompat">AppCompat</a> 库会执行该调用），这就表示您的代码将根据动态生成的字符串查询资源名称。当您执行这一调用时，默认情况下资源压缩器会采取防御性行为，将所有具有匹配名称格式的资源标记为可能已使用，无法移除。<br>例如，以下代码会使所有带 img_<br> 前缀的资源标记为已使用。<br>String name &#x3D; String.format(“img_%1d”, angle + 1);res &#x3D; getResources().getIdentifier(name, “drawable”, getPackageName());<br>资源压缩器还会浏览代码以及各种 res&#x2F;raw&#x2F;<br> 资源中的所有字符串常量，寻找格式类似于 file:&#x2F;&#x2F;&#x2F;android_res&#x2F;drawable&#x2F;&#x2F;ic_plus_anim_016.png<br> 的资源网址。如果它找到与其类似的字符串，或找到其他看似可用来构建与其类似的网址的字符串，则不会将它们移除。<br>这些是默认情况下启用的安全压缩模式的示例。但您可以停用这一“有备无患”处理方式，并指定资源压缩器只保留其确定已使用的资源。要执行此操作，请在 keep.xml<br> 文件中将 shrinkMode<br> 设置为 strict<br>，如下所示：<br><?xml version="1.0" encoding="utf-8"?><resources xmlns:tools="http://schemas.android.com/tools"    tools:shrinkMode="strict" /><br>如果您确已启用严格压缩模式，并且代码也引用了包含动态生成字符串的资源（如上所示），则必须利用 tools:keep<br> 属性手动保留这些资源。<br>移除未使用的备用资源<br>Gradle 资源压缩器只会移除未被您的应用代码引用的资源，这意味着它不会移除用于不同设备配置的<a target="_blank" rel="noopener" href="https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources">备用资源</a>。必要时，您可以使用 Android Gradle 插件的 resConfigs<br> 属性来移除您的应用不需要的备用资源文件。<br>例如，如果您使用的库包含语言资源（例如使用的是 AppCompat 或 Google Play 服务），则 APK 将包括这些库中消息的所有已翻译语言字符串，无论应用的其余部分是否翻译为同一语言。如果您想只保留应用正式支持的语言，则可以利用 resConfig<br> 属性指定这些语言。系统会移除未指定语言的所有资源。<br>下面这段代码展示了如何将语言资源限定为仅支持英语和法语：<br>android { defaultConfig { … resConfigs “en”, “fr” }}<br>同理，您也可以利用 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/configure-apk-splits.html">APK 拆分</a>为不同设备构建不同的 APK，自定义在 APK 中包括的屏幕密度或 ABI 资源。<br>合并重复资源<br>默认情况下，Gradle 还会合并同名资源，例如可能位于不同资源文件夹中的同名可绘制对象。这一行为不受 shrinkResources<br> 属性控制，也无法停用，因为在有多个资源匹配代码查询的名称时，有必要利用这一行为来避免错误。<br>只有在两个或更多个文件具有完全相同的资源名称、类型和限定符时，才会进行资源合并。Gradle 会在重复项中选择其视为最佳选择的文件（根据下述优先顺序），并只将这一个资源传递给 AAPT，以供在 APK 文件中分发。<br>Gradle 会在下列位置寻找重复资源：<br>与主源集关联的主资源，一般位于 src&#x2F;main&#x2F;res&#x2F;<br> 中。<br>变体叠加，来自构建类型和构建风味。<br>库项目依赖项。</p>
+<p>Gradle 会按以下级联优先顺序合并重复资源：<br>依赖项 → 主资源 → 构建风味 → 构建类型<br>例如，如果某个重复资源同时出现在主资源和构建风味中，Gradle 会选择构建风味中的重复资源。<br>如果完全相同的资源出现在同一源集中，Gradle 无法合并它们，并且会发出资源合并错误。如果您在 build.gradle<br> 文件的 sourceSet<br> 属性中定义了多个源集，则可能会发生这种情况，例如，如果 src&#x2F;main&#x2F;res&#x2F;<br> 和 src&#x2F;main&#x2F;res2&#x2F;<br> 包含完全相同的资源，就可能会发生这种情况。<br>排查资源压缩问题<br>当您压缩资源时，Gradle Console 会显示它从应用软件包中移除的资源的摘要。例如：<br>:android:shrinkDebugResourcesRemoved unused resources: Binary resource data reduced from 2570KB to 1711KB: Removed 33%:android:validateDebugSigning<br>Gradle 还会在 <module-name>&#x2F;build&#x2F;outputs&#x2F;mapping&#x2F;release&#x2F;<br>（ProGuard 输出文件所在的文件夹）中创建一个名为 resources.txt 的诊断文件。该文件包括诸如哪些资源引用了其他资源以及使用或移除了哪些资源等详情。</p>
+<p>例如，要了解您的 APK 为何仍包含 @drawable&#x2F;ic_plus_anim_016<br>，请打开 resources.txt<br> 文件并搜索该文件名。您可能会发现，有其他资源引用了它，如下所示：<br>16:25:48.005 [QUIET] [system.out] @drawable&#x2F;add_schedule_fab_icon_anim : reachable&#x3D;true16:25:48.009 [QUIET] [system.out] @drawable&#x2F;ic_plus_anim_016<br>现在您需要了解为何 @drawable&#x2F;add_schedule_fab_icon_anim<br> 可以访问 - 如果您向上搜索，就会发现“The root reachable resources are:”之下列有该资源。这意味着存在对 add_schedule_fab_icon_anim<br> 的代码引用（即在可访问代码中找到了其 R.drawable ID）。<br>如果您使用的不是严格检查，则存在看似可用于为动态加载资源构建资源名称的字符串常量时，可将资源 ID 标记为可访问。在这种情况下，如果您在构建输出中搜索资源名称，可能会找到类似下面这样的消息：<br>10:32:50.590 [QUIET] [system.out] Marking drawable:ic_plus_anim_016:2130837506 used because it format-string matches string pool constant ic_plus_anim_%1$d.<br>如果您看到一个这样的字符串，并且您能确定该字符串未用于动态加载给定资源，就可以按照有关如何<a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/shrink-code.html#keep-resources">自定义要保留的资源</a>部分中所述利用 tools:discard<br> 属性通知构建系统将它移除。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Java%E5%92%8CAndroid%E7%9A%84Base64%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" rel="prev" title="Java和Android的Base64加密解密">
+      <i class="fa fa-chevron-left"></i> Java和Android的Base64加密解密
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Android/Android-%E5%88%97%E8%A1%A8Item%E6%BB%91%E5%87%BA%E8%8F%9C%E5%8D%95%E6%96%B9%E6%A1%88%E9%80%89%E6%8B%A9/" rel="next" title="Android-列表Item滑出菜单方案选择">
+      Android-列表Item滑出菜单方案选择 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

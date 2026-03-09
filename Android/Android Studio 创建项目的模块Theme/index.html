@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="​​Theme.MaterialComponents​​  基于 ​​Material Design 2 (MD2)​​，是早期版本的 Material Design 规范，强调卡片、阴影和明确的层级结构。  ​​Theme.Material3​​  基于 ​​Material Design 3 (MD3)​​，是更新的设计规范，强调动态颜色（Dynamic Color）、圆角设计、更柔和的阴影">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio 创建项目的模块Theme">
+<meta property="og:url" content="http://yoursite.com/Android/Android%20Studio%20%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%A8%A1%E5%9D%97Theme/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="​​Theme.MaterialComponents​​  基于 ​​Material Design 2 (MD2)​​，是早期版本的 Material Design 规范，强调卡片、阴影和明确的层级结构。  ​​Theme.Material3​​  基于 ​​Material Design 3 (MD3)​​，是更新的设计规范，强调动态颜色（Dynamic Color）、圆角设计、更柔和的阴影">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-30T11:52:36.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:36:20.062Z">
+<meta property="article:author" content="KevinWen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/Android/Android%20Studio%20%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%A8%A1%E5%9D%97Theme/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android Studio 创建项目的模块Theme | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Studio%20%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%A8%A1%E5%9D%97Theme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android Studio 创建项目的模块Theme
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-08-30 19:52:36" itemprop="dateCreated datePublished" datetime="2025-08-30T19:52:36+08:00">2025-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li><p>​<strong>​<code>Theme.MaterialComponents</code>​</strong>​<br>  基于 ​<strong>​Material Design 2 (MD2)​</strong>​，是早期版本的 Material Design 规范，强调卡片、阴影和明确的层级结构。</p>
+</li>
+<li><p>​<strong>​<code>Theme.Material3</code>​</strong>​<br>  基于 ​<strong>​Material Design 3 (MD3)​</strong>​，是更新的设计规范，强调动态颜色（Dynamic Color）、圆角设计、更柔和的阴影和现代化的组件样式。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>MaterialComponents.DayNight.DarkActionBar</code></th>
+<th><code>Material3.DayNight.NoActionBar</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>​<strong>​Design 版本​</strong>​</td>
+<td>Material Design 2 (MD2)</td>
+<td>Material Design 3 (MD3)</td>
+</tr>
+<tr>
+<td>​<strong>​ActionBar​</strong>​</td>
+<td>包含深色 ActionBar</td>
+<td>无默认 ActionBar（需自定义）</td>
+</tr>
+<tr>
+<td>​<strong>​动态颜色支持​</strong>​</td>
+<td>不支持</td>
+<td>支持（需 API 31+）</td>
+</tr>
+<tr>
+<td>​<strong>​组件风格​</strong>​</td>
+<td>传统阴影、直角</td>
+<td>圆角、柔和阴影、动态主题</td>
+</tr>
+<tr>
+<td>​<strong>​推荐场景​</strong>​</td>
+<td>传统应用，快速开发</td>
+<td>现代化应用，Jetpack Compose 项目</td>
+</tr>
+</tbody></table>
+<h2 id="Bottom-Navigation-Views-Activity"><a href="#Bottom-Navigation-Views-Activity" class="headerlink" title="Bottom Navigation Views Activity"></a>Bottom Navigation Views Activity</h2><blockquote>
+<p><strong><code>Theme.MaterialComponents</code>​</strong>​基于 ​<strong>​Material Design 2 (MD2)​</strong>​，是早期版本的 Material Design 规范，强调卡片、阴影和明确的层级结构。<br>&#x3D;&#x3D;所以不推荐用这个模板创建项目&#x3D;&#x3D;</p>
+</blockquote>
+<p>default</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Theme.BottomNavigationViewsSample&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Primary brand color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorPrimary&quot;</span>&gt;</span>@color/purple_500<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorPrimaryVariant&quot;</span>&gt;</span>@color/purple_700<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorOnPrimary&quot;</span>&gt;</span>@color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Secondary brand color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorSecondary&quot;</span>&gt;</span>@color/teal_200<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorSecondaryVariant&quot;</span>&gt;</span>@color/teal_700<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorOnSecondary&quot;</span>&gt;</span>@color/black<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Status bar color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:statusBarColor&quot;</span>&gt;</span>?attr/colorPrimaryVariant<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>night</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Theme.FlexboxLayoutSample&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Primary brand color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorPrimary&quot;</span>&gt;</span>@color/purple_200<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorPrimaryVariant&quot;</span>&gt;</span>@color/purple_700<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorOnPrimary&quot;</span>&gt;</span>@color/black<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Secondary brand color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorSecondary&quot;</span>&gt;</span>@color/teal_200<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorSecondaryVariant&quot;</span>&gt;</span>@color/teal_200<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorOnSecondary&quot;</span>&gt;</span>@color/black<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Status bar color. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:statusBarColor&quot;</span>&gt;</span>?attr/colorPrimaryVariant<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="EmptyViews-Activity"><a href="#EmptyViews-Activity" class="headerlink" title="EmptyViews Activity"></a>EmptyViews Activity</h2><p>default</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Base.Theme.EmptyViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your light theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_light_primary&lt;/item&gt; --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Theme.EmptyViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Base.Theme.EmptyViewsActivity2025&quot;</span> /&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>night</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Base.Theme.EmptyViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your dark theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_dark_primary&lt;/item&gt; --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Basic-Views-Activity"><a href="#Basic-Views-Activity" class="headerlink" title="Basic Views Activity"></a>Basic Views Activity</h2><p>default</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Base.Theme.BasicViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your light theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_light_primary&lt;/item&gt; --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Theme.BasicViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Base.Theme.BasicViewsActivity2025&quot;</span> /&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>v23</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Theme.BasicViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Base.Theme.BasicViewsActivity2025&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Transparent system bars for edge-to-edge. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:navigationBarColor&quot;</span>&gt;</span>@android:color/transparent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:statusBarColor&quot;</span>&gt;</span>@android:color/transparent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:windowLightStatusBar&quot;</span>&gt;</span>?attr/isLightTheme<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>night</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span> <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;Base.Theme.BasicViewsActivity2025&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- Customize your dark theme here. --&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="comment">&lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_dark_primary&lt;/item&gt; --&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Flutter/Dart%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%94%AF%E6%8C%81/" rel="prev" title="Dart 数据类型支持">
+      <i class="fa fa-chevron-left"></i> Dart 数据类型支持
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Linux/%E5%88%A0%E9%99%A4%E7%89%B9%E5%AE%9A%E7%94%A8%E6%88%B7%E7%9A%84%20SSH%20%E8%AE%B0%E5%BD%95/" rel="next" title="删除特定用户的 SSH 记录">
+      删除特定用户的 SSH 记录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bottom-Navigation-Views-Activity"><span class="nav-number">1.</span> <span class="nav-text">Bottom Navigation Views Activity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EmptyViews-Activity"><span class="nav-number">2.</span> <span class="nav-text">EmptyViews Activity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Views-Activity"><span class="nav-number">3.</span> <span class="nav-text">Basic Views Activity</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

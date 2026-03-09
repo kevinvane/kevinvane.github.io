@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、 创建项目 二、 添加应用 添加完应用会自动跳转到 “接入指南”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android集成HMS推送">
+<meta property="og:url" content="http://yoursite.com/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="一、 创建项目 二、 添加应用 添加完应用会自动跳转到 “接入指南”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS1.png">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS2.png">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS3.png">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS4.png">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS5.png">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS6.png">
+<meta property="og:image" content="https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20210324163206.40382298029097015414359028930325:50520324024935:2800:B46061FF97D1157E1B3C485084546F84358B59062E35B31FDC2424F763059475.png?needInitFileName=true?needInitFileName=true">
+<meta property="og:image" content="http://yoursite.com/images/hms/HMS7.png">
+<meta property="article:published_time" content="2021-03-28T11:52:36.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:36:20.066Z">
+<meta property="article:author" content="KevinWen">
+<meta property="article:tag" content="hms">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/hms/HMS1.png">
+
+<link rel="canonical" href="http://yoursite.com/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android集成HMS推送 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%E9%9B%86%E6%88%90HMS%E6%8E%A8%E9%80%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android集成HMS推送
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-28 19:52:36" itemprop="dateCreated datePublished" datetime="2021-03-28T19:52:36+08:00">2021-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一、-创建项目"><a href="#一、-创建项目" class="headerlink" title="一、 创建项目"></a>一、 创建项目</h3><p><img src="/images/hms/HMS1.png"><br><img src="/images/hms/HMS2.png"></p>
+<h3 id="二、-添加应用"><a href="#二、-添加应用" class="headerlink" title="二、 添加应用"></a>二、 添加应用</h3><p><img src="/images/hms/HMS3.png"><br><img src="/images/hms/HMS4.png"></p>
+<p>添加完应用会自动跳转到 “接入指南”</p>
+<h3 id="三、-集成到Android项目"><a href="#三、-集成到Android项目" class="headerlink" title="三、 集成到Android项目"></a>三、 集成到Android项目</h3><p><img src="/images/hms/HMS5.png"></p>
+<p><img src="/images/hms/HMS6.png"></p>
+<p>集成HMS Core SDK</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation &#x27;com.huawei.hms:push:&#123;version&#125;&#x27; # 当前版本5.0.4.302</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、-SHA256指纹和OAuth推送所需要的参数"><a href="#四、-SHA256指纹和OAuth推送所需要的参数" class="headerlink" title="四、 SHA256指纹和OAuth推送所需要的参数"></a>四、 SHA256指纹和OAuth推送所需要的参数</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ keytool -list -v -keystore C:\TestApp.jks</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20210324163206.40382298029097015414359028930325:50520324024935:2800:B46061FF97D1157E1B3C485084546F84358B59062E35B31FDC2424F763059475.png?needInitFileName=true?needInitFileName=true"></p>
+<p><img src="/images/hms/HMS7.png"></p>
+<h3 id="五、服务端推送"><a href="#五、服务端推送" class="headerlink" title="五、服务端推送"></a>五、服务端推送</h3><p><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-server-dev-0000001050040110">【构建发送消息请求指南】</a></p>
+<h4 id="1-您的服务器获取Access-Token，详情请参见客户端模式。"><a href="#1-您的服务器获取Access-Token，详情请参见客户端模式。" class="headerlink" title="1.  您的服务器获取Access Token，详情请参见客户端模式。"></a>1.  您的服务器获取Access Token，详情请参见<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/open-platform-oauth-0000001053629189#ZH-CN_TOPIC_0000001053629189__section12493191334711">客户端模式</a>。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST /oauth2/v3/token HTTP/1.1</span><br><span class="line">Host: oauth-login.cloud.huawei.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">grant_type=client_credentials&amp;</span><br><span class="line">client_id=&lt; APP ID &gt;&amp;</span><br><span class="line">client_secret=&lt; APP SECRET &gt;</span><br></pre></td></tr></table></figure>
+
+<p> 响应</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;access_token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;返回的Access Token&gt;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;expires_in&quot;</span><span class="punctuation">:</span> <span class="number">3600</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;token_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Bearer&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-您的服务器调用API发送Push消息，详情请参见下行消息。"><a href="#2-您的服务器调用API发送Push消息，详情请参见下行消息。" class="headerlink" title="2. 您的服务器调用API发送Push消息，详情请参见下行消息。"></a>2. 您的服务器调用API发送Push消息，详情请参见<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References-V5/https-send-api-0000001050986197-V5#ZH-CN_TOPIC_0000001124288117__section8686112674319">下行消息</a>。</h4><p>HTTPS POST URL：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://push-api.cloud.huawei.com/v1/[appId]/messages:send</span><br></pre></td></tr></table></figure>
+
+<p>请求消息头示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: application/json; charset=UTF-8Authorization: Bearer CF3Xl2XV6jMKZgqYSZFws9IPlgDvxqOfFSmrlmtkTRupbU2VklvhX9kC9JCnKVSDX2VrDgAPuzvNm3WccUIaDg== </span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<p>请求消息头中的Authorization参数生成请参见<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides-V5/open-platform-oauth-0000001053629189-V5#ZH-CN_TOPIC_0000001053629189__section12493191334711">OAuth 2.0客户端模式</a>，其中的客户端ID和客户端密钥请输入您在<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/service/josp/agc/index.html">AppGallery Connect</a>项目下的Android应用里的App ID和App Secret。</p>
+<p>请求消息体示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;validate_only&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;notification&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;title&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;body&quot;</span><span class="punctuation">:</span> <span class="string">&quot;body&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;android&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;notification&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;android title&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;body&quot;</span><span class="punctuation">:</span> <span class="string">&quot;android body&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;click_action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;intent&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#Intent;compo=com.rvr/.Activity;S.W=U;end&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pushtoken1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pushtoken2&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明<br>通知栏消息中，如果设置了message.android.notification.title和message.android.notification.body，则会分别覆盖message.notification.title和message.notification.body。</p>
+</blockquote>
+<p>透传消息示例报文：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;validate_only&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;&#x27;param1&#x27;:&#x27;value1&#x27;,&#x27;param2&#x27;:&#x27;value2&#x27;&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pushtoken1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pushtoken2&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="六、Android端接收透传消息"><a href="#六、Android端接收透传消息" class="headerlink" title="六、Android端接收透传消息"></a>六、Android端接收透传消息</h3><p>集成SDK后要在 <code>AndroidManifest.xml</code> 文件的application标签下注册您自己的service，继承<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References-V5/hmsmessageservice-0000001050173839-V5">HmsMessageService</a>类并实现其中的方法，此处以DemoHmsMessageService类为例（类名由您自定义）。</p>
+<p>该service用于<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides-V5/android-client-dev-0000001050042041-V5#ZH-CN_TOPIC_0000001078601368__section161573511014">接收透传消息</a>、<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References-V5/hmsmessageservice-0000001050173839-V5#ZH-CN_TOPIC_0000001078729906__section814414561477">获取Token</a>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">&quot;.DemoHmsMessageService&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;com.huawei.push.action.MESSAGING_EVENT&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.huawei.hms.push.HmsMessageService;</span><br><span class="line"><span class="keyword">import</span> com.huawei.hms.push.RemoteMessage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoHmsMessageService</span> <span class="keyword">extends</span> <span class="title class_">HmsMessageService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">TAG</span> <span class="operator">=</span> getClass().getName();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onNewToken</span><span class="params">(String newDeviceToken)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onNewToken(newDeviceToken);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Token会在包括但不限于下述场景中发生变化：</span></span><br><span class="line">        <span class="comment">// 1、App卸载重装；</span></span><br><span class="line">        <span class="comment">// 2、App调用注销Token接口；</span></span><br><span class="line">        <span class="comment">// 3、用户恢复出厂设置；</span></span><br><span class="line">        <span class="comment">// 4、清除应用数据；</span></span><br><span class="line">        <span class="comment">// 应用的Push Token要定期更新（建议应用每次启动的时候都获取Token，</span></span><br><span class="line">        <span class="comment">// 如果发现和上次不同取到的不同，则上报到自己的服务器）</span></span><br><span class="line">        <span class="comment">// 有了这个 DeviceToken 就可以单个推送透传消息到这个手机。</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 透传消息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> remoteMessage</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onMessageReceived</span><span class="params">(RemoteMessage remoteMessage)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onMessageReceived(remoteMessage);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onDeletedMessages</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDeletedMessages();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>App启动时注册推送，自动获取的 <code>newToken</code> 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HmsMessaging.getInstance(context).setAutoInitEnabled(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="七、代码混淆"><a href="#七、代码混淆" class="headerlink" title="七、代码混淆"></a>七、代码混淆</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-ignorewarnings</span><br><span class="line">-keepattributes *Annotation*</span><br><span class="line">-keepattributes Exceptions</span><br><span class="line">-keepattributes InnerClasses</span><br><span class="line">-keepattributes Signature</span><br><span class="line">-keepattributes SourceFile,LineNumberTable</span><br><span class="line">-keep class com.huawei.hianalytics.**&#123;*;&#125;</span><br><span class="line">-keep class com.huawei.updatesdk.**&#123;*;&#125;</span><br><span class="line">-keep class com.huawei.hms.**&#123;*;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hms/" rel="tag"># hms</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Android/Android%E9%9B%86%E6%88%90%E5%B0%8F%E7%B1%B3%E6%8E%A8%E9%80%81/" rel="prev" title="Android集成小米推送">
+      <i class="fa fa-chevron-left"></i> Android集成小米推送
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Web%E5%90%8E%E7%AB%AF/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9A%84%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDb%E7%89%88%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" rel="next" title="阿里云的云数据库MongoDb版使用记录">
+      阿里云的云数据库MongoDb版使用记录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">一、 创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">二、 添加应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E9%9B%86%E6%88%90%E5%88%B0Android%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">三、 集成到Android项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-SHA256%E6%8C%87%E7%BA%B9%E5%92%8COAuth%E6%8E%A8%E9%80%81%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">四、 SHA256指纹和OAuth推送所需要的参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A8%E9%80%81"><span class="nav-number">5.</span> <span class="nav-text">五、服务端推送</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%82%A8%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96Access-Token%EF%BC%8C%E8%AF%A6%E6%83%85%E8%AF%B7%E5%8F%82%E8%A7%81%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E5%BC%8F%E3%80%82"><span class="nav-number">5.1.</span> <span class="nav-text">1.  您的服务器获取Access Token，详情请参见客户端模式。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%82%A8%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B0%83%E7%94%A8API%E5%8F%91%E9%80%81Push%E6%B6%88%E6%81%AF%EF%BC%8C%E8%AF%A6%E6%83%85%E8%AF%B7%E5%8F%82%E8%A7%81%E4%B8%8B%E8%A1%8C%E6%B6%88%E6%81%AF%E3%80%82"><span class="nav-number">5.2.</span> <span class="nav-text">2. 您的服务器调用API发送Push消息，详情请参见下行消息。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81Android%E7%AB%AF%E6%8E%A5%E6%94%B6%E9%80%8F%E4%BC%A0%E6%B6%88%E6%81%AF"><span class="nav-number">6.</span> <span class="nav-text">六、Android端接收透传消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86"><span class="nav-number">7.</span> <span class="nav-text">七、代码混淆</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

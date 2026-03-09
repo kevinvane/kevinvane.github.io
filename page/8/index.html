@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+<meta property="og:type" content="website">
+<meta property="og:title" content="咸鱼">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KevinWen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/Android%20%E6%93%8D%E4%BD%9CMp4%E6%96%87%E4%BB%B6%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Android%20%E6%93%8D%E4%BD%9CMp4%E6%96%87%E4%BB%B6%E5%BA%93/" class="post-title-link" itemprop="url">Android 操作Mp4文件库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-28 17:52:36" itemprop="dateCreated datePublished" datetime="2020-07-28T17:52:36+08:00">2020-07-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h3><p><a target="_blank" rel="noopener" href="https://github.com/sannies/mp4parser">【mp4parser】</a> 这个库提供了用于读取、写入和创建MP4文件的Java API，包含三个组件：</p>
+<ol>
+<li>isoparser</li>
+<li>muxer</li>
+<li>streaming</li>
+</ol>
+<p>我用了muxer，将H264文件和AAC文件合并为MP4文件。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.mp4parser/muxer --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mp4parser<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>muxer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.41<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Android%20%E6%93%8D%E4%BD%9CMp4%E6%96%87%E4%BB%B6%E5%BA%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Golang/Golang%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Golang/Golang%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Golang设置代理解决包依赖问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-21 19:58:28" itemprop="dateCreated datePublished" datetime="2020-07-21T19:58:28+08:00">2020-07-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>go get下载包失败在国内是常见的问题，下面是通过设置代理的解决方案</p>
+<h3 id="Go-版本是-1-13-及以上-（推荐）"><a href="#Go-版本是-1-13-及以上-（推荐）" class="headerlink" title="Go 版本是 1.13 及以上 （推荐）"></a>Go 版本是 1.13 及以上 （推荐）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line">$ go <span class="built_in">env</span> -w GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Go-版本是-1-12-及以下-实测1-14用这个方法也可以"><a href="#Go-版本是-1-12-及以下-实测1-14用这个方法也可以" class="headerlink" title="Go 版本是 1.12 及以下(实测1.14用这个方法也可以)"></a>Go 版本是 1.12 及以下(实测1.14用这个方法也可以)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/profile   （全部用户生效）</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ vim ~/.profile     （当前用户生效）</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> GO111MODULE=on</span><br><span class="line"><span class="comment"># 七牛云赞助支持的</span></span><br><span class="line"><span class="built_in">export</span> GOPROXY=https://goproxy.cn</span><br><span class="line"><span class="comment"># 阿里云</span></span><br><span class="line"><span class="comment">#export GOPROXY=https://mirrors.aliyun.com/goproxy/</span></span><br><span class="line"><span class="comment"># goproxy.io</span></span><br><span class="line"><span class="comment">#export GOPROXY=https://goproxy.io/</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Golang/Golang%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/RTP%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTP%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">RTP网络抓包分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-16 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-16T19:52:36+08:00">2020-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="RTP-Over-UDP"><a href="#RTP-Over-UDP" class="headerlink" title="RTP Over UDP"></a>RTP Over UDP</h3><p>这是rtmp-rtsp-stream-client-java发出的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">80600396000cf6ae0ce9d37f|我是分隔符|7c85b8141ff1c6921a6ba385c00040056dd92a7ccbeb7e38000837470001067fff1fc3177b46c9c731d84f1e6b6f6ff6fc763b09e21dfe9df6dbc8b84f176dbfe9db4d3b68efff8f1c444b8fca76b5da32e13cda7476ffff477fc47e3c53ebad78fc20f47edf6fe3ffa3fffff3ff043afe1edee6b04a600b730c899d05e4d4dffba8ba5f3adab44c59e08ded760e63763eda138901d3c527ffedff09e0854eb3b7ffe3bef09fd013dfb7ffe9be1d7a32430a449f19848276060df0f31fe941ff8a8976a7039b22b8d910300043c1c004254905641cf077c3c9ed77812f89043040be9a437b35b520bf448436f46f48c000401817b8f391571dc96f9f8515c3225034d14963b27feab77e6a3e8e7722e93bf6bda10b439fbee0f8afa2887e21c776f75fb8c50fff9f50caa27ddf2f17de9e690f29a9780eef43e6b031805184fce2e27feb480fb577381cace9e2bbaf378354bd524c3a3c45812dc55528ee47b8a78ab2f228bddf5372c7964bd0781f5cb673f2dbd45cfe8fc00e8675e64aaca76d34cdbaa6993c69c69c5df77bb0cf48a7ba41457cb8f6d42728128ecd69f2d1b7fdbffc89e3ebe78cbbe90bb557dc8fa006e3e8593fb7f5d3b65a8347e7ffd757e21558f4b17ac009c887912807061fdc1d87e56cfffcd951823d6e8d28060f7038a1605115c154bc0bcec0e77cfbc17ae34e6cf9b2b7641dd1f4e3e5dfff0f060a7bf595121372efffdbd2de14a9c908826749655109894930c25b0cb20fc30327a7ffc2b8973fff6e54b221f641354a50ffffe8e7485551a7fffca8c832481117a78fffdb6d05fd3edf171153a44cb24d580c9862259a3152f54e1565d4694eda2a32519e5ffbbfa88afe7cd956bd2f516f74fffa21042c4e12421c2112488a2a11b4da4055a564a7b022561f103175bd441f8f73fc3d4474f8e62d71bc4c1dc6c6cd295df1690870f73aa0efad48c09f7ec5203c0954554ba7f0a312006e3bd03fbacf6ff9518c1ed5bccb3c49106c150b6bc14c5216e9ab42bfb48cb8d958eb59641482a2946928541f04f49fd74e3b4ea8e67b78147940b2d3813f275f5744028cad6a0d27369bd6b8e6ddf4ae5ea34ac977795b69afa9888a2dc7c657b8428e7f510f971c3d035d0ee31ee67a6185555ceb6610c896d16c32cd8c857bedf56aaf58a49a1e68f28875bedf4bd083601f0ada56fffffe7d61d07fd650b7e045246963c6aa9d28ed1ccf9e37c584401664a2f8e92c711f055b7b52d9d89dc02f7e48280553ca1c2d52cf20159a824cb6fb7eb60971384a9ff7b954807714fcb880952c102ed4fd32af30ce6032668ad447dfae2425f10c04dfcfea34116c1565385b99728679581c8d23dbb18bdf90abeae6fbfa94ca18f486feb34d660bec5c5d76b54db986731a0857db65250c82d293b16060802c1c1037464d9b3709ecf5b770ca586800821738c93c4588a64b80d33292b3ec07c461c7e840bda57c18f4403615df6de9012a2b60b7e066105e60f30aee1506dbc2c4f2b8c89201b293a8fa61dd3d3804498c8c48643c80724573fb77238f65116824d336be409c8ec6a290344368394a6bd00a5872d4107ff54b09eb398c061f5e0c81283da0afdbf06686a383fab987254b835d095f2cabcbe0eaae9c4c03d7286ada203e607156d0d3a9b6f9f9a0034211effb7c0392a47214afbef9ffda37102e821292af133105d4c33b5ddbf0b1ba4e609422f878e94831e6f6909391292a41daafd076146581226a148afcfa1395062fa8</span><br></pre></td></tr></table></figure>
+<p>分隔符前面是 <code>rtp header</code> 后面是 <code>rtp payload</code> 也就是H264的NAL，这部分可能有三种情况：单NAL，聚合NAL，分包NAL</p>
+<h5 id="FU-A"><a href="#FU-A" class="headerlink" title="FU-A"></a>FU-A</h5>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTP%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">RTSP网络抓包分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-16 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-16T19:52:36+08:00">2020-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>抓包文件在附件中…</p>
+</blockquote>
+<h3 id="一、Play-抓包-Over-TCP"><a href="#一、Play-抓包-Over-TCP" class="headerlink" title="一、Play 抓包 Over TCP"></a>一、Play 抓包 Over TCP</h3><ul>
+<li>推流Client端rtmp-rtsp-stream-client-java</li>
+<li>server端EasyDarwin</li>
+<li>播放Client端 Javacv 录制（ <strong>这里用Wireshark抓包</strong> ）</li>
+</ul>
+<p>tcp追踪流</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">CSeq: 1</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 1</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Public: DESCRIBE, SETUP, TEARDOWN, PLAY, PAUSE, OPTIONS, ANNOUNCE, RECORD</span><br><span class="line"></span><br><span class="line">DESCRIBE rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">Accept: application/sdp</span><br><span class="line">CSeq: 2</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 2</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Content-Length: 444</span><br><span class="line"></span><br><span class="line">v=0</span><br><span class="line">o=- 0 0 IN IP4 127.0.0.1</span><br><span class="line">s=Unnamed</span><br><span class="line">i=N/A</span><br><span class="line">c=IN IP4 192.168.0.223</span><br><span class="line">t=0 0</span><br><span class="line">a=recvonly</span><br><span class="line">m=video 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 H264/90000</span><br><span class="line">a=fmtp:96 packetization-mode=1;sprop-parameter-sets=Z0LAHtoHgUSAeEAhUA==,aM48gA==;</span><br><span class="line">a=control:trackID=1</span><br><span class="line">m=audio 0 RTP/AVP 96</span><br><span class="line">a=rtpmap:96 MPEG4-GENERIC/32000/2</span><br><span class="line">a=fmtp:96 streamtype=5; profile-level-id=15; mode=AAC-hbr; config=1290; SizeLength=13; IndexLength=3; IndexDeltaLength=3;</span><br><span class="line">a=control:trackID=0</span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=1 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line">CSeq: 3</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 3</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=0-1</span><br><span class="line"></span><br><span class="line">SETUP rtsp://192.168.0.223:554/test/trackID=0 RTSP/1.0</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line">CSeq: 4</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 4</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Transport: RTP/AVP/TCP;unicast;interleaved=2-3</span><br><span class="line"></span><br><span class="line">PLAY rtsp://192.168.0.223:554/test/ RTSP/1.0</span><br><span class="line">Range: npt=0.000-</span><br><span class="line">CSeq: 5</span><br><span class="line">User-Agent: Lavf58.12.100</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line"></span><br><span class="line">RTSP/1.0 200 OK</span><br><span class="line">CSeq: 5</span><br><span class="line">Session: PoC0zKnGR</span><br><span class="line">Range: npt=0.000-</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是紧接着一帧一帧rtp包（rtp over tcp）</span></span><br><span class="line">701ce71cfb29c8ff28ed6843080045000524c1c240004006f1c3c0a800dfc0a8001e022ae383d37e23f074458e0a501800feecab0000240004f88060447500bd14102e9f0a407c85b803f06fe00f0e157e880381bc15565f8c35982ddba36a0312c81fd3800a814eb570c928a7818974f2303f010e39d505ae59ae3ebb42bbe706078d36e0997a0e00020011c000fff70000fea1d04f4480006968249f20dad1f9b600a5b19018a3c169c190e22c754f401f5cb5f3a4fa0736d00d6cbcb19670584cc24d248c1c51ef552de01e01807565e81e0ce8185fc160dbbeea53228011496146e44add661440a93ca0b20a0e6b2455413b9964320ed088f5cb751a24effc030f6b65c1d423a60fcf96247b9e7de03c0ef60020a1d76ad07eab06ad7584bfea63cfc9f5af1516029898299d30daa09cbff265002a099de41d7fa2262cc9a2957e885747b2bfd24b95583fd2007b1dc8060c63d0f9cb6000201a7968ad6b1eb03fc4932ee1efbc13b7a1ef52167acab89f939b0d039dad33c4b541c6ee759e541591f309071a007c130ffd1801818830226664c4db87bc2a00342111c8a630a654263ac5856721e37ed483ab31f8fa7a6797d9135039ffdfffa121bf11d0f440a84cbf443d5c9edd00010114f1c8298d5ad50b189ec1da94250a4826c50f3620d9da18cdffffb8ea614710240104fe5fa6886924bcc0d76987aa095427a80a08e13f0b935ca244c4ed4ff43b4ce7cd881a403cf8932bbffff695047712c3e0b19448ad5405308200306a59632f0a50e9a7a488da16040ece88915077f4299c947fff0794c028eba019c1036e548ce347af0cc3b1a18448fbaca4a4adaa8efd7b06f5be2dc1e7daec2ca97e2070654438fc5fe8dd06e0d30400f6fa7e09acc0c889df44c0a9cfda3c70f1cd3e0c9adcb6e208141e03bdfafd780400a3a3bf0f72fab2f7df9f8d0c701ff82c2105b6e2bcd85ea95fba2f79bbfd03539e2b4c412951d0bd4bf0581855cbcff519f54bd70d41c3b0a2f9bbe5fcf8aae3e87146bbe3c793a202ec6a5f5524a38c7fa7b6df5e90476add0f23a1539f71a2bdb6928320a0a01bdeb58527002d97c3826fcfdf7a6dc9e9a79909d71489e700531cc90d2f252aa97a97e9c1431a76fa785f03b42e60ee9f97fa6dedd63450c29b6f4d34fe3eb5c6b1d556ec510f6b6e6c8e31fede9a7ddfa939b8a9ad15b07e1e911cf2b358b776ee90de750f21b78eb8ad4ecc9c9859576c89856d2238b2feb87ca0a07f5f98bd655755bf2f6e66cb13c5b9cda6b50d605ddc4921c7a69f6fcf80aac42aaac56d5c98d6ec6b9f1e90d3183e9fc46623829bfef4b37de2d6d6d170c862ada69edb71f7723a98e6ad4bd289f42dfcb9cd90dd43cfdbd530a4e028320cdc846dd36e9ff6db77ffb8be74a93c98cce6c37ee9ca9ff1abd7d33b92dddd4d8ffaf2e0b703c21c342837a3460a8fe2002dae062608045068ace00a404e19d8d080527c354e368ce82406ab26eb61b0018c3b9991b036c07153560b53840bd0398c01e01e1c129b5b2e0efc55e32bae349338fa42a8a8c31427df5c18abc6f2f36aae5b55c78a648a6b4e3fdacd931184ea59d1e64cda61c0c0b2fb65e3ab07d70ff4b8988488acf3b25d56fa3039c123b28eff95e380c8dee9530e128920d476f47b28867b80fbb4e96af68a781b7e8bb9663c0130f8f752c7c9bbea0090e3e99b7797ff124528fc31a950e5fc651b85bdedf5ea5daa5ca41e2c2e7940ecb8e58448133afe9acaa6fb63badd2930240346a6eeda99aabb44822a41351c75d0725e36ad4d1fdc1086dbb9e6a5ee416d2df2ee372317b9541c6612d94cbb61357b2be0e37f981772c3880e02e2f4cc47e866</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/RTSP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">Live555搭建流媒体服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-06 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-06T19:52:36+08:00">2020-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Live555提供HTTP&#x2F;RTSP协议的多媒体流服务器和RTSP流代理中转。</p>
+<h2 id="下载源码编译"><a href="#下载源码编译" class="headerlink" title="下载源码编译"></a>下载源码编译</h2><p>需要g++编译环境</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ wget  http://www.live555.com/liveMedia/public/live555-latest.tar.gz</span><br><span class="line">$ tar -xzvf live555-latest.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> live</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">BasicUsageEnvironment       config.iphoneos                     config.solaris-32bit     liveMedia</span><br><span class="line">config.armeb-uclibc         config.iphone-simulator             config.solaris-64bit     Makefile.<span class="built_in">head</span></span><br><span class="line">config.armlinux             config.linux                        config.uClinux           Makefile.<span class="built_in">tail</span></span><br><span class="line">config.avr32-linux          config.linux-64bit                  configure                mediaServer</span><br><span class="line">config.bfin-linux-uclibc    config.linux-gdb                    COPYING                  proxyServer</span><br><span class="line">config.bfin-uclinux         config.linux-no-openssl             COPYING.LESSER           README</span><br><span class="line">config.bsplinux             config.linux-with-shared-libraries  fix-makefile             testProgs</span><br><span class="line">config.cris-axis-linux-gnu  config.macosx                       genMakefiles             UsageEnvironment</span><br><span class="line">config.cygwin               config.macosx-no-openssl            genWindowsMakefiles      win32config</span><br><span class="line">config.cygwin-for-vlc       config.mingw                        genWindowsMakefiles.cmd  win32config.Borland</span><br><span class="line">config.freebsd              config.openbsd                      groupsock                WindowsAudioInputDevice</span><br><span class="line">config.freebsd-no-openssl   config.qnx4                         hlsProxy</span><br><span class="line">$ ./genMakefiles linux-64bit <span class="comment">#linux-64bit这个参数是config.&lt;后缀&gt;获取得到的，是编译的目标平台</span></span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/Live555%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/" class="post-title-link" itemprop="url">Ubuntu 编译 FFmpeg</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-05 23:52:36" itemprop="dateCreated datePublished" datetime="2020-07-05T23:52:36+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>这次要编译一下FFmpeg的Android平台，采用版本v4.4.2，高版本有对 <code>--target-os=android</code> 支持，配置没那么麻烦。</p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>以前编译【ijplayer】库已经配置好环境，这次就在这个环境下编译： </p>
+<ul>
+<li>Ubuntu 20.04</li>
+<li>NDK 采用新的版本 21.3.6528147</li>
+<li>FFmpeg-4.4.2</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20FFmpeg/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">HTTP边下边播MP4文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-04 17:52:36" itemprop="dateCreated datePublished" datetime="2020-07-04T17:52:36+08:00">2020-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="通过HTTP无法播放MP4视频？"><a href="#通过HTTP无法播放MP4视频？" class="headerlink" title="通过HTTP无法播放MP4视频？"></a>通过HTTP无法播放MP4视频？</h2><p>有一个摄像机录制的视频文件record.mp4 ，放在web服务器上边下边播（<code>http://mydomain.com/record.mp4</code> ），发现无法播放，下载到本地可以播放。<br>但是从抖音下载的视频douyin.mp4文件，同样放在web服务器上，可以边下边播（<code>http://mydomain.com/douyin.mp4</code> ）能正常播放。</p>
+<p>都是MP4封装格式 ，这两个文件有什么不同呢？</p>
+<p>通过 <code>Mp4Explorer</code> 这个软件，可以查看MP4的详细信息。</p>
+<blockquote>
+<p>moov 是box参数列表，可以粗暴理解为 <strong>配置信息</strong><br>mdata 是音视频数据</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/HTTP%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%ADMP4%E6%96%87%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/" class="post-title-link" itemprop="url">FFmpeg推流RTSP和RTMP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-04 17:52:36" itemprop="dateCreated datePublished" datetime="2020-07-04T17:52:36+08:00">2020-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="RTSP推流到本地"><a href="#RTSP推流到本地" class="headerlink" title="RTSP推流到本地"></a>RTSP推流到本地</h2><p>用UDP传输</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -re -i h264.mp4 -vcodec copy -f h264 udp://127.0.0.1:8554</span><br><span class="line"></span><br><span class="line"><span class="comment">#循环文件推流（默认UDP）</span></span><br><span class="line">ffmpeg -re  -stream_loop -1 -i move.mp4 -vcodec copy -codec copy -f rtsp rtsp://192.168.0.223:554/test/</span><br><span class="line"><span class="comment">#循环文件推流（指定TCP）</span></span><br><span class="line">ffmpeg -re  -stream_loop -1 -i move.mp4 -vcodec copy -codec copy -rtsp_transport tcp -f rtsp rtsp://192.168.0.223:554/test/</span><br></pre></td></tr></table></figure>
+
+<p>在本地用ffplay播放（ffplay是ffmpeg的附带命令行工具）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ffplay  udp://127.0.0.1:8554</span><br><span class="line">$ ffplay -f h264 udp://127.0.0.1:8554</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/ffmpeg%E6%8E%A8%E6%B5%81RTSP/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/" class="post-title-link" itemprop="url">Ubuntu 编译 ijplayer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 23:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T23:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于项目<a target="_blank" rel="noopener" href="https://github.com/bilibili/ijkplayer">【ijkplayer】</a>提供编译好的库没有支持RTSP，而ijkplayer这个项目比较强大之处就是可以根据需要进行裁剪编译，所以我要自己编译一次Android版本，开启RTSP协议。</p>
+<h2 id="一、软件环境"><a href="#一、软件环境" class="headerlink" title="一、软件环境"></a>一、软件环境</h2><ol>
+<li>Ubuntu16.04 Server</li>
+<li>Android SDK</li>
+<li>NDK（不要安装最新的版本，14b版本能用）和cmake</li>
+<li>ijkplayer-k0.8.8 (commit cced91e3ae3730f5c63f3605b00d25eafcf5b97b)</li>
+<li>其他一些编译c的环境，系统本身就有，就不一样列出。</li>
+</ol>
+<p>编译所需软件大概有这些，引用参考文章的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install vim openssh-server git curl wget tar unzip</span><br><span class="line">$ sudo apt install build-essential openjdk-8-jdk yasm python</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%20%E7%BC%96%E8%AF%91%20ijplayer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/" class="post-title-link" itemprop="url">Ubuntu Server 扩展磁盘空间LVM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:53:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:53:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在《VMWare为Ubuntu添加硬盘》一文中，我尝试为虚拟机增加一块磁盘挂载了 <code>/data</code> 路径下，这可以解决在“出现磁盘耗尽预警”之前增加磁盘，尽量将新的文件都放到 <code>/data</code> 路径下。</p>
+<p>如果应用的数据无法迁移，需扩展根分区  <code>/</code> 的空间， 上面的方法则无法满足我的需求。</p>
+<h2 id="GParted"><a href="#GParted" class="headerlink" title="GParted"></a>GParted</h2><p>对于VMWare虚拟机，还可以考虑对虚拟机磁盘进行扩容，如：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/Ubuntu%20Server%20%E6%89%A9%E5%B1%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4LVM/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%20CD-DVD%20%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%20CD-DVD%20%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">VMWare CD/DVD 驱动器的类型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>CD/DVD</code> 驱动器的类型：</p>
+<ol>
+<li>如果选择操作系统为XP的话，<code>CD/DVD</code> 驱动器默认是IDE类型。</li>
+<li>如果选择操作系统为Win7的话，<code>CD/DVD</code> 驱动器默认是SATA类型。</li>
+</ol>
+<p> <code>CD/DVD</code> 驱动器底下有一个“高级”按钮，可以修改驱动器的类型。</p>
+<p><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%85%89%E9%A9%B1XP%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B.png"><br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%85%89%E9%A9%B1%E8%AE%BE%E7%BD%AE.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/" class="post-title-link" itemprop="url">VMWare为Ubuntu添加硬盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>VMWare中的Ubuntu虚拟机当初创建时只分配了20G硬盘，结果现在硬盘爆满了，记得VMWare可以加硬盘的，所以给它加了一块虚拟硬盘，记录一下过程。</p>
+<ol>
+<li>添加虚拟硬盘</li>
+</ol>
+<p>VM关机，在“编辑虚拟机设置” 中“硬件”给虚拟机实例添加一块硬盘。</p>
+<ol start="2">
+<li>开机进入Ubuntu（这里是root身份登录，所以命令没有加sudo）</li>
+</ol>
+<p>查看所有的硬盘，其中 <code>/dev/sdb</code> 是我们的第二块硬盘。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E4%B8%BAUbuntu%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%AE%89%E8%A3%85CHOST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E5%AE%89%E8%A3%85CHOST/" class="post-title-link" itemprop="url">VMWare安装CHOST</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>升级到VM15后，在网上下载Windows7 、 XP的Chost镜像，一直提示“CDBOOT: Couldn’t find BOOTMER”，修改VMWare虚拟机的BIOS第一启动项为CD依然不行。</p>
+<p>安装Linux系统（Ubuntu 20.04）却很顺利的。</p>
+<p>查看下载的镜像文件，原来是没有boot.ini文件<br><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/chost_list.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9BBIOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/VMWare%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9BBIOS/" class="post-title-link" itemprop="url">VMWare虚拟机进BIOS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-03T19:52:36+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF-%E4%BA%91%E5%B9%B3%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">虚拟化技术&云平台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>很简单，将虚拟机关机，在菜单栏“启动”绿色按钮旁边的更多三角形按钮，可以看到最底下有一个选项“打开电源时进入固件”，点击就可以进入BIOS啦。</p>
+<p><img src="/images/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF&%E4%BA%91%E5%B9%B3%E5%8F%B0/vm-bios.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/github/github%E5%8A%A0%E9%80%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/github/github%E5%8A%A0%E9%80%9F/" class="post-title-link" itemprop="url">GitHub加速</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 19:56:36" itemprop="dateCreated datePublished" datetime="2020-07-02T19:56:36+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>国内 <code>git clone</code> github上的仓库一直不快，但现在很慢，经常超时，发现一个镜像加速站点: <code>github.com.cnpmjs.org</code>。</p>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/bilibili/ijkplayer.git</span><br><span class="line"></span><br><span class="line"># 改为</span><br><span class="line"></span><br><span class="line">$ git clone https://github.com.cnpmjs.org/bilibili/ijkplayer.git</span><br></pre></td></tr></table></figure>
+
+<p>速度体验符合预期！！！</p>
+<p>而且 <a target="_blank" rel="noopener" href="https://github.com.cnpmjs.org/">github.com.cnpmjs.org</a> 也可以网页浏览，但不可以登录。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/github/github%E5%8A%A0%E9%80%9F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Android Linux命令行环境变量配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-02T19:52:36+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ubuntu下安装配置Android命令行编译环境，用于Jenkins编译项目和NDK编译第三方so库。</p>
+<h2 id="安装命令行工具sdkmanager"><a href="#安装命令行工具sdkmanager" class="headerlink" title="安装命令行工具sdkmanager"></a>安装命令行工具sdkmanager</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio#downloads">【在下载页面】</a> 下载<br><a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip">【commandlinetools-linux】</a> 至路径 <code>/usr/local/androidsdk</code> </li>
+<li>解压到当前目录，命令行工具的目录是 <code>cmdline-tools</code> </li>
+<li>sdkmanager是可执行文件</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> cmdline-tools/</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">bin  lib  NOTICE.txt  source.properties</span><br><span class="line">$ tree bin</span><br><span class="line">bin</span><br><span class="line">├── apkanalyzer</span><br><span class="line">├── avdmanager</span><br><span class="line">├── lint</span><br><span class="line">├── screenshot2</span><br><span class="line">└── sdkmanager</span><br><span class="line"></span><br><span class="line">0 directories, 5 files</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E5%BC%80%E6%BA%90%E7%9A%84H264%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6H264BSAnalyzer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E5%BC%80%E6%BA%90%E7%9A%84H264%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6H264BSAnalyzer/" class="post-title-link" itemprop="url">开源的H264数据包分析软件H264BSAnalyzer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-01 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-01T19:52:36+08:00">2020-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://github.com/latelee/H264BSAnalyzer">https://github.com/latelee/H264BSAnalyzer</a> 是一个Win程序，用于分享H264文件，已有打包好exe的文件。</p>
+<p>打开一个H264文件，如图<br><img src="/images/%E9%9F%B3%E8%A7%86%E9%A2%91/h264%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.png"></p>
+<p>可以看到这个软件已经把每一个Nal解析为一行一行的，H264文件就是以Nal为单位。</p>
+<p>一个H264文件，开头的是SPS和PPS，SEI可有可无，然后就是I帧，再就P帧或者B帧。</p>
+<p>每一帧都会有一个start code，H264BSAnalyzer 是将  <code>00 00 00 01</code> + <code>FNRIType（第一个字节）</code> 作为 start code 。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E5%BC%80%E6%BA%90%E7%9A%84H264%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6H264BSAnalyzer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/" class="post-title-link" itemprop="url">音视频推流协议RTSP和RTMP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-01 19:52:36" itemprop="dateCreated datePublished" datetime="2020-07-01T19:52:36+08:00">2020-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这是两种常用的音视频推流协议，这里简单比较一下两种协议应用场景（本文适合Java、Android开发者）。</p>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c04d810b7562">【视频传输协议详解（RTMP、RTSP、HLS）】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/wujian946110509/category_9288271.html">【流媒体 RTSP&#x2F;RTP&#x2F;RTCP&#x2F;RTMP H264】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42462202/category_9293806.html">【从零开始写一个RTSP服务器】</a></li>
+</ul>
+<h2 id="一、RTMP"><a href="#一、RTMP" class="headerlink" title="一、RTMP"></a>一、RTMP</h2><p>Real Time Messaging Protocol（实时消息传输协议）是 Adobe 的私有协议，设计用来进行实时数据通信的网络协议，主要用来在Flash&#x2F;AIR平台和支持RTMP协议的流媒体&#x2F;交互服务器之间进行音视频和数据通信。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E9%9F%B3%E8%A7%86%E9%A2%91/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81%E5%8D%8F%E8%AE%AERTSP%E5%92%8CRTMP/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/Ubuntu%20%E5%AE%89%E8%A3%85FFmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux/Ubuntu%20%E5%AE%89%E8%A3%85FFmpeg/" class="post-title-link" itemprop="url">Ubuntu 安装FFmpeg</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-28 22:58:36" itemprop="dateCreated datePublished" datetime="2020-06-28T22:58:36+08:00">2020-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-二进制文件下载（推荐）"><a href="#1-二进制文件下载（推荐）" class="headerlink" title="1. 二进制文件下载（推荐）"></a>1. 二进制文件下载（推荐）</h2><p>Ubuntu直接下载<a target="_blank" rel="noopener" href="https://launchpad.net/ubuntu/+source/ffmpeg">deb包</a> ，用 <code>dpkg -i</code> 安装。</p>
+<blockquote>
+<p>注：Ubuntu或者其他版本的linux，也可以下载<a target="_blank" rel="noopener" href="http://ffmpeg.org/download.html#build-linux">Linux Static Builds</a> 可执行文件 , 放在 <code>/usr/bin</code> 目录下，修改权限为可执行(777)即可。</p>
+</blockquote>
+<h2 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2. 命令安装"></a>2. 命令安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:mc3man/trusty-media</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ffmpeg</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Ubuntu%20%E5%AE%89%E8%A3%85FFmpeg/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/Android%20SELinux%E6%9D%83%E9%99%90%E5%8C%B9%E9%85%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Android/Android%20SELinux%E6%9D%83%E9%99%90%E5%8C%B9%E9%85%8D/" class="post-title-link" itemprop="url">Android SELinux权限匹配</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-29 19:52:36" itemprop="dateCreated datePublished" datetime="2020-05-29T19:52:36+08:00">2020-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在做Android 系统OTA升级App时，需要在 ‘<code>/cache</code>‘ 目录创建目录和脚本文件，App已经获取到system权限（安装到 <code>/system/priv-app</code> 目录），但是还是在<code>/cache</code> 目录下没有权限。</p>
+<p>通过 <code>adb</code> 命令，用system身份执行命令都没有任何问题。</p>
+<p>升级命令脚本是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;mkdir /cache/recovery&quot;</span><br><span class="line">&quot;echo \&quot;--update_package=/data/update.zip\&quot; &gt; /cache/recovery/command&quot;</span><br><span class="line">reboot recovery</span><br></pre></td></tr></table></figure>
+
+<p>但建议调用Android的接口 <code>RecoverySystem.installPackage(this,new File(&quot;/data/update.zip&quot;));</code> 执行（也是差不多这些命令）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Android/Android%20SELinux%E6%9D%83%E9%99%90%E5%8C%B9%E9%85%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

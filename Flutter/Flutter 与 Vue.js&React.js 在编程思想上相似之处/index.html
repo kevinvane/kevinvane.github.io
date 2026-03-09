@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/custom/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/custom/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Flutter 与 Vue.js&#x2F;React.js 在编程思想上有许多相似之处，尤其在组件化开发、状态管理和响应式编程等核心概念上。以下是具体对比分析：  1. 组件化设计• 相似点：  • Flutter 的 Widget 和 React&#x2F;Vue 的组件（Component）都是 UI 的原子单元，通过组合嵌套构建界面。  • 都遵循 单向数据流（父组件向子组件传递 prop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 与 Vue&amp;React 在编程思想上相似之处">
+<meta property="og:url" content="http://yoursite.com/Flutter/Flutter%20%E4%B8%8E%20Vue.js&React.js%20%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9B%B8%E4%BC%BC%E4%B9%8B%E5%A4%84/index.html">
+<meta property="og:site_name" content="咸鱼">
+<meta property="og:description" content="Flutter 与 Vue.js&#x2F;React.js 在编程思想上有许多相似之处，尤其在组件化开发、状态管理和响应式编程等核心概念上。以下是具体对比分析：  1. 组件化设计• 相似点：  • Flutter 的 Widget 和 React&#x2F;Vue 的组件（Component）都是 UI 的原子单元，通过组合嵌套构建界面。  • 都遵循 单向数据流（父组件向子组件传递 prop">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-10T13:18:06.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:36:20.067Z">
+<meta property="article:author" content="KevinWen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/Flutter/Flutter%20%E4%B8%8E%20Vue.js&React.js%20%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9B%B8%E4%BC%BC%E4%B9%8B%E5%A4%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Flutter 与 Vue&React 在编程思想上相似之处 | 咸鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">咸鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼是以盐腌渍后，晒干的鱼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-git">
+
+    <a href="/git-help/" rel="section"><i class="fa fa-fw fa-code"></i>Git</a>
+
+  </li>
+        <li class="menu-item menu-item-android-&-jdk">
+
+    <a href="/jdk-features/" rel="section"><i class="fa fa-fw fa-archive"></i>Android & JDK</a>
+
+  </li>
+        <li class="menu-item menu-item-java资源">
+
+    <a href="/awesome-java/" rel="section"><i class="fa fa-fw fa-code"></i>Java资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-hexo">
+
+    <a href="/hexo/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>hexo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Flutter/Flutter%20%E4%B8%8E%20Vue.js&React.js%20%E5%9C%A8%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9B%B8%E4%BC%BC%E4%B9%8B%E5%A4%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom/avatar_samwen.jpg">
+      <meta itemprop="name" content="KevinWen">
+      <meta itemprop="description" content="做人如果没有梦想,和咸鱼有什么区别呢?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咸鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flutter 与 Vue&React 在编程思想上相似之处
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-08-10 21:18:06" itemprop="dateCreated datePublished" datetime="2025-08-10T21:18:06+08:00">2025-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-03-09 14:36:20" itemprop="dateModified" datetime="2026-03-09T14:36:20+08:00">2026-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Flutter 与 Vue.js&#x2F;React.js 在编程思想上有许多相似之处，尤其在<strong>组件化开发</strong>、<strong>状态管理</strong>和<strong>响应式编程</strong>等核心概念上。以下是具体对比分析：</p>
+<hr>
+<h3 id="1-组件化设计"><a href="#1-组件化设计" class="headerlink" title="1. 组件化设计"></a>1. <strong>组件化设计</strong></h3><p>• <strong>相似点</strong>：<br>  • Flutter 的 <code>Widget</code> 和 React&#x2F;Vue 的组件（<code>Component</code>）都是 UI 的原子单元，通过组合嵌套构建界面。<br>  • 都遵循 <strong>单向数据流</strong>（父组件向子组件传递 props&#x2F;参数）。<br>  • 支持<strong>生命周期</strong>概念（如 Flutter 的 <code>initState</code>&#x2F;<code>dispose</code>，React 的 <code>useEffect</code>，Vue 的 <code>created</code>&#x2F;<code>mounted</code>）。</p>
+<p>• <strong>差异点</strong>：<br>  • Flutter 的 Widget 分为 <strong>Stateless</strong> 和 <strong>Stateful</strong> 两类，类似 React 的函数组件和类组件，但 Flutter 的 <code>StatefulWidget</code> 通过 <code>setState</code> 触发重建，而 React 使用虚拟 DOM 差分更新。<br>  • Vue 的模板语法更接近 HTML，而 Flutter 的 UI 完全用 Dart 代码声明（类似 React 的 JSX，但更彻底）。</p>
+<hr>
+<h3 id="2-状态管理"><a href="#2-状态管理" class="headerlink" title="2. 状态管理"></a>2. <strong>状态管理</strong></h3><p>• <strong>相似模式</strong>：<br>  • <strong>局部状态</strong>：Flutter 的 <code>StatefulWidget</code>、React 的 <code>useState</code>、Vue 的 <code>data()</code> 均用于组件内状态管理。<br>  • <strong>全局状态</strong>：三方库方案高度一致：<br>    ◦ Flutter：<code>Provider</code>（类似 React 的 Context）、<code>Riverpod</code>、<code>Bloc</code>、<code>Redux</code>。<br>    ◦ React：<code>Redux</code>、<code>MobX</code>、<code>Recoil</code>。<br>    ◦ Vue：<code>Vuex</code>、<code>Pinia</code>。<br>  • <strong>响应式更新</strong>：Flutter 的 <code>Stream</code>&#x2F;<code>ValueNotifier</code> 与 Vue 的 <code>ref</code>&#x2F;<code>reactive</code> 或 React 的 <code>useState</code>&#x2F;<code>useReducer</code> 类似。</p>
+<p>• <strong>关键差异</strong>：<br>  • Flutter 中状态变化必须通过 <code>setState</code> 或状态管理库通知框架重建 Widget，而 Vue 的响应式系统自动追踪依赖，React 依赖虚拟 DOM 和手动触发更新。</p>
+<hr>
+<h3 id="3-路由导航"><a href="#3-路由导航" class="headerlink" title="3. 路由导航"></a>3. <strong>路由导航</strong></h3><p>• <strong>相似点</strong>：<br>  • 均支持声明式路由（Flutter 的 <code>Navigator 2.0</code>、React 的 <code>React-Router</code>、Vue 的 <code>Vue-Router</code>）。<br>  • 可通过命名路由（<code>/home</code>）或代码跳转（<code>Navigator.push</code>&#x2F;<code>router.push</code>）。</p>
+<p>• <strong>差异点</strong>：<br>  • Flutter 的路由栈由 <code>Navigator</code> 管理，更贴近原生导航（如 iOS&#x2F;Android 的页面堆栈），而前端路由通常基于 URL 的哈希或 History API。</p>
+<hr>
+<h3 id="4-开发工具（DevTools）"><a href="#4-开发工具（DevTools）" class="headerlink" title="4. 开发工具（DevTools）"></a>4. <strong>开发工具（DevTools）</strong></h3><p>• <strong>共同目标</strong>：<br>  • 提供<strong>组件树检查</strong>（Flutter Widget Tree、React&#x2F;Vue DevTools）、<strong>性能分析</strong>、<strong>状态调试</strong>等功能。<br>  • Flutter 的 <code>DevTools</code> 与 Chrome 的 React&#x2F;Vue 调试工具定位类似。</p>
+<p>• <strong>特色功能</strong>：<br>  • Flutter：热重载（Hot Reload）远超前端生态的 HMR（热模块替换）。<br>  • React&#x2F;Vue：更强大的浏览器插件（如 Redux DevTools 集成）。</p>
+<hr>
+<h3 id="5-生态与语言差异"><a href="#5-生态与语言差异" class="headerlink" title="5. 生态与语言差异"></a>5. <strong>生态与语言差异</strong></h3><p>• <strong>语言特性</strong>：<br>  • Dart 的 <code>async/await</code> 与 JavaScript 类似，但 Flutter 强类型，Vue&#x2F;React 弱类型（TypeScript 可弥补）。<br>  • JSX（React）和 Vue 模板更贴近 HTML&#x2F;CSS，而 Flutter 的 UI 完全用代码表达。</p>
+<p>• <strong>跨平台能力</strong>：<br>  • Flutter 直接编译为原生代码（移动&#x2F;桌面&#x2F;Web），React&#x2F;Vue 依赖 WebView 或 React Native 桥接。</p>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>• <strong>相似性</strong>：组件化、状态管理、响应式更新等现代前端核心思想高度一致，学习一个框架后能快速迁移。<br>• <strong>差异性</strong>：Flutter 更贴近原生开发体验（如 Widget 重建机制），而 Vue&#x2F;React 依赖浏览器生态。  </p>
+<p><strong>建议</strong>：<br>• 如果你熟悉 React&#x2F;Vue，学习 Flutter 时重点关注 <strong>Dart 语法</strong>、<strong>Widget 树机制</strong>和 <strong>平台特性</strong>（如手势识别、原生模块）。<br>• 状态管理库（如 <code>Provider</code>&#x2F;<code>Bloc</code>）的设计理念可直接复用前端经验。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Flutter/Flutter%20%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E7%BB%84%E4%BB%B6/" rel="prev" title="Flutter 常用布局组件">
+      <i class="fa fa-chevron-left"></i> Flutter 常用布局组件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Flutter/Dart%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%94%AF%E6%8C%81/" rel="next" title="Dart 数据类型支持">
+      Dart 数据类型支持 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BB%84%E4%BB%B6%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">1. 组件化设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">2. 状态管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA"><span class="nav-number">3.</span> <span class="nav-text">3. 路由导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%EF%BC%88DevTools%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">4. 开发工具（DevTools）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%94%9F%E6%80%81%E4%B8%8E%E8%AF%AD%E8%A8%80%E5%B7%AE%E5%BC%82"><span class="nav-number">5.</span> <span class="nav-text">5. 生态与语言差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KevinWen"
+      src="/images/custom/avatar_samwen.jpg">
+  <p class="site-author-name" itemprop="name">KevinWen</p>
+  <div class="site-description" itemprop="description">做人如果没有梦想,和咸鱼有什么区别呢?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">390</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kevinvane" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/kevinvane@outlook.com" title="E-Mail → kevinvane@outlook.com"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/kevinvane" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/kevinvane" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/kevinvane" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kevinvane" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinWen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
